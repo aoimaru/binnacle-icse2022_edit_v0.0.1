@@ -93,6 +93,7 @@ def main():
     with open("__testCase__.json", mode="r") as f:
         test_cases = json.load(f)
     
+    total = list()
 
     for test_case in test_cases:
         print()
@@ -137,6 +138,10 @@ def main():
                 count += 1
         
         print("answer:{}%".format(count/10*100))
+        total.append(count/10*100)
+    
+    print()
+    print("total:{}%".format(sum(total)/len(total)))
 
             
 

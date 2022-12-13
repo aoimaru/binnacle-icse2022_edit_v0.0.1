@@ -54,7 +54,7 @@ def dist(X, Y):
  
         for j in range(1, n + 1):
             pq = PQ_GramWrapper._get_pq_edit_distance(X[m-1], Y[n-1], 2, 3)
-            if pq <= 0.9:           #(ケース2)
+            if pq <= 0.3:           #(ケース2)
                 cost = 0                        #(ケース2)
             else:
                 cost = 1                        #(ケース3c)
@@ -84,6 +84,7 @@ def main():
     with open("__testCase__.json", mode="r") as f:
         test_cases = json.load(f)
     
+    total = list()
 
     for test_case in test_cases:
         print()
@@ -124,6 +125,10 @@ def main():
                 count += 1
         
         print("answer:{}%".format(count/10*100))
+        total.append(count/10*100)
+    
+    print()
+    print("total:{}%".format(sum(total)/len(total)))
 
             
 
