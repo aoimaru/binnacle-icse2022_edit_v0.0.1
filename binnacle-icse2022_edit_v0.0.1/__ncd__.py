@@ -127,21 +127,6 @@ def main():
             if not run_instruction_id in dumped_ast_commands_per_run_instruction_dictionaly:
                 dumped_ast_commands_per_run_instruction_dictionaly[run_instruction_id] = list()
             dumped_ast_commands_per_run_instruction_dictionaly[run_instruction_id].append(dumped)
-    
-    # S_1 = list()
-    # for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly["openconnect:0"]:
-    #     astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
-    #     S_1.append(json.dumps(astCommand))
-    
-    # S_1 = list()
-    # for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly["webgoat:0"]:
-    #     astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
-    #     S_1.append(json.dumps(astCommand))
-
-    # S_1 = list()
-    # for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly["cadvisor:1"]:
-    #     astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
-    #     S_1.append(json.dumps(astCommand))
 
     with open("__testCase__.json", mode="r") as f:
         test_cases = json.load(f)

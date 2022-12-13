@@ -86,7 +86,7 @@ def main():
                 dumped_ast_commands_per_run_instruction_dictionaly[run_instruction_id] = list()
             dumped_ast_commands_per_run_instruction_dictionaly[run_instruction_id].append(dumped)
     
-    model_path = "{}/root-pvdm.model".format(GITHUB_MODEL_ROOT_PATH)
+    model_path = "{}/root.model".format(GITHUB_MODEL_ROOT_PATH)
     d2v_model = D2V_ROOT._load_model(model_path)
     
     print()
