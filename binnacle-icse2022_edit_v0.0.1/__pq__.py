@@ -112,10 +112,10 @@ def main():
         astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
         S_1.append(astCommand)
     
-    # S_1 = list()
-    # for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly["webgoat:0"]:
-    #     astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
-    #     S_1.append(astCommand)
+    S_1 = list()
+    for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly["webgoat:0"]:
+        astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
+        S_1.append(astCommand)
 
     pprint.pprint(S_1)
     

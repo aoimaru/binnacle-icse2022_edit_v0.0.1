@@ -132,7 +132,8 @@ def main():
         test_cases = json.load(f)
     
     S_1 = list()
-    test_case = test_cases[40]
+    test_case = "webgoat:0"
+    test_case = "zoneminder:0"
     print(test_case)
     for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case]:
         astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
