@@ -132,7 +132,7 @@ def main():
 
         count = 0
         for edit_distance in edit_distances[:10]:
-            print("caseId", "ID:{}".format(edit_distance["caseId"]), "vec_distance:", edit_distance["vec_distance"], "distance:", edit_distance["distance"])
+            print("caseId", "ID:{}".format(edit_distance["caseId"]).ljust(7), "vec_distance:", str(edit_distance["vec_distance"]).ljust(20), "distance:", str(edit_distance["distance"]).ljust(20))
             if edit_distance["answer"]==1:
                 count += 1
         
