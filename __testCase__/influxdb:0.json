@@ -1,0 +1,3382 @@
+{
+    "test_case": {
+        "type": "ROOT",
+        "children": [
+            {
+                "type": "SC-SET",
+                "children": [
+                    {
+                        "type": "SC-SET-F-E",
+                        "children": []
+                    },
+                    {
+                        "type": "SC-SET-F-X",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "type": "SC-APT-GET-UPDATE",
+                "children": []
+            },
+            {
+                "type": "SC-APT-GET-INSTALL",
+                "children": [
+                    {
+                        "type": "SC-APT-GET-F-YES",
+                        "children": []
+                    },
+                    {
+                        "type": "SC-APT-GET-PACKAGES",
+                        "children": [
+                            {
+                                "type": "SC-APT-GET-PACKAGE:CA-CERTIFICATES",
+                                "children": []
+                            },
+                            {
+                                "type": "SC-APT-GET-PACKAGE:WGET",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "SC-WGET",
+                "children": [
+                    {
+                        "type": "SC-WGET-OUTPUT-DOCUMENT",
+                        "children": [
+                            {
+                                "type": "BASH-PATH",
+                                "children": [
+                                    {
+                                        "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "SC-WGET-URL",
+                        "children": [
+                            {
+                                "type": "BASH-VARIABLE:INFLUXDB_URL",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "SC-ECHO",
+                "children": [
+                    {
+                        "type": "SC-ECHO-ITEMS",
+                        "children": [
+                            {
+                                "type": "SC-ECHO-ITEM",
+                                "children": [
+                                    {
+                                        "type": "BASH-LITERAL",
+                                        "children": [
+                                            {
+                                                "type": "ABS-DOUBLE-SPACE",
+                                                "children": []
+                                            },
+                                            {
+                                                "type": "ABS-SINGLE-SPACE",
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "SC-DPKG",
+                "children": [
+                    {
+                        "type": "SC-DPKG-INSTALLS",
+                        "children": [
+                            {
+                                "type": "SC-DPKG-INSTALL",
+                                "children": [
+                                    {
+                                        "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "SC-SED",
+                "children": [
+                    {
+                        "type": "SC-SED-EXPRESSIONS",
+                        "children": [
+                            {
+                                "type": "SC-SED-EXPRESSION",
+                                "children": [
+                                    {
+                                        "type": "BASH-LITERAL",
+                                        "children": [
+                                            {
+                                                "type": "ABS-FALSE",
+                                                "children": []
+                                            },
+                                            {
+                                                "type": "ABS-MAYBE-PATH",
+                                                "children": []
+                                            },
+                                            {
+                                                "type": "ABS-PATH-ABSOLUTE",
+                                                "children": []
+                                            },
+                                            {
+                                                "type": "ABS-TRUE",
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "SC-SED-F-IN-PLACE",
+                        "children": []
+                    },
+                    {
+                        "type": "SC-SED-PATHS",
+                        "children": [
+                            {
+                                "type": "SC-SED-PATH",
+                                "children": [
+                                    {
+                                        "type": "BASH-LITERAL",
+                                        "children": [
+                                            {
+                                                "type": "ABS-MAYBE-PATH",
+                                                "children": []
+                                            },
+                                            {
+                                                "type": "ABS-PATH-ABSOLUTE",
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "SC-WGET",
+                "children": [
+                    {
+                        "type": "SC-WGET-OUTPUT-DOCUMENT",
+                        "children": [
+                            {
+                                "type": "BASH-PATH",
+                                "children": [
+                                    {
+                                        "type": "BASH-LITERAL",
+                                        "children": [
+                                            {
+                                                "type": "ABS-MAYBE-PATH",
+                                                "children": []
+                                            },
+                                            {
+                                                "type": "ABS-PATH-ABSOLUTE",
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "SC-WGET-URL",
+                        "children": [
+                            {
+                                "type": "BASH-VARIABLE:COLLECTD_URL",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "SC-APT-GET-PURGE",
+                "children": [
+                    {
+                        "type": "SC-APT-GET-F-AUTO-REMOVE",
+                        "children": []
+                    },
+                    {
+                        "type": "SC-APT-GET-F-YES",
+                        "children": []
+                    },
+                    {
+                        "type": "SC-APT-GET-PACKAGES",
+                        "children": [
+                            {
+                                "type": "SC-APT-GET-PACKAGE:WGET",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "SC-RM",
+                "children": [
+                    {
+                        "type": "SC-RM-F-FORCE",
+                        "children": []
+                    },
+                    {
+                        "type": "SC-RM-F-RECURSIVE",
+                        "children": []
+                    },
+                    {
+                        "type": "SC-RM-PATHS",
+                        "children": [
+                            {
+                                "type": "SC-RM-PATH",
+                                "children": [
+                                    {
+                                        "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "SC-RM-PATH",
+                                "children": [
+                                    {
+                                        "type": "BASH-CONCAT",
+                                        "children": [
+                                            {
+                                                "type": "BASH-GLOB",
+                                                "children": [
+                                                    {
+                                                        "type": "ABS-GLOB-STAR",
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "BASH-LITERAL",
+                                                "children": [
+                                                    {
+                                                        "type": "ABS-APT-LISTS",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "type": "ABS-MAYBE-PATH",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "type": "ABS-PATH-ABSOLUTE",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "type": "ABS-PATH-VAR",
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "created_case": [
+        {
+            "type": "ROOT",
+            "children": [
+                {
+                    "type": "SC-SET",
+                    "children": [
+                        {
+                            "type": "SC-SET-F-E",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-SET-F-X",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-ECHO",
+                    "children": [
+                        {
+                            "type": "SC-ECHO-ITEMS",
+                            "children": [
+                                {
+                                    "type": "SC-ECHO-ITEM",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-SINGLE-SPACE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-DOUBLE-SPACE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-APT-GET-UPDATE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-INSTALL",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-F-YES",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-WGET",
+                    "children": [
+                        {
+                            "type": "SC-WGET-OUTPUT-DOCUMENT",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-WGET-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:INFLUXDB_URL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-ECHO",
+                    "children": [
+                        {
+                            "type": "SC-ECHO-ITEMS",
+                            "children": [
+                                {
+                                    "type": "SC-ECHO-ITEM",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-SINGLE-SPACE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-DOUBLE-SPACE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-DPKG",
+                    "children": [
+                        {
+                            "type": "SC-DPKG-INSTALLS",
+                            "children": [
+                                {
+                                    "type": "SC-DPKG-INSTALL",
+                                    "children": [
+                                        {
+                                            "type": "DUMMY",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-SED",
+                    "children": [
+                        {
+                            "type": "SC-SED-EXPRESSIONS",
+                            "children": [
+                                {
+                                    "type": "SC-SED-EXPRESSION",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-FALSE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "DUMMY",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-PATHS",
+                            "children": [
+                                {
+                                    "type": "SC-SED-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-WGET",
+                    "children": [
+                        {
+                            "type": "SC-WGET-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:COLLECTD_URL",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-WGET-OUTPUT-DOCUMENT",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-APT-GET-PURGE",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-F-AUTO-REMOVE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-F-YES",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGES",
+                            "children": [
+                                {
+                                    "type": "SC-APT-GET-PACKAGE:WGET",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGES",
+                            "children": [
+                                {
+                                    "type": "SC-APT-GET-PACKAGE:WGET",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-RM",
+                    "children": [
+                        {
+                            "type": "SC-RM-PATHS",
+                            "children": [
+                                {
+                                    "type": "DUMMY",
+                                    "children": [
+                                        {
+                                            "type": "DUMMY",
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-RM-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-CONCAT",
+                                            "children": [
+                                                {
+                                                    "type": "BASH-GLOB",
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-GLOB-STAR",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "BASH-LITERAL",
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-APT-LISTS",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-MAYBE-PATH",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "DUMMY",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-PATH-VAR",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-RM-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-CONCAT",
+                                            "children": [
+                                                {
+                                                    "type": "BASH-GLOB",
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-GLOB-STAR",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "BASH-LITERAL",
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-APT-LISTS",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-MAYBE-PATH",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "DUMMY",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-PATH-VAR",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-RM-F-RECURSIVE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-RM-F-FORCE",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ROOT",
+            "children": [
+                {
+                    "type": "SC-APT-GET-UPDATE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-INSTALL",
+                    "children": [
+                        {
+                            "type": "DUMMY",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGES",
+                            "children": [
+                                {
+                                    "type": "SC-APT-GET-PACKAGE:WGET",
+                                    "children": []
+                                },
+                                {
+                                    "type": "DUMMY",
+                                    "children": []
+                                },
+                                {
+                                    "type": "SC-APT-GET-PACKAGE:WGET",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-WGET",
+                    "children": [
+                        {
+                            "type": "SC-WGET-OUTPUT-DOCUMENT",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-WGET-URL",
+                            "children": [
+                                {
+                                    "type": "DUMMY",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-ECHO",
+                    "children": [
+                        {
+                            "type": "SC-ECHO-ITEMS",
+                            "children": [
+                                {
+                                    "type": "SC-ECHO-ITEM",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-DOUBLE-SPACE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-SINGLE-SPACE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-DPKG",
+                    "children": [
+                        {
+                            "type": "DUMMY",
+                            "children": [
+                                {
+                                    "type": "SC-DPKG-INSTALL",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-SED",
+                    "children": [
+                        {
+                            "type": "SC-SED-PATHS",
+                            "children": [
+                                {
+                                    "type": "SC-SED-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-EXPRESSIONS",
+                            "children": [
+                                {
+                                    "type": "SC-SED-EXPRESSION",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-FALSE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "DUMMY",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-F-IN-PLACE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-SED-PATHS",
+                            "children": [
+                                {
+                                    "type": "SC-SED-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-WGET",
+                    "children": [
+                        {
+                            "type": "SC-WGET-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:COLLECTD_URL",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-WGET-OUTPUT-DOCUMENT",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-APT-GET-PURGE",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-F-AUTO-REMOVE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-F-YES",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGES",
+                            "children": [
+                                {
+                                    "type": "SC-APT-GET-PACKAGE:WGET",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-RM",
+                    "children": [
+                        {
+                            "type": "SC-RM-F-FORCE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-RM-F-RECURSIVE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-RM-PATHS",
+                            "children": [
+                                {
+                                    "type": "SC-RM-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-RM-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-CONCAT",
+                                            "children": [
+                                                {
+                                                    "type": "BASH-GLOB",
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-GLOB-STAR",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "BASH-LITERAL",
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-APT-LISTS",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-PATH-VAR",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-MAYBE-PATH",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "DUMMY",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-PATH-VAR",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ROOT",
+            "children": [
+                {
+                    "type": "SC-SET",
+                    "children": [
+                        {
+                            "type": "SC-SET-F-E",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-SET-F-X",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-APT-GET-UPDATE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-INSTALL",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-F-YES",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGES",
+                            "children": [
+                                {
+                                    "type": "SC-APT-GET-PACKAGE:CA-CERTIFICATES",
+                                    "children": []
+                                },
+                                {
+                                    "type": "SC-APT-GET-PACKAGE:WGET",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-WGET",
+                    "children": [
+                        {
+                            "type": "SC-WGET-OUTPUT-DOCUMENT",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-WGET-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:INFLUXDB_URL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-ECHO",
+                    "children": [
+                        {
+                            "type": "SC-ECHO-ITEMS",
+                            "children": [
+                                {
+                                    "type": "SC-ECHO-ITEM",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-DOUBLE-SPACE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-DOUBLE-SPACE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "DUMMY",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-DPKG",
+                    "children": [
+                        {
+                            "type": "SC-DPKG-INSTALLS",
+                            "children": [
+                                {
+                                    "type": "SC-DPKG-INSTALL",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-SED",
+                    "children": [
+                        {
+                            "type": "SC-SED-F-IN-PLACE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-SED-PATHS",
+                            "children": [
+                                {
+                                    "type": "SC-SED-PATH",
+                                    "children": [
+                                        {
+                                            "type": "DUMMY",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-WGET",
+                    "children": [
+                        {
+                            "type": "SC-WGET-OUTPUT-DOCUMENT",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-WGET-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:COLLECTD_URL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "DUMMY",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-F-AUTO-REMOVE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-F-YES",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-RM",
+                    "children": [
+                        {
+                            "type": "SC-RM-F-FORCE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-RM-PATHS",
+                            "children": [
+                                {
+                                    "type": "SC-RM-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-RM-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-CONCAT",
+                                            "children": [
+                                                {
+                                                    "type": "BASH-GLOB",
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-GLOB-STAR",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "DUMMY",
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-APT-LISTS",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-MAYBE-PATH",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-PATH-ABSOLUTE",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "DUMMY",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ROOT",
+            "children": [
+                {
+                    "type": "SC-SET",
+                    "children": [
+                        {
+                            "type": "SC-SET-F-E",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-SET-F-X",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-APT-GET-UPDATE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-INSTALL",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-F-YES",
+                            "children": []
+                        },
+                        {
+                            "type": "DUMMY",
+                            "children": [
+                                {
+                                    "type": "SC-APT-GET-PACKAGE:CA-CERTIFICATES",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-WGET",
+                    "children": [
+                        {
+                            "type": "SC-WGET-OUTPUT-DOCUMENT",
+                            "children": [
+                                {
+                                    "type": "DUMMY",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-WGET-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:INFLUXDB_URL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-ECHO",
+                    "children": [
+                        {
+                            "type": "SC-ECHO-ITEMS",
+                            "children": [
+                                {
+                                    "type": "SC-ECHO-ITEM",
+                                    "children": [
+                                        {
+                                            "type": "DUMMY",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-DOUBLE-SPACE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-SINGLE-SPACE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-DPKG",
+                    "children": [
+                        {
+                            "type": "SC-DPKG-INSTALLS",
+                            "children": [
+                                {
+                                    "type": "SC-DPKG-INSTALL",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-SED",
+                    "children": [
+                        {
+                            "type": "SC-SED-F-IN-PLACE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-SED-EXPRESSIONS",
+                            "children": [
+                                {
+                                    "type": "SC-SED-EXPRESSION",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-FALSE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-TRUE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-F-IN-PLACE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-SED-PATHS",
+                            "children": [
+                                {
+                                    "type": "SC-SED-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "DUMMY",
+                    "children": [
+                        {
+                            "type": "SC-WGET-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:COLLECTD_URL",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-WGET-OUTPUT-DOCUMENT",
+                            "children": [
+                                {
+                                    "type": "DUMMY",
+                                    "children": [
+                                        {
+                                            "type": "DUMMY",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-APT-GET-PURGE",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-F-AUTO-REMOVE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGES",
+                            "children": [
+                                {
+                                    "type": "SC-APT-GET-PACKAGE:WGET",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-RM",
+                    "children": [
+                        {
+                            "type": "SC-RM-F-RECURSIVE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-RM-PATHS",
+                            "children": [
+                                {
+                                    "type": "SC-RM-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "DUMMY",
+                                    "children": [
+                                        {
+                                            "type": "BASH-CONCAT",
+                                            "children": [
+                                                {
+                                                    "type": "BASH-GLOB",
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-GLOB-STAR",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "BASH-LITERAL",
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-APT-LISTS",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-MAYBE-PATH",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "DUMMY",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-PATH-VAR",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "BASH-LITERAL",
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-APT-LISTS",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-MAYBE-PATH",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "DUMMY",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-PATH-VAR",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ROOT",
+            "children": [
+                {
+                    "type": "SC-SET",
+                    "children": [
+                        {
+                            "type": "SC-SET-F-E",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-APT-GET-UPDATE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-INSTALL",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-F-YES",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGES",
+                            "children": [
+                                {
+                                    "type": "SC-APT-GET-PACKAGE:CA-CERTIFICATES",
+                                    "children": []
+                                },
+                                {
+                                    "type": "SC-APT-GET-PACKAGE:WGET",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-WGET",
+                    "children": [
+                        {
+                            "type": "SC-WGET-OUTPUT-DOCUMENT",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-WGET-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:INFLUXDB_URL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-ECHO",
+                    "children": [
+                        {
+                            "type": "SC-ECHO-ITEMS",
+                            "children": [
+                                {
+                                    "type": "SC-ECHO-ITEM",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-SINGLE-SPACE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-DPKG",
+                    "children": [
+                        {
+                            "type": "SC-DPKG-INSTALLS",
+                            "children": [
+                                {
+                                    "type": "SC-DPKG-INSTALL",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-SED",
+                    "children": [
+                        {
+                            "type": "SC-SED-EXPRESSIONS",
+                            "children": [
+                                {
+                                    "type": "SC-SED-EXPRESSION",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-FALSE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-TRUE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-F-IN-PLACE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-SED-PATHS",
+                            "children": [
+                                {
+                                    "type": "SC-SED-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "DUMMY",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "DUMMY",
+                    "children": [
+                        {
+                            "type": "SC-WGET-OUTPUT-DOCUMENT",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "DUMMY",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-WGET-OUTPUT-DOCUMENT",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "DUMMY",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-WGET-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:COLLECTD_URL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "DUMMY",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-F-AUTO-REMOVE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-F-YES",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGES",
+                            "children": [
+                                {
+                                    "type": "SC-APT-GET-PACKAGE:WGET",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-RM",
+                    "children": [
+                        {
+                            "type": "SC-RM-F-FORCE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-RM-F-RECURSIVE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-RM-PATHS",
+                            "children": [
+                                {
+                                    "type": "SC-RM-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-RM-PATH",
+                                    "children": [
+                                        {
+                                            "type": "DUMMY",
+                                            "children": [
+                                                {
+                                                    "type": "BASH-LITERAL",
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-APT-LISTS",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-MAYBE-PATH",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "DUMMY",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-PATH-VAR",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ROOT",
+            "children": [
+                {
+                    "type": "SC-SET",
+                    "children": [
+                        {
+                            "type": "SC-SET-F-E",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-SET-F-X",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-APT-GET-UPDATE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-INSTALL",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-F-YES",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGES",
+                            "children": [
+                                {
+                                    "type": "SC-APT-GET-PACKAGE:CA-CERTIFICATES",
+                                    "children": []
+                                },
+                                {
+                                    "type": "SC-APT-GET-PACKAGE:WGET",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-WGET",
+                    "children": [
+                        {
+                            "type": "DUMMY",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-WGET-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:INFLUXDB_URL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-ECHO",
+                    "children": [
+                        {
+                            "type": "SC-ECHO-ITEMS",
+                            "children": [
+                                {
+                                    "type": "SC-ECHO-ITEM",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-SINGLE-SPACE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "DUMMY",
+                    "children": [
+                        {
+                            "type": "SC-DPKG-INSTALLS",
+                            "children": [
+                                {
+                                    "type": "SC-DPKG-INSTALL",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-SED",
+                    "children": [
+                        {
+                            "type": "SC-SED-EXPRESSIONS",
+                            "children": [
+                                {
+                                    "type": "SC-SED-EXPRESSION",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-FALSE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-TRUE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-F-IN-PLACE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-SED-PATHS",
+                            "children": [
+                                {
+                                    "type": "SC-SED-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "DUMMY",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-WGET",
+                    "children": [
+                        {
+                            "type": "SC-WGET-OUTPUT-DOCUMENT",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-WGET-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:COLLECTD_URL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-APT-GET-PURGE",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-F-AUTO-REMOVE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-F-YES",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGES",
+                            "children": [
+                                {
+                                    "type": "SC-APT-GET-PACKAGE:WGET",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-RM",
+                    "children": [
+                        {
+                            "type": "SC-RM-F-FORCE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-RM-F-RECURSIVE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-RM-PATHS",
+                            "children": [
+                                {
+                                    "type": "SC-RM-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-RM-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-CONCAT",
+                                            "children": [
+                                                {
+                                                    "type": "BASH-GLOB",
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-GLOB-STAR",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "BASH-LITERAL",
+                                                    "children": [
+                                                        {
+                                                            "type": "DUMMY",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-MAYBE-PATH",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "DUMMY",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-PATH-VAR",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ROOT",
+            "children": [
+                {
+                    "type": "SC-SET",
+                    "children": [
+                        {
+                            "type": "SC-SET-F-X",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-SET-F-E",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-APT-GET-UPDATE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-INSTALL",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-F-YES",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-WGET",
+                    "children": [
+                        {
+                            "type": "SC-WGET-OUTPUT-DOCUMENT",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "DUMMY",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-WGET-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:INFLUXDB_URL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-ECHO",
+                    "children": [
+                        {
+                            "type": "SC-ECHO-ITEMS",
+                            "children": [
+                                {
+                                    "type": "SC-ECHO-ITEM",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-DOUBLE-SPACE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-SINGLE-SPACE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-DPKG",
+                    "children": [
+                        {
+                            "type": "SC-DPKG-INSTALLS",
+                            "children": [
+                                {
+                                    "type": "SC-DPKG-INSTALL",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-SED",
+                    "children": [
+                        {
+                            "type": "SC-SED-EXPRESSIONS",
+                            "children": [
+                                {
+                                    "type": "SC-SED-EXPRESSION",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-FALSE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "DUMMY",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-TRUE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-F-IN-PLACE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-SED-PATHS",
+                            "children": [
+                                {
+                                    "type": "DUMMY",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-WGET",
+                    "children": [
+                        {
+                            "type": "SC-WGET-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:COLLECTD_URL",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-WGET-OUTPUT-DOCUMENT",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-WGET-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:COLLECTD_URL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-APT-GET-PURGE",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-F-AUTO-REMOVE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-F-YES",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGES",
+                            "children": [
+                                {
+                                    "type": "SC-APT-GET-PACKAGE:WGET",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-RM",
+                    "children": [
+                        {
+                            "type": "DUMMY",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-RM-F-RECURSIVE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-RM-PATHS",
+                            "children": [
+                                {
+                                    "type": "SC-RM-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-RM-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-CONCAT",
+                                            "children": [
+                                                {
+                                                    "type": "BASH-GLOB",
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-GLOB-STAR",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "BASH-LITERAL",
+                                                    "children": [
+                                                        {
+                                                            "type": "DUMMY",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-APT-LISTS",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "DUMMY",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "DUMMY",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "BASH-LITERAL",
+                                                    "children": [
+                                                        {
+                                                            "type": "DUMMY",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-APT-LISTS",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "DUMMY",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "DUMMY",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ROOT",
+            "children": [
+                {
+                    "type": "SC-SET",
+                    "children": [
+                        {
+                            "type": "DUMMY",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-SET-F-X",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-APT-GET-UPDATE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-INSTALL",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-F-YES",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGES",
+                            "children": [
+                                {
+                                    "type": "SC-APT-GET-PACKAGE:CA-CERTIFICATES",
+                                    "children": []
+                                },
+                                {
+                                    "type": "SC-APT-GET-PACKAGE:WGET",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "DUMMY",
+                    "children": [
+                        {
+                            "type": "SC-WGET-OUTPUT-DOCUMENT",
+                            "children": [
+                                {
+                                    "type": "DUMMY",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-WGET-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:INFLUXDB_URL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-ECHO",
+                    "children": [
+                        {
+                            "type": "SC-ECHO-ITEMS",
+                            "children": [
+                                {
+                                    "type": "SC-ECHO-ITEM",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-DOUBLE-SPACE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-SINGLE-SPACE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-DPKG",
+                    "children": [
+                        {
+                            "type": "DUMMY",
+                            "children": [
+                                {
+                                    "type": "SC-DPKG-INSTALL",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-SED",
+                    "children": [
+                        {
+                            "type": "SC-SED-EXPRESSIONS",
+                            "children": [
+                                {
+                                    "type": "DUMMY",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-FALSE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "DUMMY",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-TRUE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-F-IN-PLACE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-SED-PATHS",
+                            "children": [
+                                {
+                                    "type": "SC-SED-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-WGET",
+                    "children": [
+                        {
+                            "type": "SC-WGET-OUTPUT-DOCUMENT",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-WGET-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:COLLECTD_URL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-APT-GET-PURGE",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-F-AUTO-REMOVE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-F-YES",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGES",
+                            "children": [
+                                {
+                                    "type": "SC-APT-GET-PACKAGE:WGET",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-RM",
+                    "children": [
+                        {
+                            "type": "SC-RM-F-FORCE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-RM-F-RECURSIVE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-RM-PATHS",
+                            "children": [
+                                {
+                                    "type": "SC-RM-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-RM-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-RM-PATH",
+                                    "children": [
+                                        {
+                                            "type": "DUMMY",
+                                            "children": [
+                                                {
+                                                    "type": "BASH-GLOB",
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-GLOB-STAR",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "BASH-LITERAL",
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-APT-LISTS",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-MAYBE-PATH",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-PATH-ABSOLUTE",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-PATH-VAR",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ROOT",
+            "children": [
+                {
+                    "type": "SC-SET",
+                    "children": [
+                        {
+                            "type": "SC-SET-F-E",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-SET-F-X",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-APT-GET-UPDATE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-INSTALL",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-F-YES",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-WGET",
+                    "children": [
+                        {
+                            "type": "SC-WGET-OUTPUT-DOCUMENT",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-WGET-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:INFLUXDB_URL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-ECHO",
+                    "children": [
+                        {
+                            "type": "SC-ECHO-ITEMS",
+                            "children": [
+                                {
+                                    "type": "SC-ECHO-ITEM",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-DOUBLE-SPACE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-SED",
+                    "children": [
+                        {
+                            "type": "SC-SED-EXPRESSIONS",
+                            "children": [
+                                {
+                                    "type": "SC-SED-EXPRESSION",
+                                    "children": [
+                                        {
+                                            "type": "DUMMY",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-FALSE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-TRUE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-F-IN-PLACE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-SED-PATHS",
+                            "children": [
+                                {
+                                    "type": "SC-SED-PATH",
+                                    "children": [
+                                        {
+                                            "type": "DUMMY",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "DUMMY",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-WGET",
+                    "children": [
+                        {
+                            "type": "SC-WGET-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:COLLECTD_URL",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-WGET-OUTPUT-DOCUMENT",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "DUMMY",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "DUMMY",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-APT-GET-PURGE",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-F-AUTO-REMOVE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-F-YES",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGES",
+                            "children": [
+                                {
+                                    "type": "SC-APT-GET-PACKAGE:WGET",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-RM",
+                    "children": [
+                        {
+                            "type": "SC-RM-F-FORCE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-RM-F-RECURSIVE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-RM-PATHS",
+                            "children": [
+                                {
+                                    "type": "SC-RM-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ROOT",
+            "children": [
+                {
+                    "type": "SC-SET",
+                    "children": [
+                        {
+                            "type": "SC-SET-F-E",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-SET-F-E",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-SET-F-X",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-APT-GET-UPDATE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-INSTALL",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-F-YES",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGES",
+                            "children": [
+                                {
+                                    "type": "DUMMY",
+                                    "children": []
+                                },
+                                {
+                                    "type": "SC-APT-GET-PACKAGE:WGET",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-WGET",
+                    "children": [
+                        {
+                            "type": "SC-WGET-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:INFLUXDB_URL",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-WGET-OUTPUT-DOCUMENT",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-ECHO",
+                    "children": [
+                        {
+                            "type": "SC-ECHO-ITEMS",
+                            "children": [
+                                {
+                                    "type": "SC-ECHO-ITEM",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-DOUBLE-SPACE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-SINGLE-SPACE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-DPKG",
+                    "children": [
+                        {
+                            "type": "SC-DPKG-INSTALLS",
+                            "children": [
+                                {
+                                    "type": "SC-DPKG-INSTALL",
+                                    "children": [
+                                        {
+                                            "type": "DUMMY",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-SED",
+                    "children": [
+                        {
+                            "type": "SC-SED-F-IN-PLACE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-SED-EXPRESSIONS",
+                            "children": [
+                                {
+                                    "type": "SC-SED-EXPRESSION",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-FALSE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-TRUE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-PATHS",
+                            "children": [
+                                {
+                                    "type": "SC-SED-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-WGET",
+                    "children": [
+                        {
+                            "type": "DUMMY",
+                            "children": [
+                                {
+                                    "type": "DUMMY",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-WGET-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:COLLECTD_URL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-APT-GET-PURGE",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-F-AUTO-REMOVE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-F-YES",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-RM",
+                    "children": [
+                        {
+                            "type": "SC-RM-F-FORCE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-RM-F-RECURSIVE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-RM-PATHS",
+                            "children": [
+                                {
+                                    "type": "SC-RM-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-CONCAT",
+                                            "children": [
+                                                {
+                                                    "type": "BASH-GLOB",
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-GLOB-STAR",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "BASH-LITERAL",
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-APT-LISTS",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-MAYBE-PATH",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-MAYBE-PATH",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-PATH-ABSOLUTE",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-PATH-VAR",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-RM-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:INFLUXDB_FILE",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
