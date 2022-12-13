@@ -26,8 +26,8 @@ VIMAGICK_DATA_ROOT_PATH = "/Users/nakamurahekikai/Desktop/binnacle-icse2020_doc2
 VIMAGICK_AST_ROOT_PATH = "/Users/nakamurahekikai/Desktop/binnacle-icse2022_ast-path_v0.0.2/ast/vimagick"
 
 PNG_PATH = "/Users/nakamurahekikai/Desktop/binnacle-icse2022_ast-path_v0.0.2/images"
-TEST_CASE_PATH = "/Users/nakamurahekikai/Desktop/binnacle-icse2022_lstm_v0.0.3/__testCase__"
-TEST_CASE_TF_PATH = "/Users/nakamurahekikai/Desktop/binnacle-icse2022_lstm_v0.0.3/__testCaseTF__"
+TEST_CASE_PATH = "/Users/nakamurahekikai/Desktop/binnacle-icse2022_edit_v0.0.1/__testCase__"
+TEST_CASE_TF_PATH = "/Users/nakamurahekikai/Desktop/binnacle-icse2022_edit_v0.0.1/__testCaseTF__"
 
 def ncd(x,y):
     if x == y:
