@@ -68,8 +68,7 @@ def dist(X, Y):
  
             T[i][j] = min(T[i - 1][j] + 1,      #の削除(ケース3b)
                         T[i][j - 1] + 1,        #挿入(ケース3a)
-                        T[i - 1][j - 1] + cost) #交換(ケース2 + 3c)
-            
+                        T[i - 1][j - 1] + cost) #交換(ケース2 + 3c)        
  
     return T[m][n]
 
@@ -93,7 +92,7 @@ def main():
     test_case = "dante:0"
     test_case = "taskd:0"
     test_case = "phpvirtualbox:0"
-    test_case = "prestashop:2"
+    # test_case = "prestashop:2"
     test_obj = {
         "type": "ROOT",
         "children": []
@@ -101,7 +100,7 @@ def main():
 
     test_ncd = list()
 
-    for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case][:-2]:
+    for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case]:
         astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
         test_obj["children"].append(astCommand)
         test_ncd.append(json.dumps(astCommand))

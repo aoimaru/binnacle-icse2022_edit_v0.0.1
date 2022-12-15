@@ -90,6 +90,9 @@ def main():
     print()
     
     test_case = "dante:0"
+    test_case = "taskd:0"
+    test_case = "phpvirtualbox:0"
+    test_case = "prestashop:2"
     
     test_obj = {
         "type": "ROOT",
@@ -110,8 +113,8 @@ def main():
     edit_distances = list()
 
     for dumped_id, dumped_ast_commands in tqdm.tqdm(dumped_ast_commands_per_run_instruction_dictionaly.items()):
-        if dumped_id==test_case:
-            continue
+        # if dumped_id==test_case:
+        #     continue
         sample_obj = {
             "type": "ROOT",
             "children": []
@@ -126,11 +129,19 @@ def main():
             astCommandVector = d2v_model.infer_vector(astCommandSequence, epochs=30)
             sample_ncd.append(astCommandVector)
 
+        # edit_distances.append(
+        #     {
+        #         "dumpedId": dumped_id,
+        #         "astCommands": sample_obj,
+        #         "ncd_distance": dist(test_ncd, sample_ncd)/max(len(test_ncd), len(sample_ncd))*1.00,
+        #         "simple_distance": simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
+        #     }
+        # )
         edit_distances.append(
             {
                 "dumpedId": dumped_id,
                 "astCommands": sample_obj,
-                "ncd_distance": dist(test_ncd, sample_ncd)/max(len(test_ncd), len(sample_ncd))*1.00,
+                "ncd_distance": dist(test_ncd, sample_ncd),
                 "simple_distance": simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
             }
         )

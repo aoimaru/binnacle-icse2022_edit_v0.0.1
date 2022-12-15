@@ -91,15 +91,15 @@ def main():
     for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case]:
         astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
         test_obj["children"].append(astCommand)
-        test_ncd.append(json.dumps(astCommand))
+        test_ncd.append(astCommand)
     
     pprint.pprint(test_obj)
 
     edit_distances = list()
 
     for dumped_id, dumped_ast_commands in tqdm.tqdm(dumped_ast_commands_per_run_instruction_dictionaly.items()):
-        if dumped_id==test_case:
-            continue
+        # if dumped_id==test_case:
+        #     continue
         sample_obj = {
             "type": "ROOT",
             "children": []
@@ -110,15 +110,23 @@ def main():
         for dumped_ast_command in dumped_ast_commands:
             astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
             sample_obj["children"].append(astCommand)
-            sample_ncd.append(json.dumps(astCommand))
+            sample_ncd.append(astCommand)
 
         # pprint.pprint(sample_obj)
         try:
+            # edit_distances.append(
+            #     {
+            #         "dumpedId": dumped_id,
+            #         "astCommands": sample_obj,
+            #         "ncd_distance": dist(test_ncd, sample_ncd)/max(len(test_ncd), len(sample_ncd))*1.00,
+            #         "simple_distance": simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
+            #     }
+            # )
             edit_distances.append(
                 {
                     "dumpedId": dumped_id,
                     "astCommands": sample_obj,
-                    "ncd_distance": dist(test_ncd, sample_ncd)/max(len(test_ncd), len(sample_ncd))*1.00,
+                    "ncd_distance": dist(test_ncd, sample_ncd),
                     "simple_distance": simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
                 }
             )
