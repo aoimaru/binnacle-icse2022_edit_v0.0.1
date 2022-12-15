@@ -69,8 +69,7 @@ def dist(X, Y):
             T[i][j] = min(T[i - 1][j] + 1,      #の削除(ケース3b)
                         T[i][j - 1] + 1,        #挿入(ケース3a)
                         T[i - 1][j - 1] + cost) #交換(ケース2 + 3c)
-            # T[i][j] = min(T[i - 1][j] + 1,      #の削除(ケース3b)
-            #             T[i][j - 1] + 1) 
+            
  
     return T[m][n]
 
@@ -102,7 +101,7 @@ def main():
 
     test_ncd = list()
 
-    for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case]:
+    for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case][:-1]:
         astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
         test_obj["children"].append(astCommand)
         test_ncd.append(json.dumps(astCommand))
@@ -126,11 +125,19 @@ def main():
             sample_obj["children"].append(astCommand)
             sample_ncd.append(json.dumps(astCommand))
 
+        # edit_distances.append(
+        #     {
+        #         "dumpedId": dumped_id,
+        #         "astCommands": sample_obj,
+        #         "ncd_distance": dist(test_ncd, sample_ncd)/max(len(test_ncd), len(sample_ncd))*1.00,
+        #         "simple_distance": simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
+        #     }
+        # )
         edit_distances.append(
             {
                 "dumpedId": dumped_id,
                 "astCommands": sample_obj,
-                "ncd_distance": dist(test_ncd, sample_ncd)/max(len(test_ncd), len(sample_ncd))*1.00,
+                "ncd_distance": dist(test_ncd, sample_ncd),
                 "simple_distance": simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
             }
         )
@@ -149,8 +156,8 @@ def main():
     for output_distance in output_distances:
         edit_distances = sorted(output_distance[1], key=lambda x:x["simple_distance"])
         for edit_distance in edit_distances:
-            if count >= 20:
-                break
+            # if count >= 20:
+            #     break
             print(edit_distance["dumpedId"].ljust(20), edit_distance["ncd_distance"], edit_distance["simple_distance"])
             count += 1
             
