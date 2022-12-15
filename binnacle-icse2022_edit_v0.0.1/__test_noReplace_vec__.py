@@ -54,14 +54,14 @@ def dist(X, Y):
  
         for j in range(1, n + 1):
             cos = cos_sim(X[m-1], Y[n-1])
-            if cos >= 0.8:           #(ケース2)
+            if cos >= 0.1:           #(ケース2)
                 cost = 0                        #(ケース2)
             else:
                 cost = 1                        #(ケース3c)
  
             T[i][j] = min(T[i - 1][j] + 1,      #の削除(ケース3b)
-                        T[i][j - 1] + 1,        #挿入(ケース3a)
-                        T[i - 1][j - 1] + cost) #交換(ケース2 + 3c)
+                        T[i][j - 1] + 1        #挿入(ケース3a)
+                        ) #交換(ケース2 + 3c)
  
     return T[m][n]
 

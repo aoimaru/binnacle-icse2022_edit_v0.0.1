@@ -100,7 +100,7 @@ def main():
             test_obj["children"].append(astCommand)
             test_ncd.append(astCommand)
         
-        pprint.pprint(test_obj)
+        # pprint.pprint(test_obj)
 
         edit_distances = list()
 

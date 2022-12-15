@@ -53,29 +53,21 @@ def dist(X, Y):
     for i in range(1, m + 1):
  
         for j in range(1, n + 1):
-            cos = cos_sim(X[m-1], Y[n-1])
-            if cos >= 0.8:           #(ケース2)
+            pq = PQ_GramWrapper._get_pq_edit_distance(X[m-1], Y[n-1], 2, 3)
+            if pq <= 0.9:           #(ケース2)
                 cost = 0                        #(ケース2)
             else:
                 cost = 1                        #(ケース3c)
  
             T[i][j] = min(T[i - 1][j] + 1,      #の削除(ケース3b)
-                        T[i][j - 1] + 1,        #挿入(ケース3a)
-                        T[i - 1][j - 1] + cost) #交換(ケース2 + 3c)
+                        T[i][j - 1] + 1) 
  
     return T[m][n]
-
-def cos_sim(v1, v2):
-    return np.dot(v1, v2) / (np.linalg.norm(v1) * np.linalg.norm(v2))
-
 
 def main():
     file_paths = JsonFile._get_file_paths(VIMAGICK_AST_ROOT_PATH)
     dumped_ast_commands = list()
     dumped_ast_commands_per_run_instruction_dictionaly = dict()
-
-    model_path = "{}/root-pvdm.model".format(GITHUB_MODEL_ROOT_PATH)
-    d2v_model = D2V_ROOT._load_model(model_path)
 
     print("loading contents...")
     for file_path in tqdm.tqdm(file_paths):
@@ -105,9 +97,7 @@ def main():
         for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case]:
             astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
             test_obj["children"].append(astCommand)
-            astCommandSequence = Root._get(astCommand)
-            astCommandVector = d2v_model.infer_vector(astCommandSequence, epochs=30)
-            test_ncd.append(astCommandVector)
+            test_ncd.append(astCommand)
         
         # pprint.pprint(test_obj)
 
@@ -126,9 +116,7 @@ def main():
             for dumped_ast_command in dumped_ast_commands:
                 astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
                 sample_obj["children"].append(astCommand)
-                astCommandSequence = Root._get(astCommand)
-                astCommandVector = d2v_model.infer_vector(astCommandSequence, epochs=30)
-                sample_ncd.append(astCommandVector)
+                sample_ncd.append(astCommand)
 
             edit_distances.append(
                 {

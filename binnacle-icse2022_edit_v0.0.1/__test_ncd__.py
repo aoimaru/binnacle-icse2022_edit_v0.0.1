@@ -61,7 +61,7 @@ def dist(X, Y):
  
         for j in range(1, n + 1):
             nc = ncd(X[m-1], Y[n-1])
-            if nc <= 0.3:           #(ケース2)
+            if nc <= 0.8:           #(ケース2)
                 cost = 0                        #(ケース2)
             else:
                 cost = 1                        #(ケース3c)
@@ -107,7 +107,7 @@ def main():
             test_obj["children"].append(astCommand)
             test_ncd.append(json.dumps(astCommand))
         
-        pprint.pprint(test_obj)
+        # pprint.pprint(test_obj)
 
         edit_distances = list()
 

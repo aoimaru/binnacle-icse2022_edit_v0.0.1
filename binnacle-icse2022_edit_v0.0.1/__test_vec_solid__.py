@@ -88,76 +88,72 @@ def main():
                 dumped_ast_commands_per_run_instruction_dictionaly[run_instruction_id] = list()
             dumped_ast_commands_per_run_instruction_dictionaly[run_instruction_id].append(dumped)
     print()
-    with open("__testCase__.json", mode="r") as f:
-        test_cases = json.load(f)
     
+    test_case = "dante:0"
+    
+    test_obj = {
+        "type": "ROOT",
+        "children": []
+    }
 
-    for test_case in test_cases:
-        print()
-        print("test_case:", test_case)
-        test_obj = {
+    test_ncd = list()
+
+    for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case]:
+        astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
+        test_obj["children"].append(astCommand)
+        astCommandSequence = Root._get(astCommand)
+        astCommandVector = d2v_model.infer_vector(astCommandSequence, epochs=30)
+        test_ncd.append(astCommandVector)
+    
+    # pprint.pprint(test_obj)
+
+    edit_distances = list()
+
+    for dumped_id, dumped_ast_commands in tqdm.tqdm(dumped_ast_commands_per_run_instruction_dictionaly.items()):
+        if dumped_id==test_case:
+            continue
+        sample_obj = {
             "type": "ROOT",
             "children": []
         }
 
-        test_ncd = list()
+        sample_ncd = list()
 
-        for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case]:
+        for dumped_ast_command in dumped_ast_commands:
             astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
-            test_obj["children"].append(astCommand)
+            sample_obj["children"].append(astCommand)
             astCommandSequence = Root._get(astCommand)
             astCommandVector = d2v_model.infer_vector(astCommandSequence, epochs=30)
-            test_ncd.append(astCommandVector)
-        
-        # pprint.pprint(test_obj)
+            sample_ncd.append(astCommandVector)
 
-        edit_distances = list()
-
-        for dumped_id, dumped_ast_commands in tqdm.tqdm(dumped_ast_commands_per_run_instruction_dictionaly.items()):
-            if dumped_id==test_case:
-                continue
-            sample_obj = {
-                "type": "ROOT",
-                "children": []
+        edit_distances.append(
+            {
+                "dumpedId": dumped_id,
+                "astCommands": sample_obj,
+                "ncd_distance": dist(test_ncd, sample_ncd)/max(len(test_ncd), len(sample_ncd))*1.00,
+                "simple_distance": simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
             }
-
-            sample_ncd = list()
-
-            for dumped_ast_command in dumped_ast_commands:
-                astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
-                sample_obj["children"].append(astCommand)
-                astCommandSequence = Root._get(astCommand)
-                astCommandVector = d2v_model.infer_vector(astCommandSequence, epochs=30)
-                sample_ncd.append(astCommandVector)
-
-            edit_distances.append(
-                {
-                    "dumpedId": dumped_id,
-                    "astCommands": sample_obj,
-                    "ncd_distance": dist(test_ncd, sample_ncd)/max(len(test_ncd), len(sample_ncd))*1.00,
-                    "simple_distance": simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
-                }
-            )
-        
-        edit_distances = sorted(edit_distances, key=lambda x:x["ncd_distance"])
+        )
+    
+    edit_distances = sorted(edit_distances, key=lambda x:x["ncd_distance"])
 
 
-        output_distances = dict()
+    output_distances = dict()
+    for edit_distance in edit_distances:
+        if not edit_distance["ncd_distance"] in output_distances:
+            output_distances[edit_distance["ncd_distance"]] = list()
+        output_distances[edit_distance["ncd_distance"]].append(edit_distance)
+    
+    output_distances = sorted(output_distances.items(), key=lambda x:x[0])
+    count = 0
+    for output_distance in output_distances:
+        edit_distances = sorted(output_distance[1], key=lambda x:x["simple_distance"])
         for edit_distance in edit_distances:
-            if not edit_distance["ncd_distance"] in output_distances:
-                output_distances[edit_distance["ncd_distance"]] = list()
-            output_distances[edit_distance["ncd_distance"]].append(edit_distance)
+            if count >= 10:
+                break
+            print(edit_distance["dumpedId"].ljust(20), edit_distance["ncd_distance"], edit_distance["simple_distance"])
+            count += 1
         
-        output_distances = sorted(output_distances.items(), key=lambda x:x[0])
-        count = 0
-        for output_distance in output_distances:
-            edit_distances = sorted(output_distance[1], key=lambda x:x["simple_distance"])
-            for edit_distance in edit_distances:
-                if count >= 10:
-                    break
-                print(edit_distance["dumpedId"].ljust(20), edit_distance["ncd_distance"], edit_distance["simple_distance"])
-                count += 1
-            
 
 
 if __name__ == "__main__":
