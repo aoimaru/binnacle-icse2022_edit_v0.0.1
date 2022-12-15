@@ -62,7 +62,7 @@ def dist(X, Y):
     for i in range(1, m + 1):
  
         for j in range(1, n + 1):
-            nc = ncd(X[m-1], Y[n-1])
+            nc = ncd(X[i-1], Y[j-1])
             if nc <= 0.9:           #(ケース2)
                 cost = 0                        #(ケース2)
             else:

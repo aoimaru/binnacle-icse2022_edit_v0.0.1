@@ -53,7 +53,7 @@ def dist(X, Y):
     for i in range(1, m + 1):
  
         for j in range(1, n + 1):
-            cos = cos_sim(X[m-1], Y[n-1])
+            cos = cos_sim(X[i-1], Y[j-1])
             if cos >= 0.8:           #(ケース2)
                 cost = 0                        #(ケース2)
             else:
