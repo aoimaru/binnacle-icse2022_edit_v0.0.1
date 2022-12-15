@@ -60,6 +60,11 @@ def dist(X, Y):
     for i in range(1, m + 1):
  
         for j in range(1, n + 1):
+            # print()
+            # print(i-1, j-1)
+            # pprint.pprint(X[i-1])
+            # print()
+            # pprint.pprint(Y[j-1])
             nc = ncd(X[i-1], Y[j-1])
             if nc <= 0.1:           #(ケース2)
                 cost = 0                        #(ケース2)
@@ -69,6 +74,9 @@ def dist(X, Y):
             T[i][j] = min(T[i - 1][j] + 1,      #の削除(ケース3b)
                         T[i][j - 1] + 1,        #挿入(ケース3a)
                         T[i - 1][j - 1] + cost) #交換(ケース2 + 3c)
+
+            # print()           
+            # pprint.pprint(T)
             
  
     return T[m][n]
@@ -106,60 +114,48 @@ def main():
         test_obj["children"].append(astCommand)
         test_ncd.append(json.dumps(astCommand))
     
-    pprint.pprint(test_obj)
+    # pprint.pprint(test_obj)
 
     edit_distances = list()
 
-    for dumped_id, dumped_ast_commands in tqdm.tqdm(dumped_ast_commands_per_run_instruction_dictionaly.items()):
-        # if dumped_id==test_case:
-        #     continue
-        sample_obj = {
-            "type": "ROOT",
-            "children": []
-        }
 
-        sample_ncd = list()
+    sample_obj = {
+        "type": "ROOT",
+        "children": []
+    }
 
-        for dumped_ast_command in dumped_ast_commands:
-            astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
-            sample_obj["children"].append(astCommand)
-            sample_ncd.append(json.dumps(astCommand))
-
-        # edit_distances.append(
-        #     {
-        #         "dumpedId": dumped_id,
-        #         "astCommands": sample_obj,
-        #         "ncd_distance": dist(test_ncd, sample_ncd)/max(len(test_ncd), len(sample_ncd))*1.00,
-        #         "simple_distance": simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
-        #     }
-        # )
-        edit_distances.append(
-            {
-                "dumpedId": dumped_id,
-                "astCommands": sample_obj,
-                "ncd_distance": dist(test_ncd, sample_ncd),
-                "simple_distance": simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
-            }
-        )
+    sample_ncd = list()
+    sample_case = "phpvirtualbox:0"
+    for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[sample_case]:
+        astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
+        sample_obj["children"].append(astCommand)
+        sample_ncd.append(json.dumps(astCommand))
     
-    edit_distances = sorted(edit_distances, key=lambda x:x["ncd_distance"])
+    ncd_distance = dist(test_ncd, sample_ncd)
+    distance = simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
+
+    print("ncd_distance:", ncd_distance)
 
 
-    output_distances = dict()
-    for edit_distance in edit_distances:
-        if not edit_distance["ncd_distance"] in output_distances:
-            output_distances[edit_distance["ncd_distance"]] = list()
-        output_distances[edit_distance["ncd_distance"]].append(edit_distance)
     
-    output_distances = sorted(output_distances.items(), key=lambda x:x[0])
-    count = 0
-    for output_distance in output_distances:
-        edit_distances = sorted(output_distance[1], key=lambda x:x["simple_distance"])
-        for edit_distance in edit_distances:
-            if count >= 10:
-                break
-            print(edit_distance["dumpedId"].ljust(20), edit_distance["ncd_distance"], edit_distance["simple_distance"])
-            count += 1
+    # edit_distances = sorted(edit_distances, key=lambda x:x["ncd_distance"])
+
+
+    # output_distances = dict()
+    # for edit_distance in edit_distances:
+    #     if not edit_distance["ncd_distance"] in output_distances:
+    #         output_distances[edit_distance["ncd_distance"]] = list()
+    #     output_distances[edit_distance["ncd_distance"]].append(edit_distance)
+    
+    # output_distances = sorted(output_distances.items(), key=lambda x:x[0])
+    # count = 0
+    # for output_distance in output_distances:
+    #     edit_distances = sorted(output_distance[1], key=lambda x:x["simple_distance"])
+    #     for edit_distance in edit_distances:
+    #         # if count >= 20:
+    #         #     break
+    #         print(edit_distance["dumpedId"].ljust(20), edit_distance["ncd_distance"], edit_distance["simple_distance"])
+    #         count += 1
             
 
 
