@@ -64,10 +64,10 @@ def dist(X, Y):
             if nc <= 0.1:           #(ケース2)
                 cost = 0                        #(ケース2)
             else:
-                cost = 1                        #(ケース3c)
+                cost = 3                        #(ケース3c)
  
-            T[i][j] = min(T[i - 1][j] + 1,      #の削除(ケース3b)
-                        T[i][j - 1] + 0.5,        #挿入(ケース3a)
+            T[i][j] = min(T[i - 1][j] + 3,      #の削除(ケース3b)
+                        T[i][j - 1] + 1,        #挿入(ケース3a)
                         T[i - 1][j - 1] + cost) #交換(ケース2 + 3c)
  
     return T[m][n]
@@ -91,8 +91,10 @@ def main():
     
     test_case = "dante:0"
     test_case = "taskd:0"
-    test_case = "phpvirtualbox:0"
-    test_case = "prestashop:2"
+    # test_case = "phpvirtualbox:0"
+    # test_case = "prestashop:2"
+    # test_case = "kcptun:0"
+    test_case = "webgoat:0"
     test_obj = {
         "type": "ROOT",
         "children": []
@@ -100,18 +102,19 @@ def main():
 
     test_ncd = list()
 
-    for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case]:
+    for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case][:-2]:
         astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
         test_obj["children"].append(astCommand)
         test_ncd.append(json.dumps(astCommand))
     
-    pprint.pprint(test_obj)
+    # pprint.pprint(test_obj)
 
     edit_distances = list()
 
+    print("do...")
     for dumped_id, dumped_ast_commands in tqdm.tqdm(dumped_ast_commands_per_run_instruction_dictionaly.items()):
-        if dumped_id==test_case:
-            continue
+        # if dumped_id==test_case:
+        #     continue
         sample_obj = {
             "type": "ROOT",
             "children": []
@@ -132,6 +135,14 @@ def main():
                 "simple_distance": simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
             }
         )
+        # edit_distances.append(
+        #     {
+        #         "dumpedId": dumped_id,
+        #         "astCommands": sample_obj,
+        #         "ncd_distance": dist(test_ncd, sample_ncd),
+        #         "simple_distance": simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
+        #     }
+        # )
     
     edit_distances = sorted(edit_distances, key=lambda x:x["ncd_distance"])
 
@@ -147,7 +158,7 @@ def main():
     for output_distance in output_distances:
         edit_distances = sorted(output_distance[1], key=lambda x:x["simple_distance"])
         for edit_distance in edit_distances:
-            if count >= 20:
+            if count >= 10:
                 break
             print(edit_distance["dumpedId"].ljust(20), edit_distance["ncd_distance"], edit_distance["simple_distance"])
             count += 1

@@ -81,6 +81,9 @@ def main():
     print()
     
     test_case = "dante:0"
+    # test_case = "taskd:0"
+    # test_case = "phpvirtualbox:0"
+    # test_case = "prestashop:2"
     test_obj = {
         "type": "ROOT",
         "children": []
@@ -93,7 +96,7 @@ def main():
         test_obj["children"].append(astCommand)
         test_ncd.append(astCommand)
     
-    pprint.pprint(test_obj)
+    # pprint.pprint(test_obj)
 
     edit_distances = list()
 
@@ -114,22 +117,22 @@ def main():
 
         # pprint.pprint(sample_obj)
         try:
-            # edit_distances.append(
-            #     {
-            #         "dumpedId": dumped_id,
-            #         "astCommands": sample_obj,
-            #         "ncd_distance": dist(test_ncd, sample_ncd)/max(len(test_ncd), len(sample_ncd))*1.00,
-            #         "simple_distance": simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
-            #     }
-            # )
             edit_distances.append(
                 {
                     "dumpedId": dumped_id,
                     "astCommands": sample_obj,
-                    "ncd_distance": dist(test_ncd, sample_ncd),
+                    "ncd_distance": dist(test_ncd, sample_ncd)/max(len(test_ncd), len(sample_ncd))*1.00,
                     "simple_distance": simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
                 }
             )
+            # edit_distances.append(
+            #     {
+            #         "dumpedId": dumped_id,
+            #         "astCommands": sample_obj,
+            #         "ncd_distance": dist(test_ncd, sample_ncd),
+            #         "simple_distance": simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
+            #     }
+            # )
         except Exception as e:
             pass
     

@@ -91,9 +91,9 @@ def main():
     
     test_case = "dante:0"
     test_case = "taskd:0"
-    test_case = "phpvirtualbox:0"
-    test_case = "prestashop:2"
-    
+    # test_case = "phpvirtualbox:0"
+    # test_case = "prestashop:2"
+
     test_obj = {
         "type": "ROOT",
         "children": []
@@ -101,7 +101,7 @@ def main():
 
     test_ncd = list()
 
-    for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case]:
+    for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case][2:6]:
         astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
         test_obj["children"].append(astCommand)
         astCommandSequence = Root._get(astCommand)
@@ -129,22 +129,22 @@ def main():
             astCommandVector = d2v_model.infer_vector(astCommandSequence, epochs=30)
             sample_ncd.append(astCommandVector)
 
-        # edit_distances.append(
-        #     {
-        #         "dumpedId": dumped_id,
-        #         "astCommands": sample_obj,
-        #         "ncd_distance": dist(test_ncd, sample_ncd)/max(len(test_ncd), len(sample_ncd))*1.00,
-        #         "simple_distance": simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
-        #     }
-        # )
         edit_distances.append(
             {
                 "dumpedId": dumped_id,
                 "astCommands": sample_obj,
-                "ncd_distance": dist(test_ncd, sample_ncd),
+                "ncd_distance": dist(test_ncd, sample_ncd)/max(len(test_ncd), len(sample_ncd))*1.00,
                 "simple_distance": simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
             }
         )
+        # edit_distances.append(
+        #     {
+        #         "dumpedId": dumped_id,
+        #         "astCommands": sample_obj,
+        #         "ncd_distance": dist(test_ncd, sample_ncd),
+        #         "simple_distance": simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
+        #     }
+        # )
     
     edit_distances = sorted(edit_distances, key=lambda x:x["ncd_distance"])
 
