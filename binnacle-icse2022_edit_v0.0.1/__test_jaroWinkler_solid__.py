@@ -1,3 +1,5 @@
+# coding: utf-8
+# Your code here!
 import pickle
 import pprint
 import json
@@ -36,41 +38,90 @@ def ncd(x,y):
     return float(z_xy - min(z_x, z_y)) / max(z_x, z_y)
 
 
-#文字列`X`と`Y`の間のレーベンシュタイン距離を見つける関数。
-def dist(X, Y):
-    #`m`と`n`は、それぞれ`X`と`Y`の文字の総数です。
-    (m, n) = (len(X), len(Y))
- 
-    # `i`と`j`のすべてのペアについて、 `T[i、j]`はレーベンシュタイン距離を保持します
-    # `X`の最初の`i`文字と`Y`の最初の`j`文字の間の#。
-    #`T`は`(m + 1)×(n + 1)`の値を保持することに注意してください。
-    T = [[0 for x in range(n + 1)] for y in range(m + 1)]
- 
-    #によって、ソースプレフィックスを空の文字列に変換できます。
-    #はすべての文字を削除します
-    for i in range(1, m + 1):
-        T[i][0] = i                    #(ケース1)
- 
-    #空のソースプレフィックスからターゲットプレフィックスに到達できます
-    # すべての文字を挿入することによる
-    for j in range(1, n + 1):
-        T[0][j] = j                    #(ケース1)
- 
-    #はボトムアップ方式でルックアップテーブルを埋めます
-    for i in range(1, m + 1):
- 
-        for j in range(1, n + 1):
-            nc = ncd(X[i-1], Y[j-1])
-            if nc <= 0.1:           #(ケース2)
-                cost = 0                        #(ケース2)
-            else:
-                cost = 3                        #(ケース3c)
- 
-            T[i][j] = min(T[i - 1][j] + 3,      #の削除(ケース3b)
-                        T[i][j - 1] + 1,        #挿入(ケース3a)
-                        T[i - 1][j - 1] + cost) #交換(ケース2 + 3c)
- 
-    return T[m][n]
+
+def getNumRangeMatchChar(S1: str, S2: str, distance=-1):
+    L1 = len(S1); L2 = len(S2)
+    ignored_distance = False
+    
+    if distance < 0 : ignored_distance = True
+    
+    counter = 0
+    
+    for i in range(L1):
+        From = i
+        Under = L2
+        if not ignored_distance:
+            From = 0 if i<distance else i-distance
+            Under = int(L2) if i+distance>=L2 else i+distance
+        
+        for j in range(From, Under):
+            # if S1[i]==S2[j]: counter+=1
+            if ncd(S1[i], S2[j]) <= 0.1: counter+=1
+    return counter
+
+def getRangeMatchChar(S1, S2, distance=-1):
+    L1 = len(S1); L2 = len(S2)
+    ignored_distance = False
+    
+    if distance < 0 : ignored_distance = True
+    
+    ret = ""
+    for i in range(L1):
+        From = i
+        Under = L2
+        if not ignored_distance:
+            From = 0 if i<distance else i-distance
+            Under = L2 if i+distance>=L2 else i+distance
+        
+        for j in range(From, Under):
+            # if S1[i]==S2[j]: ret+=S1[i]
+            if ncd(S1[i], S2[j]) <= 0.1: ret+=S1[i]
+    
+    return ret
+    
+def getNumTransposition(S1, S2):
+    c = 0
+    L1 = len(S1); L2 = len(S2)
+    for i in range(min(L1, L2)):
+        # if S1[i] != S2[i]: c+=1
+        if ncd(S1[i], S2[i]) > 0.1: c+=1
+    
+    return c
+
+
+
+def getJaroDistance(S1, S2):
+    L1 = len(S1); L2 = len(S2)
+    distance = max(L1, L2)
+    if distance<=0: return -1
+    distance = int(distance/2)-1
+    if distance<=0: return -1
+    
+    match = getNumRangeMatchChar(S1, S2, distance)
+    trans = getNumTransposition(getRangeMatchChar(S1, S2, distance), getRangeMatchChar(S1, S2, distance))
+    m = float(match)
+    t = float(trans/2)
+    
+    try:
+        return (m/L1+m/L2+(m-t)/match)/3
+    except Exception as e:
+        return 0
+    
+def getLengthOfCommonPrefix(S1, S2):
+    L1 = len(S1); L2 = len(S2)
+    c = 0
+    for i in range(min(L1, L2)):
+        # if (S1[i]==S2[i]):
+        if ncd(S1[i], S2[i]) <= 0.1:
+            c+=1
+        else:
+            break
+    return c
+
+def getJaroWinklerDistance(S1, S2, scaling=0.1):
+    if scaling<0: return -1
+    j = getJaroDistance(S1, S2)
+    return j+getLengthOfCommonPrefix(S1, S2)*scaling*(1-j)
 
 def main():
     file_paths = JsonFile._get_file_paths(VIMAGICK_AST_ROOT_PATH)
@@ -132,39 +183,28 @@ def main():
             {
                 "dumpedId": dumped_id,
                 "astCommands": sample_obj,
-                "ncd_distance": dist(test_ncd, sample_ncd)/max(len(test_ncd), len(sample_ncd))*1.00,
+                "jw_distance": getJaroWinklerDistance(test_ncd, sample_ncd),
                 "simple_distance": simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
             }
         )
-        # edit_distances.append(
-        #     {
-        #         "dumpedId": dumped_id,
-        #         "astCommands": sample_obj,
-        #         "ncd_distance": dist(test_ncd, sample_ncd),
-        #         "simple_distance": simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
-        #     }
-        # )
+        
+    edit_distances = sorted(edit_distances, key=lambda x:x["jw_distance"])
     
-    edit_distances = sorted(edit_distances, key=lambda x:x["ncd_distance"])
-
-
     output_distances = dict()
     for edit_distance in edit_distances:
-        if not edit_distance["ncd_distance"] in output_distances:
-            output_distances[edit_distance["ncd_distance"]] = list()
-        output_distances[edit_distance["ncd_distance"]].append(edit_distance)
+        if not edit_distance["jw_distance"] in output_distances:
+            output_distances[edit_distance["jw_distance"]] = list()
+        output_distances[edit_distance["jw_distance"]].append(edit_distance)
     
-    output_distances = sorted(output_distances.items(), key=lambda x:x[0])
+    output_distances = sorted(output_distances.items(), key=lambda x:x[0], reverse=True)
     count = 0
     for output_distance in output_distances:
         edit_distances = sorted(output_distance[1], key=lambda x:x["simple_distance"])
         for edit_distance in edit_distances:
             if count >= 10:
                 break
-            print(edit_distance["dumpedId"].ljust(20), edit_distance["ncd_distance"], edit_distance["simple_distance"])
+            print(edit_distance["dumpedId"].ljust(20), edit_distance["jw_distance"], edit_distance["simple_distance"])
             count += 1
-            
-
-
+    
 if __name__ == "__main__":
     main()

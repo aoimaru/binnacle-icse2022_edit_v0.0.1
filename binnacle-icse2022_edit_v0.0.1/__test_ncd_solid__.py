@@ -93,8 +93,9 @@ def main():
     test_case = "taskd:0"
     # test_case = "phpvirtualbox:0"
     # test_case = "prestashop:2"
-    # test_case = "kcptun:0"
     test_case = "webgoat:0"
+    test_case = "webdis:2"
+    test_case = "kcptun:0"
     test_obj = {
         "type": "ROOT",
         "children": []
@@ -102,7 +103,7 @@ def main():
 
     test_ncd = list()
 
-    for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case][:-1]:
+    for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case][:-2]:
         astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
         test_obj["children"].append(astCommand)
         test_ncd.append(json.dumps(astCommand))

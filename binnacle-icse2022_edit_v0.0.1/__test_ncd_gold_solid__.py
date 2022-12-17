@@ -64,11 +64,11 @@ def dist(X, Y):
             if nc <= 0.1:           #(ケース2)
                 cost = 0                        #(ケース2)
             else:
-                cost = 3                        #(ケース3c)
+                cost = 1                        #(ケース3c)
  
-            T[i][j] = min(T[i - 1][j] + 3,      #の削除(ケース3b)
+            T[i][j] = min(T[i - 1][j] + 1,      #の削除(ケース3b)
                         T[i][j - 1] + 1,        #挿入(ケース3a)
-                        T[i - 1][j - 1] + cost) #交換(ケース2 + 3c)
+                        T[i - 1][j - 1] + cost) #交換(ケース2 + 3c)        
  
     return T[m][n]
 
@@ -77,7 +77,7 @@ def main():
     dumped_ast_commands = list()
     dumped_ast_commands_per_run_instruction_dictionaly = dict()
 
-    print("loading contents...")
+    print("loading vimagick contents...")
     for file_path in tqdm.tqdm(file_paths):
         contents = JsonFile._get_contents(file_path)
         for content in contents:
@@ -103,15 +103,29 @@ def main():
 
     test_ncd = list()
 
-    for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case][:-2]:
+    for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case]:
         astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
         test_obj["children"].append(astCommand)
         test_ncd.append(json.dumps(astCommand))
     
     # pprint.pprint(test_obj)
+    file_paths = JsonFile._get_file_paths(GOLD_AST_ROOT_PATH)
+    dumped_ast_commands = list()
+    dumped_ast_commands_per_run_instruction_dictionaly = dict()
+
+    print("loading gold contents...")
+    for file_path in tqdm.tqdm(file_paths):
+        contents = JsonFile._get_contents(file_path)
+        for content in contents:
+            run_instruction_id = ":".join(content["astCommandId"].split(":")[:-1])
+            dumped = json.dumps(content["astCommand"])
+            dumped_ast_commands.append(dumped)
+            if not run_instruction_id in dumped_ast_commands_per_run_instruction_dictionaly:
+                dumped_ast_commands_per_run_instruction_dictionaly[run_instruction_id] = list()
+            dumped_ast_commands_per_run_instruction_dictionaly[run_instruction_id].append(dumped)
+    print()
 
     edit_distances = list()
-
     print("do...")
     for dumped_id, dumped_ast_commands in tqdm.tqdm(dumped_ast_commands_per_run_instruction_dictionaly.items()):
         # if dumped_id==test_case:
@@ -159,7 +173,7 @@ def main():
     for output_distance in output_distances:
         edit_distances = sorted(output_distance[1], key=lambda x:x["simple_distance"])
         for edit_distance in edit_distances:
-            if count >= 10:
+            if count >= 30:
                 break
             print(edit_distance["dumpedId"].ljust(20), edit_distance["ncd_distance"], edit_distance["simple_distance"])
             count += 1
