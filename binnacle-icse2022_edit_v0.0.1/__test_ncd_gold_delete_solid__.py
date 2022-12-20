@@ -96,6 +96,7 @@ def main():
     # test_case = "kcptun:0"
     test_case = "webgoat:0"
     # test_case = "webdis:2"
+    test_case = "nextcloud:1"
     test_obj = {
         "type": "ROOT",
         "children": []
@@ -109,11 +110,11 @@ def main():
         test_ncd.append(json.dumps(astCommand))
     
     # pprint.pprint(test_obj)
-    file_paths = JsonFile._get_file_paths(GOLD_AST_ROOT_PATH)
+    file_paths = JsonFile._get_file_paths(GITHUB_AST_ROOT_PATH)
     dumped_ast_commands = list()
     dumped_ast_commands_per_run_instruction_dictionaly = dict()
 
-    print("loading gold contents...")
+    print("loading github contents...")
     for file_path in tqdm.tqdm(file_paths):
         contents = JsonFile._get_contents(file_path)
         for content in contents:

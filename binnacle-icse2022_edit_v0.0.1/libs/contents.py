@@ -79,14 +79,14 @@ class AstCleaner(AstContent):
 
 class ASTSeed(AstContent):
     @staticmethod
-    def _random(content):
+    def _random(content, N=0.7, R=0.1, A=0.1, D=0.1, dummy=0.03):
         def _execute(me, depth):
             if me["children"]:
                 children = list()
                 for child in me["children"]:
                     children.append(_execute(child, depth+1))
                 if len(children)>=2:
-                    edit = np.random.choice(4, p=[0.7, 0.1, 0.1, 0.1])
+                    edit = np.random.choice(4, p=[N, R, A, D])
                     if edit==1:
                         selected = random.sample([child for child, _ in enumerate(children)], 2)
                         children[selected[0]], children[selected[1]] = children[selected[1]], children[selected[0]]
@@ -96,7 +96,7 @@ class ASTSeed(AstContent):
                     if edit==3:
                         selected = random.choice([child for child, _ in enumerate(children)])
                         children.pop(selected)
-                if np.random.choice(2, p=[0.03*depth, 1.00-0.03*depth]):
+                if np.random.choice(2, p=[dummy*depth, 1.00-dummy*depth]):
                     return {
                         "type": me["type"],
                         "children": children
@@ -107,7 +107,7 @@ class ASTSeed(AstContent):
                         "children": children
                     }
             else:
-                if np.random.choice(2, p=[0.03*depth, 1.00-0.03*depth]):
+                if np.random.choice(2, p=[dummy*depth, 1.00-dummy*depth]):
                     return me
                 else:
                     return {

@@ -84,6 +84,7 @@ def main():
     # test_case = "taskd:0"
     # test_case = "phpvirtualbox:0"
     # test_case = "prestashop:2"
+    test_case = "nextcloud:2"
     test_obj = {
         "type": "ROOT",
         "children": []

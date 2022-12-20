@@ -64,9 +64,9 @@ def dist(X, Y):
             if nc <= 0.1:           #(ケース2)
                 cost = 0                        #(ケース2)
             else:
-                cost = 3                        #(ケース3c)
+                cost = 2                        #(ケース3c)
  
-            T[i][j] = min(T[i - 1][j] + 3,      #の削除(ケース3b)
+            T[i][j] = min(T[i - 1][j] + 2,      #の削除(ケース3b)
                         T[i][j - 1] + 1,        #挿入(ケース3a)
                         T[i - 1][j - 1] + cost) #交換(ケース2 + 3c)
  
@@ -96,6 +96,7 @@ def main():
     # test_case = "kcptun:0"
     test_case = "webgoat:0"
     # test_case = "webdis:2"
+    test_case = "nextcloud:1"
     test_obj = {
         "type": "ROOT",
         "children": []

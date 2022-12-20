@@ -60,8 +60,7 @@ def dist(X, Y):
     for i in range(1, m + 1):
  
         for j in range(1, n + 1):
-            nc = ncd(X[i-1], Y[j-1])
-            if nc <= 0.1:           #(ケース2)
+            if X[i-1]==Y[j-1]:           #(ケース2)
                 cost = 0                        #(ケース2)
             else:
                 cost = 1                        #(ケース3c)
@@ -107,7 +106,7 @@ def main():
     # test_case = "afterthedeadline:1"
     test_case = "dante:0"
     # test_case = "webgoat:0"
-    # test_case = "kafka-manager:1"
+    test_case = "kafka-manager:1"
     # test_case = "libev-arm:0"
     # test_case = "glances:0"
     test_obj = {
@@ -119,15 +118,14 @@ def main():
 
     for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case]:
         astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
-        astCommand = ASTSeed._random(astCommand)
-        # astCommand = ASTSeed._random(
-        #     content=astCommand,
-        #     N=0.25,
-        #     R=0.25,
-        #     A=0.25,
-        #     D=0.25,
-        #     dummy=0.1
-        # )
+        astCommand = ASTSeed._random(
+            content=astCommand,
+            N=0.25,
+            R=0.25,
+            A=0.25,
+            D=0.25,
+            dummy=0.1
+        )
         test_obj["children"].append(astCommand)
         test_ncd.append(json.dumps(astCommand))
     

@@ -91,21 +91,20 @@ def main():
     print()
     
     test_case = "dante:0"
-    test_case = "taskd:0"
+    # test_case = "taskd:0"
     # test_case = "phpvirtualbox:0"
     # test_case = "prestashop:2"
     # test_case = "webgoat:0"
     # test_case = "webdis:2"
     # test_case = "kcptun:0"
-    test_case = "snort:0"
-    test_case = "vnstat:0"
-    test_case = "mysql-proxy:0"
+    # test_case = "snort:0"
+    # test_case = "vnstat:0"
+    # test_case = "mysql-proxy:0"
     # test_case = "kafka-manager:1"
     # test_case = "nextcloud:1"
+    test_case = "nextcloud:2"
     # test_case = "mantisbt:2"
-    # test_case = "irssi:2"
-    # test_case = "afterthedeadline:1"
-    test_case = "dante:0"
+    # test_case = "dante:0"
     # test_case = "webgoat:0"
     # test_case = "kafka-manager:1"
     # test_case = "libev-arm:0"
@@ -117,27 +116,18 @@ def main():
 
     test_ncd = list()
 
-    for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case]:
+    for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case][2:-1]:
         astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
-        astCommand = ASTSeed._random(astCommand)
-        # astCommand = ASTSeed._random(
-        #     content=astCommand,
-        #     N=0.25,
-        #     R=0.25,
-        #     A=0.25,
-        #     D=0.25,
-        #     dummy=0.1
-        # )
         test_obj["children"].append(astCommand)
         test_ncd.append(json.dumps(astCommand))
     
-    # pprint.pprint(test_obj)
+    pprint.pprint(test_obj)
 
     edit_distances = list()
     print("do...")
     for dumped_id, dumped_ast_commands in tqdm.tqdm(dumped_ast_commands_per_run_instruction_dictionaly.items()):
-        # if dumped_id==test_case:
-        #     continue
+        if dumped_id==test_case:
+            continue
         sample_obj = {
             "type": "ROOT",
             "children": []
@@ -154,18 +144,36 @@ def main():
             {
                 "dumpedId": dumped_id,
                 "astCommands": sample_obj,
-                "ncd_distance": dist(test_ncd, sample_ncd)/max(len(test_ncd), len(sample_ncd))*1.00,
+                "ncd_distance": dist(sample_ncd, test_ncd)/max(len(test_ncd), len(sample_ncd))*1.00,
                 "simple_distance": simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
             }
         )
-        # edit_distances.append(
-        #     {
-        #         "dumpedId": dumped_id,
-        #         "astCommands": sample_obj,
-        #         "ncd_distance": dist(test_ncd, sample_ncd),
-        #         "simple_distance": simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
-        #     }
-        # )
+
+    print()
+    print("adding dummy...")
+    for dummy_id in tqdm.tqdm(range(10)):
+        sample_ncd = list()
+        for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case]:
+            astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
+            astCommand = ASTSeed._random(
+                content=astCommand,
+                N=0.7,
+                R=0.1,
+                A=0.1,
+                D=0.1,
+                dummy=0.05
+            )
+            sample_obj["children"].append(astCommand)
+            sample_ncd.append(json.dumps(astCommand))
+        edit_distances.append(
+            {
+                "dumpedId": test_case+":dummy:{}".format(dummy_id),
+                "astCommands": sample_obj,
+                "ncd_distance": dist(sample_ncd, test_ncd)/max(len(test_ncd), len(sample_ncd))*1.00,
+                "simple_distance": simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
+            }
+        )
+
     
     edit_distances = sorted(edit_distances, key=lambda x:x["ncd_distance"])
 
@@ -181,7 +189,7 @@ def main():
     for output_distance in output_distances:
         edit_distances = sorted(output_distance[1], key=lambda x:x["simple_distance"])
         for edit_distance in edit_distances:
-            if count >= 10:
+            if count >= 15:
                 break
             # pprint.pprint(edit_distance["astCommands"])
             print(edit_distance["dumpedId"].ljust(20), edit_distance["ncd_distance"], edit_distance["simple_distance"])

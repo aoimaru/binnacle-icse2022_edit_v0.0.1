@@ -25,6 +25,7 @@ GITHUB_MODEL_ROOT_PATH = "/Users/nakamurahekikai/Desktop/binnacle-icse2022_ast-p
 VIMAGICK_DATA_ROOT_PATH = "/Users/nakamurahekikai/Desktop/binnacle-icse2020_doc2vec_v0.0.1/data/vimagick"
 VIMAGICK_AST_ROOT_PATH = "/Users/nakamurahekikai/Desktop/binnacle-icse2022_ast-path_v0.0.2/ast/vimagick"
 JESSFRAZ_AST_ROOT_PATH = "/Users/nakamurahekikai/Desktop/binnacle-icse2022_ast-path_v0.0.2/ast/jessfraz"
+
 PNG_PATH = "/Users/nakamurahekikai/Desktop/binnacle-icse2022_ast-path_v0.0.2/images"
 
 def ncd(x,y):
@@ -64,17 +65,16 @@ def dist(X, Y):
             if nc <= 0.1:           #(ケース2)
                 cost = 0                        #(ケース2)
             else:
-                cost = 1                        #(ケース3c)
+                cost = 3                        #(ケース3c)
  
-            T[i][j] = min(T[i - 1][j] + 1,      #の削除(ケース3b)
+            T[i][j] = min(T[i - 1][j] + 3,      #の削除(ケース3b)
                         T[i][j - 1] + 1,        #挿入(ケース3a)
                         T[i - 1][j - 1] + cost) #交換(ケース2 + 3c)        
  
     return T[m][n]
 
 def main():
-    file_paths = JsonFile._get_file_paths(VIMAGICK_AST_ROOT_PATH)
-    # file_paths = JsonFile._get_file_paths(JESSFRAZ_AST_ROOT_PATH)
+    file_paths = JsonFile._get_file_paths(JESSFRAZ_AST_ROOT_PATH)
     dumped_ast_commands = list()
     dumped_ast_commands_per_run_instruction_dictionaly = dict()
 
@@ -100,16 +100,9 @@ def main():
     test_case = "snort:0"
     test_case = "vnstat:0"
     test_case = "mysql-proxy:0"
-    # test_case = "kafka-manager:1"
-    # test_case = "nextcloud:1"
-    # test_case = "mantisbt:2"
-    # test_case = "irssi:2"
-    # test_case = "afterthedeadline:1"
-    test_case = "dante:0"
-    # test_case = "webgoat:0"
-    # test_case = "kafka-manager:1"
-    # test_case = "libev-arm:0"
-    # test_case = "glances:0"
+    test_case = "kafka-manager:1"
+    test_case = "nextcloud:1"
+    test_case = "afterthedeadline:1"
     test_obj = {
         "type": "ROOT",
         "children": []
@@ -119,15 +112,6 @@ def main():
 
     for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case]:
         astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
-        astCommand = ASTSeed._random(astCommand)
-        # astCommand = ASTSeed._random(
-        #     content=astCommand,
-        #     N=0.25,
-        #     R=0.25,
-        #     A=0.25,
-        #     D=0.25,
-        #     dummy=0.1
-        # )
         test_obj["children"].append(astCommand)
         test_ncd.append(json.dumps(astCommand))
     
