@@ -190,66 +190,33 @@
     {
         "astCommandId": "magento:2:4",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
-                    "children": [
-                        {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": [
-                                        {
-                                            "type": "ABS-PROBABLY-URL",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "ABS-URL-PROTOCOL-HTTPS",
-                                            "children": []
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
                 },
                 {
-                    "type": "SC-PHP",
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-PHP-ARGS",
+                            "type": "BASH-LITERAL",
                             "children": [
                                 {
-                                    "type": "SC-PHP-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": []
-                                        }
-                                    ]
+                                    "type": "ABS-PROBABLY-URL",
+                                    "children": []
                                 },
                                 {
-                                    "type": "SC-PHP-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": []
-                                        }
-                                    ]
+                                    "type": "ABS-URL-PROTOCOL-HTTPS",
+                                    "children": []
                                 }
                             ]
                         }
@@ -260,6 +227,37 @@
     },
     {
         "astCommandId": "magento:2:5",
+        "astCommand": {
+            "type": "SC-PHP",
+            "children": [
+                {
+                    "type": "SC-PHP-ARGS",
+                    "children": [
+                        {
+                            "type": "SC-PHP-ARG",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-PHP-ARG",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "magento:2:6",
         "astCommand": {
             "type": "SC-APT-GET-PURGE",
             "children": [
@@ -316,7 +314,7 @@
         }
     },
     {
-        "astCommandId": "magento:2:6",
+        "astCommandId": "magento:2:7",
         "astCommand": {
             "type": "SC-RM",
             "children": [
@@ -379,159 +377,128 @@
     {
         "astCommandId": "magento:3:0",
         "astCommand": {
-            "type": "BASH-REDIRECT",
+            "type": "SC-ECHO",
             "children": [
                 {
-                    "type": "BASH-REDIRECT-COMMAND",
+                    "type": "SC-ECHO-ITEMS",
                     "children": [
                         {
-                            "type": "BASH-BRACE-GROUP",
+                            "type": "SC-ECHO-ITEM",
                             "children": [
                                 {
-                                    "type": "SC-ECHO",
+                                    "type": "BASH-LITERAL",
                                     "children": [
                                         {
-                                            "type": "SC-ECHO-ITEMS",
-                                            "children": [
-                                                {
-                                                    "type": "SC-ECHO-ITEM",
-                                                    "children": [
-                                                        {
-                                                            "type": "BASH-LITERAL",
-                                                            "children": [
-                                                                {
-                                                                    "type": "ABS-SINGLE-SPACE",
-                                                                    "children": []
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "SC-ECHO",
-                                    "children": [
-                                        {
-                                            "type": "SC-ECHO-ITEMS",
-                                            "children": [
-                                                {
-                                                    "type": "SC-ECHO-ITEM",
-                                                    "children": [
-                                                        {
-                                                            "type": "BASH-LITERAL",
-                                                            "children": [
-                                                                {
-                                                                    "type": "ABS-SINGLE-SPACE",
-                                                                    "children": []
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "SC-ECHO",
-                                    "children": [
-                                        {
-                                            "type": "SC-ECHO-ITEMS",
-                                            "children": [
-                                                {
-                                                    "type": "SC-ECHO-ITEM",
-                                                    "children": [
-                                                        {
-                                                            "type": "BASH-LITERAL",
-                                                            "children": [
-                                                                {
-                                                                    "type": "ABS-SINGLE-SPACE",
-                                                                    "children": []
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "SC-ECHO",
-                                    "children": [
-                                        {
-                                            "type": "SC-ECHO-ITEMS",
-                                            "children": [
-                                                {
-                                                    "type": "SC-ECHO-ITEM",
-                                                    "children": [
-                                                        {
-                                                            "type": "BASH-LITERAL",
-                                                            "children": [
-                                                                {
-                                                                    "type": "ABS-SINGLE-SPACE",
-                                                                    "children": []
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "SC-ECHO",
-                                    "children": [
-                                        {
-                                            "type": "SC-ECHO-ITEMS",
-                                            "children": [
-                                                {
-                                                    "type": "SC-ECHO-ITEM",
-                                                    "children": [
-                                                        {
-                                                            "type": "BASH-LITERAL",
-                                                            "children": [
-                                                                {
-                                                                    "type": "ABS-SINGLE-SPACE",
-                                                                    "children": []
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
-                                                }
-                                            ]
+                                            "type": "ABS-SINGLE-SPACE",
+                                            "children": []
                                         }
                                     ]
                                 }
                             ]
                         }
                     ]
-                },
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "magento:3:1",
+        "astCommand": {
+            "type": "SC-ECHO",
+            "children": [
                 {
-                    "type": "BASH-REDIRECT-REDIRECTS",
+                    "type": "SC-ECHO-ITEMS",
                     "children": [
                         {
-                            "type": "BASH-REDIRECT-OVERWRITE",
+                            "type": "SC-ECHO-ITEM",
                             "children": [
                                 {
-                                    "type": "BASH-PATH",
+                                    "type": "BASH-LITERAL",
                                     "children": [
                                         {
-                                            "type": "BASH-LITERAL",
-                                            "children": [
-                                                {
-                                                    "type": "ABS-PATH-ABSOLUTE",
-                                                    "children": []
-                                                },
-                                                {
-                                                    "type": "ABS-MAYBE-PATH",
-                                                    "children": []
-                                                }
-                                            ]
+                                            "type": "ABS-SINGLE-SPACE",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "magento:3:2",
+        "astCommand": {
+            "type": "SC-ECHO",
+            "children": [
+                {
+                    "type": "SC-ECHO-ITEMS",
+                    "children": [
+                        {
+                            "type": "SC-ECHO-ITEM",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [
+                                        {
+                                            "type": "ABS-SINGLE-SPACE",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "magento:3:3",
+        "astCommand": {
+            "type": "SC-ECHO",
+            "children": [
+                {
+                    "type": "SC-ECHO-ITEMS",
+                    "children": [
+                        {
+                            "type": "SC-ECHO-ITEM",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [
+                                        {
+                                            "type": "ABS-SINGLE-SPACE",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "magento:3:4",
+        "astCommand": {
+            "type": "SC-ECHO",
+            "children": [
+                {
+                    "type": "SC-ECHO-ITEMS",
+                    "children": [
+                        {
+                            "type": "SC-ECHO-ITEM",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [
+                                        {
+                                            "type": "ABS-SINGLE-SPACE",
+                                            "children": []
                                         }
                                     ]
                                 }
@@ -604,39 +571,30 @@
     {
         "astCommandId": "magento:9:2",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-ECHO",
             "children": [
                 {
-                    "type": "SC-ECHO",
+                    "type": "SC-ECHO-ITEMS",
                     "children": [
                         {
-                            "type": "SC-ECHO-ITEMS",
+                            "type": "SC-ECHO-ITEM",
                             "children": [
                                 {
-                                    "type": "SC-ECHO-ITEM",
+                                    "type": "BASH-LITERAL",
                                     "children": [
                                         {
-                                            "type": "BASH-LITERAL",
-                                            "children": [
-                                                {
-                                                    "type": "ABS-DOUBLE-SPACE",
-                                                    "children": []
-                                                },
-                                                {
-                                                    "type": "ABS-SINGLE-SPACE",
-                                                    "children": []
-                                                }
-                                            ]
+                                            "type": "ABS-DOUBLE-SPACE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-SINGLE-SPACE",
+                                            "children": []
                                         }
                                     ]
                                 }
                             ]
                         }
                     ]
-                },
-                {
-                    "type": "UNKNOWN",
-                    "children": []
                 }
             ]
         }

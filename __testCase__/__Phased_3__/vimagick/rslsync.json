@@ -72,75 +72,73 @@
     {
         "astCommandId": "rslsync:1:3",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "https://download-cdn.getsync.com/stable/linux-x64/resilio-sync_x64.tar.gz"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "rslsync:1:4",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-DIRECTORY",
+                    "children": [
                         {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
+                            "type": "BASH-PATH",
                             "children": [
                                 {
                                     "type": "BASH-LITERAL",
                                     "children": [],
-                                    "value": "https://download-cdn.getsync.com/stable/linux-x64/resilio-sync_x64.tar.gz"
+                                    "value": "/usr/bin/"
                                 }
                             ]
                         }
                     ]
                 },
                 {
-                    "type": "SC-TAR",
+                    "type": "SC-TAR-ARGS",
                     "children": [
                         {
-                            "type": "SC-TAR-DIRECTORY",
+                            "type": "SC-TAR-ARG",
                             "children": [
                                 {
-                                    "type": "BASH-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "/usr/bin/"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "xz"
                                 }
                             ]
                         },
                         {
-                            "type": "SC-TAR-ARGS",
+                            "type": "SC-TAR-ARG",
                             "children": [
                                 {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "xz"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "rslsync"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "rslsync"
                                 }
                             ]
                         }
@@ -150,7 +148,7 @@
         }
     },
     {
-        "astCommandId": "rslsync:1:4",
+        "astCommandId": "rslsync:1:5",
         "astCommand": {
             "type": "SC-APT-GET-PURGE",
             "children": [
@@ -181,7 +179,7 @@
         }
     },
     {
-        "astCommandId": "rslsync:1:5",
+        "astCommandId": "rslsync:1:6",
         "astCommand": {
             "type": "SC-RM",
             "children": [

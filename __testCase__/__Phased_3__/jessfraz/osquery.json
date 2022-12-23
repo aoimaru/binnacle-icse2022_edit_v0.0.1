@@ -163,43 +163,29 @@
         "astCommand": {
             "children": [
                 {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SILENT"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SHOW-ERROR"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-LOCATION"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "value": "https://apt.kitware.com/keys/kitware-archive-latest.asc",
-                                    "type": "BASH-LITERAL"
-                                }
-                            ],
-                            "type": "SC-CURL-URL"
-                        }
-                    ],
-                    "type": "SC-CURL"
+                    "children": [],
+                    "type": "SC-CURL-F-SILENT"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-SHOW-ERROR"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-LOCATION"
                 },
                 {
                     "children": [
                         {
                             "children": [],
-                            "type": "SC-APT-KEY-FILENAME"
+                            "value": "https://apt.kitware.com/keys/kitware-archive-latest.asc",
+                            "type": "BASH-LITERAL"
                         }
                     ],
-                    "type": "SC-APT-KEY-ADD"
+                    "type": "SC-CURL-URL"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-CURL"
         }
     },
     {
@@ -207,84 +193,38 @@
         "astCommand": {
             "children": [
                 {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "value": "deb https://apt.kitware.com/ubuntu/ bionic main",
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEM"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO-ITEMS"
-                                }
-                            ],
-                            "type": "SC-ECHO"
-                        }
-                    ],
-                    "type": "BASH-REDIRECT-COMMAND"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "value": "/etc/apt/sources.list.d/cmake.list",
-                                            "type": "BASH-LITERAL"
-                                        }
-                                    ],
-                                    "type": "BASH-PATH"
-                                }
-                            ],
-                            "type": "BASH-REDIRECT-OVERWRITE"
-                        }
-                    ],
-                    "type": "BASH-REDIRECT-REDIRECTS"
+                    "children": [],
+                    "type": "SC-APT-KEY-FILENAME"
                 }
             ],
-            "type": "BASH-REDIRECT"
+            "type": "SC-APT-KEY-ADD"
         }
     },
     {
-        "astCommandId": "osquery:4:0",
+        "astCommandId": "osquery:2:5",
         "astCommand": {
             "children": [
                 {
                     "children": [
                         {
-                            "children": [],
-                            "value": "buildDeps",
-                            "type": "BASH-VARIABLE"
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "deb https://apt.kitware.com/ubuntu/ bionic main",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "value": " \t\tbison \t\tclang \t\tcmake \t\tflex \t\tgit \t\tlibc++-dev \t\tlibc++abi-dev \t\tliblzma-dev \t\tlibssl-dev \t\tllvm \t\tmake \t\tpython \t\tpython3 \t",
-                            "type": "BASH-SINGLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
+                    "type": "SC-ECHO-ITEMS"
                 }
             ],
-            "type": "BASH-ASSIGN"
+            "type": "SC-ECHO"
         }
     },
     {
-        "astCommandId": "osquery:4:1",
+        "astCommandId": "osquery:4:0",
         "astCommand": {
             "children": [
                 {
@@ -296,14 +236,14 @@
         }
     },
     {
-        "astCommandId": "osquery:4:2",
+        "astCommandId": "osquery:4:1",
         "astCommand": {
             "children": [],
             "type": "SC-APT-GET-UPDATE"
         }
     },
     {
-        "astCommandId": "osquery:4:3",
+        "astCommandId": "osquery:4:2",
         "astCommand": {
             "children": [
                 {
@@ -334,7 +274,7 @@
         }
     },
     {
-        "astCommandId": "osquery:4:4",
+        "astCommandId": "osquery:4:3",
         "astCommand": {
             "children": [
                 {
@@ -375,7 +315,7 @@
         }
     },
     {
-        "astCommandId": "osquery:4:5",
+        "astCommandId": "osquery:4:4",
         "astCommand": {
             "children": [
                 {
@@ -412,7 +352,7 @@
         }
     },
     {
-        "astCommandId": "osquery:4:6",
+        "astCommandId": "osquery:4:5",
         "astCommand": {
             "children": [
                 {
@@ -460,7 +400,7 @@
         }
     },
     {
-        "astCommandId": "osquery:4:7",
+        "astCommandId": "osquery:4:6",
         "astCommand": {
             "children": [
                 {
@@ -478,7 +418,7 @@
         }
     },
     {
-        "astCommandId": "osquery:4:8",
+        "astCommandId": "osquery:4:7",
         "astCommand": {
             "children": [
                 {
@@ -496,66 +436,64 @@
         }
     },
     {
-        "astCommandId": "osquery:4:9",
+        "astCommandId": "osquery:4:8",
         "astCommand": {
             "children": [
                 {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SILENT"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SHOW-ERROR"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-LOCATION"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "value": "https://github.com/osquery/osquery-toolchain/releases/download/1.0.0/osquery-toolchain-1.0.0.tar.xz",
-                                    "type": "BASH-LITERAL"
-                                }
-                            ],
-                            "type": "SC-CURL-URL"
-                        }
-                    ],
-                    "type": "SC-CURL"
+                    "children": [],
+                    "type": "SC-CURL-F-SILENT"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-SHOW-ERROR"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-LOCATION"
                 },
                 {
                     "children": [
                         {
                             "children": [],
-                            "type": "SC-TAR-X"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-TAR-J"
-                        },
+                            "value": "https://github.com/osquery/osquery-toolchain/releases/download/1.0.0/osquery-toolchain-1.0.0.tar.xz",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-CURL-URL"
+                }
+            ],
+            "type": "SC-CURL"
+        }
+    },
+    {
+        "astCommandId": "osquery:4:9",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-TAR-X"
+                },
+                {
+                    "children": [],
+                    "type": "SC-TAR-J"
+                },
+                {
+                    "children": [
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "value": "/usr/local",
-                                            "type": "BASH-LITERAL"
-                                        }
-                                    ],
-                                    "type": "BASH-PATH"
+                                    "children": [],
+                                    "value": "/usr/local",
+                                    "type": "BASH-LITERAL"
                                 }
                             ],
-                            "type": "SC-TAR-DIRECTORY"
+                            "type": "BASH-PATH"
                         }
                     ],
-                    "type": "SC-TAR"
+                    "type": "SC-TAR-DIRECTORY"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-TAR"
         }
     },
     {

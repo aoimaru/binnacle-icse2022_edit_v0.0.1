@@ -97,93 +97,64 @@
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "value": "[default]",
-                                                            "type": "BASH-LITERAL"
-                                                        }
-                                                    ],
-                                                    "type": "SC-ECHO-ITEM"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEMS"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "value": "access_key=$AWS_ACCESS_KEY",
-                                                            "type": "BASH-LITERAL"
-                                                        }
-                                                    ],
-                                                    "type": "SC-ECHO-ITEM"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEMS"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "value": "secret_key=$AWS_SECRET_KEY",
-                                                            "type": "BASH-LITERAL"
-                                                        }
-                                                    ],
-                                                    "type": "SC-ECHO-ITEM"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEMS"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO"
+                                    "children": [],
+                                    "value": "[default]",
+                                    "type": "BASH-LITERAL"
                                 }
                             ],
-                            "type": "BASH-BRACE-GROUP"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "BASH-REDIRECT-COMMAND"
-                },
+                    "type": "SC-ECHO-ITEMS"
+                }
+            ],
+            "type": "SC-ECHO"
+        }
+    },
+    {
+        "astCommandId": "s3cmd:2:1",
+        "astCommand": {
+            "children": [
                 {
                     "children": [
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "value": "~/.s3cfg",
-                                            "type": "BASH-LITERAL"
-                                        }
-                                    ],
-                                    "type": "BASH-PATH"
+                                    "children": [],
+                                    "value": "access_key=$AWS_ACCESS_KEY",
+                                    "type": "BASH-LITERAL"
                                 }
                             ],
-                            "type": "BASH-REDIRECT-OVERWRITE"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "BASH-REDIRECT-REDIRECTS"
+                    "type": "SC-ECHO-ITEMS"
                 }
             ],
-            "type": "BASH-REDIRECT"
+            "type": "SC-ECHO"
+        }
+    },
+    {
+        "astCommandId": "s3cmd:2:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "secret_key=$AWS_SECRET_KEY",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-ECHO-ITEM"
+                        }
+                    ],
+                    "type": "SC-ECHO-ITEMS"
+                }
+            ],
+            "type": "SC-ECHO"
         }
     }
 ]

@@ -45,105 +45,55 @@
     {
         "astCommandId": "jsonwire-grid:5:2",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
-                    "children": [
-                        {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-CONCAT",
-                                    "children": [
-                                        {
-                                            "type": "BASH-VARIABLE",
-                                            "children": [],
-                                            "value": "REPOSITORY"
-                                        },
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "/releases/download/v"
-                                        },
-                                        {
-                                            "type": "BASH-VARIABLE",
-                                            "children": [],
-                                            "value": "VERSION"
-                                        },
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "/jsonwire-grid_"
-                                        },
-                                        {
-                                            "type": "BASH-VARIABLE",
-                                            "children": [],
-                                            "value": "VERSION"
-                                        },
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "_linux_amd64.tar.gz"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
                 },
                 {
-                    "type": "SC-TAR",
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-TAR-DIRECTORY",
+                            "type": "BASH-CONCAT",
                             "children": [
                                 {
-                                    "type": "BASH-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "/usr/local/bin"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-TAR-ARGS",
-                            "children": [
-                                {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "xz"
-                                        }
-                                    ]
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "REPOSITORY"
                                 },
                                 {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "jsonwire-grid"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/releases/download/v"
+                                },
+                                {
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "VERSION"
+                                },
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/jsonwire-grid_"
+                                },
+                                {
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "VERSION"
+                                },
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "_linux_amd64.tar.gz"
                                 }
                             ]
                         }
@@ -154,6 +104,54 @@
     },
     {
         "astCommandId": "jsonwire-grid:5:3",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-DIRECTORY",
+                    "children": [
+                        {
+                            "type": "BASH-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/usr/local/bin"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-TAR-ARGS",
+                    "children": [
+                        {
+                            "type": "SC-TAR-ARG",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "xz"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-TAR-ARG",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "jsonwire-grid"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "jsonwire-grid:5:4",
         "astCommand": {
             "type": "SC-CURL",
             "children": [
@@ -198,7 +196,7 @@
         }
     },
     {
-        "astCommandId": "jsonwire-grid:5:4",
+        "astCommandId": "jsonwire-grid:5:5",
         "astCommand": {
             "type": "SC-CURL",
             "children": [
@@ -243,7 +241,7 @@
         }
     },
     {
-        "astCommandId": "jsonwire-grid:5:5",
+        "astCommandId": "jsonwire-grid:5:6",
         "astCommand": {
             "type": "SC-CURL",
             "children": [
@@ -288,7 +286,7 @@
         }
     },
     {
-        "astCommandId": "jsonwire-grid:5:6",
+        "astCommandId": "jsonwire-grid:5:7",
         "astCommand": {
             "type": "SC-LN",
             "children": [
@@ -320,7 +318,7 @@
         }
     },
     {
-        "astCommandId": "jsonwire-grid:5:7",
+        "astCommandId": "jsonwire-grid:5:8",
         "astCommand": {
             "type": "SC-APK-DEL",
             "children": [

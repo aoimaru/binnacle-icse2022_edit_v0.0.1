@@ -48,64 +48,65 @@
         "astCommand": {
             "children": [
                 {
+                    "children": [],
+                    "type": "SC-CURL-F-SILENT"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-SHOW-ERROR"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-LOCATION"
+                },
+                {
                     "children": [
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SILENT"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SHOW-ERROR"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-LOCATION"
-                        },
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "type": "ABS-URL-PROTOCOL-HTTPS",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "ABS-EXTENSION-ASC",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "ABS-PROBABLY-URL",
-                                            "children": []
-                                        }
-                                    ],
-                                    "type": "BASH-LITERAL"
+                                    "type": "ABS-URL-PROTOCOL-HTTPS",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-EXTENSION-ASC",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-PROBABLY-URL",
+                                    "children": []
                                 }
                             ],
-                            "type": "SC-CURL-URL"
+                            "type": "BASH-LITERAL"
                         }
                     ],
-                    "type": "SC-CURL"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "SC-GPG-F-DEARMOR"
-                        }
-                    ],
-                    "type": "SC-GPG"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "SC-APT-KEY-FILENAME"
-                        }
-                    ],
-                    "type": "SC-APT-KEY-ADD"
+                    "type": "SC-CURL-URL"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-CURL"
+        }
+    },
+    {
+        "astCommandId": "vscode:3:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-GPG-F-DEARMOR"
+                }
+            ],
+            "type": "SC-GPG"
+        }
+    },
+    {
+        "astCommandId": "vscode:3:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APT-KEY-FILENAME"
+                }
+            ],
+            "type": "SC-APT-KEY-ADD"
         }
     },
     {
@@ -119,66 +120,28 @@
                                 {
                                     "children": [
                                         {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "type": "ABS-URL-PROTOCOL-HTTPS",
-                                                            "children": []
-                                                        },
-                                                        {
-                                                            "type": "ABS-PROBABLY-URL",
-                                                            "children": []
-                                                        },
-                                                        {
-                                                            "type": "ABS-SINGLE-SPACE",
-                                                            "children": []
-                                                        }
-                                                    ],
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEM"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO-ITEMS"
-                                }
-                            ],
-                            "type": "SC-ECHO"
-                        }
-                    ],
-                    "type": "BASH-REDIRECT-COMMAND"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
+                                            "type": "ABS-URL-PROTOCOL-HTTPS",
+                                            "children": []
+                                        },
                                         {
-                                            "children": [
-                                                {
-                                                    "type": "ABS-PATH-ABSOLUTE",
-                                                    "children": []
-                                                },
-                                                {
-                                                    "type": "ABS-MAYBE-PATH",
-                                                    "children": []
-                                                }
-                                            ],
-                                            "type": "BASH-LITERAL"
+                                            "type": "ABS-PROBABLY-URL",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-SINGLE-SPACE",
+                                            "children": []
                                         }
                                     ],
-                                    "type": "BASH-PATH"
+                                    "type": "BASH-LITERAL"
                                 }
                             ],
-                            "type": "BASH-REDIRECT-OVERWRITE"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "BASH-REDIRECT-REDIRECTS"
+                    "type": "SC-ECHO-ITEMS"
                 }
             ],
-            "type": "BASH-REDIRECT"
+            "type": "SC-ECHO"
         }
     },
     {

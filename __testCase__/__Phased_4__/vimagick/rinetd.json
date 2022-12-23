@@ -86,57 +86,55 @@
     {
         "astCommandId": "rinetd:3:4",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-CURL-F-SILENT",
+                            "type": "BASH-VARIABLE:RINETD_URL",
                             "children": []
-                        },
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "rinetd:3:5",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-STRIP",
+                    "children": [
                         {
-                            "type": "SC-CURL-F-SHOW-ERROR",
+                            "type": "BASH-LITERAL",
                             "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-VARIABLE:RINETD_URL",
-                                    "children": []
-                                }
-                            ]
                         }
                     ]
                 },
                 {
-                    "type": "SC-TAR",
+                    "type": "SC-TAR-ARGS",
                     "children": [
                         {
-                            "type": "SC-TAR-STRIP",
+                            "type": "SC-TAR-ARG",
                             "children": [
                                 {
                                     "type": "BASH-LITERAL",
                                     "children": []
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-TAR-ARGS",
-                            "children": [
-                                {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": []
-                                        }
-                                    ]
                                 }
                             ]
                         }
@@ -146,7 +144,7 @@
         }
     },
     {
-        "astCommandId": "rinetd:3:5",
+        "astCommandId": "rinetd:3:6",
         "astCommand": {
             "type": "SC-CONFIGURE",
             "children": [
@@ -195,7 +193,7 @@
         }
     },
     {
-        "astCommandId": "rinetd:3:6",
+        "astCommandId": "rinetd:3:7",
         "astCommand": {
             "type": "SC-MAKE",
             "children": [
@@ -212,7 +210,7 @@
         }
     },
     {
-        "astCommandId": "rinetd:3:7",
+        "astCommandId": "rinetd:3:8",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -234,7 +232,7 @@
         }
     },
     {
-        "astCommandId": "rinetd:3:8",
+        "astCommandId": "rinetd:3:9",
         "astCommand": {
             "type": "SC-RM",
             "children": [
@@ -260,7 +258,7 @@
         }
     },
     {
-        "astCommandId": "rinetd:3:9",
+        "astCommandId": "rinetd:3:10",
         "astCommand": {
             "type": "SC-APK-DEL",
             "children": [

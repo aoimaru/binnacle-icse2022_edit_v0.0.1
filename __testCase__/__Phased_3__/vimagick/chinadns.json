@@ -152,31 +152,22 @@
     {
         "astCommandId": "chinadns:5:5",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-ECHO",
             "children": [
                 {
-                    "type": "SC-ECHO",
+                    "type": "SC-ECHO-ITEMS",
                     "children": [
                         {
-                            "type": "SC-ECHO-ITEMS",
+                            "type": "SC-ECHO-ITEM",
                             "children": [
                                 {
-                                    "type": "SC-ECHO-ITEM",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "${DNS_MD5} ${DNS_FILE}"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "${DNS_MD5} ${DNS_FILE}"
                                 }
                             ]
                         }
                     ]
-                },
-                {
-                    "type": "UNKNOWN",
-                    "children": []
                 }
             ]
         }
@@ -381,84 +372,51 @@
     {
         "astCommandId": "chinadns:6:0",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": [],
-                                    "value": "http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest"
-                                }
-                            ]
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest"
                         }
                     ]
-                },
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "chinadns:6:1",
+        "astCommand": {
+            "type": "SC-GREP",
+            "children": [
                 {
-                    "type": "SC-GREP",
+                    "type": "SC-GREP-PATTERN",
                     "children": [
                         {
-                            "type": "SC-GREP-PATTERN",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": [],
-                                    "value": "ipv4"
-                                }
-                            ]
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "ipv4"
                         }
                     ]
-                },
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "chinadns:6:2",
+        "astCommand": {
+            "type": "SC-GREP",
+            "children": [
                 {
-                    "type": "SC-GREP",
+                    "type": "SC-GREP-PATTERN",
                     "children": [
                         {
-                            "type": "SC-GREP-PATTERN",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": [],
-                                    "value": "CN"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "BASH-REDIRECT",
-                    "children": [
-                        {
-                            "type": "BASH-REDIRECT-COMMAND",
-                            "children": [
-                                {
-                                    "type": "UNKNOWN",
-                                    "children": []
-                                }
-                            ]
-                        },
-                        {
-                            "type": "BASH-REDIRECT-REDIRECTS",
-                            "children": [
-                                {
-                                    "type": "BASH-REDIRECT-OVERWRITE",
-                                    "children": [
-                                        {
-                                            "type": "BASH-PATH",
-                                            "children": [
-                                                {
-                                                    "type": "BASH-LITERAL",
-                                                    "children": [],
-                                                    "value": "/etc/chnroute.txt"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "CN"
                         }
                     ]
                 }

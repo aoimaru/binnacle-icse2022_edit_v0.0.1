@@ -2,48 +2,18 @@
     {
         "astCommandId": "l2tpd:1:0",
         "astCommand": {
-            "type": "BASH-REDIRECT",
+            "type": "SC-ECHO",
             "children": [
                 {
-                    "type": "BASH-REDIRECT-COMMAND",
+                    "type": "SC-ECHO-ITEMS",
                     "children": [
                         {
-                            "type": "SC-ECHO",
+                            "type": "SC-ECHO-ITEM",
                             "children": [
                                 {
-                                    "type": "SC-ECHO-ITEMS",
-                                    "children": [
-                                        {
-                                            "type": "SC-ECHO-ITEM",
-                                            "children": [
-                                                {
-                                                    "type": "BASH-LITERAL",
-                                                    "children": [],
-                                                    "value": "http://dl-4.alpinelinux.org/alpine/edge/testing"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "BASH-REDIRECT-REDIRECTS",
-                    "children": [
-                        {
-                            "type": "BASH-REDIRECT-APPEND",
-                            "children": [
-                                {
-                                    "type": "BASH-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "/etc/apk/repositories"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "http://dl-4.alpinelinux.org/alpine/edge/testing"
                                 }
                             ]
                         }

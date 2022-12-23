@@ -324,38 +324,8 @@
     {
         "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:8",
         "astCommand": {
-            "children": [
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "sqlite3Version"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "SC-NPM"
-                                        }
-                                    ],
-                                    "type": "BASH-DOLLAR-PARENS"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
-                }
-            ],
-            "type": "BASH-ASSIGN"
+            "children": [],
+            "type": "SC-NPM"
         }
     },
     {
@@ -363,18 +333,18 @@
         "astCommand": {
             "children": [
                 {
+                    "children": [],
+                    "type": "SC-APK-F-NO-CACHE"
+                },
+                {
                     "children": [
                         {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "UNKNOWN"
-                                }
-                            ],
-                            "type": "BASH-BANGED"
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": ".build-deps"
                         }
                     ],
-                    "type": "BASH-IF-CONDITION"
+                    "type": "SC-APK-VIRTUAL"
                 },
                 {
                     "children": [
@@ -382,132 +352,103 @@
                             "children": [
                                 {
                                     "children": [],
-                                    "type": "SC-APK-F-NO-CACHE"
-                                },
+                                    "type": "BASH-LITERAL",
+                                    "value": "python"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "make"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "gcc"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
                                 {
                                     "children": [
                                         {
                                             "children": [],
                                             "type": "BASH-LITERAL",
-                                            "value": ".build-deps"
+                                            "value": "g"
+                                        },
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": "+"
+                                        },
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": "+"
                                         }
                                     ],
-                                    "type": "SC-APK-VIRTUAL"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "BASH-LITERAL",
-                                                    "value": "python"
-                                                }
-                                            ],
-                                            "type": "SC-APK-PACKAGE"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "BASH-LITERAL",
-                                                    "value": "make"
-                                                }
-                                            ],
-                                            "type": "SC-APK-PACKAGE"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "BASH-LITERAL",
-                                                    "value": "gcc"
-                                                }
-                                            ],
-                                            "type": "SC-APK-PACKAGE"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL",
-                                                            "value": "g"
-                                                        },
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL",
-                                                            "value": "+"
-                                                        },
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL",
-                                                            "value": "+"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-CONCAT"
-                                                }
-                                            ],
-                                            "type": "SC-APK-PACKAGE"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "BASH-LITERAL",
-                                                    "value": "libc-dev"
-                                                }
-                                            ],
-                                            "type": "SC-APK-PACKAGE"
-                                        }
-                                    ],
-                                    "type": "SC-APK-PACKAGES"
+                                    "type": "BASH-CONCAT"
                                 }
                             ],
-                            "type": "SC-APK-ADD"
-                        },
-                        {
-                            "children": [],
-                            "type": "UNKNOWN"
+                            "type": "SC-APK-PACKAGE"
                         },
                         {
                             "children": [
                                 {
                                     "children": [],
-                                    "type": "SC-APK-F-NO-NETWORK"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "BASH-LITERAL",
-                                                    "value": ".build-deps"
-                                                }
-                                            ],
-                                            "type": "SC-APK-PACKAGE"
-                                        }
-                                    ],
-                                    "type": "SC-APK-PACKAGES"
+                                    "type": "BASH-LITERAL",
+                                    "value": "libc-dev"
                                 }
                             ],
-                            "type": "SC-APK-DEL"
+                            "type": "SC-APK-PACKAGE"
                         }
                     ],
-                    "type": "BASH-IF-THEN"
-                },
-                {
-                    "children": [],
-                    "type": "BASH-IF-ELSE"
+                    "type": "SC-APK-PACKAGES"
                 }
             ],
-            "type": "BASH-IF-EXPRESSION"
+            "type": "SC-APK-ADD"
         }
     },
     {
         "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:10",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APK-F-NO-NETWORK"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": ".build-deps"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APK-PACKAGES"
+                }
+            ],
+            "type": "SC-APK-DEL"
+        }
+    },
+    {
+        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:11",
         "astCommand": {
             "children": [
                 {
@@ -519,7 +460,7 @@
         }
     },
     {
-        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:11",
+        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:12",
         "astCommand": {
             "children": [
                 {

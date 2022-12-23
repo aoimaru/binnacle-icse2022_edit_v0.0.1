@@ -550,48 +550,18 @@
     {
         "astCommandId": "mediagoblin:2:5",
         "astCommand": {
-            "type": "BASH-REDIRECT",
+            "type": "SC-ECHO",
             "children": [
                 {
-                    "type": "BASH-REDIRECT-COMMAND",
+                    "type": "SC-ECHO-ITEMS",
                     "children": [
                         {
-                            "type": "SC-ECHO",
+                            "type": "SC-ECHO-ITEM",
                             "children": [
                                 {
-                                    "type": "SC-ECHO-ITEMS",
-                                    "children": [
-                                        {
-                                            "type": "SC-ECHO-ITEM",
-                                            "children": [
-                                                {
-                                                    "type": "BASH-LITERAL",
-                                                    "children": [],
-                                                    "value": "mediagoblin ALL=(ALL:ALL) NOPASSWD: /usr/sbin/nginx, /bin/chown"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "BASH-REDIRECT-REDIRECTS",
-                    "children": [
-                        {
-                            "type": "BASH-REDIRECT-APPEND",
-                            "children": [
-                                {
-                                    "type": "BASH-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "/etc/sudoers"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "mediagoblin ALL=(ALL:ALL) NOPASSWD: /usr/sbin/nginx, /bin/chown"
                                 }
                             ]
                         }
@@ -862,93 +832,64 @@
     {
         "astCommandId": "mediagoblin:5:11",
         "astCommand": {
-            "type": "BASH-REDIRECT",
+            "type": "SC-ECHO",
             "children": [
                 {
-                    "type": "BASH-REDIRECT-COMMAND",
+                    "type": "SC-ECHO-ITEMS",
                     "children": [
                         {
-                            "type": "BASH-BRACE-GROUP",
+                            "type": "SC-ECHO-ITEM",
                             "children": [
                                 {
-                                    "type": "SC-ECHO",
-                                    "children": [
-                                        {
-                                            "type": "SC-ECHO-ITEMS",
-                                            "children": [
-                                                {
-                                                    "type": "SC-ECHO-ITEM",
-                                                    "children": [
-                                                        {
-                                                            "type": "BASH-LITERAL",
-                                                            "children": [],
-                                                            "value": "[[mediagoblin.media_types.video]]"
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "SC-ECHO",
-                                    "children": [
-                                        {
-                                            "type": "SC-ECHO-ITEMS",
-                                            "children": [
-                                                {
-                                                    "type": "SC-ECHO-ITEM",
-                                                    "children": [
-                                                        {
-                                                            "type": "BASH-LITERAL",
-                                                            "children": [],
-                                                            "value": "[[mediagoblin.media_types.audio]]"
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "SC-ECHO",
-                                    "children": [
-                                        {
-                                            "type": "SC-ECHO-ITEMS",
-                                            "children": [
-                                                {
-                                                    "type": "SC-ECHO-ITEM",
-                                                    "children": [
-                                                        {
-                                                            "type": "BASH-LITERAL",
-                                                            "children": [],
-                                                            "value": "[[mediagoblin.media_types.pdf]]"
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "[[mediagoblin.media_types.video]]"
                                 }
                             ]
                         }
                     ]
-                },
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "mediagoblin:5:12",
+        "astCommand": {
+            "type": "SC-ECHO",
+            "children": [
                 {
-                    "type": "BASH-REDIRECT-REDIRECTS",
+                    "type": "SC-ECHO-ITEMS",
                     "children": [
                         {
-                            "type": "BASH-REDIRECT-APPEND",
+                            "type": "SC-ECHO-ITEM",
                             "children": [
                                 {
-                                    "type": "BASH-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "mediagoblin_local.ini"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "[[mediagoblin.media_types.audio]]"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "mediagoblin:5:13",
+        "astCommand": {
+            "type": "SC-ECHO",
+            "children": [
+                {
+                    "type": "SC-ECHO-ITEMS",
+                    "children": [
+                        {
+                            "type": "SC-ECHO-ITEM",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "[[mediagoblin.media_types.pdf]]"
                                 }
                             ]
                         }

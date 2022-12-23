@@ -217,37 +217,28 @@
                                 {
                                     "children": [
                                         {
-                                            "children": [
-                                                {
-                                                    "type": "ABS-SINGLE-SPACE",
-                                                    "children": []
-                                                },
-                                                {
-                                                    "type": "ABS-DOUBLE-SPACE",
-                                                    "children": []
-                                                },
-                                                {
-                                                    "type": "ABS-EXTENSION-TAR",
-                                                    "children": []
-                                                }
-                                            ],
-                                            "type": "BASH-LITERAL"
+                                            "type": "ABS-SINGLE-SPACE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-DOUBLE-SPACE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-EXTENSION-TAR",
+                                            "children": []
                                         }
                                     ],
-                                    "type": "SC-ECHO-ITEM"
+                                    "type": "BASH-LITERAL"
                                 }
                             ],
-                            "type": "SC-ECHO-ITEMS"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "SC-ECHO"
-                },
-                {
-                    "children": [],
-                    "type": "UNKNOWN"
+                    "type": "SC-ECHO-ITEMS"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-ECHO"
         }
     },
     {
@@ -437,42 +428,13 @@
                     "children": [
                         {
                             "children": [],
-                            "type": "BASH-VARIABLE:gnuArch"
+                            "type": "BASH-LITERAL"
                         }
                     ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL"
-                                                        }
-                                                    ],
-                                                    "type": "SC-DPKG-ARCHITECTURE-QUERY"
-                                                }
-                                            ],
-                                            "type": "SC-DPKG-ARCHITECTURE"
-                                        }
-                                    ],
-                                    "type": "BASH-DOLLAR-PARENS"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
+                    "type": "SC-DPKG-ARCHITECTURE-QUERY"
                 }
             ],
-            "type": "BASH-ASSIGN"
+            "type": "SC-DPKG-ARCHITECTURE"
         }
     },
     {
@@ -482,136 +444,19 @@
                 {
                     "children": [
                         {
-                            "children": [],
-                            "type": "BASH-VARIABLE:enableExtstore"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [],
-                                                                    "type": "BASH-VARIABLE:gnuArch"
-                                                                }
-                                                            ],
-                                                            "type": "BASH-DOUBLE-QUOTED"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-CASE-EXP-TARGET"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [],
-                                                                    "type": "BASH-CASE-KIND"
-                                                                },
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "children": [
-                                                                                {
-                                                                                    "children": [],
-                                                                                    "type": "BASH-LITERAL"
-                                                                                },
-                                                                                {
-                                                                                    "children": [
-                                                                                        {
-                                                                                            "type": "ABS-GLOB-STAR",
-                                                                                            "children": []
-                                                                                        }
-                                                                                    ],
-                                                                                    "type": "BASH-GLOB"
-                                                                                }
-                                                                            ],
-                                                                            "type": "BASH-CONCAT"
-                                                                        }
-                                                                    ],
-                                                                    "type": "BASH-CASE-LABELS"
-                                                                },
-                                                                {
-                                                                    "children": [],
-                                                                    "type": "BASH-CASE-EXPRESSIONS"
-                                                                }
-                                                            ],
-                                                            "type": "BASH-CASE-EXP-CASE"
-                                                        },
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [],
-                                                                    "type": "BASH-CASE-KIND"
-                                                                },
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "children": [
-                                                                                {
-                                                                                    "type": "ABS-GLOB-STAR",
-                                                                                    "children": []
-                                                                                }
-                                                                            ],
-                                                                            "type": "BASH-GLOB"
-                                                                        }
-                                                                    ],
-                                                                    "type": "BASH-CASE-LABELS"
-                                                                },
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "children": [
-                                                                                {
-                                                                                    "children": [
-                                                                                        {
-                                                                                            "children": [
-                                                                                                {
-                                                                                                    "children": [],
-                                                                                                    "type": "BASH-LITERAL"
-                                                                                                }
-                                                                                            ],
-                                                                                            "type": "SC-ECHO-ITEM"
-                                                                                        }
-                                                                                    ],
-                                                                                    "type": "SC-ECHO-ITEMS"
-                                                                                }
-                                                                            ],
-                                                                            "type": "SC-ECHO"
-                                                                        }
-                                                                    ],
-                                                                    "type": "BASH-CASE-EXPRESSIONS"
-                                                                }
-                                                            ],
-                                                            "type": "BASH-CASE-EXP-CASE"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-CASE-EXP-CASES"
-                                                }
-                                            ],
-                                            "type": "BASH-CASE-EXPRESSION"
-                                        }
-                                    ],
-                                    "type": "BASH-DOLLAR-PARENS"
+                                    "children": [],
+                                    "type": "BASH-LITERAL"
                                 }
                             ],
-                            "type": "BASH-DOUBLE-QUOTED"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "BASH-ASSIGN-RHS"
+                    "type": "SC-ECHO-ITEMS"
                 }
             ],
-            "type": "BASH-ASSIGN"
+            "type": "SC-ECHO"
         }
     },
     {
@@ -778,59 +623,6 @@
         "astCommand": {
             "children": [
                 {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-VARIABLE:runDeps"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                },
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                },
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                },
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                }
-                                            ],
-                                            "type": "BASH-PIPELINE"
-                                        }
-                                    ],
-                                    "type": "BASH-DOLLAR-PARENS"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
-                }
-            ],
-            "type": "BASH-ASSIGN"
-        }
-    },
-    {
-        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:17",
-        "astCommand": {
-            "children": [
-                {
                     "children": [],
                     "type": "SC-APK-VIRTUAL:.memcached-rundeps"
                 },
@@ -848,7 +640,7 @@
         }
     },
     {
-        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:18",
+        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:17",
         "astCommand": {
             "children": [
                 {

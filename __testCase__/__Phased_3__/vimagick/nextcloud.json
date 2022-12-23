@@ -377,48 +377,39 @@
     {
         "astCommandId": "nextcloud:6:2",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
+                            "type": "BASH-CONCAT",
                             "children": [
                                 {
-                                    "type": "BASH-CONCAT",
-                                    "children": [
-                                        {
-                                            "type": "BASH-VARIABLE",
-                                            "children": [],
-                                            "value": "NC_URL"
-                                        },
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": ".md5"
-                                        }
-                                    ]
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "NC_URL"
+                                },
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": ".md5"
                                 }
                             ]
                         }
                     ]
-                },
-                {
-                    "type": "UNKNOWN",
-                    "children": []
                 }
             ]
         }

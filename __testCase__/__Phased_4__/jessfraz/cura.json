@@ -171,31 +171,60 @@
                                 {
                                     "children": [
                                         {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "type": "ABS-PATH-ABSOLUTE",
-                                                            "children": []
-                                                        },
-                                                        {
-                                                            "type": "ABS-MAYBE-PATH",
-                                                            "children": []
-                                                        }
-                                                    ],
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-DPKG-INSTALL"
+                                            "type": "ABS-PATH-ABSOLUTE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-MAYBE-PATH",
+                                            "children": []
                                         }
                                     ],
-                                    "type": "SC-DPKG-INSTALLS"
+                                    "type": "BASH-LITERAL"
                                 }
                             ],
-                            "type": "SC-DPKG"
+                            "type": "SC-DPKG-INSTALL"
                         }
                     ],
-                    "type": "BASH-OR-MEM"
+                    "type": "SC-DPKG-INSTALLS"
+                }
+            ],
+            "type": "SC-DPKG"
+        }
+    },
+    {
+        "astCommandId": "cura:2:3",
+        "astCommand": {
+            "children": [],
+            "type": "SC-TRUE"
+        }
+    },
+    {
+        "astCommandId": "cura:2:4",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-YES"
+                },
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-FIX-BROKEN"
+                }
+            ],
+            "type": "SC-APT-GET-INSTALL"
+        }
+    },
+    {
+        "astCommandId": "cura:2:5",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-FORCE"
                 },
                 {
                     "children": [
@@ -204,142 +233,85 @@
                                 {
                                     "children": [
                                         {
-                                            "children": [],
-                                            "type": "SC-TRUE"
-                                        }
-                                    ],
-                                    "type": "BASH-AND-MEM"
-                                },
-                                {
-                                    "children": [
+                                            "children": [
+                                                {
+                                                    "type": "ABS-PATH-VAR",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-APT-LISTS",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                }
+                                            ],
+                                            "type": "BASH-LITERAL"
+                                        },
                                         {
                                             "children": [
                                                 {
-                                                    "children": [],
-                                                    "type": "SC-APT-GET-F-YES"
-                                                },
-                                                {
-                                                    "children": [],
-                                                    "type": "SC-APT-GET-F-FIX-BROKEN"
+                                                    "type": "ABS-GLOB-STAR",
+                                                    "children": []
                                                 }
                                             ],
-                                            "type": "SC-APT-GET-INSTALL"
+                                            "type": "BASH-GLOB"
                                         }
                                     ],
-                                    "type": "BASH-AND-MEM"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "SC-RM-F-RECURSIVE"
-                                                },
-                                                {
-                                                    "children": [],
-                                                    "type": "SC-RM-F-FORCE"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "children": [
-                                                                                {
-                                                                                    "type": "ABS-PATH-VAR",
-                                                                                    "children": []
-                                                                                },
-                                                                                {
-                                                                                    "type": "ABS-PATH-ABSOLUTE",
-                                                                                    "children": []
-                                                                                },
-                                                                                {
-                                                                                    "type": "ABS-APT-LISTS",
-                                                                                    "children": []
-                                                                                },
-                                                                                {
-                                                                                    "type": "ABS-MAYBE-PATH",
-                                                                                    "children": []
-                                                                                }
-                                                                            ],
-                                                                            "type": "BASH-LITERAL"
-                                                                        },
-                                                                        {
-                                                                            "children": [
-                                                                                {
-                                                                                    "type": "ABS-GLOB-STAR",
-                                                                                    "children": []
-                                                                                }
-                                                                            ],
-                                                                            "type": "BASH-GLOB"
-                                                                        }
-                                                                    ],
-                                                                    "type": "BASH-CONCAT"
-                                                                }
-                                                            ],
-                                                            "type": "SC-RM-PATH"
-                                                        }
-                                                    ],
-                                                    "type": "SC-RM-PATHS"
-                                                }
-                                            ],
-                                            "type": "SC-RM"
-                                        }
-                                    ],
-                                    "type": "BASH-AND-MEM"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "SC-RM-F-RECURSIVE"
-                                                },
-                                                {
-                                                    "children": [],
-                                                    "type": "SC-RM-F-FORCE"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "type": "ABS-PATH-ABSOLUTE",
-                                                                            "children": []
-                                                                        },
-                                                                        {
-                                                                            "type": "ABS-MAYBE-PATH",
-                                                                            "children": []
-                                                                        }
-                                                                    ],
-                                                                    "type": "BASH-LITERAL"
-                                                                }
-                                                            ],
-                                                            "type": "SC-RM-PATH"
-                                                        }
-                                                    ],
-                                                    "type": "SC-RM-PATHS"
-                                                }
-                                            ],
-                                            "type": "SC-RM"
-                                        }
-                                    ],
-                                    "type": "BASH-AND-MEM"
+                                    "type": "BASH-CONCAT"
                                 }
                             ],
-                            "type": "BASH-AND-IF"
+                            "type": "SC-RM-PATH"
                         }
                     ],
-                    "type": "BASH-OR-MEM"
+                    "type": "SC-RM-PATHS"
                 }
             ],
-            "type": "BASH-OR-IF"
+            "type": "SC-RM"
+        }
+    },
+    {
+        "astCommandId": "cura:2:6",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-FORCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "type": "ABS-PATH-ABSOLUTE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-MAYBE-PATH",
+                                            "children": []
+                                        }
+                                    ],
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
         }
     }
 ]

@@ -114,81 +114,48 @@
     {
         "astCommandId": "sslsplit:2:4",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
-                    "children": [
-                        {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-CONCAT",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [
-                                                {
-                                                    "type": "ABS-PROBABLY-URL",
-                                                    "children": []
-                                                },
-                                                {
-                                                    "type": "ABS-URL-PROTOCOL-HTTPS",
-                                                    "children": []
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "BASH-VARIABLE:SSLSPLIT_VERSION",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [
-                                                {
-                                                    "type": "ABS-EXTENSION-TAR",
-                                                    "children": []
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
                 },
                 {
-                    "type": "SC-TAR",
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-TAR-STRIP",
+                            "type": "BASH-CONCAT",
                             "children": [
                                 {
                                     "type": "BASH-LITERAL",
-                                    "children": []
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-TAR-ARGS",
-                            "children": [
-                                {
-                                    "type": "SC-TAR-ARG",
                                     "children": [
                                         {
-                                            "type": "BASH-LITERAL",
+                                            "type": "ABS-PROBABLY-URL",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-URL-PROTOCOL-HTTPS",
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "BASH-VARIABLE:SSLSPLIT_VERSION",
+                                    "children": []
+                                },
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [
+                                        {
+                                            "type": "ABS-EXTENSION-TAR",
                                             "children": []
                                         }
                                     ]
@@ -202,6 +169,37 @@
     },
     {
         "astCommandId": "sslsplit:2:5",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-STRIP",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-TAR-ARGS",
+                    "children": [
+                        {
+                            "type": "SC-TAR-ARG",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "sslsplit:2:6",
         "astCommand": {
             "type": "SC-SED",
             "children": [
@@ -254,7 +252,7 @@
         }
     },
     {
-        "astCommandId": "sslsplit:2:6",
+        "astCommandId": "sslsplit:2:7",
         "astCommand": {
             "type": "SC-MAKE",
             "children": [
@@ -271,7 +269,7 @@
         }
     },
     {
-        "astCommandId": "sslsplit:2:7",
+        "astCommandId": "sslsplit:2:8",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -293,7 +291,7 @@
         }
     },
     {
-        "astCommandId": "sslsplit:2:8",
+        "astCommandId": "sslsplit:2:9",
         "astCommand": {
             "type": "SC-RM",
             "children": [
@@ -323,7 +321,7 @@
         }
     },
     {
-        "astCommandId": "sslsplit:2:9",
+        "astCommandId": "sslsplit:2:10",
         "astCommand": {
             "type": "SC-APK-DEL",
             "children": [

@@ -125,32 +125,30 @@
     {
         "astCommandId": "oled-arm:1:2",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": [],
-                                    "value": "https://bootstrap.pypa.io/get-pip.py"
-                                }
-                            ]
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "https://bootstrap.pypa.io/get-pip.py"
                         }
                     ]
-                },
-                {
-                    "type": "SC-PYTHON",
-                    "children": []
                 }
             ]
         }
     },
     {
         "astCommandId": "oled-arm:1:3",
+        "astCommand": {
+            "type": "SC-PYTHON",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "oled-arm:1:4",
         "astCommand": {
             "type": "SC-PIP-INSTALL",
             "children": [
@@ -177,7 +175,7 @@
         }
     },
     {
-        "astCommandId": "oled-arm:1:4",
+        "astCommandId": "oled-arm:1:5",
         "astCommand": {
             "type": "SC-APK-DEL",
             "children": [
@@ -309,70 +307,68 @@
     {
         "astCommandId": "oled-arm:3:2",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "https://github.com/rm-hull/luma.examples/archive/master.tar.gz"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "oled-arm:3:3",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-STRIP",
+                    "children": [
                         {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": [],
-                                    "value": "https://github.com/rm-hull/luma.examples/archive/master.tar.gz"
-                                }
-                            ]
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "2"
                         }
                     ]
                 },
                 {
-                    "type": "SC-TAR",
+                    "type": "SC-TAR-ARGS",
                     "children": [
                         {
-                            "type": "SC-TAR-STRIP",
+                            "type": "SC-TAR-ARG",
                             "children": [
                                 {
                                     "type": "BASH-LITERAL",
                                     "children": [],
-                                    "value": "2"
+                                    "value": "xz"
                                 }
                             ]
                         },
                         {
-                            "type": "SC-TAR-ARGS",
+                            "type": "SC-TAR-ARG",
                             "children": [
                                 {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "xz"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "luma.examples-master/examples"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "luma.examples-master/examples"
                                 }
                             ]
                         }
@@ -382,7 +378,7 @@
         }
     },
     {
-        "astCommandId": "oled-arm:3:3",
+        "astCommandId": "oled-arm:3:4",
         "astCommand": {
             "type": "SC-APK-DEL",
             "children": [

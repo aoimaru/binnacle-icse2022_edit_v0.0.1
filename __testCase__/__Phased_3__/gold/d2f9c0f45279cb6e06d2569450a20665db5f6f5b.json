@@ -160,59 +160,6 @@
                 {
                     "children": [
                         {
-                            "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "url"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "BASH-LITERAL",
-                                    "value": "https://golang.org/dl/go"
-                                },
-                                {
-                                    "children": [],
-                                    "type": "BASH-VARIABLE",
-                                    "value": "GOLANG_VERSION"
-                                },
-                                {
-                                    "children": [],
-                                    "type": "BASH-LITERAL",
-                                    "value": "."
-                                },
-                                {
-                                    "children": [],
-                                    "type": "BASH-VARIABLE",
-                                    "value": "goRelArch"
-                                },
-                                {
-                                    "children": [],
-                                    "type": "BASH-LITERAL",
-                                    "value": ".tar.gz"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
-                }
-            ],
-            "type": "BASH-ASSIGN"
-        }
-    },
-    {
-        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:3:2",
-        "astCommand": {
-            "children": [
-                {
-                    "children": [
-                        {
                             "children": [
                                 {
                                     "children": [],
@@ -240,7 +187,7 @@
         }
     },
     {
-        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:3:3",
+        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:3:2",
         "astCommand": {
             "children": [
                 {
@@ -248,32 +195,30 @@
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "${goRelSha256} *go.tgz"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO-ITEM"
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "${goRelSha256} *go.tgz"
                                 }
                             ],
-                            "type": "SC-ECHO-ITEMS"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "SC-ECHO"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "SC-SHA-256-SUM-F-CHECK"
-                        }
-                    ],
-                    "type": "SC-SHA-256-SUM"
+                    "type": "SC-ECHO-ITEMS"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-ECHO"
+        }
+    },
+    {
+        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:3:3",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-SHA-256-SUM-F-CHECK"
+                }
+            ],
+            "type": "SC-SHA-256-SUM"
         }
     },
     {
@@ -348,215 +293,65 @@
     {
         "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:3:6",
         "astCommand": {
+            "children": [],
+            "type": "SC-ECHO"
+        }
+    },
+    {
+        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:3:7",
+        "astCommand": {
             "children": [
                 {
                     "children": [
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-OP",
-                                            "value": "SingleBracket"
-                                        }
-                                    ],
-                                    "type": "BASH-CONDITION-OP"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-OP",
-                                                            "value": "="
-                                                        }
-                                                    ],
-                                                    "type": "BASH-CONDITION-BINARY-OP"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [],
-                                                                    "type": "BASH-VARIABLE",
-                                                                    "value": "goRelArch"
-                                                                }
-                                                            ],
-                                                            "type": "BASH-DOUBLE-QUOTED"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-CONDITION-BINARY-LHS"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-SINGLE-QUOTED",
-                                                            "value": "src"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-CONDITION-BINARY-RHS"
-                                                }
-                                            ],
-                                            "type": "BASH-CONDITION-BINARY"
-                                        }
-                                    ],
-                                    "type": "BASH-CONDITION-EXP"
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "error: UNIMPLEMENTED"
                                 }
                             ],
-                            "type": "BASH-CONDITION"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "BASH-IF-CONDITION"
-                },
+                    "type": "SC-ECHO-ITEMS"
+                }
+            ],
+            "type": "SC-ECHO"
+        }
+    },
+    {
+        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:3:8",
+        "astCommand": {
+            "children": [
                 {
                     "children": [
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "SC-ECHO"
-                                        }
-                                    ],
-                                    "type": "BASH-REDIRECT-COMMAND"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-IO-DUPE-STDERR"
-                                        }
-                                    ],
-                                    "type": "BASH-REDIRECT-REDIRECTS"
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "TODO install golang-any from jessie-backports for GOROOT_BOOTSTRAP (and uninstall after build)"
                                 }
                             ],
-                            "type": "BASH-REDIRECT"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [],
-                                                                    "type": "BASH-LITERAL",
-                                                                    "value": "error: UNIMPLEMENTED"
-                                                                }
-                                                            ],
-                                                            "type": "SC-ECHO-ITEM"
-                                                        }
-                                                    ],
-                                                    "type": "SC-ECHO-ITEMS"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO"
-                                        }
-                                    ],
-                                    "type": "BASH-REDIRECT-COMMAND"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-IO-DUPE-STDERR"
-                                        }
-                                    ],
-                                    "type": "BASH-REDIRECT-REDIRECTS"
-                                }
-                            ],
-                            "type": "BASH-REDIRECT"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [],
-                                                                    "type": "BASH-LITERAL",
-                                                                    "value": "TODO install golang-any from jessie-backports for GOROOT_BOOTSTRAP (and uninstall after build)"
-                                                                }
-                                                            ],
-                                                            "type": "SC-ECHO-ITEM"
-                                                        }
-                                                    ],
-                                                    "type": "SC-ECHO-ITEMS"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO"
-                                        }
-                                    ],
-                                    "type": "BASH-REDIRECT-COMMAND"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-IO-DUPE-STDERR"
-                                        }
-                                    ],
-                                    "type": "BASH-REDIRECT-REDIRECTS"
-                                }
-                            ],
-                            "type": "BASH-REDIRECT"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "SC-ECHO"
-                                        }
-                                    ],
-                                    "type": "BASH-REDIRECT-COMMAND"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-IO-DUPE-STDERR"
-                                        }
-                                    ],
-                                    "type": "BASH-REDIRECT-REDIRECTS"
-                                }
-                            ],
-                            "type": "BASH-REDIRECT"
-                        },
-                        {
-                            "children": [],
-                            "type": "UNKNOWN"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "BASH-IF-THEN"
-                },
-                {
-                    "children": [],
-                    "type": "BASH-IF-ELSE"
+                    "type": "SC-ECHO-ITEMS"
                 }
             ],
-            "type": "BASH-IF-EXPRESSION"
+            "type": "SC-ECHO"
         }
     },
     {
-        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:3:7",
+        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:3:9",
+        "astCommand": {
+            "children": [],
+            "type": "SC-ECHO"
+        }
+    },
+    {
+        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:3:10",
         "astCommand": {
             "children": [
                 {
@@ -604,7 +399,7 @@
         }
     },
     {
-        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:3:8",
+        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:3:11",
         "astCommand": {
             "children": [],
             "type": "SC-GO-VERSION"

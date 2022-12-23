@@ -267,31 +267,22 @@
     {
         "astCommandId": "mantisbt:7:2",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-ECHO",
             "children": [
                 {
-                    "type": "SC-ECHO",
+                    "type": "SC-ECHO-ITEMS",
                     "children": [
                         {
-                            "type": "SC-ECHO-ITEMS",
+                            "type": "SC-ECHO-ITEM",
                             "children": [
                                 {
-                                    "type": "SC-ECHO-ITEM",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "${MANTIS_MD5}  ${MANTIS_FILE}"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "${MANTIS_MD5}  ${MANTIS_FILE}"
                                 }
                             ]
                         }
                     ]
-                },
-                {
-                    "type": "UNKNOWN",
-                    "children": []
                 }
             ]
         }
@@ -452,48 +443,18 @@
     {
         "astCommandId": "mantisbt:8:2",
         "astCommand": {
-            "type": "BASH-REDIRECT",
+            "type": "SC-ECHO",
             "children": [
                 {
-                    "type": "BASH-REDIRECT-COMMAND",
+                    "type": "SC-ECHO-ITEMS",
                     "children": [
                         {
-                            "type": "SC-ECHO",
+                            "type": "SC-ECHO-ITEM",
                             "children": [
                                 {
-                                    "type": "SC-ECHO-ITEMS",
-                                    "children": [
-                                        {
-                                            "type": "SC-ECHO-ITEM",
-                                            "children": [
-                                                {
-                                                    "type": "BASH-LITERAL",
-                                                    "children": [],
-                                                    "value": "date.timezone = \"Asia/Shanghai\""
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "BASH-REDIRECT-REDIRECTS",
-                    "children": [
-                        {
-                            "type": "BASH-REDIRECT-OVERWRITE",
-                            "children": [
-                                {
-                                    "type": "BASH-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "/usr/local/etc/php/php.ini"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "date.timezone = \"Asia/Shanghai\""
                                 }
                             ]
                         }

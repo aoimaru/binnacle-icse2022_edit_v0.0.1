@@ -109,41 +109,11 @@
         "astCommand": {
             "children": [
                 {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "dpkgArch"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "SC-DPKG-F-PRINT-ARCHITECTURE"
-                                                }
-                                            ],
-                                            "type": "SC-DPKG"
-                                        }
-                                    ],
-                                    "type": "BASH-DOLLAR-PARENS"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
+                    "children": [],
+                    "type": "SC-DPKG-F-PRINT-ARCHITECTURE"
                 }
             ],
-            "type": "BASH-ASSIGN"
+            "type": "SC-DPKG"
         }
     },
     {
@@ -156,390 +126,17 @@
                             "children": [
                                 {
                                     "children": [],
-                                    "type": "BASH-VARIABLE",
-                                    "value": "dpkgArch##*-"
+                                    "type": "BASH-LITERAL",
+                                    "value": "error: current architecture (${dpkgArch}) does not have a corresponding PyPy ${PYPY_VERSION} binary release"
                                 }
                             ],
-                            "type": "BASH-DOUBLE-QUOTED"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "BASH-CASE-EXP-TARGET"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "BASH-CASE-KIND",
-                                    "value": "CaseBreak"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "amd64"
-                                        }
-                                    ],
-                                    "type": "BASH-CASE-LABELS"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-VARIABLE",
-                                                            "value": "pypyArch"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-ASSIGN-LHS"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-SINGLE-QUOTED",
-                                                            "value": "linux64"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-ASSIGN-RHS"
-                                                }
-                                            ],
-                                            "type": "BASH-ASSIGN"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-VARIABLE",
-                                                            "value": "sha256"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-ASSIGN-LHS"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-SINGLE-QUOTED",
-                                                            "value": "729e3c54325969c98bd3658c6342b9f5987b96bad1d6def04250a08401b54c4b"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-ASSIGN-RHS"
-                                                }
-                                            ],
-                                            "type": "BASH-ASSIGN"
-                                        }
-                                    ],
-                                    "type": "BASH-CASE-EXPRESSIONS"
-                                }
-                            ],
-                            "type": "BASH-CASE-EXP-CASE"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "BASH-CASE-KIND",
-                                    "value": "CaseBreak"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "i386"
-                                        }
-                                    ],
-                                    "type": "BASH-CASE-LABELS"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-VARIABLE",
-                                                            "value": "pypyArch"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-ASSIGN-LHS"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-SINGLE-QUOTED",
-                                                            "value": "linux32"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-ASSIGN-RHS"
-                                                }
-                                            ],
-                                            "type": "BASH-ASSIGN"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-VARIABLE",
-                                                            "value": "sha256"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-ASSIGN-LHS"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-SINGLE-QUOTED",
-                                                            "value": "b8db8fbca9621de8ea8cd7184b322f2dddb2f385e8e5a63dfb75bb3fea4b2e3f"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-ASSIGN-RHS"
-                                                }
-                                            ],
-                                            "type": "BASH-ASSIGN"
-                                        }
-                                    ],
-                                    "type": "BASH-CASE-EXPRESSIONS"
-                                }
-                            ],
-                            "type": "BASH-CASE-EXP-CASE"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "BASH-CASE-KIND",
-                                    "value": "CaseBreak"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "ppc64el"
-                                        }
-                                    ],
-                                    "type": "BASH-CASE-LABELS"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-VARIABLE",
-                                                            "value": "pypyArch"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-ASSIGN-LHS"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-SINGLE-QUOTED",
-                                                            "value": "ppc64le"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-ASSIGN-RHS"
-                                                }
-                                            ],
-                                            "type": "BASH-ASSIGN"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-VARIABLE",
-                                                            "value": "sha256"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-ASSIGN-LHS"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-SINGLE-QUOTED",
-                                                            "value": "2912884da05abc2cdf71dd337c3f280095351312c1a1732a52b6878174a0fd02"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-ASSIGN-RHS"
-                                                }
-                                            ],
-                                            "type": "BASH-ASSIGN"
-                                        }
-                                    ],
-                                    "type": "BASH-CASE-EXPRESSIONS"
-                                }
-                            ],
-                            "type": "BASH-CASE-EXP-CASE"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "BASH-CASE-KIND",
-                                    "value": "CaseBreak"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "s390x"
-                                        }
-                                    ],
-                                    "type": "BASH-CASE-LABELS"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-VARIABLE",
-                                                            "value": "pypyArch"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-ASSIGN-LHS"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-SINGLE-QUOTED",
-                                                            "value": "s390x"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-ASSIGN-RHS"
-                                                }
-                                            ],
-                                            "type": "BASH-ASSIGN"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-VARIABLE",
-                                                            "value": "sha256"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-ASSIGN-LHS"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-SINGLE-QUOTED",
-                                                            "value": "d588b045cc0d3a75c31fce54c1d181b1206ad9a5dd272fe79160a6268401605f"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-ASSIGN-RHS"
-                                                }
-                                            ],
-                                            "type": "BASH-ASSIGN"
-                                        }
-                                    ],
-                                    "type": "BASH-CASE-EXPRESSIONS"
-                                }
-                            ],
-                            "type": "BASH-CASE-EXP-CASE"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "BASH-CASE-KIND",
-                                    "value": "CaseBreak"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-GLOB",
-                                            "value": "*"
-                                        }
-                                    ],
-                                    "type": "BASH-CASE-LABELS"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "children": [
-                                                                                {
-                                                                                    "children": [],
-                                                                                    "type": "BASH-LITERAL",
-                                                                                    "value": "error: current architecture (${dpkgArch}) does not have a corresponding PyPy ${PYPY_VERSION} binary release"
-                                                                                }
-                                                                            ],
-                                                                            "type": "SC-ECHO-ITEM"
-                                                                        }
-                                                                    ],
-                                                                    "type": "SC-ECHO-ITEMS"
-                                                                }
-                                                            ],
-                                                            "type": "SC-ECHO"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-REDIRECT-COMMAND"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-IO-DUPE-STDERR"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-REDIRECT-REDIRECTS"
-                                                }
-                                            ],
-                                            "type": "BASH-REDIRECT"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "UNKNOWN"
-                                        }
-                                    ],
-                                    "type": "BASH-CASE-EXPRESSIONS"
-                                }
-                            ],
-                            "type": "BASH-CASE-EXP-CASE"
-                        }
-                    ],
-                    "type": "BASH-CASE-EXP-CASES"
+                    "type": "SC-ECHO-ITEMS"
                 }
             ],
-            "type": "BASH-CASE-EXPRESSION"
+            "type": "SC-ECHO"
         }
     },
     {
@@ -594,36 +191,34 @@
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "${sha256} *pypy.tar.bz2"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO-ITEM"
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "${sha256} *pypy.tar.bz2"
                                 }
                             ],
-                            "type": "SC-ECHO-ITEMS"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "SC-ECHO"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "SC-SHA-256-SUM-F-CHECK"
-                        }
-                    ],
-                    "type": "SC-SHA-256-SUM"
+                    "type": "SC-ECHO-ITEMS"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-ECHO"
         }
     },
     {
         "astCommandId": "df14a602bcd653559e635eb000a9a48180add800:6:5",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-SHA-256-SUM-F-CHECK"
+                }
+            ],
+            "type": "SC-SHA-256-SUM"
+        }
+    },
+    {
+        "astCommandId": "df14a602bcd653559e635eb000a9a48180add800:6:6",
         "astCommand": {
             "children": [
                 {
@@ -679,7 +274,7 @@
         }
     },
     {
-        "astCommandId": "df14a602bcd653559e635eb000a9a48180add800:6:6",
+        "astCommandId": "df14a602bcd653559e635eb000a9a48180add800:6:7",
         "astCommand": {
             "children": [
                 {
@@ -702,89 +297,21 @@
         }
     },
     {
-        "astCommandId": "df14a602bcd653559e635eb000a9a48180add800:6:7",
+        "astCommandId": "df14a602bcd653559e635eb000a9a48180add800:6:8",
         "astCommand": {
             "children": [
                 {
                     "children": [
                         {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-OP",
-                                            "value": "SingleBracket"
-                                        }
-                                    ],
-                                    "type": "BASH-CONDITION-OP"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-OP",
-                                                            "value": "-f"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-CONDITION-UNARY-OP"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL",
-                                                            "value": "/usr/local/lib_pypy/_ssl_build.py"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-CONDITION-UNARY-EXP"
-                                                }
-                                            ],
-                                            "type": "BASH-CONDITION-UNARY"
-                                        }
-                                    ],
-                                    "type": "BASH-CONDITION-EXP"
-                                }
-                            ],
-                            "type": "BASH-CONDITION"
-                        }
-                    ],
-                    "type": "BASH-IF-CONDITION"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "/usr/local/lib_pypy"
-                                        }
-                                    ],
-                                    "type": "SC-CD-PATH"
-                                }
-                            ],
-                            "type": "SC-CD"
-                        },
-                        {
                             "children": [],
-                            "type": "UNKNOWN"
+                            "type": "BASH-LITERAL",
+                            "value": "/usr/local/lib_pypy"
                         }
                     ],
-                    "type": "BASH-IF-THEN"
-                },
-                {
-                    "children": [],
-                    "type": "BASH-IF-ELSE"
+                    "type": "SC-CD-PATH"
                 }
             ],
-            "type": "BASH-IF-EXPRESSION"
+            "type": "SC-CD"
         }
     },
     {

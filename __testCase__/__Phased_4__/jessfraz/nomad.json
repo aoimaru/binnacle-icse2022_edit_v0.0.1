@@ -105,47 +105,33 @@
         "astCommand": {
             "children": [
                 {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SILENT"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SHOW-ERROR"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "type": "ABS-URL-PROTOCOL-HTTPS",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "ABS-PROBABLY-URL",
-                                            "children": []
-                                        }
-                                    ],
-                                    "type": "BASH-LITERAL"
-                                }
-                            ],
-                            "type": "SC-CURL-URL"
-                        }
-                    ],
-                    "type": "SC-CURL"
+                    "children": [],
+                    "type": "SC-CURL-F-SILENT"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-SHOW-ERROR"
                 },
                 {
                     "children": [
                         {
-                            "children": [],
-                            "type": "SC-APT-KEY-FILENAME"
+                            "children": [
+                                {
+                                    "type": "ABS-URL-PROTOCOL-HTTPS",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-PROBABLY-URL",
+                                    "children": []
+                                }
+                            ],
+                            "type": "BASH-LITERAL"
                         }
                     ],
-                    "type": "SC-APT-KEY-ADD"
+                    "type": "SC-CURL-URL"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-CURL"
         }
     },
     {
@@ -153,59 +139,19 @@
         "astCommand": {
             "children": [
                 {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "type": "ABS-URL-PROTOCOL-HTTPS",
-                                                    "children": []
-                                                },
-                                                {
-                                                    "type": "ABS-PROBABLY-URL",
-                                                    "children": []
-                                                },
-                                                {
-                                                    "type": "ABS-SINGLE-SPACE",
-                                                    "children": []
-                                                }
-                                            ],
-                                            "type": "BASH-LITERAL"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO-ITEM"
-                                }
-                            ],
-                            "type": "SC-ECHO-ITEMS"
-                        }
-                    ],
-                    "type": "SC-ECHO"
-                },
-                {
                     "children": [],
-                    "type": "UNKNOWN"
+                    "type": "SC-APT-KEY-FILENAME"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-APT-KEY-ADD"
         }
     },
     {
-        "astCommandId": "nomad:4:0",
+        "astCommandId": "nomad:3:5",
         "astCommand": {
             "children": [
                 {
                     "children": [
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SILENT"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-LOCATION"
-                        },
                         {
                             "children": [
                                 {
@@ -217,27 +163,68 @@
                                         {
                                             "type": "ABS-PROBABLY-URL",
                                             "children": []
+                                        },
+                                        {
+                                            "type": "ABS-SINGLE-SPACE",
+                                            "children": []
                                         }
                                     ],
                                     "type": "BASH-LITERAL"
                                 }
                             ],
-                            "type": "SC-CURL-URL"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "SC-CURL"
+                    "type": "SC-ECHO-ITEMS"
+                }
+            ],
+            "type": "SC-ECHO"
+        }
+    },
+    {
+        "astCommandId": "nomad:4:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-SILENT"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-LOCATION"
                 },
                 {
                     "children": [
                         {
-                            "children": [],
-                            "type": "SC-BASH-SCRIPT"
+                            "children": [
+                                {
+                                    "type": "ABS-URL-PROTOCOL-HTTPS",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-PROBABLY-URL",
+                                    "children": []
+                                }
+                            ],
+                            "type": "BASH-LITERAL"
                         }
                     ],
-                    "type": "SC-BASH"
+                    "type": "SC-CURL-URL"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-CURL"
+        }
+    },
+    {
+        "astCommandId": "nomad:4:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-BASH-SCRIPT"
+                }
+            ],
+            "type": "SC-BASH"
         }
     },
     {

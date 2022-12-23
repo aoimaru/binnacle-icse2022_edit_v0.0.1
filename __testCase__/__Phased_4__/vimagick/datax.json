@@ -47,70 +47,37 @@
     {
         "astCommandId": "datax:2:2",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
-                    "children": [
-                        {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": [
-                                        {
-                                            "type": "ABS-URL-PROTOCOL-HTTP",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "ABS-EXTENSION-TAR",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "ABS-PROBABLY-URL",
-                                            "children": []
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
                 },
                 {
-                    "type": "SC-TAR",
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-TAR-STRIP",
+                            "type": "BASH-LITERAL",
                             "children": [
                                 {
-                                    "type": "BASH-LITERAL",
+                                    "type": "ABS-URL-PROTOCOL-HTTP",
                                     "children": []
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-TAR-ARGS",
-                            "children": [
+                                },
                                 {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": []
-                                        }
-                                    ]
+                                    "type": "ABS-EXTENSION-TAR",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-PROBABLY-URL",
+                                    "children": []
                                 }
                             ]
                         }
@@ -121,6 +88,37 @@
     },
     {
         "astCommandId": "datax:2:3",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-STRIP",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-TAR-ARGS",
+                    "children": [
+                        {
+                            "type": "SC-TAR-ARG",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "datax:2:4",
         "astCommand": {
             "type": "SC-APK-DEL",
             "children": [

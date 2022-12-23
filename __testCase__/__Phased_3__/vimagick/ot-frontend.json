@@ -2,60 +2,58 @@
     {
         "astCommandId": "ot-frontend:2:0",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "https://github.com/owntracks/frontend/archive/master.tar.gz"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ot-frontend:2:1",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-STRIP-COMPONENTS",
+                    "children": [
                         {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": [],
-                                    "value": "https://github.com/owntracks/frontend/archive/master.tar.gz"
-                                }
-                            ]
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "1"
                         }
                     ]
                 },
                 {
-                    "type": "SC-TAR",
+                    "type": "SC-TAR-ARGS",
                     "children": [
                         {
-                            "type": "SC-TAR-STRIP-COMPONENTS",
+                            "type": "SC-TAR-ARG",
                             "children": [
                                 {
                                     "type": "BASH-LITERAL",
                                     "children": [],
-                                    "value": "1"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-TAR-ARGS",
-                            "children": [
-                                {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "xz"
-                                        }
-                                    ]
+                                    "value": "xz"
                                 }
                             ]
                         }

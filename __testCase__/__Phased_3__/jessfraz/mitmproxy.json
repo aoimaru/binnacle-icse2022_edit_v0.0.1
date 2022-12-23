@@ -211,66 +211,64 @@
         "astCommand": {
             "children": [
                 {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SILENT"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SHOW-ERROR"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-LOCATION"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "value": "https://snapshots.mitmproxy.org/${MITMPROXY_VERSION}/mitmproxy-${MITMPROXY_VERSION}-linux.tar.gz",
-                                    "type": "BASH-LITERAL"
-                                }
-                            ],
-                            "type": "SC-CURL-URL"
-                        }
-                    ],
-                    "type": "SC-CURL"
+                    "children": [],
+                    "type": "SC-CURL-F-SILENT"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-SHOW-ERROR"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-LOCATION"
                 },
                 {
                     "children": [
                         {
                             "children": [],
-                            "type": "SC-TAR-V"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-TAR-X"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-TAR-Z"
-                        },
+                            "value": "https://snapshots.mitmproxy.org/${MITMPROXY_VERSION}/mitmproxy-${MITMPROXY_VERSION}-linux.tar.gz",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-CURL-URL"
+                }
+            ],
+            "type": "SC-CURL"
+        }
+    },
+    {
+        "astCommandId": "mitmproxy:5:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-TAR-V"
+                },
+                {
+                    "children": [],
+                    "type": "SC-TAR-X"
+                },
+                {
+                    "children": [],
+                    "type": "SC-TAR-Z"
+                },
+                {
+                    "children": [
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "value": "/usr/local/bin",
-                                            "type": "BASH-LITERAL"
-                                        }
-                                    ],
-                                    "type": "BASH-PATH"
+                                    "children": [],
+                                    "value": "/usr/local/bin",
+                                    "type": "BASH-LITERAL"
                                 }
                             ],
-                            "type": "SC-TAR-DIRECTORY"
+                            "type": "BASH-PATH"
                         }
                     ],
-                    "type": "SC-TAR"
+                    "type": "SC-TAR-DIRECTORY"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-TAR"
         }
     }
 ]

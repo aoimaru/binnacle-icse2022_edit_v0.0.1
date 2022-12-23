@@ -115,133 +115,110 @@
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "value": "[default]",
-                                                            "type": "BASH-LITERAL"
-                                                        }
-                                                    ],
-                                                    "type": "SC-ECHO-ITEM"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEMS"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "value": "output = json",
-                                                            "type": "BASH-LITERAL"
-                                                        }
-                                                    ],
-                                                    "type": "SC-ECHO-ITEM"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEMS"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "value": "region = $AWS_DEFAULT_REGION",
-                                                            "type": "BASH-LITERAL"
-                                                        }
-                                                    ],
-                                                    "type": "SC-ECHO-ITEM"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEMS"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "value": "aws_access_key_id = $AMAZON_ACCESS_KEY_ID",
-                                                            "type": "BASH-LITERAL"
-                                                        }
-                                                    ],
-                                                    "type": "SC-ECHO-ITEM"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEMS"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "value": "aws_secret_access_key = $AMAZON_SECRET_ACCESS_KEY",
-                                                            "type": "BASH-LITERAL"
-                                                        }
-                                                    ],
-                                                    "type": "SC-ECHO-ITEM"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEMS"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO"
+                                    "children": [],
+                                    "value": "[default]",
+                                    "type": "BASH-LITERAL"
                                 }
                             ],
-                            "type": "BASH-BRACE-GROUP"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "BASH-REDIRECT-COMMAND"
-                },
+                    "type": "SC-ECHO-ITEMS"
+                }
+            ],
+            "type": "SC-ECHO"
+        }
+    },
+    {
+        "astCommandId": "awscli:1:4",
+        "astCommand": {
+            "children": [
                 {
                     "children": [
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "value": "/root/.aws/config",
-                                            "type": "BASH-LITERAL"
-                                        }
-                                    ],
-                                    "type": "BASH-PATH"
+                                    "children": [],
+                                    "value": "output = json",
+                                    "type": "BASH-LITERAL"
                                 }
                             ],
-                            "type": "BASH-REDIRECT-OVERWRITE"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "BASH-REDIRECT-REDIRECTS"
+                    "type": "SC-ECHO-ITEMS"
                 }
             ],
-            "type": "BASH-REDIRECT"
+            "type": "SC-ECHO"
+        }
+    },
+    {
+        "astCommandId": "awscli:1:5",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "region = $AWS_DEFAULT_REGION",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-ECHO-ITEM"
+                        }
+                    ],
+                    "type": "SC-ECHO-ITEMS"
+                }
+            ],
+            "type": "SC-ECHO"
+        }
+    },
+    {
+        "astCommandId": "awscli:1:6",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "aws_access_key_id = $AMAZON_ACCESS_KEY_ID",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-ECHO-ITEM"
+                        }
+                    ],
+                    "type": "SC-ECHO-ITEMS"
+                }
+            ],
+            "type": "SC-ECHO"
+        }
+    },
+    {
+        "astCommandId": "awscli:1:7",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "aws_secret_access_key = $AMAZON_SECRET_ACCESS_KEY",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-ECHO-ITEM"
+                        }
+                    ],
+                    "type": "SC-ECHO-ITEMS"
+                }
+            ],
+            "type": "SC-ECHO"
         }
     }
 ]

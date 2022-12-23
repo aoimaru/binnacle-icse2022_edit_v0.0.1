@@ -72,50 +72,48 @@
         "astCommand": {
             "children": [
                 {
+                    "children": [],
+                    "type": "SC-WGET-F-QUIET"
+                },
+                {
                     "children": [
-                        {
-                            "children": [],
-                            "type": "SC-WGET-F-QUIET"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "value": "-",
-                                            "type": "BASH-LITERAL"
-                                        }
-                                    ],
-                                    "type": "BASH-PATH"
-                                }
-                            ],
-                            "type": "SC-WGET-OUTPUT-DOCUMENT"
-                        },
                         {
                             "children": [
                                 {
                                     "children": [],
-                                    "value": "https://packagecloud.io/AtomEditor/atom/gpgkey",
+                                    "value": "-",
                                     "type": "BASH-LITERAL"
                                 }
                             ],
-                            "type": "SC-WGET-URL"
+                            "type": "BASH-PATH"
                         }
                     ],
-                    "type": "SC-WGET"
+                    "type": "SC-WGET-OUTPUT-DOCUMENT"
                 },
                 {
                     "children": [
                         {
                             "children": [],
-                            "type": "SC-APT-KEY-FILENAME"
+                            "value": "https://packagecloud.io/AtomEditor/atom/gpgkey",
+                            "type": "BASH-LITERAL"
                         }
                     ],
-                    "type": "SC-APT-KEY-ADD"
+                    "type": "SC-WGET-URL"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-WGET"
+        }
+    },
+    {
+        "astCommandId": "atom:3:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APT-KEY-FILENAME"
+                }
+            ],
+            "type": "SC-APT-KEY-ADD"
         }
     },
     {

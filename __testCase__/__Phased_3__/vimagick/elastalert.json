@@ -246,70 +246,40 @@
     {
         "astCommandId": "elastalert:6:5",
         "astCommand": {
-            "type": "BASH-REDIRECT",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "BASH-REDIRECT-COMMAND",
-                    "children": [
-                        {
-                            "type": "SC-CURL",
-                            "children": [
-                                {
-                                    "type": "SC-CURL-F-SILENT",
-                                    "children": []
-                                },
-                                {
-                                    "type": "SC-CURL-F-SHOW-ERROR",
-                                    "children": []
-                                },
-                                {
-                                    "type": "SC-CURL-F-LOCATION",
-                                    "children": []
-                                },
-                                {
-                                    "type": "SC-CURL-URL",
-                                    "children": [
-                                        {
-                                            "type": "BASH-CONCAT",
-                                            "children": [
-                                                {
-                                                    "type": "BASH-LITERAL",
-                                                    "children": [],
-                                                    "value": "https://github.com/Yelp/elastalert/raw/"
-                                                },
-                                                {
-                                                    "type": "BASH-VARIABLE",
-                                                    "children": [],
-                                                    "value": "ELASTALERT_VERSION"
-                                                },
-                                                {
-                                                    "type": "BASH-LITERAL",
-                                                    "children": [],
-                                                    "value": "/config.yaml.example"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
                 },
                 {
-                    "type": "BASH-REDIRECT-REDIRECTS",
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "BASH-REDIRECT-OVERWRITE",
+                            "type": "BASH-CONCAT",
                             "children": [
                                 {
-                                    "type": "BASH-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "config.yaml"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "https://github.com/Yelp/elastalert/raw/"
+                                },
+                                {
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "ELASTALERT_VERSION"
+                                },
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/config.yaml.example"
                                 }
                             ]
                         }

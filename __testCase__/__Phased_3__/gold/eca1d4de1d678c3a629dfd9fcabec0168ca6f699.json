@@ -167,77 +167,45 @@
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL",
-                                                            "value": "#/bin/sh"
-                                                        }
-                                                    ],
-                                                    "type": "SC-ECHO-ITEM"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEMS"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL",
-                                                            "value": "echo \"$JAVA_HOME\""
-                                                        }
-                                                    ],
-                                                    "type": "SC-ECHO-ITEM"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEMS"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO"
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "#/bin/sh"
                                 }
                             ],
-                            "type": "BASH-BRACE-GROUP"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "BASH-REDIRECT-COMMAND"
-                },
+                    "type": "SC-ECHO-ITEMS"
+                }
+            ],
+            "type": "SC-ECHO"
+        }
+    },
+    {
+        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:5:1",
+        "astCommand": {
+            "children": [
                 {
                     "children": [
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "/usr/local/bin/docker-java-home"
-                                        }
-                                    ],
-                                    "type": "BASH-PATH"
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "echo \"$JAVA_HOME\""
                                 }
                             ],
-                            "type": "BASH-REDIRECT-OVERWRITE"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "BASH-REDIRECT-REDIRECTS"
+                    "type": "SC-ECHO-ITEMS"
                 }
             ],
-            "type": "BASH-REDIRECT"
+            "type": "SC-ECHO"
         }
     },
     {
-        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:5:1",
+        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:5:2",
         "astCommand": {
             "children": [
                 {
@@ -280,78 +248,6 @@
         }
     },
     {
-        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:5:2",
-        "astCommand": {
-            "children": [
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-OP",
-                            "value": "SingleBracket"
-                        }
-                    ],
-                    "type": "BASH-CONDITION-OP"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-OP",
-                                            "value": "="
-                                        }
-                                    ],
-                                    "type": "BASH-CONDITION-BINARY-OP"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "BASH-VARIABLE",
-                                                    "value": "JAVA_HOME"
-                                                }
-                                            ],
-                                            "type": "BASH-DOUBLE-QUOTED"
-                                        }
-                                    ],
-                                    "type": "BASH-CONDITION-BINARY-LHS"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "UNKNOWN"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-DOLLAR-PARENS"
-                                                }
-                                            ],
-                                            "type": "BASH-DOUBLE-QUOTED"
-                                        }
-                                    ],
-                                    "type": "BASH-CONDITION-BINARY-RHS"
-                                }
-                            ],
-                            "type": "BASH-CONDITION-BINARY"
-                        }
-                    ],
-                    "type": "BASH-CONDITION-EXP"
-                }
-            ],
-            "type": "BASH-CONDITION"
-        }
-    },
-    {
         "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:9:0",
         "astCommand": {
             "children": [
@@ -376,41 +272,11 @@
         "astCommand": {
             "children": [
                 {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "dpkgArch"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "SC-DPKG-F-PRINT-ARCHITECTURE"
-                                                }
-                                            ],
-                                            "type": "SC-DPKG"
-                                        }
-                                    ],
-                                    "type": "BASH-DOLLAR-PARENS"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
+                    "children": [],
+                    "type": "SC-DPKG-F-PRINT-ARCHITECTURE"
                 }
             ],
-            "type": "BASH-ASSIGN"
+            "type": "SC-DPKG"
         }
     },
     {
@@ -423,186 +289,17 @@
                             "children": [
                                 {
                                     "children": [],
-                                    "type": "BASH-VARIABLE",
-                                    "value": "dpkgArch"
+                                    "type": "BASH-LITERAL",
+                                    "value": "error: unsupported architecture: ${dpkgArch}"
                                 }
                             ],
-                            "type": "BASH-DOUBLE-QUOTED"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "BASH-CASE-EXP-TARGET"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "BASH-CASE-KIND",
-                                    "value": "CaseBreak"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "amd64"
-                                        }
-                                    ],
-                                    "type": "BASH-CASE-LABELS"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-VARIABLE",
-                                                            "value": "upstreamArch"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-ASSIGN-LHS"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-SINGLE-QUOTED",
-                                                            "value": "x64"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-ASSIGN-RHS"
-                                                }
-                                            ],
-                                            "type": "BASH-ASSIGN"
-                                        }
-                                    ],
-                                    "type": "BASH-CASE-EXPRESSIONS"
-                                }
-                            ],
-                            "type": "BASH-CASE-EXP-CASE"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "BASH-CASE-KIND",
-                                    "value": "CaseBreak"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "arm64"
-                                        }
-                                    ],
-                                    "type": "BASH-CASE-LABELS"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-VARIABLE",
-                                                            "value": "upstreamArch"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-ASSIGN-LHS"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-SINGLE-QUOTED",
-                                                            "value": "aarch64"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-ASSIGN-RHS"
-                                                }
-                                            ],
-                                            "type": "BASH-ASSIGN"
-                                        }
-                                    ],
-                                    "type": "BASH-CASE-EXPRESSIONS"
-                                }
-                            ],
-                            "type": "BASH-CASE-EXP-CASE"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "BASH-CASE-KIND",
-                                    "value": "CaseBreak"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-GLOB",
-                                            "value": "*"
-                                        }
-                                    ],
-                                    "type": "BASH-CASE-LABELS"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "children": [
-                                                                                {
-                                                                                    "children": [],
-                                                                                    "type": "BASH-LITERAL",
-                                                                                    "value": "error: unsupported architecture: ${dpkgArch}"
-                                                                                }
-                                                                            ],
-                                                                            "type": "SC-ECHO-ITEM"
-                                                                        }
-                                                                    ],
-                                                                    "type": "SC-ECHO-ITEMS"
-                                                                }
-                                                            ],
-                                                            "type": "SC-ECHO"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-REDIRECT-COMMAND"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-IO-DUPE-STDERR"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-REDIRECT-REDIRECTS"
-                                                }
-                                            ],
-                                            "type": "BASH-REDIRECT"
-                                        }
-                                    ],
-                                    "type": "BASH-CASE-EXPRESSIONS"
-                                }
-                            ],
-                            "type": "BASH-CASE-EXP-CASE"
-                        }
-                    ],
-                    "type": "BASH-CASE-EXP-CASES"
+                    "type": "SC-ECHO-ITEMS"
                 }
             ],
-            "type": "BASH-CASE-EXPRESSION"
+            "type": "SC-ECHO"
         }
     },
     {
@@ -812,42 +509,22 @@
         "astCommand": {
             "children": [
                 {
+                    "children": [],
+                    "type": "SC-GPG-F-BATCH"
+                },
+                {
+                    "children": [],
+                    "type": "SC-GPG-LIST-SIGS"
+                },
+                {
                     "children": [
                         {
                             "children": [],
-                            "type": "SC-GPG-F-BATCH"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-GPG-LIST-SIGS"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "BASH-LITERAL",
-                                    "value": "0xLONG"
-                                }
-                            ],
-                            "type": "SC-GPG-KEYID-FORMAT"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "CA5F11C6CE22644D42C6AC4492EF8D39DC13168F"
-                                        }
-                                    ],
-                                    "type": "SC-GPG-TARGET"
-                                }
-                            ],
-                            "type": "SC-GPG-TARGETS"
+                            "type": "BASH-LITERAL",
+                            "value": "0xLONG"
                         }
                     ],
-                    "type": "SC-GPG"
+                    "type": "SC-GPG-KEYID-FORMAT"
                 },
                 {
                     "children": [
@@ -856,35 +533,56 @@
                                 {
                                     "children": [],
                                     "type": "BASH-LITERAL",
-                                    "value": "0xA5CD6035332FA671"
+                                    "value": "CA5F11C6CE22644D42C6AC4492EF8D39DC13168F"
                                 }
                             ],
-                            "type": "SC-GREP-PATTERN"
+                            "type": "SC-GPG-TARGET"
                         }
                     ],
-                    "type": "SC-GREP"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "BASH-LITERAL",
-                                    "value": "Andrew Haley"
-                                }
-                            ],
-                            "type": "SC-GREP-PATTERN"
-                        }
-                    ],
-                    "type": "SC-GREP"
+                    "type": "SC-GPG-TARGETS"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-GPG"
         }
     },
     {
         "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:9:9",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "0xA5CD6035332FA671"
+                        }
+                    ],
+                    "type": "SC-GREP-PATTERN"
+                }
+            ],
+            "type": "SC-GREP"
+        }
+    },
+    {
+        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:9:10",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "Andrew Haley"
+                        }
+                    ],
+                    "type": "SC-GREP-PATTERN"
+                }
+            ],
+            "type": "SC-GREP"
+        }
+    },
+    {
+        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:9:11",
         "astCommand": {
             "children": [
                 {
@@ -921,7 +619,7 @@
         }
     },
     {
-        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:9:10",
+        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:9:12",
         "astCommand": {
             "children": [
                 {
@@ -952,7 +650,7 @@
         }
     },
     {
-        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:9:11",
+        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:9:13",
         "astCommand": {
             "children": [
                 {
@@ -979,7 +677,7 @@
         }
     },
     {
-        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:9:12",
+        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:9:14",
         "astCommand": {
             "children": [
                 {
@@ -1035,7 +733,7 @@
         }
     },
     {
-        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:9:13",
+        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:9:15",
         "astCommand": {
             "children": [
                 {
@@ -1068,7 +766,7 @@
         }
     },
     {
-        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:9:14",
+        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:9:16",
         "astCommand": {
             "children": [
                 {
@@ -1076,157 +774,137 @@
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL",
-                                                            "value": "#!/usr/bin/env bash"
-                                                        }
-                                                    ],
-                                                    "type": "SC-ECHO-ITEM"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEMS"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL",
-                                                            "value": "set -Eeuo pipefail"
-                                                        }
-                                                    ],
-                                                    "type": "SC-ECHO-ITEM"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEMS"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL",
-                                                            "value": "if ! [ -d \"$JAVA_HOME\" ]; then echo >&2 \"error: missing JAVA_HOME environment variable\"; exit 1; fi"
-                                                        }
-                                                    ],
-                                                    "type": "SC-ECHO-ITEM"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEMS"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL",
-                                                            "value": "cacertsFile=; for f in \"$JAVA_HOME/lib/security/cacerts\" \"$JAVA_HOME/jre/lib/security/cacerts\"; do if [ -e \"$f\" ]; then cacertsFile=\"$f\"; break; fi; done"
-                                                        }
-                                                    ],
-                                                    "type": "SC-ECHO-ITEM"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEMS"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL",
-                                                            "value": "if [ -z \"$cacertsFile\" ] || ! [ -f \"$cacertsFile\" ]; then echo >&2 \"error: failed to find cacerts file in $JAVA_HOME\"; exit 1; fi"
-                                                        }
-                                                    ],
-                                                    "type": "SC-ECHO-ITEM"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEMS"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL",
-                                                            "value": "trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth \"$cacertsFile\""
-                                                        }
-                                                    ],
-                                                    "type": "SC-ECHO-ITEM"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEMS"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO"
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "#!/usr/bin/env bash"
                                 }
                             ],
-                            "type": "BASH-BRACE-GROUP"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "BASH-REDIRECT-COMMAND"
-                },
+                    "type": "SC-ECHO-ITEMS"
+                }
+            ],
+            "type": "SC-ECHO"
+        }
+    },
+    {
+        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:9:17",
+        "astCommand": {
+            "children": [
                 {
                     "children": [
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "/etc/ca-certificates/update.d/docker-openjdk"
-                                        }
-                                    ],
-                                    "type": "BASH-PATH"
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "set -Eeuo pipefail"
                                 }
                             ],
-                            "type": "BASH-REDIRECT-OVERWRITE"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "BASH-REDIRECT-REDIRECTS"
+                    "type": "SC-ECHO-ITEMS"
                 }
             ],
-            "type": "BASH-REDIRECT"
+            "type": "SC-ECHO"
         }
     },
     {
-        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:9:15",
+        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:9:18",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "if ! [ -d \"$JAVA_HOME\" ]; then echo >&2 \"error: missing JAVA_HOME environment variable\"; exit 1; fi"
+                                }
+                            ],
+                            "type": "SC-ECHO-ITEM"
+                        }
+                    ],
+                    "type": "SC-ECHO-ITEMS"
+                }
+            ],
+            "type": "SC-ECHO"
+        }
+    },
+    {
+        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:9:19",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "cacertsFile=; for f in \"$JAVA_HOME/lib/security/cacerts\" \"$JAVA_HOME/jre/lib/security/cacerts\"; do if [ -e \"$f\" ]; then cacertsFile=\"$f\"; break; fi; done"
+                                }
+                            ],
+                            "type": "SC-ECHO-ITEM"
+                        }
+                    ],
+                    "type": "SC-ECHO-ITEMS"
+                }
+            ],
+            "type": "SC-ECHO"
+        }
+    },
+    {
+        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:9:20",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "if [ -z \"$cacertsFile\" ] || ! [ -f \"$cacertsFile\" ]; then echo >&2 \"error: failed to find cacerts file in $JAVA_HOME\"; exit 1; fi"
+                                }
+                            ],
+                            "type": "SC-ECHO-ITEM"
+                        }
+                    ],
+                    "type": "SC-ECHO-ITEMS"
+                }
+            ],
+            "type": "SC-ECHO"
+        }
+    },
+    {
+        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:9:21",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth \"$cacertsFile\""
+                                }
+                            ],
+                            "type": "SC-ECHO-ITEM"
+                        }
+                    ],
+                    "type": "SC-ECHO-ITEMS"
+                }
+            ],
+            "type": "SC-ECHO"
+        }
+    },
+    {
+        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:9:22",
         "astCommand": {
             "children": [
                 {
@@ -1269,72 +947,32 @@
         }
     },
     {
-        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:9:16",
+        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:9:23",
         "astCommand": {
             "children": [
                 {
                     "children": [
                         {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "BASH-LITERAL",
-                                    "value": "*.so"
-                                }
-                            ],
-                            "type": "SC-FIND-NAME"
-                        },
-                        {
                             "children": [],
-                            "type": "SC-FIND-F-EXEC"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "BASH-LITERAL",
-                                    "value": "${JAVA_HOME}/lib"
-                                }
-                            ],
-                            "type": "SC-FIND-TARGET"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "dirname"
-                                        }
-                                    ],
-                                    "type": "SC-FIND-ARG"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-SINGLE-QUOTED",
-                                            "value": "{}"
-                                        }
-                                    ],
-                                    "type": "SC-FIND-ARG"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-SINGLE-QUOTED",
-                                            "value": ";"
-                                        }
-                                    ],
-                                    "type": "SC-FIND-ARG"
-                                }
-                            ],
-                            "type": "SC-FIND-ARGS"
+                            "type": "BASH-LITERAL",
+                            "value": "*.so"
                         }
                     ],
-                    "type": "SC-FIND"
+                    "type": "SC-FIND-NAME"
+                },
+                {
+                    "children": [],
+                    "type": "SC-FIND-F-EXEC"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "${JAVA_HOME}/lib"
+                        }
+                    ],
+                    "type": "SC-FIND-TARGET"
                 },
                 {
                     "children": [
@@ -1342,40 +980,41 @@
                             "children": [
                                 {
                                     "children": [],
-                                    "type": "UNKNOWN"
+                                    "type": "BASH-LITERAL",
+                                    "value": "dirname"
                                 }
                             ],
-                            "type": "BASH-REDIRECT-COMMAND"
+                            "type": "SC-FIND-ARG"
                         },
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "BASH-LITERAL",
-                                                    "value": "/etc/ld.so.conf.d/docker-openjdk.conf"
-                                                }
-                                            ],
-                                            "type": "BASH-PATH"
-                                        }
-                                    ],
-                                    "type": "BASH-REDIRECT-OVERWRITE"
+                                    "children": [],
+                                    "type": "BASH-SINGLE-QUOTED",
+                                    "value": "{}"
                                 }
                             ],
-                            "type": "BASH-REDIRECT-REDIRECTS"
+                            "type": "SC-FIND-ARG"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-SINGLE-QUOTED",
+                                    "value": ";"
+                                }
+                            ],
+                            "type": "SC-FIND-ARG"
                         }
                     ],
-                    "type": "BASH-REDIRECT"
+                    "type": "SC-FIND-ARGS"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-FIND"
         }
     },
     {
-        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:9:17",
+        "astCommandId": "eca1d4de1d678c3a629dfd9fcabec0168ca6f699:9:24",
         "astCommand": {
             "children": [],
             "type": "SC-LDCONFIG"

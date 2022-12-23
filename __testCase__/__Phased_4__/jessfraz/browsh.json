@@ -344,122 +344,96 @@
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "type": "ABS-PATH-ABSOLUTE",
-                                                            "children": []
-                                                        },
-                                                        {
-                                                            "type": "ABS-MAYBE-PATH",
-                                                            "children": []
-                                                        }
-                                                    ],
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-CD-PATH"
-                                        }
-                                    ],
-                                    "type": "SC-CD"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
+                                    "type": "ABS-PATH-ABSOLUTE",
+                                    "children": []
+                                },
                                 {
-                                    "children": [],
-                                    "type": "UNKNOWN"
+                                    "type": "ABS-MAYBE-PATH",
+                                    "children": []
                                 }
                             ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "SC-TAR-X"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "type": "ABS-EXTENSION-TAR",
-                                                                    "children": []
-                                                                },
-                                                                {
-                                                                    "type": "ABS-PATH-ABSOLUTE",
-                                                                    "children": []
-                                                                },
-                                                                {
-                                                                    "type": "ABS-MAYBE-PATH",
-                                                                    "children": []
-                                                                }
-                                                            ],
-                                                            "type": "BASH-LITERAL"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-PATH"
-                                                }
-                                            ],
-                                            "type": "SC-TAR-FILE"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "type": "ABS-PATH-ABSOLUTE",
-                                                                    "children": []
-                                                                },
-                                                                {
-                                                                    "type": "ABS-MAYBE-PATH",
-                                                                    "children": []
-                                                                }
-                                                            ],
-                                                            "type": "BASH-LITERAL"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-PATH"
-                                                }
-                                            ],
-                                            "type": "SC-TAR-DIRECTORY"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-TAR-STRIP-COMPONENTS"
-                                        }
-                                    ],
-                                    "type": "SC-TAR"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
+                            "type": "BASH-LITERAL"
                         }
                     ],
-                    "type": "BASH-AND-IF"
+                    "type": "SC-CD-PATH"
                 }
             ],
-            "type": "BASH-SUBSHELL"
+            "type": "SC-CD"
         }
     },
     {
         "astCommandId": "browsh:9:3",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-TAR-X"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "type": "ABS-EXTENSION-TAR",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-PATH-ABSOLUTE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-MAYBE-PATH",
+                                            "children": []
+                                        }
+                                    ],
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "BASH-PATH"
+                        }
+                    ],
+                    "type": "SC-TAR-FILE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "type": "ABS-PATH-ABSOLUTE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-MAYBE-PATH",
+                                            "children": []
+                                        }
+                                    ],
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "BASH-PATH"
+                        }
+                    ],
+                    "type": "SC-TAR-DIRECTORY"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-TAR-STRIP-COMPONENTS"
+                }
+            ],
+            "type": "SC-TAR"
+        }
+    },
+    {
+        "astCommandId": "browsh:9:4",
         "astCommand": {
             "children": [
                 {
@@ -616,65 +590,8 @@
     {
         "astCommandId": "browsh:12:0",
         "astCommand": {
-            "children": [
-                {
-                    "children": [],
-                    "type": "UNKNOWN"
-                }
-            ],
-            "type": "BASH-BACKGROUNDED"
-        }
-    },
-    {
-        "astCommandId": "browsh:12:1",
-        "astCommand": {
-            "children": [
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-VARIABLE:pidsave"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-VARIABLE:!"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
-                }
-            ],
-            "type": "BASH-ASSIGN"
-        }
-    },
-    {
-        "astCommandId": "browsh:12:2",
-        "astCommand": {
-            "children": [
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "UNKNOWN"
-                        }
-                    ],
-                    "type": "BASH-OR-MEM"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "SC-TRUE"
-                        }
-                    ],
-                    "type": "BASH-OR-MEM"
-                }
-            ],
-            "type": "BASH-OR-IF"
+            "children": [],
+            "type": "SC-TRUE"
         }
     }
 ]

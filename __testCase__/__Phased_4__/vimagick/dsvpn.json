@@ -47,48 +47,46 @@
     {
         "astCommandId": "dsvpn:3:2",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
-                    "children": [
-                        {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-VARIABLE:DSVPN_URL",
-                                    "children": []
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
                 },
                 {
-                    "type": "SC-TAR",
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-TAR-ARGS",
+                            "type": "BASH-VARIABLE:DSVPN_URL",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "dsvpn:3:3",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-ARGS",
+                    "children": [
+                        {
+                            "type": "SC-TAR-ARG",
                             "children": [
                                 {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": []
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": []
                                 }
                             ]
                         }
@@ -98,7 +96,7 @@
         }
     },
     {
-        "astCommandId": "dsvpn:3:3",
+        "astCommandId": "dsvpn:3:4",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -124,7 +122,7 @@
         }
     },
     {
-        "astCommandId": "dsvpn:3:4",
+        "astCommandId": "dsvpn:3:5",
         "astCommand": {
             "type": "SC-MAKE",
             "children": [

@@ -52,125 +52,51 @@
     {
         "astCommandId": "i2pd:5:3",
         "astCommand": {
-            "type": "BASH-BRACE-GROUP",
+            "type": "SC-WGET",
             "children": [
                 {
-                    "type": "SC-WGET",
+                    "type": "SC-WGET-OUTPUT-DOCUMENT",
                     "children": [
                         {
-                            "type": "SC-WGET-OUTPUT-DOCUMENT",
+                            "type": "BASH-PATH",
                             "children": [
                                 {
-                                    "type": "BASH-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "i2pd.deb"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-WGET-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-VARIABLE",
+                                    "type": "BASH-LITERAL",
                                     "children": [],
-                                    "value": "I2PD_URL"
+                                    "value": "i2pd.deb"
                                 }
                             ]
                         }
                     ]
                 },
                 {
-                    "type": "SC-DPKG",
+                    "type": "SC-WGET-URL",
                     "children": [
                         {
-                            "type": "SC-DPKG-INSTALLS",
-                            "children": [
-                                {
-                                    "type": "SC-DPKG-INSTALL",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "i2pd.deb"
-                                        }
-                                    ]
-                                }
-                            ]
+                            "type": "BASH-VARIABLE",
+                            "children": [],
+                            "value": "I2PD_URL"
                         }
                     ]
-                },
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "i2pd:5:4",
+        "astCommand": {
+            "type": "SC-DPKG",
+            "children": [
                 {
-                    "type": "SC-APT-GET-INSTALL",
+                    "type": "SC-DPKG-INSTALLS",
                     "children": [
                         {
-                            "type": "SC-APT-GET-F-FIX-BROKEN",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-APT-GET-F-YES",
-                            "children": []
-                        }
-                    ]
-                },
-                {
-                    "type": "SC-SED",
-                    "children": [
-                        {
-                            "type": "SC-SED-F-IN-PLACE",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-SED-EXPRESSIONS",
+                            "type": "SC-DPKG-INSTALL",
                             "children": [
                                 {
-                                    "type": "SC-SED-EXPRESSION",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "/^address =/s/127.0.0.1/0.0.0.0/"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-SED-PATHS",
-                            "children": [
-                                {
-                                    "type": "SC-SED-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "/etc/i2pd/i2pd.conf"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "SC-RM",
-                    "children": [
-                        {
-                            "type": "SC-RM-PATHS",
-                            "children": [
-                                {
-                                    "type": "SC-RM-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "i2pd.deb"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "i2pd.deb"
                                 }
                             ]
                         }
@@ -180,7 +106,88 @@
         }
     },
     {
-        "astCommandId": "i2pd:5:4",
+        "astCommandId": "i2pd:5:5",
+        "astCommand": {
+            "type": "SC-APT-GET-INSTALL",
+            "children": [
+                {
+                    "type": "SC-APT-GET-F-FIX-BROKEN",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-F-YES",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "i2pd:5:6",
+        "astCommand": {
+            "type": "SC-SED",
+            "children": [
+                {
+                    "type": "SC-SED-F-IN-PLACE",
+                    "children": []
+                },
+                {
+                    "type": "SC-SED-EXPRESSIONS",
+                    "children": [
+                        {
+                            "type": "SC-SED-EXPRESSION",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/^address =/s/127.0.0.1/0.0.0.0/"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-SED-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-SED-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/etc/i2pd/i2pd.conf"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "i2pd:5:7",
+        "astCommand": {
+            "type": "SC-RM",
+            "children": [
+                {
+                    "type": "SC-RM-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "i2pd.deb"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "i2pd:5:8",
         "astCommand": {
             "type": "SC-APT-GET-REMOVE",
             "children": [
@@ -207,7 +214,7 @@
         }
     },
     {
-        "astCommandId": "i2pd:5:5",
+        "astCommandId": "i2pd:5:9",
         "astCommand": {
             "type": "SC-RM",
             "children": [

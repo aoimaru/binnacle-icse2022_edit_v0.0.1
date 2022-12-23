@@ -156,87 +156,29 @@
         "astCommand": {
             "children": [
                 {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SILENT"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SHOW-ERROR"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-LOCATION"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "value": "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-Country&license_key=${LICENSE_KEY}&suffix=tar.gz",
-                                    "type": "BASH-LITERAL"
-                                }
-                            ],
-                            "type": "SC-CURL-URL"
-                        }
-                    ],
-                    "type": "SC-CURL"
+                    "children": [],
+                    "type": "SC-CURL-F-SILENT"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-SHOW-ERROR"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-LOCATION"
                 },
                 {
                     "children": [
                         {
                             "children": [],
-                            "type": "SC-TAR-X"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-TAR-Z"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "value": "-",
-                                            "type": "BASH-LITERAL"
-                                        }
-                                    ],
-                                    "type": "BASH-PATH"
-                                }
-                            ],
-                            "type": "SC-TAR-FILE"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "value": "1",
-                                    "type": "BASH-LITERAL"
-                                }
-                            ],
-                            "type": "SC-TAR-STRIP-COMPONENTS"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "value": "/usr/share/GeoIP",
-                                            "type": "BASH-LITERAL"
-                                        }
-                                    ],
-                                    "type": "BASH-PATH"
-                                }
-                            ],
-                            "type": "SC-TAR-DIRECTORY"
+                            "value": "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-Country&license_key=${LICENSE_KEY}&suffix=tar.gz",
+                            "type": "BASH-LITERAL"
                         }
                     ],
-                    "type": "SC-TAR"
+                    "type": "SC-CURL-URL"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-CURL"
         }
     },
     {
@@ -244,87 +186,55 @@
         "astCommand": {
             "children": [
                 {
+                    "children": [],
+                    "type": "SC-TAR-X"
+                },
+                {
+                    "children": [],
+                    "type": "SC-TAR-Z"
+                },
+                {
                     "children": [
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SILENT"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SHOW-ERROR"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-LOCATION"
-                        },
                         {
                             "children": [
                                 {
                                     "children": [],
-                                    "value": "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key=${LICENSE_KEY}&suffix=tar.gz",
+                                    "value": "-",
                                     "type": "BASH-LITERAL"
                                 }
                             ],
-                            "type": "SC-CURL-URL"
+                            "type": "BASH-PATH"
                         }
                     ],
-                    "type": "SC-CURL"
+                    "type": "SC-TAR-FILE"
                 },
                 {
                     "children": [
                         {
                             "children": [],
-                            "type": "SC-TAR-X"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-TAR-Z"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "value": "-",
-                                            "type": "BASH-LITERAL"
-                                        }
-                                    ],
-                                    "type": "BASH-PATH"
-                                }
-                            ],
-                            "type": "SC-TAR-FILE"
-                        },
+                            "value": "1",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-TAR-STRIP-COMPONENTS"
+                },
+                {
+                    "children": [
                         {
                             "children": [
                                 {
                                     "children": [],
-                                    "value": "1",
+                                    "value": "/usr/share/GeoIP",
                                     "type": "BASH-LITERAL"
                                 }
                             ],
-                            "type": "SC-TAR-STRIP-COMPONENTS"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "value": "/usr/share/GeoIP",
-                                            "type": "BASH-LITERAL"
-                                        }
-                                    ],
-                                    "type": "BASH-PATH"
-                                }
-                            ],
-                            "type": "SC-TAR-DIRECTORY"
+                            "type": "BASH-PATH"
                         }
                     ],
-                    "type": "SC-TAR"
+                    "type": "SC-TAR-DIRECTORY"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-TAR"
         }
     },
     {
@@ -332,91 +242,175 @@
         "astCommand": {
             "children": [
                 {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SILENT"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SHOW-ERROR"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-LOCATION"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "value": "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-ASN&license_key=${LICENSE_KEY}&suffix=tar.gz",
-                                    "type": "BASH-LITERAL"
-                                }
-                            ],
-                            "type": "SC-CURL-URL"
-                        }
-                    ],
-                    "type": "SC-CURL"
+                    "children": [],
+                    "type": "SC-CURL-F-SILENT"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-SHOW-ERROR"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-LOCATION"
                 },
                 {
                     "children": [
                         {
                             "children": [],
-                            "type": "SC-TAR-X"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-TAR-Z"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "value": "-",
-                                            "type": "BASH-LITERAL"
-                                        }
-                                    ],
-                                    "type": "BASH-PATH"
-                                }
-                            ],
-                            "type": "SC-TAR-FILE"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "value": "1",
-                                    "type": "BASH-LITERAL"
-                                }
-                            ],
-                            "type": "SC-TAR-STRIP-COMPONENTS"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "value": "/usr/share/GeoIP",
-                                            "type": "BASH-LITERAL"
-                                        }
-                                    ],
-                                    "type": "BASH-PATH"
-                                }
-                            ],
-                            "type": "SC-TAR-DIRECTORY"
+                            "value": "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key=${LICENSE_KEY}&suffix=tar.gz",
+                            "type": "BASH-LITERAL"
                         }
                     ],
-                    "type": "SC-TAR"
+                    "type": "SC-CURL-URL"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-CURL"
         }
     },
     {
         "astCommandId": "telize:6:5",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-TAR-X"
+                },
+                {
+                    "children": [],
+                    "type": "SC-TAR-Z"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "-",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "BASH-PATH"
+                        }
+                    ],
+                    "type": "SC-TAR-FILE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "1",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-TAR-STRIP-COMPONENTS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "/usr/share/GeoIP",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "BASH-PATH"
+                        }
+                    ],
+                    "type": "SC-TAR-DIRECTORY"
+                }
+            ],
+            "type": "SC-TAR"
+        }
+    },
+    {
+        "astCommandId": "telize:6:6",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-SILENT"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-SHOW-ERROR"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-LOCATION"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-ASN&license_key=${LICENSE_KEY}&suffix=tar.gz",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-CURL-URL"
+                }
+            ],
+            "type": "SC-CURL"
+        }
+    },
+    {
+        "astCommandId": "telize:6:7",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-TAR-X"
+                },
+                {
+                    "children": [],
+                    "type": "SC-TAR-Z"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "-",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "BASH-PATH"
+                        }
+                    ],
+                    "type": "SC-TAR-FILE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "1",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-TAR-STRIP-COMPONENTS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "/usr/share/GeoIP",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "BASH-PATH"
+                        }
+                    ],
+                    "type": "SC-TAR-DIRECTORY"
+                }
+            ],
+            "type": "SC-TAR"
+        }
+    },
+    {
+        "astCommandId": "telize:6:8",
         "astCommand": {
             "children": [
                 {
@@ -444,7 +438,43 @@
         }
     },
     {
-        "astCommandId": "telize:6:6",
+        "astCommandId": "telize:6:9",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "/usr/src/telize",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-CD-PATH"
+                }
+            ],
+            "type": "SC-CD"
+        }
+    },
+    {
+        "astCommandId": "telize:6:10",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "${TELIZE_VERSION}",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GIT-TARGET"
+                }
+            ],
+            "type": "SC-GIT-CHECKOUT"
+        }
+    },
+    {
+        "astCommandId": "telize:6:11",
         "astCommand": {
             "children": [
                 {
@@ -454,95 +484,40 @@
                                 {
                                     "children": [
                                         {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "value": "/usr/src/telize",
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-CD-PATH"
+                                            "children": [],
+                                            "value": "*",
+                                            "type": "BASH-GLOB"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": ".conf",
+                                            "type": "BASH-LITERAL"
                                         }
                                     ],
-                                    "type": "SC-CD"
+                                    "type": "BASH-CONCAT"
                                 }
                             ],
-                            "type": "BASH-AND-MEM"
+                            "type": "SC-CP-PATH"
                         },
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "value": "${TELIZE_VERSION}",
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-GIT-TARGET"
-                                        }
-                                    ],
-                                    "type": "SC-GIT-CHECKOUT"
+                                    "children": [],
+                                    "value": "/etc/nginx/",
+                                    "type": "BASH-LITERAL"
                                 }
                             ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [],
-                                                                    "value": "*",
-                                                                    "type": "BASH-GLOB"
-                                                                },
-                                                                {
-                                                                    "children": [],
-                                                                    "value": ".conf",
-                                                                    "type": "BASH-LITERAL"
-                                                                }
-                                                            ],
-                                                            "type": "BASH-CONCAT"
-                                                        }
-                                                    ],
-                                                    "type": "SC-CP-PATH"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "value": "/etc/nginx/",
-                                                            "type": "BASH-LITERAL"
-                                                        }
-                                                    ],
-                                                    "type": "SC-CP-PATH"
-                                                }
-                                            ],
-                                            "type": "SC-CP-PATHS"
-                                        }
-                                    ],
-                                    "type": "SC-CP"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
+                            "type": "SC-CP-PATH"
                         }
                     ],
-                    "type": "BASH-AND-IF"
+                    "type": "SC-CP-PATHS"
                 }
             ],
-            "type": "BASH-SUBSHELL"
+            "type": "SC-CP"
         }
     },
     {
-        "astCommandId": "telize:6:7",
+        "astCommandId": "telize:6:12",
         "astCommand": {
             "children": [
                 {

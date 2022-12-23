@@ -119,85 +119,83 @@
     {
         "astCommandId": "snort:4:4",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
+                            "type": "BASH-VARIABLE",
+                            "children": [],
+                            "value": "RULES_URL"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "snort:4:5",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-STRIP",
+                    "children": [
                         {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "1"
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-TAR-DIRECTORY",
+                    "children": [
                         {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
+                            "type": "BASH-PATH",
                             "children": [
                                 {
-                                    "type": "BASH-VARIABLE",
+                                    "type": "BASH-LITERAL",
                                     "children": [],
-                                    "value": "RULES_URL"
+                                    "value": "/etc/snort/rules/"
                                 }
                             ]
                         }
                     ]
                 },
                 {
-                    "type": "SC-TAR",
+                    "type": "SC-TAR-ARGS",
                     "children": [
                         {
-                            "type": "SC-TAR-STRIP",
+                            "type": "SC-TAR-ARG",
                             "children": [
                                 {
                                     "type": "BASH-LITERAL",
                                     "children": [],
-                                    "value": "1"
+                                    "value": "xz"
                                 }
                             ]
                         },
                         {
-                            "type": "SC-TAR-DIRECTORY",
+                            "type": "SC-TAR-ARG",
                             "children": [
                                 {
-                                    "type": "BASH-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "/etc/snort/rules/"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-TAR-ARGS",
-                            "children": [
-                                {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "xz"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "community-rules/community.rules"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "community-rules/community.rules"
                                 }
                             ]
                         }
@@ -207,7 +205,7 @@
         }
     },
     {
-        "astCommandId": "snort:4:5",
+        "astCommandId": "snort:4:6",
         "astCommand": {
             "type": "SC-MKDIR",
             "children": [
@@ -254,7 +252,7 @@
         }
     },
     {
-        "astCommandId": "snort:4:6",
+        "astCommandId": "snort:4:7",
         "astCommand": {
             "type": "SC-LN",
             "children": [
@@ -286,46 +284,44 @@
         }
     },
     {
-        "astCommandId": "snort:4:7",
+        "astCommandId": "snort:4:8",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
-                    "children": [
-                        {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": [],
-                                    "value": "https://bootstrap.pypa.io/get-pip.py"
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
                 },
                 {
-                    "type": "SC-PYTHON",
+                    "type": "SC-CURL-F-SHOW-ERROR",
                     "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "https://bootstrap.pypa.io/get-pip.py"
+                        }
+                    ]
                 }
             ]
         }
     },
     {
-        "astCommandId": "snort:4:8",
+        "astCommandId": "snort:4:9",
+        "astCommand": {
+            "type": "SC-PYTHON",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "snort:4:10",
         "astCommand": {
             "type": "SC-PIP-INSTALL",
             "children": [
@@ -352,7 +348,7 @@
         }
     },
     {
-        "astCommandId": "snort:4:9",
+        "astCommandId": "snort:4:11",
         "astCommand": {
             "type": "SC-YUM-CLEAN-ALL",
             "children": []

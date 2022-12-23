@@ -35,28 +35,67 @@
                                 {
                                     "children": [
                                         {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "type": "ABS-PROBABLY-URL",
-                                                            "children": []
-                                                        }
-                                                    ],
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-GO-PACKAGE"
+                                            "type": "ABS-PROBABLY-URL",
+                                            "children": []
                                         }
                                     ],
-                                    "type": "SC-GO-PACKAGES"
+                                    "type": "BASH-LITERAL"
                                 }
                             ],
-                            "type": "SC-GO-GET"
+                            "type": "SC-GO-PACKAGE"
                         }
                     ],
-                    "type": "BASH-OR-MEM"
-                },
+                    "type": "SC-GO-PACKAGES"
+                }
+            ],
+            "type": "SC-GO-GET"
+        }
+    },
+    {
+        "astCommandId": "golinks:4:1",
+        "astCommand": {
+            "children": [],
+            "type": "SC-TRUE"
+        }
+    },
+    {
+        "astCommandId": "golinks:4:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "type": "ABS-PATH-ABSOLUTE",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-MAYBE-SRC-DIR",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-MAYBE-PATH",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-PROBABLY-URL",
+                                    "children": []
+                                }
+                            ],
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-CD-PATH"
+                }
+            ],
+            "type": "SC-CD"
+        }
+    },
+    {
+        "astCommandId": "golinks:4:3",
+        "astCommand": {
+            "children": [
                 {
                     "children": [
                         {
@@ -64,131 +103,64 @@
                                 {
                                     "children": [
                                         {
-                                            "children": [],
-                                            "type": "SC-TRUE"
-                                        }
-                                    ],
-                                    "type": "BASH-AND-MEM"
-                                },
-                                {
-                                    "children": [
+                                            "type": "ABS-PATH-RELATIVE",
+                                            "children": []
+                                        },
                                         {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "type": "ABS-PATH-ABSOLUTE",
-                                                                    "children": []
-                                                                },
-                                                                {
-                                                                    "type": "ABS-MAYBE-SRC-DIR",
-                                                                    "children": []
-                                                                },
-                                                                {
-                                                                    "type": "ABS-MAYBE-PATH",
-                                                                    "children": []
-                                                                },
-                                                                {
-                                                                    "type": "ABS-PROBABLY-URL",
-                                                                    "children": []
-                                                                }
-                                                            ],
-                                                            "type": "BASH-LITERAL"
-                                                        }
-                                                    ],
-                                                    "type": "SC-CD-PATH"
-                                                }
-                                            ],
-                                            "type": "SC-CD"
+                                            "type": "ABS-MAYBE-PATH",
+                                            "children": []
                                         }
                                     ],
-                                    "type": "BASH-AND-MEM"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "type": "ABS-PATH-RELATIVE",
-                                                                            "children": []
-                                                                        },
-                                                                        {
-                                                                            "type": "ABS-MAYBE-PATH",
-                                                                            "children": []
-                                                                        }
-                                                                    ],
-                                                                    "type": "BASH-LITERAL"
-                                                                }
-                                                            ],
-                                                            "type": "SC-GO-PACKAGE"
-                                                        }
-                                                    ],
-                                                    "type": "SC-GO-PACKAGES"
-                                                }
-                                            ],
-                                            "type": "SC-GO-BUILD"
-                                        }
-                                    ],
-                                    "type": "BASH-AND-MEM"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [],
-                                                                    "type": "BASH-LITERAL"
-                                                                }
-                                                            ],
-                                                            "type": "SC-MV-PATH"
-                                                        },
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "type": "ABS-PATH-ABSOLUTE",
-                                                                            "children": []
-                                                                        },
-                                                                        {
-                                                                            "type": "ABS-MAYBE-PATH",
-                                                                            "children": []
-                                                                        }
-                                                                    ],
-                                                                    "type": "BASH-LITERAL"
-                                                                }
-                                                            ],
-                                                            "type": "SC-MV-PATH"
-                                                        }
-                                                    ],
-                                                    "type": "SC-MV-PATHS"
-                                                }
-                                            ],
-                                            "type": "SC-MV"
-                                        }
-                                    ],
-                                    "type": "BASH-AND-MEM"
+                                    "type": "BASH-LITERAL"
                                 }
                             ],
-                            "type": "BASH-AND-IF"
+                            "type": "SC-GO-PACKAGE"
                         }
                     ],
-                    "type": "BASH-OR-MEM"
+                    "type": "SC-GO-PACKAGES"
                 }
             ],
-            "type": "BASH-OR-IF"
+            "type": "SC-GO-BUILD"
+        }
+    },
+    {
+        "astCommandId": "golinks:4:4",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-MV-PATH"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "type": "ABS-PATH-ABSOLUTE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-MAYBE-PATH",
+                                            "children": []
+                                        }
+                                    ],
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-MV-PATH"
+                        }
+                    ],
+                    "type": "SC-MV-PATHS"
+                }
+            ],
+            "type": "SC-MV"
         }
     }
 ]

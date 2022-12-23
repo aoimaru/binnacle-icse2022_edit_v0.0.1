@@ -102,85 +102,83 @@
     {
         "astCommandId": "casperjs:7:3",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
+                            "type": "BASH-VARIABLE",
+                            "children": [],
+                            "value": "PHANTOM_URL"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "casperjs:7:4",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-DIRECTORY",
+                    "children": [
                         {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
+                            "type": "BASH-PATH",
                             "children": [
                                 {
                                     "type": "BASH-VARIABLE",
                                     "children": [],
-                                    "value": "PHANTOM_URL"
+                                    "value": "PHANTOM_DIR"
                                 }
                             ]
                         }
                     ]
                 },
                 {
-                    "type": "SC-TAR",
+                    "type": "SC-TAR-STRIP",
                     "children": [
                         {
-                            "type": "SC-TAR-DIRECTORY",
-                            "children": [
-                                {
-                                    "type": "BASH-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-VARIABLE",
-                                            "children": [],
-                                            "value": "PHANTOM_DIR"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "2"
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-TAR-WILDCARDS",
+                    "children": [
                         {
-                            "type": "SC-TAR-STRIP",
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "*/bin/phantomjs"
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-TAR-ARGS",
+                    "children": [
+                        {
+                            "type": "SC-TAR-ARG",
                             "children": [
                                 {
                                     "type": "BASH-LITERAL",
                                     "children": [],
-                                    "value": "2"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-TAR-WILDCARDS",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": [],
-                                    "value": "*/bin/phantomjs"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-TAR-ARGS",
-                            "children": [
-                                {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "xj"
-                                        }
-                                    ]
+                                    "value": "xj"
                                 }
                             ]
                         }
@@ -190,7 +188,7 @@
         }
     },
     {
-        "astCommandId": "casperjs:7:4",
+        "astCommandId": "casperjs:7:5",
         "astCommand": {
             "type": "SC-CHMOD",
             "children": [
@@ -233,7 +231,7 @@
         }
     },
     {
-        "astCommandId": "casperjs:7:5",
+        "astCommandId": "casperjs:7:6",
         "astCommand": {
             "type": "SC-MKDIR",
             "children": [
@@ -260,77 +258,75 @@
         }
     },
     {
-        "astCommandId": "casperjs:7:6",
+        "astCommandId": "casperjs:7:7",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
+                            "type": "BASH-VARIABLE",
+                            "children": [],
+                            "value": "CASPER_URL"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "casperjs:7:8",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-STRIP",
+                    "children": [
                         {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "1"
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-TAR-DIRECTORY",
+                    "children": [
                         {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
+                            "type": "BASH-PATH",
                             "children": [
                                 {
                                     "type": "BASH-VARIABLE",
                                     "children": [],
-                                    "value": "CASPER_URL"
+                                    "value": "CASPER_DIR"
                                 }
                             ]
                         }
                     ]
                 },
                 {
-                    "type": "SC-TAR",
+                    "type": "SC-TAR-ARGS",
                     "children": [
                         {
-                            "type": "SC-TAR-STRIP",
+                            "type": "SC-TAR-ARG",
                             "children": [
                                 {
                                     "type": "BASH-LITERAL",
                                     "children": [],
-                                    "value": "1"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-TAR-DIRECTORY",
-                            "children": [
-                                {
-                                    "type": "BASH-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-VARIABLE",
-                                            "children": [],
-                                            "value": "CASPER_DIR"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-TAR-ARGS",
-                            "children": [
-                                {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "xz"
-                                        }
-                                    ]
+                                    "value": "xz"
                                 }
                             ]
                         }
@@ -340,7 +336,7 @@
         }
     },
     {
-        "astCommandId": "casperjs:7:7",
+        "astCommandId": "casperjs:7:9",
         "astCommand": {
             "type": "SC-LN",
             "children": [
@@ -386,7 +382,7 @@
         }
     },
     {
-        "astCommandId": "casperjs:7:8",
+        "astCommandId": "casperjs:7:10",
         "astCommand": {
             "type": "SC-APT-GET-REMOVE",
             "children": [
@@ -423,7 +419,7 @@
         }
     },
     {
-        "astCommandId": "casperjs:7:9",
+        "astCommandId": "casperjs:7:11",
         "astCommand": {
             "type": "SC-RM",
             "children": [

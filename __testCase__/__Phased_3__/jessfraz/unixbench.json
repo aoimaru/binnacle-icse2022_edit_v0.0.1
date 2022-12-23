@@ -177,76 +177,74 @@
         "astCommand": {
             "children": [
                 {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SILENT"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SHOW-ERROR"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-LOCATION"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "value": "https://github.com/kdlucas/byte-unixbench/archive/${UNIXBENCH_VERSION}.tar.gz",
-                                    "type": "BASH-LITERAL"
-                                }
-                            ],
-                            "type": "SC-CURL-URL"
-                        }
-                    ],
-                    "type": "SC-CURL"
+                    "children": [],
+                    "type": "SC-CURL-F-SILENT"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-SHOW-ERROR"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-LOCATION"
                 },
                 {
                     "children": [
                         {
                             "children": [],
-                            "type": "SC-TAR-X"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-TAR-Z"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "value": "/usr/src/unixbench",
-                                            "type": "BASH-LITERAL"
-                                        }
-                                    ],
-                                    "type": "BASH-PATH"
-                                }
-                            ],
-                            "type": "SC-TAR-DIRECTORY"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "value": "2",
-                                    "type": "BASH-LITERAL"
-                                }
-                            ],
-                            "type": "SC-TAR-STRIP-COMPONENTS"
+                            "value": "https://github.com/kdlucas/byte-unixbench/archive/${UNIXBENCH_VERSION}.tar.gz",
+                            "type": "BASH-LITERAL"
                         }
                     ],
-                    "type": "SC-TAR"
+                    "type": "SC-CURL-URL"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-CURL"
         }
     },
     {
         "astCommandId": "unixbench:3:4",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-TAR-X"
+                },
+                {
+                    "children": [],
+                    "type": "SC-TAR-Z"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "/usr/src/unixbench",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "BASH-PATH"
+                        }
+                    ],
+                    "type": "SC-TAR-DIRECTORY"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "2",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-TAR-STRIP-COMPONENTS"
+                }
+            ],
+            "type": "SC-TAR"
+        }
+    },
+    {
+        "astCommandId": "unixbench:3:5",
         "astCommand": {
             "children": [
                 {
@@ -289,7 +287,7 @@
         }
     },
     {
-        "astCommandId": "unixbench:3:5",
+        "astCommandId": "unixbench:3:6",
         "astCommand": {
             "children": [
                 {

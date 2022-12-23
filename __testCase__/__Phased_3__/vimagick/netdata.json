@@ -226,75 +226,50 @@
     {
         "astCommandId": "netdata:2:3",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
-                    "children": [
-                        {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-CONCAT",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "https://github.com/firehol/netdata/releases/download/v"
-                                        },
-                                        {
-                                            "type": "BASH-VARIABLE",
-                                            "children": [],
-                                            "value": "NETDATA_VERSION"
-                                        },
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "/netdata-"
-                                        },
-                                        {
-                                            "type": "BASH-VARIABLE",
-                                            "children": [],
-                                            "value": "NETDATA_VERSION"
-                                        },
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": ".tar.gz"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
                 },
                 {
-                    "type": "SC-TAR",
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-TAR-ARGS",
+                            "type": "BASH-CONCAT",
                             "children": [
                                 {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "xz"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "https://github.com/firehol/netdata/releases/download/v"
+                                },
+                                {
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "NETDATA_VERSION"
+                                },
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/netdata-"
+                                },
+                                {
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "NETDATA_VERSION"
+                                },
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": ".tar.gz"
                                 }
                             ]
                         }
@@ -305,6 +280,29 @@
     },
     {
         "astCommandId": "netdata:2:4",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-ARGS",
+                    "children": [
+                        {
+                            "type": "SC-TAR-ARG",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "xz"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "netdata:2:5",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -332,7 +330,7 @@
         }
     },
     {
-        "astCommandId": "netdata:2:5",
+        "astCommandId": "netdata:2:6",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -350,7 +348,7 @@
         }
     },
     {
-        "astCommandId": "netdata:2:6",
+        "astCommandId": "netdata:2:7",
         "astCommand": {
             "type": "SC-RM",
             "children": [
@@ -391,7 +389,7 @@
         }
     },
     {
-        "astCommandId": "netdata:2:7",
+        "astCommandId": "netdata:2:8",
         "astCommand": {
             "type": "SC-APK-DEL",
             "children": [

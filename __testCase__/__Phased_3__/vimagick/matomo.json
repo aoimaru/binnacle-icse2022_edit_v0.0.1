@@ -348,31 +348,22 @@
     {
         "astCommandId": "matomo:7:2",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-ECHO",
             "children": [
                 {
-                    "type": "SC-ECHO",
+                    "type": "SC-ECHO-ITEMS",
                     "children": [
                         {
-                            "type": "SC-ECHO-ITEMS",
+                            "type": "SC-ECHO-ITEM",
                             "children": [
                                 {
-                                    "type": "SC-ECHO-ITEM",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "${PIWIK_MD5}  ${PIWIK_FILE}"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "${PIWIK_MD5}  ${PIWIK_FILE}"
                                 }
                             ]
                         }
                     ]
-                },
-                {
-                    "type": "UNKNOWN",
-                    "children": []
                 }
             ]
         }
@@ -446,40 +437,38 @@
     {
         "astCommandId": "matomo:7:5",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
-                    "children": [
-                        {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": [],
-                                    "value": "https://getcomposer.org/installer"
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
                 },
                 {
-                    "type": "SC-PHP",
+                    "type": "SC-CURL-F-SHOW-ERROR",
                     "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "https://getcomposer.org/installer"
+                        }
+                    ]
                 }
             ]
         }
     },
     {
         "astCommandId": "matomo:7:6",
+        "astCommand": {
+            "type": "SC-PHP",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "matomo:7:7",
         "astCommand": {
             "type": "SC-PHP",
             "children": [
@@ -512,50 +501,20 @@
         }
     },
     {
-        "astCommandId": "matomo:7:7",
+        "astCommandId": "matomo:7:8",
         "astCommand": {
-            "type": "BASH-REDIRECT",
+            "type": "SC-ECHO",
             "children": [
                 {
-                    "type": "BASH-REDIRECT-COMMAND",
+                    "type": "SC-ECHO-ITEMS",
                     "children": [
                         {
-                            "type": "SC-ECHO",
+                            "type": "SC-ECHO-ITEM",
                             "children": [
                                 {
-                                    "type": "SC-ECHO-ITEMS",
-                                    "children": [
-                                        {
-                                            "type": "SC-ECHO-ITEM",
-                                            "children": [
-                                                {
-                                                    "type": "BASH-LITERAL",
-                                                    "children": [],
-                                                    "value": "always_populate_raw_post_data=-1"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "BASH-REDIRECT-REDIRECTS",
-                    "children": [
-                        {
-                            "type": "BASH-REDIRECT-APPEND",
-                            "children": [
-                                {
-                                    "type": "BASH-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "/usr/local/etc/php/php.ini"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "always_populate_raw_post_data=-1"
                                 }
                             ]
                         }
@@ -565,7 +524,7 @@
         }
     },
     {
-        "astCommandId": "matomo:7:8",
+        "astCommandId": "matomo:7:9",
         "astCommand": {
             "type": "SC-CHOWN",
             "children": [

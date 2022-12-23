@@ -87,52 +87,50 @@
     {
         "astCommandId": "urlwatch:1:2",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
+                            "type": "BASH-LITERAL",
                             "children": [
                                 {
-                                    "type": "BASH-LITERAL",
-                                    "children": [
-                                        {
-                                            "type": "ABS-PROBABLY-URL",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "ABS-URL-PROTOCOL-HTTPS",
-                                            "children": []
-                                        }
-                                    ]
+                                    "type": "ABS-PROBABLY-URL",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-URL-PROTOCOL-HTTPS",
+                                    "children": []
                                 }
                             ]
                         }
                     ]
-                },
-                {
-                    "type": "SC-PYTHON",
-                    "children": []
                 }
             ]
         }
     },
     {
         "astCommandId": "urlwatch:1:3",
+        "astCommand": {
+            "type": "SC-PYTHON",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "urlwatch:1:4",
         "astCommand": {
             "type": "SC-PIP-INSTALL",
             "children": [
@@ -321,7 +319,7 @@
         }
     },
     {
-        "astCommandId": "urlwatch:1:4",
+        "astCommandId": "urlwatch:1:5",
         "astCommand": {
             "type": "SC-APK-DEL",
             "children": [
@@ -358,45 +356,36 @@
         }
     },
     {
-        "astCommandId": "urlwatch:1:5",
+        "astCommandId": "urlwatch:1:6",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-ECHO",
             "children": [
                 {
-                    "type": "SC-ECHO",
+                    "type": "SC-ECHO-ITEMS",
                     "children": [
                         {
-                            "type": "SC-ECHO-ITEMS",
+                            "type": "SC-ECHO-ITEM",
                             "children": [
                                 {
-                                    "type": "SC-ECHO-ITEM",
+                                    "type": "BASH-LITERAL",
                                     "children": [
                                         {
-                                            "type": "BASH-LITERAL",
-                                            "children": [
-                                                {
-                                                    "type": "ABS-PROBABLY-URL",
-                                                    "children": []
-                                                },
-                                                {
-                                                    "type": "ABS-PATH-ROOT-DIR",
-                                                    "children": []
-                                                },
-                                                {
-                                                    "type": "ABS-SINGLE-SPACE",
-                                                    "children": []
-                                                }
-                                            ]
+                                            "type": "ABS-PROBABLY-URL",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-PATH-ROOT-DIR",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-SINGLE-SPACE",
+                                            "children": []
                                         }
                                     ]
                                 }
                             ]
                         }
                     ]
-                },
-                {
-                    "type": "UNKNOWN",
-                    "children": []
                 }
             ]
         }

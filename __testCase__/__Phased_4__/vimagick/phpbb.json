@@ -230,42 +230,28 @@
     {
         "astCommandId": "phpbb:9:2",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-ECHO",
             "children": [
                 {
-                    "type": "SC-ECHO",
+                    "type": "SC-ECHO-ITEMS",
                     "children": [
                         {
-                            "type": "SC-ECHO-ITEMS",
+                            "type": "SC-ECHO-ITEM",
                             "children": [
                                 {
-                                    "type": "SC-ECHO-ITEM",
+                                    "type": "BASH-LITERAL",
                                     "children": [
                                         {
-                                            "type": "BASH-LITERAL",
-                                            "children": [
-                                                {
-                                                    "type": "ABS-DOUBLE-SPACE",
-                                                    "children": []
-                                                },
-                                                {
-                                                    "type": "ABS-SINGLE-SPACE",
-                                                    "children": []
-                                                }
-                                            ]
+                                            "type": "ABS-DOUBLE-SPACE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-SINGLE-SPACE",
+                                            "children": []
                                         }
                                     ]
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    "type": "SC-SHA-256-SUM",
-                    "children": [
-                        {
-                            "type": "SC-SHA-256-SUM-F-CHECK",
-                            "children": []
                         }
                     ]
                 }
@@ -274,6 +260,18 @@
     },
     {
         "astCommandId": "phpbb:9:3",
+        "astCommand": {
+            "type": "SC-SHA-256-SUM",
+            "children": [
+                {
+                    "type": "SC-SHA-256-SUM-F-CHECK",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "phpbb:9:4",
         "astCommand": {
             "type": "SC-TAR",
             "children": [
@@ -312,7 +310,7 @@
         }
     },
     {
-        "astCommandId": "phpbb:9:4",
+        "astCommandId": "phpbb:9:5",
         "astCommand": {
             "type": "SC-RM",
             "children": [
@@ -334,7 +332,7 @@
         }
     },
     {
-        "astCommandId": "phpbb:9:5",
+        "astCommandId": "phpbb:9:6",
         "astCommand": {
             "type": "SC-CHOWN",
             "children": [

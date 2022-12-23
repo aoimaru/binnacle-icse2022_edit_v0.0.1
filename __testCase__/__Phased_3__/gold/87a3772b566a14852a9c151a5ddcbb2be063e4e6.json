@@ -152,98 +152,40 @@
         "astCommand": {
             "children": [
                 {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                }
-                                            ],
-                                            "type": "BASH-REDIRECT-COMMAND"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [],
-                                                                    "type": "BASH-LITERAL",
-                                                                    "value": "/dev/null"
-                                                                }
-                                                            ],
-                                                            "type": "BASH-PATH"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-REDIRECT-OVERWRITE"
-                                                }
-                                            ],
-                                            "type": "BASH-REDIRECT-REDIRECTS"
-                                        }
-                                    ],
-                                    "type": "BASH-REDIRECT"
-                                }
-                            ],
-                            "type": "BASH-BANGED"
-                        }
-                    ],
-                    "type": "BASH-IF-CONDITION"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "SC-APT-GET-F-YES"
-                                },
-                                {
-                                    "children": [],
-                                    "type": "SC-APT-GET-F-NO-INSTALL-RECOMMENDS"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "BASH-LITERAL",
-                                                    "value": "dirmngr"
-                                                }
-                                            ],
-                                            "type": "SC-APT-GET-PACKAGE"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "BASH-LITERAL",
-                                                    "value": "gnupg"
-                                                }
-                                            ],
-                                            "type": "SC-APT-GET-PACKAGE"
-                                        }
-                                    ],
-                                    "type": "SC-APT-GET-PACKAGES"
-                                }
-                            ],
-                            "type": "SC-APT-GET-INSTALL"
-                        }
-                    ],
-                    "type": "BASH-IF-THEN"
+                    "children": [],
+                    "type": "SC-APT-GET-F-YES"
                 },
                 {
                     "children": [],
-                    "type": "BASH-IF-ELSE"
+                    "type": "SC-APT-GET-F-NO-INSTALL-RECOMMENDS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "dirmngr"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "gnupg"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APT-GET-PACKAGES"
                 }
             ],
-            "type": "BASH-IF-EXPRESSION"
+            "type": "SC-APT-GET-INSTALL"
         }
     },
     {
@@ -583,51 +525,8 @@
     {
         "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:4:9",
         "astCommand": {
-            "children": [
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "UNKNOWN"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                }
-                                            ],
-                                            "type": "BASH-OR-MEM"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "SC-TRUE"
-                                                }
-                                            ],
-                                            "type": "BASH-OR-MEM"
-                                        }
-                                    ],
-                                    "type": "BASH-OR-IF"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
-                        }
-                    ],
-                    "type": "BASH-AND-IF"
-                }
-            ],
-            "type": "BASH-BRACE-GROUP"
+            "children": [],
+            "type": "SC-TRUE"
         }
     },
     {
@@ -828,24 +727,18 @@
         "astCommand": {
             "children": [
                 {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "key"
-                        }
-                    ],
-                    "type": "BASH-FOR-IN-VARIABLE"
+                    "children": [],
+                    "type": "SC-GPG-F-BATCH"
                 },
                 {
                     "children": [
                         {
                             "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "GPG_KEYS"
+                            "type": "BASH-LITERAL",
+                            "value": "ha.pool.sks-keyservers.net"
                         }
                     ],
-                    "type": "BASH-FOR-IN-ITEMS"
+                    "type": "SC-GPG-KEYSERVER"
                 },
                 {
                     "children": [
@@ -853,41 +746,17 @@
                             "children": [
                                 {
                                     "children": [],
-                                    "type": "SC-GPG-F-BATCH"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "ha.pool.sks-keyservers.net"
-                                        }
-                                    ],
-                                    "type": "SC-GPG-KEYSERVER"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "BASH-LITERAL",
-                                                    "value": "${key}"
-                                                }
-                                            ],
-                                            "type": "SC-GPG-RECV-KEY"
-                                        }
-                                    ],
-                                    "type": "SC-GPG-RECV-KEYS"
+                                    "type": "BASH-LITERAL",
+                                    "value": "${key}"
                                 }
                             ],
-                            "type": "SC-GPG"
+                            "type": "SC-GPG-RECV-KEY"
                         }
                     ],
-                    "type": "BASH-FOR-IN-BODY"
+                    "type": "SC-GPG-RECV-KEYS"
                 }
             ],
-            "type": "BASH-FOR-IN"
+            "type": "SC-GPG"
         }
     },
     {
@@ -895,82 +764,33 @@
         "astCommand": {
             "children": [
                 {
+                    "children": [],
+                    "type": "SC-GPG-F-BATCH"
+                },
+                {
                     "children": [
                         {
                             "children": [
                                 {
                                     "children": [],
-                                    "type": "SC-GPG-F-BATCH"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "BASH-VARIABLE",
-                                                    "value": "GPG_KEYS"
-                                                }
-                                            ],
-                                            "type": "SC-GPG-EXPORT"
-                                        }
-                                    ],
-                                    "type": "SC-GPG-EXPORTS"
+                                    "type": "BASH-VARIABLE",
+                                    "value": "GPG_KEYS"
                                 }
                             ],
-                            "type": "SC-GPG"
+                            "type": "SC-GPG-EXPORT"
                         }
                     ],
-                    "type": "BASH-REDIRECT-COMMAND"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "/etc/apt/trusted.gpg.d/cassandra.gpg"
-                                        }
-                                    ],
-                                    "type": "BASH-PATH"
-                                }
-                            ],
-                            "type": "BASH-REDIRECT-OVERWRITE"
-                        }
-                    ],
-                    "type": "BASH-REDIRECT-REDIRECTS"
+                    "type": "SC-GPG-EXPORTS"
                 }
             ],
-            "type": "BASH-REDIRECT"
+            "type": "SC-GPG"
         }
     },
     {
         "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:6:4",
         "astCommand": {
-            "children": [
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "UNKNOWN"
-                        }
-                    ],
-                    "type": "BASH-OR-MEM"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "SC-TRUE"
-                        }
-                    ],
-                    "type": "BASH-OR-MEM"
-                }
-            ],
-            "type": "BASH-OR-IF"
+            "children": [],
+            "type": "SC-TRUE"
         }
     },
     {
@@ -1059,41 +879,11 @@
         "astCommand": {
             "children": [
                 {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "dpkgArch"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "SC-DPKG-F-PRINT-ARCHITECTURE"
-                                                }
-                                            ],
-                                            "type": "SC-DPKG"
-                                        }
-                                    ],
-                                    "type": "BASH-DOLLAR-PARENS"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
+                    "children": [],
+                    "type": "SC-DPKG-F-PRINT-ARCHITECTURE"
                 }
             ],
-            "type": "BASH-ASSIGN"
+            "type": "SC-DPKG"
         }
     },
     {
@@ -1106,14 +896,44 @@
                             "children": [
                                 {
                                     "children": [],
-                                    "type": "BASH-VARIABLE",
-                                    "value": "dpkgArch"
+                                    "type": "BASH-LITERAL",
+                                    "value": "deb http://www.apache.org/dist/cassandra/debian 21x main"
                                 }
                             ],
-                            "type": "BASH-DOUBLE-QUOTED"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "BASH-CASE-EXP-TARGET"
+                    "type": "SC-ECHO-ITEMS"
+                }
+            ],
+            "type": "SC-ECHO"
+        }
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:4",
+        "astCommand": {
+            "children": [],
+            "type": "SC-APT-GET-UPDATE"
+        }
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:5",
+        "astCommand": {
+            "children": [],
+            "type": "SC-APT-GET-UPDATE"
+        }
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:6",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-YES"
+                },
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-NO-INSTALL-RECOMMENDS"
                 },
                 {
                     "children": [
@@ -1121,559 +941,160 @@
                             "children": [
                                 {
                                     "children": [],
-                                    "type": "BASH-CASE-KIND",
-                                    "value": "CaseBreak"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "amd64"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "i386"
-                                        }
-                                    ],
-                                    "type": "BASH-CASE-LABELS"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "children": [
-                                                                                {
-                                                                                    "children": [],
-                                                                                    "type": "BASH-LITERAL",
-                                                                                    "value": "deb http://www.apache.org/dist/cassandra/debian 21x main"
-                                                                                }
-                                                                            ],
-                                                                            "type": "SC-ECHO-ITEM"
-                                                                        }
-                                                                    ],
-                                                                    "type": "SC-ECHO-ITEMS"
-                                                                }
-                                                            ],
-                                                            "type": "SC-ECHO"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-REDIRECT-COMMAND"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "children": [],
-                                                                            "type": "BASH-LITERAL",
-                                                                            "value": "/etc/apt/sources.list.d/cassandra.list"
-                                                                        }
-                                                                    ],
-                                                                    "type": "BASH-PATH"
-                                                                }
-                                                            ],
-                                                            "type": "BASH-REDIRECT-OVERWRITE"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-REDIRECT-REDIRECTS"
-                                                }
-                                            ],
-                                            "type": "BASH-REDIRECT"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "SC-APT-GET-UPDATE"
-                                        }
-                                    ],
-                                    "type": "BASH-CASE-EXPRESSIONS"
+                                    "type": "BASH-LITERAL",
+                                    "value": "wget"
                                 }
                             ],
-                            "type": "BASH-CASE-EXP-CASE"
+                            "type": "SC-APT-GET-PACKAGE"
                         },
                         {
                             "children": [
                                 {
                                     "children": [],
-                                    "type": "BASH-CASE-KIND",
-                                    "value": "CaseBreak"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-GLOB",
-                                            "value": "*"
-                                        }
-                                    ],
-                                    "type": "BASH-CASE-LABELS"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-VARIABLE",
-                                                            "value": "savedAptMark"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-ASSIGN-LHS"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "children": [],
-                                                                            "type": "UNKNOWN"
-                                                                        }
-                                                                    ],
-                                                                    "type": "BASH-DOLLAR-PARENS"
-                                                                }
-                                                            ],
-                                                            "type": "BASH-DOUBLE-QUOTED"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-ASSIGN-RHS"
-                                                }
-                                            ],
-                                            "type": "BASH-ASSIGN"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "SC-APT-GET-UPDATE"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "SC-APT-GET-F-YES"
-                                                },
-                                                {
-                                                    "children": [],
-                                                    "type": "SC-APT-GET-F-NO-INSTALL-RECOMMENDS"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [],
-                                                                    "type": "BASH-LITERAL",
-                                                                    "value": "wget"
-                                                                }
-                                                            ],
-                                                            "type": "SC-APT-GET-PACKAGE"
-                                                        },
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [],
-                                                                    "type": "BASH-LITERAL",
-                                                                    "value": "ca-certificates"
-                                                                }
-                                                            ],
-                                                            "type": "SC-APT-GET-PACKAGE"
-                                                        },
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [],
-                                                                    "type": "BASH-LITERAL",
-                                                                    "value": "dpkg-dev"
-                                                                }
-                                                            ],
-                                                            "type": "SC-APT-GET-PACKAGE"
-                                                        }
-                                                    ],
-                                                    "type": "SC-APT-GET-PACKAGES"
-                                                }
-                                            ],
-                                            "type": "SC-APT-GET-INSTALL"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [],
-                                                                    "type": "UNKNOWN"
-                                                                }
-                                                            ],
-                                                            "type": "BASH-REDIRECT-COMMAND"
-                                                        },
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "children": [
-                                                                                {
-                                                                                    "children": [],
-                                                                                    "type": "BASH-LITERAL",
-                                                                                    "value": "/dev/null"
-                                                                                }
-                                                                            ],
-                                                                            "type": "BASH-PATH"
-                                                                        }
-                                                                    ],
-                                                                    "type": "BASH-REDIRECT-OVERWRITE"
-                                                                }
-                                                            ],
-                                                            "type": "BASH-REDIRECT-REDIRECTS"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-REDIRECT"
-                                                }
-                                            ],
-                                            "type": "BASH-PIPELINE"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "UNKNOWN"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-VARIABLE",
-                                                            "value": "tempDir"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-ASSIGN-LHS"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "children": [
-                                                                                {
-                                                                                    "children": [],
-                                                                                    "type": "SC-MKTEMP-F-DIRECTORY"
-                                                                                }
-                                                                            ],
-                                                                            "type": "SC-MKTEMP"
-                                                                        }
-                                                                    ],
-                                                                    "type": "BASH-DOLLAR-PARENS"
-                                                                }
-                                                            ],
-                                                            "type": "BASH-DOUBLE-QUOTED"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-ASSIGN-RHS"
-                                                }
-                                            ],
-                                            "type": "BASH-ASSIGN"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-VARIABLE",
-                                                            "value": "pkg"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-FOR-IN-VARIABLE"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL",
-                                                            "value": "cassandra"
-                                                        },
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL",
-                                                            "value": "cassandra-tools"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-FOR-IN-ITEMS"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "children": [],
-                                                                            "type": "BASH-VARIABLE",
-                                                                            "value": "deb"
-                                                                        }
-                                                                    ],
-                                                                    "type": "BASH-ASSIGN-LHS"
-                                                                },
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "children": [
-                                                                                {
-                                                                                    "children": [],
-                                                                                    "type": "BASH-VARIABLE",
-                                                                                    "value": "pkg"
-                                                                                },
-                                                                                {
-                                                                                    "children": [],
-                                                                                    "type": "BASH-LITERAL",
-                                                                                    "value": "_"
-                                                                                },
-                                                                                {
-                                                                                    "children": [],
-                                                                                    "type": "BASH-VARIABLE",
-                                                                                    "value": "CASSANDRA_VERSION"
-                                                                                },
-                                                                                {
-                                                                                    "children": [],
-                                                                                    "type": "BASH-LITERAL",
-                                                                                    "value": "_all.deb"
-                                                                                }
-                                                                            ],
-                                                                            "type": "BASH-DOUBLE-QUOTED"
-                                                                        }
-                                                                    ],
-                                                                    "type": "BASH-ASSIGN-RHS"
-                                                                }
-                                                            ],
-                                                            "type": "BASH-ASSIGN"
-                                                        },
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "children": [
-                                                                                {
-                                                                                    "children": [],
-                                                                                    "type": "BASH-LITERAL",
-                                                                                    "value": "${tempDir}/${deb}"
-                                                                                }
-                                                                            ],
-                                                                            "type": "BASH-PATH"
-                                                                        }
-                                                                    ],
-                                                                    "type": "SC-WGET-OUTPUT-DOCUMENT"
-                                                                },
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "children": [],
-                                                                            "type": "BASH-LITERAL",
-                                                                            "value": "https://www.apache.org/dist/cassandra/debian/pool/main/c/cassandra/${deb}"
-                                                                        }
-                                                                    ],
-                                                                    "type": "SC-WGET-URL"
-                                                                }
-                                                            ],
-                                                            "type": "SC-WGET"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-FOR-IN-BODY"
-                                                }
-                                            ],
-                                            "type": "BASH-FOR-IN"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "UNKNOWN"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "children": [
-                                                                                {
-                                                                                    "children": [],
-                                                                                    "type": "BASH-LITERAL",
-                                                                                    "value": "${tempDir}"
-                                                                                }
-                                                                            ],
-                                                                            "type": "SC-CD-PATH"
-                                                                        }
-                                                                    ],
-                                                                    "type": "SC-CD"
-                                                                }
-                                                            ],
-                                                            "type": "BASH-AND-MEM"
-                                                        },
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "children": [
-                                                                                {
-                                                                                    "children": [],
-                                                                                    "type": "UNKNOWN"
-                                                                                }
-                                                                            ],
-                                                                            "type": "BASH-REDIRECT-COMMAND"
-                                                                        },
-                                                                        {
-                                                                            "children": [
-                                                                                {
-                                                                                    "children": [
-                                                                                        {
-                                                                                            "children": [
-                                                                                                {
-                                                                                                    "children": [],
-                                                                                                    "type": "BASH-LITERAL",
-                                                                                                    "value": "Packages"
-                                                                                                }
-                                                                                            ],
-                                                                                            "type": "BASH-PATH"
-                                                                                        }
-                                                                                    ],
-                                                                                    "type": "BASH-REDIRECT-OVERWRITE"
-                                                                                }
-                                                                            ],
-                                                                            "type": "BASH-REDIRECT-REDIRECTS"
-                                                                        }
-                                                                    ],
-                                                                    "type": "BASH-REDIRECT"
-                                                                }
-                                                            ],
-                                                            "type": "BASH-AND-MEM"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-AND-IF"
-                                                }
-                                            ],
-                                            "type": "BASH-SUBSHELL"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL",
-                                                            "value": "^Package: "
-                                                        }
-                                                    ],
-                                                    "type": "SC-GREP-PATTERN"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [],
-                                                                    "type": "BASH-LITERAL",
-                                                                    "value": "${tempDir}/Packages"
-                                                                }
-                                                            ],
-                                                            "type": "SC-GREP-PATH"
-                                                        }
-                                                    ],
-                                                    "type": "SC-GREP-PATHS"
-                                                }
-                                            ],
-                                            "type": "SC-GREP"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "children": [
-                                                                                {
-                                                                                    "children": [],
-                                                                                    "type": "BASH-LITERAL",
-                                                                                    "value": "deb [ trusted=yes ] file://${tempDir} ./"
-                                                                                }
-                                                                            ],
-                                                                            "type": "SC-ECHO-ITEM"
-                                                                        }
-                                                                    ],
-                                                                    "type": "SC-ECHO-ITEMS"
-                                                                }
-                                                            ],
-                                                            "type": "SC-ECHO"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-REDIRECT-COMMAND"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "children": [],
-                                                                            "type": "BASH-LITERAL",
-                                                                            "value": "/etc/apt/sources.list.d/temp.list"
-                                                                        }
-                                                                    ],
-                                                                    "type": "BASH-PATH"
-                                                                }
-                                                            ],
-                                                            "type": "BASH-REDIRECT-OVERWRITE"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-REDIRECT-REDIRECTS"
-                                                }
-                                            ],
-                                            "type": "BASH-REDIRECT"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "UNKNOWN"
-                                        }
-                                    ],
-                                    "type": "BASH-CASE-EXPRESSIONS"
+                                    "type": "BASH-LITERAL",
+                                    "value": "ca-certificates"
                                 }
                             ],
-                            "type": "BASH-CASE-EXP-CASE"
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "dpkg-dev"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
                         }
                     ],
-                    "type": "BASH-CASE-EXP-CASES"
+                    "type": "SC-APT-GET-PACKAGES"
                 }
             ],
-            "type": "BASH-CASE-EXPRESSION"
+            "type": "SC-APT-GET-INSTALL"
         }
     },
     {
-        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:4",
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:7",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-MKTEMP-F-DIRECTORY"
+                }
+            ],
+            "type": "SC-MKTEMP"
+        }
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:8",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "${tempDir}/${deb}"
+                                }
+                            ],
+                            "type": "BASH-PATH"
+                        }
+                    ],
+                    "type": "SC-WGET-OUTPUT-DOCUMENT"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "https://www.apache.org/dist/cassandra/debian/pool/main/c/cassandra/${deb}"
+                        }
+                    ],
+                    "type": "SC-WGET-URL"
+                }
+            ],
+            "type": "SC-WGET"
+        }
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:9",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "${tempDir}"
+                        }
+                    ],
+                    "type": "SC-CD-PATH"
+                }
+            ],
+            "type": "SC-CD"
+        }
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:10",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "^Package: "
+                        }
+                    ],
+                    "type": "SC-GREP-PATTERN"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "${tempDir}/Packages"
+                                }
+                            ],
+                            "type": "SC-GREP-PATH"
+                        }
+                    ],
+                    "type": "SC-GREP-PATHS"
+                }
+            ],
+            "type": "SC-GREP"
+        }
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:11",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "deb [ trusted=yes ] file://${tempDir} ./"
+                                }
+                            ],
+                            "type": "SC-ECHO-ITEM"
+                        }
+                    ],
+                    "type": "SC-ECHO-ITEMS"
+                }
+            ],
+            "type": "SC-ECHO"
+        }
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:12",
         "astCommand": {
             "children": [
                 {
@@ -1740,7 +1161,7 @@
         }
     },
     {
-        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:5",
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:13",
         "astCommand": {
             "children": [
                 {
@@ -1781,63 +1202,32 @@
         }
     },
     {
-        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:6",
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:14",
         "astCommand": {
             "children": [
                 {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-OP",
-                                            "value": "SingleBracket"
-                                        }
-                                    ],
-                                    "type": "BASH-CONDITION-OP"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-OP",
-                                                            "value": "-n"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-CONDITION-UNARY-OP"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [],
-                                                                    "type": "BASH-VARIABLE",
-                                                                    "value": "tempDir"
-                                                                }
-                                                            ],
-                                                            "type": "BASH-DOUBLE-QUOTED"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-CONDITION-UNARY-EXP"
-                                                }
-                                            ],
-                                            "type": "BASH-CONDITION-UNARY"
-                                        }
-                                    ],
-                                    "type": "BASH-CONDITION-EXP"
-                                }
-                            ],
-                            "type": "BASH-CONDITION"
-                        }
-                    ],
-                    "type": "BASH-IF-CONDITION"
+                    "children": [],
+                    "type": "SC-APT-GET-F-YES"
+                },
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-AUTO-REMOVE"
+                }
+            ],
+            "type": "SC-APT-GET-PURGE"
+        }
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:15",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-FORCE"
                 },
                 {
                     "children": [
@@ -1845,62 +1235,27 @@
                             "children": [
                                 {
                                     "children": [],
-                                    "type": "SC-APT-GET-F-YES"
-                                },
-                                {
-                                    "children": [],
-                                    "type": "SC-APT-GET-F-AUTO-REMOVE"
+                                    "type": "BASH-LITERAL",
+                                    "value": "${tempDir}"
                                 }
                             ],
-                            "type": "SC-APT-GET-PURGE"
+                            "type": "SC-RM-PATH"
                         },
                         {
                             "children": [
                                 {
                                     "children": [],
-                                    "type": "SC-RM-F-RECURSIVE"
-                                },
-                                {
-                                    "children": [],
-                                    "type": "SC-RM-F-FORCE"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "BASH-LITERAL",
-                                                    "value": "${tempDir}"
-                                                }
-                                            ],
-                                            "type": "SC-RM-PATH"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "BASH-LITERAL",
-                                                    "value": "/etc/apt/sources.list.d/temp.list"
-                                                }
-                                            ],
-                                            "type": "SC-RM-PATH"
-                                        }
-                                    ],
-                                    "type": "SC-RM-PATHS"
+                                    "type": "BASH-LITERAL",
+                                    "value": "/etc/apt/sources.list.d/temp.list"
                                 }
                             ],
-                            "type": "SC-RM"
+                            "type": "SC-RM-PATH"
                         }
                     ],
-                    "type": "BASH-IF-THEN"
-                },
-                {
-                    "children": [],
-                    "type": "BASH-IF-ELSE"
+                    "type": "SC-RM-PATHS"
                 }
             ],
-            "type": "BASH-IF-EXPRESSION"
+            "type": "SC-RM"
         }
     },
     {
@@ -1924,41 +1279,11 @@
         "astCommand": {
             "children": [
                 {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "dpkgArch"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "SC-DPKG-F-PRINT-ARCHITECTURE"
-                                                }
-                                            ],
-                                            "type": "SC-DPKG"
-                                        }
-                                    ],
-                                    "type": "BASH-DOLLAR-PARENS"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
+                    "children": [],
+                    "type": "SC-DPKG-F-PRINT-ARCHITECTURE"
                 }
             ],
-            "type": "BASH-ASSIGN"
+            "type": "SC-DPKG"
         }
     },
     {
@@ -1966,19 +1291,12 @@
         "astCommand": {
             "children": [
                 {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "BASH-VARIABLE",
-                                    "value": "dpkgArch"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-CASE-EXP-TARGET"
+                    "children": [],
+                    "type": "SC-SED-F-REGEXP-EXTENDED"
+                },
+                {
+                    "children": [],
+                    "type": "SC-SED-F-IN-PLACE"
                 },
                 {
                     "children": [
@@ -1986,181 +1304,82 @@
                             "children": [
                                 {
                                     "children": [],
-                                    "type": "BASH-CASE-KIND",
-                                    "value": "CaseBreak"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "ppc64el"
-                                        }
-                                    ],
-                                    "type": "BASH-CASE-LABELS"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "BASH-IF-ELSE"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [],
-                                                                    "type": "UNKNOWN"
-                                                                }
-                                                            ],
-                                                            "type": "BASH-IF-CONDITION"
-                                                        },
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [],
-                                                                    "type": "UNKNOWN"
-                                                                },
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "children": [],
-                                                                            "type": "SC-SED-F-REGEXP-EXTENDED"
-                                                                        },
-                                                                        {
-                                                                            "children": [],
-                                                                            "type": "SC-SED-F-IN-PLACE"
-                                                                        },
-                                                                        {
-                                                                            "children": [
-                                                                                {
-                                                                                    "children": [
-                                                                                        {
-                                                                                            "children": [],
-                                                                                            "type": "BASH-LITERAL",
-                                                                                            "value": "s/^-Xss256k$/-Xss512k/"
-                                                                                        }
-                                                                                    ],
-                                                                                    "type": "SC-SED-EXPRESSION"
-                                                                                }
-                                                                            ],
-                                                                            "type": "SC-SED-EXPRESSIONS"
-                                                                        },
-                                                                        {
-                                                                            "children": [
-                                                                                {
-                                                                                    "children": [
-                                                                                        {
-                                                                                            "children": [],
-                                                                                            "type": "BASH-LITERAL",
-                                                                                            "value": "${CASSANDRA_CONFIG}/jvm.options"
-                                                                                        }
-                                                                                    ],
-                                                                                    "type": "SC-SED-PATH"
-                                                                                }
-                                                                            ],
-                                                                            "type": "SC-SED-PATHS"
-                                                                        }
-                                                                    ],
-                                                                    "type": "SC-SED"
-                                                                },
-                                                                {
-                                                                    "children": [],
-                                                                    "type": "UNKNOWN"
-                                                                }
-                                                            ],
-                                                            "type": "BASH-IF-THEN"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-IF-ELSE-IF-EXP-CHECK"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [],
-                                                                    "type": "UNKNOWN"
-                                                                }
-                                                            ],
-                                                            "type": "BASH-IF-CONDITION"
-                                                        },
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "children": [],
-                                                                            "type": "SC-SED-F-REGEXP-EXTENDED"
-                                                                        },
-                                                                        {
-                                                                            "children": [],
-                                                                            "type": "SC-SED-F-IN-PLACE"
-                                                                        },
-                                                                        {
-                                                                            "children": [
-                                                                                {
-                                                                                    "children": [
-                                                                                        {
-                                                                                            "children": [],
-                                                                                            "type": "BASH-LITERAL",
-                                                                                            "value": "s/-Xss256k/-Xss512k/g"
-                                                                                        }
-                                                                                    ],
-                                                                                    "type": "SC-SED-EXPRESSION"
-                                                                                }
-                                                                            ],
-                                                                            "type": "SC-SED-EXPRESSIONS"
-                                                                        },
-                                                                        {
-                                                                            "children": [
-                                                                                {
-                                                                                    "children": [
-                                                                                        {
-                                                                                            "children": [],
-                                                                                            "type": "BASH-LITERAL",
-                                                                                            "value": "${CASSANDRA_CONFIG}/cassandra-env.sh"
-                                                                                        }
-                                                                                    ],
-                                                                                    "type": "SC-SED-PATH"
-                                                                                }
-                                                                            ],
-                                                                            "type": "SC-SED-PATHS"
-                                                                        }
-                                                                    ],
-                                                                    "type": "SC-SED"
-                                                                },
-                                                                {
-                                                                    "children": [],
-                                                                    "type": "UNKNOWN"
-                                                                }
-                                                            ],
-                                                            "type": "BASH-IF-THEN"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-IF-ELSE-IF-EXP-CHECK"
-                                                }
-                                            ],
-                                            "type": "BASH-IF-ELSE-IF-EXPRESSION"
-                                        }
-                                    ],
-                                    "type": "BASH-CASE-EXPRESSIONS"
+                                    "type": "BASH-LITERAL",
+                                    "value": "s/^-Xss256k$/-Xss512k/"
                                 }
                             ],
-                            "type": "BASH-CASE-EXP-CASE"
+                            "type": "SC-SED-EXPRESSION"
                         }
                     ],
-                    "type": "BASH-CASE-EXP-CASES"
+                    "type": "SC-SED-EXPRESSIONS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "${CASSANDRA_CONFIG}/jvm.options"
+                                }
+                            ],
+                            "type": "SC-SED-PATH"
+                        }
+                    ],
+                    "type": "SC-SED-PATHS"
                 }
             ],
-            "type": "BASH-CASE-EXPRESSION"
+            "type": "SC-SED"
         }
     },
     {
         "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:10:3",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-SED-F-REGEXP-EXTENDED"
+                },
+                {
+                    "children": [],
+                    "type": "SC-SED-F-IN-PLACE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "s/-Xss256k/-Xss512k/g"
+                                }
+                            ],
+                            "type": "SC-SED-EXPRESSION"
+                        }
+                    ],
+                    "type": "SC-SED-EXPRESSIONS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "${CASSANDRA_CONFIG}/cassandra-env.sh"
+                                }
+                            ],
+                            "type": "SC-SED-PATH"
+                        }
+                    ],
+                    "type": "SC-SED-PATHS"
+                }
+            ],
+            "type": "SC-SED"
+        }
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:10:4",
         "astCommand": {
             "children": [
                 {

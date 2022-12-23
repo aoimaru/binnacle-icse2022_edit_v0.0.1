@@ -89,144 +89,20 @@
     {
         "astCommandId": "ngrokd:11:4",
         "astCommand": {
-            "type": "BASH-FOR-IN",
+            "type": "SC-ECHO",
             "children": [
                 {
-                    "type": "BASH-FOR-IN-VARIABLE",
+                    "type": "SC-ECHO-ITEMS",
                     "children": [
                         {
-                            "type": "BASH-VARIABLE:GOOS",
-                            "children": []
-                        }
-                    ]
-                },
-                {
-                    "type": "BASH-FOR-IN-ITEMS",
-                    "children": [
-                        {
-                            "type": "BASH-LITERAL",
-                            "children": []
-                        },
-                        {
-                            "type": "BASH-LITERAL",
-                            "children": []
-                        },
-                        {
-                            "type": "BASH-LITERAL",
-                            "children": []
-                        }
-                    ]
-                },
-                {
-                    "type": "BASH-FOR-IN-BODY",
-                    "children": [
-                        {
-                            "type": "BASH-FOR-IN",
+                            "type": "SC-ECHO-ITEM",
                             "children": [
                                 {
-                                    "type": "BASH-FOR-IN-VARIABLE",
+                                    "type": "BASH-LITERAL",
                                     "children": [
                                         {
-                                            "type": "BASH-VARIABLE:GOARCH",
+                                            "type": "ABS-SINGLE-SPACE",
                                             "children": []
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "BASH-FOR-IN-ITEMS",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": []
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "BASH-FOR-IN-BODY",
-                                    "children": [
-                                        {
-                                            "type": "SC-ECHO",
-                                            "children": [
-                                                {
-                                                    "type": "SC-ECHO-ITEMS",
-                                                    "children": [
-                                                        {
-                                                            "type": "SC-ECHO-ITEM",
-                                                            "children": [
-                                                                {
-                                                                    "type": "BASH-LITERAL",
-                                                                    "children": [
-                                                                        {
-                                                                            "type": "ABS-SINGLE-SPACE",
-                                                                            "children": []
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "SC-EXPORT",
-                                            "children": [
-                                                {
-                                                    "type": "SC-EXPORT-TARGET",
-                                                    "children": [
-                                                        {
-                                                            "type": "BASH-LITERAL",
-                                                            "children": []
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "SC-MAKE",
-                                            "children": [
-                                                {
-                                                    "type": "SC-MAKE-TARGET",
-                                                    "children": [
-                                                        {
-                                                            "type": "BASH-LITERAL",
-                                                            "children": []
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "SC-ECHO",
-                                            "children": [
-                                                {
-                                                    "type": "SC-ECHO-ITEMS",
-                                                    "children": [
-                                                        {
-                                                            "type": "SC-ECHO-ITEM",
-                                                            "children": [
-                                                                {
-                                                                    "type": "BASH-LITERAL",
-                                                                    "children": [
-                                                                        {
-                                                                            "type": "ABS-SINGLE-SPACE",
-                                                                            "children": []
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
-                                                }
-                                            ]
                                         }
                                     ]
                                 }
@@ -239,6 +115,67 @@
     },
     {
         "astCommandId": "ngrokd:11:5",
+        "astCommand": {
+            "type": "SC-EXPORT",
+            "children": [
+                {
+                    "type": "SC-EXPORT-TARGET",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ngrokd:11:6",
+        "astCommand": {
+            "type": "SC-MAKE",
+            "children": [
+                {
+                    "type": "SC-MAKE-TARGET",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ngrokd:11:7",
+        "astCommand": {
+            "type": "SC-ECHO",
+            "children": [
+                {
+                    "type": "SC-ECHO-ITEMS",
+                    "children": [
+                        {
+                            "type": "SC-ECHO-ITEM",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [
+                                        {
+                                            "type": "ABS-SINGLE-SPACE",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ngrokd:11:8",
         "astCommand": {
             "type": "SC-MV",
             "children": [
@@ -337,7 +274,7 @@
         }
     },
     {
-        "astCommandId": "ngrokd:11:6",
+        "astCommandId": "ngrokd:11:9",
         "astCommand": {
             "type": "SC-APT-GET-PURGE",
             "children": [
@@ -378,7 +315,7 @@
         }
     },
     {
-        "astCommandId": "ngrokd:11:7",
+        "astCommandId": "ngrokd:11:10",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -395,7 +332,7 @@
         }
     },
     {
-        "astCommandId": "ngrokd:11:8",
+        "astCommandId": "ngrokd:11:11",
         "astCommand": {
             "type": "SC-RM",
             "children": [

@@ -200,36 +200,34 @@
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "${HAPROXY_SHA256} *haproxy.tar.gz"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO-ITEM"
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "${HAPROXY_SHA256} *haproxy.tar.gz"
                                 }
                             ],
-                            "type": "SC-ECHO-ITEMS"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "SC-ECHO"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "SC-SHA-256-SUM-F-CHECK"
-                        }
-                    ],
-                    "type": "SC-SHA-256-SUM"
+                    "type": "SC-ECHO-ITEMS"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-ECHO"
         }
     },
     {
         "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:4",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-SHA-256-SUM-F-CHECK"
+                }
+            ],
+            "type": "SC-SHA-256-SUM"
+        }
+    },
+    {
+        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:5",
         "astCommand": {
             "children": [
                 {
@@ -256,7 +254,7 @@
         }
     },
     {
-        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:5",
+        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:6",
         "astCommand": {
             "children": [
                 {
@@ -312,7 +310,7 @@
         }
     },
     {
-        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:6",
+        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:7",
         "astCommand": {
             "children": [
                 {
@@ -332,34 +330,6 @@
                 }
             ],
             "type": "SC-RM"
-        }
-    },
-    {
-        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:7",
-        "astCommand": {
-            "children": [
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "makeOpts"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-SINGLE-QUOTED",
-                            "value": " \t\tTARGET=linux-glibc \t\tUSE_LUA=1 LUA_INC=/usr/include/lua5.3 LUA_LIB=/usr/lib/lua5.3 \t\tUSE_GETADDRINFO=1 \t\tUSE_OPENSSL=1 \t\tUSE_PCRE2=1 USE_PCRE2_JIT=1 \t\tUSE_ZLIB=1 \t"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
-                }
-            ],
-            "type": "BASH-ASSIGN"
         }
     },
     {
@@ -571,60 +541,6 @@
                     "children": [
                         {
                             "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "runDeps"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                },
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                },
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                },
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                }
-                                            ],
-                                            "type": "BASH-PIPELINE"
-                                        }
-                                    ],
-                                    "type": "BASH-DOLLAR-PARENS"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
-                }
-            ],
-            "type": "BASH-ASSIGN"
-        }
-    },
-    {
-        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:14",
-        "astCommand": {
-            "children": [
-                {
-                    "children": [
-                        {
-                            "children": [],
                             "type": "BASH-LITERAL",
                             "value": ".haproxy-rundeps"
                         }
@@ -651,7 +567,7 @@
         }
     },
     {
-        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:15",
+        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:14",
         "astCommand": {
             "children": [
                 {

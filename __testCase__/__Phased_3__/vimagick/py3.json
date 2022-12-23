@@ -329,44 +329,42 @@
     {
         "astCommandId": "py3:7:4",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
-                    "children": [
-                        {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": [],
-                                    "value": "https://bootstrap.pypa.io/get-pip.py"
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
                 },
                 {
-                    "type": "SC-PYTHON",
+                    "type": "SC-CURL-F-SHOW-ERROR",
                     "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "https://bootstrap.pypa.io/get-pip.py"
+                        }
+                    ]
                 }
             ]
         }
     },
     {
         "astCommandId": "py3:7:5",
+        "astCommand": {
+            "type": "SC-PYTHON",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "py3:7:6",
         "astCommand": {
             "type": "SC-PIP-INSTALL",
             "children": [
@@ -628,7 +626,7 @@
         }
     },
     {
-        "astCommandId": "py3:7:6",
+        "astCommandId": "py3:7:7",
         "astCommand": {
             "type": "SC-CURL",
             "children": [
@@ -673,50 +671,20 @@
         }
     },
     {
-        "astCommandId": "py3:7:7",
+        "astCommandId": "py3:7:8",
         "astCommand": {
-            "type": "BASH-REDIRECT",
+            "type": "SC-ECHO",
             "children": [
                 {
-                    "type": "BASH-REDIRECT-COMMAND",
+                    "type": "SC-ECHO-ITEMS",
                     "children": [
                         {
-                            "type": "SC-ECHO",
+                            "type": "SC-ECHO-ITEM",
                             "children": [
                                 {
-                                    "type": "SC-ECHO-ITEMS",
-                                    "children": [
-                                        {
-                                            "type": "SC-ECHO-ITEM",
-                                            "children": [
-                                                {
-                                                    "type": "BASH-LITERAL",
-                                                    "children": [],
-                                                    "value": "source /etc/bash_completion.d/scrapy_bash_completion"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "BASH-REDIRECT-REDIRECTS",
-                    "children": [
-                        {
-                            "type": "BASH-REDIRECT-APPEND",
-                            "children": [
-                                {
-                                    "type": "BASH-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "/root/.bashrc"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "source /etc/bash_completion.d/scrapy_bash_completion"
                                 }
                             ]
                         }
@@ -726,7 +694,7 @@
         }
     },
     {
-        "astCommandId": "py3:7:8",
+        "astCommandId": "py3:7:9",
         "astCommand": {
             "type": "SC-APT-GET-PURGE",
             "children": [
@@ -837,7 +805,7 @@
         }
     },
     {
-        "astCommandId": "py3:7:9",
+        "astCommandId": "py3:7:10",
         "astCommand": {
             "type": "SC-APT-GET-PURGE",
             "children": [
@@ -918,7 +886,7 @@
         }
     },
     {
-        "astCommandId": "py3:7:10",
+        "astCommandId": "py3:7:11",
         "astCommand": {
             "type": "SC-RM",
             "children": [

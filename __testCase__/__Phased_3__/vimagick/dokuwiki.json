@@ -165,63 +165,61 @@
     {
         "astCommandId": "dokuwiki:2:2",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-WGET",
             "children": [
                 {
-                    "type": "SC-WGET",
+                    "type": "SC-WGET-OUTPUT-DOCUMENT",
                     "children": [
                         {
-                            "type": "SC-WGET-OUTPUT-DOCUMENT",
-                            "children": [
-                                {
-                                    "type": "BASH-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "-"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-WGET-URL",
+                            "type": "BASH-PATH",
                             "children": [
                                 {
                                     "type": "BASH-LITERAL",
                                     "children": [],
-                                    "value": "http://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz"
+                                    "value": "-"
                                 }
                             ]
                         }
                     ]
                 },
                 {
-                    "type": "SC-TAR",
+                    "type": "SC-WGET-URL",
                     "children": [
                         {
-                            "type": "SC-TAR-STRIP",
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "http://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "dokuwiki:2:3",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-STRIP",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "1"
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-TAR-ARGS",
+                    "children": [
+                        {
+                            "type": "SC-TAR-ARG",
                             "children": [
                                 {
                                     "type": "BASH-LITERAL",
                                     "children": [],
-                                    "value": "1"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-TAR-ARGS",
-                            "children": [
-                                {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "xz"
-                                        }
-                                    ]
+                                    "value": "xz"
                                 }
                             ]
                         }
@@ -231,7 +229,7 @@
         }
     },
     {
-        "astCommandId": "dokuwiki:2:3",
+        "astCommandId": "dokuwiki:2:4",
         "astCommand": {
             "type": "SC-CHOWN",
             "children": [

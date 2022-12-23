@@ -87,72 +87,39 @@
     {
         "astCommandId": "dokuwiki:2:2",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-WGET",
             "children": [
                 {
-                    "type": "SC-WGET",
+                    "type": "SC-WGET-OUTPUT-DOCUMENT",
                     "children": [
                         {
-                            "type": "SC-WGET-OUTPUT-DOCUMENT",
-                            "children": [
-                                {
-                                    "type": "BASH-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": []
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-WGET-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": [
-                                        {
-                                            "type": "ABS-URL-PROTOCOL-HTTP",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "ABS-MAYBE-SRC-DIR",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "ABS-PROBABLY-URL",
-                                            "children": []
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "SC-TAR",
-                    "children": [
-                        {
-                            "type": "SC-TAR-STRIP",
+                            "type": "BASH-PATH",
                             "children": [
                                 {
                                     "type": "BASH-LITERAL",
                                     "children": []
                                 }
                             ]
-                        },
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-WGET-URL",
+                    "children": [
                         {
-                            "type": "SC-TAR-ARGS",
+                            "type": "BASH-LITERAL",
                             "children": [
                                 {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": []
-                                        }
-                                    ]
+                                    "type": "ABS-URL-PROTOCOL-HTTP",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-MAYBE-SRC-DIR",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-PROBABLY-URL",
+                                    "children": []
                                 }
                             ]
                         }
@@ -163,6 +130,37 @@
     },
     {
         "astCommandId": "dokuwiki:2:3",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-STRIP",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-TAR-ARGS",
+                    "children": [
+                        {
+                            "type": "SC-TAR-ARG",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "dokuwiki:2:4",
         "astCommand": {
             "type": "SC-CHOWN",
             "children": [

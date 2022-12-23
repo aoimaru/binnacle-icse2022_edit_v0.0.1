@@ -380,13 +380,17 @@
         "astCommand": {
             "children": [
                 {
+                    "children": [],
+                    "type": "SC-GPG-F-NO-TTY"
+                },
+                {
                     "children": [
                         {
                             "children": [],
-                            "type": "BASH-VARIABLE:server"
+                            "type": "BASH-LITERAL"
                         }
                     ],
-                    "type": "BASH-FOR-IN-VARIABLE"
+                    "type": "SC-GPG-KEYSERVER"
                 },
                 {
                     "children": [
@@ -394,158 +398,88 @@
                             "children": [
                                 {
                                     "children": [],
-                                    "type": "UNKNOWN"
+                                    "type": "BASH-VARIABLE:TOR_FINGERPRINT"
                                 }
                             ],
-                            "type": "BASH-DOLLAR-PARENS"
+                            "type": "SC-GPG-RECV-KEY"
                         }
                     ],
-                    "type": "BASH-FOR-IN-ITEMS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "SC-GPG-F-NO-TTY"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL"
-                                                        }
-                                                    ],
-                                                    "type": "SC-GPG-KEYSERVER"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [],
-                                                                    "type": "BASH-VARIABLE:TOR_FINGERPRINT"
-                                                                }
-                                                            ],
-                                                            "type": "SC-GPG-RECV-KEY"
-                                                        }
-                                                    ],
-                                                    "type": "SC-GPG-RECV-KEYS"
-                                                }
-                                            ],
-                                            "type": "SC-GPG"
-                                        }
-                                    ],
-                                    "type": "BASH-AND-MEM"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "UNKNOWN"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-OR-MEM"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "SC-TRUE"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-OR-MEM"
-                                                }
-                                            ],
-                                            "type": "BASH-OR-IF"
-                                        }
-                                    ],
-                                    "type": "BASH-AND-MEM"
-                                }
-                            ],
-                            "type": "BASH-AND-IF"
-                        }
-                    ],
-                    "type": "BASH-FOR-IN-BODY"
+                    "type": "SC-GPG-RECV-KEYS"
                 }
             ],
-            "type": "BASH-FOR-IN"
+            "type": "SC-GPG"
         }
     },
     {
         "astCommandId": "stable:7:5",
         "astCommand": {
+            "children": [],
+            "type": "SC-TRUE"
+        }
+    },
+    {
+        "astCommandId": "stable:7:6",
+        "astCommand": {
             "children": [
+                {
+                    "children": [],
+                    "type": "SC-GPG-F-FINGERPRINT"
+                },
                 {
                     "children": [
                         {
                             "children": [],
-                            "type": "SC-GPG-F-FINGERPRINT"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "BASH-LITERAL"
-                                }
-                            ],
-                            "type": "SC-GPG-KEYID-FORMAT"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-VARIABLE:TOR_FINGERPRINT"
-                                        }
-                                    ],
-                                    "type": "SC-GPG-TARGET"
-                                }
-                            ],
-                            "type": "SC-GPG-TARGETS"
+                            "type": "BASH-LITERAL"
                         }
                     ],
-                    "type": "SC-GPG"
+                    "type": "SC-GPG-KEYID-FORMAT"
                 },
                 {
                     "children": [
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "type": "ABS-DOUBLE-SPACE",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "ABS-SINGLE-SPACE",
-                                            "children": []
-                                        }
-                                    ],
-                                    "type": "BASH-LITERAL"
+                                    "children": [],
+                                    "type": "BASH-VARIABLE:TOR_FINGERPRINT"
                                 }
                             ],
-                            "type": "SC-GREP-PATTERN"
+                            "type": "SC-GPG-TARGET"
                         }
                     ],
-                    "type": "SC-GREP"
+                    "type": "SC-GPG-TARGETS"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-GPG"
         }
     },
     {
-        "astCommandId": "stable:7:6",
+        "astCommandId": "stable:7:7",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "type": "ABS-DOUBLE-SPACE",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-SINGLE-SPACE",
+                                    "children": []
+                                }
+                            ],
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GREP-PATTERN"
+                }
+            ],
+            "type": "SC-GREP"
+        }
+    },
+    {
+        "astCommandId": "stable:7:8",
         "astCommand": {
             "children": [
                 {
@@ -589,7 +523,7 @@
         }
     },
     {
-        "astCommandId": "stable:7:7",
+        "astCommandId": "stable:7:9",
         "astCommand": {
             "children": [
                 {
@@ -673,7 +607,7 @@
         }
     },
     {
-        "astCommandId": "stable:7:8",
+        "astCommandId": "stable:7:10",
         "astCommand": {
             "children": [
                 {
@@ -726,7 +660,7 @@
         }
     },
     {
-        "astCommandId": "stable:7:9",
+        "astCommandId": "stable:7:11",
         "astCommand": {
             "children": [
                 {

@@ -252,140 +252,109 @@
                 {
                     "children": [
                         {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "value": "/usr/src/foss-heartbeat",
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-CD-PATH"
-                                        }
-                                    ],
-                                    "type": "SC-CD"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "UNKNOWN"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "SC-GREP-F-INVERT-MATCH"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "value": "numpy",
-                                                            "type": "BASH-LITERAL"
-                                                        }
-                                                    ],
-                                                    "type": "SC-GREP-PATTERN"
-                                                }
-                                            ],
-                                            "type": "SC-GREP"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "SC-GREP-F-INVERT-MATCH"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "value": "scipy",
-                                                            "type": "BASH-LITERAL"
-                                                        }
-                                                    ],
-                                                    "type": "SC-GREP-PATTERN"
-                                                }
-                                            ],
-                                            "type": "SC-GREP"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "UNKNOWN"
-                                        }
-                                    ],
-                                    "type": "BASH-PIPELINE"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "value": "requirements.txt",
-                                                            "type": "BASH-LITERAL"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-PATH"
-                                                }
-                                            ],
-                                            "type": "SC-PIP-REQUIREMENTS"
-                                        }
-                                    ],
-                                    "type": "SC-PIP-INSTALL"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "value": "statistics",
-                                                            "type": "BASH-LITERAL"
-                                                        }
-                                                    ],
-                                                    "type": "SC-PIP-TARGET"
-                                                }
-                                            ],
-                                            "type": "SC-PIP-TARGETS"
-                                        }
-                                    ],
-                                    "type": "SC-PIP-INSTALL"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
+                            "children": [],
+                            "value": "/usr/src/foss-heartbeat",
+                            "type": "BASH-LITERAL"
                         }
                     ],
-                    "type": "BASH-AND-IF"
+                    "type": "SC-CD-PATH"
                 }
             ],
-            "type": "BASH-SUBSHELL"
+            "type": "SC-CD"
         }
     },
     {
         "astCommandId": "foss-heartbeat:2:5",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-GREP-F-INVERT-MATCH"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "numpy",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GREP-PATTERN"
+                }
+            ],
+            "type": "SC-GREP"
+        }
+    },
+    {
+        "astCommandId": "foss-heartbeat:2:6",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-GREP-F-INVERT-MATCH"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "scipy",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GREP-PATTERN"
+                }
+            ],
+            "type": "SC-GREP"
+        }
+    },
+    {
+        "astCommandId": "foss-heartbeat:2:7",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "requirements.txt",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "BASH-PATH"
+                        }
+                    ],
+                    "type": "SC-PIP-REQUIREMENTS"
+                }
+            ],
+            "type": "SC-PIP-INSTALL"
+        }
+    },
+    {
+        "astCommandId": "foss-heartbeat:2:8",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "statistics",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-PIP-TARGET"
+                        }
+                    ],
+                    "type": "SC-PIP-TARGETS"
+                }
+            ],
+            "type": "SC-PIP-INSTALL"
+        }
+    },
+    {
+        "astCommandId": "foss-heartbeat:2:9",
         "astCommand": {
             "children": [
                 {

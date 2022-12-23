@@ -83,59 +83,26 @@
     {
         "astCommandId": "nginad:4:1",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
-                    "children": [
-                        {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-VARIABLE:NGINAD_URL",
-                                    "children": []
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
                 },
                 {
-                    "type": "SC-TAR",
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-TAR-STRIP",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": []
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-TAR-ARGS",
-                            "children": [
-                                {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": []
-                                        }
-                                    ]
-                                }
-                            ]
+                            "type": "BASH-VARIABLE:NGINAD_URL",
+                            "children": []
                         }
                     ]
                 }
@@ -145,14 +112,28 @@
     {
         "astCommandId": "nginad:4:2",
         "astCommand": {
-            "type": "SC-CD",
+            "type": "SC-TAR",
             "children": [
                 {
-                    "type": "SC-CD-PATH",
+                    "type": "SC-TAR-STRIP",
                     "children": [
                         {
                             "type": "BASH-LITERAL",
                             "children": []
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-TAR-ARGS",
+                    "children": [
+                        {
+                            "type": "SC-TAR-ARG",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
                         }
                     ]
                 }
@@ -162,28 +143,14 @@
     {
         "astCommandId": "nginad:4:3",
         "astCommand": {
-            "type": "SC-PHP",
+            "type": "SC-CD",
             "children": [
                 {
-                    "type": "SC-PHP-SCRIPT",
+                    "type": "SC-CD-PATH",
                     "children": [
                         {
                             "type": "BASH-LITERAL",
                             "children": []
-                        }
-                    ]
-                },
-                {
-                    "type": "SC-PHP-ARGS",
-                    "children": [
-                        {
-                            "type": "SC-PHP-ARG",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": []
-                                }
-                            ]
                         }
                     ]
                 }
@@ -224,6 +191,37 @@
     {
         "astCommandId": "nginad:4:5",
         "astCommand": {
+            "type": "SC-PHP",
+            "children": [
+                {
+                    "type": "SC-PHP-SCRIPT",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-PHP-ARGS",
+                    "children": [
+                        {
+                            "type": "SC-PHP-ARG",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "nginad:4:6",
+        "astCommand": {
             "type": "SC-CHOWN",
             "children": [
                 {
@@ -262,7 +260,7 @@
         }
     },
     {
-        "astCommandId": "nginad:4:6",
+        "astCommandId": "nginad:4:7",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -272,37 +270,6 @@
                         {
                             "type": "BASH-LITERAL",
                             "children": []
-                        }
-                    ]
-                }
-            ]
-        }
-    },
-    {
-        "astCommandId": "nginad:4:7",
-        "astCommand": {
-            "type": "SC-CP",
-            "children": [
-                {
-                    "type": "SC-CP-PATHS",
-                    "children": [
-                        {
-                            "type": "SC-CP-PATH",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": []
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-CP-PATH",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": []
-                                }
-                            ]
                         }
                     ]
                 }
@@ -405,6 +372,37 @@
     {
         "astCommandId": "nginad:4:11",
         "astCommand": {
+            "type": "SC-CP",
+            "children": [
+                {
+                    "type": "SC-CP-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-CP-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-CP-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "nginad:4:12",
+        "astCommand": {
             "type": "SC-SED",
             "children": [
                 {
@@ -465,7 +463,7 @@
         }
     },
     {
-        "astCommandId": "nginad:4:12",
+        "astCommandId": "nginad:4:13",
         "astCommand": {
             "type": "SC-APK-DEL",
             "children": [

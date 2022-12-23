@@ -232,44 +232,14 @@
                     "children": [
                         {
                             "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "debMultiarch"
+                            "type": "BASH-LITERAL",
+                            "value": "DEB_BUILD_MULTIARCH"
                         }
                     ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL",
-                                                            "value": "DEB_BUILD_MULTIARCH"
-                                                        }
-                                                    ],
-                                                    "type": "SC-DPKG-ARCHITECTURE-QUERY"
-                                                }
-                                            ],
-                                            "type": "SC-DPKG-ARCHITECTURE"
-                                        }
-                                    ],
-                                    "type": "BASH-DOLLAR-PARENS"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
+                    "type": "SC-DPKG-ARCHITECTURE-QUERY"
                 }
             ],
-            "type": "BASH-ASSIGN"
+            "type": "SC-DPKG-ARCHITECTURE"
         }
     },
     {
@@ -414,153 +384,133 @@
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL",
-                                                            "value": "opcache.memory_consumption=128"
-                                                        }
-                                                    ],
-                                                    "type": "SC-ECHO-ITEM"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEMS"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL",
-                                                            "value": "opcache.interned_strings_buffer=8"
-                                                        }
-                                                    ],
-                                                    "type": "SC-ECHO-ITEM"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEMS"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL",
-                                                            "value": "opcache.max_accelerated_files=4000"
-                                                        }
-                                                    ],
-                                                    "type": "SC-ECHO-ITEM"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEMS"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL",
-                                                            "value": "opcache.revalidate_freq=60"
-                                                        }
-                                                    ],
-                                                    "type": "SC-ECHO-ITEM"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEMS"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL",
-                                                            "value": "opcache.fast_shutdown=1"
-                                                        }
-                                                    ],
-                                                    "type": "SC-ECHO-ITEM"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEMS"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL",
-                                                            "value": "opcache.enable_cli=1"
-                                                        }
-                                                    ],
-                                                    "type": "SC-ECHO-ITEM"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEMS"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO"
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "opcache.memory_consumption=128"
                                 }
                             ],
-                            "type": "BASH-BRACE-GROUP"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "BASH-REDIRECT-COMMAND"
-                },
+                    "type": "SC-ECHO-ITEMS"
+                }
+            ],
+            "type": "SC-ECHO"
+        }
+    },
+    {
+        "astCommandId": "cc1412b12402d604598fda73b21de8261caffb36:3:1",
+        "astCommand": {
+            "children": [
                 {
                     "children": [
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "/usr/local/etc/php/conf.d/opcache-recommended.ini"
-                                        }
-                                    ],
-                                    "type": "BASH-PATH"
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "opcache.interned_strings_buffer=8"
                                 }
                             ],
-                            "type": "BASH-REDIRECT-OVERWRITE"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "BASH-REDIRECT-REDIRECTS"
+                    "type": "SC-ECHO-ITEMS"
                 }
             ],
-            "type": "BASH-REDIRECT"
+            "type": "SC-ECHO"
+        }
+    },
+    {
+        "astCommandId": "cc1412b12402d604598fda73b21de8261caffb36:3:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "opcache.max_accelerated_files=4000"
+                                }
+                            ],
+                            "type": "SC-ECHO-ITEM"
+                        }
+                    ],
+                    "type": "SC-ECHO-ITEMS"
+                }
+            ],
+            "type": "SC-ECHO"
+        }
+    },
+    {
+        "astCommandId": "cc1412b12402d604598fda73b21de8261caffb36:3:3",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "opcache.revalidate_freq=60"
+                                }
+                            ],
+                            "type": "SC-ECHO-ITEM"
+                        }
+                    ],
+                    "type": "SC-ECHO-ITEMS"
+                }
+            ],
+            "type": "SC-ECHO"
+        }
+    },
+    {
+        "astCommandId": "cc1412b12402d604598fda73b21de8261caffb36:3:4",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "opcache.fast_shutdown=1"
+                                }
+                            ],
+                            "type": "SC-ECHO-ITEM"
+                        }
+                    ],
+                    "type": "SC-ECHO-ITEMS"
+                }
+            ],
+            "type": "SC-ECHO"
+        }
+    },
+    {
+        "astCommandId": "cc1412b12402d604598fda73b21de8261caffb36:3:5",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "opcache.enable_cli=1"
+                                }
+                            ],
+                            "type": "SC-ECHO-ITEM"
+                        }
+                    ],
+                    "type": "SC-ECHO-ITEMS"
+                }
+            ],
+            "type": "SC-ECHO"
         }
     },
     {
@@ -690,36 +640,34 @@
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "${OWNCLOUD_SHA256} *owncloud.tar.bz2"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO-ITEM"
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "${OWNCLOUD_SHA256} *owncloud.tar.bz2"
                                 }
                             ],
-                            "type": "SC-ECHO-ITEMS"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "SC-ECHO"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "SC-SHA-256-SUM-F-CHECK"
-                        }
-                    ],
-                    "type": "SC-SHA-256-SUM"
+                    "type": "SC-ECHO-ITEMS"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-ECHO"
         }
     },
     {
         "astCommandId": "cc1412b12402d604598fda73b21de8261caffb36:8:4",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-SHA-256-SUM-F-CHECK"
+                }
+            ],
+            "type": "SC-SHA-256-SUM"
+        }
+    },
+    {
+        "astCommandId": "cc1412b12402d604598fda73b21de8261caffb36:8:5",
         "astCommand": {
             "children": [
                 {
@@ -771,7 +719,7 @@
         }
     },
     {
-        "astCommandId": "cc1412b12402d604598fda73b21de8261caffb36:8:5",
+        "astCommandId": "cc1412b12402d604598fda73b21de8261caffb36:8:6",
         "astCommand": {
             "children": [
                 {
@@ -808,7 +756,7 @@
         }
     },
     {
-        "astCommandId": "cc1412b12402d604598fda73b21de8261caffb36:8:6",
+        "astCommandId": "cc1412b12402d604598fda73b21de8261caffb36:8:7",
         "astCommand": {
             "children": [
                 {
@@ -845,33 +793,14 @@
         }
     },
     {
-        "astCommandId": "cc1412b12402d604598fda73b21de8261caffb36:8:7",
+        "astCommandId": "cc1412b12402d604598fda73b21de8261caffb36:8:8",
         "astCommand": {
-            "children": [
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "UNKNOWN"
-                        }
-                    ],
-                    "type": "BASH-OR-MEM"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "SC-TRUE"
-                        }
-                    ],
-                    "type": "BASH-OR-MEM"
-                }
-            ],
-            "type": "BASH-OR-IF"
+            "children": [],
+            "type": "SC-TRUE"
         }
     },
     {
-        "astCommandId": "cc1412b12402d604598fda73b21de8261caffb36:8:8",
+        "astCommandId": "cc1412b12402d604598fda73b21de8261caffb36:8:9",
         "astCommand": {
             "children": [
                 {
@@ -908,7 +837,7 @@
         }
     },
     {
-        "astCommandId": "cc1412b12402d604598fda73b21de8261caffb36:8:9",
+        "astCommandId": "cc1412b12402d604598fda73b21de8261caffb36:8:10",
         "astCommand": {
             "children": [
                 {
@@ -954,7 +883,7 @@
         }
     },
     {
-        "astCommandId": "cc1412b12402d604598fda73b21de8261caffb36:8:10",
+        "astCommandId": "cc1412b12402d604598fda73b21de8261caffb36:8:11",
         "astCommand": {
             "children": [
                 {

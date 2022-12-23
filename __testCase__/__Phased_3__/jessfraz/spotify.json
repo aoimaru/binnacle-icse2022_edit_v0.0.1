@@ -72,39 +72,25 @@
         "astCommand": {
             "children": [
                 {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SILENT"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SHOW-ERROR"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "value": "https://download.spotify.com/debian/pubkey_0D811D58.gpg",
-                                    "type": "BASH-LITERAL"
-                                }
-                            ],
-                            "type": "SC-CURL-URL"
-                        }
-                    ],
-                    "type": "SC-CURL"
+                    "children": [],
+                    "type": "SC-CURL-F-SILENT"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-SHOW-ERROR"
                 },
                 {
                     "children": [
                         {
                             "children": [],
-                            "type": "SC-APT-KEY-FILENAME"
+                            "value": "https://download.spotify.com/debian/pubkey_0D811D58.gpg",
+                            "type": "BASH-LITERAL"
                         }
                     ],
-                    "type": "SC-APT-KEY-ADD"
+                    "type": "SC-CURL-URL"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-CURL"
         }
     },
     {
@@ -112,63 +98,45 @@
         "astCommand": {
             "children": [
                 {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "value": "deb http://repository.spotify.com stable non-free",
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEM"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO-ITEMS"
-                                }
-                            ],
-                            "type": "SC-ECHO"
-                        }
-                    ],
-                    "type": "BASH-REDIRECT-COMMAND"
-                },
+                    "children": [],
+                    "type": "SC-APT-KEY-FILENAME"
+                }
+            ],
+            "type": "SC-APT-KEY-ADD"
+        }
+    },
+    {
+        "astCommandId": "spotify:1:4",
+        "astCommand": {
+            "children": [
                 {
                     "children": [
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "value": "/etc/apt/sources.list.d/spotify.list",
-                                            "type": "BASH-LITERAL"
-                                        }
-                                    ],
-                                    "type": "BASH-PATH"
+                                    "children": [],
+                                    "value": "deb http://repository.spotify.com stable non-free",
+                                    "type": "BASH-LITERAL"
                                 }
                             ],
-                            "type": "BASH-REDIRECT-APPEND"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "BASH-REDIRECT-REDIRECTS"
+                    "type": "SC-ECHO-ITEMS"
                 }
             ],
-            "type": "BASH-REDIRECT"
+            "type": "SC-ECHO"
         }
     },
     {
-        "astCommandId": "spotify:1:4",
+        "astCommandId": "spotify:1:5",
         "astCommand": {
             "children": [],
             "type": "SC-APT-GET-UPDATE"
         }
     },
     {
-        "astCommandId": "spotify:1:5",
+        "astCommandId": "spotify:1:6",
         "astCommand": {
             "children": [
                 {
@@ -259,7 +227,7 @@
         }
     },
     {
-        "astCommandId": "spotify:1:6",
+        "astCommandId": "spotify:1:7",
         "astCommand": {
             "children": [
                 {
@@ -382,48 +350,18 @@
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "value": "QLineEdit { color: #000 }",
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-ECHO-ITEM"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO-ITEMS"
+                                    "children": [],
+                                    "value": "QLineEdit { color: #000 }",
+                                    "type": "BASH-LITERAL"
                                 }
                             ],
-                            "type": "SC-ECHO"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "BASH-REDIRECT-COMMAND"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "value": "/home/spotify/spotify-override.css",
-                                            "type": "BASH-LITERAL"
-                                        }
-                                    ],
-                                    "type": "BASH-PATH"
-                                }
-                            ],
-                            "type": "BASH-REDIRECT-OVERWRITE"
-                        }
-                    ],
-                    "type": "BASH-REDIRECT-REDIRECTS"
+                    "type": "SC-ECHO-ITEMS"
                 }
             ],
-            "type": "BASH-REDIRECT"
+            "type": "SC-ECHO"
         }
     }
 ]

@@ -305,60 +305,58 @@
     {
         "astCommandId": "magento:2:4",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "https://getcomposer.org/installer"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "magento:2:5",
+        "astCommand": {
+            "type": "SC-PHP",
+            "children": [
+                {
+                    "type": "SC-PHP-ARGS",
+                    "children": [
                         {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
+                            "type": "SC-PHP-ARG",
                             "children": [
                                 {
                                     "type": "BASH-LITERAL",
                                     "children": [],
-                                    "value": "https://getcomposer.org/installer"
+                                    "value": "--install-dir=/usr/local/bin"
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    "type": "SC-PHP",
-                    "children": [
+                        },
                         {
-                            "type": "SC-PHP-ARGS",
+                            "type": "SC-PHP-ARG",
                             "children": [
                                 {
-                                    "type": "SC-PHP-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "--install-dir=/usr/local/bin"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "SC-PHP-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "--filename=composer"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "--filename=composer"
                                 }
                             ]
                         }
@@ -368,7 +366,7 @@
         }
     },
     {
-        "astCommandId": "magento:2:5",
+        "astCommandId": "magento:2:6",
         "astCommand": {
             "type": "SC-APT-GET-PURGE",
             "children": [
@@ -479,7 +477,7 @@
         }
     },
     {
-        "astCommandId": "magento:2:6",
+        "astCommandId": "magento:2:7",
         "astCommand": {
             "type": "SC-RM",
             "children": [
@@ -522,133 +520,110 @@
     {
         "astCommandId": "magento:3:0",
         "astCommand": {
-            "type": "BASH-REDIRECT",
+            "type": "SC-ECHO",
             "children": [
                 {
-                    "type": "BASH-REDIRECT-COMMAND",
+                    "type": "SC-ECHO-ITEMS",
                     "children": [
                         {
-                            "type": "BASH-BRACE-GROUP",
+                            "type": "SC-ECHO-ITEM",
                             "children": [
                                 {
-                                    "type": "SC-ECHO",
-                                    "children": [
-                                        {
-                                            "type": "SC-ECHO-ITEMS",
-                                            "children": [
-                                                {
-                                                    "type": "SC-ECHO-ITEM",
-                                                    "children": [
-                                                        {
-                                                            "type": "BASH-LITERAL",
-                                                            "children": [],
-                                                            "value": "always_populate_raw_post_data = -1"
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "SC-ECHO",
-                                    "children": [
-                                        {
-                                            "type": "SC-ECHO-ITEMS",
-                                            "children": [
-                                                {
-                                                    "type": "SC-ECHO-ITEM",
-                                                    "children": [
-                                                        {
-                                                            "type": "BASH-LITERAL",
-                                                            "children": [],
-                                                            "value": "max_execution_time = 240"
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "SC-ECHO",
-                                    "children": [
-                                        {
-                                            "type": "SC-ECHO-ITEMS",
-                                            "children": [
-                                                {
-                                                    "type": "SC-ECHO-ITEM",
-                                                    "children": [
-                                                        {
-                                                            "type": "BASH-LITERAL",
-                                                            "children": [],
-                                                            "value": "max_input_vars = 1500"
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "SC-ECHO",
-                                    "children": [
-                                        {
-                                            "type": "SC-ECHO-ITEMS",
-                                            "children": [
-                                                {
-                                                    "type": "SC-ECHO-ITEM",
-                                                    "children": [
-                                                        {
-                                                            "type": "BASH-LITERAL",
-                                                            "children": [],
-                                                            "value": "upload_max_filesize = 32M"
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "SC-ECHO",
-                                    "children": [
-                                        {
-                                            "type": "SC-ECHO-ITEMS",
-                                            "children": [
-                                                {
-                                                    "type": "SC-ECHO-ITEM",
-                                                    "children": [
-                                                        {
-                                                            "type": "BASH-LITERAL",
-                                                            "children": [],
-                                                            "value": "post_max_size = 32M"
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "always_populate_raw_post_data = -1"
                                 }
                             ]
                         }
                     ]
-                },
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "magento:3:1",
+        "astCommand": {
+            "type": "SC-ECHO",
+            "children": [
                 {
-                    "type": "BASH-REDIRECT-REDIRECTS",
+                    "type": "SC-ECHO-ITEMS",
                     "children": [
                         {
-                            "type": "BASH-REDIRECT-OVERWRITE",
+                            "type": "SC-ECHO-ITEM",
                             "children": [
                                 {
-                                    "type": "BASH-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "/usr/local/etc/php/conf.d/typo3.ini"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "max_execution_time = 240"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "magento:3:2",
+        "astCommand": {
+            "type": "SC-ECHO",
+            "children": [
+                {
+                    "type": "SC-ECHO-ITEMS",
+                    "children": [
+                        {
+                            "type": "SC-ECHO-ITEM",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "max_input_vars = 1500"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "magento:3:3",
+        "astCommand": {
+            "type": "SC-ECHO",
+            "children": [
+                {
+                    "type": "SC-ECHO-ITEMS",
+                    "children": [
+                        {
+                            "type": "SC-ECHO-ITEM",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "upload_max_filesize = 32M"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "magento:3:4",
+        "astCommand": {
+            "type": "SC-ECHO",
+            "children": [
+                {
+                    "type": "SC-ECHO-ITEMS",
+                    "children": [
+                        {
+                            "type": "SC-ECHO-ITEM",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "post_max_size = 32M"
                                 }
                             ]
                         }
@@ -721,31 +696,22 @@
     {
         "astCommandId": "magento:9:2",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-ECHO",
             "children": [
                 {
-                    "type": "SC-ECHO",
+                    "type": "SC-ECHO-ITEMS",
                     "children": [
                         {
-                            "type": "SC-ECHO-ITEMS",
+                            "type": "SC-ECHO-ITEM",
                             "children": [
                                 {
-                                    "type": "SC-ECHO-ITEM",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "${MAGENTO_MD5}  ${MAGENTO_FILE}"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "${MAGENTO_MD5}  ${MAGENTO_FILE}"
                                 }
                             ]
                         }
                     ]
-                },
-                {
-                    "type": "UNKNOWN",
-                    "children": []
                 }
             ]
         }

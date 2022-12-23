@@ -407,95 +407,74 @@
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "type": "ABS-PATH-ABSOLUTE",
-                                                            "children": []
-                                                        },
-                                                        {
-                                                            "type": "ABS-MAYBE-SRC-DIR",
-                                                            "children": []
-                                                        },
-                                                        {
-                                                            "type": "ABS-USR-SRC-DIR",
-                                                            "children": []
-                                                        },
-                                                        {
-                                                            "type": "ABS-MAYBE-PATH",
-                                                            "children": []
-                                                        }
-                                                    ],
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-CD-PATH"
-                                        }
-                                    ],
-                                    "type": "SC-CD"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
+                                    "type": "ABS-PATH-ABSOLUTE",
+                                    "children": []
+                                },
                                 {
-                                    "children": [],
-                                    "type": "SC-CONFIGURE"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
+                                    "type": "ABS-MAYBE-SRC-DIR",
+                                    "children": []
+                                },
                                 {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-MAKE-JOBS"
-                                        }
-                                    ],
-                                    "type": "SC-MAKE"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
+                                    "type": "ABS-USR-SRC-DIR",
+                                    "children": []
+                                },
                                 {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-MAKE-TARGET"
-                                        }
-                                    ],
-                                    "type": "SC-MAKE"
+                                    "type": "ABS-MAYBE-PATH",
+                                    "children": []
                                 }
                             ],
-                            "type": "BASH-AND-MEM"
+                            "type": "BASH-LITERAL"
                         }
                     ],
-                    "type": "BASH-AND-IF"
+                    "type": "SC-CD-PATH"
                 }
             ],
-            "type": "BASH-SUBSHELL"
+            "type": "SC-CD"
         }
     },
     {
         "astCommandId": "znc:6:7",
+        "astCommand": {
+            "children": [],
+            "type": "SC-CONFIGURE"
+        }
+    },
+    {
+        "astCommandId": "znc:6:8",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-MAKE-JOBS"
+                }
+            ],
+            "type": "SC-MAKE"
+        }
+    },
+    {
+        "astCommandId": "znc:6:9",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-MAKE-TARGET"
+                }
+            ],
+            "type": "SC-MAKE"
+        }
+    },
+    {
+        "astCommandId": "znc:6:10",
         "astCommand": {
             "children": [
                 {
@@ -542,64 +521,7 @@
         }
     },
     {
-        "astCommandId": "znc:6:8",
-        "astCommand": {
-            "children": [
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-VARIABLE:runDeps"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                },
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                },
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                },
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                },
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                }
-                                            ],
-                                            "type": "BASH-PIPELINE"
-                                        }
-                                    ],
-                                    "type": "BASH-DOLLAR-PARENS"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
-                }
-            ],
-            "type": "BASH-ASSIGN"
-        }
-    },
-    {
-        "astCommandId": "znc:6:9",
+        "astCommandId": "znc:6:11",
         "astCommand": {
             "children": [
                 {
@@ -624,7 +546,7 @@
         }
     },
     {
-        "astCommandId": "znc:6:10",
+        "astCommandId": "znc:6:12",
         "astCommand": {
             "children": [
                 {

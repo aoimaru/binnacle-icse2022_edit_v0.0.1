@@ -2,39 +2,6 @@
     {
         "astCommandId": "ocserv:3:0",
         "astCommand": {
-            "type": "BASH-ASSIGN",
-            "children": [
-                {
-                    "type": "BASH-ASSIGN-LHS",
-                    "children": [
-                        {
-                            "type": "BASH-VARIABLE",
-                            "children": [],
-                            "value": "buildDeps"
-                        }
-                    ]
-                },
-                {
-                    "type": "BASH-ASSIGN-RHS",
-                    "children": [
-                        {
-                            "type": "BASH-DOUBLE-QUOTED",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": [],
-                                    "value": "         curl         g++         gnutls-dev         gpgme         libev-dev         libnl3-dev         libseccomp-dev         linux-headers         linux-pam-dev         lz4-dev         make         readline-dev         tar         xz     "
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        }
-    },
-    {
-        "astCommandId": "ocserv:3:1",
-        "astCommand": {
             "type": "SC-SET",
             "children": [
                 {
@@ -45,7 +12,7 @@
         }
     },
     {
-        "astCommandId": "ocserv:3:2",
+        "astCommandId": "ocserv:3:1",
         "astCommand": {
             "type": "SC-APK-ADD",
             "children": [
@@ -82,7 +49,7 @@
         }
     },
     {
-        "astCommandId": "ocserv:3:3",
+        "astCommandId": "ocserv:3:2",
         "astCommand": {
             "type": "SC-CURL",
             "children": [
@@ -123,7 +90,7 @@
         }
     },
     {
-        "astCommandId": "ocserv:3:4",
+        "astCommandId": "ocserv:3:3",
         "astCommand": {
             "type": "SC-CURL",
             "children": [
@@ -174,7 +141,7 @@
         }
     },
     {
-        "astCommandId": "ocserv:3:5",
+        "astCommandId": "ocserv:3:4",
         "astCommand": {
             "type": "SC-GPG",
             "children": [
@@ -202,7 +169,7 @@
         }
     },
     {
-        "astCommandId": "ocserv:3:6",
+        "astCommandId": "ocserv:3:5",
         "astCommand": {
             "type": "SC-GPG",
             "children": [
@@ -230,7 +197,7 @@
         }
     },
     {
-        "astCommandId": "ocserv:3:7",
+        "astCommandId": "ocserv:3:6",
         "astCommand": {
             "type": "SC-GPG",
             "children": [
@@ -253,7 +220,7 @@
         }
     },
     {
-        "astCommandId": "ocserv:3:8",
+        "astCommandId": "ocserv:3:7",
         "astCommand": {
             "type": "SC-MKDIR",
             "children": [
@@ -280,7 +247,7 @@
         }
     },
     {
-        "astCommandId": "ocserv:3:9",
+        "astCommandId": "ocserv:3:8",
         "astCommand": {
             "type": "SC-TAR",
             "children": [
@@ -332,7 +299,7 @@
         }
     },
     {
-        "astCommandId": "ocserv:3:10",
+        "astCommandId": "ocserv:3:9",
         "astCommand": {
             "type": "SC-RM",
             "children": [
@@ -365,7 +332,7 @@
         }
     },
     {
-        "astCommandId": "ocserv:3:11",
+        "astCommandId": "ocserv:3:10",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -383,21 +350,21 @@
         }
     },
     {
-        "astCommandId": "ocserv:3:12",
+        "astCommandId": "ocserv:3:11",
         "astCommand": {
             "type": "SC-CONFIGURE",
             "children": []
         }
     },
     {
-        "astCommandId": "ocserv:3:13",
+        "astCommandId": "ocserv:3:12",
         "astCommand": {
             "type": "SC-MAKE",
             "children": []
         }
     },
     {
-        "astCommandId": "ocserv:3:14",
+        "astCommandId": "ocserv:3:13",
         "astCommand": {
             "type": "SC-MAKE",
             "children": [
@@ -415,7 +382,7 @@
         }
     },
     {
-        "astCommandId": "ocserv:3:15",
+        "astCommandId": "ocserv:3:14",
         "astCommand": {
             "type": "SC-MKDIR",
             "children": [
@@ -442,7 +409,7 @@
         }
     },
     {
-        "astCommandId": "ocserv:3:16",
+        "astCommandId": "ocserv:3:15",
         "astCommand": {
             "type": "SC-CP",
             "children": [
@@ -475,7 +442,7 @@
         }
     },
     {
-        "astCommandId": "ocserv:3:17",
+        "astCommandId": "ocserv:3:16",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -493,7 +460,7 @@
         }
     },
     {
-        "astCommandId": "ocserv:3:18",
+        "astCommandId": "ocserv:3:17",
         "astCommand": {
             "type": "SC-RM",
             "children": [
@@ -524,61 +491,7 @@
         }
     },
     {
-        "astCommandId": "ocserv:3:19",
-        "astCommand": {
-            "type": "BASH-ASSIGN",
-            "children": [
-                {
-                    "type": "BASH-ASSIGN-LHS",
-                    "children": [
-                        {
-                            "type": "BASH-VARIABLE",
-                            "children": [],
-                            "value": "runDeps"
-                        }
-                    ]
-                },
-                {
-                    "type": "BASH-ASSIGN-RHS",
-                    "children": [
-                        {
-                            "type": "BASH-DOUBLE-QUOTED",
-                            "children": [
-                                {
-                                    "type": "BASH-DOLLAR-PARENS",
-                                    "children": [
-                                        {
-                                            "type": "BASH-PIPELINE",
-                                            "children": [
-                                                {
-                                                    "type": "UNKNOWN",
-                                                    "children": []
-                                                },
-                                                {
-                                                    "type": "UNKNOWN",
-                                                    "children": []
-                                                },
-                                                {
-                                                    "type": "UNKNOWN",
-                                                    "children": []
-                                                },
-                                                {
-                                                    "type": "UNKNOWN",
-                                                    "children": []
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        }
-    },
-    {
-        "astCommandId": "ocserv:3:20",
+        "astCommandId": "ocserv:3:18",
         "astCommand": {
             "type": "SC-APK-ADD",
             "children": [
@@ -631,7 +544,7 @@
         }
     },
     {
-        "astCommandId": "ocserv:3:21",
+        "astCommandId": "ocserv:3:19",
         "astCommand": {
             "type": "SC-APK-DEL",
             "children": [
@@ -654,7 +567,7 @@
         }
     },
     {
-        "astCommandId": "ocserv:3:22",
+        "astCommandId": "ocserv:3:20",
         "astCommand": {
             "type": "SC-RM",
             "children": [

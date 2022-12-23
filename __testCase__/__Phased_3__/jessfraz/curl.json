@@ -392,119 +392,98 @@
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "value": "curl-",
-                                                            "type": "BASH-LITERAL"
-                                                        },
-                                                        {
-                                                            "children": [],
-                                                            "value": "CURL_VERSION",
-                                                            "type": "BASH-VARIABLE"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-CONCAT"
-                                                }
-                                            ],
-                                            "type": "SC-CD-PATH"
-                                        }
-                                    ],
-                                    "type": "SC-CD"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "value": "/usr",
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-CONFIGURE-WITH-NGHTTP2"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "SC-CONFIGURE-F-WITH-SSL"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "SC-CONFIGURE-ENABLE-IPV6"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "SC-CONFIGURE-ENABLE-UNIX-SOCKETS"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "SC-CONFIGURE-WITHOUT-LIBIDN"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "SC-CONFIGURE-DISABLE-STATIC"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "SC-CONFIGURE-DISABLE-LDAP"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "SC-CONFIGURE-WITH-PIC"
-                                        }
-                                    ],
-                                    "type": "SC-CONFIGURE"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
+                                    "children": [],
+                                    "value": "curl-",
+                                    "type": "BASH-LITERAL"
+                                },
                                 {
                                     "children": [],
-                                    "type": "SC-MAKE"
+                                    "value": "CURL_VERSION",
+                                    "type": "BASH-VARIABLE"
                                 }
                             ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "value": "install",
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-MAKE-TARGET"
-                                        }
-                                    ],
-                                    "type": "SC-MAKE"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
+                            "type": "BASH-CONCAT"
                         }
                     ],
-                    "type": "BASH-AND-IF"
+                    "type": "SC-CD-PATH"
                 }
             ],
-            "type": "BASH-SUBSHELL"
+            "type": "SC-CD"
         }
     },
     {
         "astCommandId": "curl:3:9",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "/usr",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-CONFIGURE-WITH-NGHTTP2"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-F-WITH-SSL"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-ENABLE-IPV6"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-ENABLE-UNIX-SOCKETS"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-WITHOUT-LIBIDN"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-DISABLE-STATIC"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-DISABLE-LDAP"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-WITH-PIC"
+                }
+            ],
+            "type": "SC-CONFIGURE"
+        }
+    },
+    {
+        "astCommandId": "curl:3:10",
+        "astCommand": {
+            "children": [],
+            "type": "SC-MAKE"
+        }
+    },
+    {
+        "astCommandId": "curl:3:11",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "install",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-MAKE-TARGET"
+                }
+            ],
+            "type": "SC-MAKE"
+        }
+    },
+    {
+        "astCommandId": "curl:3:12",
         "astCommand": {
             "children": [
                 {
@@ -541,7 +520,7 @@
         }
     },
     {
-        "astCommandId": "curl:3:10",
+        "astCommandId": "curl:3:13",
         "astCommand": {
             "children": [
                 {
@@ -568,7 +547,7 @@
         }
     },
     {
-        "astCommandId": "curl:3:11",
+        "astCommandId": "curl:3:14",
         "astCommand": {
             "children": [
                 {

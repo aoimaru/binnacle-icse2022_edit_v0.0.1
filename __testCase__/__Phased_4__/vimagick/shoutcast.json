@@ -46,49 +46,25 @@
     {
         "astCommandId": "shoutcast:2:3",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-CURL-URL",
+                            "type": "BASH-LITERAL",
                             "children": [
                                 {
-                                    "type": "BASH-LITERAL",
-                                    "children": [
-                                        {
-                                            "type": "ABS-URL-PROTOCOL-HTTP",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "ABS-EXTENSION-TAR",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "ABS-PROBABLY-URL",
-                                            "children": []
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "SC-TAR",
-                    "children": [
-                        {
-                            "type": "SC-TAR-ARGS",
-                            "children": [
+                                    "type": "ABS-URL-PROTOCOL-HTTP",
+                                    "children": []
+                                },
                                 {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": []
-                                        }
-                                    ]
+                                    "type": "ABS-EXTENSION-TAR",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-PROBABLY-URL",
+                                    "children": []
                                 }
                             ]
                         }
@@ -99,6 +75,28 @@
     },
     {
         "astCommandId": "shoutcast:2:4",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-ARGS",
+                    "children": [
+                        {
+                            "type": "SC-TAR-ARG",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "shoutcast:2:5",
         "astCommand": {
             "type": "SC-MKDIR",
             "children": [
@@ -133,7 +131,7 @@
         }
     },
     {
-        "astCommandId": "shoutcast:2:5",
+        "astCommandId": "shoutcast:2:6",
         "astCommand": {
             "type": "SC-APT-GET-PURGE",
             "children": [
@@ -158,7 +156,7 @@
         }
     },
     {
-        "astCommandId": "shoutcast:2:6",
+        "astCommandId": "shoutcast:2:7",
         "astCommand": {
             "type": "SC-RM",
             "children": [

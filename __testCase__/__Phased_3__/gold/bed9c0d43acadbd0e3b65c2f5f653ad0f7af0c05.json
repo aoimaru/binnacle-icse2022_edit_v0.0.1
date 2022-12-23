@@ -253,48 +253,46 @@
                 {
                     "children": [
                         {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "BASH-LITERAL",
-                                    "value": " node-v${NODE_VERSION}-linux-x64.tar.gz$"
-                                }
-                            ],
-                            "type": "SC-GREP-PATTERN"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "SHASUMS256.txt.asc"
-                                        }
-                                    ],
-                                    "type": "SC-GREP-PATH"
-                                }
-                            ],
-                            "type": "SC-GREP-PATHS"
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": " node-v${NODE_VERSION}-linux-x64.tar.gz$"
                         }
                     ],
-                    "type": "SC-GREP"
+                    "type": "SC-GREP-PATTERN"
                 },
                 {
                     "children": [
                         {
-                            "children": [],
-                            "type": "SC-SHA-256-SUM-F-CHECK"
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "SHASUMS256.txt.asc"
+                                }
+                            ],
+                            "type": "SC-GREP-PATH"
                         }
                     ],
-                    "type": "SC-SHA-256-SUM"
+                    "type": "SC-GREP-PATHS"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-GREP"
         }
     },
     {
         "astCommandId": "bed9c0d43acadbd0e3b65c2f5f653ad0f7af0c05:5:4",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-SHA-256-SUM-F-CHECK"
+                }
+            ],
+            "type": "SC-SHA-256-SUM"
+        }
+    },
+    {
+        "astCommandId": "bed9c0d43acadbd0e3b65c2f5f653ad0f7af0c05:5:5",
         "astCommand": {
             "children": [
                 {
@@ -350,7 +348,7 @@
         }
     },
     {
-        "astCommandId": "bed9c0d43acadbd0e3b65c2f5f653ad0f7af0c05:5:5",
+        "astCommandId": "bed9c0d43acadbd0e3b65c2f5f653ad0f7af0c05:5:6",
         "astCommand": {
             "children": [
                 {
@@ -383,7 +381,7 @@
         }
     },
     {
-        "astCommandId": "bed9c0d43acadbd0e3b65c2f5f653ad0f7af0c05:5:6",
+        "astCommandId": "bed9c0d43acadbd0e3b65c2f5f653ad0f7af0c05:5:7",
         "astCommand": {
             "children": [
                 {
@@ -430,7 +428,7 @@
         }
     },
     {
-        "astCommandId": "bed9c0d43acadbd0e3b65c2f5f653ad0f7af0c05:5:7",
+        "astCommandId": "bed9c0d43acadbd0e3b65c2f5f653ad0f7af0c05:5:8",
         "astCommand": {
             "children": [],
             "type": "SC-NPM-CACHE-CLEAN"

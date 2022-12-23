@@ -56,45 +56,27 @@
     {
         "astCommandId": "salt-master:1:2",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
-                    "children": [
-                        {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": [],
-                                    "value": "https://bootstrap.saltstack.com"
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
                 },
                 {
-                    "type": "SC-BASH",
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-BASH-F-S",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-BASH-SCRIPT",
-                            "children": []
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "https://bootstrap.saltstack.com"
                         }
                     ]
                 }
@@ -103,6 +85,22 @@
     },
     {
         "astCommandId": "salt-master:1:3",
+        "astCommand": {
+            "type": "SC-BASH",
+            "children": [
+                {
+                    "type": "SC-BASH-F-S",
+                    "children": []
+                },
+                {
+                    "type": "SC-BASH-SCRIPT",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "salt-master:1:4",
         "astCommand": {
             "type": "SC-APT-GET-INSTALL",
             "children": [
@@ -129,46 +127,44 @@
         }
     },
     {
-        "astCommandId": "salt-master:1:4",
+        "astCommandId": "salt-master:1:5",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
-                    "children": [
-                        {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": [],
-                                    "value": "https://bootstrap.pypa.io/get-pip.py"
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
                 },
                 {
-                    "type": "SC-PYTHON",
+                    "type": "SC-CURL-F-SHOW-ERROR",
                     "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "https://bootstrap.pypa.io/get-pip.py"
+                        }
+                    ]
                 }
             ]
         }
     },
     {
-        "astCommandId": "salt-master:1:5",
+        "astCommandId": "salt-master:1:6",
+        "astCommand": {
+            "type": "SC-PYTHON",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "salt-master:1:7",
         "astCommand": {
             "type": "SC-PIP-INSTALL",
             "children": [
@@ -205,7 +201,7 @@
         }
     },
     {
-        "astCommandId": "salt-master:1:6",
+        "astCommandId": "salt-master:1:8",
         "astCommand": {
             "type": "SC-RM",
             "children": [

@@ -133,103 +133,101 @@
         "astCommand": {
             "children": [
                 {
+                    "children": [],
+                    "type": "SC-CURL-F-SILENT"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-SHOW-ERROR"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-LOCATION"
+                },
+                {
                     "children": [
                         {
-                            "children": [],
-                            "type": "SC-CURL-F-SILENT"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SHOW-ERROR"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-LOCATION"
-                        },
+                            "children": [
+                                {
+                                    "type": "ABS-URL-PROTOCOL-HTTPS",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-EXTENSION-TAR",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-PROBABLY-URL",
+                                    "children": []
+                                }
+                            ],
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-CURL-URL"
+                }
+            ],
+            "type": "SC-CURL"
+        }
+    },
+    {
+        "astCommandId": "unixbench:3:4",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-TAR-X"
+                },
+                {
+                    "children": [],
+                    "type": "SC-TAR-Z"
+                },
+                {
+                    "children": [
                         {
                             "children": [
                                 {
                                     "children": [
                                         {
-                                            "type": "ABS-URL-PROTOCOL-HTTPS",
+                                            "type": "ABS-PATH-ABSOLUTE",
                                             "children": []
                                         },
                                         {
-                                            "type": "ABS-EXTENSION-TAR",
+                                            "type": "ABS-MAYBE-SRC-DIR",
                                             "children": []
                                         },
                                         {
-                                            "type": "ABS-PROBABLY-URL",
+                                            "type": "ABS-USR-SRC-DIR",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-MAYBE-PATH",
                                             "children": []
                                         }
                                     ],
                                     "type": "BASH-LITERAL"
                                 }
                             ],
-                            "type": "SC-CURL-URL"
+                            "type": "BASH-PATH"
                         }
                     ],
-                    "type": "SC-CURL"
+                    "type": "SC-TAR-DIRECTORY"
                 },
                 {
                     "children": [
                         {
                             "children": [],
-                            "type": "SC-TAR-X"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-TAR-Z"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "type": "ABS-PATH-ABSOLUTE",
-                                                    "children": []
-                                                },
-                                                {
-                                                    "type": "ABS-MAYBE-SRC-DIR",
-                                                    "children": []
-                                                },
-                                                {
-                                                    "type": "ABS-USR-SRC-DIR",
-                                                    "children": []
-                                                },
-                                                {
-                                                    "type": "ABS-MAYBE-PATH",
-                                                    "children": []
-                                                }
-                                            ],
-                                            "type": "BASH-LITERAL"
-                                        }
-                                    ],
-                                    "type": "BASH-PATH"
-                                }
-                            ],
-                            "type": "SC-TAR-DIRECTORY"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "BASH-LITERAL"
-                                }
-                            ],
-                            "type": "SC-TAR-STRIP-COMPONENTS"
+                            "type": "BASH-LITERAL"
                         }
                     ],
-                    "type": "SC-TAR"
+                    "type": "SC-TAR-STRIP-COMPONENTS"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-TAR"
         }
     },
     {
-        "astCommandId": "unixbench:3:4",
+        "astCommandId": "unixbench:3:5",
         "astCommand": {
             "children": [
                 {
@@ -286,7 +284,7 @@
         }
     },
     {
-        "astCommandId": "unixbench:3:5",
+        "astCommandId": "unixbench:3:6",
         "astCommand": {
             "children": [
                 {

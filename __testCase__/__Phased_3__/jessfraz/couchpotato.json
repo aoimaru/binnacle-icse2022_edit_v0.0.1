@@ -205,50 +205,33 @@
                 {
                     "children": [
                         {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "value": "/usr/src/couchpotato",
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-CD-PATH"
-                                        }
-                                    ],
-                                    "type": "SC-CD"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "value": "${COUCHPOTATO_VERSION}",
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-GIT-TARGET"
-                                        }
-                                    ],
-                                    "type": "SC-GIT-CHECKOUT"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
+                            "children": [],
+                            "value": "/usr/src/couchpotato",
+                            "type": "BASH-LITERAL"
                         }
                     ],
-                    "type": "BASH-AND-IF"
+                    "type": "SC-CD-PATH"
                 }
             ],
-            "type": "BASH-SUBSHELL"
+            "type": "SC-CD"
+        }
+    },
+    {
+        "astCommandId": "couchpotato:5:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "${COUCHPOTATO_VERSION}",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GIT-TARGET"
+                }
+            ],
+            "type": "SC-GIT-CHECKOUT"
         }
     }
 ]

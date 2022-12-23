@@ -94,70 +94,37 @@
     {
         "astCommandId": "hans:1:4",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
-                    "children": [
-                        {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": [
-                                        {
-                                            "type": "ABS-PROBABLY-URL",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "ABS-URL-PROTOCOL-HTTPS",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "ABS-EXTENSION-TAR",
-                                            "children": []
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
                 },
                 {
-                    "type": "SC-TAR",
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-TAR-STRIP",
+                            "type": "BASH-LITERAL",
                             "children": [
                                 {
-                                    "type": "BASH-LITERAL",
+                                    "type": "ABS-PROBABLY-URL",
                                     "children": []
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-TAR-ARGS",
-                            "children": [
+                                },
                                 {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": []
-                                        }
-                                    ]
+                                    "type": "ABS-URL-PROTOCOL-HTTPS",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-EXTENSION-TAR",
+                                    "children": []
                                 }
                             ]
                         }
@@ -169,12 +136,43 @@
     {
         "astCommandId": "hans:1:5",
         "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-STRIP",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-TAR-ARGS",
+                    "children": [
+                        {
+                            "type": "SC-TAR-ARG",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "hans:1:6",
+        "astCommand": {
             "type": "SC-MAKE",
             "children": []
         }
     },
     {
-        "astCommandId": "hans:1:6",
+        "astCommandId": "hans:1:7",
         "astCommand": {
             "type": "SC-MV",
             "children": [
@@ -214,7 +212,7 @@
         }
     },
     {
-        "astCommandId": "hans:1:7",
+        "astCommandId": "hans:1:8",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -236,7 +234,7 @@
         }
     },
     {
-        "astCommandId": "hans:1:8",
+        "astCommandId": "hans:1:9",
         "astCommand": {
             "type": "SC-RM",
             "children": [
@@ -266,7 +264,7 @@
         }
     },
     {
-        "astCommandId": "hans:1:9",
+        "astCommandId": "hans:1:10",
         "astCommand": {
             "type": "SC-APK-DEL",
             "children": [

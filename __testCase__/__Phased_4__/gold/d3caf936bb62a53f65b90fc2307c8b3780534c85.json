@@ -178,38 +178,36 @@
                                 {
                                     "children": [
                                         {
-                                            "children": [
-                                                {
-                                                    "type": "ABS-SINGLE-SPACE",
-                                                    "children": []
-                                                }
-                                            ],
-                                            "type": "BASH-LITERAL"
+                                            "type": "ABS-SINGLE-SPACE",
+                                            "children": []
                                         }
                                     ],
-                                    "type": "SC-ECHO-ITEM"
+                                    "type": "BASH-LITERAL"
                                 }
                             ],
-                            "type": "SC-ECHO-ITEMS"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "SC-ECHO"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "SC-SHA-256-SUM-F-CHECK"
-                        }
-                    ],
-                    "type": "SC-SHA-256-SUM"
+                    "type": "SC-ECHO-ITEMS"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-ECHO"
         }
     },
     {
         "astCommandId": "d3caf936bb62a53f65b90fc2307c8b3780534c85:8:3",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-SHA-256-SUM-F-CHECK"
+                }
+            ],
+            "type": "SC-SHA-256-SUM"
+        }
+    },
+    {
+        "astCommandId": "d3caf936bb62a53f65b90fc2307c8b3780534c85:8:4",
         "astCommand": {
             "children": [
                 {
@@ -235,7 +233,7 @@
         }
     },
     {
-        "astCommandId": "d3caf936bb62a53f65b90fc2307c8b3780534c85:8:4",
+        "astCommandId": "d3caf936bb62a53f65b90fc2307c8b3780534c85:8:5",
         "astCommand": {
             "children": [
                 {
@@ -293,7 +291,7 @@
         }
     },
     {
-        "astCommandId": "d3caf936bb62a53f65b90fc2307c8b3780534c85:8:5",
+        "astCommandId": "d3caf936bb62a53f65b90fc2307c8b3780534c85:8:6",
         "astCommand": {
             "children": [
                 {
@@ -321,53 +319,6 @@
                 }
             ],
             "type": "SC-RM"
-        }
-    },
-    {
-        "astCommandId": "d3caf936bb62a53f65b90fc2307c8b3780534c85:8:6",
-        "astCommand": {
-            "children": [
-                {
-                    "children": [],
-                    "type": "SC-LN-F-SYMBOLIC"
-                },
-                {
-                    "children": [],
-                    "type": "SC-LN-F-FORCE"
-                },
-                {
-                    "children": [],
-                    "type": "SC-LN-F-NO-TARGET-DIRECTORY"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-LITERAL"
-                        }
-                    ],
-                    "type": "SC-LN-TARGET"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "type": "ABS-MAYBE-PATH",
-                                    "children": []
-                                },
-                                {
-                                    "type": "ABS-PATH-ABSOLUTE",
-                                    "children": []
-                                }
-                            ],
-                            "type": "BASH-LITERAL"
-                        }
-                    ],
-                    "type": "SC-LN-LINK"
-                }
-            ],
-            "type": "SC-LN"
         }
     },
     {
@@ -422,178 +373,46 @@
         "astCommand": {
             "children": [
                 {
+                    "children": [],
+                    "type": "SC-LN-F-SYMBOLIC"
+                },
+                {
+                    "children": [],
+                    "type": "SC-LN-F-FORCE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-LN-F-NO-TARGET-DIRECTORY"
+                },
+                {
                     "children": [
                         {
                             "children": [],
-                            "type": "BASH-VARIABLE:bin"
+                            "type": "BASH-LITERAL"
                         }
                     ],
-                    "type": "BASH-FOR-IN-VARIABLE"
+                    "type": "SC-LN-TARGET"
                 },
                 {
                     "children": [
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-VARIABLE:JAVA_HOME"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "type": "ABS-MAYBE-PATH",
-                                                    "children": []
-                                                },
-                                                {
-                                                    "type": "ABS-PATH-ABSOLUTE",
-                                                    "children": []
-                                                }
-                                            ],
-                                            "type": "BASH-LITERAL"
-                                        }
-                                    ],
-                                    "type": "BASH-DOUBLE-QUOTED"
+                                    "type": "ABS-MAYBE-PATH",
+                                    "children": []
                                 },
                                 {
-                                    "children": [
-                                        {
-                                            "type": "ABS-GLOB-STAR",
-                                            "children": []
-                                        }
-                                    ],
-                                    "type": "BASH-GLOB"
+                                    "type": "ABS-PATH-ABSOLUTE",
+                                    "children": []
                                 }
                             ],
-                            "type": "BASH-CONCAT"
+                            "type": "BASH-LITERAL"
                         }
                     ],
-                    "type": "BASH-FOR-IN-ITEMS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-VARIABLE:base"
-                                        }
-                                    ],
-                                    "type": "BASH-ASSIGN-LHS"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "UNKNOWN"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-DOLLAR-PARENS"
-                                                }
-                                            ],
-                                            "type": "BASH-DOUBLE-QUOTED"
-                                        }
-                                    ],
-                                    "type": "BASH-ASSIGN-RHS"
-                                }
-                            ],
-                            "type": "BASH-ASSIGN"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-OP"
-                                        }
-                                    ],
-                                    "type": "BASH-CONDITION-OP"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-OP"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-CONDITION-UNARY-OP"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "children": [],
-                                                                            "type": "BASH-OP"
-                                                                        }
-                                                                    ],
-                                                                    "type": "BASH-CONDITION-UNARY-OP"
-                                                                },
-                                                                {
-                                                                    "children": [
-                                                                        {
-                                                                            "children": [
-                                                                                {
-                                                                                    "children": [
-                                                                                        {
-                                                                                            "type": "ABS-MAYBE-PATH",
-                                                                                            "children": []
-                                                                                        },
-                                                                                        {
-                                                                                            "type": "ABS-PATH-ABSOLUTE",
-                                                                                            "children": []
-                                                                                        }
-                                                                                    ],
-                                                                                    "type": "BASH-LITERAL"
-                                                                                },
-                                                                                {
-                                                                                    "children": [],
-                                                                                    "type": "BASH-VARIABLE:base"
-                                                                                }
-                                                                            ],
-                                                                            "type": "BASH-DOUBLE-QUOTED"
-                                                                        }
-                                                                    ],
-                                                                    "type": "BASH-CONDITION-UNARY-EXP"
-                                                                }
-                                                            ],
-                                                            "type": "BASH-CONDITION-UNARY"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-CONDITION-UNARY-EXP"
-                                                }
-                                            ],
-                                            "type": "BASH-CONDITION-UNARY"
-                                        }
-                                    ],
-                                    "type": "BASH-CONDITION-EXP"
-                                }
-                            ],
-                            "type": "BASH-CONDITION"
-                        },
-                        {
-                            "children": [],
-                            "type": "UNKNOWN"
-                        }
-                    ],
-                    "type": "BASH-FOR-IN-BODY"
+                    "type": "SC-LN-LINK"
                 }
             ],
-            "type": "BASH-FOR-IN"
+            "type": "SC-LN"
         }
     }
 ]

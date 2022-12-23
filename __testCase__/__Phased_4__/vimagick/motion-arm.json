@@ -58,66 +58,28 @@
     {
         "astCommandId": "motion-arm:4:3",
         "astCommand": {
-            "type": "BASH-REDIRECT",
+            "type": "SC-ECHO",
             "children": [
                 {
-                    "type": "BASH-REDIRECT-COMMAND",
+                    "type": "SC-ECHO-ITEMS",
                     "children": [
                         {
-                            "type": "SC-ECHO",
+                            "type": "SC-ECHO-ITEM",
                             "children": [
                                 {
-                                    "type": "SC-ECHO-ITEMS",
+                                    "type": "BASH-LITERAL",
                                     "children": [
                                         {
-                                            "type": "SC-ECHO-ITEM",
-                                            "children": [
-                                                {
-                                                    "type": "BASH-LITERAL",
-                                                    "children": [
-                                                        {
-                                                            "type": "ABS-URL-PROTOCOL-HTTP",
-                                                            "children": []
-                                                        },
-                                                        {
-                                                            "type": "ABS-SINGLE-SPACE",
-                                                            "children": []
-                                                        },
-                                                        {
-                                                            "type": "ABS-PROBABLY-URL",
-                                                            "children": []
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "BASH-REDIRECT-REDIRECTS",
-                    "children": [
-                        {
-                            "type": "BASH-REDIRECT-OVERWRITE",
-                            "children": [
-                                {
-                                    "type": "BASH-PATH",
-                                    "children": [
+                                            "type": "ABS-URL-PROTOCOL-HTTP",
+                                            "children": []
+                                        },
                                         {
-                                            "type": "BASH-LITERAL",
-                                            "children": [
-                                                {
-                                                    "type": "ABS-PATH-ABSOLUTE",
-                                                    "children": []
-                                                },
-                                                {
-                                                    "type": "ABS-MAYBE-PATH",
-                                                    "children": []
-                                                }
-                                            ]
+                                            "type": "ABS-SINGLE-SPACE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-PROBABLY-URL",
+                                            "children": []
                                         }
                                     ]
                                 }
@@ -131,49 +93,35 @@
     {
         "astCommandId": "motion-arm:4:4",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
-                    "children": [
-                        {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": [
-                                        {
-                                            "type": "ABS-URL-PROTOCOL-HTTP",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "ABS-PROBABLY-URL",
-                                            "children": []
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
                 },
                 {
-                    "type": "SC-APT-KEY-ADD",
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-APT-KEY-FILENAME",
-                            "children": []
+                            "type": "BASH-LITERAL",
+                            "children": [
+                                {
+                                    "type": "ABS-URL-PROTOCOL-HTTP",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-PROBABLY-URL",
+                                    "children": []
+                                }
+                            ]
                         }
                     ]
                 }
@@ -183,12 +131,24 @@
     {
         "astCommandId": "motion-arm:4:5",
         "astCommand": {
+            "type": "SC-APT-KEY-ADD",
+            "children": [
+                {
+                    "type": "SC-APT-KEY-FILENAME",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "motion-arm:4:6",
+        "astCommand": {
             "type": "SC-APT-GET-UPDATE",
             "children": []
         }
     },
     {
-        "astCommandId": "motion-arm:4:6",
+        "astCommandId": "motion-arm:4:7",
         "astCommand": {
             "type": "SC-APT-GET-INSTALL",
             "children": [
@@ -209,7 +169,7 @@
         }
     },
     {
-        "astCommandId": "motion-arm:4:7",
+        "astCommandId": "motion-arm:4:8",
         "astCommand": {
             "type": "SC-CURL",
             "children": [
@@ -252,52 +212,19 @@
         }
     },
     {
-        "astCommandId": "motion-arm:4:8",
+        "astCommandId": "motion-arm:4:9",
         "astCommand": {
-            "type": "BASH-SUBSHELL",
+            "type": "SC-DPKG",
             "children": [
                 {
-                    "type": "BASH-OR-IF",
+                    "type": "SC-DPKG-INSTALLS",
                     "children": [
                         {
-                            "type": "BASH-OR-MEM",
+                            "type": "SC-DPKG-INSTALL",
                             "children": [
                                 {
-                                    "type": "SC-DPKG",
-                                    "children": [
-                                        {
-                                            "type": "SC-DPKG-INSTALLS",
-                                            "children": [
-                                                {
-                                                    "type": "SC-DPKG-INSTALL",
-                                                    "children": [
-                                                        {
-                                                            "type": "BASH-VARIABLE:MOTION_FILE",
-                                                            "children": []
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "BASH-OR-MEM",
-                            "children": [
-                                {
-                                    "type": "SC-APT-GET-INSTALL",
-                                    "children": [
-                                        {
-                                            "type": "SC-APT-GET-F-FIX-BROKEN",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "SC-APT-GET-F-YES",
-                                            "children": []
-                                        }
-                                    ]
+                                    "type": "BASH-VARIABLE:MOTION_FILE",
+                                    "children": []
                                 }
                             ]
                         }
@@ -307,7 +234,23 @@
         }
     },
     {
-        "astCommandId": "motion-arm:4:9",
+        "astCommandId": "motion-arm:4:10",
+        "astCommand": {
+            "type": "SC-APT-GET-INSTALL",
+            "children": [
+                {
+                    "type": "SC-APT-GET-F-FIX-BROKEN",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-F-YES",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "motion-arm:4:11",
         "astCommand": {
             "type": "SC-SED",
             "children": [
@@ -398,7 +341,7 @@
         }
     },
     {
-        "astCommandId": "motion-arm:4:10",
+        "astCommandId": "motion-arm:4:12",
         "astCommand": {
             "type": "SC-RM",
             "children": [

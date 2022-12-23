@@ -52,38 +52,36 @@
     {
         "astCommandId": "shoutcast:2:3",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-CURL-URL",
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "http://download.nullsoft.com/shoutcast/tools/sc_serv2_linux_x64-latest.tar.gz"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "shoutcast:2:4",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-ARGS",
+                    "children": [
+                        {
+                            "type": "SC-TAR-ARG",
                             "children": [
                                 {
                                     "type": "BASH-LITERAL",
                                     "children": [],
-                                    "value": "http://download.nullsoft.com/shoutcast/tools/sc_serv2_linux_x64-latest.tar.gz"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "SC-TAR",
-                    "children": [
-                        {
-                            "type": "SC-TAR-ARGS",
-                            "children": [
-                                {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "xz"
-                                        }
-                                    ]
+                                    "value": "xz"
                                 }
                             ]
                         }
@@ -93,7 +91,7 @@
         }
     },
     {
-        "astCommandId": "shoutcast:2:4",
+        "astCommandId": "shoutcast:2:5",
         "astCommand": {
             "type": "SC-MKDIR",
             "children": [
@@ -130,7 +128,7 @@
         }
     },
     {
-        "astCommandId": "shoutcast:2:5",
+        "astCommandId": "shoutcast:2:6",
         "astCommand": {
             "type": "SC-APT-GET-PURGE",
             "children": [
@@ -161,7 +159,7 @@
         }
     },
     {
-        "astCommandId": "shoutcast:2:6",
+        "astCommandId": "shoutcast:2:7",
         "astCommand": {
             "type": "SC-RM",
             "children": [

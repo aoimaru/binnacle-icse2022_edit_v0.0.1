@@ -46,30 +46,16 @@
     {
         "astCommandId": "i2pd:5:3",
         "astCommand": {
-            "type": "BASH-BRACE-GROUP",
+            "type": "SC-WGET",
             "children": [
                 {
-                    "type": "SC-WGET",
+                    "type": "SC-WGET-OUTPUT-DOCUMENT",
                     "children": [
                         {
-                            "type": "SC-WGET-OUTPUT-DOCUMENT",
+                            "type": "BASH-PATH",
                             "children": [
                                 {
-                                    "type": "BASH-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": []
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-WGET-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-VARIABLE:I2PD_URL",
+                                    "type": "BASH-LITERAL",
                                     "children": []
                                 }
                             ]
@@ -77,16 +63,83 @@
                     ]
                 },
                 {
-                    "type": "SC-DPKG",
+                    "type": "SC-WGET-URL",
                     "children": [
                         {
-                            "type": "SC-DPKG-INSTALLS",
+                            "type": "BASH-VARIABLE:I2PD_URL",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "i2pd:5:4",
+        "astCommand": {
+            "type": "SC-DPKG",
+            "children": [
+                {
+                    "type": "SC-DPKG-INSTALLS",
+                    "children": [
+                        {
+                            "type": "SC-DPKG-INSTALL",
                             "children": [
                                 {
-                                    "type": "SC-DPKG-INSTALL",
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "i2pd:5:5",
+        "astCommand": {
+            "type": "SC-APT-GET-INSTALL",
+            "children": [
+                {
+                    "type": "SC-APT-GET-F-FIX-BROKEN",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-F-YES",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "i2pd:5:6",
+        "astCommand": {
+            "type": "SC-SED",
+            "children": [
+                {
+                    "type": "SC-SED-F-IN-PLACE",
+                    "children": []
+                },
+                {
+                    "type": "SC-SED-EXPRESSIONS",
+                    "children": [
+                        {
+                            "type": "SC-SED-EXPRESSION",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
                                     "children": [
                                         {
-                                            "type": "BASH-LITERAL",
+                                            "type": "ABS-PATH-ABSOLUTE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-MAYBE-PATH",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-SINGLE-SPACE",
                                             "children": []
                                         }
                                     ]
@@ -96,88 +149,20 @@
                     ]
                 },
                 {
-                    "type": "SC-APT-GET-INSTALL",
+                    "type": "SC-SED-PATHS",
                     "children": [
                         {
-                            "type": "SC-APT-GET-F-FIX-BROKEN",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-APT-GET-F-YES",
-                            "children": []
-                        }
-                    ]
-                },
-                {
-                    "type": "SC-SED",
-                    "children": [
-                        {
-                            "type": "SC-SED-F-IN-PLACE",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-SED-EXPRESSIONS",
+                            "type": "SC-SED-PATH",
                             "children": [
                                 {
-                                    "type": "SC-SED-EXPRESSION",
+                                    "type": "BASH-LITERAL",
                                     "children": [
                                         {
-                                            "type": "BASH-LITERAL",
-                                            "children": [
-                                                {
-                                                    "type": "ABS-PATH-ABSOLUTE",
-                                                    "children": []
-                                                },
-                                                {
-                                                    "type": "ABS-MAYBE-PATH",
-                                                    "children": []
-                                                },
-                                                {
-                                                    "type": "ABS-SINGLE-SPACE",
-                                                    "children": []
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-SED-PATHS",
-                            "children": [
-                                {
-                                    "type": "SC-SED-PATH",
-                                    "children": [
+                                            "type": "ABS-PATH-ABSOLUTE",
+                                            "children": []
+                                        },
                                         {
-                                            "type": "BASH-LITERAL",
-                                            "children": [
-                                                {
-                                                    "type": "ABS-PATH-ABSOLUTE",
-                                                    "children": []
-                                                },
-                                                {
-                                                    "type": "ABS-MAYBE-PATH",
-                                                    "children": []
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "SC-RM",
-                    "children": [
-                        {
-                            "type": "SC-RM-PATHS",
-                            "children": [
-                                {
-                                    "type": "SC-RM-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
+                                            "type": "ABS-MAYBE-PATH",
                                             "children": []
                                         }
                                     ]
@@ -190,7 +175,29 @@
         }
     },
     {
-        "astCommandId": "i2pd:5:4",
+        "astCommandId": "i2pd:5:7",
+        "astCommand": {
+            "type": "SC-RM",
+            "children": [
+                {
+                    "type": "SC-RM-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "i2pd:5:8",
         "astCommand": {
             "type": "SC-APT-GET-REMOVE",
             "children": [
@@ -211,7 +218,7 @@
         }
     },
     {
-        "astCommandId": "i2pd:5:5",
+        "astCommandId": "i2pd:5:9",
         "astCommand": {
             "type": "SC-RM",
             "children": [

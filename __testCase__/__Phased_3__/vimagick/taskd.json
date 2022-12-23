@@ -94,53 +94,51 @@
     {
         "astCommandId": "taskd:2:1",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-WGET",
             "children": [
                 {
-                    "type": "SC-WGET",
+                    "type": "SC-WGET-OUTPUT-DOCUMENT",
                     "children": [
                         {
-                            "type": "SC-WGET-OUTPUT-DOCUMENT",
-                            "children": [
-                                {
-                                    "type": "BASH-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "-"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-WGET-URL",
+                            "type": "BASH-PATH",
                             "children": [
                                 {
                                     "type": "BASH-LITERAL",
                                     "children": [],
-                                    "value": "http://downloads.sourceforge.net/project/libuuid/libuuid-1.0.3.tar.gz"
+                                    "value": "-"
                                 }
                             ]
                         }
                     ]
                 },
                 {
-                    "type": "SC-TAR",
+                    "type": "SC-WGET-URL",
                     "children": [
                         {
-                            "type": "SC-TAR-ARGS",
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "http://downloads.sourceforge.net/project/libuuid/libuuid-1.0.3.tar.gz"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "taskd:2:2",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-ARGS",
+                    "children": [
+                        {
+                            "type": "SC-TAR-ARG",
                             "children": [
                                 {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "xz"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "xz"
                                 }
                             ]
                         }
@@ -150,7 +148,7 @@
         }
     },
     {
-        "astCommandId": "taskd:2:2",
+        "astCommandId": "taskd:2:3",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -168,7 +166,7 @@
         }
     },
     {
-        "astCommandId": "taskd:2:3",
+        "astCommandId": "taskd:2:4",
         "astCommand": {
             "type": "SC-CONFIGURE",
             "children": [
@@ -191,7 +189,7 @@
         }
     },
     {
-        "astCommandId": "taskd:2:4",
+        "astCommandId": "taskd:2:5",
         "astCommand": {
             "type": "SC-MAKE",
             "children": [
@@ -209,7 +207,7 @@
         }
     },
     {
-        "astCommandId": "taskd:2:5",
+        "astCommandId": "taskd:2:6",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -227,7 +225,7 @@
         }
     },
     {
-        "astCommandId": "taskd:2:6",
+        "astCommandId": "taskd:2:7",
         "astCommand": {
             "type": "SC-RM",
             "children": [
@@ -258,55 +256,53 @@
         }
     },
     {
-        "astCommandId": "taskd:2:7",
+        "astCommandId": "taskd:2:8",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-WGET",
             "children": [
                 {
-                    "type": "SC-WGET",
+                    "type": "SC-WGET-OUTPUT-DOCUMENT",
                     "children": [
                         {
-                            "type": "SC-WGET-OUTPUT-DOCUMENT",
-                            "children": [
-                                {
-                                    "type": "BASH-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "-"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-WGET-URL",
+                            "type": "BASH-PATH",
                             "children": [
                                 {
                                     "type": "BASH-LITERAL",
                                     "children": [],
-                                    "value": "http://taskwarrior.org/download/taskd-1.1.0.tar.gz"
+                                    "value": "-"
                                 }
                             ]
                         }
                     ]
                 },
                 {
-                    "type": "SC-TAR",
+                    "type": "SC-WGET-URL",
                     "children": [
                         {
-                            "type": "SC-TAR-ARGS",
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "http://taskwarrior.org/download/taskd-1.1.0.tar.gz"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "taskd:2:9",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-ARGS",
+                    "children": [
+                        {
+                            "type": "SC-TAR-ARG",
                             "children": [
                                 {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "xz"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "xz"
                                 }
                             ]
                         }
@@ -316,7 +312,7 @@
         }
     },
     {
-        "astCommandId": "taskd:2:8",
+        "astCommandId": "taskd:2:10",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -334,7 +330,7 @@
         }
     },
     {
-        "astCommandId": "taskd:2:9",
+        "astCommandId": "taskd:2:11",
         "astCommand": {
             "type": "SC-CMAKE",
             "children": [
@@ -377,7 +373,7 @@
         }
     },
     {
-        "astCommandId": "taskd:2:10",
+        "astCommandId": "taskd:2:12",
         "astCommand": {
             "type": "SC-MAKE",
             "children": [
@@ -395,7 +391,7 @@
         }
     },
     {
-        "astCommandId": "taskd:2:11",
+        "astCommandId": "taskd:2:13",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -413,7 +409,7 @@
         }
     },
     {
-        "astCommandId": "taskd:2:12",
+        "astCommandId": "taskd:2:14",
         "astCommand": {
             "type": "SC-MKDIR",
             "children": [
@@ -440,7 +436,7 @@
         }
     },
     {
-        "astCommandId": "taskd:2:13",
+        "astCommandId": "taskd:2:15",
         "astCommand": {
             "type": "SC-MV",
             "children": [
@@ -483,7 +479,7 @@
         }
     },
     {
-        "astCommandId": "taskd:2:14",
+        "astCommandId": "taskd:2:16",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -501,7 +497,7 @@
         }
     },
     {
-        "astCommandId": "taskd:2:15",
+        "astCommandId": "taskd:2:17",
         "astCommand": {
             "type": "SC-RM",
             "children": [
@@ -532,7 +528,7 @@
         }
     },
     {
-        "astCommandId": "taskd:2:16",
+        "astCommandId": "taskd:2:18",
         "astCommand": {
             "type": "SC-APK-DEL",
             "children": [
@@ -579,7 +575,7 @@
         }
     },
     {
-        "astCommandId": "taskd:2:17",
+        "astCommandId": "taskd:2:19",
         "astCommand": {
             "type": "SC-RM",
             "children": [

@@ -59,47 +59,45 @@
     {
         "astCommandId": "tmail:1:1",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-WGET",
             "children": [
                 {
-                    "type": "SC-WGET",
+                    "type": "SC-WGET-OUTPUT-DOCUMENT",
                     "children": [
                         {
-                            "type": "SC-WGET-OUTPUT-DOCUMENT",
-                            "children": [
-                                {
-                                    "type": "BASH-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "-"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-WGET-URL",
+                            "type": "BASH-PATH",
                             "children": [
                                 {
                                     "type": "BASH-LITERAL",
                                     "children": [],
-                                    "value": "https://bootstrap.pypa.io/get-pip.py"
+                                    "value": "-"
                                 }
                             ]
                         }
                     ]
                 },
                 {
-                    "type": "SC-PYTHON",
-                    "children": []
+                    "type": "SC-WGET-URL",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "https://bootstrap.pypa.io/get-pip.py"
+                        }
+                    ]
                 }
             ]
         }
     },
     {
         "astCommandId": "tmail:1:2",
+        "astCommand": {
+            "type": "SC-PYTHON",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "tmail:1:3",
         "astCommand": {
             "type": "SC-PIP-INSTALL",
             "children": [
@@ -126,7 +124,7 @@
         }
     },
     {
-        "astCommandId": "tmail:1:3",
+        "astCommandId": "tmail:1:4",
         "astCommand": {
             "type": "SC-APK-DEL",
             "children": [
@@ -173,7 +171,7 @@
         }
     },
     {
-        "astCommandId": "tmail:1:4",
+        "astCommandId": "tmail:1:5",
         "astCommand": {
             "type": "SC-RM",
             "children": [

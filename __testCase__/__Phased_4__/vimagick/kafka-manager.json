@@ -309,95 +309,48 @@
     {
         "astCommandId": "kafka-manager:6:2",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
-                    "children": [
-                        {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-CONCAT",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [
-                                                {
-                                                    "type": "ABS-PROBABLY-URL",
-                                                    "children": []
-                                                },
-                                                {
-                                                    "type": "ABS-URL-PROTOCOL-HTTPS",
-                                                    "children": []
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "BASH-VARIABLE:KAFKA_MANAGER_VERSION",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [
-                                                {
-                                                    "type": "ABS-EXTENSION-TAR",
-                                                    "children": []
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
                 },
                 {
-                    "type": "SC-TAR",
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-TAR-STRIP",
+                            "type": "BASH-CONCAT",
                             "children": [
                                 {
                                     "type": "BASH-LITERAL",
-                                    "children": []
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-TAR-DIRECTORY",
-                            "children": [
-                                {
-                                    "type": "BASH-PATH",
                                     "children": [
                                         {
-                                            "type": "BASH-LITERAL",
+                                            "type": "ABS-PROBABLY-URL",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-URL-PROTOCOL-HTTPS",
                                             "children": []
                                         }
                                     ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-TAR-ARGS",
-                            "children": [
+                                },
                                 {
-                                    "type": "SC-TAR-ARG",
+                                    "type": "BASH-VARIABLE:KAFKA_MANAGER_VERSION",
+                                    "children": []
+                                },
+                                {
+                                    "type": "BASH-LITERAL",
                                     "children": [
                                         {
-                                            "type": "BASH-LITERAL",
+                                            "type": "ABS-EXTENSION-TAR",
                                             "children": []
                                         }
                                     ]
@@ -411,6 +364,51 @@
     },
     {
         "astCommandId": "kafka-manager:6:3",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-STRIP",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-TAR-DIRECTORY",
+                    "children": [
+                        {
+                            "type": "BASH-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-TAR-ARGS",
+                    "children": [
+                        {
+                            "type": "SC-TAR-ARG",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "kafka-manager:6:4",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -427,7 +425,7 @@
         }
     },
     {
-        "astCommandId": "kafka-manager:6:4",
+        "astCommandId": "kafka-manager:6:5",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -449,7 +447,7 @@
         }
     },
     {
-        "astCommandId": "kafka-manager:6:5",
+        "astCommandId": "kafka-manager:6:6",
         "astCommand": {
             "type": "SC-TAR",
             "children": [
@@ -507,7 +505,7 @@
         }
     },
     {
-        "astCommandId": "kafka-manager:6:6",
+        "astCommandId": "kafka-manager:6:7",
         "astCommand": {
             "type": "SC-RM",
             "children": [

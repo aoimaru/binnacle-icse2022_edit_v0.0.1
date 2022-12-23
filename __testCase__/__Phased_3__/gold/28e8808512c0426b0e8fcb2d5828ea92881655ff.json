@@ -208,36 +208,34 @@
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "${REDIS_DOWNLOAD_SHA} *redis.tar.gz"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO-ITEM"
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "${REDIS_DOWNLOAD_SHA} *redis.tar.gz"
                                 }
                             ],
-                            "type": "SC-ECHO-ITEMS"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "SC-ECHO"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "SC-SHA-256-SUM-F-CHECK"
-                        }
-                    ],
-                    "type": "SC-SHA-256-SUM"
+                    "type": "SC-ECHO-ITEMS"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-ECHO"
         }
     },
     {
         "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:4",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-SHA-256-SUM-F-CHECK"
+                }
+            ],
+            "type": "SC-SHA-256-SUM"
+        }
+    },
+    {
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:5",
         "astCommand": {
             "children": [
                 {
@@ -264,7 +262,7 @@
         }
     },
     {
-        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:5",
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:6",
         "astCommand": {
             "children": [
                 {
@@ -320,7 +318,7 @@
         }
     },
     {
-        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:6",
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:7",
         "astCommand": {
             "children": [
                 {
@@ -343,7 +341,7 @@
         }
     },
     {
-        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:7",
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:8",
         "astCommand": {
             "children": [
                 {
@@ -380,7 +378,7 @@
         }
     },
     {
-        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:8",
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:9",
         "astCommand": {
             "children": [
                 {
@@ -426,7 +424,7 @@
         }
     },
     {
-        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:9",
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:10",
         "astCommand": {
             "children": [
                 {
@@ -463,7 +461,7 @@
         }
     },
     {
-        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:10",
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:11",
         "astCommand": {
             "children": [
                 {
@@ -496,7 +494,7 @@
         }
     },
     {
-        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:11",
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:12",
         "astCommand": {
             "children": [
                 {
@@ -529,7 +527,7 @@
         }
     },
     {
-        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:12",
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:13",
         "astCommand": {
             "children": [
                 {
@@ -553,60 +551,6 @@
                 }
             ],
             "type": "SC-RM"
-        }
-    },
-    {
-        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:13",
-        "astCommand": {
-            "children": [
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "runDeps"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                },
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                },
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                },
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                }
-                                            ],
-                                            "type": "BASH-PIPELINE"
-                                        }
-                                    ],
-                                    "type": "BASH-DOLLAR-PARENS"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
-                }
-            ],
-            "type": "BASH-ASSIGN"
         }
     },
     {

@@ -196,34 +196,6 @@
         "astCommand": {
             "children": [
                 {
-                    "children": [
-                        {
-                            "children": [],
-                            "value": "buildDeps",
-                            "type": "BASH-VARIABLE"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "value": " \t\tbzip2 \t\tca-certificates \t\tcurl \t",
-                            "type": "BASH-SINGLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
-                }
-            ],
-            "type": "BASH-ASSIGN"
-        }
-    },
-    {
-        "astCommandId": "ricochet:5:1",
-        "astCommand": {
-            "children": [
-                {
                     "children": [],
                     "type": "SC-SET-F-X"
                 }
@@ -232,14 +204,14 @@
         }
     },
     {
-        "astCommandId": "ricochet:5:2",
+        "astCommandId": "ricochet:5:1",
         "astCommand": {
             "children": [],
             "type": "SC-APT-GET-UPDATE"
         }
     },
     {
-        "astCommandId": "ricochet:5:3",
+        "astCommandId": "ricochet:5:2",
         "astCommand": {
             "children": [
                 {
@@ -270,7 +242,7 @@
         }
     },
     {
-        "astCommandId": "ricochet:5:4",
+        "astCommandId": "ricochet:5:3",
         "astCommand": {
             "children": [
                 {
@@ -311,7 +283,7 @@
         }
     },
     {
-        "astCommandId": "ricochet:5:5",
+        "astCommandId": "ricochet:5:4",
         "astCommand": {
             "children": [
                 {
@@ -356,7 +328,7 @@
         }
     },
     {
-        "astCommandId": "ricochet:5:6",
+        "astCommandId": "ricochet:5:5",
         "astCommand": {
             "children": [
                 {
@@ -401,7 +373,7 @@
         }
     },
     {
-        "astCommandId": "ricochet:5:7",
+        "astCommandId": "ricochet:5:6",
         "astCommand": {
             "children": [
                 {
@@ -453,7 +425,7 @@
         }
     },
     {
-        "astCommandId": "ricochet:5:8",
+        "astCommandId": "ricochet:5:7",
         "astCommand": {
             "children": [
                 {
@@ -486,51 +458,49 @@
         }
     },
     {
-        "astCommandId": "ricochet:5:9",
+        "astCommandId": "ricochet:5:8",
         "astCommand": {
             "children": [
                 {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SILENT"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SHOW-ERROR"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-LOCATION"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "value": "https://ricochet.im/john-brooks.asc",
-                                    "type": "BASH-LITERAL"
-                                }
-                            ],
-                            "type": "SC-CURL-URL"
-                        }
-                    ],
-                    "type": "SC-CURL"
+                    "children": [],
+                    "type": "SC-CURL-F-SILENT"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-SHOW-ERROR"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-LOCATION"
                 },
                 {
                     "children": [
                         {
                             "children": [],
-                            "type": "SC-GPG-F-NO-TTY"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-GPG-F-IMPORT"
+                            "value": "https://ricochet.im/john-brooks.asc",
+                            "type": "BASH-LITERAL"
                         }
                     ],
-                    "type": "SC-GPG"
+                    "type": "SC-CURL-URL"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-CURL"
+        }
+    },
+    {
+        "astCommandId": "ricochet:5:9",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-GPG-F-NO-TTY"
+                },
+                {
+                    "children": [],
+                    "type": "SC-GPG-F-IMPORT"
+                }
+            ],
+            "type": "SC-GPG"
         }
     },
     {
@@ -538,38 +508,18 @@
         "astCommand": {
             "children": [
                 {
+                    "children": [],
+                    "type": "SC-GPG-F-FINGERPRINT"
+                },
+                {
                     "children": [
                         {
                             "children": [],
-                            "type": "SC-GPG-F-FINGERPRINT"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "value": "LONG",
-                                    "type": "BASH-LITERAL"
-                                }
-                            ],
-                            "type": "SC-GPG-KEYID-FORMAT"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "value": "RICOCHET_FINGERPRINT",
-                                            "type": "BASH-VARIABLE"
-                                        }
-                                    ],
-                                    "type": "SC-GPG-TARGET"
-                                }
-                            ],
-                            "type": "SC-GPG-TARGETS"
+                            "value": "LONG",
+                            "type": "BASH-LITERAL"
                         }
                     ],
-                    "type": "SC-GPG"
+                    "type": "SC-GPG-KEYID-FORMAT"
                 },
                 {
                     "children": [
@@ -577,21 +527,39 @@
                             "children": [
                                 {
                                     "children": [],
-                                    "value": "9032 CAE4 CBFA 933A 5A21  45D5 FF97 C53F 183C 045D",
-                                    "type": "BASH-LITERAL"
+                                    "value": "RICOCHET_FINGERPRINT",
+                                    "type": "BASH-VARIABLE"
                                 }
                             ],
-                            "type": "SC-GREP-PATTERN"
+                            "type": "SC-GPG-TARGET"
                         }
                     ],
-                    "type": "SC-GREP"
+                    "type": "SC-GPG-TARGETS"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-GPG"
         }
     },
     {
         "astCommandId": "ricochet:5:11",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "9032 CAE4 CBFA 933A 5A21  45D5 FF97 C53F 183C 045D",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GREP-PATTERN"
+                }
+            ],
+            "type": "SC-GREP"
+        }
+    },
+    {
+        "astCommandId": "ricochet:5:12",
         "astCommand": {
             "children": [
                 {
@@ -628,7 +596,7 @@
         }
     },
     {
-        "astCommandId": "ricochet:5:12",
+        "astCommandId": "ricochet:5:13",
         "astCommand": {
             "children": [
                 {
@@ -688,7 +656,7 @@
         }
     },
     {
-        "astCommandId": "ricochet:5:13",
+        "astCommandId": "ricochet:5:14",
         "astCommand": {
             "children": [
                 {
@@ -729,7 +697,7 @@
         }
     },
     {
-        "astCommandId": "ricochet:5:14",
+        "astCommandId": "ricochet:5:15",
         "astCommand": {
             "children": [
                 {
@@ -760,7 +728,7 @@
         }
     },
     {
-        "astCommandId": "ricochet:5:15",
+        "astCommandId": "ricochet:5:16",
         "astCommand": {
             "children": [
                 {

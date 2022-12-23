@@ -33,7 +33,7 @@ def _get_commands_(file_sha: str, content: dict):
             """クロシージャ"""
             if me["children"]:
                 for child in me["children"]:
-                    if child["type"] in RUN_CLEANING_WORDS:
+                    if not child["type"].startswith("SC-"):
                         _filter_(child)
                     else:
                         commands.append(child)
@@ -55,15 +55,14 @@ def _to_file_(file_path, columns):
     with open(file_path, mode="w") as f:
         json.dump(columns, f, indent=4)
 
-
 def main():
-    file_path = "vimagick.jsonl"
+    file_path = "gold.jsonl"
     contents = _get_contents_(file_path)
 
     for content_id, content in enumerate(contents):
         file_sha = content[FILE_SHA]
         columns = _get_commands_(file_sha, content)
-        file_path = "{}/{}.json".format(VIMAGICK_PATH, file_sha)
+        file_path = "{}/{}.json".format(GOLD_PATH, file_sha)
         _to_file_(file_path, columns)
 
 

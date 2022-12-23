@@ -319,44 +319,42 @@
     {
         "astCommandId": "scrapyd:5:4",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
-                    "children": [
-                        {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": [],
-                                    "value": "https://bootstrap.pypa.io/pip/2.7/get-pip.py"
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
                 },
                 {
-                    "type": "SC-PYTHON",
+                    "type": "SC-CURL-F-SHOW-ERROR",
                     "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "https://bootstrap.pypa.io/pip/2.7/get-pip.py"
+                        }
+                    ]
                 }
             ]
         }
     },
     {
         "astCommandId": "scrapyd:5:5",
+        "astCommand": {
+            "type": "SC-PYTHON",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "scrapyd:5:6",
         "astCommand": {
             "type": "SC-PIP-INSTALL",
             "children": [
@@ -563,7 +561,7 @@
         }
     },
     {
-        "astCommandId": "scrapyd:5:6",
+        "astCommandId": "scrapyd:5:7",
         "astCommand": {
             "type": "SC-CURL",
             "children": [
@@ -608,50 +606,20 @@
         }
     },
     {
-        "astCommandId": "scrapyd:5:7",
+        "astCommandId": "scrapyd:5:8",
         "astCommand": {
-            "type": "BASH-REDIRECT",
+            "type": "SC-ECHO",
             "children": [
                 {
-                    "type": "BASH-REDIRECT-COMMAND",
+                    "type": "SC-ECHO-ITEMS",
                     "children": [
                         {
-                            "type": "SC-ECHO",
+                            "type": "SC-ECHO-ITEM",
                             "children": [
                                 {
-                                    "type": "SC-ECHO-ITEMS",
-                                    "children": [
-                                        {
-                                            "type": "SC-ECHO-ITEM",
-                                            "children": [
-                                                {
-                                                    "type": "BASH-LITERAL",
-                                                    "children": [],
-                                                    "value": "source /etc/bash_completion.d/scrapy_bash_completion"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "BASH-REDIRECT-REDIRECTS",
-                    "children": [
-                        {
-                            "type": "BASH-REDIRECT-APPEND",
-                            "children": [
-                                {
-                                    "type": "BASH-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "/root/.bashrc"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "source /etc/bash_completion.d/scrapy_bash_completion"
                                 }
                             ]
                         }
@@ -661,7 +629,7 @@
         }
     },
     {
-        "astCommandId": "scrapyd:5:8",
+        "astCommandId": "scrapyd:5:9",
         "astCommand": {
             "type": "SC-APT-GET-PURGE",
             "children": [
@@ -772,7 +740,7 @@
         }
     },
     {
-        "astCommandId": "scrapyd:5:9",
+        "astCommandId": "scrapyd:5:10",
         "astCommand": {
             "type": "SC-APT-GET-PURGE",
             "children": [
@@ -853,7 +821,7 @@
         }
     },
     {
-        "astCommandId": "scrapyd:5:10",
+        "astCommandId": "scrapyd:5:11",
         "astCommand": {
             "type": "SC-RM",
             "children": [

@@ -200,115 +200,6 @@
                 {
                     "children": [
                         {
-                            "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "OPENSSL_SOURCE_URL"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "BASH-LITERAL",
-                                    "value": "https://www.openssl.org/source/openssl-"
-                                },
-                                {
-                                    "children": [],
-                                    "type": "BASH-VARIABLE",
-                                    "value": "OPENSSL_VERSION"
-                                },
-                                {
-                                    "children": [],
-                                    "type": "BASH-LITERAL",
-                                    "value": ".tar.gz"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
-                }
-            ],
-            "type": "BASH-ASSIGN"
-        }
-    },
-    {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:3",
-        "astCommand": {
-            "children": [
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "OPENSSL_PATH"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "BASH-LITERAL",
-                                    "value": "/usr/local/src/openssl-"
-                                },
-                                {
-                                    "children": [],
-                                    "type": "BASH-VARIABLE",
-                                    "value": "OPENSSL_VERSION"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
-                }
-            ],
-            "type": "BASH-ASSIGN"
-        }
-    },
-    {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:4",
-        "astCommand": {
-            "children": [
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "OPENSSL_CONFIG_DIR"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-LITERAL",
-                            "value": "/usr/local/etc/ssl"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
-                }
-            ],
-            "type": "BASH-ASSIGN"
-        }
-    },
-    {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:5",
-        "astCommand": {
-            "children": [
-                {
-                    "children": [
-                        {
                             "children": [
                                 {
                                     "children": [],
@@ -326,7 +217,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:6",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:3",
         "astCommand": {
             "children": [
                 {
@@ -359,7 +250,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:7",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:4",
         "astCommand": {
             "children": [
                 {
@@ -392,7 +283,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:8",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:5",
         "astCommand": {
             "children": [
                 {
@@ -444,28 +335,22 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:9",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:6",
         "astCommand": {
             "children": [
                 {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "key"
-                        }
-                    ],
-                    "type": "BASH-FOR-IN-VARIABLE"
+                    "children": [],
+                    "type": "SC-GPG-F-BATCH"
                 },
                 {
                     "children": [
                         {
                             "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "OPENSSL_PGP_KEY_IDS"
+                            "type": "BASH-LITERAL",
+                            "value": "${PGP_KEYSERVER}"
                         }
                     ],
-                    "type": "BASH-FOR-IN-ITEMS"
+                    "type": "SC-GPG-KEYSERVER"
                 },
                 {
                     "children": [
@@ -473,45 +358,21 @@
                             "children": [
                                 {
                                     "children": [],
-                                    "type": "SC-GPG-F-BATCH"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "${PGP_KEYSERVER}"
-                                        }
-                                    ],
-                                    "type": "SC-GPG-KEYSERVER"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "BASH-LITERAL",
-                                                    "value": "${key}"
-                                                }
-                                            ],
-                                            "type": "SC-GPG-RECV-KEY"
-                                        }
-                                    ],
-                                    "type": "SC-GPG-RECV-KEYS"
+                                    "type": "BASH-LITERAL",
+                                    "value": "${key}"
                                 }
                             ],
-                            "type": "SC-GPG"
+                            "type": "SC-GPG-RECV-KEY"
                         }
                     ],
-                    "type": "BASH-FOR-IN-BODY"
+                    "type": "SC-GPG-RECV-KEYS"
                 }
             ],
-            "type": "BASH-FOR-IN"
+            "type": "SC-GPG"
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:10",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:7",
         "astCommand": {
             "children": [
                 {
@@ -548,7 +409,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:11",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:8",
         "astCommand": {
             "children": [
                 {
@@ -579,7 +440,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:12",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:9",
         "astCommand": {
             "children": [
                 {
@@ -587,36 +448,34 @@
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "${OPENSSL_SOURCE_SHA256} *${OPENSSL_PATH}.tar.gz"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO-ITEM"
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "${OPENSSL_SOURCE_SHA256} *${OPENSSL_PATH}.tar.gz"
                                 }
                             ],
-                            "type": "SC-ECHO-ITEMS"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "SC-ECHO"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "SC-SHA-256-SUM-F-CHECK"
-                        }
-                    ],
-                    "type": "SC-SHA-256-SUM"
+                    "type": "SC-ECHO-ITEMS"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-ECHO"
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:13",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:10",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-SHA-256-SUM-F-CHECK"
+                }
+            ],
+            "type": "SC-SHA-256-SUM"
+        }
+    },
+    {
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:11",
         "astCommand": {
             "children": [
                 {
@@ -643,7 +502,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:14",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:12",
         "astCommand": {
             "children": [
                 {
@@ -695,7 +554,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:15",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:13",
         "astCommand": {
             "children": [
                 {
@@ -713,7 +572,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:16",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:14",
         "astCommand": {
             "children": [
                 {
@@ -731,7 +590,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:17",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:15",
         "astCommand": {
             "children": [
                 {
@@ -764,7 +623,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:18",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:16",
         "astCommand": {
             "children": [
                 {
@@ -782,7 +641,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:19",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:17",
         "astCommand": {
             "children": [
                 {
@@ -828,7 +687,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:20",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:18",
         "astCommand": {
             "children": [
                 {
@@ -864,88 +723,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:21",
-        "astCommand": {
-            "children": [
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "OTP_SOURCE_URL"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "BASH-LITERAL",
-                                    "value": "https://github.com/erlang/otp/archive/OTP-"
-                                },
-                                {
-                                    "children": [],
-                                    "type": "BASH-VARIABLE",
-                                    "value": "OTP_VERSION"
-                                },
-                                {
-                                    "children": [],
-                                    "type": "BASH-LITERAL",
-                                    "value": ".tar.gz"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
-                }
-            ],
-            "type": "BASH-ASSIGN"
-        }
-    },
-    {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:22",
-        "astCommand": {
-            "children": [
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "OTP_PATH"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "BASH-LITERAL",
-                                    "value": "/usr/local/src/otp-"
-                                },
-                                {
-                                    "children": [],
-                                    "type": "BASH-VARIABLE",
-                                    "value": "OTP_VERSION"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
-                }
-            ],
-            "type": "BASH-ASSIGN"
-        }
-    },
-    {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:23",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:19",
         "astCommand": {
             "children": [
                 {
@@ -972,7 +750,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:24",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:20",
         "astCommand": {
             "children": [
                 {
@@ -1005,7 +783,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:25",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:21",
         "astCommand": {
             "children": [
                 {
@@ -1013,36 +791,34 @@
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "${OTP_SOURCE_SHA256} *${OTP_PATH}.tar.gz"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO-ITEM"
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "${OTP_SOURCE_SHA256} *${OTP_PATH}.tar.gz"
                                 }
                             ],
-                            "type": "SC-ECHO-ITEMS"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "SC-ECHO"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "SC-SHA-256-SUM-F-CHECK"
-                        }
-                    ],
-                    "type": "SC-SHA-256-SUM"
+                    "type": "SC-ECHO-ITEMS"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-ECHO"
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:26",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:22",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-SHA-256-SUM-F-CHECK"
+                }
+            ],
+            "type": "SC-SHA-256-SUM"
+        }
+    },
+    {
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:23",
         "astCommand": {
             "children": [
                 {
@@ -1094,7 +870,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:27",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:24",
         "astCommand": {
             "children": [
                 {
@@ -1112,7 +888,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:28",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:25",
         "astCommand": {
             "children": [
                 {
@@ -1155,44 +931,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:29",
-        "astCommand": {
-            "children": [
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "CFLAGS"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "UNKNOWN"
-                                        }
-                                    ],
-                                    "type": "BASH-DOLLAR-PARENS"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
-                }
-            ],
-            "type": "BASH-ASSIGN"
-        }
-    },
-    {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:30",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:26",
         "astCommand": {
             "children": [
                 {
@@ -1210,178 +949,55 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:31",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:27",
         "astCommand": {
             "children": [
                 {
                     "children": [
                         {
                             "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "hostArch"
+                            "type": "BASH-LITERAL",
+                            "value": "DEB_HOST_GNU_TYPE"
                         }
                     ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL",
-                                                            "value": "DEB_HOST_GNU_TYPE"
-                                                        }
-                                                    ],
-                                                    "type": "SC-DPKG-ARCHITECTURE-QUERY"
-                                                }
-                                            ],
-                                            "type": "SC-DPKG-ARCHITECTURE"
-                                        }
-                                    ],
-                                    "type": "BASH-DOLLAR-PARENS"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
+                    "type": "SC-DPKG-ARCHITECTURE-QUERY"
                 }
             ],
-            "type": "BASH-ASSIGN"
+            "type": "SC-DPKG-ARCHITECTURE"
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:32",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:28",
         "astCommand": {
             "children": [
                 {
                     "children": [
                         {
                             "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "buildArch"
+                            "type": "BASH-LITERAL",
+                            "value": "DEB_BUILD_GNU_TYPE"
                         }
                     ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL",
-                                                            "value": "DEB_BUILD_GNU_TYPE"
-                                                        }
-                                                    ],
-                                                    "type": "SC-DPKG-ARCHITECTURE-QUERY"
-                                                }
-                                            ],
-                                            "type": "SC-DPKG-ARCHITECTURE"
-                                        }
-                                    ],
-                                    "type": "BASH-DOLLAR-PARENS"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
+                    "type": "SC-DPKG-ARCHITECTURE-QUERY"
                 }
             ],
-            "type": "BASH-ASSIGN"
+            "type": "SC-DPKG-ARCHITECTURE"
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:33",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:29",
         "astCommand": {
             "children": [
                 {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "dpkgArch"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "SC-DPKG-F-PRINT-ARCHITECTURE"
-                                                }
-                                            ],
-                                            "type": "SC-DPKG"
-                                        }
-                                    ],
-                                    "type": "BASH-DOLLAR-PARENS"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
+                    "children": [],
+                    "type": "SC-DPKG-F-PRINT-ARCHITECTURE"
                 }
             ],
-            "type": "BASH-ASSIGN"
+            "type": "SC-DPKG"
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:34",
-        "astCommand": {
-            "children": [
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "dpkgArch"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "BASH-VARIABLE",
-                                    "value": "dpkgArch##*-"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
-                }
-            ],
-            "type": "BASH-ASSIGN"
-        }
-    },
-    {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:35",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:30",
         "astCommand": {
             "children": [
                 {
@@ -1535,7 +1151,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:36",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:31",
         "astCommand": {
             "children": [
                 {
@@ -1578,7 +1194,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:37",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:32",
         "astCommand": {
             "children": [
                 {
@@ -1596,7 +1212,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:38",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:33",
         "astCommand": {
             "children": [
                 {
@@ -1614,7 +1230,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:39",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:34",
         "astCommand": {
             "children": [
                 {
@@ -1710,61 +1326,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:40",
-        "astCommand": {
-            "children": [
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "runDeps"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                },
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                },
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                },
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                }
-                                            ],
-                                            "type": "BASH-PIPELINE"
-                                        }
-                                    ],
-                                    "type": "BASH-DOLLAR-PARENS"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
-                }
-            ],
-            "type": "BASH-ASSIGN"
-        }
-    },
-    {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:41",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:35",
         "astCommand": {
             "children": [
                 {
@@ -1801,7 +1363,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:42",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:8:36",
         "astCommand": {
             "children": [
                 {
@@ -2220,97 +1782,6 @@
                 {
                     "children": [
                         {
-                            "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "RABBITMQ_SOURCE_URL"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "BASH-LITERAL",
-                                    "value": "https://github.com/rabbitmq/rabbitmq-server/releases/download/v"
-                                },
-                                {
-                                    "children": [],
-                                    "type": "BASH-VARIABLE",
-                                    "value": "RABBITMQ_VERSION"
-                                },
-                                {
-                                    "children": [],
-                                    "type": "BASH-LITERAL",
-                                    "value": "/rabbitmq-server-generic-unix-"
-                                },
-                                {
-                                    "children": [],
-                                    "type": "BASH-VARIABLE",
-                                    "value": "RABBITMQ_VERSION"
-                                },
-                                {
-                                    "children": [],
-                                    "type": "BASH-LITERAL",
-                                    "value": ".tar.xz"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
-                }
-            ],
-            "type": "BASH-ASSIGN"
-        }
-    },
-    {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:3",
-        "astCommand": {
-            "children": [
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-VARIABLE",
-                            "value": "RABBITMQ_PATH"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "BASH-LITERAL",
-                                    "value": "/usr/local/src/rabbitmq-"
-                                },
-                                {
-                                    "children": [],
-                                    "type": "BASH-VARIABLE",
-                                    "value": "RABBITMQ_VERSION"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
-                }
-            ],
-            "type": "BASH-ASSIGN"
-        }
-    },
-    {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:4",
-        "astCommand": {
-            "children": [
-                {
-                    "children": [
-                        {
                             "children": [
                                 {
                                     "children": [],
@@ -2338,7 +1809,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:5",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:3",
         "astCommand": {
             "children": [
                 {
@@ -2371,7 +1842,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:6",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:4",
         "astCommand": {
             "children": [
                 {
@@ -2423,7 +1894,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:7",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:5",
         "astCommand": {
             "children": [
                 {
@@ -2460,7 +1931,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:8",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:6",
         "astCommand": {
             "children": [
                 {
@@ -2497,7 +1968,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:9",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:7",
         "astCommand": {
             "children": [
                 {
@@ -2528,7 +1999,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:10",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:8",
         "astCommand": {
             "children": [
                 {
@@ -2555,7 +2026,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:11",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:9",
         "astCommand": {
             "children": [
                 {
@@ -2607,7 +2078,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:12",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:10",
         "astCommand": {
             "children": [
                 {
@@ -2653,7 +2124,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:13",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:11",
         "astCommand": {
             "children": [
                 {
@@ -2694,7 +2165,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:14",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:12",
         "astCommand": {
             "children": [
                 {
@@ -2736,7 +2207,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:15",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:13",
         "astCommand": {
             "children": [
                 {
@@ -2777,7 +2248,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:16",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:14",
         "astCommand": {
             "children": [
                 {
@@ -2814,7 +2285,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:17",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:15",
         "astCommand": {
             "children": [
                 {
@@ -2837,85 +2308,7 @@
         }
     },
     {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:18",
-        "astCommand": {
-            "children": [
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "BASH-OP",
-                            "value": "SingleBracket"
-                        }
-                    ],
-                    "type": "BASH-CONDITION-OP"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-OP",
-                                            "value": "!"
-                                        }
-                                    ],
-                                    "type": "BASH-CONDITION-UNARY-OP"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-OP",
-                                                            "value": "-e"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-CONDITION-UNARY-OP"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [
-                                                                {
-                                                                    "children": [],
-                                                                    "type": "BASH-VARIABLE",
-                                                                    "value": "RABBITMQ_DATA_DIR"
-                                                                },
-                                                                {
-                                                                    "children": [],
-                                                                    "type": "BASH-LITERAL",
-                                                                    "value": "/.erlang.cookie"
-                                                                }
-                                                            ],
-                                                            "type": "BASH-DOUBLE-QUOTED"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-CONDITION-UNARY-EXP"
-                                                }
-                                            ],
-                                            "type": "BASH-CONDITION-UNARY"
-                                        }
-                                    ],
-                                    "type": "BASH-CONDITION-UNARY-EXP"
-                                }
-                            ],
-                            "type": "BASH-CONDITION-UNARY"
-                        }
-                    ],
-                    "type": "BASH-CONDITION-EXP"
-                }
-            ],
-            "type": "BASH-CONDITION"
-        }
-    },
-    {
-        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:19",
+        "astCommandId": "d0a7a33cad90bc506788da62fe4617372159cce0:17:16",
         "astCommand": {
             "children": [
                 {

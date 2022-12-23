@@ -112,32 +112,30 @@
     {
         "astCommandId": "docker-compose-arm:3:3",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": [],
-                                    "value": "https://bootstrap.pypa.io/get-pip.py"
-                                }
-                            ]
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "https://bootstrap.pypa.io/get-pip.py"
                         }
                     ]
-                },
-                {
-                    "type": "SC-PYTHON",
-                    "children": []
                 }
             ]
         }
     },
     {
         "astCommandId": "docker-compose-arm:3:4",
+        "astCommand": {
+            "type": "SC-PYTHON",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "docker-compose-arm:3:5",
         "astCommand": {
             "type": "SC-PIP-INSTALL",
             "children": [
@@ -194,7 +192,7 @@
         }
     },
     {
-        "astCommandId": "docker-compose-arm:3:5",
+        "astCommandId": "docker-compose-arm:3:6",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -212,7 +210,7 @@
         }
     },
     {
-        "astCommandId": "docker-compose-arm:3:6",
+        "astCommandId": "docker-compose-arm:3:7",
         "astCommand": {
             "type": "SC-MKDIR",
             "children": [
@@ -239,147 +237,42 @@
         }
     },
     {
-        "astCommandId": "docker-compose-arm:3:7",
-        "astCommand": {
-            "type": "BASH-REDIRECT",
-            "children": [
-                {
-                    "type": "BASH-REDIRECT-COMMAND",
-                    "children": [
-                        {
-                            "type": "SC-CURL",
-                            "children": [
-                                {
-                                    "type": "SC-CURL-F-SILENT",
-                                    "children": []
-                                },
-                                {
-                                    "type": "SC-CURL-F-SHOW-ERROR",
-                                    "children": []
-                                },
-                                {
-                                    "type": "SC-CURL-F-LOCATION",
-                                    "children": []
-                                },
-                                {
-                                    "type": "SC-CURL-URL",
-                                    "children": [
-                                        {
-                                            "type": "BASH-CONCAT",
-                                            "children": [
-                                                {
-                                                    "type": "BASH-LITERAL",
-                                                    "children": [],
-                                                    "value": "https://github.com/docker/compose/raw/"
-                                                },
-                                                {
-                                                    "type": "BASH-VARIABLE",
-                                                    "children": [],
-                                                    "value": "DOCKER_COMPOSE_VERSION"
-                                                },
-                                                {
-                                                    "type": "BASH-LITERAL",
-                                                    "children": [],
-                                                    "value": "/docker-compose.spec"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "BASH-REDIRECT-REDIRECTS",
-                    "children": [
-                        {
-                            "type": "BASH-REDIRECT-OVERWRITE",
-                            "children": [
-                                {
-                                    "type": "BASH-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "docker-compose.spec"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        }
-    },
-    {
         "astCommandId": "docker-compose-arm:3:8",
         "astCommand": {
-            "type": "BASH-REDIRECT",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "BASH-REDIRECT-COMMAND",
-                    "children": [
-                        {
-                            "type": "SC-CURL",
-                            "children": [
-                                {
-                                    "type": "SC-CURL-F-SILENT",
-                                    "children": []
-                                },
-                                {
-                                    "type": "SC-CURL-F-SHOW-ERROR",
-                                    "children": []
-                                },
-                                {
-                                    "type": "SC-CURL-F-LOCATION",
-                                    "children": []
-                                },
-                                {
-                                    "type": "SC-CURL-URL",
-                                    "children": [
-                                        {
-                                            "type": "BASH-CONCAT",
-                                            "children": [
-                                                {
-                                                    "type": "BASH-LITERAL",
-                                                    "children": [],
-                                                    "value": "https://github.com/docker/compose/raw/"
-                                                },
-                                                {
-                                                    "type": "BASH-VARIABLE",
-                                                    "children": [],
-                                                    "value": "DOCKER_COMPOSE_VERSION"
-                                                },
-                                                {
-                                                    "type": "BASH-LITERAL",
-                                                    "children": [],
-                                                    "value": "/bin/docker-compose"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
                 },
                 {
-                    "type": "BASH-REDIRECT-REDIRECTS",
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "BASH-REDIRECT-OVERWRITE",
+                            "type": "BASH-CONCAT",
                             "children": [
                                 {
-                                    "type": "BASH-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "bin/docker-compose"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "https://github.com/docker/compose/raw/"
+                                },
+                                {
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "DOCKER_COMPOSE_VERSION"
+                                },
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/docker-compose.spec"
                                 }
                             ]
                         }
@@ -390,6 +283,51 @@
     },
     {
         "astCommandId": "docker-compose-arm:3:9",
+        "astCommand": {
+            "type": "SC-CURL",
+            "children": [
+                {
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
+                    "children": [
+                        {
+                            "type": "BASH-CONCAT",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "https://github.com/docker/compose/raw/"
+                                },
+                                {
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "DOCKER_COMPOSE_VERSION"
+                                },
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/bin/docker-compose"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "docker-compose-arm:3:10",
         "astCommand": {
             "type": "SC-CP",
             "children": [

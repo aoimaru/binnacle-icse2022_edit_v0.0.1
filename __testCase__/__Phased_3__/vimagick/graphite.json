@@ -113,44 +113,42 @@
     {
         "astCommandId": "graphite:8:3",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
-                    "children": [
-                        {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": [],
-                                    "value": "https://bootstrap.pypa.io/get-pip.py"
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
                 },
                 {
-                    "type": "SC-PYTHON",
+                    "type": "SC-CURL-F-SHOW-ERROR",
                     "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "https://bootstrap.pypa.io/get-pip.py"
+                        }
+                    ]
                 }
             ]
         }
     },
     {
         "astCommandId": "graphite:8:4",
+        "astCommand": {
+            "type": "SC-PYTHON",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "graphite:8:5",
         "astCommand": {
             "type": "SC-PIP-INSTALL",
             "children": [
@@ -173,7 +171,7 @@
         }
     },
     {
-        "astCommandId": "graphite:8:5",
+        "astCommandId": "graphite:8:6",
         "astCommand": {
             "type": "SC-PIP-INSTALL",
             "children": [
@@ -210,7 +208,7 @@
         }
     },
     {
-        "astCommandId": "graphite:8:6",
+        "astCommandId": "graphite:8:7",
         "astCommand": {
             "type": "SC-PIP-INSTALL",
             "children": [
@@ -292,7 +290,7 @@
         }
     },
     {
-        "astCommandId": "graphite:8:7",
+        "astCommandId": "graphite:8:8",
         "astCommand": {
             "type": "SC-PIP-INSTALL",
             "children": [
@@ -354,7 +352,7 @@
         }
     },
     {
-        "astCommandId": "graphite:8:8",
+        "astCommandId": "graphite:8:9",
         "astCommand": {
             "type": "SC-PIP-INSTALL",
             "children": [
@@ -377,7 +375,7 @@
         }
     },
     {
-        "astCommandId": "graphite:8:9",
+        "astCommandId": "graphite:8:10",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -395,50 +393,20 @@
         }
     },
     {
-        "astCommandId": "graphite:8:10",
+        "astCommandId": "graphite:8:11",
         "astCommand": {
-            "type": "BASH-REDIRECT",
+            "type": "SC-ECHO",
             "children": [
                 {
-                    "type": "BASH-REDIRECT-COMMAND",
+                    "type": "SC-ECHO-ITEMS",
                     "children": [
                         {
-                            "type": "SC-ECHO",
+                            "type": "SC-ECHO-ITEM",
                             "children": [
                                 {
-                                    "type": "SC-ECHO-ITEMS",
-                                    "children": [
-                                        {
-                                            "type": "SC-ECHO-ITEM",
-                                            "children": [
-                                                {
-                                                    "type": "BASH-LITERAL",
-                                                    "children": [],
-                                                    "value": "SECRET_KEY = '$( head -c 16 /dev/urandom |  base64 )'"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "BASH-REDIRECT-REDIRECTS",
-                    "children": [
-                        {
-                            "type": "BASH-REDIRECT-APPEND",
-                            "children": [
-                                {
-                                    "type": "BASH-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "graphite/local_settings.py"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "SECRET_KEY = '$( head -c 16 /dev/urandom |  base64 )'"
                                 }
                             ]
                         }
@@ -448,7 +416,7 @@
         }
     },
     {
-        "astCommandId": "graphite:8:11",
+        "astCommandId": "graphite:8:12",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -466,7 +434,7 @@
         }
     },
     {
-        "astCommandId": "graphite:8:12",
+        "astCommandId": "graphite:8:13",
         "astCommand": {
             "type": "SC-CP",
             "children": [
@@ -499,7 +467,7 @@
         }
     },
     {
-        "astCommandId": "graphite:8:13",
+        "astCommandId": "graphite:8:14",
         "astCommand": {
             "type": "SC-CP",
             "children": [
@@ -532,7 +500,7 @@
         }
     },
     {
-        "astCommandId": "graphite:8:14",
+        "astCommandId": "graphite:8:15",
         "astCommand": {
             "type": "SC-CP",
             "children": [
@@ -565,7 +533,7 @@
         }
     },
     {
-        "astCommandId": "graphite:8:15",
+        "astCommandId": "graphite:8:16",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -583,7 +551,7 @@
         }
     },
     {
-        "astCommandId": "graphite:8:16",
+        "astCommandId": "graphite:8:17",
         "astCommand": {
             "type": "SC-APK-DEL",
             "children": [
@@ -636,7 +604,7 @@
         }
     },
     {
-        "astCommandId": "graphite:8:17",
+        "astCommandId": "graphite:8:18",
         "astCommand": {
             "type": "SC-RM",
             "children": [

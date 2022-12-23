@@ -176,75 +176,40 @@
     {
         "astCommandId": "sslsplit:2:4",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
-                    "children": [
-                        {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-CONCAT",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "https://github.com/droe/sslsplit/archive/"
-                                        },
-                                        {
-                                            "type": "BASH-VARIABLE",
-                                            "children": [],
-                                            "value": "SSLSPLIT_VERSION"
-                                        },
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": ".tar.gz"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
                 },
                 {
-                    "type": "SC-TAR",
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-TAR-STRIP",
+                            "type": "BASH-CONCAT",
                             "children": [
                                 {
                                     "type": "BASH-LITERAL",
                                     "children": [],
-                                    "value": "1"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-TAR-ARGS",
-                            "children": [
+                                    "value": "https://github.com/droe/sslsplit/archive/"
+                                },
                                 {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "xz"
-                                        }
-                                    ]
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "SSLSPLIT_VERSION"
+                                },
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": ".tar.gz"
                                 }
                             ]
                         }
@@ -255,6 +220,39 @@
     },
     {
         "astCommandId": "sslsplit:2:5",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-STRIP",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "1"
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-TAR-ARGS",
+                    "children": [
+                        {
+                            "type": "SC-TAR-ARG",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "xz"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "sslsplit:2:6",
         "astCommand": {
             "type": "SC-SED",
             "children": [
@@ -296,7 +294,7 @@
         }
     },
     {
-        "astCommandId": "sslsplit:2:6",
+        "astCommandId": "sslsplit:2:7",
         "astCommand": {
             "type": "SC-MAKE",
             "children": [
@@ -314,7 +312,7 @@
         }
     },
     {
-        "astCommandId": "sslsplit:2:7",
+        "astCommandId": "sslsplit:2:8",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -332,7 +330,7 @@
         }
     },
     {
-        "astCommandId": "sslsplit:2:8",
+        "astCommandId": "sslsplit:2:9",
         "astCommand": {
             "type": "SC-RM",
             "children": [
@@ -363,7 +361,7 @@
         }
     },
     {
-        "astCommandId": "sslsplit:2:9",
+        "astCommandId": "sslsplit:2:10",
         "astCommand": {
             "type": "SC-APK-DEL",
             "children": [

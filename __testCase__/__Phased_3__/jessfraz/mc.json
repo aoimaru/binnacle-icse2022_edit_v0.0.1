@@ -368,177 +368,15 @@
                 {
                     "children": [
                         {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "value": "/usr/src/mc",
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-CD-PATH"
-                                        }
-                                    ],
-                                    "type": "SC-CD"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "UNKNOWN"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "value": "/usr",
-                                                            "type": "BASH-LITERAL"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-PATH"
-                                                }
-                                            ],
-                                            "type": "SC-CONFIGURE-PREFIX"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "value": "/usr/lib",
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-CONFIGURE-LIBEXECDIR"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "value": "/usr/share/man",
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-CONFIGURE-MANDIR"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "value": "/etc",
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-CONFIGURE-SYSCONFDIR"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "SC-CONFIGURE-ENABLE-BACKGROUND"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "SC-CONFIGURE-ENABLE-CHARSET"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "SC-CONFIGURE-ENABLE-LARGEFILE"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "SC-CONFIGURE-ENABLE-VFS-SFTP"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "SC-CONFIGURE-WITH-INTERNAL-EDIT"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "SC-CONFIGURE-WITH-MMAP"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "value": "ncurses",
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-CONFIGURE-WITH-SCREEN"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "SC-CONFIGURE-WITH-SUBSHELL"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "SC-CONFIGURE-WITHOUT-GPM-MOUSE"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "SC-CONFIGURE-WITHOUT-INCLUDED-GETTEXT"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "SC-CONFIGURE-WITHOUT-X"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "SC-CONFIGURE-ENABLE-ASPELL"
-                                        }
-                                    ],
-                                    "type": "SC-CONFIGURE"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "SC-MAKE"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "value": "install",
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-MAKE-TARGET"
-                                        }
-                                    ],
-                                    "type": "SC-MAKE"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
+                            "children": [],
+                            "value": "/usr/src/mc",
+                            "type": "BASH-LITERAL"
                         }
                     ],
-                    "type": "BASH-AND-IF"
+                    "type": "SC-CD-PATH"
                 }
             ],
-            "type": "BASH-SUBSHELL"
+            "type": "SC-CD"
         }
     },
     {
@@ -551,58 +389,160 @@
                             "children": [
                                 {
                                     "children": [],
-                                    "type": "SC-CURL-F-SILENT"
-                                },
-                                {
-                                    "children": [],
-                                    "type": "SC-CURL-F-SHOW-ERROR"
-                                },
-                                {
-                                    "children": [],
-                                    "type": "SC-CURL-F-LOCATION"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "value": "https://raw.githubusercontent.com/nkulikov/mc-solarized-skin/master/solarized.ini",
-                                            "type": "BASH-LITERAL"
-                                        }
-                                    ],
-                                    "type": "SC-CURL-URL"
+                                    "value": "/usr",
+                                    "type": "BASH-LITERAL"
                                 }
                             ],
-                            "type": "SC-CURL"
+                            "type": "BASH-PATH"
                         }
                     ],
-                    "type": "BASH-REDIRECT-COMMAND"
+                    "type": "SC-CONFIGURE-PREFIX"
                 },
                 {
                     "children": [
                         {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "value": "/home/mc/.mc/solarized.ini",
-                                            "type": "BASH-LITERAL"
-                                        }
-                                    ],
-                                    "type": "BASH-PATH"
-                                }
-                            ],
-                            "type": "BASH-REDIRECT-OVERWRITE"
+                            "children": [],
+                            "value": "/usr/lib",
+                            "type": "BASH-LITERAL"
                         }
                     ],
-                    "type": "BASH-REDIRECT-REDIRECTS"
+                    "type": "SC-CONFIGURE-LIBEXECDIR"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "/usr/share/man",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-CONFIGURE-MANDIR"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "/etc",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-CONFIGURE-SYSCONFDIR"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-ENABLE-BACKGROUND"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-ENABLE-CHARSET"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-ENABLE-LARGEFILE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-ENABLE-VFS-SFTP"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-WITH-INTERNAL-EDIT"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-WITH-MMAP"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "ncurses",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-CONFIGURE-WITH-SCREEN"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-WITH-SUBSHELL"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-WITHOUT-GPM-MOUSE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-WITHOUT-INCLUDED-GETTEXT"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-WITHOUT-X"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-ENABLE-ASPELL"
                 }
             ],
-            "type": "BASH-REDIRECT"
+            "type": "SC-CONFIGURE"
         }
     },
     {
         "astCommandId": "mc:5:5",
+        "astCommand": {
+            "children": [],
+            "type": "SC-MAKE"
+        }
+    },
+    {
+        "astCommandId": "mc:5:6",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "install",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-MAKE-TARGET"
+                }
+            ],
+            "type": "SC-MAKE"
+        }
+    },
+    {
+        "astCommandId": "mc:5:7",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-SILENT"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-SHOW-ERROR"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-LOCATION"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "https://raw.githubusercontent.com/nkulikov/mc-solarized-skin/master/solarized.ini",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-CURL-URL"
+                }
+            ],
+            "type": "SC-CURL"
+        }
+    },
+    {
+        "astCommandId": "mc:5:8",
         "astCommand": {
             "children": [
                 {
@@ -633,7 +573,7 @@
         }
     },
     {
-        "astCommandId": "mc:5:6",
+        "astCommandId": "mc:5:9",
         "astCommand": {
             "children": [
                 {
@@ -656,7 +596,7 @@
         }
     },
     {
-        "astCommandId": "mc:5:7",
+        "astCommandId": "mc:5:10",
         "astCommand": {
             "children": [
                 {

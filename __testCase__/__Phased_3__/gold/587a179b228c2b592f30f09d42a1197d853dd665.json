@@ -156,36 +156,34 @@
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "${sha256} *pypy.tar.bz2"
-                                        }
-                                    ],
-                                    "type": "SC-ECHO-ITEM"
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "${sha256} *pypy.tar.bz2"
                                 }
                             ],
-                            "type": "SC-ECHO-ITEMS"
+                            "type": "SC-ECHO-ITEM"
                         }
                     ],
-                    "type": "SC-ECHO"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "SC-SHA-256-SUM-F-CHECK"
-                        }
-                    ],
-                    "type": "SC-SHA-256-SUM"
+                    "type": "SC-ECHO-ITEMS"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-ECHO"
         }
     },
     {
         "astCommandId": "587a179b228c2b592f30f09d42a1197d853dd665:6:3",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-SHA-256-SUM-F-CHECK"
+                }
+            ],
+            "type": "SC-SHA-256-SUM"
+        }
+    },
+    {
+        "astCommandId": "587a179b228c2b592f30f09d42a1197d853dd665:6:4",
         "astCommand": {
             "children": [
                 {
@@ -241,7 +239,7 @@
         }
     },
     {
-        "astCommandId": "587a179b228c2b592f30f09d42a1197d853dd665:6:4",
+        "astCommandId": "587a179b228c2b592f30f09d42a1197d853dd665:6:5",
         "astCommand": {
             "children": [
                 {
@@ -264,89 +262,21 @@
         }
     },
     {
-        "astCommandId": "587a179b228c2b592f30f09d42a1197d853dd665:6:5",
+        "astCommandId": "587a179b228c2b592f30f09d42a1197d853dd665:6:6",
         "astCommand": {
             "children": [
                 {
                     "children": [
                         {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-OP",
-                                            "value": "SingleBracket"
-                                        }
-                                    ],
-                                    "type": "BASH-CONDITION-OP"
-                                },
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-OP",
-                                                            "value": "-f"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-CONDITION-UNARY-OP"
-                                                },
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "type": "BASH-LITERAL",
-                                                            "value": "/usr/local/lib_pypy/_ssl_build.py"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-CONDITION-UNARY-EXP"
-                                                }
-                                            ],
-                                            "type": "BASH-CONDITION-UNARY"
-                                        }
-                                    ],
-                                    "type": "BASH-CONDITION-EXP"
-                                }
-                            ],
-                            "type": "BASH-CONDITION"
-                        }
-                    ],
-                    "type": "BASH-IF-CONDITION"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "BASH-LITERAL",
-                                            "value": "/usr/local/lib_pypy"
-                                        }
-                                    ],
-                                    "type": "SC-CD-PATH"
-                                }
-                            ],
-                            "type": "SC-CD"
-                        },
-                        {
                             "children": [],
-                            "type": "UNKNOWN"
+                            "type": "BASH-LITERAL",
+                            "value": "/usr/local/lib_pypy"
                         }
                     ],
-                    "type": "BASH-IF-THEN"
-                },
-                {
-                    "children": [],
-                    "type": "BASH-IF-ELSE"
+                    "type": "SC-CD-PATH"
                 }
             ],
-            "type": "BASH-IF-EXPRESSION"
+            "type": "SC-CD"
         }
     },
     {

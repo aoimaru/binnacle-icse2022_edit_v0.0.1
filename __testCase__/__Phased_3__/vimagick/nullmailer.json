@@ -197,60 +197,58 @@
     {
         "astCommandId": "nullmailer:3:5",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
+                            "type": "BASH-VARIABLE",
+                            "children": [],
+                            "value": "NM_URL"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "nullmailer:3:6",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-STRIP",
+                    "children": [
                         {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-VARIABLE",
-                                    "children": [],
-                                    "value": "NM_URL"
-                                }
-                            ]
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "1"
                         }
                     ]
                 },
                 {
-                    "type": "SC-TAR",
+                    "type": "SC-TAR-ARGS",
                     "children": [
                         {
-                            "type": "SC-TAR-STRIP",
+                            "type": "SC-TAR-ARG",
                             "children": [
                                 {
                                     "type": "BASH-LITERAL",
                                     "children": [],
-                                    "value": "1"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-TAR-ARGS",
-                            "children": [
-                                {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "xz"
-                                        }
-                                    ]
+                                    "value": "xz"
                                 }
                             ]
                         }
@@ -260,7 +258,7 @@
         }
     },
     {
-        "astCommandId": "nullmailer:3:6",
+        "astCommandId": "nullmailer:3:7",
         "astCommand": {
             "type": "SC-MV",
             "children": [
@@ -293,7 +291,7 @@
         }
     },
     {
-        "astCommandId": "nullmailer:3:7",
+        "astCommandId": "nullmailer:3:8",
         "astCommand": {
             "type": "SC-CHMOD",
             "children": [
@@ -336,7 +334,7 @@
         }
     },
     {
-        "astCommandId": "nullmailer:3:8",
+        "astCommandId": "nullmailer:3:9",
         "astCommand": {
             "type": "SC-CONFIGURE",
             "children": [
@@ -383,7 +381,7 @@
         }
     },
     {
-        "astCommandId": "nullmailer:3:9",
+        "astCommandId": "nullmailer:3:10",
         "astCommand": {
             "type": "SC-MAKE",
             "children": [
@@ -416,7 +414,7 @@
         }
     },
     {
-        "astCommandId": "nullmailer:3:10",
+        "astCommandId": "nullmailer:3:11",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -434,7 +432,7 @@
         }
     },
     {
-        "astCommandId": "nullmailer:3:11",
+        "astCommandId": "nullmailer:3:12",
         "astCommand": {
             "type": "SC-RM",
             "children": [
@@ -465,7 +463,7 @@
         }
     },
     {
-        "astCommandId": "nullmailer:3:12",
+        "astCommandId": "nullmailer:3:13",
         "astCommand": {
             "type": "SC-APK-DEL",
             "children": [
@@ -538,7 +536,7 @@
         }
     },
     {
-        "astCommandId": "nullmailer:3:13",
+        "astCommandId": "nullmailer:3:14",
         "astCommand": {
             "type": "SC-RM",
             "children": [

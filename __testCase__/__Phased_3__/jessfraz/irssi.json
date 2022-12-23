@@ -723,123 +723,102 @@
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "value": "/usr/src/irssi-",
-                                                            "type": "BASH-LITERAL"
-                                                        },
-                                                        {
-                                                            "children": [],
-                                                            "value": "IRSSI_VERSION",
-                                                            "type": "BASH-VARIABLE"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-CONCAT"
-                                                }
-                                            ],
-                                            "type": "SC-CD-PATH"
-                                        }
-                                    ],
-                                    "type": "SC-CD"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
+                                    "children": [],
+                                    "value": "/usr/src/irssi-",
+                                    "type": "BASH-LITERAL"
+                                },
                                 {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "SC-CONFIGURE-ENABLE-TRUE-COLOR"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "SC-CONFIGURE-WITH-BOT"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "SC-CONFIGURE-WITH-PROXY"
-                                        },
-                                        {
-                                            "children": [],
-                                            "type": "SC-CONFIGURE-WITH-SOCKS"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "value": "/usr",
-                                                            "type": "BASH-LITERAL"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-PATH"
-                                                }
-                                            ],
-                                            "type": "SC-CONFIGURE-PREFIX"
-                                        }
-                                    ],
-                                    "type": "SC-CONFIGURE"
+                                    "children": [],
+                                    "value": "IRSSI_VERSION",
+                                    "type": "BASH-VARIABLE"
                                 }
                             ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "value": "$( getconf _NPROCESSORS_ONLN)",
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-MAKE-JOBS"
-                                        }
-                                    ],
-                                    "type": "SC-MAKE"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "value": "install",
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-MAKE-TARGET"
-                                        }
-                                    ],
-                                    "type": "SC-MAKE"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
+                            "type": "BASH-CONCAT"
                         }
                     ],
-                    "type": "BASH-AND-IF"
+                    "type": "SC-CD-PATH"
                 }
             ],
-            "type": "BASH-SUBSHELL"
+            "type": "SC-CD"
         }
     },
     {
         "astCommandId": "irssi:8:12",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-ENABLE-TRUE-COLOR"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-WITH-BOT"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-WITH-PROXY"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-WITH-SOCKS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "/usr",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "BASH-PATH"
+                        }
+                    ],
+                    "type": "SC-CONFIGURE-PREFIX"
+                }
+            ],
+            "type": "SC-CONFIGURE"
+        }
+    },
+    {
+        "astCommandId": "irssi:8:13",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "$( getconf _NPROCESSORS_ONLN)",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-MAKE-JOBS"
+                }
+            ],
+            "type": "SC-MAKE"
+        }
+    },
+    {
+        "astCommandId": "irssi:8:14",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "install",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-MAKE-TARGET"
+                }
+            ],
+            "type": "SC-MAKE"
+        }
+    },
+    {
+        "astCommandId": "irssi:8:15",
         "astCommand": {
             "children": [
                 {
@@ -884,7 +863,7 @@
         }
     },
     {
-        "astCommandId": "irssi:8:13",
+        "astCommandId": "irssi:8:16",
         "astCommand": {
             "children": [
                 {
@@ -929,7 +908,7 @@
         }
     },
     {
-        "astCommandId": "irssi:8:14",
+        "astCommandId": "irssi:8:17",
         "astCommand": {
             "children": [
                 {
@@ -981,55 +960,53 @@
         }
     },
     {
-        "astCommandId": "irssi:8:15",
+        "astCommandId": "irssi:8:18",
         "astCommand": {
             "children": [
                 {
-                    "children": [
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SILENT"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-SHOW-ERROR"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-CURL-F-LOCATION"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "value": "https://otr.cypherpunks.ca/gpgkey.asc",
-                                    "type": "BASH-LITERAL"
-                                }
-                            ],
-                            "type": "SC-CURL-URL"
-                        }
-                    ],
-                    "type": "SC-CURL"
+                    "children": [],
+                    "type": "SC-CURL-F-SILENT"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-SHOW-ERROR"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-LOCATION"
                 },
                 {
                     "children": [
                         {
                             "children": [],
-                            "type": "SC-GPG-F-NO-TTY"
-                        },
-                        {
-                            "children": [],
-                            "type": "SC-GPG-F-IMPORT"
+                            "value": "https://otr.cypherpunks.ca/gpgkey.asc",
+                            "type": "BASH-LITERAL"
                         }
                     ],
-                    "type": "SC-GPG"
+                    "type": "SC-CURL-URL"
                 }
             ],
-            "type": "BASH-PIPELINE"
+            "type": "SC-CURL"
         }
     },
     {
-        "astCommandId": "irssi:8:16",
+        "astCommandId": "irssi:8:19",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-GPG-F-NO-TTY"
+                },
+                {
+                    "children": [],
+                    "type": "SC-GPG-F-IMPORT"
+                }
+            ],
+            "type": "SC-GPG"
+        }
+    },
+    {
+        "astCommandId": "irssi:8:20",
         "astCommand": {
             "children": [
                 {
@@ -1066,7 +1043,7 @@
         }
     },
     {
-        "astCommandId": "irssi:8:17",
+        "astCommandId": "irssi:8:21",
         "astCommand": {
             "children": [
                 {
@@ -1107,7 +1084,7 @@
         }
     },
     {
-        "astCommandId": "irssi:8:18",
+        "astCommandId": "irssi:8:22",
         "astCommand": {
             "children": [
                 {
@@ -1134,7 +1111,7 @@
         }
     },
     {
-        "astCommandId": "irssi:8:19",
+        "astCommandId": "irssi:8:23",
         "astCommand": {
             "children": [
                 {
@@ -1190,7 +1167,7 @@
         }
     },
     {
-        "astCommandId": "irssi:8:20",
+        "astCommandId": "irssi:8:24",
         "astCommand": {
             "children": [
                 {
@@ -1213,98 +1190,77 @@
         }
     },
     {
-        "astCommandId": "irssi:8:21",
+        "astCommandId": "irssi:8:25",
         "astCommand": {
             "children": [
                 {
                     "children": [
                         {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "value": "/usr/src/libotr",
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-CD-PATH"
-                                        }
-                                    ],
-                                    "type": "SC-CD"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [],
-                                            "type": "SC-CONFIGURE-WITH-PIC"
-                                        },
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "value": "/usr",
-                                                            "type": "BASH-LITERAL"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-PATH"
-                                                }
-                                            ],
-                                            "type": "SC-CONFIGURE-PREFIX"
-                                        }
-                                    ],
-                                    "type": "SC-CONFIGURE"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
-                        },
+                            "children": [],
+                            "value": "/usr/src/libotr",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-CD-PATH"
+                }
+            ],
+            "type": "SC-CD"
+        }
+    },
+    {
+        "astCommandId": "irssi:8:26",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-WITH-PIC"
+                },
+                {
+                    "children": [
                         {
                             "children": [
                                 {
                                     "children": [],
-                                    "type": "SC-MAKE"
+                                    "value": "/usr",
+                                    "type": "BASH-LITERAL"
                                 }
                             ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "value": "install",
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-MAKE-TARGET"
-                                        }
-                                    ],
-                                    "type": "SC-MAKE"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
+                            "type": "BASH-PATH"
                         }
                     ],
-                    "type": "BASH-AND-IF"
+                    "type": "SC-CONFIGURE-PREFIX"
                 }
             ],
-            "type": "BASH-SUBSHELL"
+            "type": "SC-CONFIGURE"
         }
     },
     {
-        "astCommandId": "irssi:8:22",
+        "astCommandId": "irssi:8:27",
+        "astCommand": {
+            "children": [],
+            "type": "SC-MAKE"
+        }
+    },
+    {
+        "astCommandId": "irssi:8:28",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "install",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-MAKE-TARGET"
+                }
+            ],
+            "type": "SC-MAKE"
+        }
+    },
+    {
+        "astCommandId": "irssi:8:29",
         "astCommand": {
             "children": [
                 {
@@ -1331,7 +1287,7 @@
         }
     },
     {
-        "astCommandId": "irssi:8:23",
+        "astCommandId": "irssi:8:30",
         "astCommand": {
             "children": [
                 {
@@ -1376,7 +1332,7 @@
         }
     },
     {
-        "astCommandId": "irssi:8:24",
+        "astCommandId": "irssi:8:31",
         "astCommand": {
             "children": [
                 {
@@ -1403,7 +1359,7 @@
         }
     },
     {
-        "astCommandId": "irssi:8:25",
+        "astCommandId": "irssi:8:32",
         "astCommand": {
             "children": [
                 {
@@ -1455,7 +1411,7 @@
         }
     },
     {
-        "astCommandId": "irssi:8:26",
+        "astCommandId": "irssi:8:33",
         "astCommand": {
             "children": [
                 {
@@ -1482,7 +1438,25 @@
         }
     },
     {
-        "astCommandId": "irssi:8:27",
+        "astCommandId": "irssi:8:34",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "/usr/src/irssi-otr",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-CD-PATH"
+                }
+            ],
+            "type": "SC-CD"
+        }
+    },
+    {
+        "astCommandId": "irssi:8:35",
         "astCommand": {
             "children": [
                 {
@@ -1490,95 +1464,47 @@
                         {
                             "children": [
                                 {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "value": "/usr/src/irssi-otr",
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-CD-PATH"
-                                        }
-                                    ],
-                                    "type": "SC-CD"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
-                                {
                                     "children": [],
-                                    "type": "UNKNOWN"
+                                    "value": "/usr",
+                                    "type": "BASH-LITERAL"
                                 }
                             ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [
-                                                        {
-                                                            "children": [],
-                                                            "value": "/usr",
-                                                            "type": "BASH-LITERAL"
-                                                        }
-                                                    ],
-                                                    "type": "BASH-PATH"
-                                                }
-                                            ],
-                                            "type": "SC-CONFIGURE-PREFIX"
-                                        }
-                                    ],
-                                    "type": "SC-CONFIGURE"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "type": "SC-MAKE"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "value": "install",
-                                                    "type": "BASH-LITERAL"
-                                                }
-                                            ],
-                                            "type": "SC-MAKE-TARGET"
-                                        }
-                                    ],
-                                    "type": "SC-MAKE"
-                                }
-                            ],
-                            "type": "BASH-AND-MEM"
+                            "type": "BASH-PATH"
                         }
                     ],
-                    "type": "BASH-AND-IF"
+                    "type": "SC-CONFIGURE-PREFIX"
                 }
             ],
-            "type": "BASH-SUBSHELL"
+            "type": "SC-CONFIGURE"
         }
     },
     {
-        "astCommandId": "irssi:8:28",
+        "astCommandId": "irssi:8:36",
+        "astCommand": {
+            "children": [],
+            "type": "SC-MAKE"
+        }
+    },
+    {
+        "astCommandId": "irssi:8:37",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "install",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-MAKE-TARGET"
+                }
+            ],
+            "type": "SC-MAKE"
+        }
+    },
+    {
+        "astCommandId": "irssi:8:38",
         "astCommand": {
             "children": [
                 {
@@ -1619,7 +1545,7 @@
         }
     },
     {
-        "astCommandId": "irssi:8:29",
+        "astCommandId": "irssi:8:39",
         "astCommand": {
             "children": [
                 {
@@ -1650,7 +1576,7 @@
         }
     },
     {
-        "astCommandId": "irssi:8:30",
+        "astCommandId": "irssi:8:40",
         "astCommand": {
             "children": [
                 {
@@ -1681,65 +1607,7 @@
         }
     },
     {
-        "astCommandId": "irssi:8:31",
-        "astCommand": {
-            "children": [
-                {
-                    "children": [
-                        {
-                            "children": [],
-                            "value": "runDeps",
-                            "type": "BASH-VARIABLE"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-LHS"
-                },
-                {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "children": [
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                },
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                },
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                },
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                },
-                                                {
-                                                    "children": [],
-                                                    "type": "UNKNOWN"
-                                                }
-                                            ],
-                                            "type": "BASH-PIPELINE"
-                                        }
-                                    ],
-                                    "type": "BASH-DOLLAR-PARENS"
-                                }
-                            ],
-                            "type": "BASH-DOUBLE-QUOTED"
-                        }
-                    ],
-                    "type": "BASH-ASSIGN-RHS"
-                }
-            ],
-            "type": "BASH-ASSIGN"
-        }
-    },
-    {
-        "astCommandId": "irssi:8:32",
+        "astCommandId": "irssi:8:41",
         "astCommand": {
             "children": [
                 {
@@ -1786,7 +1654,7 @@
         }
     },
     {
-        "astCommandId": "irssi:8:33",
+        "astCommandId": "irssi:8:42",
         "astCommand": {
             "children": [
                 {

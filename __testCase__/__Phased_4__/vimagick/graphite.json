@@ -71,63 +71,32 @@
     {
         "astCommandId": "graphite:8:3",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
-                    "children": [
-                        {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": [
-                                        {
-                                            "type": "ABS-PROBABLY-URL",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "ABS-URL-PROTOCOL-HTTPS",
-                                            "children": []
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
                 },
                 {
-                    "type": "SC-PYTHON",
+                    "type": "SC-CURL-F-SHOW-ERROR",
                     "children": []
-                }
-            ]
-        }
-    },
-    {
-        "astCommandId": "graphite:8:4",
-        "astCommand": {
-            "type": "SC-PIP-INSTALL",
-            "children": [
+                },
                 {
-                    "type": "SC-PIP-TARGETS",
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-PIP-TARGET",
+                            "type": "BASH-LITERAL",
                             "children": [
                                 {
-                                    "type": "BASH-LITERAL",
+                                    "type": "ABS-PROBABLY-URL",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-URL-PROTOCOL-HTTPS",
                                     "children": []
                                 }
                             ]
@@ -135,6 +104,13 @@
                     ]
                 }
             ]
+        }
+    },
+    {
+        "astCommandId": "graphite:8:4",
+        "astCommand": {
+            "type": "SC-PYTHON",
+            "children": []
         }
     },
     {
@@ -143,21 +119,8 @@
             "type": "SC-PIP-INSTALL",
             "children": [
                 {
-                    "type": "SC-PIP-F-NO-CACHE-DIR",
-                    "children": []
-                },
-                {
                     "type": "SC-PIP-TARGETS",
                     "children": [
-                        {
-                            "type": "SC-PIP-TARGET",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": []
-                                }
-                            ]
-                        },
                         {
                             "type": "SC-PIP-TARGET",
                             "children": [
@@ -182,64 +145,14 @@
                     "children": []
                 },
                 {
-                    "type": "SC-PIP-PREFIX",
-                    "children": [
-                        {
-                            "type": "BASH-PATH",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": [
-                                        {
-                                            "type": "ABS-PATH-ABSOLUTE",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "ABS-MAYBE-PATH",
-                                            "children": []
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "SC-PIP-INSTALL-LIB",
-                    "children": [
-                        {
-                            "type": "BASH-LITERAL",
-                            "children": [
-                                {
-                                    "type": "ABS-PATH-ABSOLUTE",
-                                    "children": []
-                                },
-                                {
-                                    "type": "ABS-MAYBE-PATH",
-                                    "children": []
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
                     "type": "SC-PIP-TARGETS",
                     "children": [
                         {
                             "type": "SC-PIP-TARGET",
                             "children": [
                                 {
-                                    "type": "BASH-CONCAT",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "BASH-VARIABLE:GRAPHITE_VERSION",
-                                            "children": []
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": []
                                 }
                             ]
                         },
@@ -247,17 +160,8 @@
                             "type": "SC-PIP-TARGET",
                             "children": [
                                 {
-                                    "type": "BASH-CONCAT",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "BASH-VARIABLE:GRAPHITE_VERSION",
-                                            "children": []
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": []
                                 }
                             ]
                         }
@@ -336,6 +240,24 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "type": "SC-PIP-TARGET",
+                            "children": [
+                                {
+                                    "type": "BASH-CONCAT",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "BASH-VARIABLE:GRAPHITE_VERSION",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }
@@ -344,6 +266,82 @@
     },
     {
         "astCommandId": "graphite:8:8",
+        "astCommand": {
+            "type": "SC-PIP-INSTALL",
+            "children": [
+                {
+                    "type": "SC-PIP-F-NO-CACHE-DIR",
+                    "children": []
+                },
+                {
+                    "type": "SC-PIP-PREFIX",
+                    "children": [
+                        {
+                            "type": "BASH-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [
+                                        {
+                                            "type": "ABS-PATH-ABSOLUTE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-MAYBE-PATH",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-PIP-INSTALL-LIB",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [
+                                {
+                                    "type": "ABS-PATH-ABSOLUTE",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-MAYBE-PATH",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-PIP-TARGETS",
+                    "children": [
+                        {
+                            "type": "SC-PIP-TARGET",
+                            "children": [
+                                {
+                                    "type": "BASH-CONCAT",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "BASH-VARIABLE:GRAPHITE_VERSION",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "graphite:8:9",
         "astCommand": {
             "type": "SC-PIP-INSTALL",
             "children": [
@@ -365,7 +363,7 @@
         }
     },
     {
-        "astCommandId": "graphite:8:9",
+        "astCommandId": "graphite:8:10",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -391,54 +389,25 @@
         }
     },
     {
-        "astCommandId": "graphite:8:10",
+        "astCommandId": "graphite:8:11",
         "astCommand": {
-            "type": "BASH-REDIRECT",
+            "type": "SC-ECHO",
             "children": [
                 {
-                    "type": "BASH-REDIRECT-COMMAND",
+                    "type": "SC-ECHO-ITEMS",
                     "children": [
                         {
-                            "type": "SC-ECHO",
+                            "type": "SC-ECHO-ITEM",
                             "children": [
                                 {
-                                    "type": "SC-ECHO-ITEMS",
+                                    "type": "BASH-LITERAL",
                                     "children": [
                                         {
-                                            "type": "SC-ECHO-ITEM",
-                                            "children": [
-                                                {
-                                                    "type": "BASH-LITERAL",
-                                                    "children": [
-                                                        {
-                                                            "type": "ABS-DOUBLE-SPACE",
-                                                            "children": []
-                                                        },
-                                                        {
-                                                            "type": "ABS-SINGLE-SPACE",
-                                                            "children": []
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "BASH-REDIRECT-REDIRECTS",
-                    "children": [
-                        {
-                            "type": "BASH-REDIRECT-APPEND",
-                            "children": [
-                                {
-                                    "type": "BASH-PATH",
-                                    "children": [
+                                            "type": "ABS-DOUBLE-SPACE",
+                                            "children": []
+                                        },
                                         {
-                                            "type": "BASH-LITERAL",
+                                            "type": "ABS-SINGLE-SPACE",
                                             "children": []
                                         }
                                     ]
@@ -451,7 +420,7 @@
         }
     },
     {
-        "astCommandId": "graphite:8:11",
+        "astCommandId": "graphite:8:12",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -467,37 +436,6 @@
                                 },
                                 {
                                     "type": "ABS-PATH-RELATIVE",
-                                    "children": []
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        }
-    },
-    {
-        "astCommandId": "graphite:8:12",
-        "astCommand": {
-            "type": "SC-CP",
-            "children": [
-                {
-                    "type": "SC-CP-PATHS",
-                    "children": [
-                        {
-                            "type": "SC-CP-PATH",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": []
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-CP-PATH",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
                                     "children": []
                                 }
                             ]
@@ -572,6 +510,37 @@
     {
         "astCommandId": "graphite:8:15",
         "astCommand": {
+            "type": "SC-CP",
+            "children": [
+                {
+                    "type": "SC-CP-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-CP-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-CP-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "graphite:8:16",
+        "astCommand": {
             "type": "SC-CD",
             "children": [
                 {
@@ -592,7 +561,7 @@
         }
     },
     {
-        "astCommandId": "graphite:8:16",
+        "astCommandId": "graphite:8:17",
         "astCommand": {
             "type": "SC-APK-DEL",
             "children": [
@@ -621,7 +590,7 @@
         }
     },
     {
-        "astCommandId": "graphite:8:17",
+        "astCommandId": "graphite:8:18",
         "astCommand": {
             "type": "SC-RM",
             "children": [

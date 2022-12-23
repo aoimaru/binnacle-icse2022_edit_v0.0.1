@@ -55,48 +55,46 @@
     {
         "astCommandId": "h2o:4:2",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
-                    "children": [
-                        {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-VARIABLE:H2O_URL",
-                                    "children": []
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
                 },
                 {
-                    "type": "SC-TAR",
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-TAR-ARGS",
+                            "type": "BASH-VARIABLE:H2O_URL",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "h2o:4:3",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-ARGS",
+                    "children": [
+                        {
+                            "type": "SC-TAR-ARG",
                             "children": [
                                 {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": []
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": []
                                 }
                             ]
                         }
@@ -106,7 +104,7 @@
         }
     },
     {
-        "astCommandId": "h2o:4:3",
+        "astCommandId": "h2o:4:4",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -123,7 +121,7 @@
         }
     },
     {
-        "astCommandId": "h2o:4:4",
+        "astCommandId": "h2o:4:5",
         "astCommand": {
             "type": "SC-CMAKE",
             "children": [
@@ -159,7 +157,7 @@
         }
     },
     {
-        "astCommandId": "h2o:4:5",
+        "astCommandId": "h2o:4:6",
         "astCommand": {
             "type": "SC-MAKE",
             "children": [
@@ -176,7 +174,7 @@
         }
     },
     {
-        "astCommandId": "h2o:4:6",
+        "astCommandId": "h2o:4:7",
         "astCommand": {
             "type": "SC-CD",
             "children": [
@@ -198,7 +196,7 @@
         }
     },
     {
-        "astCommandId": "h2o:4:7",
+        "astCommandId": "h2o:4:8",
         "astCommand": {
             "type": "SC-RM",
             "children": [
@@ -228,7 +226,7 @@
         }
     },
     {
-        "astCommandId": "h2o:4:8",
+        "astCommandId": "h2o:4:9",
         "astCommand": {
             "type": "SC-APK-DEL",
             "children": [
@@ -261,7 +259,7 @@
         }
     },
     {
-        "astCommandId": "h2o:4:9",
+        "astCommandId": "h2o:4:10",
         "astCommand": {
             "type": "SC-RM",
             "children": [

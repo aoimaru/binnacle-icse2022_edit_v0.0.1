@@ -71,52 +71,50 @@
     {
         "astCommandId": "tor:1:2",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
+                            "type": "BASH-LITERAL",
                             "children": [
                                 {
-                                    "type": "BASH-LITERAL",
-                                    "children": [
-                                        {
-                                            "type": "ABS-PROBABLY-URL",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "ABS-URL-PROTOCOL-HTTPS",
-                                            "children": []
-                                        }
-                                    ]
+                                    "type": "ABS-PROBABLY-URL",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-URL-PROTOCOL-HTTPS",
+                                    "children": []
                                 }
                             ]
                         }
                     ]
-                },
-                {
-                    "type": "SC-PYTHON",
-                    "children": []
                 }
             ]
         }
     },
     {
         "astCommandId": "tor:1:3",
+        "astCommand": {
+            "type": "SC-PYTHON",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "tor:1:4",
         "astCommand": {
             "type": "SC-PIP-INSTALL",
             "children": [
@@ -151,7 +149,7 @@
         }
     },
     {
-        "astCommandId": "tor:1:4",
+        "astCommandId": "tor:1:5",
         "astCommand": {
             "type": "SC-GO-GET",
             "children": [
@@ -178,7 +176,7 @@
         }
     },
     {
-        "astCommandId": "tor:1:5",
+        "astCommandId": "tor:1:6",
         "astCommand": {
             "type": "SC-MV",
             "children": [
@@ -205,45 +203,6 @@
                         },
                         {
                             "type": "SC-MV-PATH",
-                            "children": [
-                                {
-                                    "type": "BASH-LITERAL",
-                                    "children": [
-                                        {
-                                            "type": "ABS-PATH-ABSOLUTE",
-                                            "children": []
-                                        },
-                                        {
-                                            "type": "ABS-MAYBE-PATH",
-                                            "children": []
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        }
-    },
-    {
-        "astCommandId": "tor:1:6",
-        "astCommand": {
-            "type": "SC-RM",
-            "children": [
-                {
-                    "type": "SC-RM-F-RECURSIVE",
-                    "children": []
-                },
-                {
-                    "type": "SC-RM-F-FORCE",
-                    "children": []
-                },
-                {
-                    "type": "SC-RM-PATHS",
-                    "children": [
-                        {
-                            "type": "SC-RM-PATH",
                             "children": [
                                 {
                                     "type": "BASH-LITERAL",
@@ -268,6 +227,45 @@
     {
         "astCommandId": "tor:1:7",
         "astCommand": {
+            "type": "SC-RM",
+            "children": [
+                {
+                    "type": "SC-RM-F-RECURSIVE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-F-FORCE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [
+                                        {
+                                            "type": "ABS-PATH-ABSOLUTE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-MAYBE-PATH",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "tor:1:8",
+        "astCommand": {
             "type": "SC-GO-GET",
             "children": [
                 {
@@ -293,7 +291,7 @@
         }
     },
     {
-        "astCommandId": "tor:1:8",
+        "astCommandId": "tor:1:9",
         "astCommand": {
             "type": "SC-MV",
             "children": [
@@ -342,7 +340,7 @@
         }
     },
     {
-        "astCommandId": "tor:1:9",
+        "astCommandId": "tor:1:10",
         "astCommand": {
             "type": "SC-RM",
             "children": [
@@ -381,7 +379,7 @@
         }
     },
     {
-        "astCommandId": "tor:1:10",
+        "astCommandId": "tor:1:11",
         "astCommand": {
             "type": "SC-APK-DEL",
             "children": [

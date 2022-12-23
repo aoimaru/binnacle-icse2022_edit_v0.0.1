@@ -88,57 +88,55 @@
     {
         "astCommandId": "phpvirtualbox:4:3",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-CURL-F-SILENT",
+                            "type": "BASH-VARIABLE:PHPVBOX_URL",
                             "children": []
-                        },
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "phpvirtualbox:4:4",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-STRIP",
+                    "children": [
                         {
-                            "type": "SC-CURL-F-SHOW-ERROR",
+                            "type": "BASH-LITERAL",
                             "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-VARIABLE:PHPVBOX_URL",
-                                    "children": []
-                                }
-                            ]
                         }
                     ]
                 },
                 {
-                    "type": "SC-TAR",
+                    "type": "SC-TAR-ARGS",
                     "children": [
                         {
-                            "type": "SC-TAR-STRIP",
+                            "type": "SC-TAR-ARG",
                             "children": [
                                 {
                                     "type": "BASH-LITERAL",
                                     "children": []
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-TAR-ARGS",
-                            "children": [
-                                {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": []
-                                        }
-                                    ]
                                 }
                             ]
                         }
@@ -148,7 +146,7 @@
         }
     },
     {
-        "astCommandId": "phpvirtualbox:4:4",
+        "astCommandId": "phpvirtualbox:4:5",
         "astCommand": {
             "type": "SC-APK-DEL",
             "children": [
@@ -165,7 +163,7 @@
         }
     },
     {
-        "astCommandId": "phpvirtualbox:4:5",
+        "astCommandId": "phpvirtualbox:4:6",
         "astCommand": {
             "type": "SC-CHOWN",
             "children": [

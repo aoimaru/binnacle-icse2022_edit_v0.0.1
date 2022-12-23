@@ -277,90 +277,40 @@
     {
         "astCommandId": "kafka-manager:6:2",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
-                    "children": [
-                        {
-                            "type": "SC-CURL-F-SILENT",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-CONCAT",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "https://github.com/yahoo/kafka-manager/archive/"
-                                        },
-                                        {
-                                            "type": "BASH-VARIABLE",
-                                            "children": [],
-                                            "value": "KAFKA_MANAGER_VERSION"
-                                        },
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": ".tar.gz"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "SC-CURL-F-SILENT",
+                    "children": []
                 },
                 {
-                    "type": "SC-TAR",
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-TAR-STRIP",
+                            "type": "BASH-CONCAT",
                             "children": [
                                 {
                                     "type": "BASH-LITERAL",
                                     "children": [],
-                                    "value": "1"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-TAR-DIRECTORY",
-                            "children": [
+                                    "value": "https://github.com/yahoo/kafka-manager/archive/"
+                                },
                                 {
-                                    "type": "BASH-PATH",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "src"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-TAR-ARGS",
-                            "children": [
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "KAFKA_MANAGER_VERSION"
+                                },
                                 {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "xz"
-                                        }
-                                    ]
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": ".tar.gz"
                                 }
                             ]
                         }
@@ -372,15 +322,45 @@
     {
         "astCommandId": "kafka-manager:6:3",
         "astCommand": {
-            "type": "SC-CD",
+            "type": "SC-TAR",
             "children": [
                 {
-                    "type": "SC-CD-PATH",
+                    "type": "SC-TAR-STRIP",
                     "children": [
                         {
                             "type": "BASH-LITERAL",
                             "children": [],
-                            "value": "src"
+                            "value": "1"
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-TAR-DIRECTORY",
+                    "children": [
+                        {
+                            "type": "BASH-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "src"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-TAR-ARGS",
+                    "children": [
+                        {
+                            "type": "SC-TAR-ARG",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "xz"
+                                }
+                            ]
                         }
                     ]
                 }
@@ -398,7 +378,7 @@
                         {
                             "type": "BASH-LITERAL",
                             "children": [],
-                            "value": ".."
+                            "value": "src"
                         }
                     ]
                 }
@@ -407,6 +387,24 @@
     },
     {
         "astCommandId": "kafka-manager:6:5",
+        "astCommand": {
+            "type": "SC-CD",
+            "children": [
+                {
+                    "type": "SC-CD-PATH",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": ".."
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "kafka-manager:6:6",
         "astCommand": {
             "type": "SC-TAR",
             "children": [
@@ -464,7 +462,7 @@
         }
     },
     {
-        "astCommandId": "kafka-manager:6:6",
+        "astCommandId": "kafka-manager:6:7",
         "astCommand": {
             "type": "SC-RM",
             "children": [

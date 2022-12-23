@@ -65,60 +65,58 @@
     {
         "astCommandId": "nifi:6:2",
         "astCommand": {
-            "type": "BASH-PIPELINE",
+            "type": "SC-CURL",
             "children": [
                 {
-                    "type": "SC-CURL",
+                    "type": "SC-CURL-F-FAIL",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-URL",
                     "children": [
                         {
-                            "type": "SC-CURL-F-FAIL",
-                            "children": []
-                        },
+                            "type": "BASH-VARIABLE",
+                            "children": [],
+                            "value": "NIFI_URL"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "nifi:6:3",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-STRIP-COMPONENTS",
+                    "children": [
                         {
-                            "type": "SC-CURL-F-SHOW-ERROR",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-F-LOCATION",
-                            "children": []
-                        },
-                        {
-                            "type": "SC-CURL-URL",
-                            "children": [
-                                {
-                                    "type": "BASH-VARIABLE",
-                                    "children": [],
-                                    "value": "NIFI_URL"
-                                }
-                            ]
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "1"
                         }
                     ]
                 },
                 {
-                    "type": "SC-TAR",
+                    "type": "SC-TAR-ARGS",
                     "children": [
                         {
-                            "type": "SC-TAR-STRIP-COMPONENTS",
+                            "type": "SC-TAR-ARG",
                             "children": [
                                 {
                                     "type": "BASH-LITERAL",
                                     "children": [],
-                                    "value": "1"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "SC-TAR-ARGS",
-                            "children": [
-                                {
-                                    "type": "SC-TAR-ARG",
-                                    "children": [
-                                        {
-                                            "type": "BASH-LITERAL",
-                                            "children": [],
-                                            "value": "xz"
-                                        }
-                                    ]
+                                    "value": "xz"
                                 }
                             ]
                         }
@@ -128,7 +126,7 @@
         }
     },
     {
-        "astCommandId": "nifi:6:3",
+        "astCommandId": "nifi:6:4",
         "astCommand": {
             "type": "SC-APK-DEL",
             "children": [
@@ -161,7 +159,7 @@
         }
     },
     {
-        "astCommandId": "nifi:6:4",
+        "astCommandId": "nifi:6:5",
         "astCommand": {
             "type": "SC-ADD-USER",
             "children": [
@@ -233,7 +231,7 @@
         }
     },
     {
-        "astCommandId": "nifi:6:5",
+        "astCommandId": "nifi:6:6",
         "astCommand": {
             "type": "SC-MKDIR",
             "children": [
@@ -290,7 +288,7 @@
         }
     },
     {
-        "astCommandId": "nifi:6:6",
+        "astCommandId": "nifi:6:7",
         "astCommand": {
             "type": "SC-CHOWN",
             "children": [
