@@ -1,0 +1,172 @@
+[
+    {
+        "astCommandId": "drone-rsync-arm:1:0",
+        "astCommand": {
+            "type": "SC-APK-ADD",
+            "children": [
+                {
+                    "type": "SC-APK-F-NO-CACHE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE:BASH",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:CA-CERTIFICATES",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:CURL",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:OPENSSH-CLIENT",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:RSYNC",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "drone-rsync-arm:2:0",
+        "astCommand": {
+            "type": "BASH-REDIRECT",
+            "children": [
+                {
+                    "type": "BASH-REDIRECT-COMMAND",
+                    "children": [
+                        {
+                            "type": "SC-CURL",
+                            "children": [
+                                {
+                                    "type": "SC-CURL-F-SILENT",
+                                    "children": []
+                                },
+                                {
+                                    "type": "SC-CURL-F-SHOW-ERROR",
+                                    "children": []
+                                },
+                                {
+                                    "type": "SC-CURL-F-LOCATION",
+                                    "children": []
+                                },
+                                {
+                                    "type": "SC-CURL-URL",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-PROBABLY-URL",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-URL-PROTOCOL-HTTPS",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "BASH-REDIRECT-REDIRECTS",
+                    "children": [
+                        {
+                            "type": "BASH-REDIRECT-OVERWRITE",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-PROBABLY-URL",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "drone-rsync-arm:3:0",
+        "astCommand": {
+            "type": "SC-CHMOD",
+            "children": [
+                {
+                    "type": "SC-CHMOD-MODE",
+                    "children": [
+                        {
+                            "type": "BASH-CONCAT",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                },
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-CHMOD-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-CHMOD-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [
+                                        {
+                                            "type": "ABS-PROBABLY-URL",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-PATH-ABSOLUTE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-MAYBE-PATH",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

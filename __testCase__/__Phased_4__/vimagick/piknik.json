@@ -1,0 +1,245 @@
+[
+    {
+        "astCommandId": "piknik:4:0",
+        "astCommand": {
+            "type": "SC-SET",
+            "children": [
+                {
+                    "type": "SC-SET-F-X",
+                    "children": []
+                },
+                {
+                    "type": "SC-SET-F-E",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "piknik:4:1",
+        "astCommand": {
+            "type": "SC-APK-ADD",
+            "children": [
+                {
+                    "type": "SC-APK-F-NO-CACHE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE:CURL",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:LIBC6-COMPAT",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:TAR",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "piknik:4:2",
+        "astCommand": {
+            "type": "BASH-PIPELINE",
+            "children": [
+                {
+                    "type": "SC-CURL",
+                    "children": [
+                        {
+                            "type": "SC-CURL-F-SILENT",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-F-SHOW-ERROR",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-F-LOCATION",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:PIKNIK_URL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-TAR",
+                    "children": [
+                        {
+                            "type": "SC-TAR-DIRECTORY",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-TAR-STRIP",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-TAR-ARGS",
+                            "children": [
+                                {
+                                    "type": "SC-TAR-ARG",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-TAR-ARG",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "piknik:4:3",
+        "astCommand": {
+            "type": "SC-MKDIR",
+            "children": [
+                {
+                    "type": "SC-MKDIR-F-PARENTS",
+                    "children": []
+                },
+                {
+                    "type": "SC-MKDIR-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-MKDIR-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [
+                                        {
+                                            "type": "ABS-PATH-ABSOLUTE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-MAYBE-PATH",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "piknik:4:4",
+        "astCommand": {
+            "type": "SC-LN",
+            "children": [
+                {
+                    "type": "SC-LN-F-SYMBOLIC",
+                    "children": []
+                },
+                {
+                    "type": "SC-LN-TARGET",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [
+                                {
+                                    "type": "ABS-PATH-ABSOLUTE",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-MAYBE-PATH",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-LN-LINK",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [
+                                {
+                                    "type": "ABS-PATH-ABSOLUTE",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-MAYBE-PATH",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "piknik:4:5",
+        "astCommand": {
+            "type": "SC-APK-DEL",
+            "children": [
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE:CURL",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:TAR",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

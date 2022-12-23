@@ -1,0 +1,466 @@
+[
+    {
+        "astCommandId": "netdata:2:0",
+        "astCommand": {
+            "type": "SC-SET",
+            "children": [
+                {
+                    "type": "SC-SET-F-X",
+                    "children": []
+                },
+                {
+                    "type": "SC-SET-F-E",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "netdata:2:1",
+        "astCommand": {
+            "type": "SC-APK-ADD",
+            "children": [
+                {
+                    "type": "SC-APK-F-NO-CACHE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "autoconf"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "automake"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "bash"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "build-base"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "curl"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "nodejs"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "nodejs-npm"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "python"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "libmnl"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "libmnl-dev"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "libuuid"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "util-linux-dev"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "zlib"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "zlib-dev"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "netdata:2:2",
+        "astCommand": {
+            "type": "SC-ADD-USER",
+            "children": [
+                {
+                    "type": "SC-ADD-USER-F-DEFAULTS",
+                    "children": []
+                },
+                {
+                    "type": "SC-ADD-USER-H",
+                    "children": []
+                },
+                {
+                    "type": "SC-ADD-USER-UID",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "1000"
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-ADD-USER-GROUPS",
+                    "children": [
+                        {
+                            "type": "SC-ADD-USER-GROUP",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "netdata"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-ADD-USER-GROUP",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "netdata"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "netdata:2:3",
+        "astCommand": {
+            "type": "BASH-PIPELINE",
+            "children": [
+                {
+                    "type": "SC-CURL",
+                    "children": [
+                        {
+                            "type": "SC-CURL-F-SILENT",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-F-SHOW-ERROR",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-F-LOCATION",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-CONCAT",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "https://github.com/firehol/netdata/releases/download/v"
+                                        },
+                                        {
+                                            "type": "BASH-VARIABLE",
+                                            "children": [],
+                                            "value": "NETDATA_VERSION"
+                                        },
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "/netdata-"
+                                        },
+                                        {
+                                            "type": "BASH-VARIABLE",
+                                            "children": [],
+                                            "value": "NETDATA_VERSION"
+                                        },
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": ".tar.gz"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-TAR",
+                    "children": [
+                        {
+                            "type": "SC-TAR-ARGS",
+                            "children": [
+                                {
+                                    "type": "SC-TAR-ARG",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "xz"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "netdata:2:4",
+        "astCommand": {
+            "type": "SC-CD",
+            "children": [
+                {
+                    "type": "SC-CD-PATH",
+                    "children": [
+                        {
+                            "type": "BASH-CONCAT",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "netdata-"
+                                },
+                                {
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "NETDATA_VERSION"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "netdata:2:5",
+        "astCommand": {
+            "type": "SC-CD",
+            "children": [
+                {
+                    "type": "SC-CD-PATH",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": ".."
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "netdata:2:6",
+        "astCommand": {
+            "type": "SC-RM",
+            "children": [
+                {
+                    "type": "SC-RM-F-RECURSIVE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-F-FORCE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-CONCAT",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "netdata-"
+                                        },
+                                        {
+                                            "type": "BASH-VARIABLE",
+                                            "children": [],
+                                            "value": "NETDATA_VERSION"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "netdata:2:7",
+        "astCommand": {
+            "type": "SC-APK-DEL",
+            "children": [
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "autoconf"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "automake"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "build-base"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "libmnl-dev"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "util-linux-dev"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "zlib-dev"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

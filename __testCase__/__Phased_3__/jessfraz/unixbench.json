@@ -1,0 +1,314 @@
+[
+    {
+        "astCommandId": "unixbench:1:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APK-F-NO-CACHE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "bash",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "coreutils",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "dateutils",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "gcc",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "make",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "musl-dev",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "perl",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APK-PACKAGES"
+                }
+            ],
+            "type": "SC-APK-ADD"
+        }
+    },
+    {
+        "astCommandId": "unixbench:3:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-SET-F-X"
+                }
+            ],
+            "type": "SC-SET"
+        }
+    },
+    {
+        "astCommandId": "unixbench:3:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APK-F-NO-CACHE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": ".build-deps",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-APK-VIRTUAL"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "ca-certificates",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "curl",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APK-PACKAGES"
+                }
+            ],
+            "type": "SC-APK-ADD"
+        }
+    },
+    {
+        "astCommandId": "unixbench:3:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-MKDIR-F-PARENTS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "/usr/src/unixbench",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-MKDIR-PATH"
+                        }
+                    ],
+                    "type": "SC-MKDIR-PATHS"
+                }
+            ],
+            "type": "SC-MKDIR"
+        }
+    },
+    {
+        "astCommandId": "unixbench:3:3",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "SC-CURL-F-SILENT"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-CURL-F-SHOW-ERROR"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-CURL-F-LOCATION"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "https://github.com/kdlucas/byte-unixbench/archive/${UNIXBENCH_VERSION}.tar.gz",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-CURL-URL"
+                        }
+                    ],
+                    "type": "SC-CURL"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "SC-TAR-X"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-TAR-Z"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "value": "/usr/src/unixbench",
+                                            "type": "BASH-LITERAL"
+                                        }
+                                    ],
+                                    "type": "BASH-PATH"
+                                }
+                            ],
+                            "type": "SC-TAR-DIRECTORY"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "2",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-TAR-STRIP-COMPONENTS"
+                        }
+                    ],
+                    "type": "SC-TAR"
+                }
+            ],
+            "type": "BASH-PIPELINE"
+        }
+    },
+    {
+        "astCommandId": "unixbench:3:4",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "+",
+                                    "type": "BASH-LITERAL"
+                                },
+                                {
+                                    "children": [],
+                                    "value": "x",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "BASH-CONCAT"
+                        }
+                    ],
+                    "type": "SC-CHMOD-MODE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "/usr/src/unixbench/Run",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-CHMOD-PATH"
+                        }
+                    ],
+                    "type": "SC-CHMOD-PATHS"
+                }
+            ],
+            "type": "SC-CHMOD"
+        }
+    },
+    {
+        "astCommandId": "unixbench:3:5",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": ".build-deps",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APK-PACKAGES"
+                }
+            ],
+            "type": "SC-APK-DEL"
+        }
+    }
+]

@@ -1,0 +1,227 @@
+[
+    {
+        "astCommandId": "mariadb:1:0",
+        "astCommand": {
+            "type": "SC-SET",
+            "children": [
+                {
+                    "type": "SC-SET-F-X",
+                    "children": []
+                },
+                {
+                    "type": "SC-SET-F-E",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "mariadb:1:1",
+        "astCommand": {
+            "type": "SC-APK-ADD",
+            "children": [
+                {
+                    "type": "SC-APK-F-UPDATE-CACHE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "bash"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "mariadb"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "mariadb-client"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "tzdata"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "mariadb:1:2",
+        "astCommand": {
+            "type": "SC-MKDIR",
+            "children": [
+                {
+                    "type": "SC-MKDIR-F-PARENTS",
+                    "children": []
+                },
+                {
+                    "type": "SC-MKDIR-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-MKDIR-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/run/mysqld"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "mariadb:1:3",
+        "astCommand": {
+            "type": "SC-CHOWN",
+            "children": [
+                {
+                    "type": "SC-CHOWN-OWNER",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "mysql:mysql"
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-CHOWN-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-CHOWN-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/run/mysqld"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "mariadb:1:4",
+        "astCommand": {
+            "type": "SC-SED",
+            "children": [
+                {
+                    "type": "SC-SED-F-REGEXP-EXTENDED",
+                    "children": []
+                },
+                {
+                    "type": "SC-SED-F-IN-PLACE",
+                    "children": []
+                },
+                {
+                    "type": "SC-SED-EXPRESSIONS",
+                    "children": [
+                        {
+                            "type": "SC-SED-EXPRESSION",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "s/^(bind-address|log)/#&/"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-EXPRESSION",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "s/^\\[mysqld\\]$/&\\nskip-host-cache\\nskip-name-resolve\\nuser=mysql/"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-SED-PATHS",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "/etc/mysql/my.cnf"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "mariadb:1:5",
+        "astCommand": {
+            "type": "SC-RM",
+            "children": [
+                {
+                    "type": "SC-RM-F-RECURSIVE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-F-FORCE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-CONCAT",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "/var/cache/apk/"
+                                        },
+                                        {
+                                            "type": "BASH-GLOB",
+                                            "children": [],
+                                            "value": "*"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

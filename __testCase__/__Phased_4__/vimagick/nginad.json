@@ -1,0 +1,488 @@
+[
+    {
+        "astCommandId": "nginad:4:0",
+        "astCommand": {
+            "type": "SC-APK-ADD",
+            "children": [
+                {
+                    "type": "SC-APK-F-NO-CACHE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE:CURL",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:GIT",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:GZIP",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:NGINX",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:PHP5-APCU",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:PHP5-CURL",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:PHP5-FPM",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:PHP5-ICONV",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:PHP5-JSON",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:PHP5-OPENSSL",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:PHP5-PDO",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:PHP5-PDO_MYSQL",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:PHP5-PHAR",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:PHP5-XML",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:PHP5-ZLIB",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:TAR",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "nginad:4:1",
+        "astCommand": {
+            "type": "BASH-PIPELINE",
+            "children": [
+                {
+                    "type": "SC-CURL",
+                    "children": [
+                        {
+                            "type": "SC-CURL-F-SILENT",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-F-SHOW-ERROR",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-F-LOCATION",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:NGINAD_URL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-TAR",
+                    "children": [
+                        {
+                            "type": "SC-TAR-STRIP",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-TAR-ARGS",
+                            "children": [
+                                {
+                                    "type": "SC-TAR-ARG",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "nginad:4:2",
+        "astCommand": {
+            "type": "SC-CD",
+            "children": [
+                {
+                    "type": "SC-CD-PATH",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "nginad:4:3",
+        "astCommand": {
+            "type": "SC-PHP",
+            "children": [
+                {
+                    "type": "SC-PHP-SCRIPT",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-PHP-ARGS",
+                    "children": [
+                        {
+                            "type": "SC-PHP-ARG",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "nginad:4:4",
+        "astCommand": {
+            "type": "SC-PHP",
+            "children": [
+                {
+                    "type": "SC-PHP-SCRIPT",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-PHP-ARGS",
+                    "children": [
+                        {
+                            "type": "SC-PHP-ARG",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "nginad:4:5",
+        "astCommand": {
+            "type": "SC-CHOWN",
+            "children": [
+                {
+                    "type": "SC-CHOWN-F-RECURSIVE",
+                    "children": []
+                },
+                {
+                    "type": "SC-CHOWN-OWNER",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-CHOWN-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-CHOWN-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [
+                                        {
+                                            "type": "ABS-MAYBE-PATH",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "nginad:4:6",
+        "astCommand": {
+            "type": "SC-CD",
+            "children": [
+                {
+                    "type": "SC-CD-PATH",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "nginad:4:7",
+        "astCommand": {
+            "type": "SC-CP",
+            "children": [
+                {
+                    "type": "SC-CP-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-CP-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-CP-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "nginad:4:8",
+        "astCommand": {
+            "type": "SC-CP",
+            "children": [
+                {
+                    "type": "SC-CP-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-CP-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-CP-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "nginad:4:9",
+        "astCommand": {
+            "type": "SC-CP",
+            "children": [
+                {
+                    "type": "SC-CP-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-CP-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-CP-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "nginad:4:10",
+        "astCommand": {
+            "type": "SC-CP",
+            "children": [
+                {
+                    "type": "SC-CP-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-CP-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-CP-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "nginad:4:11",
+        "astCommand": {
+            "type": "SC-SED",
+            "children": [
+                {
+                    "type": "SC-SED-F-IN-PLACE",
+                    "children": []
+                },
+                {
+                    "type": "SC-SED-EXPRESSIONS",
+                    "children": [
+                        {
+                            "type": "SC-SED-EXPRESSION",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [
+                                        {
+                                            "type": "ABS-DOUBLE-SPACE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-SINGLE-SPACE",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-EXPRESSION",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [
+                                        {
+                                            "type": "ABS-DOUBLE-SPACE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-SINGLE-SPACE",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-SED-PATHS",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "nginad:4:12",
+        "astCommand": {
+            "type": "SC-APK-DEL",
+            "children": [
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE:CURL",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:GIT",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

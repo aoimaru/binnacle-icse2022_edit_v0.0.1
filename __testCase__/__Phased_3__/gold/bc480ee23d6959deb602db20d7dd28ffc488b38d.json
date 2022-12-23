@@ -1,0 +1,97 @@
+[
+    {
+        "astCommandId": "bc480ee23d6959deb602db20d7dd28ffc488b38d:4:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-VARIABLE",
+                            "value": "url"
+                        }
+                    ],
+                    "type": "BASH-ASSIGN-LHS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-SINGLE-QUOTED",
+                                    "value": "https://www.python.org/ftp/python/{0}/python-{1}.amd64.msi"
+                                },
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "-f"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-VARIABLE",
+                                            "value": "env"
+                                        },
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": ":PYTHON_RELEASE,"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-VARIABLE",
+                                            "value": "env"
+                                        },
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": ":PYTHON_VERSION"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "BASH-ARRAY"
+                        }
+                    ],
+                    "type": "BASH-ASSIGN-RHS"
+                }
+            ],
+            "type": "BASH-ASSIGN"
+        }
+    },
+    {
+        "astCommandId": "bc480ee23d6959deb602db20d7dd28ffc488b38d:7:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-PIP-F-NO-CACHE-DIR"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "virtualenv"
+                                }
+                            ],
+                            "type": "SC-PIP-TARGET"
+                        }
+                    ],
+                    "type": "SC-PIP-TARGETS"
+                }
+            ],
+            "type": "SC-PIP-INSTALL"
+        }
+    }
+]

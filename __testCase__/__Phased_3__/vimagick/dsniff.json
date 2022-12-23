@@ -1,0 +1,128 @@
+[
+    {
+        "astCommandId": "dsniff:1:0",
+        "astCommand": {
+            "type": "SC-SET",
+            "children": [
+                {
+                    "type": "SC-SET-F-X",
+                    "children": []
+                },
+                {
+                    "type": "SC-SET-F-E",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "dsniff:1:1",
+        "astCommand": {
+            "type": "BASH-REDIRECT",
+            "children": [
+                {
+                    "type": "BASH-REDIRECT-COMMAND",
+                    "children": [
+                        {
+                            "type": "SC-ECHO",
+                            "children": [
+                                {
+                                    "type": "SC-ECHO-ITEMS",
+                                    "children": [
+                                        {
+                                            "type": "SC-ECHO-ITEM",
+                                            "children": [
+                                                {
+                                                    "type": "BASH-LITERAL",
+                                                    "children": [],
+                                                    "value": "http://dl-cdn.alpinelinux.org/alpine/edge/testing"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "BASH-REDIRECT-REDIRECTS",
+                    "children": [
+                        {
+                            "type": "BASH-REDIRECT-APPEND",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "/etc/apk/repositories"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "dsniff:1:2",
+        "astCommand": {
+            "type": "SC-APK-ADD",
+            "children": [
+                {
+                    "type": "SC-APK-F-NO-CACHE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "bash"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "coreutils"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "dsniff"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "tmux"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

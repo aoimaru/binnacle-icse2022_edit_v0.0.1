@@ -1,0 +1,267 @@
+[
+    {
+        "astCommandId": "nerdy:1:0",
+        "astCommand": {
+            "children": [],
+            "type": "SC-APT-GET-UPDATE"
+        }
+    },
+    {
+        "astCommandId": "nerdy:1:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-YES"
+                },
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-NO-INSTALL-RECOMMENDS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "SC-APT-GET-PACKAGE:CA-CERTIFICATES"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APT-GET-PACKAGE:COWSAY"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APT-GET-PACKAGE:CURL"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APT-GET-PACKAGE:FIGLET"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APT-GET-PACKAGE:IMAGEMAGICK"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APT-GET-PACKAGE:JP2A"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APT-GET-PACKAGE:PYTHON"
+                        }
+                    ],
+                    "type": "SC-APT-GET-PACKAGES"
+                }
+            ],
+            "type": "SC-APT-GET-INSTALL"
+        }
+    },
+    {
+        "astCommandId": "nerdy:1:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-FORCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "type": "ABS-PATH-VAR",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-APT-LISTS",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                }
+                                            ],
+                                            "type": "BASH-LITERAL"
+                                        },
+                                        {
+                                            "children": [
+                                                {
+                                                    "type": "ABS-GLOB-STAR",
+                                                    "children": []
+                                                }
+                                            ],
+                                            "type": "BASH-GLOB"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    },
+    {
+        "astCommandId": "nerdy:6:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-SINGLE-SPACE",
+                                                            "children": []
+                                                        }
+                                                    ],
+                                                    "type": "BASH-LITERAL"
+                                                }
+                                            ],
+                                            "type": "SC-ECHO-ITEM"
+                                        }
+                                    ],
+                                    "type": "SC-ECHO-ITEMS"
+                                }
+                            ],
+                            "type": "SC-ECHO"
+                        }
+                    ],
+                    "type": "BASH-REDIRECT-COMMAND"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-VARIABLE:HOME"
+                                                },
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-PATH-ABSOLUTE",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-MAYBE-PATH",
+                                                            "children": []
+                                                        }
+                                                    ],
+                                                    "type": "BASH-LITERAL"
+                                                }
+                                            ],
+                                            "type": "BASH-CONCAT"
+                                        }
+                                    ],
+                                    "type": "BASH-PATH"
+                                }
+                            ],
+                            "type": "BASH-REDIRECT-APPEND"
+                        }
+                    ],
+                    "type": "BASH-REDIRECT-REDIRECTS"
+                }
+            ],
+            "type": "BASH-REDIRECT"
+        }
+    },
+    {
+        "astCommandId": "nerdy:7:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-SINGLE-SPACE",
+                                                            "children": []
+                                                        }
+                                                    ],
+                                                    "type": "BASH-LITERAL"
+                                                }
+                                            ],
+                                            "type": "SC-ECHO-ITEM"
+                                        }
+                                    ],
+                                    "type": "SC-ECHO-ITEMS"
+                                }
+                            ],
+                            "type": "SC-ECHO"
+                        }
+                    ],
+                    "type": "BASH-REDIRECT-COMMAND"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-VARIABLE:HOME"
+                                                },
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-PATH-ABSOLUTE",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-MAYBE-PATH",
+                                                            "children": []
+                                                        }
+                                                    ],
+                                                    "type": "BASH-LITERAL"
+                                                }
+                                            ],
+                                            "type": "BASH-CONCAT"
+                                        }
+                                    ],
+                                    "type": "BASH-PATH"
+                                }
+                            ],
+                            "type": "BASH-REDIRECT-APPEND"
+                        }
+                    ],
+                    "type": "BASH-REDIRECT-REDIRECTS"
+                }
+            ],
+            "type": "BASH-REDIRECT"
+        }
+    }
+]

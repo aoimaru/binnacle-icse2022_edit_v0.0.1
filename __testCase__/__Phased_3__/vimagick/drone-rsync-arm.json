@@ -1,0 +1,172 @@
+[
+    {
+        "astCommandId": "drone-rsync-arm:1:0",
+        "astCommand": {
+            "type": "SC-APK-ADD",
+            "children": [
+                {
+                    "type": "SC-APK-F-NO-CACHE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "bash"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "ca-certificates"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "curl"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "openssh-client"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "rsync"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "drone-rsync-arm:2:0",
+        "astCommand": {
+            "type": "BASH-REDIRECT",
+            "children": [
+                {
+                    "type": "BASH-REDIRECT-COMMAND",
+                    "children": [
+                        {
+                            "type": "SC-CURL",
+                            "children": [
+                                {
+                                    "type": "SC-CURL-F-SILENT",
+                                    "children": []
+                                },
+                                {
+                                    "type": "SC-CURL-F-SHOW-ERROR",
+                                    "children": []
+                                },
+                                {
+                                    "type": "SC-CURL-F-LOCATION",
+                                    "children": []
+                                },
+                                {
+                                    "type": "SC-CURL-URL",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "https://github.com/Drillster/drone-rsync/raw/master/upload.sh"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "BASH-REDIRECT-REDIRECTS",
+                    "children": [
+                        {
+                            "type": "BASH-REDIRECT-OVERWRITE",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "/usr/local/bin/upload.sh"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "drone-rsync-arm:3:0",
+        "astCommand": {
+            "type": "SC-CHMOD",
+            "children": [
+                {
+                    "type": "SC-CHMOD-MODE",
+                    "children": [
+                        {
+                            "type": "BASH-CONCAT",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "+"
+                                },
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "x"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-CHMOD-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-CHMOD-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/usr/local/bin/upload.sh"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

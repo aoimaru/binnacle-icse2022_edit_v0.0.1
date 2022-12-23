@@ -1,0 +1,216 @@
+[
+    {
+        "astCommandId": "rehook:6:0",
+        "astCommand": {
+            "type": "SC-APK-ADD",
+            "children": [
+                {
+                    "type": "SC-APK-F-NO-CACHE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "git"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "rehook:7:0",
+        "astCommand": {
+            "type": "SC-GO-GET",
+            "children": [
+                {
+                    "type": "SC-GO-F-D",
+                    "children": []
+                },
+                {
+                    "type": "SC-GO-F-V",
+                    "children": []
+                },
+                {
+                    "type": "SC-GO-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-GO-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "github.com/jstemmer/rehook"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "rehook:8:0",
+        "astCommand": {
+            "type": "SC-GO-BUILD",
+            "children": [
+                {
+                    "type": "SC-GO-LDFLAGS",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "-s -extldflags \"-static\""
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-GO-F-I",
+                    "children": []
+                },
+                {
+                    "type": "SC-GO-O",
+                    "children": [
+                        {
+                            "type": "BASH-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "rehook"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-GO-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-GO-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "github.com/jstemmer/rehook"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "rehook:11:0",
+        "astCommand": {
+            "type": "SC-MKDIR",
+            "children": [
+                {
+                    "type": "SC-MKDIR-F-PARENTS",
+                    "children": []
+                },
+                {
+                    "type": "SC-MKDIR-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-MKDIR-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "bin"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-MKDIR-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "log"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-MKDIR-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "var"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "rehook:12:0",
+        "astCommand": {
+            "type": "SC-APK-ADD",
+            "children": [
+                {
+                    "type": "SC-APK-F-NO-CACHE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "bash"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "coreutils"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "curl"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "jq"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

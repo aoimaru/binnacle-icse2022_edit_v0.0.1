@@ -1,0 +1,449 @@
+[
+    {
+        "astCommandId": "proxyhub:1:0",
+        "astCommand": {
+            "type": "SC-APT-GET-UPDATE",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "proxyhub:2:0",
+        "astCommand": {
+            "type": "SC-APT-GET-INSTALL",
+            "children": [
+                {
+                    "type": "SC-APT-GET-F-YES",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "build-essential"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "pdnsd"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "haproxy"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "polipo"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "nginx"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "python"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "proxyhub:3:0",
+        "astCommand": {
+            "type": "SC-APT-GET-CLEAN",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "proxyhub:15:0",
+        "astCommand": {
+            "type": "SC-CHMOD",
+            "children": [
+                {
+                    "type": "SC-CHMOD-MODE",
+                    "children": [
+                        {
+                            "type": "BASH-CONCAT",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "+"
+                                },
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "x"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-CHMOD-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-CHMOD-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/usr/local/bin/jq"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "proxyhub:16:0",
+        "astCommand": {
+            "type": "SC-PYTHON",
+            "children": [
+                {
+                    "type": "SC-PYTHON-ARGS",
+                    "children": [
+                        {
+                            "type": "SC-PYTHON-ARG",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "get-pip.py"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "proxyhub:17:0",
+        "astCommand": {
+            "type": "SC-PIP-INSTALL",
+            "children": [
+                {
+                    "type": "SC-PIP-F-NO-CACHE-DIR",
+                    "children": []
+                },
+                {
+                    "type": "SC-PIP-TARGETS",
+                    "children": [
+                        {
+                            "type": "SC-PIP-TARGET",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "supervisor"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-PIP-TARGET",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "shadowsocks"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "proxyhub:18:0",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-ARGS",
+                    "children": [
+                        {
+                            "type": "SC-TAR-ARG",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "xzf"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-TAR-ARG",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "libsodium-1.0.2.tar.gz"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "proxyhub:18:1",
+        "astCommand": {
+            "type": "SC-CD",
+            "children": [
+                {
+                    "type": "SC-CD-PATH",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "libsodium-1.0.2"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "proxyhub:18:2",
+        "astCommand": {
+            "type": "SC-CONFIGURE",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "proxyhub:18:3",
+        "astCommand": {
+            "type": "SC-MAKE",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "proxyhub:18:4",
+        "astCommand": {
+            "type": "SC-MAKE",
+            "children": [
+                {
+                    "type": "SC-MAKE-TARGET",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "install"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "proxyhub:19:0",
+        "astCommand": {
+            "type": "BASH-REDIRECT",
+            "children": [
+                {
+                    "type": "BASH-REDIRECT-COMMAND",
+                    "children": [
+                        {
+                            "type": "SC-ECHO",
+                            "children": [
+                                {
+                                    "type": "SC-ECHO-ITEMS",
+                                    "children": [
+                                        {
+                                            "type": "SC-ECHO-ITEM",
+                                            "children": [
+                                                {
+                                                    "type": "BASH-LITERAL",
+                                                    "children": [],
+                                                    "value": "/usr/local/lib"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "BASH-REDIRECT-REDIRECTS",
+                    "children": [
+                        {
+                            "type": "BASH-REDIRECT-OVERWRITE",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "/etc/ld.so.conf.d/local.conf"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "proxyhub:19:1",
+        "astCommand": {
+            "type": "SC-LDCONFIG",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "proxyhub:20:0",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-ARGS",
+                    "children": [
+                        {
+                            "type": "SC-TAR-ARG",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "xzf"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-TAR-ARG",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "dnscrypt-proxy-1.4.3.tar.gz"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "proxyhub:20:1",
+        "astCommand": {
+            "type": "SC-CD",
+            "children": [
+                {
+                    "type": "SC-CD-PATH",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "dnscrypt-proxy-1.4.3"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "proxyhub:20:2",
+        "astCommand": {
+            "type": "SC-CONFIGURE",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "proxyhub:20:3",
+        "astCommand": {
+            "type": "SC-MAKE",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "proxyhub:20:4",
+        "astCommand": {
+            "type": "SC-MAKE",
+            "children": [
+                {
+                    "type": "SC-MAKE-TARGET",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "install"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "proxyhub:22:0",
+        "astCommand": {
+            "type": "SC-RM",
+            "children": [
+                {
+                    "type": "SC-RM-F-RECURSIVE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/tmp/pkgs/"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

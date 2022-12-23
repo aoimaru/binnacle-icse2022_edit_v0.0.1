@@ -1,0 +1,440 @@
+[
+    {
+        "astCommandId": "keepassxc:2:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-SET-F-X"
+                }
+            ],
+            "type": "SC-SET"
+        }
+    },
+    {
+        "astCommandId": "keepassxc:2:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APK-F-NO-CACHE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "buildDeps",
+                                    "type": "BASH-VARIABLE"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APK-PACKAGES"
+                }
+            ],
+            "type": "SC-APK-ADD"
+        }
+    },
+    {
+        "astCommandId": "keepassxc:2:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "1",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GIT-DEPTH"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "KEEPASSXC_VERSION",
+                            "type": "BASH-VARIABLE"
+                        }
+                    ],
+                    "type": "SC-GIT-BRANCH"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "https://github.com/keepassxreboot/keepassxc.git",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GIT-URL"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "/usr/src/keepassxc",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GIT-DIRECTORY"
+                }
+            ],
+            "type": "SC-GIT-CLONE"
+        }
+    },
+    {
+        "astCommandId": "keepassxc:2:3",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "/usr/src/keepassxc",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-CD-PATH"
+                }
+            ],
+            "type": "SC-CD"
+        }
+    },
+    {
+        "astCommandId": "keepassxc:2:4",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "build",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-MKDIR-PATH"
+                        }
+                    ],
+                    "type": "SC-MKDIR-PATHS"
+                }
+            ],
+            "type": "SC-MKDIR"
+        }
+    },
+    {
+        "astCommandId": "keepassxc:2:5",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "build",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-CD-PATH"
+                }
+            ],
+            "type": "SC-CD"
+        }
+    },
+    {
+        "astCommandId": "keepassxc:2:6",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "WITH_TESTS=ON",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-CMAKE-D"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "WITH_XC_AUTOTYPE=ON",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-CMAKE-D"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "WITH_XC_HTTP=ON",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-CMAKE-D"
+                        }
+                    ],
+                    "type": "SC-CMAKE-DS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "..",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-CMAKE-PATHTOSOURCEORBUILD"
+                }
+            ],
+            "type": "SC-CMAKE"
+        }
+    },
+    {
+        "astCommandId": "keepassxc:2:7",
+        "astCommand": {
+            "children": [],
+            "type": "SC-MAKE"
+        }
+    },
+    {
+        "astCommandId": "keepassxc:2:8",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "install",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-MAKE-TARGET"
+                }
+            ],
+            "type": "SC-MAKE"
+        }
+    },
+    {
+        "astCommandId": "keepassxc:2:9",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "buildDeps",
+                                    "type": "BASH-VARIABLE"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APK-PACKAGES"
+                }
+            ],
+            "type": "SC-APK-DEL"
+        }
+    },
+    {
+        "astCommandId": "keepassxc:2:10",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-FORCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "/usr/src/keepassxc",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    },
+    {
+        "astCommandId": "keepassxc:2:11",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "Build complete.",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-ECHO-ITEM"
+                        }
+                    ],
+                    "type": "SC-ECHO-ITEMS"
+                }
+            ],
+            "type": "SC-ECHO"
+        }
+    },
+    {
+        "astCommandId": "keepassxc:3:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APK-F-NO-CACHE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "argon2-libs",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libcurl",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libmicrohttpd",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libgcrypt",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libqrencode",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libsodium",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "mesa-dri-intel",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "qt5-qtbase",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "qt5-qtbase-x11",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "qt5-qtsvg",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "qt5-qttools",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "ttf-dejavu",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APK-PACKAGES"
+                }
+            ],
+            "type": "SC-APK-ADD"
+        }
+    }
+]

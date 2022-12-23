@@ -1,0 +1,428 @@
+[
+    {
+        "astCommandId": "powershell:2:0",
+        "astCommand": {
+            "children": [],
+            "type": "SC-APT-GET-UPDATE"
+        }
+    },
+    {
+        "astCommandId": "powershell:2:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-YES"
+                },
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-NO-INSTALL-RECOMMENDS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "SC-APT-GET-PACKAGE:CA-CERTIFICATES"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APT-GET-PACKAGE:DPKG"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APT-GET-PACKAGE:LIBCURL3"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APT-GET-PACKAGE:LIBICU57"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APT-GET-PACKAGE:LIBSSL1.0.2"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APT-GET-PACKAGE:LIBLTTNG-UST0"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APT-GET-PACKAGE:LIBUNWIND8"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APT-GET-PACKAGE:WGET"
+                        }
+                    ],
+                    "type": "SC-APT-GET-PACKAGES"
+                }
+            ],
+            "type": "SC-APT-GET-INSTALL"
+        }
+    },
+    {
+        "astCommandId": "powershell:2:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-FORCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "type": "ABS-PATH-VAR",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-APT-LISTS",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                }
+                                            ],
+                                            "type": "BASH-LITERAL"
+                                        },
+                                        {
+                                            "children": [
+                                                {
+                                                    "type": "ABS-GLOB-STAR",
+                                                    "children": []
+                                                }
+                                            ],
+                                            "type": "BASH-GLOB"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    },
+    {
+        "astCommandId": "powershell:3:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "type": "ABS-PATH-ABSOLUTE",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-MAYBE-SRC-DIR",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-USR-SRC-DIR",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-MAYBE-PATH",
+                                    "children": []
+                                }
+                            ],
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-CD-PATH"
+                }
+            ],
+            "type": "SC-CD"
+        }
+    },
+    {
+        "astCommandId": "powershell:3:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "type": "ABS-PATH-ABSOLUTE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-MAYBE-PATH",
+                                            "children": []
+                                        }
+                                    ],
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "BASH-PATH"
+                        }
+                    ],
+                    "type": "SC-WGET-OUTPUT-DOCUMENT"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "type": "ABS-URL-PROTOCOL-HTTPS",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-PROBABLY-URL",
+                                    "children": []
+                                }
+                            ],
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-WGET-URL"
+                }
+            ],
+            "type": "SC-WGET"
+        }
+    },
+    {
+        "astCommandId": "powershell:3:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "type": "ABS-PATH-ABSOLUTE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-MAYBE-PATH",
+                                            "children": []
+                                        }
+                                    ],
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-DPKG-INSTALL"
+                        }
+                    ],
+                    "type": "SC-DPKG-INSTALLS"
+                }
+            ],
+            "type": "SC-DPKG"
+        }
+    },
+    {
+        "astCommandId": "powershell:3:3",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-LN-F-SYMBOLIC"
+                },
+                {
+                    "children": [],
+                    "type": "SC-LN-F-NO-DEREFERENCE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-LN-F-FORCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "type": "ABS-PATH-ABSOLUTE",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-MAYBE-PATH",
+                                    "children": []
+                                }
+                            ],
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-LN-TARGET"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "type": "ABS-PATH-ABSOLUTE",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-MAYBE-PATH",
+                                    "children": []
+                                }
+                            ],
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-LN-LINK"
+                }
+            ],
+            "type": "SC-LN"
+        }
+    },
+    {
+        "astCommandId": "powershell:3:4",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-FIX-BROKEN"
+                },
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-YES"
+                }
+            ],
+            "type": "SC-APT-GET-INSTALL"
+        }
+    },
+    {
+        "astCommandId": "powershell:3:5",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-FORCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "type": "ABS-PATH-VAR",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-APT-LISTS",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                }
+                                            ],
+                                            "type": "BASH-LITERAL"
+                                        },
+                                        {
+                                            "children": [
+                                                {
+                                                    "type": "ABS-GLOB-STAR",
+                                                    "children": []
+                                                }
+                                            ],
+                                            "type": "BASH-GLOB"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-SRC-DIR",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-USR-SRC-DIR",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                }
+                                            ],
+                                            "type": "BASH-LITERAL"
+                                        },
+                                        {
+                                            "children": [
+                                                {
+                                                    "type": "ABS-GLOB-STAR",
+                                                    "children": []
+                                                }
+                                            ],
+                                            "type": "BASH-GLOB"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "type": "ABS-PATH-ABSOLUTE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-MAYBE-PATH",
+                                            "children": []
+                                        }
+                                    ],
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    }
+]

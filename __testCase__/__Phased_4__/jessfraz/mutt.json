@@ -1,0 +1,403 @@
+[
+    {
+        "astCommandId": "mutt:1:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-ADD-USER-F-DEFAULTS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "type": "ABS-PATH-ABSOLUTE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-MAYBE-PATH",
+                                            "children": []
+                                        }
+                                    ],
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "BASH-PATH"
+                        }
+                    ],
+                    "type": "SC-ADD-USER-H"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-ADD-USER-GROUP"
+                        }
+                    ],
+                    "type": "SC-ADD-USER-GROUPS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-ADD-USER-UID"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-ADD-USER-USER"
+                }
+            ],
+            "type": "SC-ADD-USER"
+        }
+    },
+    {
+        "astCommandId": "mutt:2:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APK-F-NO-CACHE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "type": "ABS-URL-PROTOCOL-HTTP",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-PROBABLY-URL",
+                                            "children": []
+                                        }
+                                    ],
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-REPOSITORY"
+                        }
+                    ],
+                    "type": "SC-APK-REPOSITORYS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "SC-APK-PACKAGE:CA-CERTIFICATES"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APK-PACKAGE:ELINKS"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APK-PACKAGE:GIT"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APK-PACKAGE:GNUPG1"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APK-PACKAGE:LYNX"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APK-PACKAGE:MUTT"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APK-PACKAGE:MUTT-DOC"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APK-PACKAGE:VIM"
+                        }
+                    ],
+                    "type": "SC-APK-PACKAGES"
+                }
+            ],
+            "type": "SC-APK-ADD"
+        }
+    },
+    {
+        "astCommandId": "mutt:7:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-MKDIR-F-PARENTS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-VARIABLE:HOME"
+                                        },
+                                        {
+                                            "children": [
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                }
+                                            ],
+                                            "type": "BASH-LITERAL"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-MKDIR-PATH"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-VARIABLE:HOME"
+                                        },
+                                        {
+                                            "children": [
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                }
+                                            ],
+                                            "type": "BASH-LITERAL"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-MKDIR-PATH"
+                        }
+                    ],
+                    "type": "SC-MKDIR-PATHS"
+                }
+            ],
+            "type": "SC-MKDIR"
+        }
+    },
+    {
+        "astCommandId": "mutt:8:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GIT-DEPTH"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "type": "ABS-URL-PROTOCOL-HTTPS",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-PROBABLY-URL",
+                                    "children": []
+                                }
+                            ],
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GIT-URL"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-VARIABLE:HOME"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "type": "ABS-PATH-ABSOLUTE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-MAYBE-PATH",
+                                            "children": []
+                                        }
+                                    ],
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "BASH-CONCAT"
+                        }
+                    ],
+                    "type": "SC-GIT-DIRECTORY"
+                }
+            ],
+            "type": "SC-GIT-CLONE"
+        }
+    },
+    {
+        "astCommandId": "mutt:8:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GIT-DEPTH"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "type": "ABS-URL-PROTOCOL-HTTPS",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-PROBABLY-URL",
+                                    "children": []
+                                }
+                            ],
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GIT-URL"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-VARIABLE:HOME"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "type": "ABS-PATH-ABSOLUTE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-MAYBE-PATH",
+                                            "children": []
+                                        }
+                                    ],
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "BASH-CONCAT"
+                        }
+                    ],
+                    "type": "SC-GIT-DIRECTORY"
+                }
+            ],
+            "type": "SC-GIT-CLONE"
+        }
+    },
+    {
+        "astCommandId": "mutt:8:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-VARIABLE:HOME"
+                                        },
+                                        {
+                                            "children": [
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                }
+                                            ],
+                                            "type": "BASH-LITERAL"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-CP-PATH"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-VARIABLE:HOME"
+                                        },
+                                        {
+                                            "children": [
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                }
+                                            ],
+                                            "type": "BASH-LITERAL"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-CP-PATH"
+                        }
+                    ],
+                    "type": "SC-CP-PATHS"
+                }
+            ],
+            "type": "SC-CP"
+        }
+    }
+]

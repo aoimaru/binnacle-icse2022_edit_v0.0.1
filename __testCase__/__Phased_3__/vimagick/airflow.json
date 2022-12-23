@@ -1,0 +1,348 @@
+[
+    {
+        "astCommandId": "airflow:5:0",
+        "astCommand": {
+            "type": "SC-SET",
+            "children": [
+                {
+                    "type": "SC-SET-F-X",
+                    "children": []
+                },
+                {
+                    "type": "SC-SET-F-E",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "airflow:5:1",
+        "astCommand": {
+            "type": "SC-APK-ADD",
+            "children": [
+                {
+                    "type": "SC-APK-F-NO-CACHE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "build-base"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "cyrus-sasl-dev"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "freetds"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "freetds-dev"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "krb5-dev"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "libffi-dev"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "mariadb-dev"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "postgresql-dev"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "python3-dev"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "airflow:5:2",
+        "astCommand": {
+            "type": "SC-PIP-INSTALL",
+            "children": [
+                {
+                    "type": "SC-PIP-F-NO-CACHE-DIR",
+                    "children": []
+                },
+                {
+                    "type": "SC-PIP-TARGETS",
+                    "children": [
+                        {
+                            "type": "SC-PIP-TARGET",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "cython"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-PIP-TARGET",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "numpy"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-PIP-TARGET",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "psycopg2-binary"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "airflow:5:3",
+        "astCommand": {
+            "type": "SC-PIP-INSTALL",
+            "children": [
+                {
+                    "type": "SC-PIP-F-NO-CACHE-DIR",
+                    "children": []
+                },
+                {
+                    "type": "SC-PIP-TARGETS",
+                    "children": [
+                        {
+                            "type": "SC-PIP-TARGET",
+                            "children": [
+                                {
+                                    "type": "BASH-CONCAT",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "apache-airflow"
+                                        },
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "["
+                                        },
+                                        {
+                                            "type": "BASH-VARIABLE",
+                                            "children": [],
+                                            "value": "AIRFLOW_EXTRAS"
+                                        },
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "]=="
+                                        },
+                                        {
+                                            "type": "BASH-VARIABLE",
+                                            "children": [],
+                                            "value": "AIRFLOW_VERSION"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "airflow:5:4",
+        "astCommand": {
+            "type": "SC-APK-DEL",
+            "children": [
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "build-base"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "cyrus-sasl-dev"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "freetds-dev"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "krb5-dev"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "libffi-dev"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "mariadb-dev"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "postgresql-dev"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "python3-dev"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "airflow:5:5",
+        "astCommand": {
+            "type": "SC-RM",
+            "children": [
+                {
+                    "type": "SC-RM-F-RECURSIVE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-F-FORCE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/root/.cache/pip"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

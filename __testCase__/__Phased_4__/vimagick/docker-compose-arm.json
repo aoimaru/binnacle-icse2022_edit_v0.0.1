@@ -1,0 +1,428 @@
+[
+    {
+        "astCommandId": "docker-compose-arm:3:0",
+        "astCommand": {
+            "type": "SC-SET",
+            "children": [
+                {
+                    "type": "SC-SET-F-X",
+                    "children": []
+                },
+                {
+                    "type": "SC-SET-F-E",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "docker-compose-arm:3:1",
+        "astCommand": {
+            "type": "SC-APT-GET-UPDATE",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "docker-compose-arm:3:2",
+        "astCommand": {
+            "type": "SC-APT-GET-INSTALL",
+            "children": [
+                {
+                    "type": "SC-APT-GET-F-YES",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-PACKAGE:BUILD-ESSENTIAL",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE:CURL",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE:LIBFFI-DEV",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE:LIBSSL-DEV",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE:PYTHON3-DEV",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE:UPX-UCL",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE:ZLIB1G-DEV",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "docker-compose-arm:3:3",
+        "astCommand": {
+            "type": "BASH-PIPELINE",
+            "children": [
+                {
+                    "type": "SC-CURL",
+                    "children": [
+                        {
+                            "type": "SC-CURL-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [
+                                        {
+                                            "type": "ABS-PROBABLY-URL",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-URL-PROTOCOL-HTTPS",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-PYTHON",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "docker-compose-arm:3:4",
+        "astCommand": {
+            "type": "SC-PIP-INSTALL",
+            "children": [
+                {
+                    "type": "SC-PIP-F-NO-CACHE-DIR",
+                    "children": []
+                },
+                {
+                    "type": "SC-PIP-TARGETS",
+                    "children": [
+                        {
+                            "type": "SC-PIP-TARGET",
+                            "children": [
+                                {
+                                    "type": "BASH-CONCAT",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "BASH-VARIABLE:DOCKER_COMPOSE_VERSION",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-PIP-TARGET",
+                            "children": [
+                                {
+                                    "type": "BASH-CONCAT",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "BASH-VARIABLE:PYINSTALLER_VERSION",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "docker-compose-arm:3:5",
+        "astCommand": {
+            "type": "SC-CD",
+            "children": [
+                {
+                    "type": "SC-CD-PATH",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [
+                                {
+                                    "type": "ABS-PATH-ABSOLUTE",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-MAYBE-PATH",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "docker-compose-arm:3:6",
+        "astCommand": {
+            "type": "SC-MKDIR",
+            "children": [
+                {
+                    "type": "SC-MKDIR-F-PARENTS",
+                    "children": []
+                },
+                {
+                    "type": "SC-MKDIR-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-MKDIR-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "docker-compose-arm:3:7",
+        "astCommand": {
+            "type": "BASH-REDIRECT",
+            "children": [
+                {
+                    "type": "BASH-REDIRECT-COMMAND",
+                    "children": [
+                        {
+                            "type": "SC-CURL",
+                            "children": [
+                                {
+                                    "type": "SC-CURL-F-SILENT",
+                                    "children": []
+                                },
+                                {
+                                    "type": "SC-CURL-F-SHOW-ERROR",
+                                    "children": []
+                                },
+                                {
+                                    "type": "SC-CURL-F-LOCATION",
+                                    "children": []
+                                },
+                                {
+                                    "type": "SC-CURL-URL",
+                                    "children": [
+                                        {
+                                            "type": "BASH-CONCAT",
+                                            "children": [
+                                                {
+                                                    "type": "BASH-LITERAL",
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-PROBABLY-URL",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-URL-PROTOCOL-HTTPS",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "BASH-VARIABLE:DOCKER_COMPOSE_VERSION",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "BASH-LITERAL",
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-PATH-ABSOLUTE",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-MAYBE-PATH",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "BASH-REDIRECT-REDIRECTS",
+                    "children": [
+                        {
+                            "type": "BASH-REDIRECT-OVERWRITE",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "docker-compose-arm:3:8",
+        "astCommand": {
+            "type": "BASH-REDIRECT",
+            "children": [
+                {
+                    "type": "BASH-REDIRECT-COMMAND",
+                    "children": [
+                        {
+                            "type": "SC-CURL",
+                            "children": [
+                                {
+                                    "type": "SC-CURL-F-SILENT",
+                                    "children": []
+                                },
+                                {
+                                    "type": "SC-CURL-F-SHOW-ERROR",
+                                    "children": []
+                                },
+                                {
+                                    "type": "SC-CURL-F-LOCATION",
+                                    "children": []
+                                },
+                                {
+                                    "type": "SC-CURL-URL",
+                                    "children": [
+                                        {
+                                            "type": "BASH-CONCAT",
+                                            "children": [
+                                                {
+                                                    "type": "BASH-LITERAL",
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-PROBABLY-URL",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-URL-PROTOCOL-HTTPS",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "BASH-VARIABLE:DOCKER_COMPOSE_VERSION",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "BASH-LITERAL",
+                                                    "children": [
+                                                        {
+                                                            "type": "ABS-PATH-ABSOLUTE",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "type": "ABS-MAYBE-PATH",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "BASH-REDIRECT-REDIRECTS",
+                    "children": [
+                        {
+                            "type": "BASH-REDIRECT-OVERWRITE",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "docker-compose-arm:3:9",
+        "astCommand": {
+            "type": "SC-CP",
+            "children": [
+                {
+                    "type": "SC-CP-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-CP-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-CP-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [
+                                        {
+                                            "type": "ABS-PATH-ABSOLUTE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-MAYBE-PATH",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

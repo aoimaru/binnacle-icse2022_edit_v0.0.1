@@ -1,0 +1,772 @@
+[
+    {
+        "astCommandId": "stable:1:0",
+        "astCommand": {
+            "children": [],
+            "type": "SC-APT-GET-UPDATE"
+        }
+    },
+    {
+        "astCommandId": "stable:1:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-YES"
+                },
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-NO-INSTALL-RECOMMENDS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "ca-certificates",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "curl",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "dirmngr",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "gnupg",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libasound2",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libdbus-glib-1-2",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libgtk-3-0",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libxrender1",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libx11-xcb-dev",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libx11-xcb1",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libxt6",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "xz-utils",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "file",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APT-GET-PACKAGES"
+                }
+            ],
+            "type": "SC-APT-GET-INSTALL"
+        }
+    },
+    {
+        "astCommandId": "stable:1:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-FORCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "value": "/var/lib/apt/lists/",
+                                            "type": "BASH-LITERAL"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": "*",
+                                            "type": "BASH-GLOB"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    },
+    {
+        "astCommandId": "stable:3:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-USER-ADD-F-CREATE-HOME"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "HOME",
+                                    "type": "BASH-VARIABLE"
+                                }
+                            ],
+                            "type": "BASH-PATH"
+                        }
+                    ],
+                    "type": "SC-USER-ADD-HOME-DIR"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "user",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-USER-ADD-LOGIN"
+                }
+            ],
+            "type": "SC-USER-ADD"
+        }
+    },
+    {
+        "astCommandId": "stable:3:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-CHOWN-F-RECURSIVE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "user:user",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-CHOWN-OWNER"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "HOME",
+                                    "type": "BASH-VARIABLE"
+                                }
+                            ],
+                            "type": "SC-CHOWN-PATH"
+                        }
+                    ],
+                    "type": "SC-CHOWN-PATHS"
+                }
+            ],
+            "type": "SC-CHOWN"
+        }
+    },
+    {
+        "astCommandId": "stable:7:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "/tmp",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-CD-PATH"
+                }
+            ],
+            "type": "SC-CD"
+        }
+    },
+    {
+        "astCommandId": "stable:7:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-SILENT"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-SHOW-ERROR"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-LOCATION"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "https://dist.torproject.org/torbrowser/${TOR_VERSION}/tor-browser-linux64-${TOR_VERSION}_en-US.tar.xz",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-CURL-URL"
+                }
+            ],
+            "type": "SC-CURL"
+        }
+    },
+    {
+        "astCommandId": "stable:7:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-SILENT"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-SHOW-ERROR"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-LOCATION"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "https://www.torproject.org/dist/torbrowser/${TOR_VERSION}/tor-browser-linux64-${TOR_VERSION}_en-US.tar.xz.asc",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-CURL-URL"
+                }
+            ],
+            "type": "SC-CURL"
+        }
+    },
+    {
+        "astCommandId": "stable:7:3",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "value": "GNUPGHOME",
+                                            "type": "BASH-VARIABLE"
+                                        }
+                                    ],
+                                    "type": "BASH-ASSIGN-LHS"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [
+                                                                {
+                                                                    "children": [],
+                                                                    "type": "SC-MKTEMP-F-DIRECTORY"
+                                                                }
+                                                            ],
+                                                            "type": "SC-MKTEMP"
+                                                        }
+                                                    ],
+                                                    "type": "BASH-DOLLAR-PARENS"
+                                                }
+                                            ],
+                                            "type": "BASH-DOUBLE-QUOTED"
+                                        }
+                                    ],
+                                    "type": "BASH-ASSIGN-RHS"
+                                }
+                            ],
+                            "type": "BASH-ASSIGN"
+                        }
+                    ],
+                    "type": "SC-EXPORT-TARGET"
+                }
+            ],
+            "type": "SC-EXPORT"
+        }
+    },
+    {
+        "astCommandId": "stable:7:4",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "server",
+                            "type": "BASH-VARIABLE"
+                        }
+                    ],
+                    "type": "BASH-FOR-IN-VARIABLE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "UNKNOWN"
+                                }
+                            ],
+                            "type": "BASH-DOLLAR-PARENS"
+                        }
+                    ],
+                    "type": "BASH-FOR-IN-ITEMS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "SC-GPG-F-NO-TTY"
+                                                },
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "value": "${server}",
+                                                            "type": "BASH-LITERAL"
+                                                        }
+                                                    ],
+                                                    "type": "SC-GPG-KEYSERVER"
+                                                },
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [
+                                                                {
+                                                                    "children": [],
+                                                                    "value": "TOR_FINGERPRINT",
+                                                                    "type": "BASH-VARIABLE"
+                                                                }
+                                                            ],
+                                                            "type": "SC-GPG-RECV-KEY"
+                                                        }
+                                                    ],
+                                                    "type": "SC-GPG-RECV-KEYS"
+                                                }
+                                            ],
+                                            "type": "SC-GPG"
+                                        }
+                                    ],
+                                    "type": "BASH-AND-MEM"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "type": "UNKNOWN"
+                                                        }
+                                                    ],
+                                                    "type": "BASH-OR-MEM"
+                                                },
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "type": "SC-TRUE"
+                                                        }
+                                                    ],
+                                                    "type": "BASH-OR-MEM"
+                                                }
+                                            ],
+                                            "type": "BASH-OR-IF"
+                                        }
+                                    ],
+                                    "type": "BASH-AND-MEM"
+                                }
+                            ],
+                            "type": "BASH-AND-IF"
+                        }
+                    ],
+                    "type": "BASH-FOR-IN-BODY"
+                }
+            ],
+            "type": "BASH-FOR-IN"
+        }
+    },
+    {
+        "astCommandId": "stable:7:5",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "SC-GPG-F-FINGERPRINT"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "LONG",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-GPG-KEYID-FORMAT"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "value": "TOR_FINGERPRINT",
+                                            "type": "BASH-VARIABLE"
+                                        }
+                                    ],
+                                    "type": "SC-GPG-TARGET"
+                                }
+                            ],
+                            "type": "SC-GPG-TARGETS"
+                        }
+                    ],
+                    "type": "SC-GPG"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "Key fingerprint = EF6E 286D DA85 EA2A 4BA7  DE68 4E2C 6E87 9329 8290",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-GREP-PATTERN"
+                        }
+                    ],
+                    "type": "SC-GREP"
+                }
+            ],
+            "type": "BASH-PIPELINE"
+        }
+    },
+    {
+        "astCommandId": "stable:7:6",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "value": "tor-browser-linux64-",
+                                            "type": "BASH-LITERAL"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": "TOR_VERSION",
+                                            "type": "BASH-VARIABLE"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": "_en-US.tar.xz.asc",
+                                            "type": "BASH-LITERAL"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-GPG-VERIFY"
+                        }
+                    ],
+                    "type": "SC-GPG-VERIFYS"
+                }
+            ],
+            "type": "SC-GPG"
+        }
+    },
+    {
+        "astCommandId": "stable:7:7",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-TAR-V"
+                },
+                {
+                    "children": [],
+                    "type": "SC-TAR-X"
+                },
+                {
+                    "children": [],
+                    "type": "SC-TAR-J"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "1",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-TAR-STRIP-COMPONENTS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "/usr/local/bin",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "BASH-PATH"
+                        }
+                    ],
+                    "type": "SC-TAR-DIRECTORY"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "value": "tor-browser-linux64-",
+                                            "type": "BASH-LITERAL"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": "TOR_VERSION",
+                                            "type": "BASH-VARIABLE"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": "_en-US.tar.xz",
+                                            "type": "BASH-LITERAL"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "BASH-PATH"
+                        }
+                    ],
+                    "type": "SC-TAR-FILE"
+                }
+            ],
+            "type": "SC-TAR"
+        }
+    },
+    {
+        "astCommandId": "stable:7:8",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-FORCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "value": "tor-browser",
+                                            "type": "BASH-LITERAL"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": "*",
+                                            "type": "BASH-GLOB"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "${GNUPGHOME}",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    },
+    {
+        "astCommandId": "stable:7:9",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-CHOWN-F-RECURSIVE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "user:user",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-CHOWN-OWNER"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "/usr/local/bin",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-CHOWN-PATH"
+                        }
+                    ],
+                    "type": "SC-CHOWN-PATHS"
+                }
+            ],
+            "type": "SC-CHOWN"
+        }
+    }
+]

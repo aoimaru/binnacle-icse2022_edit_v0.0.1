@@ -1,0 +1,593 @@
+[
+    {
+        "astCommandId": "curl:1:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APK-F-NO-CACHE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "ca-certificates",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "nghttp2",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "openssl",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APK-PACKAGES"
+                }
+            ],
+            "type": "SC-APK-ADD"
+        }
+    },
+    {
+        "astCommandId": "curl:3:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-SET-F-X"
+                }
+            ],
+            "type": "SC-SET"
+        }
+    },
+    {
+        "astCommandId": "curl:3:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APK-F-NO-CACHE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": ".build-deps",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-APK-VIRTUAL"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "value": "g",
+                                            "type": "BASH-LITERAL"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": "+",
+                                            "type": "BASH-LITERAL"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": "+",
+                                            "type": "BASH-LITERAL"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "make",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "nghttp2-dev",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "openssl-dev",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "perl",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "gnupg",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APK-PACKAGES"
+                }
+            ],
+            "type": "SC-APK-ADD"
+        }
+    },
+    {
+        "astCommandId": "curl:3:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "https://curl.haxx.se/download/curl-",
+                                    "type": "BASH-LITERAL"
+                                },
+                                {
+                                    "children": [],
+                                    "value": "CURL_VERSION",
+                                    "type": "BASH-VARIABLE"
+                                },
+                                {
+                                    "children": [],
+                                    "value": ".tar.bz2",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "BASH-CONCAT"
+                        }
+                    ],
+                    "type": "SC-WGET-URL"
+                }
+            ],
+            "type": "SC-WGET"
+        }
+    },
+    {
+        "astCommandId": "curl:3:3",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "https://curl.haxx.se/download/curl-",
+                                    "type": "BASH-LITERAL"
+                                },
+                                {
+                                    "children": [],
+                                    "value": "CURL_VERSION",
+                                    "type": "BASH-VARIABLE"
+                                },
+                                {
+                                    "children": [],
+                                    "value": ".tar.bz2.asc",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "BASH-CONCAT"
+                        }
+                    ],
+                    "type": "SC-WGET-URL"
+                }
+            ],
+            "type": "SC-WGET"
+        }
+    },
+    {
+        "astCommandId": "curl:3:4",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "ha.pool.sks-keyservers.net",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GPG-KEYSERVER"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "27EDEAF22F3ABCEB50DB9A125CC908FDB71E12C2",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-GPG-RECV-KEY"
+                        }
+                    ],
+                    "type": "SC-GPG-RECV-KEYS"
+                }
+            ],
+            "type": "SC-GPG"
+        }
+    },
+    {
+        "astCommandId": "curl:3:5",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "value": "curl-",
+                                            "type": "BASH-LITERAL"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": "CURL_VERSION",
+                                            "type": "BASH-VARIABLE"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": ".tar.bz2.asc",
+                                            "type": "BASH-LITERAL"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-GPG-VERIFY"
+                        }
+                    ],
+                    "type": "SC-GPG-VERIFYS"
+                }
+            ],
+            "type": "SC-GPG"
+        }
+    },
+    {
+        "astCommandId": "curl:3:6",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "xjvf",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-TAR-ARG"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "value": "curl-",
+                                            "type": "BASH-LITERAL"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": "CURL_VERSION",
+                                            "type": "BASH-VARIABLE"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": ".tar.bz2",
+                                            "type": "BASH-LITERAL"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-TAR-ARG"
+                        }
+                    ],
+                    "type": "SC-TAR-ARGS"
+                }
+            ],
+            "type": "SC-TAR"
+        }
+    },
+    {
+        "astCommandId": "curl:3:7",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "value": "curl-",
+                                            "type": "BASH-LITERAL"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": "CURL_VERSION",
+                                            "type": "BASH-VARIABLE"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": ".tar.bz2",
+                                            "type": "BASH-LITERAL"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    },
+    {
+        "astCommandId": "curl:3:8",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "value": "curl-",
+                                                            "type": "BASH-LITERAL"
+                                                        },
+                                                        {
+                                                            "children": [],
+                                                            "value": "CURL_VERSION",
+                                                            "type": "BASH-VARIABLE"
+                                                        }
+                                                    ],
+                                                    "type": "BASH-CONCAT"
+                                                }
+                                            ],
+                                            "type": "SC-CD-PATH"
+                                        }
+                                    ],
+                                    "type": "SC-CD"
+                                }
+                            ],
+                            "type": "BASH-AND-MEM"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "value": "/usr",
+                                                    "type": "BASH-LITERAL"
+                                                }
+                                            ],
+                                            "type": "SC-CONFIGURE-WITH-NGHTTP2"
+                                        },
+                                        {
+                                            "children": [],
+                                            "type": "SC-CONFIGURE-F-WITH-SSL"
+                                        },
+                                        {
+                                            "children": [],
+                                            "type": "SC-CONFIGURE-ENABLE-IPV6"
+                                        },
+                                        {
+                                            "children": [],
+                                            "type": "SC-CONFIGURE-ENABLE-UNIX-SOCKETS"
+                                        },
+                                        {
+                                            "children": [],
+                                            "type": "SC-CONFIGURE-WITHOUT-LIBIDN"
+                                        },
+                                        {
+                                            "children": [],
+                                            "type": "SC-CONFIGURE-DISABLE-STATIC"
+                                        },
+                                        {
+                                            "children": [],
+                                            "type": "SC-CONFIGURE-DISABLE-LDAP"
+                                        },
+                                        {
+                                            "children": [],
+                                            "type": "SC-CONFIGURE-WITH-PIC"
+                                        }
+                                    ],
+                                    "type": "SC-CONFIGURE"
+                                }
+                            ],
+                            "type": "BASH-AND-MEM"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "SC-MAKE"
+                                }
+                            ],
+                            "type": "BASH-AND-MEM"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "value": "install",
+                                                    "type": "BASH-LITERAL"
+                                                }
+                                            ],
+                                            "type": "SC-MAKE-TARGET"
+                                        }
+                                    ],
+                                    "type": "SC-MAKE"
+                                }
+                            ],
+                            "type": "BASH-AND-MEM"
+                        }
+                    ],
+                    "type": "BASH-AND-IF"
+                }
+            ],
+            "type": "BASH-SUBSHELL"
+        }
+    },
+    {
+        "astCommandId": "curl:3:9",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "value": "curl-",
+                                            "type": "BASH-LITERAL"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": "CURL_VERSION",
+                                            "type": "BASH-VARIABLE"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    },
+    {
+        "astCommandId": "curl:3:10",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "/usr/share/man",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    },
+    {
+        "astCommandId": "curl:3:11",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": ".build-deps",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APK-PACKAGES"
+                }
+            ],
+            "type": "SC-APK-DEL"
+        }
+    }
+]

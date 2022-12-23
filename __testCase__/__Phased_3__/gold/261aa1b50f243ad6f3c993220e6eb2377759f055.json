@@ -1,0 +1,218 @@
+[
+    {
+        "astCommandId": "261aa1b50f243ad6f3c993220e6eb2377759f055:1:0",
+        "astCommand": {
+            "children": [],
+            "type": "SC-APT-GET-UPDATE"
+        }
+    },
+    {
+        "astCommandId": "261aa1b50f243ad6f3c993220e6eb2377759f055:1:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-YES"
+                },
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-NO-INSTALL-RECOMMENDS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "nodejs"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APT-GET-PACKAGES"
+                }
+            ],
+            "type": "SC-APT-GET-INSTALL"
+        }
+    },
+    {
+        "astCommandId": "261aa1b50f243ad6f3c993220e6eb2377759f055:1:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-FORCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": "/var/lib/apt/lists/"
+                                        },
+                                        {
+                                            "children": [],
+                                            "type": "BASH-GLOB",
+                                            "value": "*"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    },
+    {
+        "astCommandId": "261aa1b50f243ad6f3c993220e6eb2377759f055:2:0",
+        "astCommand": {
+            "children": [],
+            "type": "SC-APT-GET-UPDATE"
+        }
+    },
+    {
+        "astCommandId": "261aa1b50f243ad6f3c993220e6eb2377759f055:2:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-YES"
+                },
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-NO-INSTALL-RECOMMENDS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "mysql-client"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "postgresql-client"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "sqlite3"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APT-GET-PACKAGES"
+                }
+            ],
+            "type": "SC-APT-GET-INSTALL"
+        }
+    },
+    {
+        "astCommandId": "261aa1b50f243ad6f3c993220e6eb2377759f055:2:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-FORCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": "/var/lib/apt/lists/"
+                                        },
+                                        {
+                                            "children": [],
+                                            "type": "BASH-GLOB",
+                                            "value": "*"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    },
+    {
+        "astCommandId": "261aa1b50f243ad6f3c993220e6eb2377759f055:4:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "${RAILS_VERSION}"
+                                }
+                            ],
+                            "type": "SC-GEM-VERSION"
+                        }
+                    ],
+                    "type": "SC-GEM-VERSIONS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "rails"
+                                }
+                            ],
+                            "type": "SC-GEM-GEM"
+                        }
+                    ],
+                    "type": "SC-GEM-GEMS"
+                }
+            ],
+            "type": "SC-GEM-INSTALL"
+        }
+    }
+]

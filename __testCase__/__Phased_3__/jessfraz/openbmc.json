@@ -1,0 +1,337 @@
+[
+    {
+        "astCommandId": "openbmc:1:0",
+        "astCommand": {
+            "children": [],
+            "type": "SC-APT-GET-UPDATE"
+        }
+    },
+    {
+        "astCommandId": "openbmc:1:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-YES"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "bash",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "build-essential",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "ca-certificates",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "chrpath",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "curl",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "diffstat",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "gawk",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "git",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libpixman-1-0",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libsdl1.2-dev",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "texinfo",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APT-GET-PACKAGES"
+                }
+            ],
+            "type": "SC-APT-GET-INSTALL"
+        }
+    },
+    {
+        "astCommandId": "openbmc:1:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-FORCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "value": "/var/lib/apt/lists/",
+                                            "type": "BASH-LITERAL"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": "*",
+                                            "type": "BASH-GLOB"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    },
+    {
+        "astCommandId": "openbmc:2:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-SILENT"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-SHOW-ERROR"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-LOCATION"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "/usr/bin/qemu-system-arm",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "BASH-PATH"
+                        }
+                    ],
+                    "type": "SC-CURL-OUTPUT"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "https://openpower.xyz/job/openbmc-qemu-build-merge-x86/lastSuccessfulBuild/artifact/qemu/arm-softmmu/qemu-system-arm",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-CURL-URL"
+                }
+            ],
+            "type": "SC-CURL"
+        }
+    },
+    {
+        "astCommandId": "openbmc:2:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "+",
+                                    "type": "BASH-LITERAL"
+                                },
+                                {
+                                    "children": [],
+                                    "value": "x",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "BASH-CONCAT"
+                        }
+                    ],
+                    "type": "SC-CHMOD-MODE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "/usr/bin/qemu-system-arm",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-CHMOD-PATH"
+                        }
+                    ],
+                    "type": "SC-CHMOD-PATHS"
+                }
+            ],
+            "type": "SC-CHMOD"
+        }
+    },
+    {
+        "astCommandId": "openbmc:3:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-MKDIR-F-PARENTS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "/usr/src/openbmc",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-MKDIR-PATH"
+                        }
+                    ],
+                    "type": "SC-MKDIR-PATHS"
+                }
+            ],
+            "type": "SC-MKDIR"
+        }
+    },
+    {
+        "astCommandId": "openbmc:4:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-SILENT"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-SHOW-ERROR"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CURL-F-LOCATION"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "/usr/src/openbmc/obmc-phosphor-image-romulus.static.mtd",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "BASH-PATH"
+                        }
+                    ],
+                    "type": "SC-CURL-OUTPUT"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "https://openpower.xyz/job/openbmc-build/distro=ubuntu,label=builder,target=romulus/lastSuccessfulBuild/artifact/deploy/images/romulus/obmc-phosphor-image-romulus.static.mtd",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-CURL-URL"
+                }
+            ],
+            "type": "SC-CURL"
+        }
+    }
+]

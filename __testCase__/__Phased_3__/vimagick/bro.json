@@ -1,0 +1,261 @@
+[
+    {
+        "astCommandId": "bro:1:0",
+        "astCommand": {
+            "type": "SC-APT-GET-UPDATE",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "bro:1:1",
+        "astCommand": {
+            "type": "SC-APT-GET-INSTALL",
+            "children": [
+                {
+                    "type": "SC-APT-GET-F-YES",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "curl"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "bro:1:2",
+        "astCommand": {
+            "type": "BASH-PIPELINE",
+            "children": [
+                {
+                    "type": "SC-CURL",
+                    "children": [
+                        {
+                            "type": "SC-CURL-F-SILENT",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-F-SHOW-ERROR",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-F-LOCATION",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "http://download.opensuse.org/repositories/network:bro/Debian_8.0/Release.key"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-APT-KEY-ADD",
+                    "children": [
+                        {
+                            "type": "SC-APT-KEY-FILENAME",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "bro:1:3",
+        "astCommand": {
+            "type": "BASH-REDIRECT",
+            "children": [
+                {
+                    "type": "BASH-REDIRECT-COMMAND",
+                    "children": [
+                        {
+                            "type": "SC-ECHO",
+                            "children": [
+                                {
+                                    "type": "SC-ECHO-ITEMS",
+                                    "children": [
+                                        {
+                                            "type": "SC-ECHO-ITEM",
+                                            "children": [
+                                                {
+                                                    "type": "BASH-LITERAL",
+                                                    "children": [],
+                                                    "value": "deb http://download.opensuse.org/repositories/network:/bro/Debian_8.0/ /"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "BASH-REDIRECT-REDIRECTS",
+                    "children": [
+                        {
+                            "type": "BASH-REDIRECT-OVERWRITE",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "/etc/apt/sources.list.d/bro.list"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "bro:1:4",
+        "astCommand": {
+            "type": "SC-APT-GET-UPDATE",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "bro:1:5",
+        "astCommand": {
+            "type": "SC-APT-GET-INSTALL",
+            "children": [
+                {
+                    "type": "SC-APT-GET-F-YES",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "bro"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "bro:1:6",
+        "astCommand": {
+            "type": "SC-RM",
+            "children": [
+                {
+                    "type": "SC-RM-F-RECURSIVE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-F-FORCE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-CONCAT",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "/var/lib/apt/lists/"
+                                        },
+                                        {
+                                            "type": "BASH-GLOB",
+                                            "children": [],
+                                            "value": "*"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "bro:2:0",
+        "astCommand": {
+            "type": "BASH-REDIRECT",
+            "children": [
+                {
+                    "type": "BASH-REDIRECT-COMMAND",
+                    "children": [
+                        {
+                            "type": "SC-ECHO",
+                            "children": [
+                                {
+                                    "type": "SC-ECHO-ITEMS",
+                                    "children": [
+                                        {
+                                            "type": "SC-ECHO-ITEM",
+                                            "children": [
+                                                {
+                                                    "type": "BASH-LITERAL",
+                                                    "children": [],
+                                                    "value": "export PATH=/opt/bro/bin:$PATH"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "BASH-REDIRECT-REDIRECTS",
+                    "children": [
+                        {
+                            "type": "BASH-REDIRECT-APPEND",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "/root/.bashrc"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

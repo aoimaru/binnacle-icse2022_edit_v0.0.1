@@ -1,0 +1,304 @@
+[
+    {
+        "astCommandId": "cadvisor:2:0",
+        "astCommand": {
+            "type": "SC-SET",
+            "children": [
+                {
+                    "type": "SC-SET-F-X",
+                    "children": []
+                },
+                {
+                    "type": "SC-SET-F-E",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "cadvisor:2:1",
+        "astCommand": {
+            "type": "SC-APK-ADD",
+            "children": [
+                {
+                    "type": "SC-APK-F-NO-CACHE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE:CA-CERTIFICATES",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:OPENSSL",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:DEVICE-MAPPER",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:ZFS",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "cadvisor:2:2",
+        "astCommand": {
+            "type": "SC-WGET",
+            "children": [
+                {
+                    "type": "SC-WGET-URL",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [
+                                {
+                                    "type": "ABS-PROBABLY-URL",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-URL-PROTOCOL-HTTPS",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "cadvisor:2:3",
+        "astCommand": {
+            "type": "SC-WGET",
+            "children": [
+                {
+                    "type": "SC-WGET-URL",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [
+                                {
+                                    "type": "ABS-PROBABLY-URL",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-URL-PROTOCOL-HTTPS",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "cadvisor:2:4",
+        "astCommand": {
+            "type": "SC-APK-ADD",
+            "children": [
+                {
+                    "type": "SC-APK-F-ALLOW-UNTRUSTED",
+                    "children": []
+                },
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE:GLIBC-2.23-R3.APK",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:GLIBC-BIN-2.23-R3.APK",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "cadvisor:2:5",
+        "astCommand": {
+            "type": "SC-RM",
+            "children": [
+                {
+                    "type": "SC-RM-F-FORCE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-CONCAT",
+                                    "children": [
+                                        {
+                                            "type": "BASH-GLOB",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-GLOB-STAR",
+                                                    "children": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "cadvisor:3:0",
+        "astCommand": {
+            "type": "SC-SET",
+            "children": [
+                {
+                    "type": "SC-SET-F-X",
+                    "children": []
+                },
+                {
+                    "type": "SC-SET-F-E",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "cadvisor:3:1",
+        "astCommand": {
+            "type": "SC-WGET",
+            "children": [
+                {
+                    "type": "SC-WGET-OUTPUT-DOCUMENT",
+                    "children": [
+                        {
+                            "type": "BASH-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [
+                                        {
+                                            "type": "ABS-PATH-ABSOLUTE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-MAYBE-PATH",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-WGET-URL",
+                    "children": [
+                        {
+                            "type": "BASH-CONCAT",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [
+                                        {
+                                            "type": "ABS-PROBABLY-URL",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-URL-PROTOCOL-HTTPS",
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "BASH-VARIABLE:CADVISOR_VERSION",
+                                    "children": []
+                                },
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [
+                                        {
+                                            "type": "ABS-PATH-ABSOLUTE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-MAYBE-PATH",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "cadvisor:3:2",
+        "astCommand": {
+            "type": "SC-CHMOD",
+            "children": [
+                {
+                    "type": "SC-CHMOD-MODE",
+                    "children": [
+                        {
+                            "type": "BASH-CONCAT",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                },
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-CHMOD-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-CHMOD-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [
+                                        {
+                                            "type": "ABS-PATH-ABSOLUTE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-MAYBE-PATH",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

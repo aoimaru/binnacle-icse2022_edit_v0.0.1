@@ -1,0 +1,449 @@
+[
+    {
+        "astCommandId": "casperjs:7:0",
+        "astCommand": {
+            "type": "SC-SET",
+            "children": [
+                {
+                    "type": "SC-SET-F-X",
+                    "children": []
+                },
+                {
+                    "type": "SC-SET-F-E",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "casperjs:7:1",
+        "astCommand": {
+            "type": "SC-APT-GET-UPDATE",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "casperjs:7:2",
+        "astCommand": {
+            "type": "SC-APT-GET-INSTALL",
+            "children": [
+                {
+                    "type": "SC-APT-GET-F-YES",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-PACKAGE:BZIP2",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE:CURL",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE:LIBFONTCONFIG",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE:LIBICU52",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE:LIBSQLITE3-0",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE:PYTHON",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "casperjs:7:3",
+        "astCommand": {
+            "type": "BASH-PIPELINE",
+            "children": [
+                {
+                    "type": "SC-CURL",
+                    "children": [
+                        {
+                            "type": "SC-CURL-F-SILENT",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-F-SHOW-ERROR",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-F-LOCATION",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:PHANTOM_URL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-TAR",
+                    "children": [
+                        {
+                            "type": "SC-TAR-DIRECTORY",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:PHANTOM_DIR",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-TAR-STRIP",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-TAR-WILDCARDS",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-TAR-ARGS",
+                            "children": [
+                                {
+                                    "type": "SC-TAR-ARG",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "casperjs:7:4",
+        "astCommand": {
+            "type": "SC-CHMOD",
+            "children": [
+                {
+                    "type": "SC-CHMOD-MODE",
+                    "children": [
+                        {
+                            "type": "BASH-CONCAT",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                },
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-CHMOD-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-CHMOD-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [
+                                        {
+                                            "type": "ABS-PATH-ABSOLUTE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-MAYBE-PATH",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "casperjs:7:5",
+        "astCommand": {
+            "type": "SC-MKDIR",
+            "children": [
+                {
+                    "type": "SC-MKDIR-F-PARENTS",
+                    "children": []
+                },
+                {
+                    "type": "SC-MKDIR-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-MKDIR-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:CASPER_DIR",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "casperjs:7:6",
+        "astCommand": {
+            "type": "BASH-PIPELINE",
+            "children": [
+                {
+                    "type": "SC-CURL",
+                    "children": [
+                        {
+                            "type": "SC-CURL-F-SILENT",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-F-SHOW-ERROR",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-F-LOCATION",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:CASPER_URL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-TAR",
+                    "children": [
+                        {
+                            "type": "SC-TAR-STRIP",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-TAR-DIRECTORY",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE:CASPER_DIR",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-TAR-ARGS",
+                            "children": [
+                                {
+                                    "type": "SC-TAR-ARG",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "casperjs:7:7",
+        "astCommand": {
+            "type": "SC-LN",
+            "children": [
+                {
+                    "type": "SC-LN-F-SYMBOLIC",
+                    "children": []
+                },
+                {
+                    "type": "SC-LN-F-FORCE",
+                    "children": []
+                },
+                {
+                    "type": "SC-LN-TARGET",
+                    "children": [
+                        {
+                            "type": "BASH-CONCAT",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:CASPER_DIR",
+                                    "children": []
+                                },
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [
+                                        {
+                                            "type": "ABS-PATH-ABSOLUTE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-MAYBE-PATH",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-LN-LINK",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [
+                                {
+                                    "type": "ABS-PATH-ABSOLUTE",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-MAYBE-PATH",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "casperjs:7:8",
+        "astCommand": {
+            "type": "SC-APT-GET-REMOVE",
+            "children": [
+                {
+                    "type": "SC-APT-GET-F-YES",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-PACKAGE:BZIP2",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE:CURL",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "casperjs:7:9",
+        "astCommand": {
+            "type": "SC-RM",
+            "children": [
+                {
+                    "type": "SC-RM-F-RECURSIVE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-F-FORCE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-CONCAT",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-PATH-VAR",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-APT-LISTS",
+                                                    "children": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "BASH-GLOB",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-GLOB-STAR",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

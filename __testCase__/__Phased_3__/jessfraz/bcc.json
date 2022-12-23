@@ -1,0 +1,678 @@
+[
+    {
+        "astCommandId": "bcc:2:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-SED-F-IN-PLACE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "s#deb http://deb.debian.org/debian buster main#deb http://deb.debian.org/debian buster main contrib non-free#g",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-SED-EXPRESSION"
+                        }
+                    ],
+                    "type": "SC-SED-EXPRESSIONS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "/etc/apt/sources.list",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-SED-PATH"
+                        }
+                    ],
+                    "type": "SC-SED-PATHS"
+                }
+            ],
+            "type": "SC-SED"
+        }
+    },
+    {
+        "astCommandId": "bcc:3:0",
+        "astCommand": {
+            "children": [],
+            "type": "SC-APT-GET-UPDATE"
+        }
+    },
+    {
+        "astCommandId": "bcc:3:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-YES"
+                },
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-NO-INSTALL-RECOMMENDS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "ca-certificates",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "clang",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "curl",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "gcc",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "git",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "value": "g",
+                                            "type": "BASH-LITERAL"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": "+",
+                                            "type": "BASH-LITERAL"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": "+",
+                                            "type": "BASH-LITERAL"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APT-GET-PACKAGES"
+                }
+            ],
+            "type": "SC-APT-GET-INSTALL"
+        }
+    },
+    {
+        "astCommandId": "bcc:3:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-FORCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "value": "/var/lib/apt/lists/",
+                                            "type": "BASH-LITERAL"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": "*",
+                                            "type": "BASH-GLOB"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    },
+    {
+        "astCommandId": "bcc:4:0",
+        "astCommand": {
+            "children": [],
+            "type": "SC-APT-GET-UPDATE"
+        }
+    },
+    {
+        "astCommandId": "bcc:4:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-YES"
+                },
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-NO-INSTALL-RECOMMENDS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "debhelper",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "cmake",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libllvm3.9",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "llvm-dev",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libclang-dev",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libelf-dev",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "bison",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "flex",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libedit-dev",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "clang-format",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "python",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "python3-pyroute2",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "luajit",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libluajit-5.1-dev",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "arping",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "iperf",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "ethtool",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "devscripts",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "zlib1g-dev",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libfl-dev",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APT-GET-PACKAGES"
+                }
+            ],
+            "type": "SC-APT-GET-INSTALL"
+        }
+    },
+    {
+        "astCommandId": "bcc:4:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-FORCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "value": "/var/lib/apt/lists/",
+                                            "type": "BASH-LITERAL"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": "*",
+                                            "type": "BASH-GLOB"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    },
+    {
+        "astCommandId": "bcc:6:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "1",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GIT-DEPTH"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "${BCC_VERSION}",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GIT-BRANCH"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "https://github.com/iovisor/bcc.git",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GIT-URL"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "/usr/src/bcc",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GIT-DIRECTORY"
+                }
+            ],
+            "type": "SC-GIT-CLONE"
+        }
+    },
+    {
+        "astCommandId": "bcc:6:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "value": "/usr/src/bcc",
+                                                    "type": "BASH-LITERAL"
+                                                }
+                                            ],
+                                            "type": "SC-CD-PATH"
+                                        }
+                                    ],
+                                    "type": "SC-CD"
+                                }
+                            ],
+                            "type": "BASH-AND-MEM"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "value": "build",
+                                                            "type": "BASH-LITERAL"
+                                                        }
+                                                    ],
+                                                    "type": "SC-MKDIR-PATH"
+                                                }
+                                            ],
+                                            "type": "SC-MKDIR-PATHS"
+                                        }
+                                    ],
+                                    "type": "SC-MKDIR"
+                                }
+                            ],
+                            "type": "BASH-AND-MEM"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "value": "build",
+                                                    "type": "BASH-LITERAL"
+                                                }
+                                            ],
+                                            "type": "SC-CD-PATH"
+                                        }
+                                    ],
+                                    "type": "SC-CD"
+                                }
+                            ],
+                            "type": "BASH-AND-MEM"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "value": "CMAKE_INSTALL_PREFIX=/usr",
+                                                            "type": "BASH-LITERAL"
+                                                        }
+                                                    ],
+                                                    "type": "SC-CMAKE-D"
+                                                }
+                                            ],
+                                            "type": "SC-CMAKE-DS"
+                                        },
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "value": "..",
+                                                    "type": "BASH-LITERAL"
+                                                }
+                                            ],
+                                            "type": "SC-CMAKE-PATHTOSOURCEORBUILD"
+                                        }
+                                    ],
+                                    "type": "SC-CMAKE"
+                                }
+                            ],
+                            "type": "BASH-AND-MEM"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "SC-MAKE"
+                                }
+                            ],
+                            "type": "BASH-AND-MEM"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "value": "install",
+                                                    "type": "BASH-LITERAL"
+                                                }
+                                            ],
+                                            "type": "SC-MAKE-TARGET"
+                                        }
+                                    ],
+                                    "type": "SC-MAKE"
+                                }
+                            ],
+                            "type": "BASH-AND-MEM"
+                        }
+                    ],
+                    "type": "BASH-AND-IF"
+                }
+            ],
+            "type": "BASH-SUBSHELL"
+        }
+    },
+    {
+        "astCommandId": "bcc:6:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-FORCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "/usr/src/bcc",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    }
+]

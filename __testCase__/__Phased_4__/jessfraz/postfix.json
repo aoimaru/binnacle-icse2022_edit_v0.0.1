@@ -1,0 +1,126 @@
+[
+    {
+        "astCommandId": "postfix:1:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APK-F-NO-CACHE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "type": "ABS-URL-PROTOCOL-HTTP",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-PROBABLY-URL",
+                                            "children": []
+                                        }
+                                    ],
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-REPOSITORY"
+                        }
+                    ],
+                    "type": "SC-APK-REPOSITORYS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "SC-APK-PACKAGE:BASH"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APK-PACKAGE:CA-CERTIFICATES"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APK-PACKAGE:LIBSASL"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APK-PACKAGE:MAILX"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APK-PACKAGE:POSTFIX"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APK-PACKAGE:RSYSLOG"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APK-PACKAGE:RUNIT"
+                        }
+                    ],
+                    "type": "SC-APK-PACKAGES"
+                }
+            ],
+            "type": "SC-APK-ADD"
+        }
+    },
+    {
+        "astCommandId": "postfix:5:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-LN-F-SYMBOLIC"
+                },
+                {
+                    "children": [],
+                    "type": "SC-LN-F-FORCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "type": "ABS-PATH-ABSOLUTE",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-MAYBE-PATH",
+                                    "children": []
+                                }
+                            ],
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-LN-TARGET"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "type": "ABS-PATH-VAR",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-PATH-ABSOLUTE",
+                                    "children": []
+                                },
+                                {
+                                    "type": "ABS-MAYBE-PATH",
+                                    "children": []
+                                }
+                            ],
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-LN-LINK"
+                }
+            ],
+            "type": "SC-LN"
+        }
+    }
+]

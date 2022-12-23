@@ -1,0 +1,339 @@
+[
+    {
+        "astCommandId": "ansible:2:0",
+        "astCommand": {
+            "type": "SC-APT-GET-UPDATE",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "ansible:2:1",
+        "astCommand": {
+            "type": "SC-APT-GET-INSTALL",
+            "children": [
+                {
+                    "type": "SC-APT-GET-F-YES",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "gcc"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "python-dev"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "libkrb5-dev"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ansible:2:2",
+        "astCommand": {
+            "type": "SC-APT-GET-INSTALL",
+            "children": [
+                {
+                    "type": "SC-APT-GET-F-YES",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "python3-pip"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ansible:2:3",
+        "astCommand": {
+            "type": "SC-PIP-INSTALL",
+            "children": [
+                {
+                    "type": "SC-PIP-F-UPGRADE",
+                    "children": []
+                },
+                {
+                    "type": "SC-PIP-TARGETS",
+                    "children": [
+                        {
+                            "type": "SC-PIP-TARGET",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "pip"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ansible:2:4",
+        "astCommand": {
+            "type": "SC-PIP-INSTALL",
+            "children": [
+                {
+                    "type": "SC-PIP-F-UPGRADE",
+                    "children": []
+                },
+                {
+                    "type": "SC-PIP-TARGETS",
+                    "children": [
+                        {
+                            "type": "SC-PIP-TARGET",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "virtualenv"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ansible:2:5",
+        "astCommand": {
+            "type": "SC-PIP-INSTALL",
+            "children": [
+                {
+                    "type": "SC-PIP-TARGETS",
+                    "children": [
+                        {
+                            "type": "SC-PIP-TARGET",
+                            "children": [
+                                {
+                                    "type": "BASH-CONCAT",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "pywinrm"
+                                        },
+                                        {
+                                            "type": "BASH-GLOB",
+                                            "children": [],
+                                            "value": "[kerberos]"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ansible:2:6",
+        "astCommand": {
+            "type": "SC-APT-INSTALL",
+            "children": [
+                {
+                    "type": "SC-APT-F-YES",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APT-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "krb5-user"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ansible:2:7",
+        "astCommand": {
+            "type": "SC-PIP-INSTALL",
+            "children": [
+                {
+                    "type": "SC-PIP-TARGETS",
+                    "children": [
+                        {
+                            "type": "SC-PIP-TARGET",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "pywinrm"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ansible:2:8",
+        "astCommand": {
+            "type": "SC-PIP-INSTALL",
+            "children": [
+                {
+                    "type": "SC-PIP-TARGETS",
+                    "children": [
+                        {
+                            "type": "SC-PIP-TARGET",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "ansible"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ansible:2:9",
+        "astCommand": {
+            "type": "SC-APT-GET-INSTALL",
+            "children": [
+                {
+                    "type": "SC-APT-GET-F-YES",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "iputils-ping"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ansible:2:10",
+        "astCommand": {
+            "type": "SC-APT-INSTALL",
+            "children": [
+                {
+                    "type": "SC-APT-F-YES",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APT-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "openssh-server"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "sudo"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ansible:3:0",
+        "astCommand": {
+            "type": "BASH-PIPELINE",
+            "children": [
+                {
+                    "type": "SC-ECHO",
+                    "children": [
+                        {
+                            "type": "SC-ECHO-ITEMS",
+                            "children": [
+                                {
+                                    "type": "SC-ECHO-ITEM",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "test:test"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "UNKNOWN",
+                    "children": []
+                }
+            ]
+        }
+    }
+]

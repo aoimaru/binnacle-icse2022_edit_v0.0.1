@@ -1,0 +1,342 @@
+[
+    {
+        "astCommandId": "install:1:0",
+        "astCommand": {
+            "children": [],
+            "type": "SC-APT-UPDATE"
+        }
+    },
+    {
+        "astCommandId": "install:1:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APT-F-YES"
+                },
+                {
+                    "children": [],
+                    "type": "SC-APT-F-NO-INSTALL-RECOMMENDS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "build-essential",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "ca-certificates",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "git",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "kmod",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libelf-dev",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libmnl-dev",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "pkg-config",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APT-PACKAGES"
+                }
+            ],
+            "type": "SC-APT-INSTALL"
+        }
+    },
+    {
+        "astCommandId": "install:1:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-FORCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "value": "/var/lib/apt/lists/",
+                                            "type": "BASH-LITERAL"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": "*",
+                                            "type": "BASH-GLOB"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    },
+    {
+        "astCommandId": "install:4:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-SET-F-X"
+                }
+            ],
+            "type": "SC-SET"
+        }
+    },
+    {
+        "astCommandId": "install:4:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "1",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GIT-DEPTH"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "${WIREGUARD_VERSION}",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GIT-BRANCH"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "https://git.zx2c4.com/wireguard-linux-compat.git",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GIT-URL"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "/wireguard",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GIT-DIRECTORY"
+                }
+            ],
+            "type": "SC-GIT-CLONE"
+        }
+    },
+    {
+        "astCommandId": "install:4:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "1",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GIT-DEPTH"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "${WIREGUARD_TOOLS_VERSION}",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GIT-BRANCH"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "https://git.zx2c4.com/wireguard-tools.git",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GIT-URL"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "/wireguard-tools",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GIT-DIRECTORY"
+                }
+            ],
+            "type": "SC-GIT-CLONE"
+        }
+    },
+    {
+        "astCommandId": "install:4:3",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "value": "/wireguard-tools/src",
+                                                    "type": "BASH-LITERAL"
+                                                }
+                                            ],
+                                            "type": "SC-CD-PATH"
+                                        }
+                                    ],
+                                    "type": "SC-CD"
+                                }
+                            ],
+                            "type": "BASH-AND-MEM"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "value": "$( nproc )",
+                                                    "type": "BASH-LITERAL"
+                                                }
+                                            ],
+                                            "type": "SC-MAKE-JOBS"
+                                        }
+                                    ],
+                                    "type": "SC-MAKE"
+                                }
+                            ],
+                            "type": "BASH-AND-MEM"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "value": "install",
+                                                    "type": "BASH-LITERAL"
+                                                }
+                                            ],
+                                            "type": "SC-MAKE-TARGET"
+                                        }
+                                    ],
+                                    "type": "SC-MAKE"
+                                }
+                            ],
+                            "type": "BASH-AND-MEM"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "value": "clean",
+                                                    "type": "BASH-LITERAL"
+                                                }
+                                            ],
+                                            "type": "SC-MAKE-TARGET"
+                                        }
+                                    ],
+                                    "type": "SC-MAKE"
+                                }
+                            ],
+                            "type": "BASH-AND-MEM"
+                        }
+                    ],
+                    "type": "BASH-AND-IF"
+                }
+            ],
+            "type": "BASH-SUBSHELL"
+        }
+    }
+]

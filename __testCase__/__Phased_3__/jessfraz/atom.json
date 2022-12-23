@@ -1,0 +1,368 @@
+[
+    {
+        "astCommandId": "atom:2:0",
+        "astCommand": {
+            "children": [],
+            "type": "SC-APT-GET-UPDATE"
+        }
+    },
+    {
+        "astCommandId": "atom:2:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-YES"
+                },
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-NO-INSTALL-RECOMMENDS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "apt-transport-https",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "ca-certificates",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "gnupg",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "wget",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APT-GET-PACKAGES"
+                }
+            ],
+            "type": "SC-APT-GET-INSTALL"
+        }
+    },
+    {
+        "astCommandId": "atom:3:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "SC-WGET-F-QUIET"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "value": "-",
+                                            "type": "BASH-LITERAL"
+                                        }
+                                    ],
+                                    "type": "BASH-PATH"
+                                }
+                            ],
+                            "type": "SC-WGET-OUTPUT-DOCUMENT"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "https://packagecloud.io/AtomEditor/atom/gpgkey",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-WGET-URL"
+                        }
+                    ],
+                    "type": "SC-WGET"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "SC-APT-KEY-FILENAME"
+                        }
+                    ],
+                    "type": "SC-APT-KEY-ADD"
+                }
+            ],
+            "type": "BASH-PIPELINE"
+        }
+    },
+    {
+        "astCommandId": "atom:4:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "echo \"deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main\" > /etc/apt/sources.list.d/atom.list",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-SH-C"
+                }
+            ],
+            "type": "SC-SH"
+        }
+    },
+    {
+        "astCommandId": "atom:5:0",
+        "astCommand": {
+            "children": [],
+            "type": "SC-APT-GET-UPDATE"
+        }
+    },
+    {
+        "astCommandId": "atom:5:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-YES"
+                },
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-NO-INSTALL-RECOMMENDS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "atom",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "git",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "gconf2",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "gconf-service",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "gvfs-bin",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libasound2",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libcap2",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libgconf-2-4",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libgtk2.0-0",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libnotify4",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libnss3",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libxkbfile1",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libxss1",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libxtst6",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libx11-xcb-dev",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "xdg-utils",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APT-GET-PACKAGES"
+                }
+            ],
+            "type": "SC-APT-GET-INSTALL"
+        }
+    },
+    {
+        "astCommandId": "atom:5:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-FORCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "value": "/var/lib/apt/lists/",
+                                            "type": "BASH-LITERAL"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": "*",
+                                            "type": "BASH-GLOB"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    }
+]

@@ -1,0 +1,268 @@
+[
+    {
+        "astCommandId": "freeradius:1:0",
+        "astCommand": {
+            "type": "SC-SET",
+            "children": [
+                {
+                    "type": "SC-SET-F-X",
+                    "children": []
+                },
+                {
+                    "type": "SC-SET-F-E",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "freeradius:1:1",
+        "astCommand": {
+            "type": "SC-APK-ADD",
+            "children": [
+                {
+                    "type": "SC-APK-F-NO-CACHE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "freeradius"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "freeradius-mysql"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "freeradius-radclient"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "make"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "openssl"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "freeradius:1:2",
+        "astCommand": {
+            "type": "SC-LN",
+            "children": [
+                {
+                    "type": "SC-LN-F-SYMBOLIC",
+                    "children": []
+                },
+                {
+                    "type": "SC-LN-TARGET",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "/etc/raddb/mods-available/sql"
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-LN-LINK",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "/etc/raddb/mods-available/sqlcounter"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "freeradius:1:3",
+        "astCommand": {
+            "type": "SC-SED",
+            "children": [
+                {
+                    "type": "SC-SED-F-IN-PLACE",
+                    "children": []
+                },
+                {
+                    "type": "SC-SED-EXPRESSIONS",
+                    "children": [
+                        {
+                            "type": "SC-SED-EXPRESSION",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "s@driver =.*@driver = \"rlm_sql_mysql\"@"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-EXPRESSION",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "s@dialect =.*@dialect = \"mysql\"@"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-EXPRESSION",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/read_clients = yes/s@^#@@"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-EXPRESSION",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/Connection info:/,/^$/{s@^#@@;s@localhost@mysql@}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-SED-PATHS",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "/etc/raddb/mods-available/sql"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "freeradius:1:4",
+        "astCommand": {
+            "type": "SC-SED",
+            "children": [
+                {
+                    "type": "SC-SED-F-IN-PLACE",
+                    "children": []
+                },
+                {
+                    "type": "SC-SED-EXPRESSIONS",
+                    "children": [
+                        {
+                            "type": "SC-SED-EXPRESSION",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/^#\\t*eap$/s@^#@@"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-EXPRESSION",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/^#\\teap {$/,/#\\t}$/s@^#@@"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-SED-PATHS",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "/etc/raddb/sites-enabled/default"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "freeradius:1:5",
+        "astCommand": {
+            "type": "SC-CHOWN",
+            "children": [
+                {
+                    "type": "SC-CHOWN-F-RECURSIVE",
+                    "children": []
+                },
+                {
+                    "type": "SC-CHOWN-OWNER",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "root:radius"
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-CHOWN-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-CHOWN-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/etc/raddb"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

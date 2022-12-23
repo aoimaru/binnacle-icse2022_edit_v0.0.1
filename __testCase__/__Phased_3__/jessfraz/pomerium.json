@@ -1,0 +1,196 @@
+[
+    {
+        "astCommandId": "pomerium:1:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APK-F-NO-CACHE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "ca-certificates",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "git",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "make",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APK-PACKAGES"
+                }
+            ],
+            "type": "SC-APK-ADD"
+        }
+    },
+    {
+        "astCommandId": "pomerium:5:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "value": "github.com/pomerium/pomerium",
+                                                    "type": "BASH-LITERAL"
+                                                }
+                                            ],
+                                            "type": "SC-GO-PACKAGE"
+                                        }
+                                    ],
+                                    "type": "SC-GO-PACKAGES"
+                                }
+                            ],
+                            "type": "SC-GO-GET"
+                        }
+                    ],
+                    "type": "BASH-OR-MEM"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "SC-TRUE"
+                                        }
+                                    ],
+                                    "type": "BASH-AND-MEM"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "value": "/go/src/github.com/pomerium/pomerium",
+                                                            "type": "BASH-LITERAL"
+                                                        }
+                                                    ],
+                                                    "type": "SC-CD-PATH"
+                                                }
+                                            ],
+                                            "type": "SC-CD"
+                                        }
+                                    ],
+                                    "type": "BASH-AND-MEM"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "value": "${POMERIUM_VERSION}",
+                                                            "type": "BASH-LITERAL"
+                                                        }
+                                                    ],
+                                                    "type": "SC-GIT-TARGET"
+                                                }
+                                            ],
+                                            "type": "SC-GIT-CHECKOUT"
+                                        }
+                                    ],
+                                    "type": "BASH-AND-MEM"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "value": "release",
+                                                            "type": "BASH-LITERAL"
+                                                        }
+                                                    ],
+                                                    "type": "SC-MAKE-TARGET"
+                                                }
+                                            ],
+                                            "type": "SC-MAKE"
+                                        }
+                                    ],
+                                    "type": "BASH-AND-MEM"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [
+                                                                {
+                                                                    "children": [],
+                                                                    "value": "dist/pomerium-linux-amd64",
+                                                                    "type": "BASH-LITERAL"
+                                                                }
+                                                            ],
+                                                            "type": "SC-MV-PATH"
+                                                        },
+                                                        {
+                                                            "children": [
+                                                                {
+                                                                    "children": [],
+                                                                    "value": "/usr/bin/pomerium",
+                                                                    "type": "BASH-LITERAL"
+                                                                }
+                                                            ],
+                                                            "type": "SC-MV-PATH"
+                                                        }
+                                                    ],
+                                                    "type": "SC-MV-PATHS"
+                                                }
+                                            ],
+                                            "type": "SC-MV"
+                                        }
+                                    ],
+                                    "type": "BASH-AND-MEM"
+                                }
+                            ],
+                            "type": "BASH-AND-IF"
+                        }
+                    ],
+                    "type": "BASH-OR-MEM"
+                }
+            ],
+            "type": "BASH-OR-IF"
+        }
+    }
+]

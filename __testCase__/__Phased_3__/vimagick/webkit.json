@@ -1,0 +1,255 @@
+[
+    {
+        "astCommandId": "webkit:1:0",
+        "astCommand": {
+            "type": "BASH-REDIRECT",
+            "children": [
+                {
+                    "type": "BASH-REDIRECT-COMMAND",
+                    "children": [
+                        {
+                            "type": "SC-ECHO",
+                            "children": [
+                                {
+                                    "type": "SC-ECHO-ITEMS",
+                                    "children": [
+                                        {
+                                            "type": "SC-ECHO-ITEM",
+                                            "children": [
+                                                {
+                                                    "type": "BASH-LITERAL",
+                                                    "children": [],
+                                                    "value": "Asia/Shanghai"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "BASH-REDIRECT-REDIRECTS",
+                    "children": [
+                        {
+                            "type": "BASH-REDIRECT-OVERWRITE",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "/etc/timezone"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "webkit:2:0",
+        "astCommand": {
+            "type": "SC-LN",
+            "children": [
+                {
+                    "type": "SC-LN-F-SYMBOLIC",
+                    "children": []
+                },
+                {
+                    "type": "SC-LN-F-FORCE",
+                    "children": []
+                },
+                {
+                    "type": "SC-LN-TARGET",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "/usr/share/zoneinfo/Asia/Shanghai"
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-LN-LINK",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "/etc/localtime"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "webkit:3:0",
+        "astCommand": {
+            "type": "SC-APT-GET-UPDATE",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "webkit:3:1",
+        "astCommand": {
+            "type": "SC-APT-GET-INSTALL",
+            "children": [
+                {
+                    "type": "SC-APT-GET-F-YES",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "supervisor"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "haproxy"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "nginx"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "libfontconfig1"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "libfreetype6"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "fontconfig"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "libicu52"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "webkit:4:0",
+        "astCommand": {
+            "type": "SC-MKDIR",
+            "children": [
+                {
+                    "type": "SC-MKDIR-F-PARENTS",
+                    "children": []
+                },
+                {
+                    "type": "SC-MKDIR-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-MKDIR-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/data/"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-MKDIR-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/webkit/includes/"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "webkit:14:0",
+        "astCommand": {
+            "type": "SC-CHMOD",
+            "children": [
+                {
+                    "type": "SC-CHMOD-MODE",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "600"
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-CHMOD-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-CHMOD-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/etc/monitrc"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

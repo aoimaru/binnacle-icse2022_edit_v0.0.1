@@ -1,0 +1,361 @@
+[
+    {
+        "astCommandId": "snort:4:0",
+        "astCommand": {
+            "type": "SC-SET",
+            "children": [
+                {
+                    "type": "SC-SET-F-X",
+                    "children": []
+                },
+                {
+                    "type": "SC-SET-F-E",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "snort:4:1",
+        "astCommand": {
+            "type": "SC-YUM-INSTALL",
+            "children": [
+                {
+                    "type": "SC-YUM-F-ASSUMEYES",
+                    "children": []
+                },
+                {
+                    "type": "SC-YUM-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-YUM-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "epel-release"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-YUM-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "jq"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-YUM-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "libdnet"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "snort:4:2",
+        "astCommand": {
+            "type": "SC-YUM-INSTALL",
+            "children": [
+                {
+                    "type": "SC-YUM-F-ASSUMEYES",
+                    "children": []
+                },
+                {
+                    "type": "SC-YUM-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-YUM-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "SNORT_URL"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "snort:4:3",
+        "astCommand": {
+            "type": "SC-MKDIR",
+            "children": [
+                {
+                    "type": "SC-MKDIR-F-PARENTS",
+                    "children": []
+                },
+                {
+                    "type": "SC-MKDIR-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-MKDIR-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/etc/snort/rules"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "snort:4:4",
+        "astCommand": {
+            "type": "BASH-PIPELINE",
+            "children": [
+                {
+                    "type": "SC-CURL",
+                    "children": [
+                        {
+                            "type": "SC-CURL-F-SILENT",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-F-SHOW-ERROR",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-F-LOCATION",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "RULES_URL"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-TAR",
+                    "children": [
+                        {
+                            "type": "SC-TAR-STRIP",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "1"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-TAR-DIRECTORY",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "/etc/snort/rules/"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-TAR-ARGS",
+                            "children": [
+                                {
+                                    "type": "SC-TAR-ARG",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "xz"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-TAR-ARG",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "community-rules/community.rules"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "snort:4:5",
+        "astCommand": {
+            "type": "SC-MKDIR",
+            "children": [
+                {
+                    "type": "SC-MKDIR-F-PARENTS",
+                    "children": []
+                },
+                {
+                    "type": "SC-MKDIR-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-MKDIR-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/etc/snort/so_rules"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-MKDIR-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/etc/snort/preproc_rules"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-MKDIR-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/usr/local/lib/snort_dynamicrules"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "snort:4:6",
+        "astCommand": {
+            "type": "SC-LN",
+            "children": [
+                {
+                    "type": "SC-LN-F-SYMBOLIC",
+                    "children": []
+                },
+                {
+                    "type": "SC-LN-TARGET",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "/usr/lib64/libdnet.so.1"
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-LN-LINK",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "/usr/local/lib/libdnet.1"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "snort:4:7",
+        "astCommand": {
+            "type": "BASH-PIPELINE",
+            "children": [
+                {
+                    "type": "SC-CURL",
+                    "children": [
+                        {
+                            "type": "SC-CURL-F-SILENT",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-F-SHOW-ERROR",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-F-LOCATION",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "https://bootstrap.pypa.io/get-pip.py"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-PYTHON",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "snort:4:8",
+        "astCommand": {
+            "type": "SC-PIP-INSTALL",
+            "children": [
+                {
+                    "type": "SC-PIP-F-NO-CACHE-DIR",
+                    "children": []
+                },
+                {
+                    "type": "SC-PIP-TARGETS",
+                    "children": [
+                        {
+                            "type": "SC-PIP-TARGET",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "idstools"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "snort:4:9",
+        "astCommand": {
+            "type": "SC-YUM-CLEAN-ALL",
+            "children": []
+        }
+    }
+]

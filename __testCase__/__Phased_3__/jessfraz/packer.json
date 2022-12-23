@@ -1,0 +1,208 @@
+[
+    {
+        "astCommandId": "packer:3:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APK-F-NO-CACHE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "bash",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "ca-certificates",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "gcc",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "git",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "make",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "zip",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APK-PACKAGES"
+                }
+            ],
+            "type": "SC-APK-ADD"
+        }
+    },
+    {
+        "astCommandId": "packer:5:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "github.com/hashicorp/packer",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-GO-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-GO-PACKAGES"
+                }
+            ],
+            "type": "SC-GO-GET"
+        }
+    },
+    {
+        "astCommandId": "packer:7:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "${PACKER_VERSION}",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GIT-TARGET"
+                }
+            ],
+            "type": "SC-GIT-CHECKOUT"
+        }
+    },
+    {
+        "astCommandId": "packer:8:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "releasebin",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-MAKE-TARGET"
+                }
+            ],
+            "type": "SC-MAKE"
+        }
+    },
+    {
+        "astCommandId": "packer:8:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "bin/packer",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-MV-PATH"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "/usr/bin/packer",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-MV-PATH"
+                        }
+                    ],
+                    "type": "SC-MV-PATHS"
+                }
+            ],
+            "type": "SC-MV"
+        }
+    },
+    {
+        "astCommandId": "packer:10:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APK-F-NO-CACHE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "bash",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "tar",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APK-PACKAGES"
+                }
+            ],
+            "type": "SC-APK-ADD"
+        }
+    }
+]

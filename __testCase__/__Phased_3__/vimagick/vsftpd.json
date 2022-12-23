@@ -1,0 +1,772 @@
+[
+    {
+        "astCommandId": "vsftpd:1:0",
+        "astCommand": {
+            "type": "SC-SET",
+            "children": [
+                {
+                    "type": "SC-SET-F-X",
+                    "children": []
+                },
+                {
+                    "type": "SC-SET-F-E",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "vsftpd:1:1",
+        "astCommand": {
+            "type": "SC-APK-ADD",
+            "children": [
+                {
+                    "type": "SC-APK-F-UPDATE-CACHE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "build-base"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "curl"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "linux-pam-dev"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "tar"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "vsftpd"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "vsftpd:1:2",
+        "astCommand": {
+            "type": "SC-MKDIR",
+            "children": [
+                {
+                    "type": "SC-MKDIR-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-MKDIR-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "pam_pwdfile"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "vsftpd:1:3",
+        "astCommand": {
+            "type": "SC-CD",
+            "children": [
+                {
+                    "type": "SC-CD-PATH",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "pam_pwdfile"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "vsftpd:1:4",
+        "astCommand": {
+            "type": "BASH-PIPELINE",
+            "children": [
+                {
+                    "type": "SC-CURL",
+                    "children": [
+                        {
+                            "type": "SC-CURL-F-SILENT",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-F-SHOW-ERROR",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-F-LOCATION",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-CURL-URL",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "https://github.com/tiwe-de/libpam-pwdfile/archive/v1.0.tar.gz"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-TAR",
+                    "children": [
+                        {
+                            "type": "SC-TAR-STRIP",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "1"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-TAR-ARGS",
+                            "children": [
+                                {
+                                    "type": "SC-TAR-ARG",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "xz"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "vsftpd:1:5",
+        "astCommand": {
+            "type": "SC-MAKE",
+            "children": [
+                {
+                    "type": "SC-MAKE-TARGET",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "install"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "vsftpd:1:6",
+        "astCommand": {
+            "type": "SC-CD",
+            "children": [
+                {
+                    "type": "SC-CD-PATH",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": ".."
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "vsftpd:1:7",
+        "astCommand": {
+            "type": "SC-RM",
+            "children": [
+                {
+                    "type": "SC-RM-F-RECURSIVE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-F-FORCE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "pam_pwdfile"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "vsftpd:1:8",
+        "astCommand": {
+            "type": "SC-APK-DEL",
+            "children": [
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "build-base"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "curl"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "linux-pam-dev"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "tar"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "vsftpd:1:9",
+        "astCommand": {
+            "type": "SC-ADD-USER",
+            "children": [
+                {
+                    "type": "SC-ADD-USER-F-DEFAULTS",
+                    "children": []
+                },
+                {
+                    "type": "SC-ADD-USER-USER",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "virtual"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "vsftpd:1:10",
+        "astCommand": {
+            "type": "SC-RM",
+            "children": [
+                {
+                    "type": "SC-RM-F-RECURSIVE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-F-FORCE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-CONCAT",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "/var/cache/apk/"
+                                        },
+                                        {
+                                            "type": "BASH-GLOB",
+                                            "children": [],
+                                            "value": "*"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "vsftpd:2:0",
+        "astCommand": {
+            "type": "BASH-REDIRECT",
+            "children": [
+                {
+                    "type": "BASH-REDIRECT-COMMAND",
+                    "children": [
+                        {
+                            "type": "BASH-BRACE-GROUP",
+                            "children": [
+                                {
+                                    "type": "SC-ECHO",
+                                    "children": [
+                                        {
+                                            "type": "SC-ECHO-ITEMS",
+                                            "children": [
+                                                {
+                                                    "type": "SC-ECHO-ITEM",
+                                                    "children": [
+                                                        {
+                                                            "type": "BASH-LITERAL",
+                                                            "children": [],
+                                                            "value": "allow_writeable_chroot=YES"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-ECHO",
+                                    "children": [
+                                        {
+                                            "type": "SC-ECHO-ITEMS",
+                                            "children": [
+                                                {
+                                                    "type": "SC-ECHO-ITEM",
+                                                    "children": [
+                                                        {
+                                                            "type": "BASH-LITERAL",
+                                                            "children": [],
+                                                            "value": "anonymous_enable=YES"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-ECHO",
+                                    "children": [
+                                        {
+                                            "type": "SC-ECHO-ITEMS",
+                                            "children": [
+                                                {
+                                                    "type": "SC-ECHO-ITEM",
+                                                    "children": [
+                                                        {
+                                                            "type": "BASH-LITERAL",
+                                                            "children": [],
+                                                            "value": "chroot_local_user=YES"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-ECHO",
+                                    "children": [
+                                        {
+                                            "type": "SC-ECHO-ITEMS",
+                                            "children": [
+                                                {
+                                                    "type": "SC-ECHO-ITEM",
+                                                    "children": [
+                                                        {
+                                                            "type": "BASH-LITERAL",
+                                                            "children": [],
+                                                            "value": "connect_from_port_20=YES"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-ECHO",
+                                    "children": [
+                                        {
+                                            "type": "SC-ECHO-ITEMS",
+                                            "children": [
+                                                {
+                                                    "type": "SC-ECHO-ITEM",
+                                                    "children": [
+                                                        {
+                                                            "type": "BASH-LITERAL",
+                                                            "children": [],
+                                                            "value": "dirmessage_enable=YES"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-ECHO",
+                                    "children": [
+                                        {
+                                            "type": "SC-ECHO-ITEMS",
+                                            "children": [
+                                                {
+                                                    "type": "SC-ECHO-ITEM",
+                                                    "children": [
+                                                        {
+                                                            "type": "BASH-LITERAL",
+                                                            "children": [],
+                                                            "value": "ftpd_banner=Welcome to VSFTPD service."
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-ECHO",
+                                    "children": [
+                                        {
+                                            "type": "SC-ECHO-ITEMS",
+                                            "children": [
+                                                {
+                                                    "type": "SC-ECHO-ITEM",
+                                                    "children": [
+                                                        {
+                                                            "type": "BASH-LITERAL",
+                                                            "children": [],
+                                                            "value": "listen=YES"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-ECHO",
+                                    "children": [
+                                        {
+                                            "type": "SC-ECHO-ITEMS",
+                                            "children": [
+                                                {
+                                                    "type": "SC-ECHO-ITEM",
+                                                    "children": [
+                                                        {
+                                                            "type": "BASH-LITERAL",
+                                                            "children": [],
+                                                            "value": "local_enable=YES"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-ECHO",
+                                    "children": [
+                                        {
+                                            "type": "SC-ECHO-ITEMS",
+                                            "children": [
+                                                {
+                                                    "type": "SC-ECHO-ITEM",
+                                                    "children": [
+                                                        {
+                                                            "type": "BASH-LITERAL",
+                                                            "children": [],
+                                                            "value": "no_anon_password=YES"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-ECHO",
+                                    "children": [
+                                        {
+                                            "type": "SC-ECHO-ITEMS",
+                                            "children": [
+                                                {
+                                                    "type": "SC-ECHO-ITEM",
+                                                    "children": [
+                                                        {
+                                                            "type": "BASH-LITERAL",
+                                                            "children": [],
+                                                            "value": "pasv_addr_resolve=YES"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-ECHO",
+                                    "children": [
+                                        {
+                                            "type": "SC-ECHO-ITEMS",
+                                            "children": [
+                                                {
+                                                    "type": "SC-ECHO-ITEM",
+                                                    "children": [
+                                                        {
+                                                            "type": "BASH-LITERAL",
+                                                            "children": [],
+                                                            "value": "pasv_address=easypi.info"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-ECHO",
+                                    "children": [
+                                        {
+                                            "type": "SC-ECHO-ITEMS",
+                                            "children": [
+                                                {
+                                                    "type": "SC-ECHO-ITEM",
+                                                    "children": [
+                                                        {
+                                                            "type": "BASH-LITERAL",
+                                                            "children": [],
+                                                            "value": "pasv_enable=YES"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-ECHO",
+                                    "children": [
+                                        {
+                                            "type": "SC-ECHO-ITEMS",
+                                            "children": [
+                                                {
+                                                    "type": "SC-ECHO-ITEM",
+                                                    "children": [
+                                                        {
+                                                            "type": "BASH-LITERAL",
+                                                            "children": [],
+                                                            "value": "pasv_max_port=30010"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-ECHO",
+                                    "children": [
+                                        {
+                                            "type": "SC-ECHO-ITEMS",
+                                            "children": [
+                                                {
+                                                    "type": "SC-ECHO-ITEM",
+                                                    "children": [
+                                                        {
+                                                            "type": "BASH-LITERAL",
+                                                            "children": [],
+                                                            "value": "pasv_min_port=30000"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-ECHO",
+                                    "children": [
+                                        {
+                                            "type": "SC-ECHO-ITEMS",
+                                            "children": [
+                                                {
+                                                    "type": "SC-ECHO-ITEM",
+                                                    "children": [
+                                                        {
+                                                            "type": "BASH-LITERAL",
+                                                            "children": [],
+                                                            "value": "port_enable=YES"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-ECHO",
+                                    "children": [
+                                        {
+                                            "type": "SC-ECHO-ITEMS",
+                                            "children": [
+                                                {
+                                                    "type": "SC-ECHO-ITEM",
+                                                    "children": [
+                                                        {
+                                                            "type": "BASH-LITERAL",
+                                                            "children": [],
+                                                            "value": "seccomp_sandbox=NO"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-ECHO",
+                                    "children": [
+                                        {
+                                            "type": "SC-ECHO-ITEMS",
+                                            "children": [
+                                                {
+                                                    "type": "SC-ECHO-ITEM",
+                                                    "children": [
+                                                        {
+                                                            "type": "BASH-LITERAL",
+                                                            "children": [],
+                                                            "value": "write_enable=YES"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "SC-ECHO",
+                                    "children": [
+                                        {
+                                            "type": "SC-ECHO-ITEMS",
+                                            "children": [
+                                                {
+                                                    "type": "SC-ECHO-ITEM",
+                                                    "children": [
+                                                        {
+                                                            "type": "BASH-LITERAL",
+                                                            "children": [],
+                                                            "value": "xferlog_enable=YES"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "BASH-REDIRECT-REDIRECTS",
+                    "children": [
+                        {
+                            "type": "BASH-REDIRECT-OVERWRITE",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "/etc/vsftpd/vsftpd.conf"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

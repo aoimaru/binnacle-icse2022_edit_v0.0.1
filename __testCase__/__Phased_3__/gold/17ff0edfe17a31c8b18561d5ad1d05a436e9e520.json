@@ -1,0 +1,676 @@
+[
+    {
+        "astCommandId": "17ff0edfe17a31c8b18561d5ad1d05a436e9e520:4:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-SET-F-X"
+                }
+            ],
+            "type": "SC-SET"
+        }
+    },
+    {
+        "astCommandId": "17ff0edfe17a31c8b18561d5ad1d05a436e9e520:4:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APK-F-NO-CACHE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": ".build-deps"
+                        }
+                    ],
+                    "type": "SC-APK-VIRTUAL"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "ca-certificates"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "gcc"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "libc-dev"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "linux-headers"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "lua5.3-dev"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "make"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "openssl"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "openssl-dev"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "pcre2-dev"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "readline-dev"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "tar"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "zlib-dev"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APK-PACKAGES"
+                }
+            ],
+            "type": "SC-APK-ADD"
+        }
+    },
+    {
+        "astCommandId": "17ff0edfe17a31c8b18561d5ad1d05a436e9e520:4:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "haproxy.tar.gz"
+                                }
+                            ],
+                            "type": "BASH-PATH"
+                        }
+                    ],
+                    "type": "SC-WGET-OUTPUT-DOCUMENT"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "${HAPROXY_URL}"
+                        }
+                    ],
+                    "type": "SC-WGET-URL"
+                }
+            ],
+            "type": "SC-WGET"
+        }
+    },
+    {
+        "astCommandId": "17ff0edfe17a31c8b18561d5ad1d05a436e9e520:4:3",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": "${HAPROXY_SHA256} *haproxy.tar.gz"
+                                        }
+                                    ],
+                                    "type": "SC-ECHO-ITEM"
+                                }
+                            ],
+                            "type": "SC-ECHO-ITEMS"
+                        }
+                    ],
+                    "type": "SC-ECHO"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "SC-SHA-256-SUM-F-CHECK"
+                        }
+                    ],
+                    "type": "SC-SHA-256-SUM"
+                }
+            ],
+            "type": "BASH-PIPELINE"
+        }
+    },
+    {
+        "astCommandId": "17ff0edfe17a31c8b18561d5ad1d05a436e9e520:4:4",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-MKDIR-F-PARENTS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "/usr/src/haproxy"
+                                }
+                            ],
+                            "type": "SC-MKDIR-PATH"
+                        }
+                    ],
+                    "type": "SC-MKDIR-PATHS"
+                }
+            ],
+            "type": "SC-MKDIR"
+        }
+    },
+    {
+        "astCommandId": "17ff0edfe17a31c8b18561d5ad1d05a436e9e520:4:5",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-TAR-X"
+                },
+                {
+                    "children": [],
+                    "type": "SC-TAR-Z"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "haproxy.tar.gz"
+                                }
+                            ],
+                            "type": "BASH-PATH"
+                        }
+                    ],
+                    "type": "SC-TAR-FILE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "/usr/src/haproxy"
+                                }
+                            ],
+                            "type": "BASH-PATH"
+                        }
+                    ],
+                    "type": "SC-TAR-DIRECTORY"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "1"
+                        }
+                    ],
+                    "type": "SC-TAR-STRIP-COMPONENTS"
+                }
+            ],
+            "type": "SC-TAR"
+        }
+    },
+    {
+        "astCommandId": "17ff0edfe17a31c8b18561d5ad1d05a436e9e520:4:6",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "haproxy.tar.gz"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    },
+    {
+        "astCommandId": "17ff0edfe17a31c8b18561d5ad1d05a436e9e520:4:7",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-VARIABLE",
+                            "value": "makeOpts"
+                        }
+                    ],
+                    "type": "BASH-ASSIGN-LHS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-SINGLE-QUOTED",
+                            "value": " \t\tTARGET=linux2628 \t\tUSE_LUA=1 LUA_INC=/usr/include/lua5.3 LUA_LIB=/usr/lib/lua5.3 \t\tUSE_GETADDRINFO=1 \t\tUSE_OPENSSL=1 \t\tUSE_PCRE2=1 USE_PCRE2_JIT=1 \t\tUSE_ZLIB=1 \t"
+                        }
+                    ],
+                    "type": "BASH-ASSIGN-RHS"
+                }
+            ],
+            "type": "BASH-ASSIGN"
+        }
+    },
+    {
+        "astCommandId": "17ff0edfe17a31c8b18561d5ad1d05a436e9e520:4:8",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "/usr/src/haproxy"
+                                }
+                            ],
+                            "type": "BASH-PATH"
+                        }
+                    ],
+                    "type": "SC-MAKE-DIRECTORY"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "$( getconf _NPROCESSORS_ONLN)"
+                        }
+                    ],
+                    "type": "SC-MAKE-JOBS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "all"
+                        }
+                    ],
+                    "type": "SC-MAKE-TARGET"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-VARIABLE",
+                                    "value": "makeOpts"
+                                }
+                            ],
+                            "type": "SC-MAKE-ARG"
+                        }
+                    ],
+                    "type": "SC-MAKE-ARGS"
+                }
+            ],
+            "type": "SC-MAKE"
+        }
+    },
+    {
+        "astCommandId": "17ff0edfe17a31c8b18561d5ad1d05a436e9e520:4:9",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "/usr/src/haproxy"
+                                }
+                            ],
+                            "type": "BASH-PATH"
+                        }
+                    ],
+                    "type": "SC-MAKE-DIRECTORY"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "install-bin"
+                        }
+                    ],
+                    "type": "SC-MAKE-TARGET"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-VARIABLE",
+                                    "value": "makeOpts"
+                                }
+                            ],
+                            "type": "SC-MAKE-ARG"
+                        }
+                    ],
+                    "type": "SC-MAKE-ARGS"
+                }
+            ],
+            "type": "SC-MAKE"
+        }
+    },
+    {
+        "astCommandId": "17ff0edfe17a31c8b18561d5ad1d05a436e9e520:4:10",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-MKDIR-F-PARENTS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "/usr/local/etc/haproxy"
+                                }
+                            ],
+                            "type": "SC-MKDIR-PATH"
+                        }
+                    ],
+                    "type": "SC-MKDIR-PATHS"
+                }
+            ],
+            "type": "SC-MKDIR"
+        }
+    },
+    {
+        "astCommandId": "17ff0edfe17a31c8b18561d5ad1d05a436e9e520:4:11",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-CP-F-RECURSIVE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "/usr/src/haproxy/examples/errorfiles"
+                                }
+                            ],
+                            "type": "SC-CP-PATH"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "/usr/local/etc/haproxy/errors"
+                                }
+                            ],
+                            "type": "SC-CP-PATH"
+                        }
+                    ],
+                    "type": "SC-CP-PATHS"
+                }
+            ],
+            "type": "SC-CP"
+        }
+    },
+    {
+        "astCommandId": "17ff0edfe17a31c8b18561d5ad1d05a436e9e520:4:12",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-FORCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "/usr/src/haproxy"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    },
+    {
+        "astCommandId": "17ff0edfe17a31c8b18561d5ad1d05a436e9e520:4:13",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-VARIABLE",
+                            "value": "runDeps"
+                        }
+                    ],
+                    "type": "BASH-ASSIGN-LHS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "UNKNOWN"
+                                                },
+                                                {
+                                                    "children": [],
+                                                    "type": "UNKNOWN"
+                                                },
+                                                {
+                                                    "children": [],
+                                                    "type": "UNKNOWN"
+                                                },
+                                                {
+                                                    "children": [],
+                                                    "type": "UNKNOWN"
+                                                }
+                                            ],
+                                            "type": "BASH-PIPELINE"
+                                        }
+                                    ],
+                                    "type": "BASH-DOLLAR-PARENS"
+                                }
+                            ],
+                            "type": "BASH-DOUBLE-QUOTED"
+                        }
+                    ],
+                    "type": "BASH-ASSIGN-RHS"
+                }
+            ],
+            "type": "BASH-ASSIGN"
+        }
+    },
+    {
+        "astCommandId": "17ff0edfe17a31c8b18561d5ad1d05a436e9e520:4:14",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": ".haproxy-rundeps"
+                        }
+                    ],
+                    "type": "SC-APK-VIRTUAL"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-VARIABLE",
+                                    "value": "runDeps"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APK-PACKAGES"
+                }
+            ],
+            "type": "SC-APK-ADD"
+        }
+    },
+    {
+        "astCommandId": "17ff0edfe17a31c8b18561d5ad1d05a436e9e520:4:15",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": ".build-deps"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APK-PACKAGES"
+                }
+            ],
+            "type": "SC-APK-DEL"
+        }
+    }
+]

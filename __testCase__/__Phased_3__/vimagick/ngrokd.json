@@ -1,0 +1,488 @@
+[
+    {
+        "astCommandId": "ngrokd:11:0",
+        "astCommand": {
+            "type": "SC-APT-GET-UPDATE",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "ngrokd:11:1",
+        "astCommand": {
+            "type": "SC-APT-GET-INSTALL",
+            "children": [
+                {
+                    "type": "SC-APT-GET-F-YES",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "build-essential"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "curl"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "git"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "golang"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "mercurial"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ngrokd:11:2",
+        "astCommand": {
+            "type": "SC-GIT-CLONE",
+            "children": [
+                {
+                    "type": "SC-GIT-URL",
+                    "children": [
+                        {
+                            "type": "BASH-VARIABLE",
+                            "children": [],
+                            "value": "NGROK_GIT"
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-GIT-DIRECTORY",
+                    "children": [
+                        {
+                            "type": "BASH-VARIABLE",
+                            "children": [],
+                            "value": "NGROK_TMP"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ngrokd:11:3",
+        "astCommand": {
+            "type": "SC-CD",
+            "children": [
+                {
+                    "type": "SC-CD-PATH",
+                    "children": [
+                        {
+                            "type": "BASH-VARIABLE",
+                            "children": [],
+                            "value": "NGROK_TMP"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ngrokd:11:4",
+        "astCommand": {
+            "type": "BASH-FOR-IN",
+            "children": [
+                {
+                    "type": "BASH-FOR-IN-VARIABLE",
+                    "children": [
+                        {
+                            "type": "BASH-VARIABLE",
+                            "children": [],
+                            "value": "GOOS"
+                        }
+                    ]
+                },
+                {
+                    "type": "BASH-FOR-IN-ITEMS",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "darwin"
+                        },
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "linux"
+                        },
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "windows"
+                        }
+                    ]
+                },
+                {
+                    "type": "BASH-FOR-IN-BODY",
+                    "children": [
+                        {
+                            "type": "BASH-FOR-IN",
+                            "children": [
+                                {
+                                    "type": "BASH-FOR-IN-VARIABLE",
+                                    "children": [
+                                        {
+                                            "type": "BASH-VARIABLE",
+                                            "children": [],
+                                            "value": "GOARCH"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "BASH-FOR-IN-ITEMS",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "386"
+                                        },
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "amd64"
+                                        },
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "arm"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "BASH-FOR-IN-BODY",
+                                    "children": [
+                                        {
+                                            "type": "SC-ECHO",
+                                            "children": [
+                                                {
+                                                    "type": "SC-ECHO-ITEMS",
+                                                    "children": [
+                                                        {
+                                                            "type": "SC-ECHO-ITEM",
+                                                            "children": [
+                                                                {
+                                                                    "type": "BASH-LITERAL",
+                                                                    "children": [],
+                                                                    "value": "=== ${GOOS}-${GOARCH} ==="
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "SC-EXPORT",
+                                            "children": [
+                                                {
+                                                    "type": "SC-EXPORT-TARGET",
+                                                    "children": [
+                                                        {
+                                                            "type": "BASH-LITERAL",
+                                                            "children": [],
+                                                            "value": "GOOS"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "SC-MAKE",
+                                            "children": [
+                                                {
+                                                    "type": "SC-MAKE-TARGET",
+                                                    "children": [
+                                                        {
+                                                            "type": "BASH-LITERAL",
+                                                            "children": [],
+                                                            "value": "release-all"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "SC-ECHO",
+                                            "children": [
+                                                {
+                                                    "type": "SC-ECHO-ITEMS",
+                                                    "children": [
+                                                        {
+                                                            "type": "SC-ECHO-ITEM",
+                                                            "children": [
+                                                                {
+                                                                    "type": "BASH-LITERAL",
+                                                                    "children": [],
+                                                                    "value": "=== done ==="
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ngrokd:11:5",
+        "astCommand": {
+            "type": "SC-MV",
+            "children": [
+                {
+                    "type": "SC-MV-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-MV-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "NGROK_CA_KEY"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-MV-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "NGROK_CA_CRT"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-MV-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "NGROK_SERVER_KEY"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-MV-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "NGROK_SERVER_CSR"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-MV-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "NGROK_SERVER_CRT"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-MV-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-CONCAT",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "./bin/"
+                                        },
+                                        {
+                                            "type": "BASH-GLOB",
+                                            "children": [],
+                                            "value": "*"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-MV-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "NGROK_DIR"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ngrokd:11:6",
+        "astCommand": {
+            "type": "SC-APT-GET-PURGE",
+            "children": [
+                {
+                    "type": "SC-APT-GET-F-AUTO-REMOVE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-F-YES",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "build-essential"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "curl"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "git"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "golang"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "mercurial"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ngrokd:11:7",
+        "astCommand": {
+            "type": "SC-CD",
+            "children": [
+                {
+                    "type": "SC-CD-PATH",
+                    "children": [
+                        {
+                            "type": "BASH-VARIABLE",
+                            "children": [],
+                            "value": "NGROK_DIR"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ngrokd:11:8",
+        "astCommand": {
+            "type": "SC-RM",
+            "children": [
+                {
+                    "type": "SC-RM-F-RECURSIVE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-F-FORCE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "NGROK_TMP"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

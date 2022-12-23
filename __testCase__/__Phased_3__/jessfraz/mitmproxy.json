@@ -1,0 +1,276 @@
+[
+    {
+        "astCommandId": "mitmproxy:2:0",
+        "astCommand": {
+            "children": [],
+            "type": "SC-APT-GET-UPDATE"
+        }
+    },
+    {
+        "astCommandId": "mitmproxy:2:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-YES"
+                },
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-NO-INSTALL-RECOMMENDS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "ca-certificates",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "curl",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APT-GET-PACKAGES"
+                }
+            ],
+            "type": "SC-APT-GET-INSTALL"
+        }
+    },
+    {
+        "astCommandId": "mitmproxy:2:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-FORCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "value": "/var/lib/apt/lists/",
+                                            "type": "BASH-LITERAL"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": "*",
+                                            "type": "BASH-GLOB"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    },
+    {
+        "astCommandId": "mitmproxy:3:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-GROUP-ADD-F-SYSTEM"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "mitmproxy",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GROUP-ADD-GROUP"
+                }
+            ],
+            "type": "SC-GROUP-ADD"
+        }
+    },
+    {
+        "astCommandId": "mitmproxy:3:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-USER-ADD-F-SYSTEM"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "mitmproxy",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-USER-ADD-GID"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "mitmproxy",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-USER-ADD-LOGIN"
+                }
+            ],
+            "type": "SC-USER-ADD"
+        }
+    },
+    {
+        "astCommandId": "mitmproxy:3:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-MKDIR-F-PARENTS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "/home/mitmproxy/.mitmproxy",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-MKDIR-PATH"
+                        }
+                    ],
+                    "type": "SC-MKDIR-PATHS"
+                }
+            ],
+            "type": "SC-MKDIR"
+        }
+    },
+    {
+        "astCommandId": "mitmproxy:3:3",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-CHOWN-F-RECURSIVE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "mitmproxy:mitmproxy",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-CHOWN-OWNER"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "/home/mitmproxy",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-CHOWN-PATH"
+                        }
+                    ],
+                    "type": "SC-CHOWN-PATHS"
+                }
+            ],
+            "type": "SC-CHOWN"
+        }
+    },
+    {
+        "astCommandId": "mitmproxy:5:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "SC-CURL-F-SILENT"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-CURL-F-SHOW-ERROR"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-CURL-F-LOCATION"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "https://snapshots.mitmproxy.org/${MITMPROXY_VERSION}/mitmproxy-${MITMPROXY_VERSION}-linux.tar.gz",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-CURL-URL"
+                        }
+                    ],
+                    "type": "SC-CURL"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "SC-TAR-V"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-TAR-X"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-TAR-Z"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "value": "/usr/local/bin",
+                                            "type": "BASH-LITERAL"
+                                        }
+                                    ],
+                                    "type": "BASH-PATH"
+                                }
+                            ],
+                            "type": "SC-TAR-DIRECTORY"
+                        }
+                    ],
+                    "type": "SC-TAR"
+                }
+            ],
+            "type": "BASH-PIPELINE"
+        }
+    }
+]

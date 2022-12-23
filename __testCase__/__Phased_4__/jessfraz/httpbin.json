@@ -1,0 +1,92 @@
+[
+    {
+        "astCommandId": "httpbin:1:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APK-F-NO-CACHE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-APK-VIRTUAL:.build-deps"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "SC-APK-PACKAGE:BUILD-BASE"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-APK-PACKAGE:LIBFFI-DEV"
+                        }
+                    ],
+                    "type": "SC-APK-PACKAGES"
+                }
+            ],
+            "type": "SC-APK-ADD"
+        }
+    },
+    {
+        "astCommandId": "httpbin:1:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-PIP-F-NO-CACHE-DIR"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-PIP-TARGET"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-PIP-TARGET"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-PIP-TARGET"
+                        }
+                    ],
+                    "type": "SC-PIP-TARGETS"
+                }
+            ],
+            "type": "SC-PIP-INSTALL"
+        }
+    },
+    {
+        "astCommandId": "httpbin:1:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "SC-APK-VIRTUAL:.build-deps"
+                        }
+                    ],
+                    "type": "SC-APK-PACKAGES"
+                }
+            ],
+            "type": "SC-APK-DEL"
+        }
+    }
+]

@@ -1,0 +1,3578 @@
+[
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:1:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-SET-F-E"
+                },
+                {
+                    "children": [],
+                    "type": "SC-SET-F-U"
+                },
+                {
+                    "children": [],
+                    "type": "SC-SET-F-X"
+                }
+            ],
+            "type": "SC-SET"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:1:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "type": "BASH-LITERAL",
+                                                            "value": "Package: php*"
+                                                        }
+                                                    ],
+                                                    "type": "SC-ECHO-ITEM"
+                                                }
+                                            ],
+                                            "type": "SC-ECHO-ITEMS"
+                                        }
+                                    ],
+                                    "type": "SC-ECHO"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "type": "BASH-LITERAL",
+                                                            "value": "Pin: release *"
+                                                        }
+                                                    ],
+                                                    "type": "SC-ECHO-ITEM"
+                                                }
+                                            ],
+                                            "type": "SC-ECHO-ITEMS"
+                                        }
+                                    ],
+                                    "type": "SC-ECHO"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "type": "BASH-LITERAL",
+                                                            "value": "Pin-Priority: -1"
+                                                        }
+                                                    ],
+                                                    "type": "SC-ECHO-ITEM"
+                                                }
+                                            ],
+                                            "type": "SC-ECHO-ITEMS"
+                                        }
+                                    ],
+                                    "type": "SC-ECHO"
+                                }
+                            ],
+                            "type": "BASH-BRACE-GROUP"
+                        }
+                    ],
+                    "type": "BASH-REDIRECT-COMMAND"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": "/etc/apt/preferences.d/no-debian-php"
+                                        }
+                                    ],
+                                    "type": "BASH-PATH"
+                                }
+                            ],
+                            "type": "BASH-REDIRECT-OVERWRITE"
+                        }
+                    ],
+                    "type": "BASH-REDIRECT-REDIRECTS"
+                }
+            ],
+            "type": "BASH-REDIRECT"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:3:0",
+        "astCommand": {
+            "children": [],
+            "type": "SC-APT-GET-UPDATE"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:3:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-YES"
+                },
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-NO-INSTALL-RECOMMENDS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-VARIABLE",
+                                    "value": "PHPIZE_DEPS"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "ca-certificates"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "curl"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "xz-utils"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APT-GET-PACKAGES"
+                }
+            ],
+            "type": "SC-APT-GET-INSTALL"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:3:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": "/var/lib/apt/lists/"
+                                        },
+                                        {
+                                            "children": [],
+                                            "type": "BASH-GLOB",
+                                            "value": "*"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:5:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-SET-F-E"
+                },
+                {
+                    "children": [],
+                    "type": "SC-SET-F-U"
+                },
+                {
+                    "children": [],
+                    "type": "SC-SET-F-X"
+                }
+            ],
+            "type": "SC-SET"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:5:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-MKDIR-F-PARENTS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "${PHP_INI_DIR}/conf.d"
+                                }
+                            ],
+                            "type": "SC-MKDIR-PATH"
+                        }
+                    ],
+                    "type": "SC-MKDIR-PATHS"
+                }
+            ],
+            "type": "SC-MKDIR"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:5:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-OP",
+                            "value": "SingleBracket"
+                        }
+                    ],
+                    "type": "BASH-CONDITION-OP"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-OP",
+                                            "value": "!"
+                                        }
+                                    ],
+                                    "type": "BASH-CONDITION-UNARY-OP"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "type": "BASH-OP",
+                                                            "value": "-d"
+                                                        }
+                                                    ],
+                                                    "type": "BASH-CONDITION-UNARY-OP"
+                                                },
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "type": "BASH-LITERAL",
+                                                            "value": "/var/www/html"
+                                                        }
+                                                    ],
+                                                    "type": "BASH-CONDITION-UNARY-EXP"
+                                                }
+                                            ],
+                                            "type": "BASH-CONDITION-UNARY"
+                                        }
+                                    ],
+                                    "type": "BASH-CONDITION-UNARY-EXP"
+                                }
+                            ],
+                            "type": "BASH-CONDITION-UNARY"
+                        }
+                    ],
+                    "type": "BASH-CONDITION-EXP"
+                }
+            ],
+            "type": "BASH-CONDITION"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:5:3",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-MKDIR-F-PARENTS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "/var/www/html"
+                                }
+                            ],
+                            "type": "SC-MKDIR-PATH"
+                        }
+                    ],
+                    "type": "SC-MKDIR-PATHS"
+                }
+            ],
+            "type": "SC-MKDIR"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:5:4",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "www-data:www-data"
+                        }
+                    ],
+                    "type": "SC-CHOWN-OWNER"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "/var/www/html"
+                                }
+                            ],
+                            "type": "SC-CHOWN-PATH"
+                        }
+                    ],
+                    "type": "SC-CHOWN-PATHS"
+                }
+            ],
+            "type": "SC-CHOWN"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:5:5",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "777"
+                        }
+                    ],
+                    "type": "SC-CHMOD-MODE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "/var/www/html"
+                                }
+                            ],
+                            "type": "SC-CHMOD-PATH"
+                        }
+                    ],
+                    "type": "SC-CHMOD-PATHS"
+                }
+            ],
+            "type": "SC-CHMOD"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:8:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-SET-F-E"
+                },
+                {
+                    "children": [],
+                    "type": "SC-SET-F-U"
+                },
+                {
+                    "children": [],
+                    "type": "SC-SET-F-X"
+                }
+            ],
+            "type": "SC-SET"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:8:1",
+        "astCommand": {
+            "children": [],
+            "type": "SC-APT-GET-UPDATE"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:8:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-YES"
+                },
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-NO-INSTALL-RECOMMENDS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "apache2"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APT-GET-PACKAGES"
+                }
+            ],
+            "type": "SC-APT-GET-INSTALL"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:8:3",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-FORCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": "/var/lib/apt/lists/"
+                                        },
+                                        {
+                                            "children": [],
+                                            "type": "BASH-GLOB",
+                                            "value": "*"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:8:4",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-SED-F-REGEXP-EXTENDED"
+                },
+                {
+                    "children": [],
+                    "type": "SC-SED-F-IN-PLACE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "s/^export ([^=]+)=(.*)$/: ${\\1:=\\2}\\nexport \\1/"
+                                }
+                            ],
+                            "type": "SC-SED-EXPRESSION"
+                        }
+                    ],
+                    "type": "SC-SED-EXPRESSIONS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "${APACHE_ENVVARS}"
+                                }
+                            ],
+                            "type": "SC-SED-PATH"
+                        }
+                    ],
+                    "type": "SC-SED-PATHS"
+                }
+            ],
+            "type": "SC-SED"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:8:5",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-VARIABLE",
+                            "value": "dir"
+                        }
+                    ],
+                    "type": "BASH-FOR-IN-VARIABLE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-VARIABLE",
+                                    "value": "APACHE_LOCK_DIR"
+                                }
+                            ],
+                            "type": "BASH-DOUBLE-QUOTED"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-VARIABLE",
+                                    "value": "APACHE_RUN_DIR"
+                                }
+                            ],
+                            "type": "BASH-DOUBLE-QUOTED"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-VARIABLE",
+                                    "value": "APACHE_LOG_DIR"
+                                }
+                            ],
+                            "type": "BASH-DOUBLE-QUOTED"
+                        }
+                    ],
+                    "type": "BASH-FOR-IN-ITEMS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "SC-RM-F-RECURSIVE"
+                                },
+                                {
+                                    "children": [],
+                                    "type": "SC-RM-F-VERBOSE"
+                                },
+                                {
+                                    "children": [],
+                                    "type": "SC-RM-F-FORCE"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-LITERAL",
+                                                    "value": "${dir}"
+                                                }
+                                            ],
+                                            "type": "SC-RM-PATH"
+                                        }
+                                    ],
+                                    "type": "SC-RM-PATHS"
+                                }
+                            ],
+                            "type": "SC-RM"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "SC-MKDIR-F-PARENTS"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-LITERAL",
+                                                    "value": "${dir}"
+                                                }
+                                            ],
+                                            "type": "SC-MKDIR-PATH"
+                                        }
+                                    ],
+                                    "type": "SC-MKDIR-PATHS"
+                                }
+                            ],
+                            "type": "SC-MKDIR"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": "${APACHE_RUN_USER}:${APACHE_RUN_GROUP}"
+                                        }
+                                    ],
+                                    "type": "SC-CHOWN-OWNER"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-LITERAL",
+                                                    "value": "${dir}"
+                                                }
+                                            ],
+                                            "type": "SC-CHOWN-PATH"
+                                        }
+                                    ],
+                                    "type": "SC-CHOWN-PATHS"
+                                }
+                            ],
+                            "type": "SC-CHOWN"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": "777"
+                                        }
+                                    ],
+                                    "type": "SC-CHMOD-MODE"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-LITERAL",
+                                                    "value": "${dir}"
+                                                }
+                                            ],
+                                            "type": "SC-CHMOD-PATH"
+                                        }
+                                    ],
+                                    "type": "SC-CHMOD-PATHS"
+                                }
+                            ],
+                            "type": "SC-CHMOD"
+                        }
+                    ],
+                    "type": "BASH-FOR-IN-BODY"
+                }
+            ],
+            "type": "BASH-FOR-IN"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:8:6",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-VERBOSE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-FORCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": "/var/www/html/"
+                                        },
+                                        {
+                                            "children": [],
+                                            "type": "BASH-GLOB",
+                                            "value": "*"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:8:7",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-LN-F-SYMBOLIC"
+                },
+                {
+                    "children": [],
+                    "type": "SC-LN-F-FORCE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-LN-F-NO-TARGET-DIRECTORY"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "/dev/stderr"
+                        }
+                    ],
+                    "type": "SC-LN-TARGET"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "${APACHE_LOG_DIR}/error.log"
+                        }
+                    ],
+                    "type": "SC-LN-LINK"
+                }
+            ],
+            "type": "SC-LN"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:8:8",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-LN-F-SYMBOLIC"
+                },
+                {
+                    "children": [],
+                    "type": "SC-LN-F-FORCE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-LN-F-NO-TARGET-DIRECTORY"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "/dev/stdout"
+                        }
+                    ],
+                    "type": "SC-LN-TARGET"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "${APACHE_LOG_DIR}/access.log"
+                        }
+                    ],
+                    "type": "SC-LN-LINK"
+                }
+            ],
+            "type": "SC-LN"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:8:9",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-LN-F-SYMBOLIC"
+                },
+                {
+                    "children": [],
+                    "type": "SC-LN-F-FORCE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-LN-F-NO-TARGET-DIRECTORY"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "/dev/stdout"
+                        }
+                    ],
+                    "type": "SC-LN-TARGET"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "${APACHE_LOG_DIR}/other_vhosts_access.log"
+                        }
+                    ],
+                    "type": "SC-LN-LINK"
+                }
+            ],
+            "type": "SC-LN"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:8:10",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-CHOWN-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CHOWN-F-NO-DEREFERENCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "${APACHE_RUN_USER}:${APACHE_RUN_GROUP}"
+                        }
+                    ],
+                    "type": "SC-CHOWN-OWNER"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "${APACHE_LOG_DIR}"
+                                }
+                            ],
+                            "type": "SC-CHOWN-PATH"
+                        }
+                    ],
+                    "type": "SC-CHOWN-PATHS"
+                }
+            ],
+            "type": "SC-CHOWN"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:10:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-LITERAL",
+                                                    "value": "<FilesMatch \\.php$>"
+                                                }
+                                            ],
+                                            "type": "SC-ECHO-ITEM"
+                                        }
+                                    ],
+                                    "type": "SC-ECHO-ITEMS"
+                                }
+                            ],
+                            "type": "SC-ECHO"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-LITERAL",
+                                                    "value": "\\tSetHandler application/x-httpd-php"
+                                                }
+                                            ],
+                                            "type": "SC-ECHO-ITEM"
+                                        }
+                                    ],
+                                    "type": "SC-ECHO-ITEMS"
+                                }
+                            ],
+                            "type": "SC-ECHO"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-LITERAL",
+                                                    "value": "</FilesMatch>"
+                                                }
+                                            ],
+                                            "type": "SC-ECHO-ITEM"
+                                        }
+                                    ],
+                                    "type": "SC-ECHO-ITEMS"
+                                }
+                            ],
+                            "type": "SC-ECHO"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-ECHO"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-LITERAL",
+                                                    "value": "DirectoryIndex disabled"
+                                                }
+                                            ],
+                                            "type": "SC-ECHO-ITEM"
+                                        }
+                                    ],
+                                    "type": "SC-ECHO-ITEMS"
+                                }
+                            ],
+                            "type": "SC-ECHO"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-LITERAL",
+                                                    "value": "DirectoryIndex index.php index.html"
+                                                }
+                                            ],
+                                            "type": "SC-ECHO-ITEM"
+                                        }
+                                    ],
+                                    "type": "SC-ECHO-ITEMS"
+                                }
+                            ],
+                            "type": "SC-ECHO"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-ECHO"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-LITERAL",
+                                                    "value": "<Directory /var/www/>"
+                                                }
+                                            ],
+                                            "type": "SC-ECHO-ITEM"
+                                        }
+                                    ],
+                                    "type": "SC-ECHO-ITEMS"
+                                }
+                            ],
+                            "type": "SC-ECHO"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-LITERAL",
+                                                    "value": "\\tOptions -Indexes"
+                                                }
+                                            ],
+                                            "type": "SC-ECHO-ITEM"
+                                        }
+                                    ],
+                                    "type": "SC-ECHO-ITEMS"
+                                }
+                            ],
+                            "type": "SC-ECHO"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-LITERAL",
+                                                    "value": "\\tAllowOverride All"
+                                                }
+                                            ],
+                                            "type": "SC-ECHO-ITEM"
+                                        }
+                                    ],
+                                    "type": "SC-ECHO-ITEMS"
+                                }
+                            ],
+                            "type": "SC-ECHO"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-LITERAL",
+                                                    "value": "</Directory>"
+                                                }
+                                            ],
+                                            "type": "SC-ECHO-ITEM"
+                                        }
+                                    ],
+                                    "type": "SC-ECHO-ITEMS"
+                                }
+                            ],
+                            "type": "SC-ECHO"
+                        }
+                    ],
+                    "type": "BASH-BRACE-GROUP"
+                },
+                {
+                    "children": [],
+                    "type": "UNKNOWN"
+                }
+            ],
+            "type": "BASH-PIPELINE"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:22:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-SET-F-X"
+                },
+                {
+                    "children": [],
+                    "type": "SC-SET-F-E"
+                }
+            ],
+            "type": "SC-SET"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:22:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-VARIABLE",
+                            "value": "fetchDeps"
+                        }
+                    ],
+                    "type": "BASH-ASSIGN-LHS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-SINGLE-QUOTED",
+                            "value": " \t\twget \t"
+                        }
+                    ],
+                    "type": "BASH-ASSIGN-RHS"
+                }
+            ],
+            "type": "BASH-ASSIGN"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:22:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "UNKNOWN"
+                                                }
+                                            ],
+                                            "type": "BASH-REDIRECT-COMMAND"
+                                        },
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [
+                                                                {
+                                                                    "children": [],
+                                                                    "type": "BASH-LITERAL",
+                                                                    "value": "/dev/null"
+                                                                }
+                                                            ],
+                                                            "type": "BASH-PATH"
+                                                        }
+                                                    ],
+                                                    "type": "BASH-REDIRECT-OVERWRITE"
+                                                }
+                                            ],
+                                            "type": "BASH-REDIRECT-REDIRECTS"
+                                        }
+                                    ],
+                                    "type": "BASH-REDIRECT"
+                                }
+                            ],
+                            "type": "BASH-BANGED"
+                        }
+                    ],
+                    "type": "BASH-IF-CONDITION"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-VARIABLE",
+                                            "value": "fetchDeps"
+                                        }
+                                    ],
+                                    "type": "BASH-ASSIGN-LHS"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-VARIABLE",
+                                                    "value": "fetchDeps"
+                                                },
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-LITERAL",
+                                                    "value": " \t\t\tdirmngr \t\t\tgnupg \t\t"
+                                                }
+                                            ],
+                                            "type": "BASH-DOUBLE-QUOTED"
+                                        }
+                                    ],
+                                    "type": "BASH-ASSIGN-RHS"
+                                }
+                            ],
+                            "type": "BASH-ASSIGN"
+                        }
+                    ],
+                    "type": "BASH-IF-THEN"
+                },
+                {
+                    "children": [],
+                    "type": "BASH-IF-ELSE"
+                }
+            ],
+            "type": "BASH-IF-EXPRESSION"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:22:3",
+        "astCommand": {
+            "children": [],
+            "type": "SC-APT-GET-UPDATE"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:22:4",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-YES"
+                },
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-NO-INSTALL-RECOMMENDS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-VARIABLE",
+                                    "value": "fetchDeps"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APT-GET-PACKAGES"
+                }
+            ],
+            "type": "SC-APT-GET-INSTALL"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:22:5",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-FORCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": "/var/lib/apt/lists/"
+                                        },
+                                        {
+                                            "children": [],
+                                            "type": "BASH-GLOB",
+                                            "value": "*"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:22:6",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-MKDIR-F-PARENTS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "/usr/src"
+                                }
+                            ],
+                            "type": "SC-MKDIR-PATH"
+                        }
+                    ],
+                    "type": "SC-MKDIR-PATHS"
+                }
+            ],
+            "type": "SC-MKDIR"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:22:7",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "/usr/src"
+                        }
+                    ],
+                    "type": "SC-CD-PATH"
+                }
+            ],
+            "type": "SC-CD"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:22:8",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "php.tar.xz"
+                                }
+                            ],
+                            "type": "BASH-PATH"
+                        }
+                    ],
+                    "type": "SC-WGET-OUTPUT-DOCUMENT"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "${PHP_URL}"
+                        }
+                    ],
+                    "type": "SC-WGET-URL"
+                }
+            ],
+            "type": "SC-WGET"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:22:9",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-OP",
+                                            "value": "SingleBracket"
+                                        }
+                                    ],
+                                    "type": "BASH-CONDITION-OP"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "type": "BASH-OP",
+                                                            "value": "-n"
+                                                        }
+                                                    ],
+                                                    "type": "BASH-CONDITION-UNARY-OP"
+                                                },
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [
+                                                                {
+                                                                    "children": [],
+                                                                    "type": "BASH-VARIABLE",
+                                                                    "value": "PHP_SHA256"
+                                                                }
+                                                            ],
+                                                            "type": "BASH-DOUBLE-QUOTED"
+                                                        }
+                                                    ],
+                                                    "type": "BASH-CONDITION-UNARY-EXP"
+                                                }
+                                            ],
+                                            "type": "BASH-CONDITION-UNARY"
+                                        }
+                                    ],
+                                    "type": "BASH-CONDITION-EXP"
+                                }
+                            ],
+                            "type": "BASH-CONDITION"
+                        }
+                    ],
+                    "type": "BASH-IF-CONDITION"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "type": "BASH-LITERAL",
+                                                            "value": "${PHP_SHA256} *php.tar.xz"
+                                                        }
+                                                    ],
+                                                    "type": "SC-ECHO-ITEM"
+                                                }
+                                            ],
+                                            "type": "SC-ECHO-ITEMS"
+                                        }
+                                    ],
+                                    "type": "SC-ECHO"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "SC-SHA-256-SUM-F-CHECK"
+                                        }
+                                    ],
+                                    "type": "SC-SHA-256-SUM"
+                                }
+                            ],
+                            "type": "BASH-PIPELINE"
+                        }
+                    ],
+                    "type": "BASH-IF-THEN"
+                },
+                {
+                    "children": [],
+                    "type": "BASH-IF-ELSE"
+                }
+            ],
+            "type": "BASH-IF-EXPRESSION"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:22:10",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-OP",
+                                            "value": "SingleBracket"
+                                        }
+                                    ],
+                                    "type": "BASH-CONDITION-OP"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "type": "BASH-OP",
+                                                            "value": "-n"
+                                                        }
+                                                    ],
+                                                    "type": "BASH-CONDITION-UNARY-OP"
+                                                },
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [
+                                                                {
+                                                                    "children": [],
+                                                                    "type": "BASH-VARIABLE",
+                                                                    "value": "PHP_MD5"
+                                                                }
+                                                            ],
+                                                            "type": "BASH-DOUBLE-QUOTED"
+                                                        }
+                                                    ],
+                                                    "type": "BASH-CONDITION-UNARY-EXP"
+                                                }
+                                            ],
+                                            "type": "BASH-CONDITION-UNARY"
+                                        }
+                                    ],
+                                    "type": "BASH-CONDITION-EXP"
+                                }
+                            ],
+                            "type": "BASH-CONDITION"
+                        }
+                    ],
+                    "type": "BASH-IF-CONDITION"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "type": "BASH-LITERAL",
+                                                            "value": "${PHP_MD5} *php.tar.xz"
+                                                        }
+                                                    ],
+                                                    "type": "SC-ECHO-ITEM"
+                                                }
+                                            ],
+                                            "type": "SC-ECHO-ITEMS"
+                                        }
+                                    ],
+                                    "type": "SC-ECHO"
+                                },
+                                {
+                                    "children": [],
+                                    "type": "UNKNOWN"
+                                }
+                            ],
+                            "type": "BASH-PIPELINE"
+                        }
+                    ],
+                    "type": "BASH-IF-THEN"
+                },
+                {
+                    "children": [],
+                    "type": "BASH-IF-ELSE"
+                }
+            ],
+            "type": "BASH-IF-EXPRESSION"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:22:11",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-OP",
+                                            "value": "SingleBracket"
+                                        }
+                                    ],
+                                    "type": "BASH-CONDITION-OP"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "type": "BASH-OP",
+                                                            "value": "-n"
+                                                        }
+                                                    ],
+                                                    "type": "BASH-CONDITION-UNARY-OP"
+                                                },
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [
+                                                                {
+                                                                    "children": [],
+                                                                    "type": "BASH-VARIABLE",
+                                                                    "value": "PHP_ASC_URL"
+                                                                }
+                                                            ],
+                                                            "type": "BASH-DOUBLE-QUOTED"
+                                                        }
+                                                    ],
+                                                    "type": "BASH-CONDITION-UNARY-EXP"
+                                                }
+                                            ],
+                                            "type": "BASH-CONDITION-UNARY"
+                                        }
+                                    ],
+                                    "type": "BASH-CONDITION-EXP"
+                                }
+                            ],
+                            "type": "BASH-CONDITION"
+                        }
+                    ],
+                    "type": "BASH-IF-CONDITION"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-LITERAL",
+                                                    "value": "php.tar.xz.asc"
+                                                }
+                                            ],
+                                            "type": "BASH-PATH"
+                                        }
+                                    ],
+                                    "type": "SC-WGET-OUTPUT-DOCUMENT"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": "${PHP_ASC_URL}"
+                                        }
+                                    ],
+                                    "type": "SC-WGET-URL"
+                                }
+                            ],
+                            "type": "SC-WGET"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "type": "BASH-VARIABLE",
+                                                            "value": "GNUPGHOME"
+                                                        }
+                                                    ],
+                                                    "type": "BASH-ASSIGN-LHS"
+                                                },
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [
+                                                                {
+                                                                    "children": [
+                                                                        {
+                                                                            "children": [
+                                                                                {
+                                                                                    "children": [],
+                                                                                    "type": "SC-MKTEMP-F-DIRECTORY"
+                                                                                }
+                                                                            ],
+                                                                            "type": "SC-MKTEMP"
+                                                                        }
+                                                                    ],
+                                                                    "type": "BASH-DOLLAR-PARENS"
+                                                                }
+                                                            ],
+                                                            "type": "BASH-DOUBLE-QUOTED"
+                                                        }
+                                                    ],
+                                                    "type": "BASH-ASSIGN-RHS"
+                                                }
+                                            ],
+                                            "type": "BASH-ASSIGN"
+                                        }
+                                    ],
+                                    "type": "SC-EXPORT-TARGET"
+                                }
+                            ],
+                            "type": "SC-EXPORT"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-VARIABLE",
+                                            "value": "key"
+                                        }
+                                    ],
+                                    "type": "BASH-FOR-IN-VARIABLE"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-VARIABLE",
+                                            "value": "GPG_KEYS"
+                                        }
+                                    ],
+                                    "type": "BASH-FOR-IN-ITEMS"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "SC-GPG-F-BATCH"
+                                                },
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "type": "BASH-LITERAL",
+                                                            "value": "ha.pool.sks-keyservers.net"
+                                                        }
+                                                    ],
+                                                    "type": "SC-GPG-KEYSERVER"
+                                                },
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [
+                                                                {
+                                                                    "children": [],
+                                                                    "type": "BASH-LITERAL",
+                                                                    "value": "${key}"
+                                                                }
+                                                            ],
+                                                            "type": "SC-GPG-RECV-KEY"
+                                                        }
+                                                    ],
+                                                    "type": "SC-GPG-RECV-KEYS"
+                                                }
+                                            ],
+                                            "type": "SC-GPG"
+                                        }
+                                    ],
+                                    "type": "BASH-FOR-IN-BODY"
+                                }
+                            ],
+                            "type": "BASH-FOR-IN"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "SC-GPG-F-BATCH"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-LITERAL",
+                                                    "value": "php.tar.xz.asc"
+                                                }
+                                            ],
+                                            "type": "SC-GPG-VERIFY"
+                                        },
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-LITERAL",
+                                                    "value": "php.tar.xz"
+                                                }
+                                            ],
+                                            "type": "SC-GPG-VERIFY"
+                                        }
+                                    ],
+                                    "type": "SC-GPG-VERIFYS"
+                                }
+                            ],
+                            "type": "SC-GPG"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "type": "UNKNOWN"
+                                                        }
+                                                    ],
+                                                    "type": "BASH-REDIRECT-COMMAND"
+                                                },
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [
+                                                                {
+                                                                    "children": [
+                                                                        {
+                                                                            "children": [],
+                                                                            "type": "BASH-LITERAL",
+                                                                            "value": "/dev/null"
+                                                                        }
+                                                                    ],
+                                                                    "type": "BASH-PATH"
+                                                                }
+                                                            ],
+                                                            "type": "BASH-REDIRECT-OVERWRITE"
+                                                        }
+                                                    ],
+                                                    "type": "BASH-REDIRECT-REDIRECTS"
+                                                }
+                                            ],
+                                            "type": "BASH-REDIRECT"
+                                        }
+                                    ],
+                                    "type": "BASH-AND-MEM"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "UNKNOWN"
+                                        }
+                                    ],
+                                    "type": "BASH-AND-MEM"
+                                }
+                            ],
+                            "type": "BASH-AND-IF"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "SC-RM-F-RECURSIVE"
+                                },
+                                {
+                                    "children": [],
+                                    "type": "SC-RM-F-FORCE"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-LITERAL",
+                                                    "value": "${GNUPGHOME}"
+                                                }
+                                            ],
+                                            "type": "SC-RM-PATH"
+                                        }
+                                    ],
+                                    "type": "SC-RM-PATHS"
+                                }
+                            ],
+                            "type": "SC-RM"
+                        }
+                    ],
+                    "type": "BASH-IF-THEN"
+                },
+                {
+                    "children": [],
+                    "type": "BASH-IF-ELSE"
+                }
+            ],
+            "type": "BASH-IF-EXPRESSION"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:22:12",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-YES"
+                },
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-AUTO-REMOVE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "APT::AutoRemove::RecommendsImportant=false"
+                                }
+                            ],
+                            "type": "SC-APT-GET-OPTION"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-VARIABLE",
+                                    "value": "fetchDeps"
+                                }
+                            ],
+                            "type": "SC-APT-GET-OPTION"
+                        }
+                    ],
+                    "type": "SC-APT-GET-OPTIONS"
+                }
+            ],
+            "type": "SC-APT-GET-PURGE"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-SET-F-E"
+                },
+                {
+                    "children": [],
+                    "type": "SC-SET-F-U"
+                },
+                {
+                    "children": [],
+                    "type": "SC-SET-F-X"
+                }
+            ],
+            "type": "SC-SET"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-VARIABLE",
+                            "value": "savedAptMark"
+                        }
+                    ],
+                    "type": "BASH-ASSIGN-LHS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "UNKNOWN"
+                                        }
+                                    ],
+                                    "type": "BASH-DOLLAR-PARENS"
+                                }
+                            ],
+                            "type": "BASH-DOUBLE-QUOTED"
+                        }
+                    ],
+                    "type": "BASH-ASSIGN-RHS"
+                }
+            ],
+            "type": "BASH-ASSIGN"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:2",
+        "astCommand": {
+            "children": [],
+            "type": "SC-APT-GET-UPDATE"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:3",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-YES"
+                },
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-NO-INSTALL-RECOMMENDS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "libcurl4-openssl-dev"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "libedit-dev"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "libsodium-dev"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "libsqlite3-dev"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "libssl-dev"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "libxml2-dev"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "zlib1g-dev"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-VARIABLE",
+                                    "value": "PHP_EXTRA_BUILD_DEPS:-"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APT-GET-PACKAGES"
+                }
+            ],
+            "type": "SC-APT-GET-INSTALL"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:4",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-LITERAL",
+                                                    "value": "s/stretch/buster/g"
+                                                }
+                                            ],
+                                            "type": "SC-SED-EXPRESSION"
+                                        }
+                                    ],
+                                    "type": "SC-SED-EXPRESSIONS"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": "/etc/apt/sources.list"
+                                        }
+                                    ],
+                                    "type": "SC-SED-PATHS"
+                                }
+                            ],
+                            "type": "SC-SED"
+                        }
+                    ],
+                    "type": "BASH-REDIRECT-COMMAND"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": "/etc/apt/sources.list.d/buster.list"
+                                        }
+                                    ],
+                                    "type": "BASH-PATH"
+                                }
+                            ],
+                            "type": "BASH-REDIRECT-OVERWRITE"
+                        }
+                    ],
+                    "type": "BASH-REDIRECT-REDIRECTS"
+                }
+            ],
+            "type": "BASH-REDIRECT"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:5",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "type": "BASH-LITERAL",
+                                                            "value": "Package: *"
+                                                        }
+                                                    ],
+                                                    "type": "SC-ECHO-ITEM"
+                                                }
+                                            ],
+                                            "type": "SC-ECHO-ITEMS"
+                                        }
+                                    ],
+                                    "type": "SC-ECHO"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "type": "BASH-LITERAL",
+                                                            "value": "Pin: release n=buster"
+                                                        }
+                                                    ],
+                                                    "type": "SC-ECHO-ITEM"
+                                                }
+                                            ],
+                                            "type": "SC-ECHO-ITEMS"
+                                        }
+                                    ],
+                                    "type": "SC-ECHO"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "type": "BASH-LITERAL",
+                                                            "value": "Pin-Priority: -10"
+                                                        }
+                                                    ],
+                                                    "type": "SC-ECHO-ITEM"
+                                                }
+                                            ],
+                                            "type": "SC-ECHO-ITEMS"
+                                        }
+                                    ],
+                                    "type": "SC-ECHO"
+                                },
+                                {
+                                    "children": [],
+                                    "type": "SC-ECHO"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "type": "BASH-LITERAL",
+                                                            "value": "Package: libargon2*"
+                                                        }
+                                                    ],
+                                                    "type": "SC-ECHO-ITEM"
+                                                }
+                                            ],
+                                            "type": "SC-ECHO-ITEMS"
+                                        }
+                                    ],
+                                    "type": "SC-ECHO"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "type": "BASH-LITERAL",
+                                                            "value": "Pin: release n=buster"
+                                                        }
+                                                    ],
+                                                    "type": "SC-ECHO-ITEM"
+                                                }
+                                            ],
+                                            "type": "SC-ECHO-ITEMS"
+                                        }
+                                    ],
+                                    "type": "SC-ECHO"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "type": "BASH-LITERAL",
+                                                            "value": "Pin-Priority: 990"
+                                                        }
+                                                    ],
+                                                    "type": "SC-ECHO-ITEM"
+                                                }
+                                            ],
+                                            "type": "SC-ECHO-ITEMS"
+                                        }
+                                    ],
+                                    "type": "SC-ECHO"
+                                }
+                            ],
+                            "type": "BASH-BRACE-GROUP"
+                        }
+                    ],
+                    "type": "BASH-REDIRECT-COMMAND"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": "/etc/apt/preferences.d/argon2-buster"
+                                        }
+                                    ],
+                                    "type": "BASH-PATH"
+                                }
+                            ],
+                            "type": "BASH-REDIRECT-OVERWRITE"
+                        }
+                    ],
+                    "type": "BASH-REDIRECT-REDIRECTS"
+                }
+            ],
+            "type": "BASH-REDIRECT"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:6",
+        "astCommand": {
+            "children": [],
+            "type": "SC-APT-GET-UPDATE"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:7",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-YES"
+                },
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-NO-INSTALL-RECOMMENDS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "libargon2-dev"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APT-GET-PACKAGES"
+                }
+            ],
+            "type": "SC-APT-GET-INSTALL"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:8",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-FORCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": "/var/lib/apt/lists/"
+                                        },
+                                        {
+                                            "children": [],
+                                            "type": "BASH-GLOB",
+                                            "value": "*"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:9",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-VARIABLE",
+                                            "value": "CFLAGS"
+                                        }
+                                    ],
+                                    "type": "BASH-ASSIGN-LHS"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-VARIABLE",
+                                                    "value": "PHP_CFLAGS"
+                                                }
+                                            ],
+                                            "type": "BASH-DOUBLE-QUOTED"
+                                        }
+                                    ],
+                                    "type": "BASH-ASSIGN-RHS"
+                                }
+                            ],
+                            "type": "BASH-ASSIGN"
+                        }
+                    ],
+                    "type": "SC-EXPORT-TARGET"
+                }
+            ],
+            "type": "SC-EXPORT"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:10",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "/usr/src/php"
+                        }
+                    ],
+                    "type": "SC-CD-PATH"
+                }
+            ],
+            "type": "SC-CD"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:11",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-VARIABLE",
+                            "value": "gnuArch"
+                        }
+                    ],
+                    "type": "BASH-ASSIGN-LHS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "type": "BASH-LITERAL",
+                                                            "value": "DEB_BUILD_GNU_TYPE"
+                                                        }
+                                                    ],
+                                                    "type": "SC-DPKG-ARCHITECTURE-QUERY"
+                                                }
+                                            ],
+                                            "type": "SC-DPKG-ARCHITECTURE"
+                                        }
+                                    ],
+                                    "type": "BASH-DOLLAR-PARENS"
+                                }
+                            ],
+                            "type": "BASH-DOUBLE-QUOTED"
+                        }
+                    ],
+                    "type": "BASH-ASSIGN-RHS"
+                }
+            ],
+            "type": "BASH-ASSIGN"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:12",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-VARIABLE",
+                            "value": "debMultiarch"
+                        }
+                    ],
+                    "type": "BASH-ASSIGN-LHS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "type": "BASH-LITERAL",
+                                                            "value": "DEB_BUILD_MULTIARCH"
+                                                        }
+                                                    ],
+                                                    "type": "SC-DPKG-ARCHITECTURE-QUERY"
+                                                }
+                                            ],
+                                            "type": "SC-DPKG-ARCHITECTURE"
+                                        }
+                                    ],
+                                    "type": "BASH-DOLLAR-PARENS"
+                                }
+                            ],
+                            "type": "BASH-DOUBLE-QUOTED"
+                        }
+                    ],
+                    "type": "BASH-ASSIGN-RHS"
+                }
+            ],
+            "type": "BASH-ASSIGN"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:13",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-OP",
+                                            "value": "SingleBracket"
+                                        }
+                                    ],
+                                    "type": "BASH-CONDITION-OP"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "type": "BASH-OP",
+                                                            "value": "!"
+                                                        }
+                                                    ],
+                                                    "type": "BASH-CONDITION-UNARY-OP"
+                                                },
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [
+                                                                {
+                                                                    "children": [
+                                                                        {
+                                                                            "children": [],
+                                                                            "type": "BASH-OP",
+                                                                            "value": "-d"
+                                                                        }
+                                                                    ],
+                                                                    "type": "BASH-CONDITION-UNARY-OP"
+                                                                },
+                                                                {
+                                                                    "children": [
+                                                                        {
+                                                                            "children": [],
+                                                                            "type": "BASH-LITERAL",
+                                                                            "value": "/usr/include/curl"
+                                                                        }
+                                                                    ],
+                                                                    "type": "BASH-CONDITION-UNARY-EXP"
+                                                                }
+                                                            ],
+                                                            "type": "BASH-CONDITION-UNARY"
+                                                        }
+                                                    ],
+                                                    "type": "BASH-CONDITION-UNARY-EXP"
+                                                }
+                                            ],
+                                            "type": "BASH-CONDITION-UNARY"
+                                        }
+                                    ],
+                                    "type": "BASH-CONDITION-EXP"
+                                }
+                            ],
+                            "type": "BASH-CONDITION"
+                        }
+                    ],
+                    "type": "BASH-IF-CONDITION"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "SC-LN-F-SYMBOLIC"
+                                },
+                                {
+                                    "children": [],
+                                    "type": "SC-LN-F-NO-TARGET-DIRECTORY"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": "/usr/include/${debMultiarch}/curl"
+                                        }
+                                    ],
+                                    "type": "SC-LN-TARGET"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": "/usr/local/include/curl"
+                                        }
+                                    ],
+                                    "type": "SC-LN-LINK"
+                                }
+                            ],
+                            "type": "SC-LN"
+                        }
+                    ],
+                    "type": "BASH-IF-THEN"
+                },
+                {
+                    "children": [],
+                    "type": "BASH-IF-ELSE"
+                }
+            ],
+            "type": "BASH-IF-EXPRESSION"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:14",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "${gnuArch}"
+                        }
+                    ],
+                    "type": "SC-CONFIGURE-BUILD"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "${PHP_INI_DIR}"
+                        }
+                    ],
+                    "type": "SC-CONFIGURE-WITH-CONFIG-FILE-PATH"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "${PHP_INI_DIR}/conf.d"
+                        }
+                    ],
+                    "type": "SC-CONFIGURE-WITH-CONFIG-FILE-SCAN-DIR"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "fatal"
+                        }
+                    ],
+                    "type": "SC-CONFIGURE-ENABLE-OPTION-CHECKING"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-WITH-MHASH"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-ENABLE-FTP"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-ENABLE-MBSTRING"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-ENABLE-MYSQLND"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-WITH-PASSWORD-ARGON2"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "shared"
+                        }
+                    ],
+                    "type": "SC-CONFIGURE-WITH-SODIUM"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-WITH-CURL"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-WITH-LIBEDIT"
+                },
+                {
+                    "children": [],
+                    "type": "SC-CONFIGURE-WITH-OPENSSL"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "UNKNOWN"
+                                                }
+                                            ],
+                                            "type": "BASH-AND-MEM"
+                                        },
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [
+                                                                {
+                                                                    "children": [
+                                                                        {
+                                                                            "children": [],
+                                                                            "type": "BASH-LITERAL",
+                                                                            "value": "--without-pcre-jit"
+                                                                        }
+                                                                    ],
+                                                                    "type": "SC-ECHO-ITEM"
+                                                                }
+                                                            ],
+                                                            "type": "SC-ECHO-ITEMS"
+                                                        }
+                                                    ],
+                                                    "type": "SC-ECHO"
+                                                }
+                                            ],
+                                            "type": "BASH-AND-MEM"
+                                        }
+                                    ],
+                                    "type": "BASH-AND-IF"
+                                }
+                            ],
+                            "type": "BASH-DOLLAR-PARENS"
+                        }
+                    ],
+                    "type": "SC-CONFIGURE-WITH-ZLIB"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "lib/${debMultiarch}"
+                        }
+                    ],
+                    "type": "SC-CONFIGURE-WITH-LIBDIR"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-VARIABLE",
+                                    "value": "PHP_EXTRA_CONFIGURE_ARGS:-"
+                                }
+                            ],
+                            "type": "SC-CONFIGURE-IGNORE"
+                        }
+                    ],
+                    "type": "SC-CONFIGURE-IGNORES"
+                }
+            ],
+            "type": "SC-CONFIGURE"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:15",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "$( nproc )"
+                        }
+                    ],
+                    "type": "SC-MAKE-JOBS"
+                }
+            ],
+            "type": "SC-MAKE"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:16",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "install"
+                        }
+                    ],
+                    "type": "SC-MAKE-TARGET"
+                }
+            ],
+            "type": "SC-MAKE"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:17",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": "f"
+                                        }
+                                    ],
+                                    "type": "SC-FIND-TYPE"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-LITERAL",
+                                                    "value": true
+                                                }
+                                            ],
+                                            "type": "SC-FIND-E"
+                                        },
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-LITERAL",
+                                                    "value": true
+                                                }
+                                            ],
+                                            "type": "SC-FIND-E"
+                                        },
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-LITERAL",
+                                                    "value": true
+                                                }
+                                            ],
+                                            "type": "SC-FIND-E"
+                                        }
+                                    ],
+                                    "type": "SC-FIND-ES"
+                                },
+                                {
+                                    "children": [],
+                                    "type": "SC-FIND-X"
+                                },
+                                {
+                                    "children": [],
+                                    "type": "SC-FIND-C"
+                                },
+                                {
+                                    "children": [],
+                                    "type": "SC-FIND-U"
+                                },
+                                {
+                                    "children": [],
+                                    "type": "SC-FIND-T"
+                                },
+                                {
+                                    "children": [],
+                                    "type": "SC-FIND-A"
+                                },
+                                {
+                                    "children": [],
+                                    "type": "SC-FIND-B"
+                                },
+                                {
+                                    "children": [],
+                                    "type": "SC-FIND-L"
+                                },
+                                {
+                                    "children": [],
+                                    "type": "SC-FIND-F-EXEC"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": "/usr/local/bin"
+                                        }
+                                    ],
+                                    "type": "SC-FIND-TARGET"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-LITERAL",
+                                                    "value": "strip"
+                                                }
+                                            ],
+                                            "type": "SC-FIND-ARG"
+                                        },
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-LITERAL",
+                                                    "value": "--strip-all"
+                                                }
+                                            ],
+                                            "type": "SC-FIND-ARG"
+                                        },
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-SINGLE-QUOTED",
+                                                    "value": "{}"
+                                                }
+                                            ],
+                                            "type": "SC-FIND-ARG"
+                                        },
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "BASH-LITERAL",
+                                                    "value": "+"
+                                                }
+                                            ],
+                                            "type": "SC-FIND-ARG"
+                                        }
+                                    ],
+                                    "type": "SC-FIND-ARGS"
+                                }
+                            ],
+                            "type": "SC-FIND"
+                        }
+                    ],
+                    "type": "BASH-OR-MEM"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "SC-TRUE"
+                        }
+                    ],
+                    "type": "BASH-OR-MEM"
+                }
+            ],
+            "type": "BASH-OR-IF"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:18",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "clean"
+                        }
+                    ],
+                    "type": "SC-MAKE-TARGET"
+                }
+            ],
+            "type": "SC-MAKE"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:19",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-CP-F-VERBOSE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": "php.ini-"
+                                        },
+                                        {
+                                            "children": [],
+                                            "type": "BASH-GLOB",
+                                            "value": "*"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-CP-PATH"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "${PHP_INI_DIR}/"
+                                }
+                            ],
+                            "type": "SC-CP-PATH"
+                        }
+                    ],
+                    "type": "SC-CP-PATHS"
+                }
+            ],
+            "type": "SC-CP"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:20",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "BASH-LITERAL",
+                            "value": "/"
+                        }
+                    ],
+                    "type": "SC-CD-PATH"
+                }
+            ],
+            "type": "SC-CD"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:21",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "UNKNOWN"
+                        }
+                    ],
+                    "type": "BASH-REDIRECT-COMMAND"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": "/dev/null"
+                                        }
+                                    ],
+                                    "type": "BASH-PATH"
+                                }
+                            ],
+                            "type": "BASH-REDIRECT-OVERWRITE"
+                        }
+                    ],
+                    "type": "BASH-REDIRECT-REDIRECTS"
+                }
+            ],
+            "type": "BASH-REDIRECT"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:22",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-OP",
+                                            "value": "SingleBracket"
+                                        }
+                                    ],
+                                    "type": "BASH-CONDITION-OP"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [],
+                                                            "type": "BASH-OP",
+                                                            "value": "-z"
+                                                        }
+                                                    ],
+                                                    "type": "BASH-CONDITION-UNARY-OP"
+                                                },
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [
+                                                                {
+                                                                    "children": [],
+                                                                    "type": "BASH-VARIABLE",
+                                                                    "value": "savedAptMark"
+                                                                }
+                                                            ],
+                                                            "type": "BASH-DOUBLE-QUOTED"
+                                                        }
+                                                    ],
+                                                    "type": "BASH-CONDITION-UNARY-EXP"
+                                                }
+                                            ],
+                                            "type": "BASH-CONDITION-UNARY"
+                                        }
+                                    ],
+                                    "type": "BASH-CONDITION-EXP"
+                                }
+                            ],
+                            "type": "BASH-CONDITION"
+                        }
+                    ],
+                    "type": "BASH-OR-MEM"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "type": "UNKNOWN"
+                        }
+                    ],
+                    "type": "BASH-OR-MEM"
+                }
+            ],
+            "type": "BASH-OR-IF"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:23",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "f"
+                                }
+                            ],
+                            "type": "SC-FIND-TYPE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": true
+                                        }
+                                    ],
+                                    "type": "SC-FIND-E"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": true
+                                        }
+                                    ],
+                                    "type": "SC-FIND-E"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": true
+                                        }
+                                    ],
+                                    "type": "SC-FIND-E"
+                                }
+                            ],
+                            "type": "SC-FIND-ES"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-FIND-X"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-FIND-C"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-FIND-U"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-FIND-T"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-FIND-A"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-FIND-B"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-FIND-L"
+                        },
+                        {
+                            "children": [],
+                            "type": "SC-FIND-F-EXEC"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "/usr/local"
+                                }
+                            ],
+                            "type": "SC-FIND-TARGET"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-LITERAL",
+                                            "value": "ldd"
+                                        }
+                                    ],
+                                    "type": "SC-FIND-ARG"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-SINGLE-QUOTED",
+                                            "value": "{}"
+                                        }
+                                    ],
+                                    "type": "SC-FIND-ARG"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "BASH-SINGLE-QUOTED",
+                                            "value": ";"
+                                        }
+                                    ],
+                                    "type": "SC-FIND-ARG"
+                                }
+                            ],
+                            "type": "SC-FIND-ARGS"
+                        }
+                    ],
+                    "type": "SC-FIND"
+                },
+                {
+                    "children": [],
+                    "type": "UNKNOWN"
+                },
+                {
+                    "children": [],
+                    "type": "UNKNOWN"
+                },
+                {
+                    "children": [],
+                    "type": "UNKNOWN"
+                },
+                {
+                    "children": [],
+                    "type": "UNKNOWN"
+                },
+                {
+                    "children": [],
+                    "type": "UNKNOWN"
+                },
+                {
+                    "children": [],
+                    "type": "UNKNOWN"
+                }
+            ],
+            "type": "BASH-PIPELINE"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:24",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-YES"
+                },
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-AUTO-REMOVE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "APT::AutoRemove::RecommendsImportant=false"
+                                }
+                            ],
+                            "type": "SC-APT-GET-OPTION"
+                        }
+                    ],
+                    "type": "SC-APT-GET-OPTIONS"
+                }
+            ],
+            "type": "SC-APT-GET-PURGE"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:25",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-FORCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "/tmp/pear"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "type": "BASH-LITERAL",
+                                    "value": "~/.pearrc"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    },
+    {
+        "astCommandId": "46146eb0c2ad8dccdf2df8ee87c89605a3180a3d:24:26",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-PHP-VERSION"
+                }
+            ],
+            "type": "SC-PHP"
+        }
+    }
+]

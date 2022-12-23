@@ -1,0 +1,403 @@
+[
+    {
+        "astCommandId": "discuz:1:0",
+        "astCommand": {
+            "type": "SC-SET",
+            "children": [
+                {
+                    "type": "SC-SET-F-X",
+                    "children": []
+                },
+                {
+                    "type": "SC-SET-F-E",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "discuz:1:1",
+        "astCommand": {
+            "type": "SC-APT-GET-UPDATE",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "discuz:1:2",
+        "astCommand": {
+            "type": "SC-APT-GET-INSTALL",
+            "children": [
+                {
+                    "type": "SC-APT-GET-F-YES",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "curl"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "libjpeg-dev"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "libpng12-dev"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "unzip"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "discuz:1:3",
+        "astCommand": {
+            "type": "SC-RM",
+            "children": [
+                {
+                    "type": "SC-RM-F-RECURSIVE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-F-FORCE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-CONCAT",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "/var/lib/apt/lists/"
+                                        },
+                                        {
+                                            "type": "BASH-GLOB",
+                                            "children": [],
+                                            "value": "*"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "discuz:1:4",
+        "astCommand": {
+            "type": "SC-DPHP-EXT-INSTALL",
+            "children": [
+                {
+                    "type": "SC-DPHP-EXT-INSTALL-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-DPHP-EXT-INSTALL-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "gd"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-DPHP-EXT-INSTALL-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "mysql"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "discuz:7:0",
+        "astCommand": {
+            "type": "SC-SET",
+            "children": [
+                {
+                    "type": "SC-SET-F-X",
+                    "children": []
+                },
+                {
+                    "type": "SC-SET-F-E",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "discuz:7:1",
+        "astCommand": {
+            "type": "SC-CURL",
+            "children": [
+                {
+                    "type": "SC-CURL-F-FAIL",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-OUTPUT",
+                    "children": [
+                        {
+                            "type": "BASH-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "DISCUZ_FILE"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-CURL-URL",
+                    "children": [
+                        {
+                            "type": "BASH-VARIABLE",
+                            "children": [],
+                            "value": "DISCUZ_URL"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "discuz:7:2",
+        "astCommand": {
+            "type": "BASH-PIPELINE",
+            "children": [
+                {
+                    "type": "SC-ECHO",
+                    "children": [
+                        {
+                            "type": "SC-ECHO-ITEMS",
+                            "children": [
+                                {
+                                    "type": "SC-ECHO-ITEM",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "${DISCUZ_MD5}  ${DISCUZ_FILE}"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "UNKNOWN",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "discuz:7:3",
+        "astCommand": {
+            "type": "SC-UNZIP",
+            "children": [
+                {
+                    "type": "SC-UNZIP-FILE",
+                    "children": [
+                        {
+                            "type": "BASH-VARIABLE",
+                            "children": [],
+                            "value": "DISCUZ_FILE"
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-UNZIP-ITEMS",
+                    "children": [
+                        {
+                            "type": "SC-UNZIP-ITEM",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "upload/*"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "discuz:7:4",
+        "astCommand": {
+            "type": "SC-MV",
+            "children": [
+                {
+                    "type": "SC-MV-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-MV-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-CONCAT",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "upload/"
+                                        },
+                                        {
+                                            "type": "BASH-GLOB",
+                                            "children": [],
+                                            "value": "*"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-MV-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "discuz:7:5",
+        "astCommand": {
+            "type": "SC-RM",
+            "children": [
+                {
+                    "type": "SC-RM-F-RECURSIVE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-F-FORCE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "DISCUZ_FILE"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "upload"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "discuz:7:6",
+        "astCommand": {
+            "type": "SC-CHOWN",
+            "children": [
+                {
+                    "type": "SC-CHOWN-F-RECURSIVE",
+                    "children": []
+                },
+                {
+                    "type": "SC-CHOWN-OWNER",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "www-data:www-data"
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-CHOWN-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-CHOWN-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

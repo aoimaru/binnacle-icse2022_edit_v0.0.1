@@ -1,0 +1,297 @@
+[
+    {
+        "astCommandId": "cura:1:0",
+        "astCommand": {
+            "children": [],
+            "type": "SC-APT-GET-UPDATE"
+        }
+    },
+    {
+        "astCommandId": "cura:1:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-YES"
+                },
+                {
+                    "children": [],
+                    "type": "SC-APT-GET-F-NO-INSTALL-RECOMMENDS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "ca-certificates",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libgfortran4",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libssl-dev",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "wget",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APT-GET-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APT-GET-PACKAGES"
+                }
+            ],
+            "type": "SC-APT-GET-INSTALL"
+        }
+    },
+    {
+        "astCommandId": "cura:1:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-RM-F-RECURSIVE"
+                },
+                {
+                    "children": [],
+                    "type": "SC-RM-F-FORCE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "value": "/var/lib/apt/lists/",
+                                            "type": "BASH-LITERAL"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": "*",
+                                            "type": "BASH-GLOB"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-RM-PATH"
+                        }
+                    ],
+                    "type": "SC-RM-PATHS"
+                }
+            ],
+            "type": "SC-RM"
+        }
+    },
+    {
+        "astCommandId": "cura:2:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "/tmp/cura.deb",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "BASH-PATH"
+                        }
+                    ],
+                    "type": "SC-WGET-OUTPUT-DOCUMENT"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "https://gitlab.com/lulzbot3d/cura-le/cura-lulzbot/uploads/0676b39295476b93181fa8a512f34265/cura-lulzbot_3.2.21_amd64.deb",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-WGET-URL"
+                }
+            ],
+            "type": "SC-WGET"
+        }
+    },
+    {
+        "astCommandId": "cura:2:1",
+        "astCommand": {
+            "children": [],
+            "type": "SC-APT-UPDATE"
+        }
+    },
+    {
+        "astCommandId": "cura:2:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "value": "/tmp/cura.deb",
+                                                    "type": "BASH-LITERAL"
+                                                }
+                                            ],
+                                            "type": "SC-DPKG-INSTALL"
+                                        }
+                                    ],
+                                    "type": "SC-DPKG-INSTALLS"
+                                }
+                            ],
+                            "type": "SC-DPKG"
+                        }
+                    ],
+                    "type": "BASH-OR-MEM"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "type": "SC-TRUE"
+                                        }
+                                    ],
+                                    "type": "BASH-AND-MEM"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "SC-APT-GET-F-YES"
+                                                },
+                                                {
+                                                    "children": [],
+                                                    "type": "SC-APT-GET-F-FIX-BROKEN"
+                                                }
+                                            ],
+                                            "type": "SC-APT-GET-INSTALL"
+                                        }
+                                    ],
+                                    "type": "BASH-AND-MEM"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "SC-RM-F-RECURSIVE"
+                                                },
+                                                {
+                                                    "children": [],
+                                                    "type": "SC-RM-F-FORCE"
+                                                },
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [
+                                                                {
+                                                                    "children": [
+                                                                        {
+                                                                            "children": [],
+                                                                            "value": "/var/lib/apt/lists/",
+                                                                            "type": "BASH-LITERAL"
+                                                                        },
+                                                                        {
+                                                                            "children": [],
+                                                                            "value": "*",
+                                                                            "type": "BASH-GLOB"
+                                                                        }
+                                                                    ],
+                                                                    "type": "BASH-CONCAT"
+                                                                }
+                                                            ],
+                                                            "type": "SC-RM-PATH"
+                                                        }
+                                                    ],
+                                                    "type": "SC-RM-PATHS"
+                                                }
+                                            ],
+                                            "type": "SC-RM"
+                                        }
+                                    ],
+                                    "type": "BASH-AND-MEM"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [],
+                                                    "type": "SC-RM-F-RECURSIVE"
+                                                },
+                                                {
+                                                    "children": [],
+                                                    "type": "SC-RM-F-FORCE"
+                                                },
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [
+                                                                {
+                                                                    "children": [],
+                                                                    "value": "/tmp/cura.deb",
+                                                                    "type": "BASH-LITERAL"
+                                                                }
+                                                            ],
+                                                            "type": "SC-RM-PATH"
+                                                        }
+                                                    ],
+                                                    "type": "SC-RM-PATHS"
+                                                }
+                                            ],
+                                            "type": "SC-RM"
+                                        }
+                                    ],
+                                    "type": "BASH-AND-MEM"
+                                }
+                            ],
+                            "type": "BASH-AND-IF"
+                        }
+                    ],
+                    "type": "BASH-OR-MEM"
+                }
+            ],
+            "type": "BASH-OR-IF"
+        }
+    }
+]

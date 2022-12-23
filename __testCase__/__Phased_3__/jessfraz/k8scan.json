@@ -1,0 +1,286 @@
+[
+    {
+        "astCommandId": "k8scan:3:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-APK-F-NO-CACHE"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "ca-certificates",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "git",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "gcc",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libc-dev",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "libgcc",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "make",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-APK-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-APK-PACKAGES"
+                }
+            ],
+            "type": "SC-APK-ADD"
+        }
+    },
+    {
+        "astCommandId": "k8scan:4:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "honnef.co/go/tools/cmd/staticcheck",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-GO-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "golang.org/x/lint/golint",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-GO-PACKAGE"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "github.com/google/go-cmp/cmp",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-GO-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-GO-PACKAGES"
+                }
+            ],
+            "type": "SC-GO-GET"
+        }
+    },
+    {
+        "astCommandId": "k8scan:7:0",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-SET-F-X"
+                }
+            ],
+            "type": "SC-SET"
+        }
+    },
+    {
+        "astCommandId": "k8scan:7:1",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-GO-F-D"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": ".",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-GO-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-GO-PACKAGES"
+                }
+            ],
+            "type": "SC-GO-GET"
+        }
+    },
+    {
+        "astCommandId": "k8scan:7:2",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "./...",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-GO-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-GO-PACKAGES"
+                }
+            ],
+            "type": "SC-GO-TEST"
+        }
+    },
+    {
+        "astCommandId": "k8scan:7:3",
+        "astCommand": {
+            "children": [],
+            "type": "SC-GO-VET"
+        }
+    },
+    {
+        "astCommandId": "k8scan:7:4",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [],
+                    "type": "SC-GO-F-A"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "netgo",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GO-TAGS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "value": "-w -extldflags \"-static\"",
+                            "type": "BASH-LITERAL"
+                        }
+                    ],
+                    "type": "SC-GO-LDFLAGS"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "/usr/bin/k8scan",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "BASH-PATH"
+                        }
+                    ],
+                    "type": "SC-GO-O"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [],
+                                            "value": "*",
+                                            "type": "BASH-GLOB"
+                                        },
+                                        {
+                                            "children": [],
+                                            "value": ".go",
+                                            "type": "BASH-LITERAL"
+                                        }
+                                    ],
+                                    "type": "BASH-CONCAT"
+                                }
+                            ],
+                            "type": "SC-GO-PACKAGE"
+                        }
+                    ],
+                    "type": "SC-GO-PACKAGES"
+                }
+            ],
+            "type": "SC-GO-BUILD"
+        }
+    },
+    {
+        "astCommandId": "k8scan:7:5",
+        "astCommand": {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "value": "Build complete.",
+                                    "type": "BASH-LITERAL"
+                                }
+                            ],
+                            "type": "SC-ECHO-ITEM"
+                        }
+                    ],
+                    "type": "SC-ECHO-ITEMS"
+                }
+            ],
+            "type": "SC-ECHO"
+        }
+    }
+]

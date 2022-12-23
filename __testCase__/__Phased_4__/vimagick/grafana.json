@@ -1,0 +1,188 @@
+[
+    {
+        "astCommandId": "grafana:4:0",
+        "astCommand": {
+            "type": "SC-SET",
+            "children": [
+                {
+                    "type": "SC-SET-F-X",
+                    "children": []
+                },
+                {
+                    "type": "SC-SET-F-E",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "grafana:4:1",
+        "astCommand": {
+            "type": "SC-APT-GET-UPDATE",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "grafana:4:2",
+        "astCommand": {
+            "type": "SC-APT-GET-INSTALL",
+            "children": [
+                {
+                    "type": "SC-APT-GET-F-YES",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-PACKAGE:CA-CERTIFICATES",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE:LIBFONTCONFIG",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APT-GET-PACKAGE:WGET",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "grafana:4:3",
+        "astCommand": {
+            "type": "SC-WGET",
+            "children": [
+                {
+                    "type": "SC-WGET-URL",
+                    "children": [
+                        {
+                            "type": "BASH-VARIABLE:GRAFANA_URL",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "grafana:4:4",
+        "astCommand": {
+            "type": "SC-DPKG",
+            "children": [
+                {
+                    "type": "SC-DPKG-INSTALLS",
+                    "children": [
+                        {
+                            "type": "SC-DPKG-INSTALL",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:GRAFANA_FILE",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "grafana:4:5",
+        "astCommand": {
+            "type": "SC-APT-GET-PURGE",
+            "children": [
+                {
+                    "type": "SC-APT-GET-F-AUTO-REMOVE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-F-YES",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-GET-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APT-GET-PACKAGE:WGET",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "grafana:4:6",
+        "astCommand": {
+            "type": "SC-RM",
+            "children": [
+                {
+                    "type": "SC-RM-F-RECURSIVE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-F-FORCE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE:GRAFANA_FILE",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-CONCAT",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-PATH-VAR",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-PATH-ABSOLUTE",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-MAYBE-PATH",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "ABS-APT-LISTS",
+                                                    "children": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "BASH-GLOB",
+                                            "children": [
+                                                {
+                                                    "type": "ABS-GLOB-STAR",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

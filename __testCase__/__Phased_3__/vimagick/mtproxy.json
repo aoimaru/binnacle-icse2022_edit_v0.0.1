@@ -1,0 +1,443 @@
+[
+    {
+        "astCommandId": "mtproxy:2:0",
+        "astCommand": {
+            "type": "SC-SET",
+            "children": [
+                {
+                    "type": "SC-SET-F-X",
+                    "children": []
+                },
+                {
+                    "type": "SC-SET-F-E",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "mtproxy:2:1",
+        "astCommand": {
+            "type": "SC-APT-UPDATE",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "mtproxy:2:2",
+        "astCommand": {
+            "type": "SC-APT-INSTALL",
+            "children": [
+                {
+                    "type": "SC-APT-F-YES",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APT-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "build-essential"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "curl"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "git"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "libssl-dev"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "zlib1g-dev"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "mtproxy:2:3",
+        "astCommand": {
+            "type": "SC-GIT-CLONE",
+            "children": [
+                {
+                    "type": "SC-GIT-F-SINGLE-BRANCH",
+                    "children": []
+                },
+                {
+                    "type": "SC-GIT-DEPTH",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "1"
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-GIT-URL",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "https://github.com/TelegramMessenger/MTProxy.git"
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-GIT-DIRECTORY",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "."
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "mtproxy:2:4",
+        "astCommand": {
+            "type": "SC-MAKE",
+            "children": [
+                {
+                    "type": "SC-MAKE-JOBS",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "$( getconf _NPROCESSORS_ONLN)"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "mtproxy:2:5",
+        "astCommand": {
+            "type": "SC-CP",
+            "children": [
+                {
+                    "type": "SC-CP-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-CP-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "./objs/bin/mtproto-proxy"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-CP-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/usr/local/bin/"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "mtproxy:2:6",
+        "astCommand": {
+            "type": "SC-APT-REMOVE",
+            "children": [
+                {
+                    "type": "SC-APT-F-YES",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APT-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "build-essential"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "git"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "libssl-dev"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "zlib1g-dev"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "mtproxy:2:7",
+        "astCommand": {
+            "type": "SC-CD",
+            "children": [
+                {
+                    "type": "SC-CD-PATH",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": ".."
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "mtproxy:2:8",
+        "astCommand": {
+            "type": "SC-RM",
+            "children": [
+                {
+                    "type": "SC-RM-F-RECURSIVE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "mtproxy"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-CONCAT",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "/var/lib/apt/lists/"
+                                        },
+                                        {
+                                            "type": "BASH-GLOB",
+                                            "children": [],
+                                            "value": "*"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "mtproxy:4:0",
+        "astCommand": {
+            "type": "SC-SET",
+            "children": [
+                {
+                    "type": "SC-SET-F-X",
+                    "children": []
+                },
+                {
+                    "type": "SC-SET-F-E",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "mtproxy:4:1",
+        "astCommand": {
+            "type": "BASH-REDIRECT",
+            "children": [
+                {
+                    "type": "BASH-REDIRECT-COMMAND",
+                    "children": [
+                        {
+                            "type": "SC-CURL",
+                            "children": [
+                                {
+                                    "type": "SC-CURL-F-SILENT",
+                                    "children": []
+                                },
+                                {
+                                    "type": "SC-CURL-F-SHOW-ERROR",
+                                    "children": []
+                                },
+                                {
+                                    "type": "SC-CURL-F-LOCATION",
+                                    "children": []
+                                },
+                                {
+                                    "type": "SC-CURL-URL",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "https://core.telegram.org/getProxySecret"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "BASH-REDIRECT-REDIRECTS",
+                    "children": [
+                        {
+                            "type": "BASH-REDIRECT-OVERWRITE",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "proxy-secret"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "mtproxy:4:2",
+        "astCommand": {
+            "type": "BASH-REDIRECT",
+            "children": [
+                {
+                    "type": "BASH-REDIRECT-COMMAND",
+                    "children": [
+                        {
+                            "type": "SC-CURL",
+                            "children": [
+                                {
+                                    "type": "SC-CURL-F-SILENT",
+                                    "children": []
+                                },
+                                {
+                                    "type": "SC-CURL-F-SHOW-ERROR",
+                                    "children": []
+                                },
+                                {
+                                    "type": "SC-CURL-F-LOCATION",
+                                    "children": []
+                                },
+                                {
+                                    "type": "SC-CURL-URL",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "https://core.telegram.org/getProxyConfig"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "BASH-REDIRECT-REDIRECTS",
+                    "children": [
+                        {
+                            "type": "BASH-REDIRECT-OVERWRITE",
+                            "children": [
+                                {
+                                    "type": "BASH-PATH",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "proxy-multi.conf"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

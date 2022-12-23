@@ -1,0 +1,254 @@
+[
+    {
+        "astCommandId": "airflow:5:0",
+        "astCommand": {
+            "type": "SC-SET",
+            "children": [
+                {
+                    "type": "SC-SET-F-X",
+                    "children": []
+                },
+                {
+                    "type": "SC-SET-F-E",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "airflow:5:1",
+        "astCommand": {
+            "type": "SC-APK-ADD",
+            "children": [
+                {
+                    "type": "SC-APK-F-NO-CACHE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE:BUILD-BASE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:CYRUS-SASL-DEV",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:FREETDS",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:FREETDS-DEV",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:KRB5-DEV",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:LIBFFI-DEV",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:MARIADB-DEV",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:POSTGRESQL-DEV",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:PYTHON3-DEV",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "airflow:5:2",
+        "astCommand": {
+            "type": "SC-PIP-INSTALL",
+            "children": [
+                {
+                    "type": "SC-PIP-F-NO-CACHE-DIR",
+                    "children": []
+                },
+                {
+                    "type": "SC-PIP-TARGETS",
+                    "children": [
+                        {
+                            "type": "SC-PIP-TARGET",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-PIP-TARGET",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-PIP-TARGET",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "airflow:5:3",
+        "astCommand": {
+            "type": "SC-PIP-INSTALL",
+            "children": [
+                {
+                    "type": "SC-PIP-F-NO-CACHE-DIR",
+                    "children": []
+                },
+                {
+                    "type": "SC-PIP-TARGETS",
+                    "children": [
+                        {
+                            "type": "SC-PIP-TARGET",
+                            "children": [
+                                {
+                                    "type": "BASH-CONCAT",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "BASH-VARIABLE:AIRFLOW_EXTRAS",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "BASH-VARIABLE:AIRFLOW_VERSION",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "airflow:5:4",
+        "astCommand": {
+            "type": "SC-APK-DEL",
+            "children": [
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE:BUILD-BASE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:CYRUS-SASL-DEV",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:FREETDS-DEV",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:KRB5-DEV",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:LIBFFI-DEV",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:MARIADB-DEV",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:POSTGRESQL-DEV",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:PYTHON3-DEV",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "airflow:5:5",
+        "astCommand": {
+            "type": "SC-RM",
+            "children": [
+                {
+                    "type": "SC-RM-F-RECURSIVE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-F-FORCE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [
+                                        {
+                                            "type": "ABS-PATH-ROOT-DIR",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-PATH-ABSOLUTE",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-MAYBE-PATH",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-PATH-DOT-CACHE",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

@@ -1,0 +1,205 @@
+[
+    {
+        "astCommandId": "optaweb-employee-rostering:4:0",
+        "astCommand": {
+            "type": "SC-SET",
+            "children": [
+                {
+                    "type": "SC-SET-F-X",
+                    "children": []
+                },
+                {
+                    "type": "SC-SET-F-E",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "optaweb-employee-rostering:4:1",
+        "astCommand": {
+            "type": "SC-APT-UPDATE",
+            "children": [
+                {
+                    "type": "SC-APT-F-YES",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "optaweb-employee-rostering:4:2",
+        "astCommand": {
+            "type": "SC-APT-INSTALL",
+            "children": [
+                {
+                    "type": "SC-APT-F-YES",
+                    "children": []
+                },
+                {
+                    "type": "SC-APT-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APT-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "wget"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APT-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "unzip"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "optaweb-employee-rostering:4:3",
+        "astCommand": {
+            "type": "SC-CD",
+            "children": [
+                {
+                    "type": "SC-CD-PATH",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "/opt"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "optaweb-employee-rostering:4:4",
+        "astCommand": {
+            "type": "SC-WGET",
+            "children": [
+                {
+                    "type": "SC-WGET-URL",
+                    "children": [
+                        {
+                            "type": "BASH-VARIABLE",
+                            "children": [],
+                            "value": "APP_URL"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "optaweb-employee-rostering:4:5",
+        "astCommand": {
+            "type": "SC-UNZIP",
+            "children": [
+                {
+                    "type": "SC-UNZIP-FILE",
+                    "children": [
+                        {
+                            "type": "BASH-VARIABLE",
+                            "children": [],
+                            "value": "APP_FILE"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "optaweb-employee-rostering:4:6",
+        "astCommand": {
+            "type": "SC-MV",
+            "children": [
+                {
+                    "type": "SC-MV-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-MV-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "APP_FILE%.zip"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-MV-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "app"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "optaweb-employee-rostering:4:7",
+        "astCommand": {
+            "type": "SC-RM",
+            "children": [
+                {
+                    "type": "SC-RM-F-RECURSIVE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-F-FORCE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "APP_FILE"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-CONCAT",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "/var/lib/apt/lists/"
+                                        },
+                                        {
+                                            "type": "BASH-GLOB",
+                                            "children": [],
+                                            "value": "*"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

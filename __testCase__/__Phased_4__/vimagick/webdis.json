@@ -1,0 +1,228 @@
+[
+    {
+        "astCommandId": "webdis:2:0",
+        "astCommand": {
+            "type": "SC-APK-ADD",
+            "children": [
+                {
+                    "type": "SC-APK-F-NO-CACHE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE:WGET",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:MAKE",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:GCC",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:LIBEVENT-DEV",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:MSGPACK-C-DEV",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:MUSL-DEV",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:BSD-COMPAT-HEADERS",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "webdis:3:0",
+        "astCommand": {
+            "type": "SC-WGET",
+            "children": [
+                {
+                    "type": "SC-WGET-OUTPUT-DOCUMENT",
+                    "children": [
+                        {
+                            "type": "BASH-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [
+                                        {
+                                            "type": "ABS-EXTENSION-TAR",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-WGET-URL",
+                    "children": [
+                        {
+                            "type": "BASH-CONCAT",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [
+                                        {
+                                            "type": "ABS-PROBABLY-URL",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "ABS-URL-PROTOCOL-HTTPS",
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "BASH-VARIABLE:WEBDIS_VERSION",
+                                    "children": []
+                                },
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [
+                                        {
+                                            "type": "ABS-EXTENSION-TAR",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "webdis:4:0",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-X",
+                    "children": []
+                },
+                {
+                    "type": "SC-TAR-V",
+                    "children": []
+                },
+                {
+                    "type": "SC-TAR-Z",
+                    "children": []
+                },
+                {
+                    "type": "SC-TAR-FILE",
+                    "children": [
+                        {
+                            "type": "BASH-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [
+                                        {
+                                            "type": "ABS-EXTENSION-TAR",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "webdis:4:1",
+        "astCommand": {
+            "type": "SC-CD",
+            "children": [
+                {
+                    "type": "SC-CD-PATH",
+                    "children": [
+                        {
+                            "type": "BASH-CONCAT",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": []
+                                },
+                                {
+                                    "type": "BASH-VARIABLE:WEBDIS_VERSION",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "webdis:4:2",
+        "astCommand": {
+            "type": "SC-MAKE",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "webdis:4:3",
+        "astCommand": {
+            "type": "SC-MAKE",
+            "children": [
+                {
+                    "type": "SC-MAKE-TARGET",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "webdis:7:0",
+        "astCommand": {
+            "type": "SC-APK-ADD",
+            "children": [
+                {
+                    "type": "SC-APK-F-NO-CACHE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE:LIBCRYPTO1.1",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:LIBEVENT",
+                            "children": []
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE:MSGPACK-C",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

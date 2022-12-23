@@ -1,0 +1,978 @@
+[
+    {
+        "astCommandId": "ocserv:3:0",
+        "astCommand": {
+            "type": "BASH-ASSIGN",
+            "children": [
+                {
+                    "type": "BASH-ASSIGN-LHS",
+                    "children": [
+                        {
+                            "type": "BASH-VARIABLE",
+                            "children": [],
+                            "value": "buildDeps"
+                        }
+                    ]
+                },
+                {
+                    "type": "BASH-ASSIGN-RHS",
+                    "children": [
+                        {
+                            "type": "BASH-DOUBLE-QUOTED",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "         curl         g++         gnutls-dev         gpgme         libev-dev         libnl3-dev         libseccomp-dev         linux-headers         linux-pam-dev         lz4-dev         make         readline-dev         tar         xz     "
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:3:1",
+        "astCommand": {
+            "type": "SC-SET",
+            "children": [
+                {
+                    "type": "SC-SET-F-X",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:3:2",
+        "astCommand": {
+            "type": "SC-APK-ADD",
+            "children": [
+                {
+                    "type": "SC-APK-F-UPDATE",
+                    "children": []
+                },
+                {
+                    "type": "SC-APK-VIRTUAL",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": ".build-deps"
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "buildDeps"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:3:3",
+        "astCommand": {
+            "type": "SC-CURL",
+            "children": [
+                {
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-OUTPUT",
+                    "children": [
+                        {
+                            "type": "BASH-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "ocserv.tar.xz"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-CURL-URL",
+                    "children": [
+                        {
+                            "type": "BASH-VARIABLE",
+                            "children": [],
+                            "value": "OCSERV_URL"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:3:4",
+        "astCommand": {
+            "type": "SC-CURL",
+            "children": [
+                {
+                    "type": "SC-CURL-F-SHOW-ERROR",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-F-LOCATION",
+                    "children": []
+                },
+                {
+                    "type": "SC-CURL-OUTPUT",
+                    "children": [
+                        {
+                            "type": "BASH-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "ocserv.tar.xz.sig"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-CURL-URL",
+                    "children": [
+                        {
+                            "type": "BASH-CONCAT",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "OCSERV_URL"
+                                },
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": ".sig"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:3:5",
+        "astCommand": {
+            "type": "SC-GPG",
+            "children": [
+                {
+                    "type": "SC-GPG-KEYSERVER",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "pgp.mit.edu"
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-GPG-RECV-KEY",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "7F343FA7"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:3:6",
+        "astCommand": {
+            "type": "SC-GPG",
+            "children": [
+                {
+                    "type": "SC-GPG-KEYSERVER",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "pgp.mit.edu"
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-GPG-RECV-KEY",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "96865171"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:3:7",
+        "astCommand": {
+            "type": "SC-GPG",
+            "children": [
+                {
+                    "type": "SC-GPG-VERIFYS",
+                    "children": [
+                        {
+                            "type": "SC-GPG-VERIFY",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "ocserv.tar.xz.sig"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:3:8",
+        "astCommand": {
+            "type": "SC-MKDIR",
+            "children": [
+                {
+                    "type": "SC-MKDIR-F-PARENTS",
+                    "children": []
+                },
+                {
+                    "type": "SC-MKDIR-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-MKDIR-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/usr/src/ocserv"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:3:9",
+        "astCommand": {
+            "type": "SC-TAR",
+            "children": [
+                {
+                    "type": "SC-TAR-X",
+                    "children": []
+                },
+                {
+                    "type": "SC-TAR-FILE",
+                    "children": [
+                        {
+                            "type": "BASH-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "ocserv.tar.xz"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-TAR-DIRECTORY",
+                    "children": [
+                        {
+                            "type": "BASH-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/usr/src/ocserv"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-TAR-STRIP-COMPONENTS",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:3:10",
+        "astCommand": {
+            "type": "SC-RM",
+            "children": [
+                {
+                    "type": "SC-RM-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-CONCAT",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "ocserv.tar.xz"
+                                        },
+                                        {
+                                            "type": "BASH-GLOB",
+                                            "children": [],
+                                            "value": "*"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:3:11",
+        "astCommand": {
+            "type": "SC-CD",
+            "children": [
+                {
+                    "type": "SC-CD-PATH",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "/usr/src/ocserv"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:3:12",
+        "astCommand": {
+            "type": "SC-CONFIGURE",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "ocserv:3:13",
+        "astCommand": {
+            "type": "SC-MAKE",
+            "children": []
+        }
+    },
+    {
+        "astCommandId": "ocserv:3:14",
+        "astCommand": {
+            "type": "SC-MAKE",
+            "children": [
+                {
+                    "type": "SC-MAKE-TARGET",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "install"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:3:15",
+        "astCommand": {
+            "type": "SC-MKDIR",
+            "children": [
+                {
+                    "type": "SC-MKDIR-F-PARENTS",
+                    "children": []
+                },
+                {
+                    "type": "SC-MKDIR-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-MKDIR-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/etc/ocserv"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:3:16",
+        "astCommand": {
+            "type": "SC-CP",
+            "children": [
+                {
+                    "type": "SC-CP-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-CP-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/usr/src/ocserv/doc/sample.config"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-CP-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/etc/ocserv/ocserv.conf"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:3:17",
+        "astCommand": {
+            "type": "SC-CD",
+            "children": [
+                {
+                    "type": "SC-CD-PATH",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "/"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:3:18",
+        "astCommand": {
+            "type": "SC-RM",
+            "children": [
+                {
+                    "type": "SC-RM-F-RECURSIVE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-F-FORCE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/usr/src/ocserv"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:3:19",
+        "astCommand": {
+            "type": "BASH-ASSIGN",
+            "children": [
+                {
+                    "type": "BASH-ASSIGN-LHS",
+                    "children": [
+                        {
+                            "type": "BASH-VARIABLE",
+                            "children": [],
+                            "value": "runDeps"
+                        }
+                    ]
+                },
+                {
+                    "type": "BASH-ASSIGN-RHS",
+                    "children": [
+                        {
+                            "type": "BASH-DOUBLE-QUOTED",
+                            "children": [
+                                {
+                                    "type": "BASH-DOLLAR-PARENS",
+                                    "children": [
+                                        {
+                                            "type": "BASH-PIPELINE",
+                                            "children": [
+                                                {
+                                                    "type": "UNKNOWN",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "UNKNOWN",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "UNKNOWN",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "UNKNOWN",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:3:20",
+        "astCommand": {
+            "type": "SC-APK-ADD",
+            "children": [
+                {
+                    "type": "SC-APK-VIRTUAL",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": ".run-deps"
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-VARIABLE",
+                                    "children": [],
+                                    "value": "runDeps"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "gnutls-utils"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "iptables"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:3:21",
+        "astCommand": {
+            "type": "SC-APK-DEL",
+            "children": [
+                {
+                    "type": "SC-APK-PACKAGES",
+                    "children": [
+                        {
+                            "type": "SC-APK-PACKAGE",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": ".build-deps"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:3:22",
+        "astCommand": {
+            "type": "SC-RM",
+            "children": [
+                {
+                    "type": "SC-RM-F-RECURSIVE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-F-FORCE",
+                    "children": []
+                },
+                {
+                    "type": "SC-RM-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-RM-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-CONCAT",
+                                    "children": [
+                                        {
+                                            "type": "BASH-LITERAL",
+                                            "children": [],
+                                            "value": "/var/cache/apk/"
+                                        },
+                                        {
+                                            "type": "BASH-GLOB",
+                                            "children": [],
+                                            "value": "*"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:4:0",
+        "astCommand": {
+            "type": "SC-SET",
+            "children": [
+                {
+                    "type": "SC-SET-F-X",
+                    "children": []
+                },
+                {
+                    "type": "SC-SET-F-E",
+                    "children": []
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:4:1",
+        "astCommand": {
+            "type": "SC-MKDIR",
+            "children": [
+                {
+                    "type": "SC-MKDIR-F-PARENTS",
+                    "children": []
+                },
+                {
+                    "type": "SC-MKDIR-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-MKDIR-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/etc/ocserv/certs"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:4:2",
+        "astCommand": {
+            "type": "SC-MKDIR",
+            "children": [
+                {
+                    "type": "SC-MKDIR-F-PARENTS",
+                    "children": []
+                },
+                {
+                    "type": "SC-MKDIR-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-MKDIR-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/etc/ocserv/config-per-user"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:4:3",
+        "astCommand": {
+            "type": "SC-MKDIR",
+            "children": [
+                {
+                    "type": "SC-MKDIR-F-PARENTS",
+                    "children": []
+                },
+                {
+                    "type": "SC-MKDIR-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-MKDIR-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/etc/ocserv/config-per-group"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:4:4",
+        "astCommand": {
+            "type": "SC-MKDIR",
+            "children": [
+                {
+                    "type": "SC-MKDIR-F-PARENTS",
+                    "children": []
+                },
+                {
+                    "type": "SC-MKDIR-PATHS",
+                    "children": [
+                        {
+                            "type": "SC-MKDIR-PATH",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "/etc/ocserv/defaults"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "astCommandId": "ocserv:4:5",
+        "astCommand": {
+            "type": "SC-SED",
+            "children": [
+                {
+                    "type": "SC-SED-F-IN-PLACE",
+                    "children": []
+                },
+                {
+                    "type": "SC-SED-EXPRESSIONS",
+                    "children": [
+                        {
+                            "type": "SC-SED-EXPRESSION",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "s@\\./sample.passwd@/etc/ocserv/ocpasswd@"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-EXPRESSION",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "s@\\.\\./tests/@/etc/ocserv/@"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-EXPRESSION",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "s@^#cert-group-oid =@cert-group-oid =@"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-EXPRESSION",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "s@^#compression =.*@compression = true@"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-EXPRESSION",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "s@^#config-per-@config-per-@"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-EXPRESSION",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "s@^#default-@default-@"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-EXPRESSION",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "s@^#enable-auth = \"certificate\"$@enable-auth = \"certificate\"@"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-EXPRESSION",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "s@^default-domain@#&@"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-EXPRESSION",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "s@^dns =.*@dns = 8.8.8.8@"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-EXPRESSION",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "s@^max-clients =.*@max-clients = 0@"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-EXPRESSION",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "s@^max-same-clients =.*@max-same-clients = 0@"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-EXPRESSION",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "s@^route@#&@"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "SC-SED-EXPRESSION",
+                            "children": [
+                                {
+                                    "type": "BASH-LITERAL",
+                                    "children": [],
+                                    "value": "s@^try-mtu-discovery =.*@try-mtu-discovery = true@"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "SC-SED-PATHS",
+                    "children": [
+                        {
+                            "type": "BASH-LITERAL",
+                            "children": [],
+                            "value": "/etc/ocserv/ocserv.conf"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]
