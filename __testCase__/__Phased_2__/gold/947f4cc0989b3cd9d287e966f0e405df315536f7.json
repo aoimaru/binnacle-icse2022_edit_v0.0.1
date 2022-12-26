@@ -1,0 +1,77 @@
+[
+    {
+        "astCommandId": "947f4cc0989b3cd9d287e966f0e405df315536f7:5:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "947f4cc0989b3cd9d287e966f0e405df315536f7:5:2",
+        "astCommand": [
+            "%%ARCH-CASE%%"
+        ]
+    },
+    {
+        "astCommandId": "947f4cc0989b3cd9d287e966f0e405df315536f7:5:3",
+        "astCommand": [
+            "wget",
+            "-O",
+            "docker.tgz",
+            "https://download.docker.com/linux/static/",
+            "DOCKER_CHANNEL",
+            "/",
+            "dockerArch",
+            "/docker-",
+            "DOCKER_VERSION",
+            ".tgz"
+        ]
+    },
+    {
+        "astCommandId": "947f4cc0989b3cd9d287e966f0e405df315536f7:5:4",
+        "astCommand": [
+            "echo",
+            "error: failed to download 'docker-",
+            "DOCKER_VERSION",
+            "' from '",
+            "DOCKER_CHANNEL",
+            "' for '",
+            "dockerArch",
+            "'"
+        ]
+    },
+    {
+        "astCommandId": "947f4cc0989b3cd9d287e966f0e405df315536f7:5:5",
+        "astCommand": [
+            "exit",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "947f4cc0989b3cd9d287e966f0e405df315536f7:5:6",
+        "astCommand": [
+            "tar",
+            "--extract",
+            "--file",
+            "docker.tgz",
+            "--strip-components",
+            "1",
+            "--directory",
+            "/usr/local/bin/"
+        ]
+    },
+    {
+        "astCommandId": "947f4cc0989b3cd9d287e966f0e405df315536f7:5:7",
+        "astCommand": [
+            "rm",
+            "docker.tgz"
+        ]
+    },
+    {
+        "astCommandId": "947f4cc0989b3cd9d287e966f0e405df315536f7:5:8",
+        "astCommand": [
+            "dockerd",
+            "--version"
+        ]
+    }
+]

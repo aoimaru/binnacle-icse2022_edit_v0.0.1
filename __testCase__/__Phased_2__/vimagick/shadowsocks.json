@@ -1,0 +1,58 @@
+[
+    {
+        "astCommandId": "shadowsocks:1:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "shadowsocks:1:2",
+        "astCommand": [
+            "echo",
+            "http://nl.alpinelinux.org/alpine/edge/main"
+        ]
+    },
+    {
+        "astCommandId": "shadowsocks:1:3",
+        "astCommand": [
+            "apk",
+            "add",
+            "-U",
+            "curl",
+            "libsodium",
+            "python"
+        ]
+    },
+    {
+        "astCommandId": "shadowsocks:1:4",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://bootstrap.pypa.io/get-pip.py"
+        ]
+    },
+    {
+        "astCommandId": "shadowsocks:1:5",
+        "astCommand": [
+            "python"
+        ]
+    },
+    {
+        "astCommandId": "shadowsocks:1:6",
+        "astCommand": [
+            "pip",
+            "install",
+            "--no-cache-dir",
+            "shadowsocks"
+        ]
+    },
+    {
+        "astCommandId": "shadowsocks:1:7",
+        "astCommand": [
+            "apk",
+            "del",
+            "curl"
+        ]
+    }
+]

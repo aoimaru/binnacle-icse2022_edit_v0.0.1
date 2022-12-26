@@ -1,0 +1,66 @@
+[
+    {
+        "astCommandId": "plex:4:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "plex:4:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "plex:4:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "curl"
+        ]
+    },
+    {
+        "astCommandId": "plex:4:4",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "PLEX_URL",
+            "-o",
+            "PLEX_FILE"
+        ]
+    },
+    {
+        "astCommandId": "plex:4:5",
+        "astCommand": [
+            "dpkg",
+            "-i",
+            "PLEX_FILE"
+        ]
+    },
+    {
+        "astCommandId": "plex:4:6",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-f"
+        ]
+    },
+    {
+        "astCommandId": "plex:11:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "plex:11:2",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR"
+        ]
+    }
+]

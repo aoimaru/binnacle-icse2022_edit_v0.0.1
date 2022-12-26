@@ -1,0 +1,672 @@
+[
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:1:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:1:2",
+        "astCommand": [
+            "command",
+            "-v",
+            "gpg"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:1:3",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:1:4",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "gnupg",
+            "dirmngr"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:2:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:2:2",
+        "astCommand": [
+            "groupadd",
+            "-r",
+            "postgres",
+            "--gid=999"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:2:3",
+        "astCommand": [
+            "useradd",
+            "-r",
+            "-g",
+            "postgres",
+            "--uid=999",
+            "--home-dir=/var/lib/postgresql",
+            "--shell=/bin/bash",
+            "postgres"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:2:4",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/var/lib/postgresql"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:4:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:4:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:4:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "ca-certificates",
+            "wget"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:4:4",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:4:5",
+        "astCommand": [
+            "wget",
+            "-O",
+            "/usr/local/bin/gosu",
+            "https://github.com/tianon/gosu/releases/download/",
+            "GOSU_VERSION",
+            "/gosu-",
+            "dpkg",
+            "--print-architecture"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:4:6",
+        "astCommand": [
+            "wget",
+            "-O",
+            "/usr/local/bin/gosu.asc",
+            "https://github.com/tianon/gosu/releases/download/",
+            "GOSU_VERSION",
+            "/gosu-",
+            "dpkg",
+            "--print-architecture",
+            ".asc"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:4:7",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:4:8",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--keyserver",
+            "ha.pool.sks-keyservers.net",
+            "--recv-keys",
+            "B42F6819007F00F88E364FD4036A9C25BF357DD4"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:4:9",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--verify",
+            "/usr/local/bin/gosu.asc",
+            "/usr/local/bin/gosu"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:4:10",
+        "astCommand": [
+            "command",
+            "-v",
+            "gpgconf"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:4:11",
+        "astCommand": [
+            "gpgconf",
+            "--kill",
+            "all"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:4:12",
+        "astCommand": [
+            ":"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:4:13",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "GNUPGHOME",
+            "/usr/local/bin/gosu.asc"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:4:14",
+        "astCommand": [
+            "chmod",
+            "+",
+            "x",
+            "/usr/local/bin/gosu"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:4:15",
+        "astCommand": [
+            "gosu",
+            "nobody",
+            "true"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:5:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:5:2",
+        "astCommand": [
+            "grep",
+            "-q",
+            "/usr/share/locale",
+            "/etc/dpkg/dpkg.cfg.d/docker"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:5:3",
+        "astCommand": [
+            "sed",
+            "-ri",
+            "/\\/usr\\/share\\/locale/d",
+            "/etc/dpkg/dpkg.cfg.d/docker"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:5:4",
+        "astCommand": [
+            "grep",
+            "-q",
+            "/usr/share/locale",
+            "/etc/dpkg/dpkg.cfg.d/docker"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:5:5",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:5:6",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "locales"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:5:7",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:7:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:7:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:7:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "libnss-wrapper"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:9:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:9:2",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:9:3",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--keyserver",
+            "ha.pool.sks-keyservers.net",
+            "--recv-keys",
+            "key"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:9:4",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--export",
+            "key"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:9:5",
+        "astCommand": [
+            "command",
+            "-v",
+            "gpgconf"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:9:6",
+        "astCommand": [
+            "gpgconf",
+            "--kill",
+            "all"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:9:7",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "GNUPGHOME"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:2",
+        "astCommand": [
+            "export",
+            "PYTHONDONTWRITEBYTECODE",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:3",
+        "astCommand": [
+            "dpkg",
+            "--print-architecture"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:4",
+        "astCommand": [
+            "echo",
+            "deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main ",
+            "PG_MAJOR"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:5",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:6",
+        "astCommand": [
+            "echo",
+            "deb-src http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main ",
+            "PG_MAJOR"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:7",
+        "astCommand": [
+            "echo",
+            "deb http://deb.debian.org/debian stretch-backports main"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:8",
+        "astCommand": [
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:9",
+        "astCommand": [
+            "cd",
+            "tempDir"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:10",
+        "astCommand": [
+            "apt-mark",
+            "showmanual"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:11",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:12",
+        "astCommand": [
+            "apt-get",
+            "build-dep",
+            "-y",
+            "postgresql-common",
+            "pgdg-keyring",
+            "postgresql-",
+            "PG_MAJOR",
+            "=",
+            "PG_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:13",
+        "astCommand": [
+            "DEB_BUILD_OPTIONS",
+            "nocheck parallel=",
+            "nproc",
+            "apt-get",
+            "source",
+            "--compile",
+            "postgresql-common",
+            "pgdg-keyring",
+            "postgresql-",
+            "PG_MAJOR",
+            "=",
+            "PG_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:14",
+        "astCommand": [
+            "apt-mark",
+            "showmanual"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:15",
+        "astCommand": [
+            "xargs",
+            "apt-mark",
+            "auto"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:16",
+        "astCommand": [
+            "apt-mark",
+            "manual",
+            "savedAptMark"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:17",
+        "astCommand": [
+            "ls",
+            "-lAFh"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:18",
+        "astCommand": [
+            "dpkg-scanpackages",
+            "."
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:19",
+        "astCommand": [
+            "grep",
+            "^Package: ",
+            "Packages"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:20",
+        "astCommand": [
+            "echo",
+            "deb [ trusted=yes ] file://",
+            "tempDir",
+            " ./"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:21",
+        "astCommand": [
+            "apt-get",
+            "-o",
+            "Acquire::GzipIndexes=false",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:22",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "postgresql-common"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:23",
+        "astCommand": [
+            "sed",
+            "-ri",
+            "s/#(create_main_cluster) .*$/\\1 = false/",
+            "/etc/postgresql-common/createcluster.conf"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:24",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "postgresql-",
+            "PG_MAJOR",
+            "=",
+            "PG_VERSION",
+            "postgresql-contrib-",
+            "PG_MAJOR",
+            "=",
+            "PG_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:25",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:26",
+        "astCommand": [
+            "apt-get",
+            "purge",
+            "-y",
+            "--auto-remove"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:12:27",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "tempDir",
+            "/etc/apt/sources.list.d/temp.list"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:13:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:13:2",
+        "astCommand": [
+            "dpkg-divert",
+            "--add",
+            "--rename",
+            "--divert",
+            "/usr/share/postgresql/postgresql.conf.sample.dpkg",
+            "/usr/share/postgresql/",
+            "PG_MAJOR",
+            "/postgresql.conf.sample"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:13:3",
+        "astCommand": [
+            "cp",
+            "-v",
+            "/usr/share/postgresql/postgresql.conf.sample.dpkg",
+            "/usr/share/postgresql/postgresql.conf.sample"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:13:4",
+        "astCommand": [
+            "ln",
+            "-sv",
+            "../postgresql.conf.sample",
+            "/usr/share/postgresql/",
+            "PG_MAJOR",
+            "/"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:13:5",
+        "astCommand": [
+            "sed",
+            "-ri",
+            "s!^#?(listen_addresses)\\s*=\\s*\\S+.*!\\1 = '*'!",
+            "/usr/share/postgresql/postgresql.conf.sample"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:14:1",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/var/run/postgresql"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:14:2",
+        "astCommand": [
+            "chown",
+            "-R",
+            "postgres:postgres",
+            "/var/run/postgresql"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:17:1",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "PGDATA"
+        ]
+    },
+    {
+        "astCommandId": "d87cba9dda97b8ae229d1bc92fd6beae7ca73269:17:2",
+        "astCommand": [
+            "chown",
+            "-R",
+            "postgres:postgres",
+            "PGDATA"
+        ]
+    }
+]

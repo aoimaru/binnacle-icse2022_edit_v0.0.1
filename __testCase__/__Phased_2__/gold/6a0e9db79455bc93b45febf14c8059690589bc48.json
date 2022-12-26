@@ -1,0 +1,384 @@
+[
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:1:1",
+        "astCommand": [
+            "groupadd",
+            "-r",
+            "mongodb"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:2:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:2:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:2:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "ca-certificates",
+            "jq",
+            "numactl"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:2:4",
+        "astCommand": [
+            "command",
+            "-v",
+            "ps"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:2:5",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "procps"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:5:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:5:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:5:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "wget"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:5:4",
+        "astCommand": [
+            "command",
+            "-v",
+            "gpg"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:5:5",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "gnupg",
+            "dirmngr"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:5:6",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:5:7",
+        "astCommand": [
+            "dpkg",
+            "--print-architecture"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:5:8",
+        "astCommand": [
+            "awk",
+            "-F-",
+            "{ print $NF }"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:5:9",
+        "astCommand": [
+            "wget",
+            "-O",
+            "/usr/local/bin/gosu",
+            "https://github.com/tianon/gosu/releases/download/",
+            "GOSU_VERSION",
+            "/gosu-",
+            "dpkgArch"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:5:10",
+        "astCommand": [
+            "wget",
+            "-O",
+            "/usr/local/bin/gosu.asc",
+            "https://github.com/tianon/gosu/releases/download/",
+            "GOSU_VERSION",
+            "/gosu-",
+            "dpkgArch",
+            ".asc"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:5:11",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:5:12",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--keyserver",
+            "ha.pool.sks-keyservers.net",
+            "--recv-keys",
+            "B42F6819007F00F88E364FD4036A9C25BF357DD4"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:5:13",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--verify",
+            "/usr/local/bin/gosu.asc",
+            "/usr/local/bin/gosu"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:5:14",
+        "astCommand": [
+            "command",
+            "-v",
+            "gpgconf"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:5:15",
+        "astCommand": [
+            "gpgconf",
+            "--kill",
+            "all"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:5:16",
+        "astCommand": [
+            ":"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:5:17",
+        "astCommand": [
+            "rm",
+            "-r",
+            "GNUPGHOME",
+            "/usr/local/bin/gosu.asc"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:5:18",
+        "astCommand": [
+            "chmod",
+            "+",
+            "x",
+            "/usr/local/bin/gosu"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:5:19",
+        "astCommand": [
+            "gosu",
+            "--version"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:5:20",
+        "astCommand": [
+            "gosu",
+            "nobody",
+            "true"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:5:21",
+        "astCommand": [
+            "wget",
+            "-O",
+            "/js-yaml.js",
+            "https://github.com/nodeca/js-yaml/raw/",
+            "JSYAML_VERSION",
+            "/dist/js-yaml.js"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:8:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:8:2",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:8:3",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--keyserver",
+            "ha.pool.sks-keyservers.net",
+            "--recv-keys",
+            "key"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:8:4",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--export",
+            "GPG_KEYS"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:8:5",
+        "astCommand": [
+            "command",
+            "-v",
+            "gpgconf"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:8:6",
+        "astCommand": [
+            "gpgconf",
+            "--kill",
+            "all"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:8:7",
+        "astCommand": [
+            ":"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:8:8",
+        "astCommand": [
+            "rm",
+            "-r",
+            "GNUPGHOME"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:15:1",
+        "astCommand": [
+            "echo",
+            "deb http://",
+            "MONGO_REPO",
+            "/apt/ubuntu xenial/",
+            "MONGO_PACKAGE%-unstable",
+            "/",
+            "MONGO_MAJOR",
+            " multiverse"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:16:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:16:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:16:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "MONGO_PACKAGE",
+            "=",
+            "MONGO_VERSION",
+            "MONGO_PACKAGE",
+            "-server=",
+            "MONGO_VERSION",
+            "MONGO_PACKAGE",
+            "-shell=",
+            "MONGO_VERSION",
+            "MONGO_PACKAGE",
+            "-mongos=",
+            "MONGO_VERSION",
+            "MONGO_PACKAGE",
+            "-tools=",
+            "MONGO_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:16:4",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:16:5",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/mongodb"
+        ]
+    },
+    {
+        "astCommandId": "6a0e9db79455bc93b45febf14c8059690589bc48:17:1",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/data/db",
+            "/data/configdb"
+        ]
+    }
+]

@@ -1,0 +1,105 @@
+[
+    {
+        "astCommandId": "twemproxy:5:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "twemproxy:5:2",
+        "astCommand": [
+            "apk",
+            "--no-cache",
+            "add",
+            "-t",
+            "TMP",
+            "alpine-sdk",
+            "autoconf",
+            "automake",
+            "curl",
+            "libtool",
+            "tar"
+        ]
+    },
+    {
+        "astCommandId": "twemproxy:5:3",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "conf",
+            "logs",
+            "src"
+        ]
+    },
+    {
+        "astCommandId": "twemproxy:5:4",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "TWEMPROXY_URL"
+        ]
+    },
+    {
+        "astCommandId": "twemproxy:5:5",
+        "astCommand": [
+            "tar",
+            "xz",
+            "--strip",
+            "1",
+            "-C",
+            "src"
+        ]
+    },
+    {
+        "astCommandId": "twemproxy:5:6",
+        "astCommand": [
+            "cd",
+            "src"
+        ]
+    },
+    {
+        "astCommandId": "twemproxy:5:7",
+        "astCommand": [
+            "autoreconf",
+            "-fvi"
+        ]
+    },
+    {
+        "astCommandId": "twemproxy:5:8",
+        "astCommand": [
+            "CFLAGS",
+            "-O3",
+            "./configure"
+        ]
+    },
+    {
+        "astCommandId": "twemproxy:5:9",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "twemproxy:5:10",
+        "astCommand": [
+            "nutcracker",
+            "--version"
+        ]
+    },
+    {
+        "astCommandId": "twemproxy:5:11",
+        "astCommand": [
+            "cd",
+            ".."
+        ]
+    },
+    {
+        "astCommandId": "twemproxy:5:12",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "src"
+        ]
+    }
+]

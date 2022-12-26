@@ -1,0 +1,387 @@
+[
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:1:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:1:2",
+        "astCommand": [
+            "command",
+            "-v",
+            "gpg"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:1:3",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:1:4",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "gnupg",
+            "dirmngr"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:3:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:2",
+        "astCommand": [
+            "apt-mark",
+            "showmanual"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:3",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:4",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "dpkg-dev",
+            "flex"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:5",
+        "astCommand": [
+            "rm",
+            "-r",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:6",
+        "astCommand": [
+            "_fetch",
+            "gcc-",
+            "GCC_VERSION",
+            "/gcc-",
+            "GCC_VERSION",
+            ".tar.xz.sig",
+            "gcc.tar.xz.sig"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:7",
+        "astCommand": [
+            "_fetch",
+            "GCC_VERSION",
+            "/gcc-",
+            "GCC_VERSION",
+            ".tar.xz.sig"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:8",
+        "astCommand": [
+            "_fetch",
+            "gcc-",
+            "GCC_VERSION",
+            "/gcc-",
+            "GCC_VERSION",
+            ".tar.xz",
+            "gcc.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:9",
+        "astCommand": [
+            "_fetch",
+            "GCC_VERSION",
+            "/gcc-",
+            "GCC_VERSION",
+            ".tar.xz",
+            "gcc.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:10",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--verify",
+            "gcc.tar.xz.sig",
+            "gcc.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:11",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/gcc"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:12",
+        "astCommand": [
+            "tar",
+            "-xf",
+            "gcc.tar.xz",
+            "-C",
+            "/usr/src/gcc",
+            "--strip-components=1"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:13",
+        "astCommand": [
+            "rm",
+            "gcc.tar.xz",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:14",
+        "astCommand": [
+            "cd",
+            "/usr/src/gcc"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:15",
+        "astCommand": [
+            "./contrib/download_prerequisites"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:16",
+        "astCommand": [
+            "rm",
+            "*",
+            ".tar.",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:17",
+        "astCommand": [
+            "true"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:18",
+        "astCommand": [
+            "wget",
+            "-O",
+            "f",
+            "https://git.savannah.gnu.org/cgit/config.git/plain/",
+            "f",
+            "?id=7d3d27baf8107b630586c962c057e22149653deb"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:19",
+        "astCommand": [
+            "find",
+            "-mindepth",
+            "2",
+            "-name",
+            "f",
+            "-exec",
+            "cp",
+            "-v",
+            "f",
+            "{}",
+            ";"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:20",
+        "astCommand": [
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:21",
+        "astCommand": [
+            "cd",
+            "dir"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:22",
+        "astCommand": [
+            "dpkg",
+            "--print-architecture"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:23",
+        "astCommand": [
+            "set",
+            "-e"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:24",
+        "astCommand": [
+            ".",
+            "/etc/os-release"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:25",
+        "astCommand": [
+            "echo",
+            "VERSION_ID"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:26",
+        "astCommand": [
+            "dpkg-architecture",
+            "--query",
+            "DEB_BUILD_GNU_TYPE"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:27",
+        "astCommand": [
+            "/usr/src/gcc/configure",
+            "--build=",
+            "gnuArch",
+            "--disable-multilib",
+            "--enable-languages=c,c",
+            "+",
+            "+",
+            ",fortran,go",
+            "extraConfigureArgs"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:28",
+        "astCommand": [
+            "make",
+            "-j",
+            "nproc"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:29",
+        "astCommand": [
+            "make",
+            "install-strip"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:30",
+        "astCommand": [
+            "cd",
+            ".."
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:31",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "dir",
+            "/usr/src/gcc"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:32",
+        "astCommand": [
+            "apt-mark",
+            "auto",
+            ".*"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:6:33",
+        "astCommand": [
+            "apt-mark",
+            "manual",
+            "savedAptMark"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:7:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:7:2",
+        "astCommand": [
+            "echo",
+            "/usr/local/lib64"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:8:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:8:2",
+        "astCommand": [
+            "dpkg-divert",
+            "--divert",
+            "/usr/bin/gcc.orig",
+            "--rename",
+            "/usr/bin/gcc"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:8:3",
+        "astCommand": [
+            "dpkg-divert",
+            "--divert",
+            "/usr/bin/g",
+            "+",
+            "+",
+            ".orig",
+            "--rename",
+            "/usr/bin/g",
+            "+",
+            "+"
+        ]
+    },
+    {
+        "astCommandId": "b043f7fc1cbaa463a9fdcd621f584feda373d430:8:4",
+        "astCommand": [
+            "dpkg-divert",
+            "--divert",
+            "/usr/bin/gfortran.orig",
+            "--rename",
+            "/usr/bin/gfortran"
+        ]
+    }
+]

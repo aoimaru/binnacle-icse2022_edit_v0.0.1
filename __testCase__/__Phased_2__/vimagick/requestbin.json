@@ -1,0 +1,68 @@
+[
+    {
+        "astCommandId": "requestbin:1:1",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "build-base",
+            "git",
+            "libffi-dev",
+            "--repository",
+            "http://dl-cdn.alpinelinux.org/alpine/edge/main/"
+        ]
+    },
+    {
+        "astCommandId": "requestbin:1:2",
+        "astCommand": [
+            "git",
+            "clone",
+            "--depth",
+            "1",
+            "https://github.com/Runscope/requestbin",
+            "/src"
+        ]
+    },
+    {
+        "astCommandId": "requestbin:1:3",
+        "astCommand": [
+            "sed",
+            "-i",
+            "s/gevent/gevent==1.4.0/",
+            "/src/requirements.txt"
+        ]
+    },
+    {
+        "astCommandId": "requestbin:1:4",
+        "astCommand": [
+            "echo",
+            "Flask==1.1.1"
+        ]
+    },
+    {
+        "astCommandId": "requestbin:1:5",
+        "astCommand": [
+            "echo",
+            "Werkzeug==0.15.6"
+        ]
+    },
+    {
+        "astCommandId": "requestbin:1:6",
+        "astCommand": [
+            "pip",
+            "install",
+            "-r",
+            "/src/requirements.txt"
+        ]
+    },
+    {
+        "astCommandId": "requestbin:1:7",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "~/.pip/cache"
+        ]
+    }
+]

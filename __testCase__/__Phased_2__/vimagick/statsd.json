@@ -1,0 +1,55 @@
+[
+    {
+        "astCommandId": "statsd:4:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "statsd:4:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "ca-certificates",
+            "curl",
+            "nodejs",
+            "npm",
+            "tar"
+        ]
+    },
+    {
+        "astCommandId": "statsd:4:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "STATSD_URL"
+        ]
+    },
+    {
+        "astCommandId": "statsd:4:4",
+        "astCommand": [
+            "tar",
+            "xz",
+            "--strip",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "statsd:4:5",
+        "astCommand": [
+            "npm",
+            "install",
+            "--production"
+        ]
+    },
+    {
+        "astCommandId": "statsd:4:6",
+        "astCommand": [
+            "sed",
+            "s/graphite.example.com/graphite/",
+            "exampleConfig.js"
+        ]
+    }
+]

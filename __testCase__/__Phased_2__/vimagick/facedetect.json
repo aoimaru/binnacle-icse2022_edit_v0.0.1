@@ -1,0 +1,45 @@
+[
+    {
+        "astCommandId": "facedetect:1:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "facedetect:1:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "facedetect:1:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "curl",
+            "python",
+            "python-opencv",
+            "libopencv-dev"
+        ]
+    },
+    {
+        "astCommandId": "facedetect:1:4",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://github.com/wavexx/facedetect/raw/master/facedetect"
+        ]
+    },
+    {
+        "astCommandId": "facedetect:1:5",
+        "astCommand": [
+            "chmod",
+            "+",
+            "x",
+            "/usr/local/bin/facedetect"
+        ]
+    }
+]

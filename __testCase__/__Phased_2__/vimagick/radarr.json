@@ -1,0 +1,64 @@
+[
+    {
+        "astCommandId": "radarr:6:1",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/opt/radarr"
+        ]
+    },
+    {
+        "astCommandId": "radarr:6:2",
+        "astCommand": [
+            "wget",
+            "https://github.com/Radarr/Radarr/releases/download/v",
+            "RADARR_VERSION",
+            "/Radarr.develop.",
+            "RADARR_VERSION",
+            ".linux.tar.gz",
+            "-O",
+            "/tmp/radarr.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "radarr:6:3",
+        "astCommand": [
+            "tar",
+            "-xzvf",
+            "/tmp/radarr.tar.gz",
+            "-C",
+            "/opt/radarr",
+            "--strip-components",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "radarr:8:1",
+        "astCommand": [
+            "addgroup",
+            "-g",
+            "666",
+            "-S",
+            "radarr"
+        ]
+    },
+    {
+        "astCommandId": "radarr:8:2",
+        "astCommand": [
+            "adduser",
+            "-u",
+            "666",
+            "-SHG",
+            "radarr",
+            "radarr"
+        ]
+    },
+    {
+        "astCommandId": "radarr:8:3",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/config"
+        ]
+    }
+]

@@ -1,0 +1,235 @@
+[
+    {
+        "astCommandId": "osquery:2:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "osquery:2:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "apt-transport-https",
+            "ca-certificates",
+            "curl",
+            "gnupg2",
+            "libc",
+            "+",
+            "+",
+            "1",
+            "tar",
+            "xz-utils",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "osquery:2:3",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "osquery:2:4",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://apt.kitware.com/keys/kitware-archive-latest.asc"
+        ]
+    },
+    {
+        "astCommandId": "osquery:2:5",
+        "astCommand": [
+            "apt-key",
+            "add",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "osquery:4:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "osquery:4:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "osquery:4:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "buildDeps",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "osquery:4:4",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "osquery:4:5",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/osquery/build",
+            "/usr/share/osquery"
+        ]
+    },
+    {
+        "astCommandId": "osquery:4:6",
+        "astCommand": [
+            "git",
+            "clone",
+            "--branch",
+            "OSQUERY_VERSION",
+            "--depth",
+            "1",
+            "https://github.com/osquery/osquery.git",
+            "/usr/src/osquery/src"
+        ]
+    },
+    {
+        "astCommandId": "osquery:4:7",
+        "astCommand": [
+            "cd",
+            "/usr/src/osquery"
+        ]
+    },
+    {
+        "astCommandId": "osquery:4:8",
+        "astCommand": [
+            "ls",
+            "-la",
+            "src/"
+        ]
+    },
+    {
+        "astCommandId": "osquery:4:9",
+        "astCommand": [
+            "cd",
+            "build"
+        ]
+    },
+    {
+        "astCommandId": "osquery:4:10",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://github.com/osquery/osquery-toolchain/releases/download/1.0.0/osquery-toolchain-1.0.0.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "osquery:4:11",
+        "astCommand": [
+            "tar",
+            "-xJ",
+            "-C",
+            "/usr/local"
+        ]
+    },
+    {
+        "astCommandId": "osquery:4:12",
+        "astCommand": [
+            "cmake",
+            "-DOSQUERY_TOOLCHAIN_SYSROOT=/usr/local/osquery-toolchain",
+            "../src"
+        ]
+    },
+    {
+        "astCommandId": "osquery:4:13",
+        "astCommand": [
+            "cmake",
+            "--build",
+            "."
+        ]
+    },
+    {
+        "astCommandId": "osquery:4:14",
+        "astCommand": [
+            "mv",
+            "osquery/osqueryd",
+            "/usr/bin"
+        ]
+    },
+    {
+        "astCommandId": "osquery:4:15",
+        "astCommand": [
+            "mv",
+            "package/linux/osqueryctl",
+            "/usr/bin"
+        ]
+    },
+    {
+        "astCommandId": "osquery:4:16",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/share/osquery/certs"
+        ]
+    },
+    {
+        "astCommandId": "osquery:4:17",
+        "astCommand": [
+            "cp",
+            "../src/tools/deployment/certs.pem",
+            "/usr/share/osquery/certs/"
+        ]
+    },
+    {
+        "astCommandId": "osquery:4:18",
+        "astCommand": [
+            "apt-get",
+            "purge",
+            "-y",
+            "--auto-remove",
+            "buildDeps"
+        ]
+    },
+    {
+        "astCommandId": "osquery:4:19",
+        "astCommand": [
+            "chmod",
+            "a",
+            "+",
+            "x",
+            "/usr/bin/osquery",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "osquery:7:1",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/var/osquery",
+            "/var/log/osquery"
+        ]
+    },
+    {
+        "astCommandId": "osquery:7:2",
+        "astCommand": [
+            "useradd",
+            "--create-home",
+            "--home-dir",
+            "HOME",
+            "user"
+        ]
+    }
+]

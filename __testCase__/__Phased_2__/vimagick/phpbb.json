@@ -1,0 +1,99 @@
+[
+    {
+        "astCommandId": "phpbb:2:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "phpbb:2:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "phpbb:2:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "curl",
+            "unzip",
+            "bzip2",
+            "libfreetype6-dev",
+            "libjpeg-dev",
+            "libpng-dev",
+            "libpq-dev"
+        ]
+    },
+    {
+        "astCommandId": "phpbb:2:4",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "phpbb:2:5",
+        "astCommand": [
+            "docker-php-ext-configure",
+            "gd",
+            "--with-freetype",
+            "--with-jpeg"
+        ]
+    },
+    {
+        "astCommandId": "phpbb:9:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "phpbb:9:2",
+        "astCommand": [
+            "curl",
+            "-fSL",
+            "PHPBB_URL",
+            "-o",
+            "PHPBB_FILE"
+        ]
+    },
+    {
+        "astCommandId": "phpbb:9:3",
+        "astCommand": [
+            "echo",
+            "PHPBB_SHA",
+            "  ",
+            "PHPBB_FILE"
+        ]
+    },
+    {
+        "astCommandId": "phpbb:9:4",
+        "astCommand": [
+            "sha256sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "phpbb:9:5",
+        "astCommand": [
+            "tar",
+            "-xjf",
+            "PHPBB_FILE",
+            "--strip-components=1"
+        ]
+    },
+    {
+        "astCommandId": "phpbb:9:6",
+        "astCommand": [
+            "rm",
+            "PHPBB_FILE"
+        ]
+    }
+]

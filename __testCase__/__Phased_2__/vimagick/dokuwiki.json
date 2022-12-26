@@ -1,0 +1,47 @@
+[
+    {
+        "astCommandId": "dokuwiki:2:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "dokuwiki:2:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "ca-certificates",
+            "gzip",
+            "nginx",
+            "openssl",
+            "php7-fpm",
+            "php7-json",
+            "php7-openssl",
+            "php7-pdo_sqlite",
+            "php7-session",
+            "php7-sqlite3",
+            "php7-xml",
+            "php7-zlib",
+            "tar"
+        ]
+    },
+    {
+        "astCommandId": "dokuwiki:2:3",
+        "astCommand": [
+            "wget",
+            "-O-",
+            "http://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz"
+        ]
+    },
+    {
+        "astCommandId": "dokuwiki:2:4",
+        "astCommand": [
+            "tar",
+            "xz",
+            "--strip",
+            "1"
+        ]
+    }
+]

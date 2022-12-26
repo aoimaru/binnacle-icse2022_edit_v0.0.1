@@ -1,0 +1,67 @@
+[
+    {
+        "astCommandId": "gitiles:2:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "gitiles:2:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "bash",
+            "ca-certificates",
+            "curl",
+            "git",
+            "openjdk-8-jdk",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "gitiles:3:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "gitiles:3:2",
+        "astCommand": [
+            "git",
+            "clone",
+            "--depth",
+            "1",
+            "--branch",
+            "GITILES_VERSION",
+            "https://gerrit.googlesource.com/gitiles",
+            "/usr/src/gitiles"
+        ]
+    },
+    {
+        "astCommandId": "gitiles:3:3",
+        "astCommand": [
+            "cd",
+            "/usr/src/gitiles"
+        ]
+    },
+    {
+        "astCommandId": "gitiles:3:4",
+        "astCommand": [
+            "bazel",
+            "build",
+            "java/com/google/gitiles/dev"
+        ]
+    },
+    {
+        "astCommandId": "gitiles:3:5",
+        "astCommand": [
+            "cp",
+            "-rL",
+            "bazel-bin",
+            "bin"
+        ]
+    }
+]

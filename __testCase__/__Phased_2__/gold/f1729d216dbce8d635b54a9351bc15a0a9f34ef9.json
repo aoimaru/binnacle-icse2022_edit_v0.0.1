@@ -1,0 +1,218 @@
+[
+    {
+        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:1:1",
+        "astCommand": [
+            "addgroup",
+            "-g",
+            "11211",
+            "memcache"
+        ]
+    },
+    {
+        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "ca-certificates",
+            "coreutils",
+            "cyrus-sasl-dev",
+            "dpkg-dev",
+            "dpkg",
+            "gcc",
+            "libc-dev",
+            "libevent-dev",
+            "linux-headers",
+            "make",
+            "openssl",
+            "perl",
+            "perl-utils",
+            "tar",
+            "wget"
+        ]
+    },
+    {
+        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:3",
+        "astCommand": [
+            "wget",
+            "-O",
+            "memcached.tar.gz",
+            "https://memcached.org/files/memcached-",
+            "MEMCACHED_VERSION",
+            ".tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:4",
+        "astCommand": [
+            "echo",
+            "MEMCACHED_SHA1",
+            "  memcached.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:5",
+        "astCommand": [
+            "sha1sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:6",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/memcached"
+        ]
+    },
+    {
+        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:7",
+        "astCommand": [
+            "tar",
+            "-xzf",
+            "memcached.tar.gz",
+            "-C",
+            "/usr/src/memcached",
+            "--strip-components=1"
+        ]
+    },
+    {
+        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:8",
+        "astCommand": [
+            "rm",
+            "memcached.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:9",
+        "astCommand": [
+            "cd",
+            "/usr/src/memcached"
+        ]
+    },
+    {
+        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:10",
+        "astCommand": [
+            "dpkg-architecture",
+            "--query",
+            "DEB_BUILD_GNU_TYPE"
+        ]
+    },
+    {
+        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:11",
+        "astCommand": [
+            "echo",
+            "--enable-extstore"
+        ]
+    },
+    {
+        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:12",
+        "astCommand": [
+            "./configure",
+            "--build=",
+            "gnuArch",
+            "--enable-sasl",
+            "--enable-sasl-pwdb",
+            "enableExtstore"
+        ]
+    },
+    {
+        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:13",
+        "astCommand": [
+            "make",
+            "-j",
+            "nproc"
+        ]
+    },
+    {
+        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:14",
+        "astCommand": [
+            "make",
+            "test"
+        ]
+    },
+    {
+        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:15",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:16",
+        "astCommand": [
+            "cd",
+            "/"
+        ]
+    },
+    {
+        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:17",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/usr/src/memcached"
+        ]
+    },
+    {
+        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:18",
+        "astCommand": [
+            "scanelf",
+            "--needed",
+            "--nobanner",
+            "--format",
+            "%n#p",
+            "--recursive",
+            "/usr/local"
+        ]
+    },
+    {
+        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:19",
+        "astCommand": [
+            "tr",
+            ",",
+            "\\n"
+        ]
+    },
+    {
+        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:20",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:21",
+        "astCommand": [
+            "awk",
+            "system(\"[ -e /usr/local/lib/\" $1 \" ]\") == 0 { next } { print \"so:\" $1 }"
+        ]
+    },
+    {
+        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:22",
+        "astCommand": [
+            "apk",
+            "add",
+            "--virtual",
+            ".memcached-rundeps",
+            "runDeps"
+        ]
+    },
+    {
+        "astCommandId": "f1729d216dbce8d635b54a9351bc15a0a9f34ef9:5:23",
+        "astCommand": [
+            "apk",
+            "del",
+            ".build-deps"
+        ]
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "astCommandId": "unixbench:3:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "unixbench:3:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "ca-certificates",
+            "curl"
+        ]
+    },
+    {
+        "astCommandId": "unixbench:3:3",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/unixbench"
+        ]
+    },
+    {
+        "astCommandId": "unixbench:3:4",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://github.com/kdlucas/byte-unixbench/archive/",
+            "UNIXBENCH_VERSION",
+            ".tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "unixbench:3:5",
+        "astCommand": [
+            "tar",
+            "-xzC",
+            "/usr/src/unixbench",
+            "--strip-components",
+            "2"
+        ]
+    },
+    {
+        "astCommandId": "unixbench:3:6",
+        "astCommand": [
+            "chmod",
+            "+",
+            "x",
+            "/usr/src/unixbench/Run"
+        ]
+    }
+]

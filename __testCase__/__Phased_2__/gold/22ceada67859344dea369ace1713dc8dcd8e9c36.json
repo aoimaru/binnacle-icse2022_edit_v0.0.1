@@ -1,0 +1,362 @@
+[
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:1:1",
+        "astCommand": [
+            "groupadd",
+            "-r",
+            "mysql"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:2:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:2:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "gnupg",
+            "dirmngr"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:4:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:4:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:4:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "ca-certificates",
+            "wget"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:4:4",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:4:5",
+        "astCommand": [
+            "wget",
+            "-O",
+            "/usr/local/bin/gosu",
+            "https://github.com/tianon/gosu/releases/download/",
+            "GOSU_VERSION",
+            "/gosu-",
+            "dpkg",
+            "--print-architecture"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:4:6",
+        "astCommand": [
+            "wget",
+            "-O",
+            "/usr/local/bin/gosu.asc",
+            "https://github.com/tianon/gosu/releases/download/",
+            "GOSU_VERSION",
+            "/gosu-",
+            "dpkg",
+            "--print-architecture",
+            ".asc"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:4:7",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:4:8",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--keyserver",
+            "ha.pool.sks-keyservers.net",
+            "--recv-keys",
+            "B42F6819007F00F88E364FD4036A9C25BF357DD4"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:4:9",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--verify",
+            "/usr/local/bin/gosu.asc",
+            "/usr/local/bin/gosu"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:4:10",
+        "astCommand": [
+            "gpgconf",
+            "--kill",
+            "all"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:4:11",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "GNUPGHOME",
+            "/usr/local/bin/gosu.asc"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:4:12",
+        "astCommand": [
+            "chmod",
+            "+",
+            "x",
+            "/usr/local/bin/gosu"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:4:13",
+        "astCommand": [
+            "gosu",
+            "nobody",
+            "true"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:6:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:6:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "pwgen",
+            "openssl",
+            "perl"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:7:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:7:2",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:7:3",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--keyserver",
+            "ha.pool.sks-keyservers.net",
+            "--recv-keys",
+            "key"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:7:4",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--export",
+            "key"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:7:5",
+        "astCommand": [
+            "gpgconf",
+            "--kill",
+            "all"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:7:6",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "GNUPGHOME"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:11:1",
+        "astCommand": [
+            "echo",
+            "mysql-community-server",
+            "mysql-community-server/data-dir",
+            "select",
+            ""
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:11:2",
+        "astCommand": [
+            "echo",
+            "mysql-community-server",
+            "mysql-community-server/root-pass",
+            "password",
+            ""
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:11:3",
+        "astCommand": [
+            "echo",
+            "mysql-community-server",
+            "mysql-community-server/re-root-pass",
+            "password",
+            ""
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:11:4",
+        "astCommand": [
+            "echo",
+            "mysql-community-server",
+            "mysql-community-server/remove-test-db",
+            "select",
+            "false"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:11:5",
+        "astCommand": [
+            "debconf-set-selections"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:11:6",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:11:7",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "mysql-server=",
+            "MYSQL_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:11:8",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:11:9",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/mysql"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:11:10",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/var/lib/mysql",
+            "/var/run/mysqld"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:11:11",
+        "astCommand": [
+            "chown",
+            "-R",
+            "mysql:mysql",
+            "/var/lib/mysql",
+            "/var/run/mysqld"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:11:12",
+        "astCommand": [
+            "chmod",
+            "777",
+            "/var/run/mysqld"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:11:13",
+        "astCommand": [
+            "find",
+            "/etc/mysql/",
+            "-name",
+            "*.cnf",
+            "-print0"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:11:14",
+        "astCommand": [
+            "xargs",
+            "-0",
+            "grep",
+            "-lZE",
+            "^(bind-address|log)"
+        ]
+    },
+    {
+        "astCommandId": "22ceada67859344dea369ace1713dc8dcd8e9c36:11:15",
+        "astCommand": [
+            "xargs",
+            "-rt",
+            "-0",
+            "sed",
+            "-Ei",
+            "s/^(bind-address|log)/#&/"
+        ]
+    }
+]

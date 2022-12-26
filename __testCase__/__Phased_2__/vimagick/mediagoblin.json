@@ -1,0 +1,237 @@
+[
+    {
+        "astCommandId": "mediagoblin:1:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "mediagoblin:1:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "mediagoblin:1:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "automake",
+            "gir1.2-gst-plugins-base-1.0",
+            "gir1.2-gstreamer-1.0",
+            "git-core",
+            "gstreamer1.0-libav",
+            "gstreamer1.0-plugins-bad",
+            "gstreamer1.0-plugins-base",
+            "gstreamer1.0-plugins-good",
+            "gstreamer1.0-plugins-ugly",
+            "gstreamer1.0-tools",
+            "libasound2-dev",
+            "libgstreamer-plugins-base1.0-dev",
+            "libsndfile1-dev",
+            "nginx",
+            "nodejs-legacy",
+            "npm",
+            "poppler-utils",
+            "python",
+            "python-dev",
+            "python-gi",
+            "python-gst-1.0",
+            "python-gst-1.0",
+            "python-imaging",
+            "python-lxml",
+            "python-numpy",
+            "python-scipy",
+            "python-virtualenv",
+            "python3-gi",
+            "sudo"
+        ]
+    },
+    {
+        "astCommandId": "mediagoblin:2:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "mediagoblin:2:2",
+        "astCommand": [
+            "useradd",
+            "-d",
+            "/var/lib/mediagoblin",
+            "-m",
+            "-r",
+            "-g",
+            "www-data",
+            "mediagoblin"
+        ]
+    },
+    {
+        "astCommandId": "mediagoblin:2:3",
+        "astCommand": [
+            "groupadd",
+            "-r",
+            "mediagoblin"
+        ]
+    },
+    {
+        "astCommandId": "mediagoblin:2:4",
+        "astCommand": [
+            "usermod",
+            "-a",
+            "-G",
+            "mediagoblin",
+            "mediagoblin"
+        ]
+    },
+    {
+        "astCommandId": "mediagoblin:2:5",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/var/log/mediagoblin",
+            "/srv/mediagoblin.example.org/mediagoblin"
+        ]
+    },
+    {
+        "astCommandId": "mediagoblin:2:6",
+        "astCommand": [
+            "chown",
+            "-hR",
+            "mediagoblin:www-data",
+            "/var/log/mediagoblin",
+            "/srv/mediagoblin.example.org"
+        ]
+    },
+    {
+        "astCommandId": "mediagoblin:5:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "mediagoblin:5:2",
+        "astCommand": [
+            "git",
+            "clone",
+            "http://git.savannah.gnu.org/r/mediagoblin.git",
+            "."
+        ]
+    },
+    {
+        "astCommandId": "mediagoblin:5:3",
+        "astCommand": [
+            "git",
+            "checkout",
+            "stable"
+        ]
+    },
+    {
+        "astCommandId": "mediagoblin:5:4",
+        "astCommand": [
+            "git",
+            "submodule",
+            "sync"
+        ]
+    },
+    {
+        "astCommandId": "mediagoblin:5:5",
+        "astCommand": [
+            "git",
+            "submodule",
+            "update",
+            "--force",
+            "--init",
+            "--recursive"
+        ]
+    },
+    {
+        "astCommandId": "mediagoblin:5:6",
+        "astCommand": [
+            "./bootstrap.sh"
+        ]
+    },
+    {
+        "astCommandId": "mediagoblin:5:7",
+        "astCommand": [
+            "./configure"
+        ]
+    },
+    {
+        "astCommandId": "mediagoblin:5:8",
+        "astCommand": [
+            "make"
+        ]
+    },
+    {
+        "astCommandId": "mediagoblin:5:9",
+        "astCommand": [
+            "bin/easy_install",
+            "flup==1.0.3.dev-20110405"
+        ]
+    },
+    {
+        "astCommandId": "mediagoblin:5:10",
+        "astCommand": [
+            "bin/pip",
+            "install",
+            "--no-cache-dir",
+            "scikits.audiolab"
+        ]
+    },
+    {
+        "astCommandId": "mediagoblin:5:11",
+        "astCommand": [
+            "ln",
+            "-s",
+            "/var/lib/mediagoblin",
+            "user_dev"
+        ]
+    },
+    {
+        "astCommandId": "mediagoblin:5:12",
+        "astCommand": [
+            "cp",
+            "-av",
+            "mediagoblin.ini",
+            "mediagoblin_local.ini"
+        ]
+    },
+    {
+        "astCommandId": "mediagoblin:5:13",
+        "astCommand": [
+            "cp",
+            "-av",
+            "paste.ini",
+            "paste_local.ini"
+        ]
+    },
+    {
+        "astCommandId": "mediagoblin:5:14",
+        "astCommand": [
+            "sed",
+            "-i",
+            "s@.*sql_engine = .*@sql_engine = sqlite:////var/lib/mediagoblin/mediagoblin.db@",
+            "mediagoblin_local.ini"
+        ]
+    },
+    {
+        "astCommandId": "mediagoblin:5:15",
+        "astCommand": [
+            "echo",
+            "[[mediagoblin.media_types.video]]"
+        ]
+    },
+    {
+        "astCommandId": "mediagoblin:5:16",
+        "astCommand": [
+            "echo",
+            "[[mediagoblin.media_types.audio]]"
+        ]
+    }
+]

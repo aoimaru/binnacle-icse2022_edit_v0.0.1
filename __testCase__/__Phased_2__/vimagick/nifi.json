@@ -1,0 +1,82 @@
+[
+    {
+        "astCommandId": "nifi:6:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "nifi:6:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "bash",
+            "curl",
+            "tar"
+        ]
+    },
+    {
+        "astCommandId": "nifi:6:3",
+        "astCommand": [
+            "curl",
+            "-fSL",
+            "NIFI_URL"
+        ]
+    },
+    {
+        "astCommandId": "nifi:6:4",
+        "astCommand": [
+            "tar",
+            "xz",
+            "--strip-components=1"
+        ]
+    },
+    {
+        "astCommandId": "nifi:6:5",
+        "astCommand": [
+            "apk",
+            "del",
+            "curl",
+            "tar"
+        ]
+    },
+    {
+        "astCommandId": "nifi:6:6",
+        "astCommand": [
+            "addgroup",
+            "-g",
+            "1000",
+            "nifi"
+        ]
+    },
+    {
+        "astCommandId": "nifi:6:7",
+        "astCommand": [
+            "adduser",
+            "-h",
+            "NIFI_HOME",
+            "-s",
+            "/bin/bash",
+            "-G",
+            "nifi",
+            "-u",
+            "1000",
+            "-D",
+            "-H",
+            "nifi"
+        ]
+    },
+    {
+        "astCommandId": "nifi:6:8",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "content_repository",
+            "database_repository",
+            "flowfile_repository",
+            "provenance_repository"
+        ]
+    }
+]

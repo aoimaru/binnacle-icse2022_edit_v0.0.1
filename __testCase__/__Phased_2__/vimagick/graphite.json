@@ -1,0 +1,182 @@
+[
+    {
+        "astCommandId": "graphite:8:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "graphite:8:2",
+        "astCommand": [
+            "apk",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "graphite:8:3",
+        "astCommand": [
+            "apk",
+            "add",
+            "build-base",
+            "cairo",
+            "curl",
+            "libffi-dev",
+            "nginx",
+            "python3",
+            "python3-dev"
+        ]
+    },
+    {
+        "astCommandId": "graphite:8:4",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://bootstrap.pypa.io/get-pip.py"
+        ]
+    },
+    {
+        "astCommandId": "graphite:8:5",
+        "astCommand": [
+            "python3"
+        ]
+    },
+    {
+        "astCommandId": "graphite:8:6",
+        "astCommand": [
+            "pip3",
+            "install",
+            "pip==20.1"
+        ]
+    },
+    {
+        "astCommandId": "graphite:8:7",
+        "astCommand": [
+            "pip3",
+            "install",
+            "--no-cache-dir",
+            "gunicorn",
+            "supervisor"
+        ]
+    },
+    {
+        "astCommandId": "graphite:8:8",
+        "astCommand": [
+            "pip3",
+            "install",
+            "--no-cache-dir",
+            "--install-option=--prefix=/opt/graphite",
+            "--install-option=--install-lib=/opt/graphite/lib",
+            "whisper==",
+            "GRAPHITE_VERSION",
+            "carbon==",
+            "GRAPHITE_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "graphite:8:9",
+        "astCommand": [
+            "pip3",
+            "install",
+            "--no-cache-dir",
+            "--install-option=--prefix=/opt/graphite",
+            "--install-option=--install-lib=/opt/graphite/webapp",
+            "graphite-web==",
+            "GRAPHITE_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "graphite:8:10",
+        "astCommand": [
+            "pip3",
+            "install",
+            "pyparsing==2.4.7"
+        ]
+    },
+    {
+        "astCommandId": "graphite:8:11",
+        "astCommand": [
+            "cd",
+            "./webapp"
+        ]
+    },
+    {
+        "astCommandId": "graphite:8:12",
+        "astCommand": [
+            "echo",
+            "SECRET_KEY = '",
+            "head",
+            "-c",
+            "16",
+            "/dev/urandom",
+            "base64",
+            "'"
+        ]
+    },
+    {
+        "astCommandId": "graphite:8:13",
+        "astCommand": [
+            "cd",
+            "../conf"
+        ]
+    },
+    {
+        "astCommandId": "graphite:8:14",
+        "astCommand": [
+            "cp",
+            "carbon.conf.example",
+            "carbon.conf"
+        ]
+    },
+    {
+        "astCommandId": "graphite:8:15",
+        "astCommand": [
+            "cp",
+            "storage-schemas.conf.example",
+            "storage-schemas.conf"
+        ]
+    },
+    {
+        "astCommandId": "graphite:8:16",
+        "astCommand": [
+            "cp",
+            "aggregation-rules.conf.example",
+            "aggregation-rules.conf"
+        ]
+    },
+    {
+        "astCommandId": "graphite:8:17",
+        "astCommand": [
+            "cd",
+            ".."
+        ]
+    },
+    {
+        "astCommandId": "graphite:8:18",
+        "astCommand": [
+            "django-admin",
+            "collectstatic",
+            "--noinput"
+        ]
+    },
+    {
+        "astCommandId": "graphite:8:19",
+        "astCommand": [
+            "django-admin",
+            "migrate",
+            "--noinput",
+            "--run-syncdb"
+        ]
+    },
+    {
+        "astCommandId": "graphite:8:20",
+        "astCommand": [
+            "apk",
+            "del",
+            "build-base",
+            "curl",
+            "libffi-dev",
+            "python3-dev"
+        ]
+    }
+]

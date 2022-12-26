@@ -1,0 +1,52 @@
+[
+    {
+        "astCommandId": "grafana:4:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "grafana:4:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "grafana:4:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "ca-certificates",
+            "libfontconfig",
+            "wget"
+        ]
+    },
+    {
+        "astCommandId": "grafana:4:4",
+        "astCommand": [
+            "wget",
+            "GRAFANA_URL"
+        ]
+    },
+    {
+        "astCommandId": "grafana:4:5",
+        "astCommand": [
+            "dpkg",
+            "-i",
+            "GRAFANA_FILE"
+        ]
+    },
+    {
+        "astCommandId": "grafana:4:6",
+        "astCommand": [
+            "apt-get",
+            "purge",
+            "--auto-remove",
+            "-y",
+            "wget"
+        ]
+    }
+]

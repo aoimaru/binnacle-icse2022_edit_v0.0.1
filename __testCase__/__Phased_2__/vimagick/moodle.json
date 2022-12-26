@@ -1,0 +1,130 @@
+[
+    {
+        "astCommandId": "moodle:2:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "moodle:2:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "moodle:2:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "clamav",
+            "graphviz",
+            "libicu52",
+            "libicu-dev",
+            "libjpeg62-turbo",
+            "libjpeg-dev",
+            "libldap-2.4-2",
+            "libldap2-dev",
+            "libmcrypt4",
+            "libmcrypt-dev",
+            "libpng12-0",
+            "libpng12-dev",
+            "libpspell-dev",
+            "libxml2",
+            "libxml2-dev"
+        ]
+    },
+    {
+        "astCommandId": "moodle:2:4",
+        "astCommand": [
+            "docker-php-ext-configure",
+            "gd",
+            "--with-png-dir=/usr",
+            "--with-jpeg-dir=/usr"
+        ]
+    },
+    {
+        "astCommandId": "moodle:2:5",
+        "astCommand": [
+            "docker-php-ext-configure",
+            "ldap",
+            "--with-libdir=lib/x86_64-linux-gnu"
+        ]
+    },
+    {
+        "astCommandId": "moodle:2:6",
+        "astCommand": [
+            "docker-php-ext-install",
+            "gd",
+            "intl",
+            "ldap",
+            "mcrypt",
+            "mbstring",
+            "mysqli",
+            "opcache",
+            "pspell",
+            "xmlrpc",
+            "zip"
+        ]
+    },
+    {
+        "astCommandId": "moodle:2:7",
+        "astCommand": [
+            "apt-get",
+            "remove",
+            "-y",
+            "libicu-dev",
+            "libjpeg-dev",
+            "libldap2-dev",
+            "libmcrypt-dev",
+            "libpng12-dev",
+            "libpspell-dev",
+            "libxml2-dev"
+        ]
+    },
+    {
+        "astCommandId": "moodle:7:1",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "MOODLE_URL",
+            "-o",
+            "MOODLE_FILE"
+        ]
+    },
+    {
+        "astCommandId": "moodle:7:2",
+        "astCommand": [
+            "echo",
+            "MOODLE_MD5",
+            "  ",
+            "MOODLE_FILE"
+        ]
+    },
+    {
+        "astCommandId": "moodle:7:3",
+        "astCommand": [
+            "md5sum",
+            "-c"
+        ]
+    },
+    {
+        "astCommandId": "moodle:7:4",
+        "astCommand": [
+            "tar",
+            "xzf",
+            "MOODLE_FILE",
+            "--strip",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "moodle:7:5",
+        "astCommand": [
+            "rm",
+            "MOODLE_FILE"
+        ]
+    }
+]

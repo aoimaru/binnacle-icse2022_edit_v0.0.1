@@ -1,0 +1,380 @@
+[
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:4:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:4:2",
+        "astCommand": [
+            "curl",
+            "-fL",
+            "-o",
+            "busybox.tar.bz2",
+            "https://busybox.net/downloads/",
+            "tarball"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:4:3",
+        "astCommand": [
+            "curl",
+            "-fL",
+            "-o",
+            "busybox.tar.bz2.sig",
+            "https://busybox.net/downloads/",
+            "tarball",
+            ".sig"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:4:4",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--verify",
+            "busybox.tar.bz2.sig",
+            "busybox.tar.bz2"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:4:5",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/busybox"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:4:6",
+        "astCommand": [
+            "tar",
+            "-xf",
+            "busybox.tar.bz2",
+            "-C",
+            "/usr/src/busybox",
+            "--strip-components",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:7:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:7:2",
+        "astCommand": [
+            "make",
+            "defconfig"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:7:3",
+        "astCommand": [
+            "sed",
+            "-i",
+            "-e",
+            "s!^",
+            "conf",
+            "=.*$!# ",
+            "conf",
+            " is not set!",
+            ".config"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:7:4",
+        "astCommand": [
+            "sed",
+            "-i",
+            "-e",
+            "s!^",
+            "conf",
+            "=.*$!",
+            "confV",
+            "!",
+            "-e",
+            "s!^# ",
+            "conf",
+            " is not set$!",
+            "confV",
+            "!",
+            ".config"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:7:5",
+        "astCommand": [
+            "grep",
+            "-q",
+            "^",
+            "confV",
+            "$",
+            ".config"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:7:6",
+        "astCommand": [
+            "echo",
+            "confV"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:7:7",
+        "astCommand": [
+            "make",
+            "oldconfig"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:7:8",
+        "astCommand": [
+            "grep",
+            "-q",
+            "^",
+            "conf",
+            "=",
+            ".config"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:8:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:8:2",
+        "astCommand": [
+            "make",
+            "-j",
+            "nproc",
+            "busybox"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:8:3",
+        "astCommand": [
+            "./busybox",
+            "--help"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:8:4",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "rootfs/bin"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:8:5",
+        "astCommand": [
+            "ln",
+            "-vL",
+            "busybox",
+            "rootfs/bin/"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:9:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:9:2",
+        "astCommand": [
+            "cat",
+            "/etc/alpine-release"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:9:3",
+        "astCommand": [
+            "curl",
+            "-fsSL",
+            "https://git.alpinelinux.org/cgit/aports/plain/main/musl/getconf.c?h=",
+            "aportsVersion",
+            "-o",
+            "/usr/src/getconf.c"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:9:4",
+        "astCommand": [
+            "gcc",
+            "-o",
+            "rootfs/bin/getconf",
+            "-static",
+            "-Os",
+            "/usr/src/getconf.c"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:10:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:10:2",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "rootfs/etc"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:10:3",
+        "astCommand": [
+            "curl",
+            "-fL",
+            "-o",
+            "rootfs/etc/",
+            "f",
+            "https://git.busybox.net/buildroot/plain/system/skeleton/etc/",
+            "f",
+            "?id=",
+            "buildrootVersion"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:10:4",
+        "astCommand": [
+            "grep",
+            "-E",
+            "^root::",
+            "rootfs/etc/shadow"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:10:5",
+        "astCommand": [
+            "sed",
+            "-ri",
+            "-e",
+            "s/^root::/root:*:/",
+            "rootfs/etc/shadow"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:10:6",
+        "astCommand": [
+            "grep",
+            "-E",
+            "^root:[*]:",
+            "rootfs/etc/shadow"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:10:7",
+        "astCommand": [
+            "curl",
+            "-fL",
+            "-o",
+            "buildroot-device-table.txt",
+            "https://git.busybox.net/buildroot/plain/system/device_table.txt?id=",
+            "buildrootVersion"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:10:8",
+        "astCommand": [
+            "awk",
+            " \t\t!/^#/ { \t\t\tif ($2 != \"d\" && $2 != \"f\") { \t\t\t\tprintf \"error: unknown type \\\"%s\\\" encountered in line %d: %s\\n\", $2, NR, $0 > \"/dev/stderr\"; \t\t\t\texit 1; \t\t\t} \t\t\tsub(/^\\/?/, \"rootfs/\", $1); \t\t\tif ($2 == \"d\") { \t\t\t\tprintf \"mkdir -p %s\\n\", $1; \t\t\t} \t\t\tprintf \"chmod %s %s\\n\", $3, $1; \t\t} \t",
+            "buildroot-device-table.txt"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:10:9",
+        "astCommand": [
+            "sh",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:11:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:11:2",
+        "astCommand": [
+            "cd",
+            "rootfs"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:11:3",
+        "astCommand": [
+            "awk",
+            "-F",
+            ":",
+            "{ print $3 \":\" $4 \"=\" $6 }",
+            "etc/passwd"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:11:4",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "home"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:11:5",
+        "astCommand": [
+            "chown",
+            "user",
+            "home"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:13:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:13:2",
+        "astCommand": [
+            "ln",
+            "-vL",
+            "/usr/share/zoneinfo/UTC",
+            "rootfs/etc/localtime"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:14:1",
+        "astCommand": [
+            "cp",
+            "-L",
+            "/etc/resolv.conf",
+            "rootfs/etc/"
+        ]
+    },
+    {
+        "astCommandId": "51037ff39053a126c1ff2b054bbfb32bab327536:14:2",
+        "astCommand": [
+            "chroot",
+            "rootfs",
+            "/bin/sh",
+            "-xec",
+            "nslookup google.com"
+        ]
+    }
+]

@@ -1,0 +1,473 @@
+[
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:2",
+        "astCommand": [
+            "apt-mark",
+            "showmanual"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:3",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:4",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "gnupg",
+            "dirmngr"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:5",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:6",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--keyserver",
+            "ha.pool.sks-keyservers.net",
+            "--recv-keys",
+            "key"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:7",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "wget",
+            "ca-certificates"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:8",
+        "astCommand": [
+            "wget",
+            "-O",
+            "tomcat.tar.gz",
+            "url"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:9",
+        "astCommand": [
+            "break"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:10",
+        "astCommand": [
+            "echo",
+            "TOMCAT_SHA512",
+            " *tomcat.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:11",
+        "astCommand": [
+            "sha512sum",
+            "--strict",
+            "--check",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:12",
+        "astCommand": [
+            "wget",
+            "-O",
+            "tomcat.tar.gz.asc",
+            "url"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:13",
+        "astCommand": [
+            "break"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:14",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--verify",
+            "tomcat.tar.gz.asc",
+            "tomcat.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:15",
+        "astCommand": [
+            "tar",
+            "-xvf",
+            "tomcat.tar.gz",
+            "--strip-components=1"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:16",
+        "astCommand": [
+            "rm",
+            "bin/",
+            "*",
+            ".bat"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:17",
+        "astCommand": [
+            "rm",
+            "tomcat.tar.gz",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:18",
+        "astCommand": [
+            "command",
+            "-v",
+            "gpgconf"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:19",
+        "astCommand": [
+            "gpgconf",
+            "--kill",
+            "all"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:20",
+        "astCommand": [
+            ":"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:21",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "GNUPGHOME"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:22",
+        "astCommand": [
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:23",
+        "astCommand": [
+            "tar",
+            "-xvf",
+            "bin/tomcat-native.tar.gz",
+            "-C",
+            "nativeBuildDir",
+            "--strip-components=1"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:24",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "dpkg-dev",
+            "gcc",
+            "libapr1-dev",
+            "libssl-dev",
+            "make"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:25",
+        "astCommand": [
+            "export",
+            "CATALINA_HOME",
+            "PWD"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:26",
+        "astCommand": [
+            "cd",
+            "nativeBuildDir",
+            "/native"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:27",
+        "astCommand": [
+            "dpkg-architecture",
+            "--query",
+            "DEB_BUILD_GNU_TYPE"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:28",
+        "astCommand": [
+            "which",
+            "apr-1-config"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:29",
+        "astCommand": [
+            "./configure",
+            "--build=",
+            "gnuArch",
+            "--libdir=",
+            "TOMCAT_NATIVE_LIBDIR",
+            "--prefix=",
+            "CATALINA_HOME",
+            "--with-apr=",
+            "aprConfig",
+            "--with-java-home=",
+            "JAVA_HOME",
+            "--with-ssl=yes"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:30",
+        "astCommand": [
+            "make",
+            "-j",
+            "nproc"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:31",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:32",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "nativeBuildDir"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:33",
+        "astCommand": [
+            "rm",
+            "bin/tomcat-native.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:34",
+        "astCommand": [
+            "apt-mark",
+            "auto",
+            ".*"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:35",
+        "astCommand": [
+            "apt-mark",
+            "manual",
+            "savedAptMark"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:36",
+        "astCommand": [
+            "find",
+            "TOMCAT_NATIVE_LIBDIR",
+            "-type",
+            "f",
+            "-executable",
+            "-exec",
+            "ldd",
+            "{}",
+            ";"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:37",
+        "astCommand": [
+            "awk",
+            "/=>/ { print $(NF-1) }"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:38",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:39",
+        "astCommand": [
+            "xargs",
+            "-r",
+            "dpkg-query",
+            "--search"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:40",
+        "astCommand": [
+            "cut",
+            "-d:",
+            "-f1"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:41",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:42",
+        "astCommand": [
+            "xargs",
+            "-r",
+            "apt-mark",
+            "manual"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:43",
+        "astCommand": [
+            "apt-get",
+            "purge",
+            "-y",
+            "--auto-remove",
+            "-o",
+            "APT::AutoRemove::RecommendsImportant=false"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:44",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:45",
+        "astCommand": [
+            "find",
+            "./bin/",
+            "-name",
+            "*.sh",
+            "-exec",
+            "sed",
+            "-ri",
+            "s|^#!/bin/sh$|#!/usr/bin/env bash|",
+            "{}",
+            "+"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:13:46",
+        "astCommand": [
+            "chmod",
+            "-R",
+            "+",
+            "rX",
+            "."
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:14:1",
+        "astCommand": [
+            "set",
+            "-e"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:14:2",
+        "astCommand": [
+            "catalina.sh",
+            "configtest"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:14:3",
+        "astCommand": [
+            "echo",
+            "nativeLines"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:14:4",
+        "astCommand": [
+            "grep",
+            "Apache Tomcat Native"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:14:5",
+        "astCommand": [
+            "echo",
+            "nativeLines"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:14:6",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:14:7",
+        "astCommand": [
+            "echo",
+            "nativeLines"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:14:8",
+        "astCommand": [
+            "grep",
+            "INFO: Loaded APR based Apache Tomcat Native library"
+        ]
+    },
+    {
+        "astCommandId": "3870ccc23fd41eddfaf6f7b999e04eea654f52b0:14:9",
+        "astCommand": [
+            "echo",
+            "nativeLines"
+        ]
+    }
+]

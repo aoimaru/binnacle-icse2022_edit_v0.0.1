@@ -1,0 +1,246 @@
+[
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:2:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:2:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "PHPIZE_DEPS",
+            "imagemagick-dev",
+            "libjpeg-turbo-dev",
+            "libpng-dev"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:2:3",
+        "astCommand": [
+            "docker-php-ext-configure",
+            "gd",
+            "--with-png-dir=/usr",
+            "--with-jpeg-dir=/usr"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:2:4",
+        "astCommand": [
+            "docker-php-ext-install",
+            "bcmath",
+            "exif",
+            "gd",
+            "mysqli",
+            "opcache",
+            "zip"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:2:5",
+        "astCommand": [
+            "pecl",
+            "install",
+            "imagick-3.4.4"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:2:6",
+        "astCommand": [
+            "docker-php-ext-enable",
+            "imagick"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:2:7",
+        "astCommand": [
+            "scanelf",
+            "--needed",
+            "--nobanner",
+            "--format",
+            "%n#p",
+            "--recursive",
+            "/usr/local/lib/php/extensions"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:2:8",
+        "astCommand": [
+            "tr",
+            ",",
+            "\\n"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:2:9",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:2:10",
+        "astCommand": [
+            "awk",
+            "system(\"[ -e /usr/local/lib/\" $1 \" ]\") == 0 { next } { print \"so:\" $1 }"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:2:11",
+        "astCommand": [
+            "apk",
+            "add",
+            "--virtual",
+            ".wordpress-phpexts-rundeps",
+            "runDeps"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:3:1",
+        "astCommand": [
+            "echo",
+            "opcache.memory_consumption=128"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:3:2",
+        "astCommand": [
+            "echo",
+            "opcache.interned_strings_buffer=8"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:3:3",
+        "astCommand": [
+            "echo",
+            "opcache.max_accelerated_files=4000"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:3:4",
+        "astCommand": [
+            "echo",
+            "opcache.revalidate_freq=2"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:3:5",
+        "astCommand": [
+            "echo",
+            "opcache.fast_shutdown=1"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:4:1",
+        "astCommand": [
+            "echo",
+            "error_reporting = 4339"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:4:2",
+        "astCommand": [
+            "echo",
+            "display_errors = Off"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:4:3",
+        "astCommand": [
+            "echo",
+            "display_startup_errors = Off"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:4:4",
+        "astCommand": [
+            "echo",
+            "log_errors = On"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:4:5",
+        "astCommand": [
+            "echo",
+            "error_log = /dev/stderr"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:4:6",
+        "astCommand": [
+            "echo",
+            "log_errors_max_len = 1024"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:4:7",
+        "astCommand": [
+            "echo",
+            "ignore_repeated_errors = On"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:4:8",
+        "astCommand": [
+            "echo",
+            "ignore_repeated_source = Off"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:8:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:8:2",
+        "astCommand": [
+            "curl",
+            "-o",
+            "wordpress.tar.gz",
+            "-fSL",
+            "https://wordpress.org/wordpress-",
+            "WORDPRESS_VERSION",
+            ".tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:8:3",
+        "astCommand": [
+            "echo",
+            "WORDPRESS_SHA1",
+            " *wordpress.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:8:4",
+        "astCommand": [
+            "sha1sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:8:5",
+        "astCommand": [
+            "tar",
+            "-xzf",
+            "wordpress.tar.gz",
+            "-C",
+            "/usr/src/"
+        ]
+    },
+    {
+        "astCommandId": "8a1398724213e0b23a2c7466622bb4d7123bb742:8:6",
+        "astCommand": [
+            "rm",
+            "wordpress.tar.gz"
+        ]
+    }
+]

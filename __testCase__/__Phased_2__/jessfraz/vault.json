@@ -1,0 +1,113 @@
+[
+    {
+        "astCommandId": "vault:3:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "vault:3:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "apt-transport-https",
+            "ca-certificates",
+            "curl",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "vault:3:3",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "vault:3:4",
+        "astCommand": [
+            "curl",
+            "-sS",
+            "https://dl.yarnpkg.com/debian/pubkey.gpg"
+        ]
+    },
+    {
+        "astCommandId": "vault:3:5",
+        "astCommand": [
+            "apt-key",
+            "add",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "vault:3:6",
+        "astCommand": [
+            "echo",
+            "deb https://dl.yarnpkg.com/debian/ stable main"
+        ]
+    },
+    {
+        "astCommandId": "vault:4:1",
+        "astCommand": [
+            "curl",
+            "-sL",
+            "https://deb.nodesource.com/setup_10.x"
+        ]
+    },
+    {
+        "astCommandId": "vault:5:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "vault:5:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "gcc",
+            "git",
+            "g",
+            "+",
+            "+",
+            "make",
+            "nodejs",
+            "pkgconf",
+            "python",
+            "yarn",
+            "zip",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "vault:7:1",
+        "astCommand": [
+            "go",
+            "get",
+            "github.com/hashicorp/vault"
+        ]
+    },
+    {
+        "astCommandId": "vault:10:1",
+        "astCommand": [
+            "XC_ARCH",
+            "amd64",
+            "XC_OS",
+            "linux",
+            "XC_OSARCH",
+            "linux/amd64",
+            "LD_FLAGS",
+            " -extldflags -static ",
+            "make",
+            "bootstrap",
+            "static-dist",
+            "bin"
+        ]
+    }
+]

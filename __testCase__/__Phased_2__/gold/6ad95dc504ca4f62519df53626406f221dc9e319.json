@@ -1,0 +1,898 @@
+[
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:1:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:1:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:1:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "gosu"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:1:4",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:2",
+        "astCommand": [
+            "apt-mark",
+            "showmanual"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:3",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:4",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "--yes",
+            "--no-install-recommends",
+            "autoconf",
+            "ca-certificates",
+            "dpkg-dev",
+            "gcc",
+            "gnupg",
+            "libncurses5-dev",
+            "make",
+            "wget"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:5",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:6",
+        "astCommand": [
+            "wget",
+            "--progress",
+            "dot:giga",
+            "--output-document",
+            "OPENSSL_PATH",
+            ".tar.gz.asc",
+            "OPENSSL_SOURCE_URL",
+            ".asc"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:7",
+        "astCommand": [
+            "wget",
+            "--progress",
+            "dot:giga",
+            "--output-document",
+            "OPENSSL_PATH",
+            ".tar.gz",
+            "OPENSSL_SOURCE_URL"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:8",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:9",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--keyserver",
+            "PGP_KEYSERVER",
+            "--recv-keys",
+            "key"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:10",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--verify",
+            "OPENSSL_PATH",
+            ".tar.gz.asc",
+            "OPENSSL_PATH",
+            ".tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:11",
+        "astCommand": [
+            "gpgconf",
+            "--kill",
+            "all"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:12",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "GNUPGHOME"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:13",
+        "astCommand": [
+            "echo",
+            "OPENSSL_SOURCE_SHA256",
+            " *",
+            "OPENSSL_PATH",
+            ".tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:14",
+        "astCommand": [
+            "sha256sum",
+            "--check",
+            "--strict",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:15",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "OPENSSL_PATH"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:16",
+        "astCommand": [
+            "tar",
+            "--extract",
+            "--file",
+            "OPENSSL_PATH",
+            ".tar.gz",
+            "--directory",
+            "OPENSSL_PATH",
+            "--strip-components",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:17",
+        "astCommand": [
+            "cd",
+            "OPENSSL_PATH"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:18",
+        "astCommand": [
+            "dpkg-architecture",
+            "--query",
+            "DEB_HOST_MULTIARCH"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:19",
+        "astCommand": [
+            "MACHINE",
+            "dpkg-architecture",
+            "--query",
+            "DEB_BUILD_GNU_CPU",
+            "RELEASE",
+            "4.x.y-z",
+            "SYSTEM",
+            "Linux",
+            "BUILD",
+            "???",
+            "./config",
+            "--openssldir=",
+            "OPENSSL_CONFIG_DIR",
+            "--libdir=",
+            "lib/",
+            "debMultiarch"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:20",
+        "astCommand": [
+            "make",
+            "-j",
+            "getconf",
+            "_NPROCESSORS_ONLN"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:21",
+        "astCommand": [
+            "make",
+            "install_sw",
+            "install_ssldirs"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:22",
+        "astCommand": [
+            "cd",
+            ".."
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:23",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "OPENSSL_PATH",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:24",
+        "astCommand": [
+            "echo",
+            "/usr/local/lib"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:25",
+        "astCommand": [
+            "ldconfig"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:26",
+        "astCommand": [
+            "rmdir",
+            "OPENSSL_CONFIG_DIR",
+            "/certs",
+            "OPENSSL_CONFIG_DIR",
+            "/private"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:27",
+        "astCommand": [
+            "ln",
+            "-sf",
+            "/etc/ssl/certs",
+            "/etc/ssl/private",
+            "OPENSSL_CONFIG_DIR"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:28",
+        "astCommand": [
+            "openssl",
+            "version"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:29",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "OTP_PATH"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:30",
+        "astCommand": [
+            "wget",
+            "--progress",
+            "dot:giga",
+            "--output-document",
+            "OTP_PATH",
+            ".tar.gz",
+            "OTP_SOURCE_URL"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:31",
+        "astCommand": [
+            "echo",
+            "OTP_SOURCE_SHA256",
+            " *",
+            "OTP_PATH",
+            ".tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:32",
+        "astCommand": [
+            "sha256sum",
+            "--check",
+            "--strict",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:33",
+        "astCommand": [
+            "tar",
+            "--extract",
+            "--file",
+            "OTP_PATH",
+            ".tar.gz",
+            "--directory",
+            "OTP_PATH",
+            "--strip-components",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:34",
+        "astCommand": [
+            "cd",
+            "OTP_PATH"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:35",
+        "astCommand": [
+            "export",
+            "ERL_TOP",
+            "OTP_PATH"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:36",
+        "astCommand": [
+            "./otp_build",
+            "autoconf"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:37",
+        "astCommand": [
+            "dpkg-buildflags",
+            "--get",
+            "CFLAGS"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:38",
+        "astCommand": [
+            "export",
+            "CFLAGS"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:39",
+        "astCommand": [
+            "dpkg-architecture",
+            "--query",
+            "DEB_HOST_GNU_TYPE"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:40",
+        "astCommand": [
+            "dpkg-architecture",
+            "--query",
+            "DEB_BUILD_GNU_TYPE"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:41",
+        "astCommand": [
+            "dpkg",
+            "--print-architecture"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:42",
+        "astCommand": [
+            "./configure",
+            "--host=",
+            "hostArch",
+            "--build=",
+            "buildArch",
+            "--disable-dynamic-ssl-lib",
+            "--disable-hipe",
+            "--disable-sctp",
+            "--disable-silent-rules",
+            "--enable-clock-gettime",
+            "--enable-hybrid-heap",
+            "--enable-kernel-poll",
+            "--enable-shared-zlib",
+            "--enable-smp-support",
+            "--enable-threads",
+            "--with-microstate-accounting=extra",
+            "--without-common_test",
+            "--without-debugger",
+            "--without-dialyzer",
+            "--without-diameter",
+            "--without-edoc",
+            "--without-erl_docgen",
+            "--without-erl_interface",
+            "--without-et",
+            "--without-eunit",
+            "--without-ftp",
+            "--without-hipe",
+            "--without-jinterface",
+            "--without-megaco",
+            "--without-observer",
+            "--without-odbc",
+            "--without-reltool",
+            "--without-ssh",
+            "--without-tftp",
+            "--without-wx"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:43",
+        "astCommand": [
+            "make",
+            "-j",
+            "getconf",
+            "_NPROCESSORS_ONLN",
+            "GEN_OPT_FLGS=",
+            "-O2 -fno-strict-aliasing"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:44",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:45",
+        "astCommand": [
+            "cd",
+            ".."
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:46",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "OTP_PATH",
+            "*",
+            "/usr/local/lib/erlang/lib/",
+            "*",
+            "/examples",
+            "/usr/local/lib/erlang/lib/",
+            "*",
+            "/src"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:47",
+        "astCommand": [
+            "apt-mark",
+            "auto",
+            ".*"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:48",
+        "astCommand": [
+            "apt-mark",
+            "manual",
+            "savedAptMark"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:49",
+        "astCommand": [
+            "find",
+            "/usr/local",
+            "-type",
+            "f",
+            "-executable",
+            "-exec",
+            "ldd",
+            "{}",
+            ";"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:50",
+        "astCommand": [
+            "awk",
+            "/=>/ { print $(NF-1) }"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:51",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:52",
+        "astCommand": [
+            "xargs",
+            "-r",
+            "dpkg-query",
+            "--search"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:53",
+        "astCommand": [
+            "cut",
+            "-d:",
+            "-f1"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:54",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:55",
+        "astCommand": [
+            "xargs",
+            "-r",
+            "apt-mark",
+            "manual"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:56",
+        "astCommand": [
+            "apt-get",
+            "purge",
+            "-y",
+            "--auto-remove",
+            "-o",
+            "APT::AutoRemove::RecommendsImportant=false"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:8:57",
+        "astCommand": [
+            "openssl",
+            "version"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:10:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:10:2",
+        "astCommand": [
+            "groupadd",
+            "--gid",
+            "999",
+            "--system",
+            "rabbitmq"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:10:3",
+        "astCommand": [
+            "useradd",
+            "--uid",
+            "999",
+            "--system",
+            "--home-dir",
+            "RABBITMQ_DATA_DIR",
+            "--gid",
+            "rabbitmq",
+            "rabbitmq"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:10:4",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "RABBITMQ_DATA_DIR",
+            "/etc/rabbitmq",
+            "/tmp/rabbitmq-ssl",
+            "/var/log/rabbitmq"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:10:5",
+        "astCommand": [
+            "chown",
+            "-fR",
+            "rabbitmq:rabbitmq",
+            "RABBITMQ_DATA_DIR",
+            "/etc/rabbitmq",
+            "/tmp/rabbitmq-ssl",
+            "/var/log/rabbitmq"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:10:6",
+        "astCommand": [
+            "chmod",
+            "777",
+            "RABBITMQ_DATA_DIR",
+            "/etc/rabbitmq",
+            "/tmp/rabbitmq-ssl",
+            "/var/log/rabbitmq"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:17:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:17:2",
+        "astCommand": [
+            "apt-mark",
+            "showmanual"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:17:3",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:17:4",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "--yes",
+            "--no-install-recommends",
+            "ca-certificates",
+            "gnupg",
+            "wget",
+            "xz-utils"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:17:5",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:17:6",
+        "astCommand": [
+            "wget",
+            "--progress",
+            "dot:giga",
+            "--output-document",
+            "RABBITMQ_PATH",
+            ".tar.xz.asc",
+            "RABBITMQ_SOURCE_URL",
+            ".asc"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:17:7",
+        "astCommand": [
+            "wget",
+            "--progress",
+            "dot:giga",
+            "--output-document",
+            "RABBITMQ_PATH",
+            ".tar.xz",
+            "RABBITMQ_SOURCE_URL"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:17:8",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:17:9",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--keyserver",
+            "PGP_KEYSERVER",
+            "--recv-keys",
+            "RABBITMQ_PGP_KEY_ID"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:17:10",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--verify",
+            "RABBITMQ_PATH",
+            ".tar.xz.asc",
+            "RABBITMQ_PATH",
+            ".tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:17:11",
+        "astCommand": [
+            "gpgconf",
+            "--kill",
+            "all"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:17:12",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "GNUPGHOME"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:17:13",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "RABBITMQ_HOME"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:17:14",
+        "astCommand": [
+            "tar",
+            "--extract",
+            "--file",
+            "RABBITMQ_PATH",
+            ".tar.xz",
+            "--directory",
+            "RABBITMQ_HOME",
+            "--strip-components",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:17:15",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "RABBITMQ_PATH",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:17:16",
+        "astCommand": [
+            "grep",
+            "-qE",
+            "^SYS_PREFIX=\\$\\{RABBITMQ_HOME\\}$",
+            "RABBITMQ_HOME",
+            "/sbin/rabbitmq-defaults"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:17:17",
+        "astCommand": [
+            "sed",
+            "-i",
+            "s/^SYS_PREFIX=.*$/SYS_PREFIX=/",
+            "RABBITMQ_HOME",
+            "/sbin/rabbitmq-defaults"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:17:18",
+        "astCommand": [
+            "grep",
+            "-qE",
+            "^SYS_PREFIX=$",
+            "RABBITMQ_HOME",
+            "/sbin/rabbitmq-defaults"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:17:19",
+        "astCommand": [
+            "chown",
+            "-R",
+            "rabbitmq:rabbitmq",
+            "RABBITMQ_HOME"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:17:20",
+        "astCommand": [
+            "apt-mark",
+            "auto",
+            ".*"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:17:21",
+        "astCommand": [
+            "apt-mark",
+            "manual",
+            "savedAptMark"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:17:22",
+        "astCommand": [
+            "apt-get",
+            "purge",
+            "-y",
+            "--auto-remove",
+            "-o",
+            "APT::AutoRemove::RecommendsImportant=false"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:17:23",
+        "astCommand": [
+            "gosu",
+            "rabbitmq",
+            "rabbitmqctl",
+            "help"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:17:24",
+        "astCommand": [
+            "gosu",
+            "rabbitmq",
+            "rabbitmqctl",
+            "list_ciphers"
+        ]
+    },
+    {
+        "astCommandId": "6ad95dc504ca4f62519df53626406f221dc9e319:17:25",
+        "astCommand": [
+            "gosu",
+            "rabbitmq",
+            "rabbitmq-plugins",
+            "list"
+        ]
+    }
+]

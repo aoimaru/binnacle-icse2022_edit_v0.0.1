@@ -1,0 +1,70 @@
+[
+    {
+        "astCommandId": "shadowvpn:1:1",
+        "astCommand": [
+            "apk",
+            "add",
+            "-U",
+            "autoconf",
+            "automake",
+            "build-base",
+            "gawk",
+            "git",
+            "iptables",
+            "libtool",
+            "linux-headers"
+        ]
+    },
+    {
+        "astCommandId": "shadowvpn:1:2",
+        "astCommand": [
+            "git",
+            "clone",
+            "--recursive",
+            "https://github.com/vimagick/ShadowVPN.git"
+        ]
+    },
+    {
+        "astCommandId": "shadowvpn:1:3",
+        "astCommand": [
+            "cd",
+            "ShadowVPN"
+        ]
+    },
+    {
+        "astCommandId": "shadowvpn:1:4",
+        "astCommand": [
+            "./autogen.sh"
+        ]
+    },
+    {
+        "astCommandId": "shadowvpn:1:5",
+        "astCommand": [
+            "./configure",
+            "--enable-static",
+            "--sysconfdir=/etc"
+        ]
+    },
+    {
+        "astCommandId": "shadowvpn:1:6",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "shadowvpn:1:7",
+        "astCommand": [
+            "cd",
+            ".."
+        ]
+    },
+    {
+        "astCommandId": "shadowvpn:1:8",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "ShadowVPN"
+        ]
+    }
+]

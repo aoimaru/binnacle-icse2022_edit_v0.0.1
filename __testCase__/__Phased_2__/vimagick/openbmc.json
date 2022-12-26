@@ -1,0 +1,38 @@
+[
+    {
+        "astCommandId": "openbmc:1:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "openbmc:1:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "bash",
+            "build-essential",
+            "ca-certificates",
+            "chrpath",
+            "curl",
+            "diffstat",
+            "gawk",
+            "git",
+            "libpixman-1-0",
+            "libsdl1.2-dev",
+            "texinfo"
+        ]
+    },
+    {
+        "astCommandId": "openbmc:2:1",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "-o",
+            "/usr/bin/qemu-system-arm",
+            "https://openpower.xyz/job/openbmc-qemu-build-merge-x86/lastSuccessfulBuild/artifact/qemu/arm-softmmu/qemu-system-arm"
+        ]
+    }
+]

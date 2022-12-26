@@ -1,0 +1,113 @@
+[
+    {
+        "astCommandId": "dante:7:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "dante:7:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "dante:7:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "DANTE_DEPS"
+        ]
+    },
+    {
+        "astCommandId": "dante:7:4",
+        "astCommand": [
+            "mkdir",
+            "DANTE_TEMP"
+        ]
+    },
+    {
+        "astCommandId": "dante:7:5",
+        "astCommand": [
+            "cd",
+            "DANTE_TEMP"
+        ]
+    },
+    {
+        "astCommandId": "dante:7:6",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "DANTE_URL",
+            "-o",
+            "DANTE_FILE"
+        ]
+    },
+    {
+        "astCommandId": "dante:7:7",
+        "astCommand": [
+            "echo",
+            "DANTE_SHA1",
+            " *",
+            "DANTE_FILE"
+        ]
+    },
+    {
+        "astCommandId": "dante:7:8",
+        "astCommand": [
+            "sha1sum",
+            "-c"
+        ]
+    },
+    {
+        "astCommandId": "dante:7:9",
+        "astCommand": [
+            "tar",
+            "xzf",
+            "DANTE_FILE",
+            "--strip",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "dante:7:10",
+        "astCommand": [
+            "./configure"
+        ]
+    },
+    {
+        "astCommandId": "dante:7:11",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "dante:7:12",
+        "astCommand": [
+            "cd",
+            ".."
+        ]
+    },
+    {
+        "astCommandId": "dante:7:13",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "DANTE_TEMP"
+        ]
+    },
+    {
+        "astCommandId": "dante:7:14",
+        "astCommand": [
+            "apt-get",
+            "purge",
+            "-y",
+            "--auto-remove",
+            "DANTE_DEPS"
+        ]
+    }
+]

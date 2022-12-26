@@ -1,0 +1,274 @@
+[
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:1:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:1:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:1:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "ca-certificates",
+            "curl"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:2",
+        "astCommand": [
+            "apt-mark",
+            "showmanual"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:3",
+        "astCommand": [
+            "command",
+            "-v",
+            "gpg"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:4",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:5",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "gnupg",
+            "dirmngr"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:6",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:7",
+        "astCommand": [
+            "dpkg",
+            "--print-architecture"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:8",
+        "astCommand": [
+            "echo",
+            "error: current architecture (",
+            "dpkgArch",
+            ") does not have a corresponding Julia binary release"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:9",
+        "astCommand": [
+            "exit",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:10",
+        "astCommand": [
+            "echo",
+            "JULIA_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:11",
+        "astCommand": [
+            "cut",
+            "-d.",
+            "-f1-2"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:12",
+        "astCommand": [
+            "curl",
+            "-fL",
+            "-o",
+            "julia.tar.gz.asc",
+            "https://julialang-s3.julialang.org/bin/linux/",
+            "dirArch",
+            "/",
+            "folder",
+            "/julia-",
+            "JULIA_VERSION",
+            "-linux-",
+            "tarArch",
+            ".tar.gz.asc"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:13",
+        "astCommand": [
+            "curl",
+            "-fL",
+            "-o",
+            "julia.tar.gz",
+            "https://julialang-s3.julialang.org/bin/linux/",
+            "dirArch",
+            "/",
+            "folder",
+            "/julia-",
+            "JULIA_VERSION",
+            "-linux-",
+            "tarArch",
+            ".tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:14",
+        "astCommand": [
+            "echo",
+            "sha256",
+            " *julia.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:15",
+        "astCommand": [
+            "sha256sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:16",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:17",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--keyserver",
+            "ha.pool.sks-keyservers.net",
+            "--recv-keys",
+            "JULIA_GPG"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:18",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--verify",
+            "julia.tar.gz.asc",
+            "julia.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:19",
+        "astCommand": [
+            "command",
+            "-v",
+            "gpgconf"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:20",
+        "astCommand": [
+            "gpgconf",
+            "--kill",
+            "all"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:21",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "GNUPGHOME",
+            "julia.tar.gz.asc"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:22",
+        "astCommand": [
+            "mkdir",
+            "JULIA_PATH"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:23",
+        "astCommand": [
+            "tar",
+            "-xzf",
+            "julia.tar.gz",
+            "-C",
+            "JULIA_PATH",
+            "--strip-components",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:24",
+        "astCommand": [
+            "rm",
+            "julia.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:25",
+        "astCommand": [
+            "apt-mark",
+            "auto",
+            ".*"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:26",
+        "astCommand": [
+            "apt-mark",
+            "manual",
+            "savedAptMark"
+        ]
+    },
+    {
+        "astCommandId": "c73d9783e23e52ebcce9ddde9ac9b391bab5cc15:6:27",
+        "astCommand": [
+            "apt-get",
+            "purge",
+            "-y",
+            "--auto-remove",
+            "-o",
+            "APT::AutoRemove::RecommendsImportant=false"
+        ]
+    }
+]

@@ -1,0 +1,127 @@
+[
+    {
+        "astCommandId": "browsh:1:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "browsh:1:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "bash",
+            "bzip2",
+            "ca-certificates",
+            "libdbus-glib-1-2",
+            "libgtk-3-0",
+            "libx11-xcb1",
+            "libxt6",
+            "tar",
+            "wget",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "browsh:3:1",
+        "astCommand": [
+            "addgroup",
+            "--gid",
+            "666",
+            "browsh"
+        ]
+    },
+    {
+        "astCommandId": "browsh:9:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "browsh:9:2",
+        "astCommand": [
+            "wget",
+            "https://ftp.mozilla.org/pub/firefox/releases/",
+            "FIREFOX_VERSION",
+            "/linux-x86_64/en-US/firefox-",
+            "FIREFOX_VERSION",
+            ".tar.bz2",
+            "-O",
+            "/tmp/firefox.tar.bz2"
+        ]
+    },
+    {
+        "astCommandId": "browsh:9:3",
+        "astCommand": [
+            "cd",
+            "/tmp"
+        ]
+    },
+    {
+        "astCommandId": "browsh:9:4",
+        "astCommand": [
+            "bzip2",
+            "-d",
+            "/tmp/firefox.tar.bz2"
+        ]
+    },
+    {
+        "astCommandId": "browsh:9:5",
+        "astCommand": [
+            "tar",
+            "-xf",
+            "/tmp/firefox.tar",
+            "-C",
+            "/home/browsh/bin/",
+            "--strip-components",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "browsh:9:6",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/tmp/firefox",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "browsh:11:1",
+        "astCommand": [
+            "wget",
+            "https://github.com/browsh-org/browsh/releases/download/v",
+            "BROWSH_VERSION",
+            "/browsh_",
+            "BROWSH_VERSION",
+            "_linux_amd64",
+            "-O",
+            "/home/browsh/bin/browsh"
+        ]
+    },
+    {
+        "astCommandId": "browsh:12:1",
+        "astCommand": [
+            "TERM",
+            "xterm",
+            "browsh"
+        ]
+    },
+    {
+        "astCommandId": "browsh:12:2",
+        "astCommand": [
+            "sleep",
+            "10"
+        ]
+    },
+    {
+        "astCommandId": "browsh:12:3",
+        "astCommand": [
+            "kill",
+            "pidsave"
+        ]
+    }
+]

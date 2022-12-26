@@ -1,0 +1,54 @@
+[
+    {
+        "astCommandId": "vagrant:1:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "vagrant:1:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "bridge-utils",
+            "ca-certificates",
+            "curl",
+            "gcc",
+            "libxslt-dev",
+            "libxml2-dev",
+            "libvirt0",
+            "libvirt-dev",
+            "make",
+            "pkg-config",
+            "qemu-kvm",
+            "ruby-dev",
+            "ssh",
+            "zlib1g-dev",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "vagrant:3:1",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://releases.hashicorp.com/vagrant/",
+            "VAGRANT_VERSION",
+            "/vagrant_",
+            "VAGRANT_VERSION",
+            "_x86_64.deb",
+            "-o",
+            "/tmp/vagrant-amd64.deb"
+        ]
+    },
+    {
+        "astCommandId": "vagrant:3:2",
+        "astCommand": [
+            "dpkg",
+            "-i",
+            "/tmp/vagrant-amd64.deb"
+        ]
+    }
+]

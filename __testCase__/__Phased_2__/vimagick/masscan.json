@@ -1,0 +1,74 @@
+[
+    {
+        "astCommandId": "masscan:3:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "masscan:3:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "build-base",
+            "clang",
+            "clang-dev",
+            "git",
+            "linux-headers"
+        ]
+    },
+    {
+        "astCommandId": "masscan:3:3",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "masscan:3:4",
+        "astCommand": [
+            "git",
+            "clone",
+            "--depth",
+            "1",
+            "--branch",
+            "MASSCAN_VERSION",
+            "https://github.com/robertdavidgraham/masscan.git",
+            "/usr/src/masscan"
+        ]
+    },
+    {
+        "astCommandId": "masscan:3:5",
+        "astCommand": [
+            "cd",
+            "/usr/src/masscan"
+        ]
+    },
+    {
+        "astCommandId": "masscan:3:6",
+        "astCommand": [
+            "make"
+        ]
+    },
+    {
+        "astCommandId": "masscan:3:7",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "masscan:3:8",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/usr/src/masscan"
+        ]
+    }
+]

@@ -1,0 +1,106 @@
+[
+    {
+        "astCommandId": "bed9c0d43acadbd0e3b65c2f5f653ad0f7af0c05:1:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "bed9c0d43acadbd0e3b65c2f5f653ad0f7af0c05:1:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "ca-certificates",
+            "curl",
+            "build-essential",
+            "pkg-config",
+            "git",
+            "python"
+        ]
+    },
+    {
+        "astCommandId": "bed9c0d43acadbd0e3b65c2f5f653ad0f7af0c05:5:1",
+        "astCommand": [
+            "curl",
+            "-SLO",
+            "http://nodejs.org/dist/v",
+            "NODE_VERSION",
+            "/node-v",
+            "NODE_VERSION",
+            "-linux-x64.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "bed9c0d43acadbd0e3b65c2f5f653ad0f7af0c05:5:2",
+        "astCommand": [
+            "curl",
+            "-SLO",
+            "http://nodejs.org/dist/v",
+            "NODE_VERSION",
+            "/SHASUMS256.txt.asc"
+        ]
+    },
+    {
+        "astCommandId": "bed9c0d43acadbd0e3b65c2f5f653ad0f7af0c05:5:3",
+        "astCommand": [
+            "gpg",
+            "--verify",
+            "SHASUMS256.txt.asc"
+        ]
+    },
+    {
+        "astCommandId": "bed9c0d43acadbd0e3b65c2f5f653ad0f7af0c05:5:4",
+        "astCommand": [
+            "grep",
+            " node-v",
+            "NODE_VERSION",
+            "-linux-x64.tar.gz$",
+            "SHASUMS256.txt.asc"
+        ]
+    },
+    {
+        "astCommandId": "bed9c0d43acadbd0e3b65c2f5f653ad0f7af0c05:5:5",
+        "astCommand": [
+            "sha256sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "bed9c0d43acadbd0e3b65c2f5f653ad0f7af0c05:5:6",
+        "astCommand": [
+            "tar",
+            "-xzf",
+            "node-v",
+            "NODE_VERSION",
+            "-linux-x64.tar.gz",
+            "-C",
+            "/usr/local",
+            "--strip-components=1"
+        ]
+    },
+    {
+        "astCommandId": "bed9c0d43acadbd0e3b65c2f5f653ad0f7af0c05:5:7",
+        "astCommand": [
+            "rm",
+            "node-v",
+            "NODE_VERSION",
+            "-linux-x64.tar.gz",
+            "SHASUMS256.txt.asc"
+        ]
+    },
+    {
+        "astCommandId": "bed9c0d43acadbd0e3b65c2f5f653ad0f7af0c05:5:8",
+        "astCommand": [
+            "npm",
+            "install",
+            "-g",
+            "npm",
+            "@",
+            "NPM_VERSION"
+        ]
+    }
+]

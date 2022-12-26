@@ -1,0 +1,251 @@
+[
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:1:1",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/local/etc"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:1:2",
+        "astCommand": [
+            "echo",
+            "install: --no-document"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "buildDeps"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:4",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:5",
+        "astCommand": [
+            "wget",
+            "-O",
+            "ruby.tar.xz",
+            "https://cache.ruby-lang.org/pub/ruby/",
+            "RUBY_MAJOR%-rc",
+            "/ruby-",
+            "RUBY_VERSION",
+            ".tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:6",
+        "astCommand": [
+            "echo",
+            "RUBY_DOWNLOAD_SHA256",
+            " *ruby.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:7",
+        "astCommand": [
+            "sha256sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:8",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/ruby"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:9",
+        "astCommand": [
+            "tar",
+            "-xJf",
+            "ruby.tar.xz",
+            "-C",
+            "/usr/src/ruby",
+            "--strip-components=1"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:10",
+        "astCommand": [
+            "rm",
+            "ruby.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:11",
+        "astCommand": [
+            "cd",
+            "/usr/src/ruby"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:12",
+        "astCommand": [
+            "echo",
+            "#define ENABLE_PATH_CHECK 0"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:13",
+        "astCommand": [
+            "echo"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:14",
+        "astCommand": [
+            "cat",
+            "file.c"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:15",
+        "astCommand": [
+            "mv",
+            "file.c.new",
+            "file.c"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:16",
+        "astCommand": [
+            "autoconf"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:17",
+        "astCommand": [
+            "dpkg-architecture",
+            "--query",
+            "DEB_BUILD_GNU_TYPE"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:18",
+        "astCommand": [
+            "./configure",
+            "--build=",
+            "gnuArch",
+            "--disable-install-doc",
+            "--enable-shared"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:19",
+        "astCommand": [
+            "make",
+            "-j",
+            "nproc"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:20",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:21",
+        "astCommand": [
+            "apt-get",
+            "purge",
+            "-y",
+            "--auto-remove",
+            "buildDeps"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:22",
+        "astCommand": [
+            "cd",
+            "/"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:23",
+        "astCommand": [
+            "rm",
+            "-r",
+            "/usr/src/ruby"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:24",
+        "astCommand": [
+            "ruby",
+            "-e",
+            "exit(Gem::Version.create(ENV[\"RUBYGEMS_VERSION\"]) > Gem::Version.create(Gem::VERSION))"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:25",
+        "astCommand": [
+            "gem",
+            "update",
+            "--system",
+            "RUBYGEMS_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:26",
+        "astCommand": [
+            "rm",
+            "-r",
+            "/root/.gem/"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:27",
+        "astCommand": [
+            "ruby",
+            "--version"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:6:28",
+        "astCommand": [
+            "gem",
+            "--version"
+        ]
+    },
+    {
+        "astCommandId": "1c11182d763188889c00d8f44a91d0df09e0147b:12:1",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "GEM_HOME"
+        ]
+    }
+]

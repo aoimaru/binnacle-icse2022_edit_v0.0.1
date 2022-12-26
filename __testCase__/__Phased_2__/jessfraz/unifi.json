@@ -1,0 +1,258 @@
+[
+    {
+        "astCommandId": "unifi:2:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "unifi:2:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "ca-certificates",
+            "dirmngr",
+            "gnupg",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "unifi:4:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "unifi:4:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "unifi:4:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "fetchDeps"
+        ]
+    },
+    {
+        "astCommandId": "unifi:4:4",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "unifi:4:5",
+        "astCommand": [
+            "dpkg",
+            "--print-architecture"
+        ]
+    },
+    {
+        "astCommandId": "unifi:4:6",
+        "astCommand": [
+            "awk",
+            "-F-",
+            "{ print $NF }"
+        ]
+    },
+    {
+        "astCommandId": "unifi:4:7",
+        "astCommand": [
+            "wget",
+            "-O",
+            "/usr/local/bin/gosu",
+            "https://github.com/tianon/gosu/releases/download/",
+            "GOSU_VERSION",
+            "/gosu-",
+            "dpkgArch"
+        ]
+    },
+    {
+        "astCommandId": "unifi:4:8",
+        "astCommand": [
+            "wget",
+            "-O",
+            "/usr/local/bin/gosu.asc",
+            "https://github.com/tianon/gosu/releases/download/",
+            "GOSU_VERSION",
+            "/gosu-",
+            "dpkgArch",
+            ".asc"
+        ]
+    },
+    {
+        "astCommandId": "unifi:4:9",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "unifi:4:10",
+        "astCommand": [
+            "shuf",
+            "-e",
+            "ha.pool.sks-keyservers.net",
+            "hkp://p80.pool.sks-keyservers.net:80",
+            "keyserver.ubuntu.com",
+            "hkp://keyserver.ubuntu.com:80",
+            "pgp.mit.edu"
+        ]
+    },
+    {
+        "astCommandId": "unifi:4:11",
+        "astCommand": [
+            "gpg",
+            "--keyserver",
+            "server",
+            "--recv-keys",
+            "B42F6819007F00F88E364FD4036A9C25BF357DD4"
+        ]
+    },
+    {
+        "astCommandId": "unifi:4:12",
+        "astCommand": [
+            "break"
+        ]
+    },
+    {
+        "astCommandId": "unifi:4:13",
+        "astCommand": [
+            ":"
+        ]
+    },
+    {
+        "astCommandId": "unifi:4:14",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--verify",
+            "/usr/local/bin/gosu.asc",
+            "/usr/local/bin/gosu"
+        ]
+    },
+    {
+        "astCommandId": "unifi:4:15",
+        "astCommand": [
+            "rm",
+            "-r",
+            "GNUPGHOME",
+            "/usr/local/bin/gosu.asc"
+        ]
+    },
+    {
+        "astCommandId": "unifi:4:16",
+        "astCommand": [
+            "chmod",
+            "+",
+            "x",
+            "/usr/local/bin/gosu"
+        ]
+    },
+    {
+        "astCommandId": "unifi:4:17",
+        "astCommand": [
+            "gosu",
+            "nobody",
+            "true"
+        ]
+    },
+    {
+        "astCommandId": "unifi:5:1",
+        "astCommand": [
+            "apt-key",
+            "adv",
+            "--keyserver",
+            "hkp://keyserver.ubuntu.com:80",
+            "--recv",
+            "0C49F3730359A14518585931BC711F9BA15703C6"
+        ]
+    },
+    {
+        "astCommandId": "unifi:6:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "unifi:6:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "binutils",
+            "jsvc",
+            "mongodb-org-server",
+            "openjdk-8-jre-headless",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "unifi:8:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "unifi:8:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "curl",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "unifi:8:3",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "unifi:8:4",
+        "astCommand": [
+            "curl",
+            "-o",
+            "/tmp/unifi.deb",
+            "-L",
+            "https://dl.ubnt.com/unifi/",
+            "UNIFI_VERSION",
+            "/unifi_sysvinit_all.deb"
+        ]
+    },
+    {
+        "astCommandId": "unifi:8:5",
+        "astCommand": [
+            "dpkg",
+            "-i",
+            "/tmp/unifi.deb"
+        ]
+    },
+    {
+        "astCommandId": "unifi:8:6",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/tmp/unifi.deb"
+        ]
+    }
+]

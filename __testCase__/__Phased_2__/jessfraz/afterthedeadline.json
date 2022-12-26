@@ -1,0 +1,34 @@
+[
+    {
+        "astCommandId": "afterthedeadline:4:1",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "http://www.polishmywriting.com/download/atd_distribution",
+            "ATD_VERSION",
+            ".tgz",
+            "-o",
+            "/tmp/atd.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "afterthedeadline:4:2",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/atd"
+        ]
+    },
+    {
+        "astCommandId": "afterthedeadline:4:3",
+        "astCommand": [
+            "tar",
+            "-xzf",
+            "/tmp/atd.tar.gz",
+            "-C",
+            "/usr/src/atd",
+            "--strip-components",
+            "1"
+        ]
+    }
+]

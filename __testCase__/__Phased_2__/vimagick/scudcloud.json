@@ -1,0 +1,57 @@
+[
+    {
+        "astCommandId": "scudcloud:2:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "scudcloud:2:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "dbus-x11",
+            "hunspell-en-us",
+            "libnotify-bin",
+            "python3-dbus",
+            "software-properties-common",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "scudcloud:2:3",
+        "astCommand": [
+            "apt-add-repository",
+            "-y",
+            "ppa:rael-gc/scudcloud"
+        ]
+    },
+    {
+        "astCommandId": "scudcloud:2:4",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "scudcloud:2:5",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "scudcloud"
+        ]
+    },
+    {
+        "astCommandId": "scudcloud:5:1",
+        "astCommand": [
+            "useradd",
+            "--create-home",
+            "--home-dir",
+            "HOME",
+            "user"
+        ]
+    }
+]

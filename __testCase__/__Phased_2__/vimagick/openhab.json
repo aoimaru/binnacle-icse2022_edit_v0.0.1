@@ -1,0 +1,41 @@
+[
+    {
+        "astCommandId": "openhab:5:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "openhab:5:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "curl"
+        ]
+    },
+    {
+        "astCommandId": "openhab:5:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "OPENHAB_URL"
+        ]
+    },
+    {
+        "astCommandId": "openhab:5:4",
+        "astCommand": [
+            "unzip",
+            "OPENHAB_FILE"
+        ]
+    },
+    {
+        "astCommandId": "openhab:5:5",
+        "astCommand": [
+            "apk",
+            "del",
+            "curl"
+        ]
+    }
+]

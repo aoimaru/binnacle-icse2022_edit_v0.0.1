@@ -1,0 +1,136 @@
+[
+    {
+        "astCommandId": "curl:3:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "curl:3:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "g",
+            "+",
+            "+",
+            "make",
+            "nghttp2-dev",
+            "openssl-dev",
+            "perl",
+            "gnupg"
+        ]
+    },
+    {
+        "astCommandId": "curl:3:3",
+        "astCommand": [
+            "wget",
+            "https://curl.haxx.se/download/curl-",
+            "CURL_VERSION",
+            ".tar.bz2"
+        ]
+    },
+    {
+        "astCommandId": "curl:3:4",
+        "astCommand": [
+            "wget",
+            "https://curl.haxx.se/download/curl-",
+            "CURL_VERSION",
+            ".tar.bz2.asc"
+        ]
+    },
+    {
+        "astCommandId": "curl:3:5",
+        "astCommand": [
+            "gpg",
+            "--keyserver",
+            "ha.pool.sks-keyservers.net",
+            "--recv-keys",
+            "27EDEAF22F3ABCEB50DB9A125CC908FDB71E12C2"
+        ]
+    },
+    {
+        "astCommandId": "curl:3:6",
+        "astCommand": [
+            "gpg",
+            "--verify",
+            "curl-",
+            "CURL_VERSION",
+            ".tar.bz2.asc"
+        ]
+    },
+    {
+        "astCommandId": "curl:3:7",
+        "astCommand": [
+            "tar",
+            "xjvf",
+            "curl-",
+            "CURL_VERSION",
+            ".tar.bz2"
+        ]
+    },
+    {
+        "astCommandId": "curl:3:8",
+        "astCommand": [
+            "rm",
+            "curl-",
+            "CURL_VERSION",
+            ".tar.bz2"
+        ]
+    },
+    {
+        "astCommandId": "curl:3:9",
+        "astCommand": [
+            "cd",
+            "curl-",
+            "CURL_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "curl:3:10",
+        "astCommand": [
+            "./configure",
+            "--with-nghttp2=/usr",
+            "--with-ssl",
+            "--enable-ipv6",
+            "--enable-unix-sockets",
+            "--without-libidn",
+            "--disable-static",
+            "--disable-ldap",
+            "--with-pic"
+        ]
+    },
+    {
+        "astCommandId": "curl:3:11",
+        "astCommand": [
+            "make"
+        ]
+    },
+    {
+        "astCommandId": "curl:3:12",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "curl:3:13",
+        "astCommand": [
+            "rm",
+            "-r",
+            "curl-",
+            "CURL_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "curl:3:14",
+        "astCommand": [
+            "rm",
+            "-r",
+            "/usr/share/man"
+        ]
+    }
+]

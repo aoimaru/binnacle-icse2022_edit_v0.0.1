@@ -1,0 +1,68 @@
+[
+    {
+        "astCommandId": "vault:4:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "vault:4:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "-U",
+            "ca-certificates"
+        ]
+    },
+    {
+        "astCommandId": "vault:4:3",
+        "astCommand": [
+            "wget",
+            "-O",
+            "vault.zip",
+            "VAULT_URL"
+        ]
+    },
+    {
+        "astCommandId": "vault:4:4",
+        "astCommand": [
+            "echo",
+            "VAULT_MD5",
+            "  vault.zip"
+        ]
+    },
+    {
+        "astCommandId": "vault:4:5",
+        "astCommand": [
+            "md5sum",
+            "-c"
+        ]
+    },
+    {
+        "astCommandId": "vault:4:6",
+        "astCommand": [
+            "unzip",
+            "vault.zip",
+            "-d",
+            "/usr/bin/"
+        ]
+    },
+    {
+        "astCommandId": "vault:4:7",
+        "astCommand": [
+            "chmod",
+            "+",
+            "x",
+            "/usr/bin/vault"
+        ]
+    },
+    {
+        "astCommandId": "vault:4:8",
+        "astCommand": [
+            "apk",
+            "del",
+            "ca-certificates"
+        ]
+    }
+]

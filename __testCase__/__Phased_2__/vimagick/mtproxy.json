@@ -1,0 +1,92 @@
+[
+    {
+        "astCommandId": "mtproxy:2:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "mtproxy:2:2",
+        "astCommand": [
+            "apt",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "mtproxy:2:3",
+        "astCommand": [
+            "apt",
+            "install",
+            "-y",
+            "build-essential",
+            "curl",
+            "git",
+            "libssl-dev",
+            "zlib1g-dev"
+        ]
+    },
+    {
+        "astCommandId": "mtproxy:2:4",
+        "astCommand": [
+            "git",
+            "clone",
+            "--single-branch",
+            "--depth",
+            "1",
+            "https://github.com/TelegramMessenger/MTProxy.git",
+            "."
+        ]
+    },
+    {
+        "astCommandId": "mtproxy:2:5",
+        "astCommand": [
+            "make",
+            "-j",
+            "getconf",
+            "_NPROCESSORS_ONLN"
+        ]
+    },
+    {
+        "astCommandId": "mtproxy:2:6",
+        "astCommand": [
+            "cp",
+            "./objs/bin/mtproto-proxy",
+            "/usr/local/bin/"
+        ]
+    },
+    {
+        "astCommandId": "mtproxy:2:7",
+        "astCommand": [
+            "apt",
+            "remove",
+            "-y",
+            "build-essential",
+            "git",
+            "libssl-dev",
+            "zlib1g-dev"
+        ]
+    },
+    {
+        "astCommandId": "mtproxy:2:8",
+        "astCommand": [
+            "cd",
+            ".."
+        ]
+    },
+    {
+        "astCommandId": "mtproxy:4:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "mtproxy:4:2",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://core.telegram.org/getProxySecret"
+        ]
+    }
+]

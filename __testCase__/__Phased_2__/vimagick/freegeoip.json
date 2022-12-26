@@ -1,0 +1,36 @@
+[
+    {
+        "astCommandId": "freegeoip:5:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "freegeoip:5:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "curl",
+            "tar"
+        ]
+    },
+    {
+        "astCommandId": "freegeoip:5:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "FREEGEOIP_URL"
+        ]
+    },
+    {
+        "astCommandId": "freegeoip:5:4",
+        "astCommand": [
+            "tar",
+            "xz",
+            "--strip",
+            "1"
+        ]
+    }
+]

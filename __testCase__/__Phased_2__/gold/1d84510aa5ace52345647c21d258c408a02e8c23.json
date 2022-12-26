@@ -1,0 +1,94 @@
+[
+    {
+        "astCommandId": "1d84510aa5ace52345647c21d258c408a02e8c23:5:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "1d84510aa5ace52345647c21d258c408a02e8c23:5:2",
+        "astCommand": [
+            "apk",
+            "--print-arch"
+        ]
+    },
+    {
+        "astCommandId": "1d84510aa5ace52345647c21d258c408a02e8c23:5:3",
+        "astCommand": [
+            "echo",
+            "error: unsupported architecture (",
+            "apkArch",
+            ")"
+        ]
+    },
+    {
+        "astCommandId": "1d84510aa5ace52345647c21d258c408a02e8c23:5:4",
+        "astCommand": [
+            "exit",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "1d84510aa5ace52345647c21d258c408a02e8c23:5:5",
+        "astCommand": [
+            "wget",
+            "-O",
+            "docker.tgz",
+            "https://download.docker.com/linux/static/",
+            "DOCKER_CHANNEL",
+            "/",
+            "dockerArch",
+            "/docker-",
+            "DOCKER_VERSION",
+            ".tgz"
+        ]
+    },
+    {
+        "astCommandId": "1d84510aa5ace52345647c21d258c408a02e8c23:5:6",
+        "astCommand": [
+            "echo",
+            "error: failed to download 'docker-",
+            "DOCKER_VERSION",
+            "' from '",
+            "DOCKER_CHANNEL",
+            "' for '",
+            "dockerArch",
+            "'"
+        ]
+    },
+    {
+        "astCommandId": "1d84510aa5ace52345647c21d258c408a02e8c23:5:7",
+        "astCommand": [
+            "exit",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "1d84510aa5ace52345647c21d258c408a02e8c23:5:8",
+        "astCommand": [
+            "tar",
+            "--extract",
+            "--file",
+            "docker.tgz",
+            "--strip-components",
+            "1",
+            "--directory",
+            "/usr/local/bin/"
+        ]
+    },
+    {
+        "astCommandId": "1d84510aa5ace52345647c21d258c408a02e8c23:5:9",
+        "astCommand": [
+            "rm",
+            "docker.tgz"
+        ]
+    },
+    {
+        "astCommandId": "1d84510aa5ace52345647c21d258c408a02e8c23:5:10",
+        "astCommand": [
+            "dockerd",
+            "--version"
+        ]
+    }
+]

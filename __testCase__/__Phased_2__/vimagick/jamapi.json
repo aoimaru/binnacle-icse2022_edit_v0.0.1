@@ -1,0 +1,56 @@
+[
+    {
+        "astCommandId": "jamapi:2:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "jamapi:2:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "-U",
+            "ca-certificates",
+            "curl",
+            "nodejs",
+            "nodejs-npm",
+            "tar"
+        ]
+    },
+    {
+        "astCommandId": "jamapi:2:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://github.com/gavindinubilo/jam-api/archive/master.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "jamapi:2:4",
+        "astCommand": [
+            "tar",
+            "xz",
+            "--strip",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "jamapi:2:5",
+        "astCommand": [
+            "npm",
+            "install",
+            "--production"
+        ]
+    },
+    {
+        "astCommandId": "jamapi:2:6",
+        "astCommand": [
+            "apk",
+            "del",
+            "curl",
+            "tar"
+        ]
+    }
+]

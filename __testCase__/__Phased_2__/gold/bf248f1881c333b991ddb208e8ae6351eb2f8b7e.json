@@ -1,0 +1,133 @@
+[
+    {
+        "astCommandId": "bf248f1881c333b991ddb208e8ae6351eb2f8b7e:1:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "bf248f1881c333b991ddb208e8ae6351eb2f8b7e:1:2",
+        "astCommand": [
+            "yum",
+            "install",
+            "-y",
+            "gzip",
+            "tar",
+            "freetype",
+            "fontconfig"
+        ]
+    },
+    {
+        "astCommandId": "bf248f1881c333b991ddb208e8ae6351eb2f8b7e:8:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "bf248f1881c333b991ddb208e8ae6351eb2f8b7e:8:2",
+        "astCommand": [
+            "curl",
+            "-fL",
+            "-o",
+            "/openjdk.tgz",
+            "JAVA_URL"
+        ]
+    },
+    {
+        "astCommandId": "bf248f1881c333b991ddb208e8ae6351eb2f8b7e:8:3",
+        "astCommand": [
+            "echo",
+            "JAVA_SHA256",
+            " */openjdk.tgz"
+        ]
+    },
+    {
+        "astCommandId": "bf248f1881c333b991ddb208e8ae6351eb2f8b7e:8:4",
+        "astCommand": [
+            "sha256sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "bf248f1881c333b991ddb208e8ae6351eb2f8b7e:8:5",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "JAVA_HOME"
+        ]
+    },
+    {
+        "astCommandId": "bf248f1881c333b991ddb208e8ae6351eb2f8b7e:8:6",
+        "astCommand": [
+            "tar",
+            "--extract",
+            "--file",
+            "/openjdk.tgz",
+            "--directory",
+            "JAVA_HOME",
+            "--strip-components",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "bf248f1881c333b991ddb208e8ae6351eb2f8b7e:8:7",
+        "astCommand": [
+            "rm",
+            "/openjdk.tgz"
+        ]
+    },
+    {
+        "astCommandId": "bf248f1881c333b991ddb208e8ae6351eb2f8b7e:8:8",
+        "astCommand": [
+            "ln",
+            "-sfT",
+            "JAVA_HOME",
+            "/usr/java/default"
+        ]
+    },
+    {
+        "astCommandId": "bf248f1881c333b991ddb208e8ae6351eb2f8b7e:8:9",
+        "astCommand": [
+            "ln",
+            "-sfT",
+            "JAVA_HOME",
+            "/usr/java/latest"
+        ]
+    },
+    {
+        "astCommandId": "bf248f1881c333b991ddb208e8ae6351eb2f8b7e:8:10",
+        "astCommand": [
+            "basename",
+            "bin"
+        ]
+    },
+    {
+        "astCommandId": "bf248f1881c333b991ddb208e8ae6351eb2f8b7e:8:11",
+        "astCommand": [
+            "alternatives",
+            "--install",
+            "/usr/bin/",
+            "base",
+            "base",
+            "bin",
+            "20000"
+        ]
+    },
+    {
+        "astCommandId": "bf248f1881c333b991ddb208e8ae6351eb2f8b7e:8:12",
+        "astCommand": [
+            "java",
+            "-Xshare:dump"
+        ]
+    },
+    {
+        "astCommandId": "bf248f1881c333b991ddb208e8ae6351eb2f8b7e:8:13",
+        "astCommand": [
+            "java",
+            "--version"
+        ]
+    }
+]

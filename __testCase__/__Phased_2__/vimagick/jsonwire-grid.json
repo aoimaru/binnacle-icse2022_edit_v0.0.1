@@ -1,0 +1,77 @@
+[
+    {
+        "astCommandId": "jsonwire-grid:5:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "jsonwire-grid:5:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "curl"
+        ]
+    },
+    {
+        "astCommandId": "jsonwire-grid:5:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "REPOSITORY",
+            "/releases/download/v",
+            "VERSION",
+            "/jsonwire-grid_",
+            "VERSION",
+            "_linux_amd64.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "jsonwire-grid:5:4",
+        "astCommand": [
+            "tar",
+            "xz",
+            "-C",
+            "/usr/local/bin",
+            "jsonwire-grid"
+        ]
+    },
+    {
+        "astCommandId": "jsonwire-grid:5:5",
+        "astCommand": [
+            "curl",
+            "-sSLO",
+            "REPOSITORY",
+            "/raw/master/config-local-sample.json"
+        ]
+    },
+    {
+        "astCommandId": "jsonwire-grid:5:6",
+        "astCommand": [
+            "curl",
+            "-sSLO",
+            "REPOSITORY",
+            "/raw/master/config-sample.json"
+        ]
+    },
+    {
+        "astCommandId": "jsonwire-grid:5:7",
+        "astCommand": [
+            "curl",
+            "-sSLO",
+            "REPOSITORY",
+            "/raw/master/config-test.json"
+        ]
+    },
+    {
+        "astCommandId": "jsonwire-grid:5:8",
+        "astCommand": [
+            "ln",
+            "-s",
+            "config-local-sample.json",
+            "CONFIG_PATH"
+        ]
+    }
+]

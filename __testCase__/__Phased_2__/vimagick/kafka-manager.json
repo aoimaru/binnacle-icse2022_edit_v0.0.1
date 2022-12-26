@@ -1,0 +1,126 @@
+[
+    {
+        "astCommandId": "kafka-manager:4:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "kafka-manager:4:2",
+        "astCommand": [
+            "apt",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "kafka-manager:4:3",
+        "astCommand": [
+            "wget",
+            "https://downloads.lightbend.com/scala/",
+            "SCALA_VERSION",
+            "/scala-",
+            "SCALA_VERSION",
+            ".deb",
+            "-O",
+            "scala.deb"
+        ]
+    },
+    {
+        "astCommandId": "kafka-manager:4:4",
+        "astCommand": [
+            "wget",
+            "https://dl.bintray.com/sbt/debian/sbt-",
+            "SBT_VERSION",
+            ".deb",
+            "-O",
+            "sbt.deb"
+        ]
+    },
+    {
+        "astCommandId": "kafka-manager:4:5",
+        "astCommand": [
+            "dpkg",
+            "-i",
+            "scala.deb",
+            "sbt.deb"
+        ]
+    },
+    {
+        "astCommandId": "kafka-manager:4:6",
+        "astCommand": [
+            "rm",
+            "scala.deb",
+            "sbt.deb"
+        ]
+    },
+    {
+        "astCommandId": "kafka-manager:6:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "kafka-manager:6:2",
+        "astCommand": [
+            "mkdir",
+            "src"
+        ]
+    },
+    {
+        "astCommandId": "kafka-manager:6:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://github.com/yahoo/kafka-manager/archive/",
+            "KAFKA_MANAGER_VERSION",
+            ".tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "kafka-manager:6:4",
+        "astCommand": [
+            "tar",
+            "xz",
+            "--strip",
+            "1",
+            "-C",
+            "src"
+        ]
+    },
+    {
+        "astCommandId": "kafka-manager:6:5",
+        "astCommand": [
+            "cd",
+            "src"
+        ]
+    },
+    {
+        "astCommandId": "kafka-manager:6:6",
+        "astCommand": [
+            "sbt",
+            "clean",
+            "universal:packageZipTarball"
+        ]
+    },
+    {
+        "astCommandId": "kafka-manager:6:7",
+        "astCommand": [
+            "cd",
+            ".."
+        ]
+    },
+    {
+        "astCommandId": "kafka-manager:6:8",
+        "astCommand": [
+            "tar",
+            "xzf",
+            "src/target/universal/kafka-manager-",
+            "KAFKA_MANAGER_VERSION",
+            ".tgz",
+            "--strip",
+            "1"
+        ]
+    }
+]

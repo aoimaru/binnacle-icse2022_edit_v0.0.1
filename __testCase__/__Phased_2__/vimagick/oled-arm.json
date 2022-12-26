@@ -1,0 +1,83 @@
+[
+    {
+        "astCommandId": "oled-arm:1:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "oled-arm:1:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "build-base",
+            "curl",
+            "linux-headers",
+            "python",
+            "python-dev",
+            "freetype",
+            "freetype-dev",
+            "jpeg",
+            "jpeg-dev"
+        ]
+    },
+    {
+        "astCommandId": "oled-arm:1:3",
+        "astCommand": [
+            "curl",
+            "https://bootstrap.pypa.io/get-pip.py"
+        ]
+    },
+    {
+        "astCommandId": "oled-arm:1:4",
+        "astCommand": [
+            "python"
+        ]
+    },
+    {
+        "astCommandId": "oled-arm:1:5",
+        "astCommand": [
+            "pip",
+            "install",
+            "--no-cache-dir",
+            "luma.oled"
+        ]
+    },
+    {
+        "astCommandId": "oled-arm:3:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "oled-arm:3:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "curl",
+            "tar"
+        ]
+    },
+    {
+        "astCommandId": "oled-arm:3:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://github.com/rm-hull/luma.examples/archive/master.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "oled-arm:3:4",
+        "astCommand": [
+            "tar",
+            "xz",
+            "--strip",
+            "2",
+            "luma.examples-master/examples"
+        ]
+    }
+]

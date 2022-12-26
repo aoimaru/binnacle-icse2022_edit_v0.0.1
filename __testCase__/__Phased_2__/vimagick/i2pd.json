@@ -1,0 +1,76 @@
+[
+    {
+        "astCommandId": "i2pd:5:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "i2pd:5:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "i2pd:5:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "wget"
+        ]
+    },
+    {
+        "astCommandId": "i2pd:5:4",
+        "astCommand": [
+            "wget",
+            "I2PD_URL",
+            "-O",
+            "i2pd.deb"
+        ]
+    },
+    {
+        "astCommandId": "i2pd:5:5",
+        "astCommand": [
+            "dpkg",
+            "-i",
+            "i2pd.deb"
+        ]
+    },
+    {
+        "astCommandId": "i2pd:5:6",
+        "astCommand": [
+            "apt-get",
+            "-f",
+            "install",
+            "-y"
+        ]
+    },
+    {
+        "astCommandId": "i2pd:5:7",
+        "astCommand": [
+            "sed",
+            "-i",
+            "/^address =/s/127.0.0.1/0.0.0.0/",
+            "/etc/i2pd/i2pd.conf"
+        ]
+    },
+    {
+        "astCommandId": "i2pd:5:8",
+        "astCommand": [
+            "rm",
+            "i2pd.deb"
+        ]
+    },
+    {
+        "astCommandId": "i2pd:5:9",
+        "astCommand": [
+            "apt-get",
+            "remove",
+            "-y",
+            "wget"
+        ]
+    }
+]

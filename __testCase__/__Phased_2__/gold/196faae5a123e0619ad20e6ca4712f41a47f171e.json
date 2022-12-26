@@ -1,0 +1,226 @@
+[
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:1:1",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/local/etc"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:1:2",
+        "astCommand": [
+            "echo",
+            "install: --no-document"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:5:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:5:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:5:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "buildDeps"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:5:4",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:5:5",
+        "astCommand": [
+            "wget",
+            "-O",
+            "ruby.tar.xz",
+            "https://cache.ruby-lang.org/pub/ruby/",
+            "RUBY_MAJOR%-rc",
+            "/ruby-",
+            "RUBY_VERSION",
+            ".tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:5:6",
+        "astCommand": [
+            "echo",
+            "RUBY_DOWNLOAD_SHA256",
+            " *ruby.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:5:7",
+        "astCommand": [
+            "sha256sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:5:8",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/ruby"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:5:9",
+        "astCommand": [
+            "tar",
+            "-xJf",
+            "ruby.tar.xz",
+            "-C",
+            "/usr/src/ruby",
+            "--strip-components=1"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:5:10",
+        "astCommand": [
+            "rm",
+            "ruby.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:5:11",
+        "astCommand": [
+            "cd",
+            "/usr/src/ruby"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:5:12",
+        "astCommand": [
+            "echo",
+            "#define ENABLE_PATH_CHECK 0"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:5:13",
+        "astCommand": [
+            "echo"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:5:14",
+        "astCommand": [
+            "cat",
+            "file.c"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:5:15",
+        "astCommand": [
+            "mv",
+            "file.c.new",
+            "file.c"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:5:16",
+        "astCommand": [
+            "autoconf"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:5:17",
+        "astCommand": [
+            "dpkg-architecture",
+            "--query",
+            "DEB_BUILD_GNU_TYPE"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:5:18",
+        "astCommand": [
+            "./configure",
+            "--build=",
+            "gnuArch",
+            "--disable-install-doc",
+            "--enable-shared"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:5:19",
+        "astCommand": [
+            "make",
+            "-j",
+            "nproc"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:5:20",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:5:21",
+        "astCommand": [
+            "apt-get",
+            "purge",
+            "-y",
+            "--auto-remove",
+            "buildDeps"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:5:22",
+        "astCommand": [
+            "cd",
+            "/"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:5:23",
+        "astCommand": [
+            "rm",
+            "-r",
+            "/usr/src/ruby"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:5:24",
+        "astCommand": [
+            "ruby",
+            "--version"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:5:25",
+        "astCommand": [
+            "gem",
+            "--version"
+        ]
+    },
+    {
+        "astCommandId": "196faae5a123e0619ad20e6ca4712f41a47f171e:11:1",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "GEM_HOME"
+        ]
+    }
+]

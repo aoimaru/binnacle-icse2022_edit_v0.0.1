@@ -1,0 +1,49 @@
+[
+    {
+        "astCommandId": "mariadb:1:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "mariadb:1:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "-U",
+            "bash",
+            "mariadb",
+            "mariadb-client",
+            "tzdata"
+        ]
+    },
+    {
+        "astCommandId": "mariadb:1:3",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/run/mysqld"
+        ]
+    },
+    {
+        "astCommandId": "mariadb:1:4",
+        "astCommand": [
+            "chown",
+            "mysql:mysql",
+            "/run/mysqld"
+        ]
+    },
+    {
+        "astCommandId": "mariadb:1:5",
+        "astCommand": [
+            "sed",
+            "-Ei",
+            "-e",
+            "s/^(bind-address|log)/#&/",
+            "-e",
+            "s/^\\[mysqld\\]$/&\\nskip-host-cache\\nskip-name-resolve\\nuser=mysql/",
+            "/etc/mysql/my.cnf"
+        ]
+    }
+]

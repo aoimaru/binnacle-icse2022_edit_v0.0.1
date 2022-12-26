@@ -1,0 +1,179 @@
+[
+    {
+        "astCommandId": "ngrokd:11:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "ngrokd:11:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "build-essential",
+            "curl",
+            "git",
+            "golang",
+            "mercurial"
+        ]
+    },
+    {
+        "astCommandId": "ngrokd:11:3",
+        "astCommand": [
+            "git",
+            "clone",
+            "NGROK_GIT",
+            "NGROK_TMP"
+        ]
+    },
+    {
+        "astCommandId": "ngrokd:11:4",
+        "astCommand": [
+            "cd",
+            "NGROK_TMP"
+        ]
+    },
+    {
+        "astCommandId": "ngrokd:11:5",
+        "astCommand": [
+            "openssl",
+            "genrsa",
+            "-out",
+            "NGROK_CA_KEY",
+            "2048"
+        ]
+    },
+    {
+        "astCommandId": "ngrokd:11:6",
+        "astCommand": [
+            "openssl",
+            "req",
+            "-new",
+            "-x509",
+            "-nodes",
+            "-key",
+            "NGROK_CA_KEY",
+            "-subj",
+            "/CN=",
+            "NGROK_BASE_DOMAIN",
+            "-days",
+            "365",
+            "-out",
+            "NGROK_CA_CRT"
+        ]
+    },
+    {
+        "astCommandId": "ngrokd:11:7",
+        "astCommand": [
+            "openssl",
+            "genrsa",
+            "-out",
+            "NGROK_SERVER_KEY",
+            "2048"
+        ]
+    },
+    {
+        "astCommandId": "ngrokd:11:8",
+        "astCommand": [
+            "openssl",
+            "req",
+            "-new",
+            "-key",
+            "NGROK_SERVER_KEY",
+            "-subj",
+            "/CN=",
+            "NGROK_BASE_DOMAIN",
+            "-out",
+            "NGROK_SERVER_CSR"
+        ]
+    },
+    {
+        "astCommandId": "ngrokd:11:9",
+        "astCommand": [
+            "openssl",
+            "x509",
+            "-req",
+            "-in",
+            "NGROK_SERVER_CSR",
+            "-CA",
+            "NGROK_CA_CRT",
+            "-CAkey",
+            "NGROK_CA_KEY",
+            "-CAcreateserial",
+            "-days",
+            "365",
+            "-out",
+            "NGROK_SERVER_CRT"
+        ]
+    },
+    {
+        "astCommandId": "ngrokd:11:10",
+        "astCommand": [
+            "echo",
+            "=== ",
+            "GOOS",
+            "-",
+            "GOARCH",
+            " ==="
+        ]
+    },
+    {
+        "astCommandId": "ngrokd:11:11",
+        "astCommand": [
+            "export",
+            "GOOS",
+            "GOARCH"
+        ]
+    },
+    {
+        "astCommandId": "ngrokd:11:12",
+        "astCommand": [
+            "make",
+            "release-all"
+        ]
+    },
+    {
+        "astCommandId": "ngrokd:11:13",
+        "astCommand": [
+            "echo",
+            "=== done ==="
+        ]
+    },
+    {
+        "astCommandId": "ngrokd:11:14",
+        "astCommand": [
+            "mv",
+            "NGROK_CA_KEY",
+            "NGROK_CA_CRT",
+            "NGROK_SERVER_KEY",
+            "NGROK_SERVER_CSR",
+            "NGROK_SERVER_CRT",
+            "./bin/",
+            "*",
+            "NGROK_DIR"
+        ]
+    },
+    {
+        "astCommandId": "ngrokd:11:15",
+        "astCommand": [
+            "apt-get",
+            "purge",
+            "--auto-remove",
+            "-y",
+            "build-essential",
+            "curl",
+            "git",
+            "golang",
+            "mercurial"
+        ]
+    },
+    {
+        "astCommandId": "ngrokd:11:16",
+        "astCommand": [
+            "cd",
+            "NGROK_DIR"
+        ]
+    }
+]

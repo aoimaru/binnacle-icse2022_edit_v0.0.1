@@ -1,0 +1,104 @@
+[
+    {
+        "astCommandId": "a46047bb3a77f474f33bddee82433f3702685f4d:1:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "a46047bb3a77f474f33bddee82433f3702685f4d:1:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "a46047bb3a77f474f33bddee82433f3702685f4d:1:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "ca-certificates",
+            "wget"
+        ]
+    },
+    {
+        "astCommandId": "a46047bb3a77f474f33bddee82433f3702685f4d:4:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "a46047bb3a77f474f33bddee82433f3702685f4d:4:2",
+        "astCommand": [
+            "apt-mark",
+            "showmanual"
+        ]
+    },
+    {
+        "astCommandId": "a46047bb3a77f474f33bddee82433f3702685f4d:4:3",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "a46047bb3a77f474f33bddee82433f3702685f4d:4:4",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "gcc",
+            "libc-dev",
+            "libssl-dev",
+            "zlib1g-dev"
+        ]
+    },
+    {
+        "astCommandId": "a46047bb3a77f474f33bddee82433f3702685f4d:4:5",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "a46047bb3a77f474f33bddee82433f3702685f4d:4:6",
+        "astCommand": [
+            "cpanm",
+            "EV",
+            "IO::Socket::IP",
+            "IO::Socket::Socks",
+            "Net::DNS::Native"
+        ]
+    },
+    {
+        "astCommandId": "a46047bb3a77f474f33bddee82433f3702685f4d:4:7",
+        "astCommand": [
+            "cpanm",
+            "--notest",
+            "IO::Socket::SSL"
+        ]
+    },
+    {
+        "astCommandId": "a46047bb3a77f474f33bddee82433f3702685f4d:4:8",
+        "astCommand": [
+            "apt-mark",
+            "auto",
+            ".*"
+        ]
+    },
+    {
+        "astCommandId": "a46047bb3a77f474f33bddee82433f3702685f4d:4:9",
+        "astCommand": [
+            "apt-mark",
+            "manual",
+            "savedAptMark"
+        ]
+    }
+]

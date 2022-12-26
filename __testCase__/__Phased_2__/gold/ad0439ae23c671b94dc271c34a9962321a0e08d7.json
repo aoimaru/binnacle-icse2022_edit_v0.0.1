@@ -1,0 +1,310 @@
+[
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:1:1",
+        "astCommand": [
+            "groupadd",
+            "-r",
+            "redis"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:3:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:3:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:3:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "fetchDeps"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:3:4",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:3:5",
+        "astCommand": [
+            "dpkg",
+            "--print-architecture"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:3:6",
+        "astCommand": [
+            "awk",
+            "-F-",
+            "{ print $NF }"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:3:7",
+        "astCommand": [
+            "wget",
+            "-O",
+            "/usr/local/bin/gosu",
+            "https://github.com/tianon/gosu/releases/download/",
+            "GOSU_VERSION",
+            "/gosu-",
+            "dpkgArch"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:3:8",
+        "astCommand": [
+            "wget",
+            "-O",
+            "/usr/local/bin/gosu.asc",
+            "https://github.com/tianon/gosu/releases/download/",
+            "GOSU_VERSION",
+            "/gosu-",
+            "dpkgArch",
+            ".asc"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:3:9",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:3:10",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--keyserver",
+            "ha.pool.sks-keyservers.net",
+            "--recv-keys",
+            "B42F6819007F00F88E364FD4036A9C25BF357DD4"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:3:11",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--verify",
+            "/usr/local/bin/gosu.asc",
+            "/usr/local/bin/gosu"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:3:12",
+        "astCommand": [
+            "gpgconf",
+            "--kill",
+            "all"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:3:13",
+        "astCommand": [
+            "rm",
+            "-r",
+            "GNUPGHOME",
+            "/usr/local/bin/gosu.asc"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:3:14",
+        "astCommand": [
+            "chmod",
+            "+",
+            "x",
+            "/usr/local/bin/gosu"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:3:15",
+        "astCommand": [
+            "gosu",
+            "nobody",
+            "true"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:7:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:7:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "libc6-i386"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:8:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:8:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:8:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "buildDeps",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:8:4",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:8:5",
+        "astCommand": [
+            "wget",
+            "-O",
+            "redis.tar.gz",
+            "REDIS_DOWNLOAD_URL"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:8:6",
+        "astCommand": [
+            "echo",
+            "REDIS_DOWNLOAD_SHA",
+            " *redis.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:8:7",
+        "astCommand": [
+            "sha256sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:8:8",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/redis"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:8:9",
+        "astCommand": [
+            "tar",
+            "-xzf",
+            "redis.tar.gz",
+            "-C",
+            "/usr/src/redis",
+            "--strip-components=1"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:8:10",
+        "astCommand": [
+            "rm",
+            "redis.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:8:11",
+        "astCommand": [
+            "grep",
+            "-q",
+            "^#define CONFIG_DEFAULT_PROTECTED_MODE 1$",
+            "/usr/src/redis/src/server.h"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:8:12",
+        "astCommand": [
+            "sed",
+            "-ri",
+            "s!^(#define CONFIG_DEFAULT_PROTECTED_MODE) 1$!\\1 0!",
+            "/usr/src/redis/src/server.h"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:8:13",
+        "astCommand": [
+            "grep",
+            "-q",
+            "^#define CONFIG_DEFAULT_PROTECTED_MODE 0$",
+            "/usr/src/redis/src/server.h"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:8:14",
+        "astCommand": [
+            "make",
+            "-C",
+            "/usr/src/redis",
+            "-j",
+            "nproc",
+            "32bit"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:8:15",
+        "astCommand": [
+            "make",
+            "-C",
+            "/usr/src/redis",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:8:16",
+        "astCommand": [
+            "rm",
+            "-r",
+            "/usr/src/redis"
+        ]
+    },
+    {
+        "astCommandId": "ad0439ae23c671b94dc271c34a9962321a0e08d7:9:1",
+        "astCommand": [
+            "mkdir",
+            "/data"
+        ]
+    }
+]

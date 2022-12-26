@@ -1,0 +1,180 @@
+[
+    {
+        "astCommandId": "tarsnap:1:1",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "ca-certificates",
+            "gnupg"
+        ]
+    },
+    {
+        "astCommandId": "tarsnap:3:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "tarsnap:3:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "build-base",
+            "curl",
+            "e2fsprogs-libs",
+            "e2fsprogs-dev",
+            "make",
+            "openssl-dev",
+            "perl-digest-sha1",
+            "perl-utils",
+            "tar",
+            "zlib-dev"
+        ]
+    },
+    {
+        "astCommandId": "tarsnap:3:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://www.tarsnap.com/download/tarsnap-autoconf-",
+            "TARSNAP_VERSION",
+            ".tgz",
+            "-o",
+            "/tmp/tarsnap.tgz"
+        ]
+    },
+    {
+        "astCommandId": "tarsnap:3:4",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://www.tarsnap.com/download/tarsnap-sigs-",
+            "TARSNAP_VERSION",
+            ".asc",
+            "-o",
+            "/tmp/tarsnap.tgz.asc"
+        ]
+    },
+    {
+        "astCommandId": "tarsnap:3:5",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://www.tarsnap.com/tarsnap-signing-key-2015.asc"
+        ]
+    },
+    {
+        "astCommandId": "tarsnap:3:6",
+        "astCommand": [
+            "gpg",
+            "--no-tty",
+            "--import"
+        ]
+    },
+    {
+        "astCommandId": "tarsnap:3:7",
+        "astCommand": [
+            "gpg",
+            "--decrypt",
+            "/tmp/tarsnap.tgz.asc"
+        ]
+    },
+    {
+        "astCommandId": "tarsnap:3:8",
+        "astCommand": [
+            "awk",
+            "{ print $4 }"
+        ]
+    },
+    {
+        "astCommandId": "tarsnap:3:9",
+        "astCommand": [
+            "shasum",
+            "-a",
+            "256",
+            "/tmp/tarsnap.tgz"
+        ]
+    },
+    {
+        "astCommandId": "tarsnap:3:10",
+        "astCommand": [
+            "awk",
+            "{ print $1 }"
+        ]
+    },
+    {
+        "astCommandId": "tarsnap:3:11",
+        "astCommand": [
+            "exit",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "tarsnap:3:12",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/tarsnap"
+        ]
+    },
+    {
+        "astCommandId": "tarsnap:3:13",
+        "astCommand": [
+            "tar",
+            "-xzf",
+            "/tmp/tarsnap.tgz",
+            "-C",
+            "/usr/src/tarsnap",
+            "--strip-components",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "tarsnap:3:14",
+        "astCommand": [
+            "rm",
+            "/tmp/tarsnap.tgz",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "tarsnap:3:15",
+        "astCommand": [
+            "cd",
+            "/usr/src/tarsnap"
+        ]
+    },
+    {
+        "astCommandId": "tarsnap:3:16",
+        "astCommand": [
+            "./configure",
+            "--prefix=/usr"
+        ]
+    },
+    {
+        "astCommandId": "tarsnap:3:17",
+        "astCommand": [
+            "make"
+        ]
+    },
+    {
+        "astCommandId": "tarsnap:3:18",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "tarsnap:3:19",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/usr/src/tarsnap"
+        ]
+    }
+]

@@ -1,0 +1,112 @@
+[
+    {
+        "astCommandId": "6d0053fcedb10ee39057cc8b62534edc8d85140d:2:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "6d0053fcedb10ee39057cc8b62534edc8d85140d:2:2",
+        "astCommand": [
+            "apt-mark",
+            "showmanual"
+        ]
+    },
+    {
+        "astCommandId": "6d0053fcedb10ee39057cc8b62534edc8d85140d:2:3",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "6d0053fcedb10ee39057cc8b62534edc8d85140d:2:4",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "gcc",
+            "make"
+        ]
+    },
+    {
+        "astCommandId": "6d0053fcedb10ee39057cc8b62534edc8d85140d:2:5",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "6d0053fcedb10ee39057cc8b62534edc8d85140d:2:6",
+        "astCommand": [
+            "gem",
+            "install",
+            "passenger",
+            "--version",
+            "PASSENGER_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "6d0053fcedb10ee39057cc8b62534edc8d85140d:2:7",
+        "astCommand": [
+            "passenger-config",
+            "build-native-support"
+        ]
+    },
+    {
+        "astCommandId": "6d0053fcedb10ee39057cc8b62534edc8d85140d:2:8",
+        "astCommand": [
+            "passenger-config",
+            "build-native-support"
+        ]
+    },
+    {
+        "astCommandId": "6d0053fcedb10ee39057cc8b62534edc8d85140d:2:9",
+        "astCommand": [
+            "cat",
+            "/tmp/passenger_native_support-",
+            "*",
+            ".log"
+        ]
+    },
+    {
+        "astCommandId": "6d0053fcedb10ee39057cc8b62534edc8d85140d:2:10",
+        "astCommand": [
+            "false"
+        ]
+    },
+    {
+        "astCommandId": "6d0053fcedb10ee39057cc8b62534edc8d85140d:2:11",
+        "astCommand": [
+            "apt-mark",
+            "auto",
+            ".*"
+        ]
+    },
+    {
+        "astCommandId": "6d0053fcedb10ee39057cc8b62534edc8d85140d:2:12",
+        "astCommand": [
+            "apt-mark",
+            "manual",
+            "savedAptMark"
+        ]
+    },
+    {
+        "astCommandId": "6d0053fcedb10ee39057cc8b62534edc8d85140d:3:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "6d0053fcedb10ee39057cc8b62534edc8d85140d:3:2",
+        "astCommand": [
+            "passenger-config",
+            "install-agent"
+        ]
+    }
+]

@@ -1,0 +1,93 @@
+[
+    {
+        "astCommandId": "keepassxc:2:1",
+        "astCommand": [
+            "buildDeps",
+            " \t\tautomake \t\targon2-dev \t\tbash \t\tcmake \t\tcurl-dev \t\texpat \t\tg++ \t\tgcc \t\tgit \t\tlibgcrypt-dev \t\tlibmicrohttpd-dev \t\tlibqrencode-dev\t\t\tlibsodium-dev \t\tmake \t\tqt5-qtbase-dev \t\tqt5-qtsvg-dev \t\tqt5-qttools-dev \t",
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "keepassxc:2:2",
+        "astCommand": [
+            "apk",
+            "--no-cache",
+            "add",
+            "buildDeps"
+        ]
+    },
+    {
+        "astCommandId": "keepassxc:2:3",
+        "astCommand": [
+            "git",
+            "clone",
+            "--depth",
+            "1",
+            "--branch",
+            "KEEPASSXC_VERSION",
+            "https://github.com/keepassxreboot/keepassxc.git",
+            "/usr/src/keepassxc"
+        ]
+    },
+    {
+        "astCommandId": "keepassxc:2:4",
+        "astCommand": [
+            "cd",
+            "/usr/src/keepassxc"
+        ]
+    },
+    {
+        "astCommandId": "keepassxc:2:5",
+        "astCommand": [
+            "mkdir",
+            "build"
+        ]
+    },
+    {
+        "astCommandId": "keepassxc:2:6",
+        "astCommand": [
+            "cd",
+            "build"
+        ]
+    },
+    {
+        "astCommandId": "keepassxc:2:7",
+        "astCommand": [
+            "cmake",
+            "-DWITH_TESTS=ON",
+            "-DWITH_XC_AUTOTYPE=ON",
+            "-DWITH_XC_HTTP=ON",
+            ".."
+        ]
+    },
+    {
+        "astCommandId": "keepassxc:2:8",
+        "astCommand": [
+            "make"
+        ]
+    },
+    {
+        "astCommandId": "keepassxc:2:9",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "keepassxc:2:10",
+        "astCommand": [
+            "apk",
+            "del",
+            "buildDeps"
+        ]
+    },
+    {
+        "astCommandId": "keepassxc:2:11",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/usr/src/keepassxc"
+        ]
+    }
+]

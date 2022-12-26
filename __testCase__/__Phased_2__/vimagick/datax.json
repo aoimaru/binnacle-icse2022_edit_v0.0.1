@@ -1,0 +1,44 @@
+[
+    {
+        "astCommandId": "datax:2:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "datax:2:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "curl",
+            "python2",
+            "tar"
+        ]
+    },
+    {
+        "astCommandId": "datax:2:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "http://datax-opensource.oss-cn-hangzhou.aliyuncs.com/datax.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "datax:2:4",
+        "astCommand": [
+            "tar",
+            "xz",
+            "--strip",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "datax:2:5",
+        "astCommand": [
+            "bin/datax.py",
+            "--help"
+        ]
+    }
+]

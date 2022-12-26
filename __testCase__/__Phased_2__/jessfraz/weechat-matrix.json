@@ -1,0 +1,67 @@
+[
+    {
+        "astCommandId": "weechat-matrix:3:1",
+        "astCommand": [
+            "adduser",
+            "-S",
+            "user",
+            "-h",
+            "HOME"
+        ]
+    },
+    {
+        "astCommandId": "weechat-matrix:3:2",
+        "astCommand": [
+            "chown",
+            "-R",
+            "user",
+            "HOME"
+        ]
+    },
+    {
+        "astCommandId": "weechat-matrix:3:3",
+        "astCommand": [
+            "cd",
+            "HOME"
+        ]
+    },
+    {
+        "astCommandId": "weechat-matrix:3:4",
+        "astCommand": [
+            "git",
+            "clone",
+            "https://github.com/poljar/weechat-matrix.git"
+        ]
+    },
+    {
+        "astCommandId": "weechat-matrix:3:5",
+        "astCommand": [
+            "cd",
+            "weechat-matrix"
+        ]
+    },
+    {
+        "astCommandId": "weechat-matrix:3:6",
+        "astCommand": [
+            "pip3",
+            "install",
+            "-r",
+            "requirements.txt"
+        ]
+    },
+    {
+        "astCommandId": "weechat-matrix:3:7",
+        "astCommand": [
+            "pip3",
+            "install",
+            "websocket-client"
+        ]
+    },
+    {
+        "astCommandId": "weechat-matrix:3:8",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    }
+]

@@ -1,0 +1,83 @@
+[
+    {
+        "astCommandId": "zoneminder:1:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "zoneminder:1:2",
+        "astCommand": [
+            "echo",
+            "deb http://http.debian.net/debian jessie-backports main"
+        ]
+    },
+    {
+        "astCommandId": "zoneminder:1:3",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "zoneminder:1:4",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "--no-install-recommends",
+            "-y",
+            "fcgiwrap",
+            "ffmpeg",
+            "nginx",
+            "php5-fpm",
+            "zoneminder"
+        ]
+    },
+    {
+        "astCommandId": "zoneminder:2:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "zoneminder:2:2",
+        "astCommand": [
+            "chmod",
+            "o",
+            "+",
+            "r",
+            "/etc/zm/zm.conf"
+        ]
+    },
+    {
+        "astCommandId": "zoneminder:2:3",
+        "astCommand": [
+            "sed",
+            "-i",
+            "s@^ZM_DB_HOST=.*$@ZM_DB_HOST=mysql@",
+            "/etc/zm/zm.conf"
+        ]
+    },
+    {
+        "astCommandId": "zoneminder:2:4",
+        "astCommand": [
+            "sed",
+            "-i",
+            "s@^;date.timezone =.*$@date.timezone = Asia/Shanghai@",
+            "/etc/php5/",
+            "*",
+            "/php.ini"
+        ]
+    },
+    {
+        "astCommandId": "zoneminder:2:5",
+        "astCommand": [
+            "ln",
+            "-sf",
+            "/usr/share/zoneinfo/Asia/Shanghai",
+            "/etc/localtime"
+        ]
+    }
+]

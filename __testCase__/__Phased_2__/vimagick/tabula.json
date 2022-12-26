@@ -1,0 +1,62 @@
+[
+    {
+        "astCommandId": "tabula:1:1",
+        "astCommand": [
+            "apt-get",
+            "update",
+            "-qq"
+        ]
+    },
+    {
+        "astCommandId": "tabula:1:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "build-essential",
+            "curl"
+        ]
+    },
+    {
+        "astCommandId": "tabula:1:3",
+        "astCommand": [
+            "apt-get",
+            "clean"
+        ]
+    },
+    {
+        "astCommandId": "tabula:5:1",
+        "astCommand": [
+            "gem",
+            "install",
+            "bundler",
+            "-v",
+            "< 2"
+        ]
+    },
+    {
+        "astCommandId": "tabula:5:2",
+        "astCommand": [
+            "bundle",
+            "config",
+            "--global",
+            "path",
+            "GEM_HOME"
+        ]
+    },
+    {
+        "astCommandId": "tabula:8:1",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://github.com/tabulapdf/tabula/archive/master.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "tabula:9:1",
+        "astCommand": [
+            "bundle",
+            "install"
+        ]
+    }
+]

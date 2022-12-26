@@ -1,0 +1,301 @@
+[
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:1:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:1:2",
+        "astCommand": [
+            "apt-mark",
+            "showmanual"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:1:3",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:1:4",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "libjpeg-dev",
+            "libmagickwand-dev",
+            "libpng-dev",
+            "libzip-dev"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:1:5",
+        "astCommand": [
+            "docker-php-ext-configure",
+            "gd",
+            "--with-png-dir=/usr",
+            "--with-jpeg-dir=/usr"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:1:6",
+        "astCommand": [
+            "docker-php-ext-install",
+            "bcmath",
+            "exif",
+            "gd",
+            "mysqli",
+            "opcache",
+            "zip"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:1:7",
+        "astCommand": [
+            "pecl",
+            "install",
+            "imagick-3.4.4"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:1:8",
+        "astCommand": [
+            "docker-php-ext-enable",
+            "imagick"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:1:9",
+        "astCommand": [
+            "apt-mark",
+            "auto",
+            ".*"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:1:10",
+        "astCommand": [
+            "apt-mark",
+            "manual",
+            "savedAptMark"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:1:11",
+        "astCommand": [
+            "ldd",
+            "php",
+            "-r",
+            "echo ini_get(\"extension_dir\");",
+            "/",
+            "*",
+            ".so"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:1:12",
+        "astCommand": [
+            "awk",
+            "/=>/ { print $3 }"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:1:13",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:1:14",
+        "astCommand": [
+            "xargs",
+            "-r",
+            "dpkg-query",
+            "-S"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:1:15",
+        "astCommand": [
+            "cut",
+            "-d:",
+            "-f1"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:1:16",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:1:17",
+        "astCommand": [
+            "xargs",
+            "-rt",
+            "apt-mark",
+            "manual"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:1:18",
+        "astCommand": [
+            "apt-get",
+            "purge",
+            "-y",
+            "--auto-remove",
+            "-o",
+            "APT::AutoRemove::RecommendsImportant=false"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:2:1",
+        "astCommand": [
+            "echo",
+            "opcache.memory_consumption=128"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:2:2",
+        "astCommand": [
+            "echo",
+            "opcache.interned_strings_buffer=8"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:2:3",
+        "astCommand": [
+            "echo",
+            "opcache.max_accelerated_files=4000"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:2:4",
+        "astCommand": [
+            "echo",
+            "opcache.revalidate_freq=2"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:2:5",
+        "astCommand": [
+            "echo",
+            "opcache.fast_shutdown=1"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:3:1",
+        "astCommand": [
+            "echo",
+            "error_reporting = 4339"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:3:2",
+        "astCommand": [
+            "echo",
+            "display_errors = Off"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:3:3",
+        "astCommand": [
+            "echo",
+            "display_startup_errors = Off"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:3:4",
+        "astCommand": [
+            "echo",
+            "log_errors = On"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:3:5",
+        "astCommand": [
+            "echo",
+            "error_log = /dev/stderr"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:3:6",
+        "astCommand": [
+            "echo",
+            "log_errors_max_len = 1024"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:3:7",
+        "astCommand": [
+            "echo",
+            "ignore_repeated_errors = On"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:3:8",
+        "astCommand": [
+            "echo",
+            "ignore_repeated_source = Off"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:7:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:7:2",
+        "astCommand": [
+            "curl",
+            "-o",
+            "wordpress.tar.gz",
+            "-fSL",
+            "https://wordpress.org/wordpress-",
+            "WORDPRESS_VERSION",
+            ".tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:7:3",
+        "astCommand": [
+            "echo",
+            "WORDPRESS_SHA1",
+            " *wordpress.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:7:4",
+        "astCommand": [
+            "sha1sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:7:5",
+        "astCommand": [
+            "tar",
+            "-xzf",
+            "wordpress.tar.gz",
+            "-C",
+            "/usr/src/"
+        ]
+    },
+    {
+        "astCommandId": "af756098f19f4156a00579320f686199cb8818ac:7:6",
+        "astCommand": [
+            "rm",
+            "wordpress.tar.gz"
+        ]
+    }
+]

@@ -1,0 +1,186 @@
+[
+    {
+        "astCommandId": "magento:2:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "magento:2:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "magento:2:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "build-essential",
+            "libcurl3",
+            "libcurl3-dev",
+            "libfreetype6",
+            "libfreetype6-dev",
+            "libicu52",
+            "libicu-dev",
+            "libjpeg62-turbo",
+            "libjpeg62-turbo-dev",
+            "libmcrypt4",
+            "libmcrypt-dev",
+            "libpng16-16",
+            "libpng-dev",
+            "libxslt1.1",
+            "libxslt1-dev",
+            "zlib1g",
+            "zlib1g-dev",
+            "zziplib-bin"
+        ]
+    },
+    {
+        "astCommandId": "magento:2:4",
+        "astCommand": [
+            "docker-php-ext-configure",
+            "gd",
+            "--with-png-dir=/usr",
+            "--with-jpeg-dir=/usr"
+        ]
+    },
+    {
+        "astCommandId": "magento:2:5",
+        "astCommand": [
+            "docker-php-ext-install",
+            "gd",
+            "intl",
+            "mbstring",
+            "mcrypt",
+            "pdo_mysql",
+            "xsl",
+            "zip"
+        ]
+    },
+    {
+        "astCommandId": "magento:2:6",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://getcomposer.org/installer"
+        ]
+    },
+    {
+        "astCommandId": "magento:2:7",
+        "astCommand": [
+            "php",
+            "--",
+            "--install-dir=/usr/local/bin",
+            "--filename=composer"
+        ]
+    },
+    {
+        "astCommandId": "magento:2:8",
+        "astCommand": [
+            "apt-get",
+            "purge",
+            "-y",
+            "--auto-remove",
+            "build-essential",
+            "libcurl3-dev",
+            "libfreetype6-dev",
+            "libicu-dev",
+            "libjpeg62-turbo-dev",
+            "libmcrypt-dev",
+            "libpng-dev",
+            "libxslt1-dev",
+            "zlib1g-dev"
+        ]
+    },
+    {
+        "astCommandId": "magento:3:1",
+        "astCommand": [
+            "echo",
+            "always_populate_raw_post_data = -1"
+        ]
+    },
+    {
+        "astCommandId": "magento:3:2",
+        "astCommand": [
+            "echo",
+            "max_execution_time = 240"
+        ]
+    },
+    {
+        "astCommandId": "magento:3:3",
+        "astCommand": [
+            "echo",
+            "max_input_vars = 1500"
+        ]
+    },
+    {
+        "astCommandId": "magento:3:4",
+        "astCommand": [
+            "echo",
+            "upload_max_filesize = 32M"
+        ]
+    },
+    {
+        "astCommandId": "magento:9:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "magento:9:2",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "MAGENTO_URL",
+            "-o",
+            "MAGENTO_FILE"
+        ]
+    },
+    {
+        "astCommandId": "magento:9:3",
+        "astCommand": [
+            "echo",
+            "MAGENTO_MD5",
+            "  ",
+            "MAGENTO_FILE"
+        ]
+    },
+    {
+        "astCommandId": "magento:9:4",
+        "astCommand": [
+            "md5sum",
+            "-c"
+        ]
+    },
+    {
+        "astCommandId": "magento:9:5",
+        "astCommand": [
+            "tar",
+            "xzf",
+            "MAGENTO_FILE",
+            "--strip",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "magento:9:6",
+        "astCommand": [
+            "rm",
+            "MAGENTO_FILE"
+        ]
+    },
+    {
+        "astCommandId": "magento:9:7",
+        "astCommand": [
+            "chown",
+            "-R",
+            "www-data:www-data",
+            "."
+        ]
+    }
+]

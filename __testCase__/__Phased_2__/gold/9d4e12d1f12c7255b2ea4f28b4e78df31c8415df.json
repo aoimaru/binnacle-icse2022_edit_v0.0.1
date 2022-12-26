@@ -1,0 +1,300 @@
+[
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:1:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:1:2",
+        "astCommand": [
+            "apt-mark",
+            "showmanual"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:1:3",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:1:4",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "libjpeg-dev",
+            "libmagickwand-dev",
+            "libpng-dev"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:1:5",
+        "astCommand": [
+            "docker-php-ext-configure",
+            "gd",
+            "--with-png-dir=/usr",
+            "--with-jpeg-dir=/usr"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:1:6",
+        "astCommand": [
+            "docker-php-ext-install",
+            "bcmath",
+            "exif",
+            "gd",
+            "mysqli",
+            "opcache",
+            "zip"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:1:7",
+        "astCommand": [
+            "pecl",
+            "install",
+            "imagick-3.4.4"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:1:8",
+        "astCommand": [
+            "docker-php-ext-enable",
+            "imagick"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:1:9",
+        "astCommand": [
+            "apt-mark",
+            "auto",
+            ".*"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:1:10",
+        "astCommand": [
+            "apt-mark",
+            "manual",
+            "savedAptMark"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:1:11",
+        "astCommand": [
+            "ldd",
+            "php",
+            "-r",
+            "echo ini_get(\"extension_dir\");",
+            "/",
+            "*",
+            ".so"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:1:12",
+        "astCommand": [
+            "awk",
+            "/=>/ { print $3 }"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:1:13",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:1:14",
+        "astCommand": [
+            "xargs",
+            "-r",
+            "dpkg-query",
+            "-S"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:1:15",
+        "astCommand": [
+            "cut",
+            "-d:",
+            "-f1"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:1:16",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:1:17",
+        "astCommand": [
+            "xargs",
+            "-rt",
+            "apt-mark",
+            "manual"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:1:18",
+        "astCommand": [
+            "apt-get",
+            "purge",
+            "-y",
+            "--auto-remove",
+            "-o",
+            "APT::AutoRemove::RecommendsImportant=false"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:2:1",
+        "astCommand": [
+            "echo",
+            "opcache.memory_consumption=128"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:2:2",
+        "astCommand": [
+            "echo",
+            "opcache.interned_strings_buffer=8"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:2:3",
+        "astCommand": [
+            "echo",
+            "opcache.max_accelerated_files=4000"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:2:4",
+        "astCommand": [
+            "echo",
+            "opcache.revalidate_freq=2"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:2:5",
+        "astCommand": [
+            "echo",
+            "opcache.fast_shutdown=1"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:3:1",
+        "astCommand": [
+            "echo",
+            "error_reporting = 4339"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:3:2",
+        "astCommand": [
+            "echo",
+            "display_errors = Off"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:3:3",
+        "astCommand": [
+            "echo",
+            "display_startup_errors = Off"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:3:4",
+        "astCommand": [
+            "echo",
+            "log_errors = On"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:3:5",
+        "astCommand": [
+            "echo",
+            "error_log = /dev/stderr"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:3:6",
+        "astCommand": [
+            "echo",
+            "log_errors_max_len = 1024"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:3:7",
+        "astCommand": [
+            "echo",
+            "ignore_repeated_errors = On"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:3:8",
+        "astCommand": [
+            "echo",
+            "ignore_repeated_source = Off"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:8:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:8:2",
+        "astCommand": [
+            "curl",
+            "-o",
+            "wordpress.tar.gz",
+            "-fSL",
+            "https://wordpress.org/wordpress-",
+            "WORDPRESS_VERSION",
+            ".tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:8:3",
+        "astCommand": [
+            "echo",
+            "WORDPRESS_SHA1",
+            " *wordpress.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:8:4",
+        "astCommand": [
+            "sha1sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:8:5",
+        "astCommand": [
+            "tar",
+            "-xzf",
+            "wordpress.tar.gz",
+            "-C",
+            "/usr/src/"
+        ]
+    },
+    {
+        "astCommandId": "9d4e12d1f12c7255b2ea4f28b4e78df31c8415df:8:6",
+        "astCommand": [
+            "rm",
+            "wordpress.tar.gz"
+        ]
+    }
+]

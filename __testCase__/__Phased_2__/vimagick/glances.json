@@ -1,0 +1,72 @@
+[
+    {
+        "astCommandId": "glances:1:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "glances:1:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "glances:1:3",
+        "astCommand": [
+            "apt-get",
+            "-y",
+            "install",
+            "build-essential",
+            "curl",
+            "libfreetype6",
+            "libfreetype6-dev",
+            "libpng12-0",
+            "libpng12-dev",
+            "lm-sensors",
+            "pkg-config",
+            "python",
+            "python-dev",
+            "wireless-tools"
+        ]
+    },
+    {
+        "astCommandId": "glances:1:4",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://bootstrap.pypa.io/get-pip.py"
+        ]
+    },
+    {
+        "astCommandId": "glances:1:5",
+        "astCommand": [
+            "python"
+        ]
+    },
+    {
+        "astCommandId": "glances:1:6",
+        "astCommand": [
+            "pip",
+            "install",
+            "--no-cache-dir",
+            "glances[action,batinfo,browser,cpuinfo,chart,docker,export,folders,gpu,ip,raid,snmp,web,wifi]"
+        ]
+    },
+    {
+        "astCommandId": "glances:1:7",
+        "astCommand": [
+            "apt-get",
+            "remove",
+            "-y",
+            "build-essential",
+            "curl",
+            "libfreetype6-dev",
+            "libpng12-dev",
+            "pkg-config",
+            "python-dev"
+        ]
+    }
+]

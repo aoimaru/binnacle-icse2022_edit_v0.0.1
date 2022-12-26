@@ -1,0 +1,89 @@
+[
+    {
+        "astCommandId": "c492dadb9187b5b71192ce2402f439cf355345ab:1:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "c492dadb9187b5b71192ce2402f439cf355345ab:1:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "c492dadb9187b5b71192ce2402f439cf355345ab:1:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "ca-certificates",
+            "wget",
+            "git"
+        ]
+    },
+    {
+        "astCommandId": "c492dadb9187b5b71192ce2402f439cf355345ab:1:4",
+        "astCommand": [
+            "awk",
+            "$1 == \"deb\" && $4 == \"main\" && $3 !~ /[\\/-]/ { print $3; exit }",
+            "/etc/apt/sources.list"
+        ]
+    },
+    {
+        "astCommandId": "c492dadb9187b5b71192ce2402f439cf355345ab:1:5",
+        "astCommand": [
+            "echo",
+            "deb http://deb.debian.org/debian ",
+            "suite",
+            "-backports main"
+        ]
+    },
+    {
+        "astCommandId": "c492dadb9187b5b71192ce2402f439cf355345ab:1:6",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "c492dadb9187b5b71192ce2402f439cf355345ab:1:7",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "-t",
+            "suite",
+            "-backports",
+            "golang-go"
+        ]
+    },
+    {
+        "astCommandId": "c492dadb9187b5b71192ce2402f439cf355345ab:8:1",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "BASHBREW_CACHE"
+        ]
+    },
+    {
+        "astCommandId": "c492dadb9187b5b71192ce2402f439cf355345ab:11:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "c492dadb9187b5b71192ce2402f439cf355345ab:11:2",
+        "astCommand": [
+            "CGO_ENABLED",
+            "0",
+            "./bashbrew/bashbrew.sh",
+            "--help"
+        ]
+    }
+]

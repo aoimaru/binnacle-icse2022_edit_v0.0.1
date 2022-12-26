@@ -1,0 +1,45 @@
+[
+    {
+        "astCommandId": "routersploit:2:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "routersploit:2:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "git",
+            "python-requests",
+            "python-paramiko",
+            "python-pysnmp-common",
+            "python-bs4",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "routersploit:2:3",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "routersploit:2:4",
+        "astCommand": [
+            "git",
+            "clone",
+            "--depth",
+            "1",
+            "--branch",
+            "ROUTERSPLOIT_VERSION",
+            "https://github.com/reverse-shell/routersploit",
+            "/usr/bin/routersploit"
+        ]
+    }
+]

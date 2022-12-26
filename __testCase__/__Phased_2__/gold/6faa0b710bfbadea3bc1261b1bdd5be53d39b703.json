@@ -1,0 +1,205 @@
+[
+    {
+        "astCommandId": "6faa0b710bfbadea3bc1261b1bdd5be53d39b703:8:1",
+        "astCommand": [
+            "set",
+            "-euxo",
+            "pipefail"
+        ]
+    },
+    {
+        "astCommandId": "6faa0b710bfbadea3bc1261b1bdd5be53d39b703:8:2",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "6faa0b710bfbadea3bc1261b1bdd5be53d39b703:8:3",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--keyserver",
+            "ha.pool.sks-keyservers.net",
+            "--recv-keys",
+            "MANIFEST_TOOL_GPG_KEY"
+        ]
+    },
+    {
+        "astCommandId": "6faa0b710bfbadea3bc1261b1bdd5be53d39b703:8:4",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "bin"
+        ]
+    },
+    {
+        "astCommandId": "6faa0b710bfbadea3bc1261b1bdd5be53d39b703:8:5",
+        "astCommand": [
+            ".bashbrew-arch-to-goenv.sh",
+            "bashbrewArch"
+        ]
+    },
+    {
+        "astCommandId": "6faa0b710bfbadea3bc1261b1bdd5be53d39b703:8:6",
+        "astCommand": [
+            "eval",
+            "goEnv"
+        ]
+    },
+    {
+        "astCommandId": "6faa0b710bfbadea3bc1261b1bdd5be53d39b703:8:7",
+        "astCommand": [
+            "wget",
+            "-O",
+            "targetBin",
+            ".asc",
+            "https://github.com/estesp/manifest-tool/releases/download/v",
+            "MANIFEST_TOOL_VERSION",
+            "/",
+            "srcBin",
+            ".asc"
+        ]
+    },
+    {
+        "astCommandId": "6faa0b710bfbadea3bc1261b1bdd5be53d39b703:8:8",
+        "astCommand": [
+            "wget",
+            "-O",
+            "targetBin",
+            "https://github.com/estesp/manifest-tool/releases/download/v",
+            "MANIFEST_TOOL_VERSION",
+            "/",
+            "srcBin"
+        ]
+    },
+    {
+        "astCommandId": "6faa0b710bfbadea3bc1261b1bdd5be53d39b703:8:9",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--verify",
+            "targetBin",
+            ".asc",
+            "targetBin"
+        ]
+    },
+    {
+        "astCommandId": "6faa0b710bfbadea3bc1261b1bdd5be53d39b703:8:10",
+        "astCommand": [
+            "ls",
+            "-lAFh",
+            "targetBin",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "6faa0b710bfbadea3bc1261b1bdd5be53d39b703:8:11",
+        "astCommand": [
+            "file",
+            "targetBin",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "6faa0b710bfbadea3bc1261b1bdd5be53d39b703:8:12",
+        "astCommand": [
+            "gpgconf",
+            "--kill",
+            "all"
+        ]
+    },
+    {
+        "astCommandId": "6faa0b710bfbadea3bc1261b1bdd5be53d39b703:8:13",
+        "astCommand": [
+            "rm",
+            "-r",
+            "GNUPGHOME"
+        ]
+    },
+    {
+        "astCommandId": "6faa0b710bfbadea3bc1261b1bdd5be53d39b703:8:14",
+        "astCommand": [
+            "ls",
+            "-lAFh",
+            "bin/manifest-tool-",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "6faa0b710bfbadea3bc1261b1bdd5be53d39b703:10:1",
+        "astCommand": [
+            "set",
+            "-euxo",
+            "pipefail"
+        ]
+    },
+    {
+        "astCommandId": "6faa0b710bfbadea3bc1261b1bdd5be53d39b703:10:2",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "bin"
+        ]
+    },
+    {
+        "astCommandId": "6faa0b710bfbadea3bc1261b1bdd5be53d39b703:10:3",
+        "astCommand": [
+            ".bashbrew-arch-to-goenv.sh",
+            "bashbrewArch"
+        ]
+    },
+    {
+        "astCommandId": "6faa0b710bfbadea3bc1261b1bdd5be53d39b703:10:4",
+        "astCommand": [
+            "eval",
+            "goEnv"
+        ]
+    },
+    {
+        "astCommandId": "6faa0b710bfbadea3bc1261b1bdd5be53d39b703:10:5",
+        "astCommand": [
+            "go",
+            "build",
+            "-a",
+            "-v",
+            "-ldflags",
+            "-s -w",
+            "-tags",
+            "netgo",
+            "-installsuffix",
+            "netgo",
+            "-o",
+            "targetBin",
+            "-mod",
+            "vendor",
+            "bashbrew/src/bashbrew"
+        ]
+    },
+    {
+        "astCommandId": "6faa0b710bfbadea3bc1261b1bdd5be53d39b703:10:6",
+        "astCommand": [
+            "ls",
+            "-lAFh",
+            "targetBin"
+        ]
+    },
+    {
+        "astCommandId": "6faa0b710bfbadea3bc1261b1bdd5be53d39b703:10:7",
+        "astCommand": [
+            "file",
+            "targetBin"
+        ]
+    },
+    {
+        "astCommandId": "6faa0b710bfbadea3bc1261b1bdd5be53d39b703:10:8",
+        "astCommand": [
+            "ls",
+            "-lAFh",
+            "bin/bashbrew-",
+            "*"
+        ]
+    }
+]

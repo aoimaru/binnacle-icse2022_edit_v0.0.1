@@ -1,0 +1,196 @@
+[
+    {
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:1:1",
+        "astCommand": [
+            "addgroup",
+            "-S",
+            "redis"
+        ]
+    },
+    {
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "coreutils",
+            "gcc",
+            "linux-headers",
+            "make",
+            "musl-dev"
+        ]
+    },
+    {
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:3",
+        "astCommand": [
+            "wget",
+            "-O",
+            "redis.tar.gz",
+            "REDIS_DOWNLOAD_URL"
+        ]
+    },
+    {
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:4",
+        "astCommand": [
+            "echo",
+            "REDIS_DOWNLOAD_SHA",
+            " *redis.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:5",
+        "astCommand": [
+            "sha256sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:6",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/redis"
+        ]
+    },
+    {
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:7",
+        "astCommand": [
+            "tar",
+            "-xzf",
+            "redis.tar.gz",
+            "-C",
+            "/usr/src/redis",
+            "--strip-components=1"
+        ]
+    },
+    {
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:8",
+        "astCommand": [
+            "rm",
+            "redis.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:9",
+        "astCommand": [
+            "grep",
+            "-q",
+            "^#define CONFIG_DEFAULT_PROTECTED_MODE 1$",
+            "/usr/src/redis/src/server.h"
+        ]
+    },
+    {
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:10",
+        "astCommand": [
+            "sed",
+            "-ri",
+            "s!^(#define CONFIG_DEFAULT_PROTECTED_MODE) 1$!\\1 0!",
+            "/usr/src/redis/src/server.h"
+        ]
+    },
+    {
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:11",
+        "astCommand": [
+            "grep",
+            "-q",
+            "^#define CONFIG_DEFAULT_PROTECTED_MODE 0$",
+            "/usr/src/redis/src/server.h"
+        ]
+    },
+    {
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:12",
+        "astCommand": [
+            "make",
+            "-C",
+            "/usr/src/redis",
+            "-j",
+            "nproc"
+        ]
+    },
+    {
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:13",
+        "astCommand": [
+            "make",
+            "-C",
+            "/usr/src/redis",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:14",
+        "astCommand": [
+            "rm",
+            "-r",
+            "/usr/src/redis"
+        ]
+    },
+    {
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:15",
+        "astCommand": [
+            "scanelf",
+            "--needed",
+            "--nobanner",
+            "--format",
+            "%n#p",
+            "--recursive",
+            "/usr/local"
+        ]
+    },
+    {
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:16",
+        "astCommand": [
+            "tr",
+            ",",
+            "\\n"
+        ]
+    },
+    {
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:17",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:18",
+        "astCommand": [
+            "awk",
+            "system(\"[ -e /usr/local/lib/\" $1 \" ]\") == 0 { next } { print \"so:\" $1 }"
+        ]
+    },
+    {
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:19",
+        "astCommand": [
+            "apk",
+            "add",
+            "--virtual",
+            ".redis-rundeps",
+            "runDeps"
+        ]
+    },
+    {
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:6:20",
+        "astCommand": [
+            "apk",
+            "del",
+            ".build-deps"
+        ]
+    },
+    {
+        "astCommandId": "28e8808512c0426b0e8fcb2d5828ea92881655ff:7:1",
+        "astCommand": [
+            "mkdir",
+            "/data"
+        ]
+    }
+]

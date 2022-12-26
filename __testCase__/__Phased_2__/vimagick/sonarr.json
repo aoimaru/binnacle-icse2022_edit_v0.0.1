@@ -1,0 +1,64 @@
+[
+    {
+        "astCommandId": "sonarr:6:1",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/opt/sonarr"
+        ]
+    },
+    {
+        "astCommandId": "sonarr:6:2",
+        "astCommand": [
+            "wget",
+            "http://update.sonarr.tv/v2/",
+            "SONARR_VERSION",
+            "/mono/NzbDrone.",
+            "SONARR_VERSION",
+            ".tar.gz",
+            "-O",
+            "/tmp/sonarr.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "sonarr:6:3",
+        "astCommand": [
+            "tar",
+            "-xzvf",
+            "/tmp/sonarr.tar.gz",
+            "-C",
+            "/opt/sonarr",
+            "--strip-components",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "sonarr:8:1",
+        "astCommand": [
+            "addgroup",
+            "-g",
+            "666",
+            "-S",
+            "sonarr"
+        ]
+    },
+    {
+        "astCommandId": "sonarr:8:2",
+        "astCommand": [
+            "adduser",
+            "-u",
+            "666",
+            "-SHG",
+            "sonarr",
+            "sonarr"
+        ]
+    },
+    {
+        "astCommandId": "sonarr:8:3",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/config"
+        ]
+    }
+]

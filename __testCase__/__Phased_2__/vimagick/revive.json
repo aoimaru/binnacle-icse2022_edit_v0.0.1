@@ -1,0 +1,50 @@
+[
+    {
+        "astCommandId": "revive:2:1",
+        "astCommand": [
+            "apk",
+            "add",
+            "-U",
+            "gzip",
+            "nginx",
+            "php-curl",
+            "php-fpm",
+            "php-gd",
+            "php-json",
+            "php-mysql",
+            "php-opcache",
+            "php-openssl",
+            "php-pgsql",
+            "php-phar",
+            "php-xml",
+            "php-zlib",
+            "tar"
+        ]
+    },
+    {
+        "astCommandId": "revive:2:2",
+        "astCommand": [
+            "wget",
+            "-O-",
+            "http://download.revive-adserver.com/revive-adserver-3.2.1.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "revive:2:3",
+        "astCommand": [
+            "tar",
+            "xz",
+            "--strip",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "revive:2:4",
+        "astCommand": [
+            "chown",
+            "-R",
+            "nobody:nobody",
+            "."
+        ]
+    }
+]

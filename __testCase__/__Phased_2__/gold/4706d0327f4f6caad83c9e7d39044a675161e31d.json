@@ -1,0 +1,321 @@
+[
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:1:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:1:2",
+        "astCommand": [
+            "addgroup",
+            "-g",
+            "82",
+            "-S",
+            "www-data"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:4:1",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "HTTPD_PREFIX"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "runDeps",
+            "ca-certificates",
+            "coreutils",
+            "dpkg-dev",
+            "dpkg",
+            "gcc",
+            "gnupg",
+            "libc-dev",
+            "curl-dev",
+            "jansson-dev",
+            "libxml2-dev",
+            "lua-dev",
+            "make",
+            "nghttp2-dev",
+            "openssl",
+            "openssl-dev",
+            "pcre-dev",
+            "tar",
+            "zlib-dev"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:3",
+        "astCommand": [
+            "ddist",
+            "httpd.tar.bz2",
+            "httpd/httpd-",
+            "HTTPD_VERSION",
+            ".tar.bz2"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:4",
+        "astCommand": [
+            "echo",
+            "HTTPD_SHA256",
+            " *httpd.tar.bz2"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:5",
+        "astCommand": [
+            "sha256sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:6",
+        "astCommand": [
+            "ddist",
+            "httpd.tar.bz2.asc",
+            "httpd/httpd-",
+            "HTTPD_VERSION",
+            ".tar.bz2.asc"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:7",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:8",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--keyserver",
+            "ha.pool.sks-keyservers.net",
+            "--recv-keys",
+            "key"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:9",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--verify",
+            "httpd.tar.bz2.asc",
+            "httpd.tar.bz2"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:10",
+        "astCommand": [
+            "command",
+            "-v",
+            "gpgconf"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:11",
+        "astCommand": [
+            "gpgconf",
+            "--kill",
+            "all"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:12",
+        "astCommand": [
+            ":"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:13",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "GNUPGHOME",
+            "httpd.tar.bz2.asc"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:14",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "src"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:15",
+        "astCommand": [
+            "tar",
+            "-xf",
+            "httpd.tar.bz2",
+            "-C",
+            "src",
+            "--strip-components=1"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:16",
+        "astCommand": [
+            "rm",
+            "httpd.tar.bz2"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:17",
+        "astCommand": [
+            "cd",
+            "src"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:18",
+        "astCommand": [
+            "patches",
+            "HTTPD_PATCHES"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:19",
+        "astCommand": [
+            "dpkg-architecture",
+            "--query",
+            "DEB_BUILD_GNU_TYPE"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:20",
+        "astCommand": [
+            "./configure",
+            "--build=",
+            "gnuArch",
+            "--prefix=",
+            "HTTPD_PREFIX",
+            "--enable-mods-shared=reallyall",
+            "--enable-mpms-shared=all"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:21",
+        "astCommand": [
+            "make",
+            "-j",
+            "nproc"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:22",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:23",
+        "astCommand": [
+            "cd",
+            ".."
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:24",
+        "astCommand": [
+            "rm",
+            "-r",
+            "src",
+            "man",
+            "manual"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:25",
+        "astCommand": [
+            "sed",
+            "-ri",
+            "-e",
+            "s!^(\\s*CustomLog)\\s+\\S+!\\1 /proc/self/fd/1!g",
+            "-e",
+            "s!^(\\s*ErrorLog)\\s+\\S+!\\1 /proc/self/fd/2!g",
+            "-e",
+            "s!^(\\s*TransferLog)\\s+\\S+!\\1 /proc/self/fd/1!g",
+            "HTTPD_PREFIX",
+            "/conf/httpd.conf",
+            "HTTPD_PREFIX",
+            "/conf/extra/httpd-ssl.conf"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:26",
+        "astCommand": [
+            "scanelf",
+            "--needed",
+            "--nobanner",
+            "--format",
+            "%n#p",
+            "--recursive",
+            "/usr/local"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:27",
+        "astCommand": [
+            "tr",
+            ",",
+            "\\n"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:28",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:29",
+        "astCommand": [
+            "awk",
+            "system(\"[ -e /usr/local/lib/\" $1 \" ]\") == 0 { next } { print \"so:\" $1 }"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:30",
+        "astCommand": [
+            "apk",
+            "add",
+            "--virtual",
+            ".httpd-rundeps",
+            "runDeps"
+        ]
+    },
+    {
+        "astCommandId": "4706d0327f4f6caad83c9e7d39044a675161e31d:10:31",
+        "astCommand": [
+            "apk",
+            "del",
+            ".build-deps"
+        ]
+    }
+]

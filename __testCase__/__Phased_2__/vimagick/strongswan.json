@@ -1,0 +1,30 @@
+[
+    {
+        "astCommandId": "strongswan:1:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "strongswan:1:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "iptables",
+            "openssl",
+            "strongswan",
+            "util-linux"
+        ]
+    },
+    {
+        "astCommandId": "strongswan:1:3",
+        "astCommand": [
+            "ln",
+            "-sf",
+            "/etc/ipsec.d/ipsec.conf",
+            "/etc/ipsec.conf"
+        ]
+    }
+]

@@ -1,0 +1,168 @@
+[
+    {
+        "astCommandId": "stable:1:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "stable:1:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "ca-certificates",
+            "curl",
+            "dirmngr",
+            "gnupg",
+            "libasound2",
+            "libdbus-glib-1-2",
+            "libgtk-3-0",
+            "libxrender1",
+            "libx11-xcb-dev",
+            "libx11-xcb1",
+            "libxt6",
+            "xz-utils",
+            "file",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "stable:3:1",
+        "astCommand": [
+            "useradd",
+            "--create-home",
+            "--home-dir",
+            "HOME",
+            "user"
+        ]
+    },
+    {
+        "astCommandId": "stable:7:1",
+        "astCommand": [
+            "cd",
+            "/tmp"
+        ]
+    },
+    {
+        "astCommandId": "stable:7:2",
+        "astCommand": [
+            "curl",
+            "-sSOL",
+            "https://dist.torproject.org/torbrowser/",
+            "TOR_VERSION",
+            "/tor-browser-linux64-",
+            "TOR_VERSION",
+            "_en-US.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "stable:7:3",
+        "astCommand": [
+            "curl",
+            "-sSOL",
+            "https://www.torproject.org/dist/torbrowser/",
+            "TOR_VERSION",
+            "/tor-browser-linux64-",
+            "TOR_VERSION",
+            "_en-US.tar.xz.asc"
+        ]
+    },
+    {
+        "astCommandId": "stable:7:4",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "stable:7:5",
+        "astCommand": [
+            "shuf",
+            "-e",
+            "ha.pool.sks-keyservers.net",
+            "hkp://p80.pool.sks-keyservers.net:80",
+            "keyserver.ubuntu.com",
+            "hkp://keyserver.ubuntu.com:80",
+            "pgp.mit.edu"
+        ]
+    },
+    {
+        "astCommandId": "stable:7:6",
+        "astCommand": [
+            "gpg",
+            "--no-tty",
+            "--keyserver",
+            "server",
+            "--recv-keys",
+            "TOR_FINGERPRINT"
+        ]
+    },
+    {
+        "astCommandId": "stable:7:7",
+        "astCommand": [
+            "break"
+        ]
+    },
+    {
+        "astCommandId": "stable:7:8",
+        "astCommand": [
+            ":"
+        ]
+    },
+    {
+        "astCommandId": "stable:7:9",
+        "astCommand": [
+            "gpg",
+            "--fingerprint",
+            "--keyid-format",
+            "LONG",
+            "TOR_FINGERPRINT"
+        ]
+    },
+    {
+        "astCommandId": "stable:7:10",
+        "astCommand": [
+            "grep",
+            "Key fingerprint = EF6E 286D DA85 EA2A 4BA7  DE68 4E2C 6E87 9329 8290"
+        ]
+    },
+    {
+        "astCommandId": "stable:7:11",
+        "astCommand": [
+            "gpg",
+            "--verify",
+            "tor-browser-linux64-",
+            "TOR_VERSION",
+            "_en-US.tar.xz.asc"
+        ]
+    },
+    {
+        "astCommandId": "stable:7:12",
+        "astCommand": [
+            "tar",
+            "-vxJ",
+            "--strip-components",
+            "1",
+            "-C",
+            "/usr/local/bin",
+            "-f",
+            "tor-browser-linux64-",
+            "TOR_VERSION",
+            "_en-US.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "stable:7:13",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "tor-browser",
+            "*",
+            "GNUPGHOME"
+        ]
+    }
+]

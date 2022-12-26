@@ -1,0 +1,464 @@
+[
+    {
+        "astCommandId": "irssi:3:1",
+        "astCommand": [
+            "adduser",
+            "-u",
+            "1001",
+            "-D",
+            "user"
+        ]
+    },
+    {
+        "astCommandId": "irssi:3:2",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "HOME",
+            "/.irssi"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "autoconf",
+            "automake",
+            "curl",
+            "gcc",
+            "glib-dev",
+            "gnupg",
+            "libc-dev",
+            "libgcrypt-dev",
+            "libtool",
+            "lynx",
+            "make",
+            "ncurses-dev",
+            "openssl-dev",
+            "perl-dev",
+            "pkgconf",
+            "tar",
+            "xz"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://github.com/irssi/irssi/releases/download/",
+            "IRSSI_VERSION",
+            "/irssi-",
+            "IRSSI_VERSION",
+            ".tar.xz",
+            "-o",
+            "/tmp/irssi.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:4",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://github.com/irssi/irssi/releases/download/",
+            "IRSSI_VERSION",
+            "/irssi-",
+            "IRSSI_VERSION",
+            ".tar.xz.asc",
+            "-o",
+            "/tmp/irssi.tar.xz.asc"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:5",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:6",
+        "astCommand": [
+            "gpg",
+            "--no-tty",
+            "--keyserver",
+            "ha.pool.sks-keyservers.net",
+            "--recv-keys",
+            "7EE65E3082A5FB06AC7C368D00CCB587DDBEF0E1"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:7",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--verify",
+            "/tmp/irssi.tar.xz.asc",
+            "/tmp/irssi.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:8",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "GNUPGHOME",
+            "/tmp/irssi.tar.xz.asc"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:9",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:10",
+        "astCommand": [
+            "tar",
+            "-xJf",
+            "/tmp/irssi.tar.xz",
+            "-C",
+            "/usr/src"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:11",
+        "astCommand": [
+            "rm",
+            "/tmp/irssi.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:12",
+        "astCommand": [
+            "cd",
+            "/usr/src/irssi-",
+            "IRSSI_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:13",
+        "astCommand": [
+            "./configure",
+            "--enable-true-color",
+            "--with-bot",
+            "--with-proxy",
+            "--with-socks",
+            "--prefix=/usr"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:14",
+        "astCommand": [
+            "make",
+            "-j",
+            "getconf",
+            "_NPROCESSORS_ONLN"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:15",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:16",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://otr.cypherpunks.ca/libotr-",
+            "LIB_OTR_VERSION",
+            ".tar.gz",
+            "-o",
+            "/tmp/libotr.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:17",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://otr.cypherpunks.ca/libotr-",
+            "LIB_OTR_VERSION",
+            ".tar.gz.asc",
+            "-o",
+            "/tmp/libotr.tar.gz.asc"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:18",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:19",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://otr.cypherpunks.ca/gpgkey.asc"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:20",
+        "astCommand": [
+            "gpg",
+            "--no-tty",
+            "--import"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:21",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--verify",
+            "/tmp/libotr.tar.gz.asc",
+            "/tmp/libotr.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:22",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "GNUPGHOME",
+            "/tmp/libotr.tar.gz.asc"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:23",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/libotr"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:24",
+        "astCommand": [
+            "tar",
+            "-xzf",
+            "/tmp/libotr.tar.gz",
+            "-C",
+            "/usr/src/libotr",
+            "--strip-components",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:25",
+        "astCommand": [
+            "rm",
+            "/tmp/libotr.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:26",
+        "astCommand": [
+            "cd",
+            "/usr/src/libotr"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:27",
+        "astCommand": [
+            "./configure",
+            "--with-pic",
+            "--prefix=/usr"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:28",
+        "astCommand": [
+            "make"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:29",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:30",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/irssi-otr"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:31",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://github.com/cryptodotis/irssi-otr/archive/v",
+            "IRSSI_OTR_VERSION",
+            ".tar.gz",
+            "-o",
+            "/tmp/irssi-otr.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:32",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/irssi-otr"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:33",
+        "astCommand": [
+            "tar",
+            "-xf",
+            "/tmp/irssi-otr.tar.gz",
+            "-C",
+            "/usr/src/irssi-otr",
+            "--strip-components",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:34",
+        "astCommand": [
+            "rm",
+            "-f",
+            "/tmp/irssi-otr.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:35",
+        "astCommand": [
+            "cd",
+            "/usr/src/irssi-otr"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:36",
+        "astCommand": [
+            "./bootstrap"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:37",
+        "astCommand": [
+            "./configure",
+            "--prefix=/usr"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:38",
+        "astCommand": [
+            "make"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:39",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:40",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/usr/src/irssi-",
+            "IRSSI_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:41",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/usr/src/libotr"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:42",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/usr/src/irssi-otr"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:43",
+        "astCommand": [
+            "scanelf",
+            "--needed",
+            "--nobanner",
+            "--recursive",
+            "/usr"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:44",
+        "astCommand": [
+            "awk",
+            "{ gsub(/,/, \"\\nso:\", $2); print \"so:\" $2 }"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:45",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:46",
+        "astCommand": [
+            "xargs",
+            "-r",
+            "apk",
+            "info",
+            "--installed"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:47",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "irssi:8:48",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".irssi-rundeps",
+            "runDeps",
+            "perl-libwww"
+        ]
+    }
+]

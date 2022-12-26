@@ -1,0 +1,53 @@
+[
+    {
+        "astCommandId": "skype:2:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "skype:3:1",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://repo.skype.com/data/SKYPE-GPG-KEY"
+        ]
+    },
+    {
+        "astCommandId": "skype:5:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "skype:5:2",
+        "astCommand": [
+            "apt-get",
+            "-y",
+            "install",
+            "skypeforlinux",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "skype:8:1",
+        "astCommand": [
+            "useradd",
+            "--create-home",
+            "--home-dir",
+            "HOME",
+            "skype"
+        ]
+    },
+    {
+        "astCommandId": "skype:8:2",
+        "astCommand": [
+            "chown",
+            "-R",
+            "skype:skype",
+            "HOME"
+        ]
+    }
+]

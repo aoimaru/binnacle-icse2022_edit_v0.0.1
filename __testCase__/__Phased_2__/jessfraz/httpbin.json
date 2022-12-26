@@ -1,0 +1,25 @@
+[
+    {
+        "astCommandId": "httpbin:1:1",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "build-base",
+            "libffi-dev"
+        ]
+    },
+    {
+        "astCommandId": "httpbin:1:2",
+        "astCommand": [
+            "pip3",
+            "install",
+            "--no-cache-dir",
+            "gevent",
+            "gunicorn",
+            "httpbin"
+        ]
+    }
+]

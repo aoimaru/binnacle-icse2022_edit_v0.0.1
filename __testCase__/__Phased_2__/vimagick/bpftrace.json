@@ -1,0 +1,83 @@
+[
+    {
+        "astCommandId": "bpftrace:3:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "bpftrace:3:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "ca-certificates",
+            "clang",
+            "curl",
+            "gcc",
+            "git",
+            "g",
+            "+",
+            "+",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "bpftrace:5:1",
+        "astCommand": [
+            "git",
+            "clone",
+            "--depth",
+            "1",
+            "--branch",
+            "BPFTRACE_VERSION",
+            "https://github.com/iovisor/bpftrace.git",
+            "/usr/src/bpftrace"
+        ]
+    },
+    {
+        "astCommandId": "bpftrace:5:2",
+        "astCommand": [
+            "cd",
+            "/usr/src/bpftrace"
+        ]
+    },
+    {
+        "astCommandId": "bpftrace:5:3",
+        "astCommand": [
+            "mkdir",
+            "build"
+        ]
+    },
+    {
+        "astCommandId": "bpftrace:5:4",
+        "astCommand": [
+            "cd",
+            "build"
+        ]
+    },
+    {
+        "astCommandId": "bpftrace:5:5",
+        "astCommand": [
+            "cmake",
+            "-DCMAKE_BUILD_TYPE=Release",
+            "-DCMAKE_INSTALL_PREFIX=/usr",
+            ".."
+        ]
+    },
+    {
+        "astCommandId": "bpftrace:5:6",
+        "astCommand": [
+            "make",
+            "-j8"
+        ]
+    },
+    {
+        "astCommandId": "bpftrace:5:7",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    }
+]

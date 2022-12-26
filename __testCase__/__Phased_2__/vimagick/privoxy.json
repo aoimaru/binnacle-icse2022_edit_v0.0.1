@@ -1,0 +1,44 @@
+[
+    {
+        "astCommandId": "privoxy:1:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "privoxy:1:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "-U",
+            "curl",
+            "privoxy"
+        ]
+    },
+    {
+        "astCommandId": "privoxy:1:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://github.com/tianon/gosu/releases/download/1.9/gosu-amd64"
+        ]
+    },
+    {
+        "astCommandId": "privoxy:1:4",
+        "astCommand": [
+            "chmod",
+            "+",
+            "x",
+            "/usr/sbin/gosu"
+        ]
+    },
+    {
+        "astCommandId": "privoxy:1:5",
+        "astCommand": [
+            "apk",
+            "del",
+            "curl"
+        ]
+    }
+]

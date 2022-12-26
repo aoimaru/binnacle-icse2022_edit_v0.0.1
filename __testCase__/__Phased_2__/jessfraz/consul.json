@@ -1,0 +1,128 @@
+[
+    {
+        "astCommandId": "consul:3:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "consul:3:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "apt-transport-https",
+            "ca-certificates",
+            "curl",
+            "gcc",
+            "git",
+            "make",
+            "ruby-dev",
+            "ruby",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "consul:4:1",
+        "astCommand": [
+            "curl",
+            "-sS",
+            "https://dl.yarnpkg.com/debian/pubkey.gpg"
+        ]
+    },
+    {
+        "astCommandId": "consul:5:1",
+        "astCommand": [
+            "echo",
+            "deb https://dl.yarnpkg.com/debian/ stable main"
+        ]
+    },
+    {
+        "astCommandId": "consul:6:1",
+        "astCommand": [
+            "curl",
+            "-sL",
+            "https://deb.nodesource.com/setup_10.x"
+        ]
+    },
+    {
+        "astCommandId": "consul:7:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "consul:7:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "nodejs",
+            "yarn",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "consul:9:1",
+        "astCommand": [
+            "go",
+            "get",
+            "github.com/hashicorp/consul"
+        ]
+    },
+    {
+        "astCommandId": "consul:13:1",
+        "astCommand": [
+            "cd",
+            "ui-v2"
+        ]
+    },
+    {
+        "astCommandId": "consul:13:2",
+        "astCommand": [
+            "yarn",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "consul:13:3",
+        "astCommand": [
+            "make"
+        ]
+    },
+    {
+        "astCommandId": "consul:13:4",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "../pkg/web_ui"
+        ]
+    },
+    {
+        "astCommandId": "consul:13:5",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "../pkg"
+        ]
+    },
+    {
+        "astCommandId": "consul:14:1",
+        "astCommand": [
+            "TERM",
+            "xterm",
+            "XC_ARCH",
+            "amd64",
+            "XC_OS",
+            "linux",
+            "LD_FLAGS",
+            " -extldflags -static",
+            "make",
+            "tools",
+            "static-assets",
+            "bin"
+        ]
+    }
+]

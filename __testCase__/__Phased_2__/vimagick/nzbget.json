@@ -1,0 +1,66 @@
+[
+    {
+        "astCommandId": "nzbget:6:1",
+        "astCommand": [
+            "wget",
+            "https://github.com/nzbget/nzbget/releases/download/v",
+            "NZBGET_VERSION",
+            "/nzbget-",
+            "NZBGET_VERSION",
+            "-bin-linux.run",
+            "-O",
+            "/tmp/nzbget.run"
+        ]
+    },
+    {
+        "astCommandId": "nzbget:6:2",
+        "astCommand": [
+            "bash",
+            "/tmp/nzbget.run",
+            "--destdir",
+            "/opt/nzbget"
+        ]
+    },
+    {
+        "astCommandId": "nzbget:6:3",
+        "astCommand": [
+            "git",
+            "clone",
+            "--depth=1",
+            "https://github.com/clinton-hall/nzbToMedia.git",
+            "/opt/nzbget/scripts/nzbToMedia"
+        ]
+    },
+    {
+        "astCommandId": "nzbget:8:1",
+        "astCommand": [
+            "addgroup",
+            "-g",
+            "666",
+            "-S",
+            "nzbget"
+        ]
+    },
+    {
+        "astCommandId": "nzbget:8:2",
+        "astCommand": [
+            "adduser",
+            "-u",
+            "666",
+            "-SHG",
+            "nzbget",
+            "nzbget"
+        ]
+    },
+    {
+        "astCommandId": "nzbget:8:3",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/movies",
+            "/downloads",
+            "/comics",
+            "/tvseries"
+        ]
+    }
+]

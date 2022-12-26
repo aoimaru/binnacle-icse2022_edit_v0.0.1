@@ -1,0 +1,597 @@
+[
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:1:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:1:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "bzip2",
+            "curl",
+            "gcc",
+            "gnupg",
+            "dirmngr",
+            "make",
+            "bc",
+            "cpio",
+            "dpkg-dev",
+            "g",
+            "+",
+            "+",
+            "patch",
+            "perl",
+            "python",
+            "rsync",
+            "unzip",
+            "wget"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:4:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:4:2",
+        "astCommand": [
+            "curl",
+            "-fL",
+            "-o",
+            "buildroot.tar.bz2",
+            "https://buildroot.org/downloads/",
+            "tarball"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:4:3",
+        "astCommand": [
+            "curl",
+            "-fL",
+            "-o",
+            "buildroot.tar.bz2.sign",
+            "https://buildroot.org/downloads/",
+            "tarball",
+            ".sign"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:4:4",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--decrypt",
+            "--output",
+            "buildroot.tar.bz2.txt",
+            "buildroot.tar.bz2.sign"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:4:5",
+        "astCommand": [
+            "awk",
+            "$1 == \"SHA1:\" && $2 ~ /^[0-9a-f]+$/ && $3 == \"",
+            "tarball",
+            "\" { print $2, \"*buildroot.tar.bz2\" }",
+            "buildroot.tar.bz2.txt"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:4:6",
+        "astCommand": [
+            "test",
+            "-s",
+            "buildroot.tar.bz2.sha1"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:4:7",
+        "astCommand": [
+            "sha1sum",
+            "-c",
+            "buildroot.tar.bz2.sha1"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:4:8",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/buildroot"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:4:9",
+        "astCommand": [
+            "tar",
+            "-xf",
+            "buildroot.tar.bz2",
+            "-C",
+            "/usr/src/buildroot",
+            "--strip-components",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:5:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:5:2",
+        "astCommand": [
+            "cd",
+            "/usr/src/buildroot"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:5:3",
+        "astCommand": [
+            "dpkg",
+            "--print-architecture"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:5:4",
+        "astCommand": [
+            "echo",
+            "error: unsupported architecture '",
+            "dpkgArch",
+            "'!"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:5:5",
+        "astCommand": [
+            "exit",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:5:6",
+        "astCommand": [
+            "make",
+            "defconfig"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:5:7",
+        "astCommand": [
+            "sed",
+            "-i",
+            "-e",
+            "s!^",
+            "conf",
+            "=.*$!# ",
+            "conf",
+            " is not set!",
+            ".config"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:5:8",
+        "astCommand": [
+            "sed",
+            "-i",
+            "-e",
+            "s!^",
+            "conf",
+            "=.*$!",
+            "confV",
+            "!",
+            "-e",
+            "s!^# ",
+            "conf",
+            " is not set$!",
+            "confV",
+            "!",
+            ".config"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:5:9",
+        "astCommand": [
+            "grep",
+            "-q",
+            "^",
+            "confV",
+            "$",
+            ".config"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:5:10",
+        "astCommand": [
+            "echo",
+            "confV"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:5:11",
+        "astCommand": [
+            "make",
+            "oldconfig"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:5:12",
+        "astCommand": [
+            "grep",
+            "-q",
+            "^",
+            "conf",
+            "=",
+            ".config"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:6:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:6:2",
+        "astCommand": [
+            "dpkg-architecture",
+            "--query",
+            "DEB_BUILD_GNU_TYPE"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:10:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:10:2",
+        "astCommand": [
+            "curl",
+            "-fL",
+            "-o",
+            "busybox.tar.bz2",
+            "https://busybox.net/downloads/",
+            "tarball"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:10:3",
+        "astCommand": [
+            "curl",
+            "-fL",
+            "-o",
+            "busybox.tar.bz2.sig",
+            "https://busybox.net/downloads/",
+            "tarball",
+            ".sig"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:10:4",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--verify",
+            "busybox.tar.bz2.sig",
+            "busybox.tar.bz2"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:10:5",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/busybox"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:10:6",
+        "astCommand": [
+            "tar",
+            "-xf",
+            "busybox.tar.bz2",
+            "-C",
+            "/usr/src/busybox",
+            "--strip-components",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:12:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:12:2",
+        "astCommand": [
+            "make",
+            "defconfig"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:12:3",
+        "astCommand": [
+            "sed",
+            "-i",
+            "-e",
+            "s!^",
+            "conf",
+            "=.*$!# ",
+            "conf",
+            " is not set!",
+            ".config"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:12:4",
+        "astCommand": [
+            "sed",
+            "-i",
+            "-e",
+            "s!^",
+            "conf",
+            "=.*$!",
+            "confV",
+            "!",
+            "-e",
+            "s!^# ",
+            "conf",
+            " is not set$!",
+            "confV",
+            "!",
+            ".config"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:12:5",
+        "astCommand": [
+            "grep",
+            "-q",
+            "^",
+            "confV",
+            "$",
+            ".config"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:12:6",
+        "astCommand": [
+            "echo",
+            "confV"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:12:7",
+        "astCommand": [
+            "make",
+            "oldconfig"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:12:8",
+        "astCommand": [
+            "grep",
+            "-q",
+            "^",
+            "conf",
+            "=",
+            ".config"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:13:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:13:2",
+        "astCommand": [
+            "make",
+            "-j",
+            "nproc",
+            "CROSS_COMPILE=",
+            "basename",
+            "/usr/src/buildroot/output/host/usr/",
+            "*",
+            "-buildroot-linux-uclibc",
+            "*",
+            "-",
+            "busybox"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:13:3",
+        "astCommand": [
+            "./busybox",
+            "--help"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:13:4",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "rootfs/bin"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:13:5",
+        "astCommand": [
+            "ln",
+            "-vL",
+            "busybox",
+            "rootfs/bin/"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:13:6",
+        "astCommand": [
+            "ln",
+            "-vL",
+            "../buildroot/output/target/usr/bin/getconf",
+            "rootfs/bin/"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:13:7",
+        "astCommand": [
+            "chroot",
+            "rootfs",
+            "/bin/getconf",
+            "_NPROCESSORS_ONLN"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:14:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:14:2",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "rootfs/etc"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:14:3",
+        "astCommand": [
+            "ln",
+            "-vL",
+            "../buildroot/system/skeleton/etc/",
+            "f",
+            "rootfs/etc/",
+            "f"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:14:4",
+        "astCommand": [
+            "grep",
+            "-E",
+            "^root::",
+            "rootfs/etc/shadow"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:14:5",
+        "astCommand": [
+            "sed",
+            "-ri",
+            "-e",
+            "s/^root::/root:*:/",
+            "rootfs/etc/shadow"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:14:6",
+        "astCommand": [
+            "grep",
+            "-E",
+            "^root:[*]:",
+            "rootfs/etc/shadow"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:14:7",
+        "astCommand": [
+            "awk",
+            " \t\t!/^#/ { \t\t\tif ($2 != \"d\" && $2 != \"f\") { \t\t\t\tprintf \"error: unknown type \\\"%s\\\" encountered in line %d: %s\\n\", $2, NR, $0 > \"/dev/stderr\"; \t\t\t\texit 1; \t\t\t} \t\t\tsub(/^\\/?/, \"rootfs/\", $1); \t\t\tif ($2 == \"d\") { \t\t\t\tprintf \"mkdir -p %s\\n\", $1; \t\t\t} \t\t\tprintf \"chmod %s %s\\n\", $3, $1; \t\t} \t",
+            "../buildroot/system/device_table.txt"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:15:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:15:2",
+        "astCommand": [
+            "cd",
+            "rootfs"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:15:3",
+        "astCommand": [
+            "awk",
+            "-F",
+            ":",
+            "{ print $3 \":\" $4 \"=\" $6 }",
+            "etc/passwd"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:15:4",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "home"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:15:5",
+        "astCommand": [
+            "chown",
+            "user",
+            "home"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:17:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:17:2",
+        "astCommand": [
+            "ln",
+            "-vL",
+            "/usr/share/zoneinfo/UTC",
+            "rootfs/etc/localtime"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:18:1",
+        "astCommand": [
+            "cp",
+            "-L",
+            "/etc/resolv.conf",
+            "rootfs/etc/"
+        ]
+    },
+    {
+        "astCommandId": "46c3d73b04e8919fb736279d2fb454b2fbc578a1:18:2",
+        "astCommand": [
+            "chroot",
+            "rootfs",
+            "/bin/sh",
+            "-xec",
+            "nslookup google.com"
+        ]
+    }
+]

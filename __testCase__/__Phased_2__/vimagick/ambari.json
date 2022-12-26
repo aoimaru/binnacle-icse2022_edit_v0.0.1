@@ -1,0 +1,190 @@
+[
+    {
+        "astCommandId": "ambari:4:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "ambari:4:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "ambari:4:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "python",
+            "maven",
+            "node",
+            "npm",
+            "wget"
+        ]
+    },
+    {
+        "astCommandId": "ambari:4:4",
+        "astCommand": [
+            "npm",
+            "install",
+            "--global",
+            "yarn"
+        ]
+    },
+    {
+        "astCommandId": "ambari:4:5",
+        "astCommand": [
+            "wget",
+            "https://www-eu.apache.org/dist/ambari/ambari-",
+            "AMBARI_VERSION",
+            "/apache-ambari-",
+            "AMBARI_VERSION",
+            "-src.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "ambari:4:6",
+        "astCommand": [
+            "tar",
+            "xfvz",
+            "apache-ambari-",
+            "AMBARI_VERSION",
+            "-src.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "ambari:4:7",
+        "astCommand": [
+            "cd",
+            "apache-ambari-",
+            "AMBARI_VERSION",
+            "-src"
+        ]
+    },
+    {
+        "astCommandId": "ambari:4:8",
+        "astCommand": [
+            "mvn",
+            "versions:set",
+            "-DnewVersion=",
+            "AMBARI_VERSION",
+            ".0.0"
+        ]
+    },
+    {
+        "astCommandId": "ambari:4:9",
+        "astCommand": [
+            "pushd",
+            "ambari-metrics"
+        ]
+    },
+    {
+        "astCommandId": "ambari:4:10",
+        "astCommand": [
+            "mvn",
+            "versions:set",
+            "-DnewVersion=",
+            "AMBARI_VERSION",
+            ".0.0"
+        ]
+    },
+    {
+        "astCommandId": "ambari:4:11",
+        "astCommand": [
+            "popd"
+        ]
+    },
+    {
+        "astCommandId": "ambari:4:12",
+        "astCommand": [
+            "mvn",
+            "-B",
+            "clean",
+            "install",
+            "jdeb:jdeb",
+            "-DnewVersion=",
+            "AMBARI_VERSION",
+            ".0.0",
+            "-DbuildNumber=",
+            "AMBARI_BUILD_NUMBER",
+            "-DskipTests",
+            "-Dpython.ver=",
+            "python >= 2.6"
+        ]
+    },
+    {
+        "astCommandId": "ambari:9:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "ambari:9:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "ambari:9:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "curl",
+            "gnupg",
+            "libpostgresql-jdbc-java",
+            "openjdk-8-jdk",
+            "openssh-client"
+        ]
+    },
+    {
+        "astCommandId": "ambari:9:4",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "AMBARI_SOURCE"
+        ]
+    },
+    {
+        "astCommandId": "ambari:9:5",
+        "astCommand": [
+            "apt-key",
+            "adv",
+            "--recv-keys",
+            "--keyserver",
+            "keyserver.ubuntu.com",
+            "B9733A7A07513CAD"
+        ]
+    },
+    {
+        "astCommandId": "ambari:9:6",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "ambari:9:7",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "ambari-server"
+        ]
+    },
+    {
+        "astCommandId": "ambari:9:8",
+        "astCommand": [
+            "ambari-server",
+            "setup",
+            "--jdbc-db=postgres",
+            "--jdbc-driver=/usr/share/java/postgresql.jar"
+        ]
+    }
+]

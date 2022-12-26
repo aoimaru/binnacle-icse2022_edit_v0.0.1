@@ -1,0 +1,166 @@
+[
+    {
+        "astCommandId": "642431f2055fcd5df9db296775466990332526ba:4:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "642431f2055fcd5df9db296775466990332526ba:4:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "bash",
+            "gcc",
+            "musl-dev",
+            "openssl",
+            "go"
+        ]
+    },
+    {
+        "astCommandId": "642431f2055fcd5df9db296775466990332526ba:4:3",
+        "astCommand": [
+            "export",
+            "GOROOT_BOOTSTRAP",
+            "go",
+            "env",
+            "GOROOT",
+            "GOOS",
+            "go",
+            "env",
+            "GOOS",
+            "GOARCH",
+            "go",
+            "env",
+            "GOARCH",
+            "GOHOSTOS",
+            "go",
+            "env",
+            "GOHOSTOS",
+            "GOHOSTARCH",
+            "go",
+            "env",
+            "GOHOSTARCH"
+        ]
+    },
+    {
+        "astCommandId": "642431f2055fcd5df9db296775466990332526ba:4:4",
+        "astCommand": [
+            "apk",
+            "--print-arch"
+        ]
+    },
+    {
+        "astCommandId": "642431f2055fcd5df9db296775466990332526ba:4:5",
+        "astCommand": [
+            "export",
+            "GOARM",
+            "6"
+        ]
+    },
+    {
+        "astCommandId": "642431f2055fcd5df9db296775466990332526ba:4:6",
+        "astCommand": [
+            "export",
+            "GO386",
+            "387"
+        ]
+    },
+    {
+        "astCommandId": "642431f2055fcd5df9db296775466990332526ba:4:7",
+        "astCommand": [
+            "wget",
+            "-O",
+            "go.tgz",
+            "https://golang.org/dl/go",
+            "GOLANG_VERSION",
+            ".src.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "642431f2055fcd5df9db296775466990332526ba:4:8",
+        "astCommand": [
+            "echo",
+            "%%SRC-SHA256%% *go.tgz"
+        ]
+    },
+    {
+        "astCommandId": "642431f2055fcd5df9db296775466990332526ba:4:9",
+        "astCommand": [
+            "sha256sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "642431f2055fcd5df9db296775466990332526ba:4:10",
+        "astCommand": [
+            "tar",
+            "-C",
+            "/usr/local",
+            "-xzf",
+            "go.tgz"
+        ]
+    },
+    {
+        "astCommandId": "642431f2055fcd5df9db296775466990332526ba:4:11",
+        "astCommand": [
+            "rm",
+            "go.tgz"
+        ]
+    },
+    {
+        "astCommandId": "642431f2055fcd5df9db296775466990332526ba:4:12",
+        "astCommand": [
+            "cd",
+            "/usr/local/go/src"
+        ]
+    },
+    {
+        "astCommandId": "642431f2055fcd5df9db296775466990332526ba:4:13",
+        "astCommand": [
+            "./make.bash"
+        ]
+    },
+    {
+        "astCommandId": "642431f2055fcd5df9db296775466990332526ba:4:14",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/usr/local/go/pkg/bootstrap",
+            "/usr/local/go/pkg/obj"
+        ]
+    },
+    {
+        "astCommandId": "642431f2055fcd5df9db296775466990332526ba:4:15",
+        "astCommand": [
+            "apk",
+            "del",
+            ".build-deps"
+        ]
+    },
+    {
+        "astCommandId": "642431f2055fcd5df9db296775466990332526ba:4:16",
+        "astCommand": [
+            "export",
+            "PATH",
+            "/usr/local/go/bin:",
+            "PATH"
+        ]
+    },
+    {
+        "astCommandId": "642431f2055fcd5df9db296775466990332526ba:7:1",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "GOPATH",
+            "/src",
+            "GOPATH",
+            "/bin"
+        ]
+    }
+]

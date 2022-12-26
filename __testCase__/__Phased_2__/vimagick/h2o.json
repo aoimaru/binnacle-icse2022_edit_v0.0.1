@@ -1,0 +1,86 @@
+[
+    {
+        "astCommandId": "h2o:4:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "h2o:4:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "-U",
+            "build-base",
+            "cmake",
+            "curl",
+            "linux-headers",
+            "zlib-dev"
+        ]
+    },
+    {
+        "astCommandId": "h2o:4:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "H2O_URL"
+        ]
+    },
+    {
+        "astCommandId": "h2o:4:4",
+        "astCommand": [
+            "tar",
+            "xz"
+        ]
+    },
+    {
+        "astCommandId": "h2o:4:5",
+        "astCommand": [
+            "cd",
+            "H2O_DIR"
+        ]
+    },
+    {
+        "astCommandId": "h2o:4:6",
+        "astCommand": [
+            "cmake",
+            "-DWITH_BUNDLED_SSL=on",
+            "."
+        ]
+    },
+    {
+        "astCommandId": "h2o:4:7",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "h2o:4:8",
+        "astCommand": [
+            "cd",
+            ".."
+        ]
+    },
+    {
+        "astCommandId": "h2o:4:9",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "H2O_DIR"
+        ]
+    },
+    {
+        "astCommandId": "h2o:4:10",
+        "astCommand": [
+            "apk",
+            "del",
+            "build-base",
+            "cmake",
+            "curl",
+            "linux-headers",
+            "zlib-dev"
+        ]
+    }
+]

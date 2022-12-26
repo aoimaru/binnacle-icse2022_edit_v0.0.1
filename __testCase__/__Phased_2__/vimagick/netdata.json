@@ -1,0 +1,104 @@
+[
+    {
+        "astCommandId": "netdata:2:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "netdata:2:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "autoconf",
+            "automake",
+            "bash",
+            "build-base",
+            "curl",
+            "nodejs",
+            "nodejs-npm",
+            "python",
+            "libmnl",
+            "libmnl-dev",
+            "libuuid",
+            "util-linux-dev",
+            "zlib",
+            "zlib-dev"
+        ]
+    },
+    {
+        "astCommandId": "netdata:2:3",
+        "astCommand": [
+            "addgroup",
+            "-g",
+            "1000",
+            "netdata"
+        ]
+    },
+    {
+        "astCommandId": "netdata:2:4",
+        "astCommand": [
+            "adduser",
+            "-D",
+            "-H",
+            "-u",
+            "1000",
+            "-G",
+            "netdata",
+            "netdata"
+        ]
+    },
+    {
+        "astCommandId": "netdata:2:5",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://github.com/firehol/netdata/releases/download/v",
+            "NETDATA_VERSION",
+            "/netdata-",
+            "NETDATA_VERSION",
+            ".tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "netdata:2:6",
+        "astCommand": [
+            "tar",
+            "xz"
+        ]
+    },
+    {
+        "astCommandId": "netdata:2:7",
+        "astCommand": [
+            "cd",
+            "netdata-",
+            "NETDATA_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "netdata:2:8",
+        "astCommand": [
+            "./netdata-installer.sh",
+            "--dont-start-it",
+            "--dont-wait"
+        ]
+    },
+    {
+        "astCommandId": "netdata:2:9",
+        "astCommand": [
+            "cd",
+            ".."
+        ]
+    },
+    {
+        "astCommandId": "netdata:2:10",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "netdata-",
+            "NETDATA_VERSION"
+        ]
+    }
+]

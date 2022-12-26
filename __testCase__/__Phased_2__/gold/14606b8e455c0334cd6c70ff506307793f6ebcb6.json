@@ -1,0 +1,84 @@
+[
+    {
+        "astCommandId": "14606b8e455c0334cd6c70ff506307793f6ebcb6:1:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "14606b8e455c0334cd6c70ff506307793f6ebcb6:1:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "btrfs-progs",
+            "e2fsprogs",
+            "e2fsprogs-extra",
+            "iptables",
+            "xfsprogs",
+            "xz",
+            "pigz"
+        ]
+    },
+    {
+        "astCommandId": "14606b8e455c0334cd6c70ff506307793f6ebcb6:1:3",
+        "astCommand": [
+            "apk",
+            "info",
+            "--no-cache",
+            "--quiet",
+            "zfs"
+        ]
+    },
+    {
+        "astCommandId": "14606b8e455c0334cd6c70ff506307793f6ebcb6:2:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "14606b8e455c0334cd6c70ff506307793f6ebcb6:2:2",
+        "astCommand": [
+            "addgroup",
+            "-S",
+            "dockremap"
+        ]
+    },
+    {
+        "astCommandId": "14606b8e455c0334cd6c70ff506307793f6ebcb6:2:3",
+        "astCommand": [
+            "adduser",
+            "-S",
+            "-G",
+            "dockremap",
+            "dockremap"
+        ]
+    },
+    {
+        "astCommandId": "14606b8e455c0334cd6c70ff506307793f6ebcb6:2:4",
+        "astCommand": [
+            "echo",
+            "dockremap:165536:65536"
+        ]
+    },
+    {
+        "astCommandId": "14606b8e455c0334cd6c70ff506307793f6ebcb6:4:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "14606b8e455c0334cd6c70ff506307793f6ebcb6:4:2",
+        "astCommand": [
+            "wget",
+            "-O",
+            "/usr/local/bin/dind",
+            "https://raw.githubusercontent.com/docker/docker/",
+            "DIND_COMMIT",
+            "/hack/dind"
+        ]
+    }
+]

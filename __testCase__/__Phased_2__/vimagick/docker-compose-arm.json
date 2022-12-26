@@ -1,0 +1,113 @@
+[
+    {
+        "astCommandId": "docker-compose-arm:3:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "docker-compose-arm:3:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "docker-compose-arm:3:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "build-essential",
+            "curl",
+            "libffi-dev",
+            "libssl-dev",
+            "python3-dev",
+            "upx-ucl",
+            "zlib1g-dev"
+        ]
+    },
+    {
+        "astCommandId": "docker-compose-arm:3:4",
+        "astCommand": [
+            "curl",
+            "https://bootstrap.pypa.io/get-pip.py"
+        ]
+    },
+    {
+        "astCommandId": "docker-compose-arm:3:5",
+        "astCommand": [
+            "python3"
+        ]
+    },
+    {
+        "astCommandId": "docker-compose-arm:3:6",
+        "astCommand": [
+            "pip",
+            "install",
+            "--no-cache-dir",
+            "docker-compose==",
+            "DOCKER_COMPOSE_VERSION",
+            "pyinstaller==",
+            "PYINSTALLER_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "docker-compose-arm:3:7",
+        "astCommand": [
+            "cd",
+            "/usr/local/lib/python3.7/dist-packages"
+        ]
+    },
+    {
+        "astCommandId": "docker-compose-arm:3:8",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "bin"
+        ]
+    },
+    {
+        "astCommandId": "docker-compose-arm:3:9",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://github.com/docker/compose/raw/",
+            "DOCKER_COMPOSE_VERSION",
+            "/docker-compose.spec"
+        ]
+    },
+    {
+        "astCommandId": "docker-compose-arm:3:10",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://github.com/docker/compose/raw/",
+            "DOCKER_COMPOSE_VERSION",
+            "/bin/docker-compose"
+        ]
+    },
+    {
+        "astCommandId": "docker-compose-arm:3:11",
+        "astCommand": [
+            "touch",
+            "compose/GITSHA"
+        ]
+    },
+    {
+        "astCommandId": "docker-compose-arm:3:12",
+        "astCommand": [
+            "pyinstaller",
+            "docker-compose.spec"
+        ]
+    },
+    {
+        "astCommandId": "docker-compose-arm:3:13",
+        "astCommand": [
+            "cp",
+            "docker-compose/dist/docker-compose",
+            "/usr/local/bin/"
+        ]
+    }
+]

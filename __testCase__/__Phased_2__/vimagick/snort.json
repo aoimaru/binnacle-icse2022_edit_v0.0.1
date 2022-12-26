@@ -1,0 +1,108 @@
+[
+    {
+        "astCommandId": "snort:4:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "snort:4:2",
+        "astCommand": [
+            "yum",
+            "-y",
+            "install",
+            "epel-release",
+            "jq",
+            "libdnet"
+        ]
+    },
+    {
+        "astCommandId": "snort:4:3",
+        "astCommand": [
+            "yum",
+            "-y",
+            "install",
+            "SNORT_URL"
+        ]
+    },
+    {
+        "astCommandId": "snort:4:4",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/etc/snort/rules"
+        ]
+    },
+    {
+        "astCommandId": "snort:4:5",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "RULES_URL"
+        ]
+    },
+    {
+        "astCommandId": "snort:4:6",
+        "astCommand": [
+            "tar",
+            "xz",
+            "--strip",
+            "1",
+            "-C",
+            "/etc/snort/rules/",
+            "community-rules/community.rules"
+        ]
+    },
+    {
+        "astCommandId": "snort:4:7",
+        "astCommand": [
+            "touch",
+            "/etc/snort/rules/local.rules",
+            "/etc/snort/rules/black_list.rules",
+            "/etc/snort/rules/white_list.rules"
+        ]
+    },
+    {
+        "astCommandId": "snort:4:8",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/etc/snort/so_rules",
+            "/etc/snort/preproc_rules",
+            "/usr/local/lib/snort_dynamicrules"
+        ]
+    },
+    {
+        "astCommandId": "snort:4:9",
+        "astCommand": [
+            "ln",
+            "-s",
+            "/usr/lib64/libdnet.so.1",
+            "/usr/local/lib/libdnet.1"
+        ]
+    },
+    {
+        "astCommandId": "snort:4:10",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://bootstrap.pypa.io/get-pip.py"
+        ]
+    },
+    {
+        "astCommandId": "snort:4:11",
+        "astCommand": [
+            "python"
+        ]
+    },
+    {
+        "astCommandId": "snort:4:12",
+        "astCommand": [
+            "pip",
+            "install",
+            "--no-cache-dir",
+            "idstools"
+        ]
+    }
+]

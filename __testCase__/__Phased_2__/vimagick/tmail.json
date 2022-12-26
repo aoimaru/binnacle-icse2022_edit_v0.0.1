@@ -1,0 +1,48 @@
+[
+    {
+        "astCommandId": "tmail:1:1",
+        "astCommand": [
+            "apk",
+            "add",
+            "--update",
+            "build-base",
+            "python",
+            "python-dev",
+            "openssl"
+        ]
+    },
+    {
+        "astCommandId": "tmail:1:2",
+        "astCommand": [
+            "wget",
+            "-O-",
+            "https://bootstrap.pypa.io/get-pip.py"
+        ]
+    },
+    {
+        "astCommandId": "tmail:1:3",
+        "astCommand": [
+            "python"
+        ]
+    },
+    {
+        "astCommandId": "tmail:1:4",
+        "astCommand": [
+            "pip",
+            "install",
+            "--no-cache-dir",
+            "twisted"
+        ]
+    },
+    {
+        "astCommandId": "tmail:1:5",
+        "astCommand": [
+            "apk",
+            "del",
+            "--purge",
+            "build-base",
+            "python-dev",
+            "openssl"
+        ]
+    }
+]

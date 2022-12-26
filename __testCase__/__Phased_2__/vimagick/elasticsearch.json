@@ -1,0 +1,105 @@
+[
+    {
+        "astCommandId": "elasticsearch:6:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "elasticsearch:6:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "ca-certificates",
+            "bash",
+            "curl",
+            "openjdk8-jre",
+            "tar"
+        ]
+    },
+    {
+        "astCommandId": "elasticsearch:6:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "ELASTICSEARCH_URL"
+        ]
+    },
+    {
+        "astCommandId": "elasticsearch:6:4",
+        "astCommand": [
+            "tar",
+            "xz",
+            "--strip",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "elasticsearch:6:5",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "GOSU_URL"
+        ]
+    },
+    {
+        "astCommandId": "elasticsearch:6:6",
+        "astCommand": [
+            "chmod",
+            "+",
+            "x",
+            "/usr/local/bin/gosu"
+        ]
+    },
+    {
+        "astCommandId": "elasticsearch:6:7",
+        "astCommand": [
+            "gosu",
+            "nobody",
+            "true"
+        ]
+    },
+    {
+        "astCommandId": "elasticsearch:7:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "elasticsearch:7:2",
+        "astCommand": [
+            "addgroup",
+            "-g",
+            "1000",
+            "elasticsearch"
+        ]
+    },
+    {
+        "astCommandId": "elasticsearch:7:3",
+        "astCommand": [
+            "adduser",
+            "-D",
+            "-H",
+            "-h",
+            "/opt/elasticsearch",
+            "-u",
+            "1000",
+            "-G",
+            "elasticsearch",
+            "elasticsearch"
+        ]
+    },
+    {
+        "astCommandId": "elasticsearch:7:4",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "data",
+            "logs",
+            "config/scripts"
+        ]
+    }
+]

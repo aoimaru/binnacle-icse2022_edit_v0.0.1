@@ -1,0 +1,44 @@
+[
+    {
+        "astCommandId": "obfsproxy:1:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "obfsproxy:1:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "build-base",
+            "curl",
+            "python",
+            "python-dev"
+        ]
+    },
+    {
+        "astCommandId": "obfsproxy:1:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://bootstrap.pypa.io/get-pip.py"
+        ]
+    },
+    {
+        "astCommandId": "obfsproxy:1:4",
+        "astCommand": [
+            "python"
+        ]
+    },
+    {
+        "astCommandId": "obfsproxy:1:5",
+        "astCommand": [
+            "pip",
+            "install",
+            "--no-cache-dir",
+            "obfsproxy"
+        ]
+    }
+]

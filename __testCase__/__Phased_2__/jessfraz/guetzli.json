@@ -1,0 +1,71 @@
+[
+    {
+        "astCommandId": "guetzli:4:1",
+        "astCommand": [
+            "buildDeps",
+            "     \tg++ \t\tgit \t\tlibpng-dev \t\tmake \t",
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "guetzli:4:2",
+        "astCommand": [
+            "apk",
+            "--no-cache",
+            "add",
+            "buildDeps"
+        ]
+    },
+    {
+        "astCommandId": "guetzli:4:3",
+        "astCommand": [
+            "git",
+            "clone",
+            "--depth",
+            "1",
+            "--branch",
+            "GUETZLI_VERSION",
+            "https://github.com/google/guetzli.git",
+            "APPDIR"
+        ]
+    },
+    {
+        "astCommandId": "guetzli:4:4",
+        "astCommand": [
+            "cd",
+            "APPDIR"
+        ]
+    },
+    {
+        "astCommandId": "guetzli:4:5",
+        "astCommand": [
+            "make"
+        ]
+    },
+    {
+        "astCommandId": "guetzli:4:6",
+        "astCommand": [
+            "mv",
+            "APPDIR",
+            "/bin/Release/guetzli",
+            "/usr/local/bin/guetzli"
+        ]
+    },
+    {
+        "astCommandId": "guetzli:4:7",
+        "astCommand": [
+            "apk",
+            "del",
+            "buildDeps"
+        ]
+    },
+    {
+        "astCommandId": "guetzli:4:8",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "APPDIR"
+        ]
+    }
+]

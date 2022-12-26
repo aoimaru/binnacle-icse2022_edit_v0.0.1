@@ -1,0 +1,110 @@
+[
+    {
+        "astCommandId": "motion-arm:4:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "motion-arm:4:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "motion-arm:4:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "curl",
+            "gnupg",
+            "mosquitto-clients",
+            "openssh-client"
+        ]
+    },
+    {
+        "astCommandId": "motion-arm:4:4",
+        "astCommand": [
+            "echo",
+            "deb http://archive.raspberrypi.org/debian/ buster main"
+        ]
+    },
+    {
+        "astCommandId": "motion-arm:4:5",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "http://archive.raspberrypi.org/debian/raspberrypi.gpg.key"
+        ]
+    },
+    {
+        "astCommandId": "motion-arm:4:6",
+        "astCommand": [
+            "apt-key",
+            "add",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "motion-arm:4:7",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "motion-arm:4:8",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "libraspberrypi0"
+        ]
+    },
+    {
+        "astCommandId": "motion-arm:4:9",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "MOTION_URL",
+            "-o",
+            "MOTION_FILE"
+        ]
+    },
+    {
+        "astCommandId": "motion-arm:4:10",
+        "astCommand": [
+            "dpkg",
+            "-i",
+            "MOTION_FILE"
+        ]
+    },
+    {
+        "astCommandId": "motion-arm:4:11",
+        "astCommand": [
+            "apt-get",
+            "-f",
+            "install",
+            "-y"
+        ]
+    },
+    {
+        "astCommandId": "motion-arm:4:12",
+        "astCommand": [
+            "sed",
+            "-i",
+            "-e",
+            "s/^daemon on/daemon off/",
+            "-e",
+            "s/^webcontrol_localhost on/webcontrol_localhost off/",
+            "-e",
+            "s/^stream_localhost on/stream_localhost off/",
+            "-e",
+            "s/^output_pictures on/output_pictures off/",
+            "/etc/motion/motion.conf"
+        ]
+    }
+]

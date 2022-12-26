@@ -1,0 +1,58 @@
+[
+    {
+        "astCommandId": "mitmproxy:2:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "mitmproxy:2:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "ca-certificates",
+            "curl",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "mitmproxy:3:1",
+        "astCommand": [
+            "groupadd",
+            "-r",
+            "mitmproxy"
+        ]
+    },
+    {
+        "astCommandId": "mitmproxy:3:2",
+        "astCommand": [
+            "useradd",
+            "-r",
+            "-g",
+            "mitmproxy",
+            "mitmproxy"
+        ]
+    },
+    {
+        "astCommandId": "mitmproxy:3:3",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/home/mitmproxy/.mitmproxy"
+        ]
+    },
+    {
+        "astCommandId": "mitmproxy:5:1",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://snapshots.mitmproxy.org/",
+            "MITMPROXY_VERSION",
+            "/mitmproxy-",
+            "MITMPROXY_VERSION",
+            "-linux.tar.gz"
+        ]
+    }
+]

@@ -1,0 +1,82 @@
+[
+    {
+        "astCommandId": "john:2:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "john:2:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "build-base",
+            "gcc",
+            "git",
+            "gmp-dev",
+            "krb5-dev",
+            "libressl-dev",
+            "make",
+            "perl"
+        ]
+    },
+    {
+        "astCommandId": "john:2:3",
+        "astCommand": [
+            "git",
+            "clone",
+            "--depth",
+            "1",
+            "https://github.com/magnumripper/JohnTheRipper.git",
+            "/usr/src/johntheripper"
+        ]
+    },
+    {
+        "astCommandId": "john:2:4",
+        "astCommand": [
+            "cd",
+            "/usr/src/johntheripper/src"
+        ]
+    },
+    {
+        "astCommandId": "john:2:5",
+        "astCommand": [
+            "./configure"
+        ]
+    },
+    {
+        "astCommandId": "john:2:6",
+        "astCommand": [
+            "cat",
+            "config.log"
+        ]
+    },
+    {
+        "astCommandId": "john:2:7",
+        "astCommand": [
+            "make"
+        ]
+    },
+    {
+        "astCommandId": "john:2:8",
+        "astCommand": [
+            "cp",
+            "-r",
+            "../run/",
+            "*",
+            "/usr/local/bin/"
+        ]
+    },
+    {
+        "astCommandId": "john:2:9",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/usr/src/johntheripper"
+        ]
+    }
+]

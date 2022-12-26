@@ -1,0 +1,239 @@
+[
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:1:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:1:2",
+        "astCommand": [
+            "command",
+            "-v",
+            "a2enmod"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:1:3",
+        "astCommand": [
+            "a2enmod",
+            "rewrite"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:1:4",
+        "astCommand": [
+            "apt-mark",
+            "showmanual"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:1:5",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:1:6",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "libjpeg-dev",
+            "libpng-dev",
+            "libpq-dev",
+            "libzip-dev"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:1:7",
+        "astCommand": [
+            "docker-php-ext-configure",
+            "gd",
+            "--with-png-dir=/usr",
+            "--with-jpeg-dir=/usr"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:1:8",
+        "astCommand": [
+            "docker-php-ext-install",
+            "-j",
+            "nproc",
+            "gd",
+            "opcache",
+            "pdo_mysql",
+            "pdo_pgsql",
+            "zip"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:1:9",
+        "astCommand": [
+            "apt-mark",
+            "auto",
+            ".*"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:1:10",
+        "astCommand": [
+            "apt-mark",
+            "manual",
+            "savedAptMark"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:1:11",
+        "astCommand": [
+            "ldd",
+            "php",
+            "-r",
+            "echo ini_get(\"extension_dir\");",
+            "/",
+            "*",
+            ".so"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:1:12",
+        "astCommand": [
+            "awk",
+            "/=>/ { print $3 }"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:1:13",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:1:14",
+        "astCommand": [
+            "xargs",
+            "-r",
+            "dpkg-query",
+            "-S"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:1:15",
+        "astCommand": [
+            "cut",
+            "-d:",
+            "-f1"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:1:16",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:1:17",
+        "astCommand": [
+            "xargs",
+            "-rt",
+            "apt-mark",
+            "manual"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:1:18",
+        "astCommand": [
+            "apt-get",
+            "purge",
+            "-y",
+            "--auto-remove",
+            "-o",
+            "APT::AutoRemove::RecommendsImportant=false"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:2:1",
+        "astCommand": [
+            "echo",
+            "opcache.memory_consumption=128"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:2:2",
+        "astCommand": [
+            "echo",
+            "opcache.interned_strings_buffer=8"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:2:3",
+        "astCommand": [
+            "echo",
+            "opcache.max_accelerated_files=4000"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:2:4",
+        "astCommand": [
+            "echo",
+            "opcache.revalidate_freq=60"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:2:5",
+        "astCommand": [
+            "echo",
+            "opcache.fast_shutdown=1"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:6:1",
+        "astCommand": [
+            "curl",
+            "-fSL",
+            "https://ftp.drupal.org/files/projects/drupal-",
+            "DRUPAL_VERSION",
+            ".tar.gz",
+            "-o",
+            "drupal.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:6:2",
+        "astCommand": [
+            "echo",
+            "DRUPAL_MD5",
+            " *drupal.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:6:3",
+        "astCommand": [
+            "md5sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:6:4",
+        "astCommand": [
+            "tar",
+            "-xz",
+            "--strip-components=1",
+            "-f",
+            "drupal.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "ca4acdafd2a1886c6fe0440e939eded376856338:6:5",
+        "astCommand": [
+            "rm",
+            "drupal.tar.gz"
+        ]
+    }
+]

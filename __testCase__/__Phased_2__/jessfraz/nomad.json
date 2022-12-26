@@ -1,0 +1,104 @@
+[
+    {
+        "astCommandId": "nomad:3:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "nomad:3:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "apt-transport-https",
+            "ca-certificates",
+            "curl",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "nomad:3:3",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "nomad:3:4",
+        "astCommand": [
+            "curl",
+            "-sS",
+            "https://dl.yarnpkg.com/debian/pubkey.gpg"
+        ]
+    },
+    {
+        "astCommandId": "nomad:3:5",
+        "astCommand": [
+            "apt-key",
+            "add",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "nomad:3:6",
+        "astCommand": [
+            "echo",
+            "deb https://dl.yarnpkg.com/debian/ stable main"
+        ]
+    },
+    {
+        "astCommandId": "nomad:4:1",
+        "astCommand": [
+            "curl",
+            "-sL",
+            "https://deb.nodesource.com/setup_12.x"
+        ]
+    },
+    {
+        "astCommandId": "nomad:5:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "nomad:5:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "gcc",
+            "git",
+            "g",
+            "+",
+            "+",
+            "make",
+            "nodejs",
+            "pkgconf",
+            "python",
+            "yarn",
+            "zip",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "nomad:10:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "nomad:10:2",
+        "astCommand": [
+            "make",
+            "bootstrap",
+            "ember-dist",
+            "static-assets"
+        ]
+    }
+]

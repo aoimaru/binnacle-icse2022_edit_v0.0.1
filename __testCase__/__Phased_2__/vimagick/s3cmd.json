@@ -1,0 +1,34 @@
+[
+    {
+        "astCommandId": "s3cmd:1:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "s3cmd:1:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "ca-certificates",
+            "s3cmd",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "s3cmd:2:1",
+        "astCommand": [
+            "echo",
+            "[default]"
+        ]
+    },
+    {
+        "astCommandId": "s3cmd:2:2",
+        "astCommand": [
+            "echo",
+            "access_key=$AWS_ACCESS_KEY"
+        ]
+    }
+]

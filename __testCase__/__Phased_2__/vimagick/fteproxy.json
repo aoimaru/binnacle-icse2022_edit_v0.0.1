@@ -1,0 +1,59 @@
+[
+    {
+        "astCommandId": "fteproxy:1:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "fteproxy:1:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "-U",
+            "build-base",
+            "curl",
+            "gmp",
+            "gmp-dev",
+            "libstdc",
+            "+",
+            "+",
+            "python2",
+            "python2-dev"
+        ]
+    },
+    {
+        "astCommandId": "fteproxy:1:3",
+        "astCommand": [
+            "curl",
+            "https://bootstrap.pypa.io/pip/2.7/get-pip.py"
+        ]
+    },
+    {
+        "astCommandId": "fteproxy:1:4",
+        "astCommand": [
+            "python"
+        ]
+    },
+    {
+        "astCommandId": "fteproxy:1:5",
+        "astCommand": [
+            "pip",
+            "install",
+            "--no-cache-dir",
+            "fteproxy"
+        ]
+    },
+    {
+        "astCommandId": "fteproxy:1:6",
+        "astCommand": [
+            "apk",
+            "del",
+            "build-base",
+            "curl",
+            "gmp-dev",
+            "python2-dev"
+        ]
+    }
+]

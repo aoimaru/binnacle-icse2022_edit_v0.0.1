@@ -1,0 +1,256 @@
+[
+    {
+        "astCommandId": "taskd:2:1",
+        "astCommand": [
+            "apk",
+            "add",
+            "--update",
+            "build-base",
+            "cmake",
+            "gnutls",
+            "gnutls-dev",
+            "gnutls-utils",
+            "libstdc",
+            "+",
+            "+"
+        ]
+    },
+    {
+        "astCommandId": "taskd:2:2",
+        "astCommand": [
+            "wget",
+            "-O-",
+            "http://downloads.sourceforge.net/project/libuuid/libuuid-1.0.3.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "taskd:2:3",
+        "astCommand": [
+            "tar",
+            "xz"
+        ]
+    },
+    {
+        "astCommandId": "taskd:2:4",
+        "astCommand": [
+            "cd",
+            "libuuid-1.0.3"
+        ]
+    },
+    {
+        "astCommandId": "taskd:2:5",
+        "astCommand": [
+            "./configure",
+            "--prefix=/usr"
+        ]
+    },
+    {
+        "astCommandId": "taskd:2:6",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "taskd:2:7",
+        "astCommand": [
+            "cd",
+            ".."
+        ]
+    },
+    {
+        "astCommandId": "taskd:2:8",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "libuuid-1.0.3"
+        ]
+    },
+    {
+        "astCommandId": "taskd:2:9",
+        "astCommand": [
+            "wget",
+            "-O-",
+            "http://taskwarrior.org/download/taskd-1.1.0.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "taskd:2:10",
+        "astCommand": [
+            "tar",
+            "xz"
+        ]
+    },
+    {
+        "astCommandId": "taskd:2:11",
+        "astCommand": [
+            "cd",
+            "taskd-1.1.0"
+        ]
+    },
+    {
+        "astCommandId": "taskd:2:12",
+        "astCommand": [
+            "cmake",
+            "-DCMAKE_INSTALL_PREFIX:PATH=/usr",
+            "-DCMAKE_BUILD_TYPE=release",
+            "."
+        ]
+    },
+    {
+        "astCommandId": "taskd:2:13",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "taskd:2:14",
+        "astCommand": [
+            "cd",
+            "pki"
+        ]
+    },
+    {
+        "astCommandId": "taskd:2:15",
+        "astCommand": [
+            "./generate"
+        ]
+    },
+    {
+        "astCommandId": "taskd:2:16",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "TASKDDATA"
+        ]
+    },
+    {
+        "astCommandId": "taskd:2:17",
+        "astCommand": [
+            "mv",
+            "*",
+            ".pem",
+            "TASKDDATA"
+        ]
+    },
+    {
+        "astCommandId": "taskd:2:18",
+        "astCommand": [
+            "cd",
+            "../.."
+        ]
+    },
+    {
+        "astCommandId": "taskd:2:19",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "taskd-1.1.0"
+        ]
+    },
+    {
+        "astCommandId": "taskd:2:20",
+        "astCommand": [
+            "apk",
+            "del",
+            "--purge",
+            "build-base",
+            "cmake",
+            "gnutls-dev"
+        ]
+    },
+    {
+        "astCommandId": "taskd:3:1",
+        "astCommand": [
+            "taskd",
+            "init"
+        ]
+    },
+    {
+        "astCommandId": "taskd:3:2",
+        "astCommand": [
+            "taskd",
+            "config",
+            "--force",
+            "client.cert",
+            "TASKDDATA",
+            "/client.cert.pem"
+        ]
+    },
+    {
+        "astCommandId": "taskd:3:3",
+        "astCommand": [
+            "taskd",
+            "config",
+            "--force",
+            "client.key",
+            "TASKDDATA",
+            "/client.key.pem"
+        ]
+    },
+    {
+        "astCommandId": "taskd:3:4",
+        "astCommand": [
+            "taskd",
+            "config",
+            "--force",
+            "server.cert",
+            "TASKDDATA",
+            "/server.cert.pem"
+        ]
+    },
+    {
+        "astCommandId": "taskd:3:5",
+        "astCommand": [
+            "taskd",
+            "config",
+            "--force",
+            "server.key",
+            "TASKDDATA",
+            "/server.key.pem"
+        ]
+    },
+    {
+        "astCommandId": "taskd:3:6",
+        "astCommand": [
+            "taskd",
+            "config",
+            "--force",
+            "server.crl",
+            "TASKDDATA",
+            "/server.crl.pem"
+        ]
+    },
+    {
+        "astCommandId": "taskd:3:7",
+        "astCommand": [
+            "taskd",
+            "config",
+            "--force",
+            "ca.cert",
+            "TASKDDATA",
+            "/ca.cert.pem"
+        ]
+    },
+    {
+        "astCommandId": "taskd:3:8",
+        "astCommand": [
+            "taskd",
+            "config",
+            "--force",
+            "log",
+            "/dev/stdout"
+        ]
+    },
+    {
+        "astCommandId": "taskd:3:9",
+        "astCommand": [
+            "taskd",
+            "config",
+            "--force",
+            "pid.file",
+            "/run/taskd.pid"
+        ]
+    }
+]

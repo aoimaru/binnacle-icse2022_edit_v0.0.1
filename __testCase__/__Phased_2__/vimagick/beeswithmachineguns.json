@@ -1,0 +1,54 @@
+[
+    {
+        "astCommandId": "beeswithmachineguns:2:1",
+        "astCommand": [
+            "buildDeps",
+            " \t\tbuild-base \t\tgit \t\tpython-dev \t",
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "beeswithmachineguns:2:2",
+        "astCommand": [
+            "apk",
+            "--no-cache",
+            "add",
+            "buildDeps"
+        ]
+    },
+    {
+        "astCommandId": "beeswithmachineguns:2:3",
+        "astCommand": [
+            "git",
+            "clone",
+            "--depth",
+            "1",
+            "https://github.com/newsapps/beeswithmachineguns",
+            "/usr/src/beeswithmachineguns"
+        ]
+    },
+    {
+        "astCommandId": "beeswithmachineguns:2:4",
+        "astCommand": [
+            "cd",
+            "/usr/src/beeswithmachineguns"
+        ]
+    },
+    {
+        "astCommandId": "beeswithmachineguns:2:5",
+        "astCommand": [
+            "python",
+            "setup.py",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "beeswithmachineguns:2:6",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/usr/src/beeswithmachineguns"
+        ]
+    }
+]

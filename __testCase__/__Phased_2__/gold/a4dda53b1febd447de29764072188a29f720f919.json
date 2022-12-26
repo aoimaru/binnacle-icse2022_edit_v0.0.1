@@ -1,0 +1,173 @@
+[
+    {
+        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "ca-certificates",
+            "gcc",
+            "libc-dev",
+            "linux-headers",
+            "lua5.3-dev",
+            "make",
+            "openssl",
+            "openssl-dev",
+            "pcre2-dev",
+            "readline-dev",
+            "tar",
+            "zlib-dev"
+        ]
+    },
+    {
+        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:3",
+        "astCommand": [
+            "wget",
+            "-O",
+            "haproxy.tar.gz",
+            "HAPROXY_URL"
+        ]
+    },
+    {
+        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:4",
+        "astCommand": [
+            "echo",
+            "HAPROXY_SHA256",
+            " *haproxy.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:5",
+        "astCommand": [
+            "sha256sum",
+            "-c"
+        ]
+    },
+    {
+        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:6",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/haproxy"
+        ]
+    },
+    {
+        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:7",
+        "astCommand": [
+            "tar",
+            "-xzf",
+            "haproxy.tar.gz",
+            "-C",
+            "/usr/src/haproxy",
+            "--strip-components=1"
+        ]
+    },
+    {
+        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:8",
+        "astCommand": [
+            "rm",
+            "haproxy.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:9",
+        "astCommand": [
+            "make",
+            "-C",
+            "/usr/src/haproxy",
+            "-j",
+            "getconf",
+            "_NPROCESSORS_ONLN",
+            "all",
+            "makeOpts"
+        ]
+    },
+    {
+        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:10",
+        "astCommand": [
+            "make",
+            "-C",
+            "/usr/src/haproxy",
+            "install-bin",
+            "makeOpts"
+        ]
+    },
+    {
+        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:11",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/local/etc/haproxy"
+        ]
+    },
+    {
+        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:12",
+        "astCommand": [
+            "cp",
+            "-R",
+            "/usr/src/haproxy/examples/errorfiles",
+            "/usr/local/etc/haproxy/errors"
+        ]
+    },
+    {
+        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:13",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/usr/src/haproxy"
+        ]
+    },
+    {
+        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:14",
+        "astCommand": [
+            "scanelf",
+            "--needed",
+            "--nobanner",
+            "--format",
+            "%n#p",
+            "--recursive",
+            "/usr/local"
+        ]
+    },
+    {
+        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:15",
+        "astCommand": [
+            "tr",
+            ",",
+            "\\n"
+        ]
+    },
+    {
+        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:16",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:17",
+        "astCommand": [
+            "awk",
+            "system(\"[ -e /usr/local/lib/\" $1 \" ]\") == 0 { next } { print \"so:\" $1 }"
+        ]
+    },
+    {
+        "astCommandId": "a4dda53b1febd447de29764072188a29f720f919:4:18",
+        "astCommand": [
+            "apk",
+            "add",
+            "--virtual",
+            ".haproxy-rundeps",
+            "runDeps"
+        ]
+    }
+]

@@ -1,0 +1,131 @@
+[
+    {
+        "astCommandId": "opencart:2:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "opencart:2:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "opencart:2:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "libpng-dev",
+            "libjpeg-dev",
+            "libmcrypt-dev"
+        ]
+    },
+    {
+        "astCommandId": "opencart:2:4",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "opencart:2:5",
+        "astCommand": [
+            "docker-php-ext-configure",
+            "gd",
+            "--with-png-dir=/usr",
+            "--with-jpeg-dir=/usr"
+        ]
+    },
+    {
+        "astCommandId": "opencart:2:6",
+        "astCommand": [
+            "docker-php-ext-install",
+            "gd",
+            "mbstring",
+            "mysqli",
+            "zip"
+        ]
+    },
+    {
+        "astCommandId": "opencart:2:7",
+        "astCommand": [
+            "pecl",
+            "install",
+            "mcrypt-1.0.4"
+        ]
+    },
+    {
+        "astCommandId": "opencart:8:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "opencart:8:2",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "OPENCART_URL",
+            "-o",
+            "OPENCART_FILE"
+        ]
+    },
+    {
+        "astCommandId": "opencart:8:3",
+        "astCommand": [
+            "echo",
+            "OPENCART_MD5",
+            "  ",
+            "OPENCART_FILE"
+        ]
+    },
+    {
+        "astCommandId": "opencart:8:4",
+        "astCommand": [
+            "md5sum",
+            "-c"
+        ]
+    },
+    {
+        "astCommandId": "opencart:8:5",
+        "astCommand": [
+            "tar",
+            "xzf",
+            "OPENCART_FILE",
+            "--strip",
+            "2",
+            "--wildcards",
+            "*/upload/"
+        ]
+    },
+    {
+        "astCommandId": "opencart:8:6",
+        "astCommand": [
+            "mv",
+            "config-dist.php",
+            "config.php"
+        ]
+    },
+    {
+        "astCommandId": "opencart:8:7",
+        "astCommand": [
+            "mv",
+            "admin/config-dist.php",
+            "admin/config.php"
+        ]
+    },
+    {
+        "astCommandId": "opencart:8:8",
+        "astCommand": [
+            "rm",
+            "OPENCART_FILE"
+        ]
+    }
+]

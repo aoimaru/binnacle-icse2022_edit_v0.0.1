@@ -59,8 +59,39 @@ def __Levenshtein__(X, Y):
                 T[i][j - 1] + 1,
                 T[i - 1][j - 1] + cost
             )
-    return T[m][n]  
+    return T[m][n]
 
+def __Demerau_Levenshtein__(X, Y):
+    (m, n) = (len(X), len(Y))
+
+    T = [[0 for x in range(n + 1)] for y in range(m + 1)]
+
+    for i in range(1, m + 1):
+        T[i][0] = i
+
+    for j in range(1, n + 1):
+        T[0][j] = j
+    
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            nc = ncd(X[i-1], Y[j-1])
+            if nc <= 0.3:
+                cost = 0
+            else:
+                cost = 1
+ 
+            T[i][j] = min(
+                T[i - 1][j] + 1,
+                T[i][j - 1] + 1,
+                T[i - 1][j - 1] + cost
+            )
+
+            if 1<i<m and 1<j<n and X[i-1]==Y[j-2] and X[i-2]==Y[j-1]:
+                T[i][j]=min(
+                    T[i][j], T[i-2][j-2]+1
+                )
+
+    return T[m][n]
 
 
 def main():

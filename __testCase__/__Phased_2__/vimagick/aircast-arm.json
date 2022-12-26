@@ -1,0 +1,28 @@
+[
+    {
+        "astCommandId": "aircast-arm:4:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "aircast-arm:4:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "curl"
+        ]
+    },
+    {
+        "astCommandId": "aircast-arm:4:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "-o",
+            "/usr/local/bin/aircast",
+            "APP_URL"
+        ]
+    }
+]

@@ -1,0 +1,98 @@
+[
+    {
+        "astCommandId": "foss-heartbeat:2:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "foss-heartbeat:2:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "build-base",
+            "git",
+            "lapack-dev",
+            "libffi-dev",
+            "openssl-dev"
+        ]
+    },
+    {
+        "astCommandId": "foss-heartbeat:2:3",
+        "astCommand": [
+            "ln",
+            "-s",
+            "/usr/include/locale.h",
+            "/usr/include/xlocale.h"
+        ]
+    },
+    {
+        "astCommandId": "foss-heartbeat:2:4",
+        "astCommand": [
+            "git",
+            "clone",
+            "--depth",
+            "1",
+            "https://github.com/sarahsharp/foss-heartbeat.git",
+            "/usr/src/foss-heartbeat"
+        ]
+    },
+    {
+        "astCommandId": "foss-heartbeat:2:5",
+        "astCommand": [
+            "cd",
+            "/usr/src/foss-heartbeat"
+        ]
+    },
+    {
+        "astCommandId": "foss-heartbeat:2:6",
+        "astCommand": [
+            "cat",
+            "requirements.txt"
+        ]
+    },
+    {
+        "astCommandId": "foss-heartbeat:2:7",
+        "astCommand": [
+            "grep",
+            "-v",
+            "numpy"
+        ]
+    },
+    {
+        "astCommandId": "foss-heartbeat:2:8",
+        "astCommand": [
+            "grep",
+            "-v",
+            "scipy"
+        ]
+    },
+    {
+        "astCommandId": "foss-heartbeat:2:9",
+        "astCommand": [
+            "tee",
+            "requirements.txt"
+        ]
+    },
+    {
+        "astCommandId": "foss-heartbeat:2:10",
+        "astCommand": [
+            "pip",
+            "install",
+            "-r",
+            "requirements.txt"
+        ]
+    },
+    {
+        "astCommandId": "foss-heartbeat:2:11",
+        "astCommand": [
+            "pip",
+            "install",
+            "statistics"
+        ]
+    }
+]

@@ -1,0 +1,40 @@
+[
+    {
+        "astCommandId": "b5487f01519c626455dc09d1cd32d69e22cec326:2:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "b5487f01519c626455dc09d1cd32d69e22cec326:2:2",
+        "astCommand": [
+            "erl",
+            "-noinput",
+            "-eval",
+            " \t\t{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> \t\t\tcase Acc of \t\t\t\t\"\" -> \t\t\t\t\tcase lists:suffix(\"/rabbitmqadmin\", FileInArchive) of \t\t\t\t\t\ttrue -> GetBin(); \t\t\t\t\t\tfalse -> Acc \t\t\t\t\tend; \t\t\t\t_ -> Acc \t\t\tend \t\tend, \"\", init:get_plain_arguments()), \t\tio:format(\"~s\", [ AdminBin ]), \t\tinit:stop(). \t",
+            "--",
+            "/plugins/rabbitmq_management-",
+            "*",
+            ".ez"
+        ]
+    },
+    {
+        "astCommandId": "b5487f01519c626455dc09d1cd32d69e22cec326:2:3",
+        "astCommand": [
+            "chmod",
+            "+",
+            "x",
+            "/usr/local/bin/rabbitmqadmin"
+        ]
+    },
+    {
+        "astCommandId": "b5487f01519c626455dc09d1cd32d69e22cec326:2:4",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "python"
+        ]
+    }
+]

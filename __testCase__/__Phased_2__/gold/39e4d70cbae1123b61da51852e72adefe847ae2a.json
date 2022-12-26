@@ -1,0 +1,172 @@
+[
+    {
+        "astCommandId": "39e4d70cbae1123b61da51852e72adefe847ae2a:1:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "39e4d70cbae1123b61da51852e72adefe847ae2a:1:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "coreutils",
+            "freetype-dev",
+            "libjpeg-turbo-dev",
+            "libpng-dev",
+            "libzip-dev",
+            "postgresql-dev"
+        ]
+    },
+    {
+        "astCommandId": "39e4d70cbae1123b61da51852e72adefe847ae2a:1:3",
+        "astCommand": [
+            "docker-php-ext-configure",
+            "gd",
+            "--with-freetype-dir=/usr/include/",
+            "--with-jpeg-dir=/usr/include/",
+            "--with-png-dir=/usr/include/"
+        ]
+    },
+    {
+        "astCommandId": "39e4d70cbae1123b61da51852e72adefe847ae2a:1:4",
+        "astCommand": [
+            "docker-php-ext-install",
+            "-j",
+            "nproc",
+            "gd",
+            "opcache",
+            "pdo_mysql",
+            "pdo_pgsql",
+            "zip"
+        ]
+    },
+    {
+        "astCommandId": "39e4d70cbae1123b61da51852e72adefe847ae2a:1:5",
+        "astCommand": [
+            "scanelf",
+            "--needed",
+            "--nobanner",
+            "--format",
+            "%n#p",
+            "--recursive",
+            "/usr/local"
+        ]
+    },
+    {
+        "astCommandId": "39e4d70cbae1123b61da51852e72adefe847ae2a:1:6",
+        "astCommand": [
+            "tr",
+            ",",
+            "\\n"
+        ]
+    },
+    {
+        "astCommandId": "39e4d70cbae1123b61da51852e72adefe847ae2a:1:7",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "39e4d70cbae1123b61da51852e72adefe847ae2a:1:8",
+        "astCommand": [
+            "awk",
+            "system(\"[ -e /usr/local/lib/\" $1 \" ]\") == 0 { next } { print \"so:\" $1 }"
+        ]
+    },
+    {
+        "astCommandId": "39e4d70cbae1123b61da51852e72adefe847ae2a:1:9",
+        "astCommand": [
+            "apk",
+            "add",
+            "--virtual",
+            ".drupal-phpexts-rundeps",
+            "runDeps"
+        ]
+    },
+    {
+        "astCommandId": "39e4d70cbae1123b61da51852e72adefe847ae2a:2:1",
+        "astCommand": [
+            "echo",
+            "opcache.memory_consumption=128"
+        ]
+    },
+    {
+        "astCommandId": "39e4d70cbae1123b61da51852e72adefe847ae2a:2:2",
+        "astCommand": [
+            "echo",
+            "opcache.interned_strings_buffer=8"
+        ]
+    },
+    {
+        "astCommandId": "39e4d70cbae1123b61da51852e72adefe847ae2a:2:3",
+        "astCommand": [
+            "echo",
+            "opcache.max_accelerated_files=4000"
+        ]
+    },
+    {
+        "astCommandId": "39e4d70cbae1123b61da51852e72adefe847ae2a:2:4",
+        "astCommand": [
+            "echo",
+            "opcache.revalidate_freq=60"
+        ]
+    },
+    {
+        "astCommandId": "39e4d70cbae1123b61da51852e72adefe847ae2a:2:5",
+        "astCommand": [
+            "echo",
+            "opcache.fast_shutdown=1"
+        ]
+    },
+    {
+        "astCommandId": "39e4d70cbae1123b61da51852e72adefe847ae2a:6:1",
+        "astCommand": [
+            "curl",
+            "-fSL",
+            "https://ftp.drupal.org/files/projects/drupal-",
+            "DRUPAL_VERSION",
+            ".tar.gz",
+            "-o",
+            "drupal.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "39e4d70cbae1123b61da51852e72adefe847ae2a:6:2",
+        "astCommand": [
+            "echo",
+            "DRUPAL_MD5",
+            " *drupal.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "39e4d70cbae1123b61da51852e72adefe847ae2a:6:3",
+        "astCommand": [
+            "md5sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "39e4d70cbae1123b61da51852e72adefe847ae2a:6:4",
+        "astCommand": [
+            "tar",
+            "-xz",
+            "--strip-components=1",
+            "-f",
+            "drupal.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "39e4d70cbae1123b61da51852e72adefe847ae2a:6:5",
+        "astCommand": [
+            "rm",
+            "drupal.tar.gz"
+        ]
+    }
+]

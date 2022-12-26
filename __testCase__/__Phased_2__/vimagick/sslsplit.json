@@ -1,0 +1,91 @@
+[
+    {
+        "astCommandId": "sslsplit:2:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "sslsplit:2:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "build-base",
+            "curl",
+            "fts",
+            "fts-dev",
+            "libevent",
+            "libevent-dev",
+            "linux-headers",
+            "openssl",
+            "openssl-dev",
+            "tar"
+        ]
+    },
+    {
+        "astCommandId": "sslsplit:2:3",
+        "astCommand": [
+            "mkdir",
+            "sslsplit"
+        ]
+    },
+    {
+        "astCommandId": "sslsplit:2:4",
+        "astCommand": [
+            "cd",
+            "sslsplit"
+        ]
+    },
+    {
+        "astCommandId": "sslsplit:2:5",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://github.com/droe/sslsplit/archive/",
+            "SSLSPLIT_VERSION",
+            ".tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "sslsplit:2:6",
+        "astCommand": [
+            "tar",
+            "xz",
+            "--strip",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "sslsplit:2:7",
+        "astCommand": [
+            "sed",
+            "-i",
+            "/^LIBS/s/$/ -lfts/",
+            "GNUmakefile"
+        ]
+    },
+    {
+        "astCommandId": "sslsplit:2:8",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "sslsplit:2:9",
+        "astCommand": [
+            "cd",
+            ".."
+        ]
+    },
+    {
+        "astCommandId": "sslsplit:2:10",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "sslsplit"
+        ]
+    }
+]

@@ -1,0 +1,170 @@
+[
+    {
+        "astCommandId": "8bb0da230203a6be21b4097ef0f79e07406388ab:3:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "8bb0da230203a6be21b4097ef0f79e07406388ab:3:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "tcl",
+            "tk"
+        ]
+    },
+    {
+        "astCommandId": "8bb0da230203a6be21b4097ef0f79e07406388ab:6:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "8bb0da230203a6be21b4097ef0f79e07406388ab:6:2",
+        "astCommand": [
+            "dpkg",
+            "--print-architecture"
+        ]
+    },
+    {
+        "astCommandId": "8bb0da230203a6be21b4097ef0f79e07406388ab:6:3",
+        "astCommand": [
+            "echo",
+            "error: current architecture (",
+            "dpkgArch",
+            ") does not have a corresponding PyPy ",
+            "PYPY_VERSION",
+            " binary release"
+        ]
+    },
+    {
+        "astCommandId": "8bb0da230203a6be21b4097ef0f79e07406388ab:6:4",
+        "astCommand": [
+            "exit",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "8bb0da230203a6be21b4097ef0f79e07406388ab:6:5",
+        "astCommand": [
+            "wget",
+            "-O",
+            "pypy.tar.bz2",
+            "https://bitbucket.org/pypy/pypy/downloads/pypy3.6-v",
+            "PYPY_VERSION",
+            "-",
+            "pypyArch",
+            ".tar.bz2",
+            "--progress=dot:giga"
+        ]
+    },
+    {
+        "astCommandId": "8bb0da230203a6be21b4097ef0f79e07406388ab:6:6",
+        "astCommand": [
+            "echo",
+            "sha256",
+            " *pypy.tar.bz2"
+        ]
+    },
+    {
+        "astCommandId": "8bb0da230203a6be21b4097ef0f79e07406388ab:6:7",
+        "astCommand": [
+            "sha256sum",
+            "-c"
+        ]
+    },
+    {
+        "astCommandId": "8bb0da230203a6be21b4097ef0f79e07406388ab:6:8",
+        "astCommand": [
+            "tar",
+            "-xjC",
+            "/usr/local",
+            "--strip-components=1",
+            "-f",
+            "pypy.tar.bz2"
+        ]
+    },
+    {
+        "astCommandId": "8bb0da230203a6be21b4097ef0f79e07406388ab:6:9",
+        "astCommand": [
+            "find",
+            "/usr/local/lib-python",
+            "-depth",
+            "-type",
+            "d",
+            "-a",
+            "(",
+            "-name",
+            "test",
+            "-o",
+            "-name",
+            "tests",
+            ")",
+            "-exec",
+            "rm",
+            "-rf",
+            "{}",
+            "+"
+        ]
+    },
+    {
+        "astCommandId": "8bb0da230203a6be21b4097ef0f79e07406388ab:6:10",
+        "astCommand": [
+            "rm",
+            "pypy.tar.bz2"
+        ]
+    },
+    {
+        "astCommandId": "8bb0da230203a6be21b4097ef0f79e07406388ab:6:11",
+        "astCommand": [
+            "pypy3",
+            "--version"
+        ]
+    },
+    {
+        "astCommandId": "8bb0da230203a6be21b4097ef0f79e07406388ab:6:12",
+        "astCommand": [
+            "cd",
+            "/usr/local/lib_pypy"
+        ]
+    },
+    {
+        "astCommandId": "8bb0da230203a6be21b4097ef0f79e07406388ab:7:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "8bb0da230203a6be21b4097ef0f79e07406388ab:7:2",
+        "astCommand": [
+            "wget",
+            "-O",
+            "get-pip.py",
+            "https://bootstrap.pypa.io/get-pip.py"
+        ]
+    },
+    {
+        "astCommandId": "8bb0da230203a6be21b4097ef0f79e07406388ab:7:3",
+        "astCommand": [
+            "pypy3",
+            "get-pip.py",
+            "--disable-pip-version-check",
+            "--no-cache-dir",
+            "pip==",
+            "PYTHON_PIP_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "8bb0da230203a6be21b4097ef0f79e07406388ab:7:4",
+        "astCommand": [
+            "pip",
+            "--version"
+        ]
+    }
+]

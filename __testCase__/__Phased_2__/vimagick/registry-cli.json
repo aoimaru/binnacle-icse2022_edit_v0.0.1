@@ -1,0 +1,53 @@
+[
+    {
+        "astCommandId": "registry-cli:4:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "registry-cli:4:2",
+        "astCommand": [
+            "apt",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "registry-cli:4:3",
+        "astCommand": [
+            "apt",
+            "install",
+            "-y",
+            "binutils"
+        ]
+    },
+    {
+        "astCommandId": "registry-cli:4:4",
+        "astCommand": [
+            "pip",
+            "install",
+            "--no-cache-dir",
+            "pyinstaller"
+        ]
+    },
+    {
+        "astCommandId": "registry-cli:4:5",
+        "astCommand": [
+            "pip",
+            "install",
+            "--no-cache-dir",
+            "-r",
+            "requirements-ci.txt"
+        ]
+    },
+    {
+        "astCommandId": "registry-cli:4:6",
+        "astCommand": [
+            "pyinstaller",
+            "--onefile",
+            "--name=registry-cli",
+            "registry.py"
+        ]
+    }
+]

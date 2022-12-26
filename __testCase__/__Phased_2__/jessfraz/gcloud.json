@@ -1,0 +1,94 @@
+[
+    {
+        "astCommandId": "gcloud:3:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "gcloud:3:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "curl",
+            "ca-certificates",
+            "tar"
+        ]
+    },
+    {
+        "astCommandId": "gcloud:3:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "-o",
+            "/tmp/google-cloud-sdk.tar.gz",
+            "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-",
+            "CLOUD_SDK_DOCKER_VERSION",
+            "-linux-x86_64.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "gcloud:3:4",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/google-cloud-sdk"
+        ]
+    },
+    {
+        "astCommandId": "gcloud:3:5",
+        "astCommand": [
+            "tar",
+            "-xzf",
+            "/tmp/google-cloud-sdk.tar.gz",
+            "-C",
+            "/usr/src/google-cloud-sdk",
+            "--strip-components",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "gcloud:3:6",
+        "astCommand": [
+            "rm",
+            "/tmp/google-cloud-sdk.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "gcloud:3:7",
+        "astCommand": [
+            "cd",
+            "/usr/src/google-cloud-sdk"
+        ]
+    },
+    {
+        "astCommandId": "gcloud:3:8",
+        "astCommand": [
+            "./install.sh",
+            "--usage-reporting",
+            "false",
+            "--path-update",
+            "false"
+        ]
+    },
+    {
+        "astCommandId": "gcloud:3:9",
+        "astCommand": [
+            "apk",
+            "del",
+            ".build-deps"
+        ]
+    },
+    {
+        "astCommandId": "gcloud:3:10",
+        "astCommand": [
+            "gcloud",
+            "components",
+            "update"
+        ]
+    }
+]

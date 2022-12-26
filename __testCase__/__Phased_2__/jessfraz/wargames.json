@@ -1,0 +1,63 @@
+[
+    {
+        "astCommandId": "wargames:2:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "wargames:2:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "ca-certificates",
+            "gcc",
+            "git",
+            "libc-dev",
+            "make"
+        ]
+    },
+    {
+        "astCommandId": "wargames:2:3",
+        "astCommand": [
+            "git",
+            "clone",
+            "--depth",
+            "1",
+            "https://github.com/abs0/wargames.git",
+            "/tmp/wargames"
+        ]
+    },
+    {
+        "astCommandId": "wargames:2:4",
+        "astCommand": [
+            "cd",
+            "/tmp/wargames"
+        ]
+    },
+    {
+        "astCommandId": "wargames:2:5",
+        "astCommand": [
+            "make"
+        ]
+    },
+    {
+        "astCommandId": "wargames:2:6",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "wargames:2:7",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/tmp/wargames"
+        ]
+    }
+]

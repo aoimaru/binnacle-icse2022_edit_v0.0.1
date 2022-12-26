@@ -1,0 +1,161 @@
+[
+    {
+        "astCommandId": "znc:3:1",
+        "astCommand": [
+            "adduser",
+            "-u",
+            "1001",
+            "-D",
+            "user"
+        ]
+    },
+    {
+        "astCommandId": "znc:6:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "znc:6:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "build-base",
+            "curl",
+            "libressl-dev",
+            "perl-dev",
+            "tar"
+        ]
+    },
+    {
+        "astCommandId": "znc:6:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "http://znc.in/releases/znc-",
+            "ZNC_VERSION",
+            ".tar.gz",
+            "-o",
+            "/tmp/znc.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "znc:6:4",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/znc"
+        ]
+    },
+    {
+        "astCommandId": "znc:6:5",
+        "astCommand": [
+            "tar",
+            "-xzf",
+            "/tmp/znc.tar.gz",
+            "-C",
+            "/usr/src/znc",
+            "--strip-components",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "znc:6:6",
+        "astCommand": [
+            "rm",
+            "/tmp/znc.tar.gz",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "znc:6:7",
+        "astCommand": [
+            "cd",
+            "/usr/src/znc"
+        ]
+    },
+    {
+        "astCommandId": "znc:6:8",
+        "astCommand": [
+            "./configure"
+        ]
+    },
+    {
+        "astCommandId": "znc:6:9",
+        "astCommand": [
+            "make",
+            "-j8"
+        ]
+    },
+    {
+        "astCommandId": "znc:6:10",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "znc:6:11",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/usr/src/znc"
+        ]
+    },
+    {
+        "astCommandId": "znc:6:12",
+        "astCommand": [
+            "scanelf",
+            "--needed",
+            "--nobanner",
+            "--recursive",
+            "/usr"
+        ]
+    },
+    {
+        "astCommandId": "znc:6:13",
+        "astCommand": [
+            "awk",
+            "{ gsub(/,/, \"\\nso:\", $2); print \"so:\" $2 }"
+        ]
+    },
+    {
+        "astCommandId": "znc:6:14",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "znc:6:15",
+        "astCommand": [
+            "xargs",
+            "-r",
+            "apk",
+            "info",
+            "--installed"
+        ]
+    },
+    {
+        "astCommandId": "znc:6:16",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "znc:6:17",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".irssi-rundeps",
+            "runDeps"
+        ]
+    }
+]

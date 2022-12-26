@@ -1,0 +1,223 @@
+[
+    {
+        "astCommandId": "2e5c9eb28b4235d6dfb57261968b1cbbfc68459b:4:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "2e5c9eb28b4235d6dfb57261968b1cbbfc68459b:4:2",
+        "astCommand": [
+            "apt-mark",
+            "showmanual"
+        ]
+    },
+    {
+        "astCommandId": "2e5c9eb28b4235d6dfb57261968b1cbbfc68459b:4:3",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "2e5c9eb28b4235d6dfb57261968b1cbbfc68459b:4:4",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "ca-certificates",
+            "gcc",
+            "libc6-dev",
+            "libpcre2-dev",
+            "libssl1.0-dev",
+            "make",
+            "wget",
+            "zlib1g-dev"
+        ]
+    },
+    {
+        "astCommandId": "2e5c9eb28b4235d6dfb57261968b1cbbfc68459b:4:5",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "2e5c9eb28b4235d6dfb57261968b1cbbfc68459b:4:6",
+        "astCommand": [
+            "wget",
+            "-O",
+            "haproxy.tar.gz",
+            "HAPROXY_URL"
+        ]
+    },
+    {
+        "astCommandId": "2e5c9eb28b4235d6dfb57261968b1cbbfc68459b:4:7",
+        "astCommand": [
+            "echo",
+            "HAPROXY_SHA256",
+            " *haproxy.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "2e5c9eb28b4235d6dfb57261968b1cbbfc68459b:4:8",
+        "astCommand": [
+            "sha256sum",
+            "-c"
+        ]
+    },
+    {
+        "astCommandId": "2e5c9eb28b4235d6dfb57261968b1cbbfc68459b:4:9",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/haproxy"
+        ]
+    },
+    {
+        "astCommandId": "2e5c9eb28b4235d6dfb57261968b1cbbfc68459b:4:10",
+        "astCommand": [
+            "tar",
+            "-xzf",
+            "haproxy.tar.gz",
+            "-C",
+            "/usr/src/haproxy",
+            "--strip-components=1"
+        ]
+    },
+    {
+        "astCommandId": "2e5c9eb28b4235d6dfb57261968b1cbbfc68459b:4:11",
+        "astCommand": [
+            "rm",
+            "haproxy.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "2e5c9eb28b4235d6dfb57261968b1cbbfc68459b:4:12",
+        "astCommand": [
+            "make",
+            "-C",
+            "/usr/src/haproxy",
+            "-j",
+            "nproc",
+            "all",
+            "makeOpts"
+        ]
+    },
+    {
+        "astCommandId": "2e5c9eb28b4235d6dfb57261968b1cbbfc68459b:4:13",
+        "astCommand": [
+            "make",
+            "-C",
+            "/usr/src/haproxy",
+            "install-bin",
+            "makeOpts"
+        ]
+    },
+    {
+        "astCommandId": "2e5c9eb28b4235d6dfb57261968b1cbbfc68459b:4:14",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/local/etc/haproxy"
+        ]
+    },
+    {
+        "astCommandId": "2e5c9eb28b4235d6dfb57261968b1cbbfc68459b:4:15",
+        "astCommand": [
+            "cp",
+            "-R",
+            "/usr/src/haproxy/examples/errorfiles",
+            "/usr/local/etc/haproxy/errors"
+        ]
+    },
+    {
+        "astCommandId": "2e5c9eb28b4235d6dfb57261968b1cbbfc68459b:4:16",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/usr/src/haproxy"
+        ]
+    },
+    {
+        "astCommandId": "2e5c9eb28b4235d6dfb57261968b1cbbfc68459b:4:17",
+        "astCommand": [
+            "apt-mark",
+            "auto",
+            ".*"
+        ]
+    },
+    {
+        "astCommandId": "2e5c9eb28b4235d6dfb57261968b1cbbfc68459b:4:18",
+        "astCommand": [
+            "apt-mark",
+            "manual",
+            "savedAptMark"
+        ]
+    },
+    {
+        "astCommandId": "2e5c9eb28b4235d6dfb57261968b1cbbfc68459b:4:19",
+        "astCommand": [
+            "find",
+            "/usr/local",
+            "-type",
+            "f",
+            "-executable",
+            "-exec",
+            "ldd",
+            "{}",
+            ";"
+        ]
+    },
+    {
+        "astCommandId": "2e5c9eb28b4235d6dfb57261968b1cbbfc68459b:4:20",
+        "astCommand": [
+            "awk",
+            "/=>/ { print $(NF-1) }"
+        ]
+    },
+    {
+        "astCommandId": "2e5c9eb28b4235d6dfb57261968b1cbbfc68459b:4:21",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "2e5c9eb28b4235d6dfb57261968b1cbbfc68459b:4:22",
+        "astCommand": [
+            "xargs",
+            "-r",
+            "dpkg-query",
+            "--search"
+        ]
+    },
+    {
+        "astCommandId": "2e5c9eb28b4235d6dfb57261968b1cbbfc68459b:4:23",
+        "astCommand": [
+            "cut",
+            "-d:",
+            "-f1"
+        ]
+    },
+    {
+        "astCommandId": "2e5c9eb28b4235d6dfb57261968b1cbbfc68459b:4:24",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "2e5c9eb28b4235d6dfb57261968b1cbbfc68459b:4:25",
+        "astCommand": [
+            "xargs",
+            "-r",
+            "apt-mark",
+            "manual"
+        ]
+    }
+]

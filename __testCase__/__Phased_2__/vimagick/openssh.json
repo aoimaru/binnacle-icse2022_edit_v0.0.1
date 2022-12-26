@@ -1,0 +1,35 @@
+[
+    {
+        "astCommandId": "openssh:1:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "openssh:1:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "openssh"
+        ]
+    },
+    {
+        "astCommandId": "openssh:1:3",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "700",
+            "/root/.ssh"
+        ]
+    },
+    {
+        "astCommandId": "openssh:1:4",
+        "astCommand": [
+            "mv",
+            "/etc/ssh",
+            "/root/.ssh/ssh"
+        ]
+    }
+]

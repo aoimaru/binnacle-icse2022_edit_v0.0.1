@@ -1,0 +1,86 @@
+[
+    {
+        "astCommandId": "cfssl:6:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "cfssl:6:2",
+        "astCommand": [
+            "go",
+            "get",
+            "github.com/cloudflare/cfssl_trust/..."
+        ]
+    },
+    {
+        "astCommandId": "cfssl:6:3",
+        "astCommand": [
+            "go",
+            "get",
+            "github.com/GeertJohan/go.rice/rice"
+        ]
+    },
+    {
+        "astCommandId": "cfssl:6:4",
+        "astCommand": [
+            "cd",
+            "/go/src/github.com/cloudflare/cfssl"
+        ]
+    },
+    {
+        "astCommandId": "cfssl:6:5",
+        "astCommand": [
+            "rice",
+            "embed-go",
+            "-i=./cli/serve"
+        ]
+    },
+    {
+        "astCommandId": "cfssl:6:6",
+        "astCommand": [
+            "mkdir",
+            "bin"
+        ]
+    },
+    {
+        "astCommandId": "cfssl:6:7",
+        "astCommand": [
+            "cd",
+            "bin"
+        ]
+    },
+    {
+        "astCommandId": "cfssl:6:8",
+        "astCommand": [
+            "go",
+            "build",
+            "../cmd/cfssl"
+        ]
+    },
+    {
+        "astCommandId": "cfssl:6:9",
+        "astCommand": [
+            "go",
+            "build",
+            "../cmd/cfssljson"
+        ]
+    },
+    {
+        "astCommandId": "cfssl:6:10",
+        "astCommand": [
+            "go",
+            "build",
+            "../cmd/mkbundle"
+        ]
+    },
+    {
+        "astCommandId": "cfssl:6:11",
+        "astCommand": [
+            "go",
+            "build",
+            "../cmd/multirootca"
+        ]
+    }
+]

@@ -1,0 +1,242 @@
+[
+    {
+        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:5:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:5:2",
+        "astCommand": [
+            "npm",
+            "install",
+            "-g",
+            "ghost-cli@",
+            "GHOST_CLI_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:2",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "GHOST_INSTALL"
+        ]
+    },
+    {
+        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:3",
+        "astCommand": [
+            "chown",
+            "node:node",
+            "GHOST_INSTALL"
+        ]
+    },
+    {
+        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:4",
+        "astCommand": [
+            "su-exec",
+            "node",
+            "ghost",
+            "install",
+            "GHOST_VERSION",
+            "--db",
+            "sqlite3",
+            "--no-prompt",
+            "--no-stack",
+            "--no-setup",
+            "--dir",
+            "GHOST_INSTALL"
+        ]
+    },
+    {
+        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:5",
+        "astCommand": [
+            "cd",
+            "GHOST_INSTALL"
+        ]
+    },
+    {
+        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:6",
+        "astCommand": [
+            "su-exec",
+            "node",
+            "ghost",
+            "config",
+            "--ip",
+            "0.0.0.0",
+            "--port",
+            "2368",
+            "--no-prompt",
+            "--db",
+            "sqlite3",
+            "--url",
+            "http://localhost:2368",
+            "--dbpath",
+            "GHOST_CONTENT",
+            "/data/ghost.db"
+        ]
+    },
+    {
+        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:7",
+        "astCommand": [
+            "su-exec",
+            "node",
+            "ghost",
+            "config",
+            "paths.contentPath",
+            "GHOST_CONTENT"
+        ]
+    },
+    {
+        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:8",
+        "astCommand": [
+            "su-exec",
+            "node",
+            "ln",
+            "-s",
+            "config.production.json",
+            "GHOST_INSTALL",
+            "/config.development.json"
+        ]
+    },
+    {
+        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:9",
+        "astCommand": [
+            "readlink",
+            "-f",
+            "GHOST_INSTALL",
+            "/config.development.json"
+        ]
+    },
+    {
+        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:10",
+        "astCommand": [
+            "mv",
+            "GHOST_CONTENT",
+            "GHOST_INSTALL",
+            "/content.orig"
+        ]
+    },
+    {
+        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:11",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "GHOST_CONTENT"
+        ]
+    },
+    {
+        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:12",
+        "astCommand": [
+            "chown",
+            "node:node",
+            "GHOST_CONTENT"
+        ]
+    },
+    {
+        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:13",
+        "astCommand": [
+            "cd",
+            "GHOST_INSTALL",
+            "/current"
+        ]
+    },
+    {
+        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:14",
+        "astCommand": [
+            "npm",
+            "view",
+            ".",
+            "optionalDependencies.sqlite3"
+        ]
+    },
+    {
+        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:15",
+        "astCommand": [
+            "su-exec",
+            "node",
+            "yarn",
+            "add",
+            "sqlite3@",
+            "sqlite3Version",
+            "--force"
+        ]
+    },
+    {
+        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:16",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "python",
+            "make",
+            "gcc",
+            "g",
+            "+",
+            "+",
+            "libc-dev"
+        ]
+    },
+    {
+        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:17",
+        "astCommand": [
+            "su-exec",
+            "node",
+            "yarn",
+            "add",
+            "sqlite3@",
+            "sqlite3Version",
+            "--force",
+            "--build-from-source"
+        ]
+    },
+    {
+        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:18",
+        "astCommand": [
+            "apk",
+            "del",
+            "--no-network",
+            ".build-deps"
+        ]
+    },
+    {
+        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:19",
+        "astCommand": [
+            "su-exec",
+            "node",
+            "yarn",
+            "cache",
+            "clean"
+        ]
+    },
+    {
+        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:20",
+        "astCommand": [
+            "su-exec",
+            "node",
+            "npm",
+            "cache",
+            "clean",
+            "--force"
+        ]
+    },
+    {
+        "astCommandId": "6bdc46f23236f247a7df69d0a1a529354924df04:9:21",
+        "astCommand": [
+            "npm",
+            "cache",
+            "clean",
+            "--force"
+        ]
+    }
+]

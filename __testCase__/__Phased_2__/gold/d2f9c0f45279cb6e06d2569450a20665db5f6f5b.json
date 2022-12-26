@@ -1,0 +1,133 @@
+[
+    {
+        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:1:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:1:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "g",
+            "+",
+            "+",
+            "gcc",
+            "libc6-dev",
+            "make",
+            "pkg-config"
+        ]
+    },
+    {
+        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:3:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:3:2",
+        "astCommand": [
+            "%%ARCH-CASE%%"
+        ]
+    },
+    {
+        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:3:3",
+        "astCommand": [
+            "wget",
+            "-O",
+            "go.tgz",
+            "url"
+        ]
+    },
+    {
+        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:3:4",
+        "astCommand": [
+            "echo",
+            "goRelSha256",
+            " *go.tgz"
+        ]
+    },
+    {
+        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:3:5",
+        "astCommand": [
+            "sha256sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:3:6",
+        "astCommand": [
+            "tar",
+            "-C",
+            "/usr/local",
+            "-xzf",
+            "go.tgz"
+        ]
+    },
+    {
+        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:3:7",
+        "astCommand": [
+            "rm",
+            "go.tgz"
+        ]
+    },
+    {
+        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:3:8",
+        "astCommand": [
+            "echo"
+        ]
+    },
+    {
+        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:3:9",
+        "astCommand": [
+            "echo",
+            "error: UNIMPLEMENTED"
+        ]
+    },
+    {
+        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:3:10",
+        "astCommand": [
+            "echo",
+            "TODO install golang-any from jessie-backports for GOROOT_BOOTSTRAP (and uninstall after build)"
+        ]
+    },
+    {
+        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:3:11",
+        "astCommand": [
+            "echo"
+        ]
+    },
+    {
+        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:3:12",
+        "astCommand": [
+            "exit",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:3:13",
+        "astCommand": [
+            "export",
+            "PATH",
+            "/usr/local/go/bin:",
+            "PATH"
+        ]
+    },
+    {
+        "astCommandId": "d2f9c0f45279cb6e06d2569450a20665db5f6f5b:6:1",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "GOPATH",
+            "/src",
+            "GOPATH",
+            "/bin"
+        ]
+    }
+]

@@ -1,0 +1,380 @@
+[
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:1:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:1:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "bzip2",
+            "ca-certificates",
+            "libffi-dev",
+            "libgdbm3",
+            "libgmp-dev",
+            "libssl-dev",
+            "libyaml-dev",
+            "procps",
+            "zlib1g-dev"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:2:1",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/local/etc"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:2:2",
+        "astCommand": [
+            "echo",
+            "install: --no-document"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:2",
+        "astCommand": [
+            "apt-mark",
+            "showmanual"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:3",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:4",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "autoconf",
+            "bison",
+            "dpkg-dev",
+            "gcc",
+            "libbz2-dev",
+            "libgdbm-dev",
+            "libglib2.0-dev",
+            "libncurses-dev",
+            "libreadline-dev",
+            "libxml2-dev",
+            "libxslt-dev",
+            "make",
+            "ruby",
+            "wget",
+            "xz-utils"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:5",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:6",
+        "astCommand": [
+            "wget",
+            "-O",
+            "ruby.tar.xz",
+            "https://cache.ruby-lang.org/pub/ruby/",
+            "RUBY_MAJOR%-rc",
+            "/ruby-",
+            "RUBY_VERSION",
+            ".tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:7",
+        "astCommand": [
+            "echo",
+            "RUBY_DOWNLOAD_SHA256",
+            " *ruby.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:8",
+        "astCommand": [
+            "sha256sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:9",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/ruby"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:10",
+        "astCommand": [
+            "tar",
+            "-xJf",
+            "ruby.tar.xz",
+            "-C",
+            "/usr/src/ruby",
+            "--strip-components=1"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:11",
+        "astCommand": [
+            "rm",
+            "ruby.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:12",
+        "astCommand": [
+            "cd",
+            "/usr/src/ruby"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:13",
+        "astCommand": [
+            "echo",
+            "#define ENABLE_PATH_CHECK 0"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:14",
+        "astCommand": [
+            "echo"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:15",
+        "astCommand": [
+            "cat",
+            "file.c"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:16",
+        "astCommand": [
+            "mv",
+            "file.c.new",
+            "file.c"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:17",
+        "astCommand": [
+            "autoconf"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:18",
+        "astCommand": [
+            "dpkg-architecture",
+            "--query",
+            "DEB_BUILD_GNU_TYPE"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:19",
+        "astCommand": [
+            "./configure",
+            "--build=",
+            "gnuArch",
+            "--disable-install-doc",
+            "--enable-shared"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:20",
+        "astCommand": [
+            "make",
+            "-j",
+            "nproc"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:21",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:22",
+        "astCommand": [
+            "apt-mark",
+            "auto",
+            ".*"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:23",
+        "astCommand": [
+            "apt-mark",
+            "manual",
+            "savedAptMark"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:24",
+        "astCommand": [
+            "find",
+            "/usr/local",
+            "-type",
+            "f",
+            "-executable",
+            "-not",
+            "(",
+            "-name",
+            "*tkinter*",
+            ")",
+            "-exec",
+            "ldd",
+            "{}",
+            ";"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:25",
+        "astCommand": [
+            "awk",
+            "/=>/ { print $(NF-1) }"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:26",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:27",
+        "astCommand": [
+            "xargs",
+            "-r",
+            "dpkg-query",
+            "--search"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:28",
+        "astCommand": [
+            "cut",
+            "-d:",
+            "-f1"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:29",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:30",
+        "astCommand": [
+            "xargs",
+            "-r",
+            "apt-mark",
+            "manual"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:31",
+        "astCommand": [
+            "apt-get",
+            "purge",
+            "-y",
+            "--auto-remove",
+            "-o",
+            "APT::AutoRemove::RecommendsImportant=false"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:32",
+        "astCommand": [
+            "cd",
+            "/"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:33",
+        "astCommand": [
+            "rm",
+            "-r",
+            "/usr/src/ruby"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:34",
+        "astCommand": [
+            "ruby",
+            "-e",
+            "exit(Gem::Version.create(ENV[\"RUBYGEMS_VERSION\"]) > Gem::Version.create(Gem::VERSION))"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:35",
+        "astCommand": [
+            "gem",
+            "update",
+            "--system",
+            "RUBYGEMS_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:36",
+        "astCommand": [
+            "rm",
+            "-r",
+            "/root/.gem/"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:37",
+        "astCommand": [
+            "ruby",
+            "--version"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:7:38",
+        "astCommand": [
+            "gem",
+            "--version"
+        ]
+    },
+    {
+        "astCommandId": "bceec186f87e9e6f2a0df69bb1c7685f5ee58232:13:1",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "GEM_HOME"
+        ]
+    }
+]

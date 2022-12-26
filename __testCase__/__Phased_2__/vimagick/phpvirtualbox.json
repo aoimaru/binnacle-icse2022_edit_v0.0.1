@@ -1,0 +1,67 @@
+[
+    {
+        "astCommandId": "phpvirtualbox:4:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "phpvirtualbox:4:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "bash",
+            "nginx",
+            "php5-fpm",
+            "php5-cli",
+            "php5-json",
+            "php5-soap"
+        ]
+    },
+    {
+        "astCommandId": "phpvirtualbox:4:3",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            "build-dependencies",
+            "curl",
+            "tar"
+        ]
+    },
+    {
+        "astCommandId": "phpvirtualbox:4:4",
+        "astCommand": [
+            "touch",
+            "/etc/php5/fpm.d/empty.conf"
+        ]
+    },
+    {
+        "astCommandId": "phpvirtualbox:4:5",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "PHPVBOX_URL"
+        ]
+    },
+    {
+        "astCommandId": "phpvirtualbox:4:6",
+        "astCommand": [
+            "tar",
+            "xz",
+            "--strip",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "phpvirtualbox:4:7",
+        "astCommand": [
+            "apk",
+            "del",
+            "build-dependencies"
+        ]
+    }
+]

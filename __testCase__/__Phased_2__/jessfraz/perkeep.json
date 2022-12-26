@@ -1,0 +1,48 @@
+[
+    {
+        "astCommandId": "perkeep:3:1",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/go/src/perkeep.org"
+        ]
+    },
+    {
+        "astCommandId": "perkeep:3:2",
+        "astCommand": [
+            "git",
+            "clone",
+            "--depth",
+            "1",
+            "--branch",
+            "PERKEEP_VERSION",
+            "https://github.com/perkeep/perkeep.git",
+            "/go/src/perkeep.org"
+        ]
+    },
+    {
+        "astCommandId": "perkeep:3:3",
+        "astCommand": [
+            "cd",
+            "/go/src/perkeep.org"
+        ]
+    },
+    {
+        "astCommandId": "perkeep:3:4",
+        "astCommand": [
+            "go",
+            "run",
+            "make.go"
+        ]
+    },
+    {
+        "astCommandId": "perkeep:3:5",
+        "astCommand": [
+            "cp",
+            "-vr",
+            "/go/bin/",
+            "*",
+            "/usr/local/bin/"
+        ]
+    }
+]

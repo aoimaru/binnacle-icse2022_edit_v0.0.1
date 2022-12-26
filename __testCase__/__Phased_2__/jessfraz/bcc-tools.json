@@ -1,0 +1,117 @@
+[
+    {
+        "astCommandId": "bcc-tools:3:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "bcc-tools:3:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "ca-certificates",
+            "clang",
+            "curl",
+            "gcc",
+            "git",
+            "g",
+            "+",
+            "+",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "bcc-tools:4:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "bcc-tools:4:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "debhelper",
+            "cmake",
+            "libllvm3.9",
+            "llvm-dev",
+            "libclang-dev",
+            "libelf-dev",
+            "bison",
+            "flex",
+            "libedit-dev",
+            "clang-format",
+            "python",
+            "python3-pyroute2",
+            "luajit",
+            "libluajit-5.1-dev",
+            "arping",
+            "iperf",
+            "ethtool",
+            "devscripts",
+            "zlib1g-dev",
+            "libfl-dev",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "bcc-tools:6:1",
+        "astCommand": [
+            "git",
+            "clone",
+            "--depth",
+            "1",
+            "--branch",
+            "BCC_VERSION",
+            "https://github.com/iovisor/bcc.git",
+            "/usr/src/bcc"
+        ]
+    },
+    {
+        "astCommandId": "bcc-tools:6:2",
+        "astCommand": [
+            "cd",
+            "/usr/src/bcc"
+        ]
+    },
+    {
+        "astCommandId": "bcc-tools:6:3",
+        "astCommand": [
+            "mkdir",
+            "build"
+        ]
+    },
+    {
+        "astCommandId": "bcc-tools:6:4",
+        "astCommand": [
+            "cd",
+            "build"
+        ]
+    },
+    {
+        "astCommandId": "bcc-tools:6:5",
+        "astCommand": [
+            "cmake",
+            "..",
+            "-DCMAKE_INSTALL_PREFIX=/usr"
+        ]
+    },
+    {
+        "astCommandId": "bcc-tools:6:6",
+        "astCommand": [
+            "make"
+        ]
+    },
+    {
+        "astCommandId": "bcc-tools:6:7",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    }
+]

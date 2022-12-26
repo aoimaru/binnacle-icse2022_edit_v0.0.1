@@ -1,0 +1,124 @@
+[
+    {
+        "astCommandId": "telize:5:1",
+        "astCommand": [
+            "addgroup",
+            "-S",
+            "nginx"
+        ]
+    },
+    {
+        "astCommandId": "telize:6:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "telize:6:2",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/share/GeoIP"
+        ]
+    },
+    {
+        "astCommandId": "telize:6:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-Country&license_key=",
+            "LICENSE_KEY",
+            "&suffix=tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "telize:6:4",
+        "astCommand": [
+            "tar",
+            "-xzf",
+            "-",
+            "--strip-components",
+            "1",
+            "-C",
+            "/usr/share/GeoIP"
+        ]
+    },
+    {
+        "astCommandId": "telize:6:5",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key=",
+            "LICENSE_KEY",
+            "&suffix=tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "telize:6:6",
+        "astCommand": [
+            "tar",
+            "-xzf",
+            "-",
+            "--strip-components",
+            "1",
+            "-C",
+            "/usr/share/GeoIP"
+        ]
+    },
+    {
+        "astCommandId": "telize:6:7",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-ASN&license_key=",
+            "LICENSE_KEY",
+            "&suffix=tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "telize:6:8",
+        "astCommand": [
+            "tar",
+            "-xzf",
+            "-",
+            "--strip-components",
+            "1",
+            "-C",
+            "/usr/share/GeoIP"
+        ]
+    },
+    {
+        "astCommandId": "telize:6:9",
+        "astCommand": [
+            "git",
+            "clone",
+            "https://github.com/fcambus/telize.git",
+            "/usr/src/telize"
+        ]
+    },
+    {
+        "astCommandId": "telize:6:10",
+        "astCommand": [
+            "cd",
+            "/usr/src/telize"
+        ]
+    },
+    {
+        "astCommandId": "telize:6:11",
+        "astCommand": [
+            "git",
+            "checkout",
+            "TELIZE_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "telize:6:12",
+        "astCommand": [
+            "cp",
+            "*",
+            ".conf",
+            "/etc/nginx/"
+        ]
+    }
+]

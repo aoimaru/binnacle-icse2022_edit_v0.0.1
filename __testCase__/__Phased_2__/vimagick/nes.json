@@ -1,0 +1,41 @@
+[
+    {
+        "astCommandId": "nes:1:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "nes:1:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "binutils",
+            "ca-certificates",
+            "gcc",
+            "git",
+            "golang",
+            "libgl1-mesa-dev",
+            "libgl1-mesa-dri",
+            "libxcursor-dev",
+            "libxxf86vm-dev",
+            "libxi-dev",
+            "libxinerama-dev",
+            "libxrandr-dev",
+            "mercurial",
+            "portaudio19-dev",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "nes:1:3",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    }
+]

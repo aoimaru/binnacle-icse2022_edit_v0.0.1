@@ -1,0 +1,61 @@
+[
+    {
+        "astCommandId": "delegated:5:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "delegated:5:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "delegated:5:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "wget"
+        ]
+    },
+    {
+        "astCommandId": "delegated:5:4",
+        "astCommand": [
+            "wget",
+            "DG_URL",
+            "-O",
+            "DG_FILE"
+        ]
+    },
+    {
+        "astCommandId": "delegated:5:5",
+        "astCommand": [
+            "tar",
+            "xzf",
+            "DG_FILE"
+        ]
+    },
+    {
+        "astCommandId": "delegated:5:6",
+        "astCommand": [
+            "cp",
+            "DG_DIR",
+            "/DGROOT/bin/",
+            "DG_DIR",
+            "/bin/delegated"
+        ]
+    },
+    {
+        "astCommandId": "delegated:5:7",
+        "astCommand": [
+            "apt-get",
+            "remove",
+            "-y",
+            "wget"
+        ]
+    }
+]

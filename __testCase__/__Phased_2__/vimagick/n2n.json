@@ -1,0 +1,60 @@
+[
+    {
+        "astCommandId": "n2n:1:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "n2n:1:2",
+        "astCommand": [
+            "apt",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "n2n:1:3",
+        "astCommand": [
+            "apt",
+            "install",
+            "-y",
+            "gnupg",
+            "iptables",
+            "lsb-release",
+            "net-tools",
+            "wget"
+        ]
+    },
+    {
+        "astCommandId": "n2n:1:4",
+        "astCommand": [
+            "wget",
+            "http://apt.ntop.org/buster/all/apt-ntop.deb"
+        ]
+    },
+    {
+        "astCommandId": "n2n:1:5",
+        "astCommand": [
+            "dpkg",
+            "-i",
+            "apt-ntop.deb"
+        ]
+    },
+    {
+        "astCommandId": "n2n:1:6",
+        "astCommand": [
+            "apt",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "n2n:1:7",
+        "astCommand": [
+            "apt",
+            "install",
+            "-y",
+            "n2n"
+        ]
+    }
+]

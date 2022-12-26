@@ -1,0 +1,549 @@
+[
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:1:1",
+        "astCommand": [
+            "groupadd",
+            "-r",
+            "cassandra",
+            "--gid=999"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:2:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:2:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:2:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "libjemalloc1",
+            "procps",
+            "iproute2"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:2:4",
+        "astCommand": [
+            "command",
+            "-v",
+            "gpg"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:2:5",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "dirmngr",
+            "gnupg"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:4:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:4:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:4:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "ca-certificates",
+            "wget"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:4:4",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:4:5",
+        "astCommand": [
+            "wget",
+            "-O",
+            "/usr/local/bin/gosu",
+            "https://github.com/tianon/gosu/releases/download/",
+            "GOSU_VERSION",
+            "/gosu-",
+            "dpkg",
+            "--print-architecture"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:4:6",
+        "astCommand": [
+            "wget",
+            "-O",
+            "/usr/local/bin/gosu.asc",
+            "https://github.com/tianon/gosu/releases/download/",
+            "GOSU_VERSION",
+            "/gosu-",
+            "dpkg",
+            "--print-architecture",
+            ".asc"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:4:7",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:4:8",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--keyserver",
+            "ha.pool.sks-keyservers.net",
+            "--recv-keys",
+            "B42F6819007F00F88E364FD4036A9C25BF357DD4"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:4:9",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--verify",
+            "/usr/local/bin/gosu.asc",
+            "/usr/local/bin/gosu"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:4:10",
+        "astCommand": [
+            "command",
+            "-v",
+            "gpgconf"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:4:11",
+        "astCommand": [
+            "gpgconf",
+            "--kill",
+            "all"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:4:12",
+        "astCommand": [
+            ":"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:4:13",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "GNUPGHOME",
+            "/usr/local/bin/gosu.asc"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:4:14",
+        "astCommand": [
+            "chmod",
+            "+",
+            "x",
+            "/usr/local/bin/gosu"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:4:15",
+        "astCommand": [
+            "gosu",
+            "nobody",
+            "true"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:6:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:6:2",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:6:3",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--keyserver",
+            "ha.pool.sks-keyservers.net",
+            "--recv-keys",
+            "key"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:6:4",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--export",
+            "GPG_KEYS"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:6:5",
+        "astCommand": [
+            "command",
+            "-v",
+            "gpgconf"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:6:6",
+        "astCommand": [
+            "gpgconf",
+            "--kill",
+            "all"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:6:7",
+        "astCommand": [
+            ":"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:6:8",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "GNUPGHOME"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:2",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/share/man/man1/"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:3",
+        "astCommand": [
+            "dpkg",
+            "--print-architecture"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:4",
+        "astCommand": [
+            "echo",
+            "deb http://www.apache.org/dist/cassandra/debian 21x main"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:5",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:6",
+        "astCommand": [
+            "apt-mark",
+            "showmanual"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:7",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:8",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "wget",
+            "ca-certificates",
+            "dpkg-dev"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:9",
+        "astCommand": [
+            "apt-mark",
+            "showmanual"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:10",
+        "astCommand": [
+            "xargs",
+            "apt-mark",
+            "auto"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:11",
+        "astCommand": [
+            "apt-mark",
+            "manual",
+            "savedAptMark"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:12",
+        "astCommand": [
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:13",
+        "astCommand": [
+            "wget",
+            "-O",
+            "tempDir",
+            "/",
+            "deb",
+            "https://www.apache.org/dist/cassandra/debian/pool/main/c/cassandra/",
+            "deb"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:14",
+        "astCommand": [
+            "ls",
+            "-lAFh",
+            "tempDir"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:15",
+        "astCommand": [
+            "cd",
+            "tempDir"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:16",
+        "astCommand": [
+            "dpkg-scanpackages",
+            "."
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:17",
+        "astCommand": [
+            "grep",
+            "^Package: ",
+            "tempDir",
+            "/Packages"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:18",
+        "astCommand": [
+            "echo",
+            "deb [ trusted=yes ] file://",
+            "tempDir",
+            " ./"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:19",
+        "astCommand": [
+            "apt-get",
+            "-o",
+            "Acquire::GzipIndexes=false",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:20",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "cassandra=",
+            "CASSANDRA_VERSION",
+            "cassandra-tools=",
+            "CASSANDRA_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:21",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:8:22",
+        "astCommand": [
+            "apt-get",
+            "purge",
+            "-y",
+            "--auto-remove"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:10:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:10:2",
+        "astCommand": [
+            "dpkg",
+            "--print-architecture"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:10:3",
+        "astCommand": [
+            "grep",
+            "-q",
+            "--",
+            "^-Xss",
+            "CASSANDRA_CONFIG",
+            "/jvm.options"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:10:4",
+        "astCommand": [
+            "grep",
+            "--",
+            "^-Xss256k$",
+            "CASSANDRA_CONFIG",
+            "/jvm.options"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:10:5",
+        "astCommand": [
+            "sed",
+            "-ri",
+            "s/^-Xss256k$/-Xss512k/",
+            "CASSANDRA_CONFIG",
+            "/jvm.options"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:10:6",
+        "astCommand": [
+            "grep",
+            "--",
+            "^-Xss512k$",
+            "CASSANDRA_CONFIG",
+            "/jvm.options"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:10:7",
+        "astCommand": [
+            "grep",
+            "-q",
+            "--",
+            "-Xss256k",
+            "CASSANDRA_CONFIG",
+            "/cassandra-env.sh"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:10:8",
+        "astCommand": [
+            "sed",
+            "-ri",
+            "s/-Xss256k/-Xss512k/g",
+            "CASSANDRA_CONFIG",
+            "/cassandra-env.sh"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:10:9",
+        "astCommand": [
+            "grep",
+            "--",
+            "-Xss512k",
+            "CASSANDRA_CONFIG",
+            "/cassandra-env.sh"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:14:1",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/var/lib/cassandra",
+            "CASSANDRA_CONFIG"
+        ]
+    },
+    {
+        "astCommandId": "87a3772b566a14852a9c151a5ddcbb2be063e4e6:14:2",
+        "astCommand": [
+            "chown",
+            "-R",
+            "cassandra:cassandra",
+            "/var/lib/cassandra",
+            "CASSANDRA_CONFIG"
+        ]
+    }
+]

@@ -1,0 +1,137 @@
+[
+    {
+        "astCommandId": "chinadns:5:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "chinadns:5:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "build-essential",
+            "curl",
+            "dnsmasq",
+            "supervisor"
+        ]
+    },
+    {
+        "astCommandId": "chinadns:5:3",
+        "astCommand": [
+            "mkdir",
+            "chinadns"
+        ]
+    },
+    {
+        "astCommandId": "chinadns:5:4",
+        "astCommand": [
+            "cd",
+            "chinadns"
+        ]
+    },
+    {
+        "astCommandId": "chinadns:5:5",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "DNS_URL",
+            "-o",
+            "DNS_FILE"
+        ]
+    },
+    {
+        "astCommandId": "chinadns:5:6",
+        "astCommand": [
+            "echo",
+            "DNS_MD5",
+            " ",
+            "DNS_FILE"
+        ]
+    },
+    {
+        "astCommandId": "chinadns:5:7",
+        "astCommand": [
+            "md5sum",
+            "-c"
+        ]
+    },
+    {
+        "astCommandId": "chinadns:5:8",
+        "astCommand": [
+            "tar",
+            "xzf",
+            "DNS_FILE",
+            "--strip",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "chinadns:5:9",
+        "astCommand": [
+            "./configure"
+        ]
+    },
+    {
+        "astCommandId": "chinadns:5:10",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "chinadns:5:11",
+        "astCommand": [
+            "cd",
+            ".."
+        ]
+    },
+    {
+        "astCommandId": "chinadns:5:12",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "chinadns"
+        ]
+    },
+    {
+        "astCommandId": "chinadns:5:13",
+        "astCommand": [
+            "apt-get",
+            "remove",
+            "-y",
+            "build-essential"
+        ]
+    },
+    {
+        "astCommandId": "chinadns:5:14",
+        "astCommand": [
+            "apt-get",
+            "autoremove",
+            "-y"
+        ]
+    },
+    {
+        "astCommandId": "chinadns:6:1",
+        "astCommand": [
+            "curl",
+            "http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest"
+        ]
+    },
+    {
+        "astCommandId": "chinadns:6:2",
+        "astCommand": [
+            "grep",
+            "ipv4"
+        ]
+    },
+    {
+        "astCommandId": "chinadns:6:3",
+        "astCommand": [
+            "grep",
+            "CN"
+        ]
+    }
+]

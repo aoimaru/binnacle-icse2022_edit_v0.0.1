@@ -1,0 +1,237 @@
+[
+    {
+        "astCommandId": "ffaef29733eba4016ab92139a635d8c58a9e782f:1:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "ffaef29733eba4016ab92139a635d8c58a9e782f:1:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "fontconfig-config",
+            "fonts-dejavu-core",
+            "geoip-database",
+            "init-system-helpers",
+            "libarchive-extract-perl",
+            "libexpat1",
+            "libfontconfig1",
+            "libfreetype6",
+            "libgcrypt11",
+            "libgd3",
+            "libgdbm3",
+            "libgeoip1",
+            "libgpg-error0",
+            "libjbig0",
+            "libjpeg8",
+            "liblog-message-perl",
+            "liblog-message-simple-perl",
+            "libmodule-pluggable-perl",
+            "libpng12-0",
+            "libpod-latex-perl",
+            "libssl1.0.0",
+            "libterm-ui-perl",
+            "libtext-soundex-perl",
+            "libtiff5",
+            "libvpx1",
+            "libx11-6",
+            "libx11-data",
+            "libxau6",
+            "libxcb1",
+            "libxdmcp6",
+            "libxml2",
+            "libxpm4",
+            "libxslt1.1",
+            "perl",
+            "perl-modules",
+            "rename",
+            "sgml-base",
+            "ucf",
+            "xml-core"
+        ]
+    },
+    {
+        "astCommandId": "ffaef29733eba4016ab92139a635d8c58a9e782f:4:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "ffaef29733eba4016ab92139a635d8c58a9e782f:4:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "buildDeps"
+        ]
+    },
+    {
+        "astCommandId": "ffaef29733eba4016ab92139a635d8c58a9e782f:4:3",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "ffaef29733eba4016ab92139a635d8c58a9e782f:4:4",
+        "astCommand": [
+            "curl",
+            "-SL",
+            "http://nginx.org/download/nginx-",
+            "NGINX_VERSION",
+            ".tar.gz",
+            "-o",
+            "nginx.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "ffaef29733eba4016ab92139a635d8c58a9e782f:4:5",
+        "astCommand": [
+            "curl",
+            "-SL",
+            "http://nginx.org/download/nginx-",
+            "NGINX_VERSION",
+            ".tar.gz.asc",
+            "-o",
+            "nginx.tar.gz.asc"
+        ]
+    },
+    {
+        "astCommandId": "ffaef29733eba4016ab92139a635d8c58a9e782f:4:6",
+        "astCommand": [
+            "gpg",
+            "--verify",
+            "nginx.tar.gz.asc"
+        ]
+    },
+    {
+        "astCommandId": "ffaef29733eba4016ab92139a635d8c58a9e782f:4:7",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/nginx"
+        ]
+    },
+    {
+        "astCommandId": "ffaef29733eba4016ab92139a635d8c58a9e782f:4:8",
+        "astCommand": [
+            "tar",
+            "-xvf",
+            "nginx.tar.gz",
+            "-C",
+            "/usr/src/nginx",
+            "--strip-components=1"
+        ]
+    },
+    {
+        "astCommandId": "ffaef29733eba4016ab92139a635d8c58a9e782f:4:9",
+        "astCommand": [
+            "rm",
+            "nginx.tar.gz",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "ffaef29733eba4016ab92139a635d8c58a9e782f:4:10",
+        "astCommand": [
+            "cd",
+            "/usr/src/nginx"
+        ]
+    },
+    {
+        "astCommandId": "ffaef29733eba4016ab92139a635d8c58a9e782f:4:11",
+        "astCommand": [
+            "./configure",
+            "--user=www-data",
+            "--group=www-data",
+            "--prefix=/usr/local/nginx",
+            "--conf-path=/etc/nginx.conf",
+            "--http-log-path=/proc/self/fd/1",
+            "--error-log-path=/proc/self/fd/2",
+            "--with-http_addition_module",
+            "--with-http_auth_request_module",
+            "--with-http_dav_module",
+            "--with-http_geoip_module",
+            "--with-http_gzip_static_module",
+            "--with-http_image_filter_module",
+            "--with-http_perl_module",
+            "--with-http_realip_module",
+            "--with-http_spdy_module",
+            "--with-http_ssl_module",
+            "--with-http_stub_status_module",
+            "--with-http_sub_module",
+            "--with-http_xslt_module",
+            "--with-ipv6",
+            "--with-mail",
+            "--with-mail_ssl_module",
+            "--with-pcre-jit"
+        ]
+    },
+    {
+        "astCommandId": "ffaef29733eba4016ab92139a635d8c58a9e782f:4:12",
+        "astCommand": [
+            "make",
+            "-j",
+            "nproc"
+        ]
+    },
+    {
+        "astCommandId": "ffaef29733eba4016ab92139a635d8c58a9e782f:4:13",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "ffaef29733eba4016ab92139a635d8c58a9e782f:4:14",
+        "astCommand": [
+            "cd",
+            "/"
+        ]
+    },
+    {
+        "astCommandId": "ffaef29733eba4016ab92139a635d8c58a9e782f:4:15",
+        "astCommand": [
+            "rm",
+            "-r",
+            "/usr/src/nginx"
+        ]
+    },
+    {
+        "astCommandId": "ffaef29733eba4016ab92139a635d8c58a9e782f:4:16",
+        "astCommand": [
+            "chown",
+            "-R",
+            "www-data:www-data",
+            "/usr/local/nginx"
+        ]
+    },
+    {
+        "astCommandId": "ffaef29733eba4016ab92139a635d8c58a9e782f:4:17",
+        "astCommand": [
+            "echo"
+        ]
+    },
+    {
+        "astCommandId": "ffaef29733eba4016ab92139a635d8c58a9e782f:4:18",
+        "astCommand": [
+            "echo",
+            "# stay in the foreground so Docker has a process to track"
+        ]
+    },
+    {
+        "astCommandId": "ffaef29733eba4016ab92139a635d8c58a9e782f:4:19",
+        "astCommand": [
+            "echo",
+            "daemon off;"
+        ]
+    }
+]

@@ -1,0 +1,133 @@
+[
+    {
+        "astCommandId": "nginad:4:1",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "curl",
+            "git",
+            "gzip",
+            "nginx",
+            "php5-apcu",
+            "php5-curl",
+            "php5-fpm",
+            "php5-iconv",
+            "php5-json",
+            "php5-openssl",
+            "php5-pdo",
+            "php5-pdo_mysql",
+            "php5-phar",
+            "php5-xml",
+            "php5-zlib",
+            "tar"
+        ]
+    },
+    {
+        "astCommandId": "nginad:4:2",
+        "astCommand": [
+            "touch",
+            "/etc/php5/fpm.d/empty.conf"
+        ]
+    },
+    {
+        "astCommandId": "nginad:4:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "NGINAD_URL"
+        ]
+    },
+    {
+        "astCommandId": "nginad:4:4",
+        "astCommand": [
+            "tar",
+            "xz",
+            "--strip",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "nginad:4:5",
+        "astCommand": [
+            "cd",
+            "upload"
+        ]
+    },
+    {
+        "astCommandId": "nginad:4:6",
+        "astCommand": [
+            "php",
+            "composer.phar",
+            "self-update"
+        ]
+    },
+    {
+        "astCommandId": "nginad:4:7",
+        "astCommand": [
+            "php",
+            "composer.phar",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "nginad:4:8",
+        "astCommand": [
+            "chown",
+            "-R",
+            "nobody:nobody",
+            "."
+        ]
+    },
+    {
+        "astCommandId": "nginad:4:9",
+        "astCommand": [
+            "cd",
+            "config/autoload"
+        ]
+    },
+    {
+        "astCommandId": "nginad:4:10",
+        "astCommand": [
+            "cp",
+            "database.local.php.dist",
+            "database.local.php"
+        ]
+    },
+    {
+        "astCommandId": "nginad:4:11",
+        "astCommand": [
+            "cp",
+            "delivery.local.php.dist",
+            "delivery.local.php"
+        ]
+    },
+    {
+        "astCommandId": "nginad:4:12",
+        "astCommand": [
+            "cp",
+            "email.local.php.dist",
+            "email.local.php"
+        ]
+    },
+    {
+        "astCommandId": "nginad:4:13",
+        "astCommand": [
+            "cp",
+            "rtb.config.local.php.dist",
+            "rtb.config.local.php"
+        ]
+    },
+    {
+        "astCommandId": "nginad:4:14",
+        "astCommand": [
+            "sed",
+            "-i",
+            "-e",
+            "s/'pass'   => ''/'pass'   => 'root'/",
+            "-e",
+            "s/'host'   => 'localhost'/'host'   => 'mysql'/",
+            "database.local.php"
+        ]
+    }
+]

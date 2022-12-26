@@ -1,0 +1,125 @@
+[
+    {
+        "astCommandId": "lkp-tests:2:1",
+        "astCommand": [
+            "dpkg",
+            "--add-architecture",
+            "i386"
+        ]
+    },
+    {
+        "astCommandId": "lkp-tests:2:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "lkp-tests:2:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "automake",
+            "bc",
+            "binutils-dev",
+            "bison",
+            "build-essential",
+            "bzip2",
+            "ca-certificates",
+            "cpio",
+            "fakeroot",
+            "flex",
+            "gawk",
+            "gcc",
+            "git",
+            "gzip",
+            "hdparm",
+            "iperf",
+            "kmod",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "lkp-tests:3:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "lkp-tests:3:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "libaudit-dev",
+            "libbabeltrace-ctf-dev",
+            "libc6-dev",
+            "libc6-dev:i386",
+            "libdw-dev",
+            "libiberty-dev",
+            "libklibc-dev",
+            "liblzma-dev",
+            "libnuma-dev",
+            "libperl-dev",
+            "libslang2-dev",
+            "libssl-dev",
+            "libtool",
+            "libunwind-dev",
+            "linux-libc-dev",
+            "linux-libc-dev:i386",
+            "linux-perf",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "lkp-tests:3:3",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "lkp-tests:4:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "lkp-tests:4:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "make",
+            "nfs-common",
+            "openssl",
+            "patch",
+            "perl",
+            "procps",
+            "psmisc",
+            "python-dev",
+            "rsync",
+            "rt-tests",
+            "ruby",
+            "ruby-dev",
+            "sysstat",
+            "systemtap-sdt-dev",
+            "time",
+            "wget",
+            "zlib1g-dev",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "lkp-tests:11:1",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    }
+]

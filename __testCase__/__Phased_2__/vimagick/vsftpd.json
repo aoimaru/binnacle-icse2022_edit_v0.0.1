@@ -1,0 +1,221 @@
+[
+    {
+        "astCommandId": "vsftpd:1:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:1:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "-U",
+            "build-base",
+            "curl",
+            "linux-pam-dev",
+            "tar",
+            "vsftpd"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:1:3",
+        "astCommand": [
+            "mkdir",
+            "pam_pwdfile"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:1:4",
+        "astCommand": [
+            "cd",
+            "pam_pwdfile"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:1:5",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://github.com/tiwe-de/libpam-pwdfile/archive/v1.0.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:1:6",
+        "astCommand": [
+            "tar",
+            "xz",
+            "--strip",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:1:7",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:1:8",
+        "astCommand": [
+            "cd",
+            ".."
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:1:9",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "pam_pwdfile"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:1:10",
+        "astCommand": [
+            "apk",
+            "del",
+            "build-base",
+            "curl",
+            "linux-pam-dev",
+            "tar"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:1:11",
+        "astCommand": [
+            "passwd",
+            "-l",
+            "root"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:1:12",
+        "astCommand": [
+            "adduser",
+            "-D",
+            "virtual"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:2:1",
+        "astCommand": [
+            "echo",
+            "allow_writeable_chroot=YES"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:2:2",
+        "astCommand": [
+            "echo",
+            "anonymous_enable=YES"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:2:3",
+        "astCommand": [
+            "echo",
+            "chroot_local_user=YES"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:2:4",
+        "astCommand": [
+            "echo",
+            "connect_from_port_20=YES"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:2:5",
+        "astCommand": [
+            "echo",
+            "dirmessage_enable=YES"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:2:6",
+        "astCommand": [
+            "echo",
+            "ftpd_banner=Welcome to VSFTPD service."
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:2:7",
+        "astCommand": [
+            "echo",
+            "listen=YES"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:2:8",
+        "astCommand": [
+            "echo",
+            "local_enable=YES"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:2:9",
+        "astCommand": [
+            "echo",
+            "no_anon_password=YES"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:2:10",
+        "astCommand": [
+            "echo",
+            "pasv_addr_resolve=YES"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:2:11",
+        "astCommand": [
+            "echo",
+            "pasv_address=easypi.info"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:2:12",
+        "astCommand": [
+            "echo",
+            "pasv_enable=YES"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:2:13",
+        "astCommand": [
+            "echo",
+            "pasv_max_port=30010"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:2:14",
+        "astCommand": [
+            "echo",
+            "pasv_min_port=30000"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:2:15",
+        "astCommand": [
+            "echo",
+            "port_enable=YES"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:2:16",
+        "astCommand": [
+            "echo",
+            "seccomp_sandbox=NO"
+        ]
+    },
+    {
+        "astCommandId": "vsftpd:2:17",
+        "astCommand": [
+            "echo",
+            "write_enable=YES"
+        ]
+    }
+]

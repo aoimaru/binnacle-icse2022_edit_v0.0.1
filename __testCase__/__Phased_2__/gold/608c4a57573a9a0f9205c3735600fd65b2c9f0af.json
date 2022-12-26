@@ -1,0 +1,323 @@
+[
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:3:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:3:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "ca-certificates",
+            "libexpat1",
+            "libffi6",
+            "libgdbm3",
+            "libsqlite3-0"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:2",
+        "astCommand": [
+            "dpkg",
+            "--print-architecture"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:3",
+        "astCommand": [
+            "echo",
+            "error: current architecture (",
+            "dpkgArch",
+            ") does not have a corresponding PyPy ",
+            "PYPY_VERSION",
+            " binary release"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:4",
+        "astCommand": [
+            "exit",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:5",
+        "astCommand": [
+            "apt-mark",
+            "showmanual"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:6",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:7",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "bzip2",
+            "wget",
+            "libncurses5"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:8",
+        "astCommand": [
+            "wget",
+            "-O",
+            "pypy.tar.bz2",
+            "https://bitbucket.org/pypy/pypy/downloads/pypy2.7-v",
+            "PYPY_VERSION",
+            "-",
+            "pypyArch",
+            ".tar.bz2",
+            "--progress=dot:giga"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:9",
+        "astCommand": [
+            "echo",
+            "sha256",
+            " *pypy.tar.bz2"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:10",
+        "astCommand": [
+            "sha256sum",
+            "-c"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:11",
+        "astCommand": [
+            "tar",
+            "-xjC",
+            "/usr/local",
+            "--strip-components=1",
+            "-f",
+            "pypy.tar.bz2"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:12",
+        "astCommand": [
+            "find",
+            "/usr/local/lib-python",
+            "-depth",
+            "-type",
+            "d",
+            "-a",
+            "(",
+            "-name",
+            "test",
+            "-o",
+            "-name",
+            "tests",
+            ")",
+            "-exec",
+            "rm",
+            "-rf",
+            "{}",
+            "+"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:13",
+        "astCommand": [
+            "rm",
+            "pypy.tar.bz2"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:14",
+        "astCommand": [
+            "pypy",
+            "--version"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:15",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "gcc",
+            "libc6-dev",
+            "libssl-dev"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:16",
+        "astCommand": [
+            "cd",
+            "/usr/local/lib_pypy"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:17",
+        "astCommand": [
+            "pypy",
+            "_ssl_build.py"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:18",
+        "astCommand": [
+            "wget",
+            "-O",
+            "get-pip.py",
+            "https://bootstrap.pypa.io/get-pip.py"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:19",
+        "astCommand": [
+            "pypy",
+            "get-pip.py",
+            "--disable-pip-version-check",
+            "--no-cache-dir",
+            "pip==",
+            "PYTHON_PIP_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:20",
+        "astCommand": [
+            "pip",
+            "--version"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:21",
+        "astCommand": [
+            "rm",
+            "-f",
+            "get-pip.py"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:22",
+        "astCommand": [
+            "apt-mark",
+            "auto",
+            ".*"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:23",
+        "astCommand": [
+            "apt-mark",
+            "manual",
+            "savedAptMark"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:24",
+        "astCommand": [
+            "find",
+            "/usr/local",
+            "-type",
+            "f",
+            "-executable",
+            "-exec",
+            "ldd",
+            "{}",
+            ";"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:25",
+        "astCommand": [
+            "awk",
+            "/=>/ { print $(NF-1) }"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:26",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:27",
+        "astCommand": [
+            "xargs",
+            "-r",
+            "dpkg-query",
+            "--search"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:28",
+        "astCommand": [
+            "cut",
+            "-d:",
+            "-f1"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:29",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:30",
+        "astCommand": [
+            "xargs",
+            "-r",
+            "apt-mark",
+            "manual"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:31",
+        "astCommand": [
+            "apt-get",
+            "purge",
+            "-y",
+            "--auto-remove",
+            "-o",
+            "APT::AutoRemove::RecommendsImportant=false"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:32",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "608c4a57573a9a0f9205c3735600fd65b2c9f0af:6:33",
+        "astCommand": [
+            "pypy",
+            "--version"
+        ]
+    }
+]

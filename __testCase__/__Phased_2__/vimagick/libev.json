@@ -1,0 +1,140 @@
+[
+    {
+        "astCommandId": "libev:4:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "libev:4:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "libcrypto1.0",
+            "libev",
+            "libsodium",
+            "pcre",
+            "udns"
+        ]
+    },
+    {
+        "astCommandId": "libev:4:3",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            "TMP",
+            "autoconf",
+            "automake",
+            "build-base",
+            "curl",
+            "gettext-dev",
+            "libev-dev",
+            "libsodium-dev",
+            "libtool",
+            "linux-headers",
+            "openssl-dev",
+            "pcre-dev",
+            "tar",
+            "udns-dev"
+        ]
+    },
+    {
+        "astCommandId": "libev:4:4",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "SS_URL"
+        ]
+    },
+    {
+        "astCommandId": "libev:4:5",
+        "astCommand": [
+            "tar",
+            "xz"
+        ]
+    },
+    {
+        "astCommandId": "libev:4:6",
+        "astCommand": [
+            "cd",
+            "SS_DIR"
+        ]
+    },
+    {
+        "astCommandId": "libev:4:7",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://github.com/shadowsocks/ipset/archive/shadowsocks.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "libev:4:8",
+        "astCommand": [
+            "tar",
+            "xz",
+            "--strip",
+            "1",
+            "-C",
+            "libipset"
+        ]
+    },
+    {
+        "astCommandId": "libev:4:9",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://github.com/shadowsocks/libcork/archive/shadowsocks.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "libev:4:10",
+        "astCommand": [
+            "tar",
+            "xz",
+            "--strip",
+            "1",
+            "-C",
+            "libcork"
+        ]
+    },
+    {
+        "astCommandId": "libev:4:11",
+        "astCommand": [
+            "./autogen.sh"
+        ]
+    },
+    {
+        "astCommandId": "libev:4:12",
+        "astCommand": [
+            "./configure",
+            "--disable-documentation"
+        ]
+    },
+    {
+        "astCommandId": "libev:4:13",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "libev:4:14",
+        "astCommand": [
+            "cd",
+            ".."
+        ]
+    },
+    {
+        "astCommandId": "libev:4:15",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "SS_DIR"
+        ]
+    }
+]

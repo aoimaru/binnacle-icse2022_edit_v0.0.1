@@ -1,0 +1,362 @@
+[
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:2:1",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/local/etc"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:2:2",
+        "astCommand": [
+            "echo",
+            "install: --no-document"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".ruby-builddeps",
+            "autoconf",
+            "bison",
+            "bzip2",
+            "bzip2-dev",
+            "ca-certificates",
+            "coreutils",
+            "dpkg-dev",
+            "dpkg",
+            "gcc",
+            "gdbm-dev",
+            "glib-dev",
+            "libc-dev",
+            "libffi-dev",
+            "libxml2-dev",
+            "libxslt-dev",
+            "linux-headers",
+            "make",
+            "ncurses-dev",
+            "openssl",
+            "openssl-dev",
+            "procps",
+            "readline-dev",
+            "ruby",
+            "tar",
+            "xz",
+            "yaml-dev",
+            "zlib-dev"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:3",
+        "astCommand": [
+            "wget",
+            "-O",
+            "ruby.tar.xz",
+            "https://cache.ruby-lang.org/pub/ruby/",
+            "RUBY_MAJOR%-rc",
+            "/ruby-",
+            "RUBY_VERSION",
+            ".tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:4",
+        "astCommand": [
+            "echo",
+            "RUBY_DOWNLOAD_SHA256",
+            " *ruby.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:5",
+        "astCommand": [
+            "sha256sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:6",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/ruby"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:7",
+        "astCommand": [
+            "tar",
+            "-xJf",
+            "ruby.tar.xz",
+            "-C",
+            "/usr/src/ruby",
+            "--strip-components=1"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:8",
+        "astCommand": [
+            "rm",
+            "ruby.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:9",
+        "astCommand": [
+            "cd",
+            "/usr/src/ruby"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:10",
+        "astCommand": [
+            "wget",
+            "-O",
+            "thread-stack-fix.patch",
+            "https://bugs.ruby-lang.org/attachments/download/7081/0001-thread_pthread.c-make-get_main_stack-portable-on-lin.patch"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:11",
+        "astCommand": [
+            "echo",
+            "3ab628a51d92fdf0d2b5835e93564857aea73e0c1de00313864a94a6255cb645 *thread-stack-fix.patch"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:12",
+        "astCommand": [
+            "sha256sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:13",
+        "astCommand": [
+            "patch",
+            "-p1",
+            "-i",
+            "thread-stack-fix.patch"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:14",
+        "astCommand": [
+            "rm",
+            "thread-stack-fix.patch"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:15",
+        "astCommand": [
+            "echo",
+            "#define ENABLE_PATH_CHECK 0"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:16",
+        "astCommand": [
+            "echo"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:17",
+        "astCommand": [
+            "cat",
+            "file.c"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:18",
+        "astCommand": [
+            "mv",
+            "file.c.new",
+            "file.c"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:19",
+        "astCommand": [
+            "autoconf"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:20",
+        "astCommand": [
+            "dpkg-architecture",
+            "--query",
+            "DEB_BUILD_GNU_TYPE"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:21",
+        "astCommand": [
+            "export",
+            "ac_cv_func_isnan",
+            "yes",
+            "ac_cv_func_isinf",
+            "yes"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:22",
+        "astCommand": [
+            "./configure",
+            "--build=",
+            "gnuArch",
+            "--disable-install-doc",
+            "--enable-shared"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:23",
+        "astCommand": [
+            "make",
+            "-j",
+            "nproc"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:24",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:25",
+        "astCommand": [
+            "scanelf",
+            "--needed",
+            "--nobanner",
+            "--format",
+            "%n#p",
+            "--recursive",
+            "/usr/local"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:26",
+        "astCommand": [
+            "tr",
+            ",",
+            "\\n"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:27",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:28",
+        "astCommand": [
+            "awk",
+            "system(\"[ -e /usr/local/lib/\" $1 \" ]\") == 0 { next } { print \"so:\" $1 }"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:29",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-network",
+            "--virtual",
+            ".ruby-rundeps",
+            "runDeps",
+            "bzip2",
+            "ca-certificates",
+            "libffi-dev",
+            "procps",
+            "yaml-dev",
+            "zlib-dev"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:30",
+        "astCommand": [
+            "apk",
+            "del",
+            "--no-network",
+            ".ruby-builddeps"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:31",
+        "astCommand": [
+            "cd",
+            "/"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:32",
+        "astCommand": [
+            "rm",
+            "-r",
+            "/usr/src/ruby"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:33",
+        "astCommand": [
+            "ruby",
+            "-e",
+            "exit(Gem::Version.create(ENV[\"RUBYGEMS_VERSION\"]) > Gem::Version.create(Gem::VERSION))"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:34",
+        "astCommand": [
+            "gem",
+            "update",
+            "--system",
+            "RUBYGEMS_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:35",
+        "astCommand": [
+            "rm",
+            "-r",
+            "/root/.gem/"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:36",
+        "astCommand": [
+            "ruby",
+            "--version"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:7:37",
+        "astCommand": [
+            "gem",
+            "--version"
+        ]
+    },
+    {
+        "astCommandId": "7abb94f2128445d47f90dff64fb8af6aa148deed:13:1",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "GEM_HOME"
+        ]
+    }
+]

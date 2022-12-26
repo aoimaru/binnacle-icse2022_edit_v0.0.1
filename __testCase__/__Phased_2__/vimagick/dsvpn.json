@@ -1,0 +1,43 @@
+[
+    {
+        "astCommandId": "dsvpn:3:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "dsvpn:3:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "build-base",
+            "curl",
+            "linux-headers"
+        ]
+    },
+    {
+        "astCommandId": "dsvpn:3:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "DSVPN_URL"
+        ]
+    },
+    {
+        "astCommandId": "dsvpn:3:4",
+        "astCommand": [
+            "tar",
+            "xz"
+        ]
+    },
+    {
+        "astCommandId": "dsvpn:3:5",
+        "astCommand": [
+            "cd",
+            "dsvpn-",
+            "DSVPN_VERSION"
+        ]
+    }
+]

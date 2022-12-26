@@ -1,0 +1,67 @@
+[
+    {
+        "astCommandId": "crystal:1:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "crystal:1:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "apt-transport-https"
+        ]
+    },
+    {
+        "astCommandId": "crystal:1:3",
+        "astCommand": [
+            "apt-key",
+            "adv",
+            "--keyserver",
+            "keyserver.ubuntu.com",
+            "--recv-keys",
+            "09617FD37CC06B54"
+        ]
+    },
+    {
+        "astCommandId": "crystal:1:4",
+        "astCommand": [
+            "echo",
+            "deb https://dist.crystal-lang.org/apt crystal main"
+        ]
+    },
+    {
+        "astCommandId": "crystal:1:5",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "crystal:1:6",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "crystal",
+            "gcc",
+            "pkg-config",
+            "libssl-dev",
+            "libxml2-dev",
+            "libyaml-dev",
+            "libgmp-dev",
+            "git",
+            "make"
+        ]
+    },
+    {
+        "astCommandId": "crystal:1:7",
+        "astCommand": [
+            "apt-get",
+            "clean"
+        ]
+    }
+]

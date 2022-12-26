@@ -1,0 +1,66 @@
+[
+    {
+        "astCommandId": "freeradius:1:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "freeradius:1:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "freeradius",
+            "freeradius-mysql",
+            "freeradius-radclient",
+            "make",
+            "openssl"
+        ]
+    },
+    {
+        "astCommandId": "freeradius:1:3",
+        "astCommand": [
+            "/etc/raddb/certs/bootstrap"
+        ]
+    },
+    {
+        "astCommandId": "freeradius:1:4",
+        "astCommand": [
+            "ln",
+            "-s",
+            "/etc/raddb/mods-available/sql",
+            "/etc/raddb/mods-available/sqlcounter",
+            "/etc/raddb/mods-enabled"
+        ]
+    },
+    {
+        "astCommandId": "freeradius:1:5",
+        "astCommand": [
+            "sed",
+            "-i",
+            "-e",
+            "s@driver =.*@driver = \"rlm_sql_mysql\"@",
+            "-e",
+            "s@dialect =.*@dialect = \"mysql\"@",
+            "-e",
+            "/read_clients = yes/s@^#@@",
+            "-e",
+            "/Connection info:/,/^$/{s@^#@@;s@localhost@mysql@}",
+            "/etc/raddb/mods-available/sql"
+        ]
+    },
+    {
+        "astCommandId": "freeradius:1:6",
+        "astCommand": [
+            "sed",
+            "-i",
+            "-e",
+            "/^#\\t*eap$/s@^#@@",
+            "-e",
+            "/^#\\teap {$/,/#\\t}$/s@^#@@",
+            "/etc/raddb/sites-enabled/default"
+        ]
+    }
+]

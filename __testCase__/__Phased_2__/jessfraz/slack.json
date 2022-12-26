@@ -1,0 +1,66 @@
+[
+    {
+        "astCommandId": "slack:3:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "slack:3:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "apt-transport-https",
+            "ca-certificates",
+            "curl",
+            "gnupg",
+            "locales",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "slack:4:1",
+        "astCommand": [
+            "echo",
+            "en_US.UTF-8 UTF-8"
+        ]
+    },
+    {
+        "astCommandId": "slack:4:2",
+        "astCommand": [
+            "locale-gen",
+            "en_US.utf8"
+        ]
+    },
+    {
+        "astCommandId": "slack:5:1",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://packagecloud.io/slacktechnologies/slack/gpgkey"
+        ]
+    },
+    {
+        "astCommandId": "slack:7:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "slack:7:2",
+        "astCommand": [
+            "apt-get",
+            "-y",
+            "install",
+            "libasound2",
+            "libgtk-3-0",
+            "libx11-xcb1",
+            "libxkbfile1",
+            "slack-desktop",
+            "--no-install-recommends"
+        ]
+    }
+]

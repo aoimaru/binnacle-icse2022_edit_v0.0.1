@@ -1,0 +1,81 @@
+[
+    {
+        "astCommandId": "wine:1:1",
+        "astCommand": [
+            "echo",
+            "deb http://deb.debian.org/debian sid main contrib"
+        ]
+    },
+    {
+        "astCommandId": "wine:1:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "wine:1:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "apt-transport-https",
+            "cabextract",
+            "ca-certificates",
+            "curl",
+            "gnupg2",
+            "fonts-wine",
+            "winetricks",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "wine:1:4",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://dl.winehq.org/wine-builds/winehq.key"
+        ]
+    },
+    {
+        "astCommandId": "wine:1:5",
+        "astCommand": [
+            "apt-key",
+            "add",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "wine:1:6",
+        "astCommand": [
+            "echo",
+            "deb https://dl.winehq.org/wine-builds/debian/ bullseye main"
+        ]
+    },
+    {
+        "astCommandId": "wine:1:7",
+        "astCommand": [
+            "dpkg",
+            "--add-architecture",
+            "i386"
+        ]
+    },
+    {
+        "astCommandId": "wine:1:8",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "wine:1:9",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "libwine",
+            "winehq-staging",
+            "--no-install-recommends"
+        ]
+    }
+]

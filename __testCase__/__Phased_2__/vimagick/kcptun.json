@@ -1,0 +1,35 @@
+[
+    {
+        "astCommandId": "kcptun:4:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "kcptun:4:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "curl"
+        ]
+    },
+    {
+        "astCommandId": "kcptun:4:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "KCPTUN_URL"
+        ]
+    },
+    {
+        "astCommandId": "kcptun:4:4",
+        "astCommand": [
+            "tar",
+            "xz",
+            "-C",
+            "/usr/local/bin"
+        ]
+    }
+]

@@ -1,0 +1,75 @@
+[
+    {
+        "astCommandId": "k8scan:7:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "k8scan:7:2",
+        "astCommand": [
+            "go",
+            "get",
+            "-d",
+            "."
+        ]
+    },
+    {
+        "astCommandId": "k8scan:7:3",
+        "astCommand": [
+            "gofmt",
+            "-s",
+            "-l",
+            "."
+        ]
+    },
+    {
+        "astCommandId": "k8scan:7:4",
+        "astCommand": [
+            "go",
+            "test",
+            "./..."
+        ]
+    },
+    {
+        "astCommandId": "k8scan:7:5",
+        "astCommand": [
+            "go",
+            "vet",
+            "./..."
+        ]
+    },
+    {
+        "astCommandId": "k8scan:7:6",
+        "astCommand": [
+            "golint",
+            "./..."
+        ]
+    },
+    {
+        "astCommandId": "k8scan:7:7",
+        "astCommand": [
+            "staticcheck",
+            "./..."
+        ]
+    },
+    {
+        "astCommandId": "k8scan:7:8",
+        "astCommand": [
+            "CGO_ENABLED",
+            "0",
+            "go",
+            "build",
+            "-a",
+            "-tags",
+            "netgo",
+            "-ldflags",
+            "-w -extldflags \"-static\"",
+            "-o",
+            "/usr/bin/k8scan",
+            "*",
+            ".go"
+        ]
+    }
+]

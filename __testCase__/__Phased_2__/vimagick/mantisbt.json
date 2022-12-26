@@ -1,0 +1,117 @@
+[
+    {
+        "astCommandId": "mantisbt:2:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "mantisbt:2:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "mantisbt:2:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "libfreetype6-dev",
+            "libpng-dev",
+            "libjpeg-dev",
+            "libpq-dev",
+            "libxml2-dev"
+        ]
+    },
+    {
+        "astCommandId": "mantisbt:2:4",
+        "astCommand": [
+            "docker-php-ext-configure",
+            "gd",
+            "--with-png-dir=/usr",
+            "--with-jpeg-dir=/usr",
+            "--with-freetype-dir=/usr"
+        ]
+    },
+    {
+        "astCommandId": "mantisbt:2:5",
+        "astCommand": [
+            "docker-php-ext-install",
+            "gd",
+            "mbstring",
+            "mysql",
+            "mysqli",
+            "pgsql",
+            "soap"
+        ]
+    },
+    {
+        "astCommandId": "mantisbt:7:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "mantisbt:7:2",
+        "astCommand": [
+            "curl",
+            "-fSL",
+            "MANTIS_URL",
+            "-o",
+            "MANTIS_FILE"
+        ]
+    },
+    {
+        "astCommandId": "mantisbt:7:3",
+        "astCommand": [
+            "echo",
+            "MANTIS_MD5",
+            "  ",
+            "MANTIS_FILE"
+        ]
+    },
+    {
+        "astCommandId": "mantisbt:7:4",
+        "astCommand": [
+            "md5sum",
+            "-c"
+        ]
+    },
+    {
+        "astCommandId": "mantisbt:7:5",
+        "astCommand": [
+            "tar",
+            "-xz",
+            "--strip-components=1",
+            "-f",
+            "MANTIS_FILE"
+        ]
+    },
+    {
+        "astCommandId": "mantisbt:7:6",
+        "astCommand": [
+            "rm",
+            "MANTIS_FILE"
+        ]
+    },
+    {
+        "astCommandId": "mantisbt:8:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "mantisbt:8:2",
+        "astCommand": [
+            "ln",
+            "-sf",
+            "/usr/share/zoneinfo/Asia/Shanghai",
+            "/etc/localtime"
+        ]
+    }
+]

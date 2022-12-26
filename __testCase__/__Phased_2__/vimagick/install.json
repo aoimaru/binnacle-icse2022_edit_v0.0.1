@@ -1,0 +1,80 @@
+[
+    {
+        "astCommandId": "install:1:1",
+        "astCommand": [
+            "apt",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "install:1:2",
+        "astCommand": [
+            "apt",
+            "-y",
+            "install",
+            "build-essential",
+            "ca-certificates",
+            "git",
+            "kmod",
+            "libelf-dev",
+            "libmnl-dev",
+            "pkg-config",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "install:4:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "install:4:2",
+        "astCommand": [
+            "git",
+            "clone",
+            "--depth",
+            "1",
+            "--branch",
+            "WIREGUARD_VERSION",
+            "https://git.zx2c4.com/wireguard-linux-compat.git",
+            "/wireguard"
+        ]
+    },
+    {
+        "astCommandId": "install:4:3",
+        "astCommand": [
+            "git",
+            "clone",
+            "--depth",
+            "1",
+            "--branch",
+            "WIREGUARD_TOOLS_VERSION",
+            "https://git.zx2c4.com/wireguard-tools.git",
+            "/wireguard-tools"
+        ]
+    },
+    {
+        "astCommandId": "install:4:4",
+        "astCommand": [
+            "cd",
+            "/wireguard-tools/src"
+        ]
+    },
+    {
+        "astCommandId": "install:4:5",
+        "astCommand": [
+            "make",
+            "-j",
+            "nproc"
+        ]
+    },
+    {
+        "astCommandId": "install:4:6",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    }
+]

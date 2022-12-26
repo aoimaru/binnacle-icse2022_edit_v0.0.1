@@ -1,0 +1,77 @@
+[
+    {
+        "astCommandId": "libev-arm:5:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "libev-arm:5:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--update",
+            "SS_DEP"
+        ]
+    },
+    {
+        "astCommandId": "libev-arm:5:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "SS_URL"
+        ]
+    },
+    {
+        "astCommandId": "libev-arm:5:4",
+        "astCommand": [
+            "tar",
+            "xz"
+        ]
+    },
+    {
+        "astCommandId": "libev-arm:5:5",
+        "astCommand": [
+            "cd",
+            "SS_DIR"
+        ]
+    },
+    {
+        "astCommandId": "libev-arm:5:6",
+        "astCommand": [
+            "./configure"
+        ]
+    },
+    {
+        "astCommandId": "libev-arm:5:7",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "libev-arm:5:8",
+        "astCommand": [
+            "cd",
+            ".."
+        ]
+    },
+    {
+        "astCommandId": "libev-arm:5:9",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "SS_DIR"
+        ]
+    },
+    {
+        "astCommandId": "libev-arm:5:10",
+        "astCommand": [
+            "apk",
+            "del",
+            "--purge",
+            "SS_DEP"
+        ]
+    }
+]

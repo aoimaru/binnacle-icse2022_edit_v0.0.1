@@ -1,0 +1,63 @@
+[
+    {
+        "astCommandId": "hcfg:2:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "hcfg:2:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "curl",
+            "git",
+            "python3"
+        ]
+    },
+    {
+        "astCommandId": "hcfg:2:3",
+        "astCommand": [
+            "pip3",
+            "install",
+            "--no-cache-dir",
+            "gitpython"
+        ]
+    },
+    {
+        "astCommandId": "hcfg:2:4",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "bin",
+            "etc"
+        ]
+    },
+    {
+        "astCommandId": "hcfg:2:5",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://raw.githubusercontent.com/danielperna84/hass-configurator/master/configurator.py"
+        ]
+    },
+    {
+        "astCommandId": "hcfg:2:6",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://raw.githubusercontent.com/danielperna84/hass-configurator/master/settings.conf"
+        ]
+    },
+    {
+        "astCommandId": "hcfg:2:7",
+        "astCommand": [
+            "sed",
+            "-i",
+            "/^GIT/s/False/True/",
+            "/opt/hcfg/bin/hcfg"
+        ]
+    }
+]

@@ -1,0 +1,266 @@
+[
+    {
+        "astCommandId": "ocserv:3:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:3:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--update",
+            "--virtual",
+            ".build-deps",
+            "buildDeps"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:3:3",
+        "astCommand": [
+            "curl",
+            "-SL",
+            "OCSERV_URL",
+            "-o",
+            "ocserv.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:3:4",
+        "astCommand": [
+            "curl",
+            "-SL",
+            "OCSERV_URL",
+            ".sig",
+            "-o",
+            "ocserv.tar.xz.sig"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:3:5",
+        "astCommand": [
+            "gpg",
+            "--keyserver",
+            "pgp.mit.edu",
+            "--recv-key",
+            "7F343FA7"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:3:6",
+        "astCommand": [
+            "gpg",
+            "--keyserver",
+            "pgp.mit.edu",
+            "--recv-key",
+            "96865171"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:3:7",
+        "astCommand": [
+            "gpg",
+            "--verify",
+            "ocserv.tar.xz.sig"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:3:8",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/ocserv"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:3:9",
+        "astCommand": [
+            "tar",
+            "-xf",
+            "ocserv.tar.xz",
+            "-C",
+            "/usr/src/ocserv",
+            "--strip-components=1"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:3:10",
+        "astCommand": [
+            "rm",
+            "ocserv.tar.xz",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:3:11",
+        "astCommand": [
+            "cd",
+            "/usr/src/ocserv"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:3:12",
+        "astCommand": [
+            "./configure"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:3:13",
+        "astCommand": [
+            "make"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:3:14",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:3:15",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/etc/ocserv"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:3:16",
+        "astCommand": [
+            "cp",
+            "/usr/src/ocserv/doc/sample.config",
+            "/etc/ocserv/ocserv.conf"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:3:17",
+        "astCommand": [
+            "cd",
+            "/"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:3:18",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/usr/src/ocserv"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:3:19",
+        "astCommand": [
+            "scanelf",
+            "--needed",
+            "--nobanner",
+            "/usr/local/sbin/ocserv"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:3:20",
+        "astCommand": [
+            "awk",
+            "{ gsub(/,/, \"\\nso:\", $2); print \"so:\" $2 }"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:3:21",
+        "astCommand": [
+            "xargs",
+            "-r",
+            "apk",
+            "info",
+            "--installed"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:3:22",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:3:23",
+        "astCommand": [
+            "apk",
+            "add",
+            "--virtual",
+            ".run-deps",
+            "runDeps",
+            "gnutls-utils",
+            "iptables"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:3:24",
+        "astCommand": [
+            "apk",
+            "del",
+            ".build-deps"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:4:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:4:2",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/etc/ocserv/certs"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:4:3",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/etc/ocserv/config-per-user"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:4:4",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/etc/ocserv/config-per-group"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:4:5",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/etc/ocserv/defaults"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:4:6",
+        "astCommand": [
+            "touch",
+            "/etc/ocserv/defaults/user.conf"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:4:7",
+        "astCommand": [
+            "touch",
+            "/etc/ocserv/defaults/group.conf"
+        ]
+    },
+    {
+        "astCommandId": "ocserv:4:8",
+        "astCommand": [
+            "touch",
+            "/etc/ocserv/ocpasswd"
+        ]
+    }
+]

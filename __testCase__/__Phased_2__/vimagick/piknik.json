@@ -1,0 +1,57 @@
+[
+    {
+        "astCommandId": "piknik:4:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "piknik:4:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "curl",
+            "libc6-compat",
+            "tar"
+        ]
+    },
+    {
+        "astCommandId": "piknik:4:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "PIKNIK_URL"
+        ]
+    },
+    {
+        "astCommandId": "piknik:4:4",
+        "astCommand": [
+            "tar",
+            "xz",
+            "-C",
+            "/usr/local/bin",
+            "--strip",
+            "1",
+            "linux-x86_64/piknik"
+        ]
+    },
+    {
+        "astCommandId": "piknik:4:5",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/etc/piknik"
+        ]
+    },
+    {
+        "astCommandId": "piknik:4:6",
+        "astCommand": [
+            "ln",
+            "-s",
+            "/lib",
+            "/lib64"
+        ]
+    }
+]

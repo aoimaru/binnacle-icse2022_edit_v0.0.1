@@ -1,0 +1,156 @@
+[
+    {
+        "astCommandId": "scrapyd:5:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "scrapyd:5:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "scrapyd:5:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "autoconf",
+            "build-essential",
+            "curl",
+            "git",
+            "libffi-dev",
+            "libssl-dev",
+            "libtool",
+            "libxml2",
+            "libxml2-dev",
+            "libxslt1.1",
+            "libxslt1-dev",
+            "python",
+            "python-dev",
+            "tini",
+            "vim-tiny"
+        ]
+    },
+    {
+        "astCommandId": "scrapyd:5:4",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "libtiff5",
+            "libtiff5-dev",
+            "libfreetype6-dev",
+            "libjpeg62-turbo",
+            "libjpeg62-turbo-dev",
+            "liblcms2-2",
+            "liblcms2-dev",
+            "libwebp6",
+            "libwebp-dev",
+            "zlib1g",
+            "zlib1g-dev"
+        ]
+    },
+    {
+        "astCommandId": "scrapyd:5:5",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://bootstrap.pypa.io/pip/2.7/get-pip.py"
+        ]
+    },
+    {
+        "astCommandId": "scrapyd:5:6",
+        "astCommand": [
+            "python"
+        ]
+    },
+    {
+        "astCommandId": "scrapyd:5:7",
+        "astCommand": [
+            "pip",
+            "install",
+            "--no-cache-dir",
+            "git",
+            "+",
+            "https://github.com/scrapy/scrapy.git",
+            "@",
+            "SCRAPY_VERSION",
+            "git",
+            "+",
+            "https://github.com/scrapy/scrapyd.git",
+            "@",
+            "SCRAPYD_VERSION",
+            "git",
+            "+",
+            "https://github.com/scrapy/scrapyd-client.git",
+            "git",
+            "+",
+            "https://github.com/scrapinghub/scrapy-splash.git",
+            "git",
+            "+",
+            "https://github.com/scrapinghub/scrapyrt.git",
+            "@",
+            "SCRAPYRT_VERSION",
+            "git",
+            "+",
+            "https://github.com/python-pillow/Pillow.git",
+            "@",
+            "PILLOW_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "scrapyd:5:8",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://github.com/scrapy/scrapy/raw/master/extras/scrapy_bash_completion",
+            "-o",
+            "/etc/bash_completion.d/scrapy_bash_completion"
+        ]
+    },
+    {
+        "astCommandId": "scrapyd:5:9",
+        "astCommand": [
+            "echo",
+            "source /etc/bash_completion.d/scrapy_bash_completion"
+        ]
+    },
+    {
+        "astCommandId": "scrapyd:5:10",
+        "astCommand": [
+            "apt-get",
+            "purge",
+            "-y",
+            "--auto-remove",
+            "autoconf",
+            "build-essential",
+            "curl",
+            "libffi-dev",
+            "libssl-dev",
+            "libtool",
+            "libxml2-dev",
+            "libxslt1-dev",
+            "python-dev"
+        ]
+    },
+    {
+        "astCommandId": "scrapyd:5:11",
+        "astCommand": [
+            "apt-get",
+            "purge",
+            "-y",
+            "--auto-remove",
+            "libtiff5-dev",
+            "libfreetype6-dev",
+            "libjpeg62-turbo-dev",
+            "liblcms2-dev",
+            "libwebp-dev",
+            "zlib1g-dev"
+        ]
+    }
+]

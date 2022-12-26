@@ -1,0 +1,76 @@
+[
+    {
+        "astCommandId": "48efd6eb73e3f6600782a85e4676f470ec78f13a:6:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "48efd6eb73e3f6600782a85e4676f470ec78f13a:6:2",
+        "astCommand": [
+            "wget",
+            "-O",
+            "/openjdk.tgz",
+            "JAVA_URL"
+        ]
+    },
+    {
+        "astCommandId": "48efd6eb73e3f6600782a85e4676f470ec78f13a:6:3",
+        "astCommand": [
+            "echo",
+            "JAVA_SHA256",
+            " */openjdk.tgz"
+        ]
+    },
+    {
+        "astCommandId": "48efd6eb73e3f6600782a85e4676f470ec78f13a:6:4",
+        "astCommand": [
+            "sha256sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "48efd6eb73e3f6600782a85e4676f470ec78f13a:6:5",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "JAVA_HOME"
+        ]
+    },
+    {
+        "astCommandId": "48efd6eb73e3f6600782a85e4676f470ec78f13a:6:6",
+        "astCommand": [
+            "tar",
+            "--extract",
+            "--file",
+            "/openjdk.tgz",
+            "--directory",
+            "JAVA_HOME",
+            "--strip-components",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "48efd6eb73e3f6600782a85e4676f470ec78f13a:6:7",
+        "astCommand": [
+            "rm",
+            "/openjdk.tgz"
+        ]
+    },
+    {
+        "astCommandId": "48efd6eb73e3f6600782a85e4676f470ec78f13a:6:8",
+        "astCommand": [
+            "java",
+            "-Xshare:dump"
+        ]
+    },
+    {
+        "astCommandId": "48efd6eb73e3f6600782a85e4676f470ec78f13a:6:9",
+        "astCommand": [
+            "java",
+            "--version"
+        ]
+    }
+]

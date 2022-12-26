@@ -1,0 +1,41 @@
+[
+    {
+        "astCommandId": "pure-ftpd:1:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "pure-ftpd:1:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "pure-ftpd:1:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "pure-ftpd"
+        ]
+    },
+    {
+        "astCommandId": "pure-ftpd:1:4",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "pure-ftpd:1:5",
+        "astCommand": [
+            "groupadd",
+            "ftpgroup"
+        ]
+    }
+]

@@ -1,0 +1,136 @@
+[
+    {
+        "astCommandId": "nullmailer:3:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "nullmailer:3:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "-U",
+            "autoconf",
+            "automake",
+            "build-base",
+            "curl",
+            "gnutls",
+            "gnutls-dev",
+            "libstdc",
+            "+",
+            "+",
+            "tar"
+        ]
+    },
+    {
+        "astCommandId": "nullmailer:3:3",
+        "astCommand": [
+            "adduser",
+            "-H",
+            "-D",
+            "nullmail"
+        ]
+    },
+    {
+        "astCommandId": "nullmailer:3:4",
+        "astCommand": [
+            "mkdir",
+            "nullmailer"
+        ]
+    },
+    {
+        "astCommandId": "nullmailer:3:5",
+        "astCommand": [
+            "cd",
+            "nullmailer"
+        ]
+    },
+    {
+        "astCommandId": "nullmailer:3:6",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "NM_URL"
+        ]
+    },
+    {
+        "astCommandId": "nullmailer:3:7",
+        "astCommand": [
+            "tar",
+            "xz",
+            "--strip",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "nullmailer:3:8",
+        "astCommand": [
+            "mv",
+            "ChangeLog.old",
+            "ChangeLog"
+        ]
+    },
+    {
+        "astCommandId": "nullmailer:3:9",
+        "astCommand": [
+            "chmod",
+            "+",
+            "x",
+            "autogen.sh"
+        ]
+    },
+    {
+        "astCommandId": "nullmailer:3:10",
+        "astCommand": [
+            "./autogen.sh"
+        ]
+    },
+    {
+        "astCommandId": "nullmailer:3:11",
+        "astCommand": [
+            "./configure",
+            "--prefix=/usr",
+            "--sysconfdir=/etc",
+            "--localstatedir=/var",
+            "--enable-tls"
+        ]
+    },
+    {
+        "astCommandId": "nullmailer:3:12",
+        "astCommand": [
+            "make",
+            "install",
+            "install-root"
+        ]
+    },
+    {
+        "astCommandId": "nullmailer:3:13",
+        "astCommand": [
+            "cd",
+            ".."
+        ]
+    },
+    {
+        "astCommandId": "nullmailer:3:14",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "nullmailer"
+        ]
+    },
+    {
+        "astCommandId": "nullmailer:3:15",
+        "astCommand": [
+            "apk",
+            "del",
+            "autoconf",
+            "automake",
+            "build-base",
+            "curl",
+            "gnutls-dev",
+            "tar"
+        ]
+    }
+]

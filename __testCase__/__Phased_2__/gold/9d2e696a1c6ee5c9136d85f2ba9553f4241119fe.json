@@ -1,0 +1,550 @@
+[
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:1:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:1:2",
+        "astCommand": [
+            "echo",
+            "Package: php*"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:1:3",
+        "astCommand": [
+            "echo",
+            "Pin: release *"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:3:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:3:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "PHPIZE_DEPS",
+            "ca-certificates",
+            "curl",
+            "xz-utils",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:5:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:5:2",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "PHP_INI_DIR",
+            "/conf.d"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:5:3",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/var/www/html"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:5:4",
+        "astCommand": [
+            "chown",
+            "www-data:www-data",
+            "/var/www/html"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:16:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:16:2",
+        "astCommand": [
+            "command",
+            "-v",
+            "gpg"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:16:3",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:16:4",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "fetchDeps"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:16:5",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:16:6",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:16:7",
+        "astCommand": [
+            "cd",
+            "/usr/src"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:16:8",
+        "astCommand": [
+            "wget",
+            "-O",
+            "php.tar.xz",
+            "PHP_URL"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:16:9",
+        "astCommand": [
+            "echo",
+            "PHP_SHA256",
+            " *php.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:16:10",
+        "astCommand": [
+            "sha256sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:16:11",
+        "astCommand": [
+            "echo",
+            "PHP_MD5",
+            " *php.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:16:12",
+        "astCommand": [
+            "md5sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:16:13",
+        "astCommand": [
+            "wget",
+            "-O",
+            "php.tar.xz.asc",
+            "PHP_ASC_URL"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:16:14",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:16:15",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--keyserver",
+            "ha.pool.sks-keyservers.net",
+            "--recv-keys",
+            "key"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:16:16",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--verify",
+            "php.tar.xz.asc",
+            "php.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:16:17",
+        "astCommand": [
+            "command",
+            "-v",
+            "gpgconf"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:16:18",
+        "astCommand": [
+            "gpgconf",
+            "--kill",
+            "all"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:16:19",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "GNUPGHOME"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:2",
+        "astCommand": [
+            "apt-mark",
+            "showmanual"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:3",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:4",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "libcurl4-openssl-dev",
+            "libedit-dev",
+            "libsqlite3-dev",
+            "libssl-dev",
+            "libxml2-dev",
+            "zlib1g-dev",
+            "PHP_EXTRA_BUILD_DEPS:-"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:5",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:6",
+        "astCommand": [
+            "export",
+            "CFLAGS",
+            "PHP_CFLAGS",
+            "CPPFLAGS",
+            "PHP_CPPFLAGS",
+            "LDFLAGS",
+            "PHP_LDFLAGS"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:7",
+        "astCommand": [
+            "docker-php-source",
+            "extract"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:8",
+        "astCommand": [
+            "cd",
+            "/usr/src/php"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:9",
+        "astCommand": [
+            "dpkg-architecture",
+            "--query",
+            "DEB_BUILD_GNU_TYPE"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:10",
+        "astCommand": [
+            "dpkg-architecture",
+            "--query",
+            "DEB_BUILD_MULTIARCH"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:11",
+        "astCommand": [
+            "ln",
+            "-sT",
+            "/usr/include/",
+            "debMultiarch",
+            "/curl",
+            "/usr/local/include/curl"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:12",
+        "astCommand": [
+            "./configure",
+            "--build=",
+            "gnuArch",
+            "--with-config-file-path=",
+            "PHP_INI_DIR",
+            "--with-config-file-scan-dir=",
+            "PHP_INI_DIR",
+            "/conf.d",
+            "--enable-option-checking=fatal",
+            "--with-mhash",
+            "--enable-ftp",
+            "--enable-mbstring",
+            "--enable-mysqlnd",
+            "--with-curl",
+            "--with-libedit",
+            "--with-openssl",
+            "--with-zlib",
+            "test",
+            "gnuArch",
+            "=",
+            "s390x-linux-gnu",
+            "echo",
+            "--without-pcre-jit",
+            "--with-libdir=",
+            "lib/",
+            "debMultiarch",
+            "PHP_EXTRA_CONFIGURE_ARGS:-"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:13",
+        "astCommand": [
+            "make",
+            "-j",
+            "nproc"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:14",
+        "astCommand": [
+            "find",
+            "-type",
+            "f",
+            "-name",
+            "*.a",
+            "-delete"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:15",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:16",
+        "astCommand": [
+            "find",
+            "/usr/local/bin",
+            "/usr/local/sbin",
+            "-type",
+            "f",
+            "-executable",
+            "-exec",
+            "strip",
+            "--strip-all",
+            "{}",
+            "+"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:17",
+        "astCommand": [
+            "true"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:18",
+        "astCommand": [
+            "make",
+            "clean"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:19",
+        "astCommand": [
+            "cp",
+            "-v",
+            "php.ini-",
+            "*",
+            "PHP_INI_DIR",
+            "/"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:20",
+        "astCommand": [
+            "cd",
+            "/"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:21",
+        "astCommand": [
+            "docker-php-source",
+            "delete"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:22",
+        "astCommand": [
+            "apt-mark",
+            "auto",
+            ".*"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:23",
+        "astCommand": [
+            "apt-mark",
+            "manual",
+            "savedAptMark"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:24",
+        "astCommand": [
+            "find",
+            "/usr/local",
+            "-type",
+            "f",
+            "-executable",
+            "-exec",
+            "ldd",
+            "{}",
+            ";"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:25",
+        "astCommand": [
+            "awk",
+            "/=>/ { print $(NF-1) }"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:26",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:27",
+        "astCommand": [
+            "xargs",
+            "-r",
+            "dpkg-query",
+            "--search"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:28",
+        "astCommand": [
+            "cut",
+            "-d:",
+            "-f1"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:29",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:30",
+        "astCommand": [
+            "xargs",
+            "-r",
+            "apt-mark",
+            "manual"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:31",
+        "astCommand": [
+            "apt-get",
+            "purge",
+            "-y",
+            "--auto-remove",
+            "-o",
+            "APT::AutoRemove::RecommendsImportant=false"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:32",
+        "astCommand": [
+            "pecl",
+            "update-channels"
+        ]
+    },
+    {
+        "astCommandId": "9d2e696a1c6ee5c9136d85f2ba9553f4241119fe:18:33",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/tmp/pear",
+            "~/.pearrc"
+        ]
+    }
+]

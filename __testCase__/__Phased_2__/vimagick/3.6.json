@@ -1,0 +1,75 @@
+[
+    {
+        "astCommandId": "3.6:4:1",
+        "astCommand": [
+            "echo",
+            "==> Installing dependencies..."
+        ]
+    },
+    {
+        "astCommandId": "3.6:4:2",
+        "astCommand": [
+            "apk",
+            "--no-cache",
+            "add",
+            "--virtual",
+            "build-deps",
+            "buildDeps"
+        ]
+    },
+    {
+        "astCommandId": "3.6:4:3",
+        "astCommand": [
+            "echo",
+            "==> Downloading Zookeeper..."
+        ]
+    },
+    {
+        "astCommandId": "3.6:4:4",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/opt"
+        ]
+    },
+    {
+        "astCommandId": "3.6:4:5",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "http://apache.osuosl.org/zookeeper/zookeeper-",
+            "ZOOKEEPER_VERSION",
+            "/apache-zookeeper-",
+            "ZOOKEEPER_VERSION",
+            "-bin.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "3.6:4:6",
+        "astCommand": [
+            "tar",
+            "-xzf",
+            "-",
+            "-C",
+            "/opt"
+        ]
+    },
+    {
+        "astCommandId": "3.6:4:7",
+        "astCommand": [
+            "mv",
+            "/opt/apache-zookeeper-",
+            "ZOOKEEPER_VERSION",
+            "-bin",
+            "/opt/zookeeper"
+        ]
+    },
+    {
+        "astCommandId": "3.6:4:8",
+        "astCommand": [
+            "cp",
+            "/opt/zookeeper/conf/zoo_sample.cfg",
+            "/opt/zookeeper/conf/zoo.cfg"
+        ]
+    }
+]

@@ -1,0 +1,33 @@
+[
+    {
+        "astCommandId": "imagemin:2:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "imagemin:2:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "autoconf",
+            "automake",
+            "build-base",
+            "libpng-dev",
+            "nasm"
+        ]
+    },
+    {
+        "astCommandId": "imagemin:2:3",
+        "astCommand": [
+            "npm",
+            "install",
+            "--global",
+            "imagemin-cli"
+        ]
+    }
+]

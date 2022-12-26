@@ -1,0 +1,87 @@
+[
+    {
+        "astCommandId": "spotify:1:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "spotify:1:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "ca-certificates",
+            "curl",
+            "dirmngr",
+            "gnupg",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "spotify:1:3",
+        "astCommand": [
+            "curl",
+            "-sS",
+            "https://download.spotify.com/debian/pubkey_0D811D58.gpg"
+        ]
+    },
+    {
+        "astCommandId": "spotify:1:4",
+        "astCommand": [
+            "apt-key",
+            "add",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "spotify:1:5",
+        "astCommand": [
+            "echo",
+            "deb http://repository.spotify.com stable non-free"
+        ]
+    },
+    {
+        "astCommandId": "spotify:1:6",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "spotify:1:7",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "alsa-utils",
+            "libgl1-mesa-dri",
+            "libgl1-mesa-glx",
+            "libpulse0",
+            "libsm6",
+            "spotify-client",
+            "xdg-utils",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "spotify:3:1",
+        "astCommand": [
+            "useradd",
+            "--create-home",
+            "--home-dir",
+            "HOME",
+            "spotify"
+        ]
+    },
+    {
+        "astCommandId": "spotify:3:2",
+        "astCommand": [
+            "gpasswd",
+            "-a",
+            "spotify",
+            "audio"
+        ]
+    }
+]

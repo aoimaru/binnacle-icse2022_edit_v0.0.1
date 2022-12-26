@@ -1,0 +1,83 @@
+[
+    {
+        "astCommandId": "apacheds:11:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "apacheds:11:2",
+        "astCommand": [
+            "apt",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "apacheds:11:3",
+        "astCommand": [
+            "apt",
+            "install",
+            "-y",
+            "apt-utils",
+            "curl",
+            "ldap-utils",
+            "openjdk-11-jre-headless",
+            "procps"
+        ]
+    },
+    {
+        "astCommandId": "apacheds:11:4",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "GOSU_URL"
+        ]
+    },
+    {
+        "astCommandId": "apacheds:11:5",
+        "astCommand": [
+            "chmod",
+            "+",
+            "x",
+            "/usr/local/bin/gosu"
+        ]
+    },
+    {
+        "astCommandId": "apacheds:11:6",
+        "astCommand": [
+            "gosu",
+            "nobody",
+            "true"
+        ]
+    },
+    {
+        "astCommandId": "apacheds:11:7",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "APACHEDS_URL"
+        ]
+    },
+    {
+        "astCommandId": "apacheds:11:8",
+        "astCommand": [
+            "dpkg",
+            "-i",
+            "APACHEDS_FILE"
+        ]
+    },
+    {
+        "astCommandId": "apacheds:11:9",
+        "astCommand": [
+            "sed",
+            "-i",
+            "/INSTANCES_DIRECTORY/s/-",
+            "APACHEDS_VERSION",
+            "//",
+            "/opt/apacheds-",
+            "APACHEDS_VERSION",
+            "/bin/apacheds"
+        ]
+    }
+]

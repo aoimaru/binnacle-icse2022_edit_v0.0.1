@@ -1,0 +1,65 @@
+[
+    {
+        "astCommandId": "airflow:5:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "airflow:5:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "build-base",
+            "cyrus-sasl-dev",
+            "freetds",
+            "freetds-dev",
+            "krb5-dev",
+            "libffi-dev",
+            "mariadb-dev",
+            "postgresql-dev",
+            "python3-dev"
+        ]
+    },
+    {
+        "astCommandId": "airflow:5:3",
+        "astCommand": [
+            "pip",
+            "install",
+            "--no-cache-dir",
+            "cython",
+            "numpy",
+            "psycopg2-binary"
+        ]
+    },
+    {
+        "astCommandId": "airflow:5:4",
+        "astCommand": [
+            "pip",
+            "install",
+            "--no-cache-dir",
+            "apache-airflow",
+            "[",
+            "AIRFLOW_EXTRAS",
+            "]==",
+            "AIRFLOW_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "airflow:5:5",
+        "astCommand": [
+            "apk",
+            "del",
+            "build-base",
+            "cyrus-sasl-dev",
+            "freetds-dev",
+            "krb5-dev",
+            "libffi-dev",
+            "mariadb-dev",
+            "postgresql-dev",
+            "python3-dev"
+        ]
+    }
+]

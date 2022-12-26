@@ -1,0 +1,60 @@
+[
+    {
+        "astCommandId": "wireshark:2:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "wireshark:2:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "software-properties-common",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "wireshark:2:3",
+        "astCommand": [
+            "add-apt-repository",
+            "ppa:wireshark-dev/stable"
+        ]
+    },
+    {
+        "astCommandId": "wireshark:2:4",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "wireshark:2:5",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "wireshark"
+        ]
+    },
+    {
+        "astCommandId": "wireshark:4:1",
+        "astCommand": [
+            "useradd",
+            "--create-home",
+            "--home-dir",
+            "HOME",
+            "wireshark"
+        ]
+    },
+    {
+        "astCommandId": "wireshark:5:1",
+        "astCommand": [
+            "chown",
+            "root:wireshark",
+            "/usr/bin/dumpcap"
+        ]
+    }
+]

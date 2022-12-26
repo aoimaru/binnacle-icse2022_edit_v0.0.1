@@ -1,0 +1,78 @@
+[
+    {
+        "astCommandId": "its:1:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "its:1:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "ca-certificates",
+            "simh",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "its:2:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "its:2:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "its:2:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "buildDeps",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "its:2:4",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "its:2:5",
+        "astCommand": [
+            "git",
+            "clone",
+            "--depth",
+            "1",
+            "https://github.com/PDP-10/its.git",
+            "/usr/src/its"
+        ]
+    },
+    {
+        "astCommandId": "its:2:6",
+        "astCommand": [
+            "cd",
+            "/usr/src/its"
+        ]
+    },
+    {
+        "astCommandId": "its:2:7",
+        "astCommand": [
+            "make",
+            "EMULATOR=simh"
+        ]
+    }
+]

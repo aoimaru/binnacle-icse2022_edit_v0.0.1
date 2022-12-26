@@ -1,0 +1,83 @@
+[
+    {
+        "astCommandId": "powershell:2:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "powershell:2:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "ca-certificates",
+            "dpkg",
+            "libcurl3",
+            "libicu57",
+            "libssl1.0.2",
+            "liblttng-ust0",
+            "libunwind8",
+            "wget",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "powershell:3:1",
+        "astCommand": [
+            "cd",
+            "/usr/src"
+        ]
+    },
+    {
+        "astCommandId": "powershell:3:2",
+        "astCommand": [
+            "wget",
+            "https://github.com/PowerShell/PowerShell/releases/download/v",
+            "POWERSHELL_VERSION",
+            "/powershell_",
+            "POWERSHELL_VERSION",
+            "-1.debian.9_amd64.deb",
+            "-O",
+            "/tmp/powershell.deb"
+        ]
+    },
+    {
+        "astCommandId": "powershell:3:3",
+        "astCommand": [
+            "dpkg",
+            "-i",
+            "/tmp/powershell.deb"
+        ]
+    },
+    {
+        "astCommandId": "powershell:3:4",
+        "astCommand": [
+            "ln",
+            "-snf",
+            "/opt/microsoft/powershell/7/pwsh",
+            "/usr/bin/pwsh"
+        ]
+    },
+    {
+        "astCommandId": "powershell:3:5",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-fy"
+        ]
+    },
+    {
+        "astCommandId": "powershell:3:6",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*",
+            "/usr/src/",
+            "*",
+            "/tmp/powershell.deb"
+        ]
+    }
+]

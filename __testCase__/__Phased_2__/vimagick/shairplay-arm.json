@@ -1,0 +1,92 @@
+[
+    {
+        "astCommandId": "shairplay-arm:1:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "shairplay-arm:1:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "alsa-utils",
+            "autoconf",
+            "automake",
+            "avahi-dev",
+            "build-base",
+            "curl",
+            "dbus",
+            "libao",
+            "libao-dev",
+            "libltdl",
+            "libtool"
+        ]
+    },
+    {
+        "astCommandId": "shairplay-arm:1:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://github.com/juhovh/shairplay/archive/master.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "shairplay-arm:1:4",
+        "astCommand": [
+            "tar",
+            "xz"
+        ]
+    },
+    {
+        "astCommandId": "shairplay-arm:1:5",
+        "astCommand": [
+            "cd",
+            "shairplay-master"
+        ]
+    },
+    {
+        "astCommandId": "shairplay-arm:1:6",
+        "astCommand": [
+            "./autogen.sh"
+        ]
+    },
+    {
+        "astCommandId": "shairplay-arm:1:7",
+        "astCommand": [
+            "./configure"
+        ]
+    },
+    {
+        "astCommandId": "shairplay-arm:1:8",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "shairplay-arm:1:9",
+        "astCommand": [
+            "cp",
+            "airport.key",
+            "/airport.key"
+        ]
+    },
+    {
+        "astCommandId": "shairplay-arm:1:10",
+        "astCommand": [
+            "cd",
+            ".."
+        ]
+    },
+    {
+        "astCommandId": "shairplay-arm:1:11",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "shairplay-master"
+        ]
+    }
+]

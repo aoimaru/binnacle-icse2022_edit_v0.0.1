@@ -1,0 +1,399 @@
+[
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:2:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:2:2",
+        "astCommand": [
+            "wget",
+            "-O",
+            "/usr/local/bin/gosu",
+            "https://github.com/tianon/gosu/releases/download/",
+            "GOSU_VERSION",
+            "/gosu-",
+            "dpkg",
+            "--print-architecture"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:2:3",
+        "astCommand": [
+            "wget",
+            "-O",
+            "/usr/local/bin/gosu.asc",
+            "https://github.com/tianon/gosu/releases/download/",
+            "GOSU_VERSION",
+            "/gosu-",
+            "dpkg",
+            "--print-architecture",
+            ".asc"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:2:4",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:2:5",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--keyserver",
+            "ha.pool.sks-keyservers.net",
+            "--recv-keys",
+            "B42F6819007F00F88E364FD4036A9C25BF357DD4"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:2:6",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--verify",
+            "/usr/local/bin/gosu.asc",
+            "/usr/local/bin/gosu"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:2:7",
+        "astCommand": [
+            "command",
+            "-v",
+            "gpgconf"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:2:8",
+        "astCommand": [
+            "gpgconf",
+            "--kill",
+            "all"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:2:9",
+        "astCommand": [
+            ":"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:2:10",
+        "astCommand": [
+            "rm",
+            "-r",
+            "GNUPGHOME",
+            "/usr/local/bin/gosu.asc"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:2:11",
+        "astCommand": [
+            "chmod",
+            "+",
+            "x",
+            "/usr/local/bin/gosu"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:5:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:5:2",
+        "astCommand": [
+            "npm",
+            "install",
+            "-g",
+            "ghost-cli@",
+            "GHOST_CLI_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:2",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "GHOST_INSTALL"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:3",
+        "astCommand": [
+            "chown",
+            "node:node",
+            "GHOST_INSTALL"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:4",
+        "astCommand": [
+            "gosu",
+            "node",
+            "ghost",
+            "install",
+            "GHOST_VERSION",
+            "--db",
+            "sqlite3",
+            "--no-prompt",
+            "--no-stack",
+            "--no-setup",
+            "--dir",
+            "GHOST_INSTALL"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:5",
+        "astCommand": [
+            "cd",
+            "GHOST_INSTALL"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:6",
+        "astCommand": [
+            "gosu",
+            "node",
+            "ghost",
+            "config",
+            "--ip",
+            "0.0.0.0",
+            "--port",
+            "2368",
+            "--no-prompt",
+            "--db",
+            "sqlite3",
+            "--url",
+            "http://localhost:2368",
+            "--dbpath",
+            "GHOST_CONTENT",
+            "/data/ghost.db"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:7",
+        "astCommand": [
+            "gosu",
+            "node",
+            "ghost",
+            "config",
+            "paths.contentPath",
+            "GHOST_CONTENT"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:8",
+        "astCommand": [
+            "gosu",
+            "node",
+            "ln",
+            "-s",
+            "config.production.json",
+            "GHOST_INSTALL",
+            "/config.development.json"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:9",
+        "astCommand": [
+            "readlink",
+            "-f",
+            "GHOST_INSTALL",
+            "/config.development.json"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:10",
+        "astCommand": [
+            "mv",
+            "GHOST_CONTENT",
+            "GHOST_INSTALL",
+            "/content.orig"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:11",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "GHOST_CONTENT"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:12",
+        "astCommand": [
+            "chown",
+            "node:node",
+            "GHOST_CONTENT"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:13",
+        "astCommand": [
+            "GHOST_INSTALL",
+            "/current/node_modules/knex-migrator/bin/knex-migrator",
+            "--version"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:14",
+        "astCommand": [
+            "cd",
+            "GHOST_INSTALL",
+            "/current"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:15",
+        "astCommand": [
+            "npm",
+            "view",
+            ".",
+            "optionalDependencies.sqlite3"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:16",
+        "astCommand": [
+            "gosu",
+            "node",
+            "yarn",
+            "add",
+            "sqlite3@",
+            "sqlite3Version",
+            "--force"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:17",
+        "astCommand": [
+            "apt-mark",
+            "showmanual"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:18",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:19",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "python",
+            "make",
+            "gcc",
+            "g",
+            "+",
+            "+",
+            "libc-dev"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:20",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:21",
+        "astCommand": [
+            "gosu",
+            "node",
+            "yarn",
+            "add",
+            "sqlite3@",
+            "sqlite3Version",
+            "--force",
+            "--build-from-source"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:22",
+        "astCommand": [
+            "apt-mark",
+            "showmanual"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:23",
+        "astCommand": [
+            "xargs",
+            "apt-mark",
+            "auto"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:24",
+        "astCommand": [
+            "apt-mark",
+            "manual",
+            "savedAptMark"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:25",
+        "astCommand": [
+            "apt-get",
+            "purge",
+            "-y",
+            "--auto-remove"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:26",
+        "astCommand": [
+            "gosu",
+            "node",
+            "yarn",
+            "cache",
+            "clean"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:27",
+        "astCommand": [
+            "gosu",
+            "node",
+            "npm",
+            "cache",
+            "clean",
+            "--force"
+        ]
+    },
+    {
+        "astCommandId": "b28dcc0d74e235364ea39ccf37fa7fe244f7cde7:9:28",
+        "astCommand": [
+            "npm",
+            "cache",
+            "clean",
+            "--force"
+        ]
+    }
+]

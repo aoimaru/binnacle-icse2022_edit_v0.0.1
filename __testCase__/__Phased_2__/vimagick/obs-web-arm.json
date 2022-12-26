@@ -1,0 +1,45 @@
+[
+    {
+        "astCommandId": "obs-web-arm:2:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "obs-web-arm:2:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "curl",
+            "node",
+            "npm",
+            "tar"
+        ]
+    },
+    {
+        "astCommandId": "obs-web-arm:2:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://github.com/Niek/obs-web/archive/refs/heads/master.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "obs-web-arm:2:4",
+        "astCommand": [
+            "tar",
+            "xz",
+            "--strip",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "obs-web-arm:2:5",
+        "astCommand": [
+            "npm",
+            "install"
+        ]
+    }
+]

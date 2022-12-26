@@ -1,0 +1,155 @@
+[
+    {
+        "astCommandId": "53b8a8cfc843bc1c9a7bda084e37311ba56ede80:1:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "53b8a8cfc843bc1c9a7bda084e37311ba56ede80:1:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "g",
+            "+",
+            "+",
+            "gcc",
+            "libc6-dev",
+            "make",
+            "pkg-config"
+        ]
+    },
+    {
+        "astCommandId": "53b8a8cfc843bc1c9a7bda084e37311ba56ede80:3:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "53b8a8cfc843bc1c9a7bda084e37311ba56ede80:3:2",
+        "astCommand": [
+            "dpkg",
+            "--print-architecture"
+        ]
+    },
+    {
+        "astCommandId": "53b8a8cfc843bc1c9a7bda084e37311ba56ede80:3:3",
+        "astCommand": [
+            "echo"
+        ]
+    },
+    {
+        "astCommandId": "53b8a8cfc843bc1c9a7bda084e37311ba56ede80:3:4",
+        "astCommand": [
+            "echo",
+            "warning: current architecture (",
+            "dpkgArch",
+            ") does not have a corresponding Go binary release; will be building from source"
+        ]
+    },
+    {
+        "astCommandId": "53b8a8cfc843bc1c9a7bda084e37311ba56ede80:3:5",
+        "astCommand": [
+            "echo"
+        ]
+    },
+    {
+        "astCommandId": "53b8a8cfc843bc1c9a7bda084e37311ba56ede80:3:6",
+        "astCommand": [
+            "wget",
+            "-O",
+            "go.tgz",
+            "url"
+        ]
+    },
+    {
+        "astCommandId": "53b8a8cfc843bc1c9a7bda084e37311ba56ede80:3:7",
+        "astCommand": [
+            "echo",
+            "goRelSha256",
+            " *go.tgz"
+        ]
+    },
+    {
+        "astCommandId": "53b8a8cfc843bc1c9a7bda084e37311ba56ede80:3:8",
+        "astCommand": [
+            "sha256sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "53b8a8cfc843bc1c9a7bda084e37311ba56ede80:3:9",
+        "astCommand": [
+            "tar",
+            "-C",
+            "/usr/local",
+            "-xzf",
+            "go.tgz"
+        ]
+    },
+    {
+        "astCommandId": "53b8a8cfc843bc1c9a7bda084e37311ba56ede80:3:10",
+        "astCommand": [
+            "rm",
+            "go.tgz"
+        ]
+    },
+    {
+        "astCommandId": "53b8a8cfc843bc1c9a7bda084e37311ba56ede80:3:11",
+        "astCommand": [
+            "echo"
+        ]
+    },
+    {
+        "astCommandId": "53b8a8cfc843bc1c9a7bda084e37311ba56ede80:3:12",
+        "astCommand": [
+            "echo",
+            "error: UNIMPLEMENTED"
+        ]
+    },
+    {
+        "astCommandId": "53b8a8cfc843bc1c9a7bda084e37311ba56ede80:3:13",
+        "astCommand": [
+            "echo",
+            "TODO install golang-any from jessie-backports for GOROOT_BOOTSTRAP (and uninstall after build)"
+        ]
+    },
+    {
+        "astCommandId": "53b8a8cfc843bc1c9a7bda084e37311ba56ede80:3:14",
+        "astCommand": [
+            "echo"
+        ]
+    },
+    {
+        "astCommandId": "53b8a8cfc843bc1c9a7bda084e37311ba56ede80:3:15",
+        "astCommand": [
+            "exit",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "53b8a8cfc843bc1c9a7bda084e37311ba56ede80:3:16",
+        "astCommand": [
+            "export",
+            "PATH",
+            "/usr/local/go/bin:",
+            "PATH"
+        ]
+    },
+    {
+        "astCommandId": "53b8a8cfc843bc1c9a7bda084e37311ba56ede80:6:1",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "GOPATH",
+            "/src",
+            "GOPATH",
+            "/bin"
+        ]
+    }
+]

@@ -1,0 +1,250 @@
+[
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:1:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:1:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "bzip2",
+            "gnupg",
+            "dirmngr",
+            "libcurl4-openssl-dev",
+            "libfreetype6-dev",
+            "libicu-dev",
+            "libjpeg-dev",
+            "libldap2-dev",
+            "libmcrypt-dev",
+            "libmemcached-dev",
+            "libpng-dev",
+            "libpq-dev",
+            "libxml2-dev",
+            "unzip"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:2:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:2:2",
+        "astCommand": [
+            "docker-php-ext-configure",
+            "gd",
+            "--with-png-dir=/usr",
+            "--with-jpeg-dir=/usr"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:2:3",
+        "astCommand": [
+            "dpkg-architecture",
+            "--query",
+            "DEB_BUILD_MULTIARCH"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:2:4",
+        "astCommand": [
+            "docker-php-ext-configure",
+            "ldap",
+            "--with-libdir=",
+            "lib/",
+            "debMultiarch"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:3:1",
+        "astCommand": [
+            "echo",
+            "opcache.memory_consumption=128"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:3:2",
+        "astCommand": [
+            "echo",
+            "opcache.interned_strings_buffer=8"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:3:3",
+        "astCommand": [
+            "echo",
+            "opcache.max_accelerated_files=4000"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:3:4",
+        "astCommand": [
+            "echo",
+            "opcache.revalidate_freq=60"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:3:5",
+        "astCommand": [
+            "echo",
+            "opcache.fast_shutdown=1"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:5:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:5:2",
+        "astCommand": [
+            "pecl",
+            "install",
+            "APCu-5.1.11"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:5:3",
+        "astCommand": [
+            "pecl",
+            "install",
+            "memcached-3.0.4"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:5:4",
+        "astCommand": [
+            "pecl",
+            "install",
+            "redis-3.1.6"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:9:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:9:2",
+        "astCommand": [
+            "curl",
+            "-fL",
+            "-o",
+            "owncloud.tar.bz2",
+            "https://download.owncloud.org/community/owncloud-",
+            "OWNCLOUD_VERSION",
+            ".tar.bz2"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:9:3",
+        "astCommand": [
+            "curl",
+            "-fL",
+            "-o",
+            "owncloud.tar.bz2.asc",
+            "https://download.owncloud.org/community/owncloud-",
+            "OWNCLOUD_VERSION",
+            ".tar.bz2.asc"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:9:4",
+        "astCommand": [
+            "echo",
+            "OWNCLOUD_SHA256",
+            " *owncloud.tar.bz2"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:9:5",
+        "astCommand": [
+            "sha256sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:9:6",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:9:7",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--keyserver",
+            "ha.pool.sks-keyservers.net",
+            "--recv-keys",
+            "E3036906AD9F30807351FAC32D5D5E97F6978A26"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:9:8",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--verify",
+            "owncloud.tar.bz2.asc",
+            "owncloud.tar.bz2"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:9:9",
+        "astCommand": [
+            "command",
+            "-v",
+            "gpgconf"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:9:10",
+        "astCommand": [
+            "gpgconf",
+            "--kill",
+            "all"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:9:11",
+        "astCommand": [
+            ":"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:9:12",
+        "astCommand": [
+            "rm",
+            "-r",
+            "GNUPGHOME",
+            "owncloud.tar.bz2.asc"
+        ]
+    },
+    {
+        "astCommandId": "0897f7981c6cb263a322c2c01750c0390933cf6b:9:13",
+        "astCommand": [
+            "tar",
+            "-xjf",
+            "owncloud.tar.bz2",
+            "-C",
+            "/usr/src/"
+        ]
+    }
+]

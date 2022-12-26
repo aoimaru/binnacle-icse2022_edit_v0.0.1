@@ -1,0 +1,430 @@
+[
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:3:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:3:2",
+        "astCommand": [
+            "addgroup",
+            "-g",
+            "82",
+            "-S",
+            "www-data"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:5:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:5:2",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "PHP_INI_DIR",
+            "/conf.d"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:5:3",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/var/www/html"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:5:4",
+        "astCommand": [
+            "chown",
+            "www-data:www-data",
+            "/var/www/html"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:15:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:15:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".fetch-deps",
+            "gnupg",
+            "wget"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:15:3",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:15:4",
+        "astCommand": [
+            "cd",
+            "/usr/src"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:15:5",
+        "astCommand": [
+            "wget",
+            "-O",
+            "php.tar.xz",
+            "PHP_URL"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:15:6",
+        "astCommand": [
+            "echo",
+            "PHP_SHA256",
+            " *php.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:15:7",
+        "astCommand": [
+            "sha256sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:15:8",
+        "astCommand": [
+            "echo",
+            "PHP_MD5",
+            " *php.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:15:9",
+        "astCommand": [
+            "md5sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:15:10",
+        "astCommand": [
+            "wget",
+            "-O",
+            "php.tar.xz.asc",
+            "PHP_ASC_URL"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:15:11",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:15:12",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--keyserver",
+            "ha.pool.sks-keyservers.net",
+            "--recv-keys",
+            "key"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:15:13",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--verify",
+            "php.tar.xz.asc",
+            "php.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:15:14",
+        "astCommand": [
+            "command",
+            "-v",
+            "gpgconf"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:15:15",
+        "astCommand": [
+            "gpgconf",
+            "--kill",
+            "all"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:15:16",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "GNUPGHOME"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:17:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:17:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "PHPIZE_DEPS",
+            "argon2-dev",
+            "coreutils",
+            "curl-dev",
+            "libedit-dev",
+            "libsodium-dev",
+            "libxml2-dev",
+            "openssl-dev",
+            "sqlite-dev"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:17:3",
+        "astCommand": [
+            "export",
+            "CFLAGS",
+            "PHP_CFLAGS",
+            "CPPFLAGS",
+            "PHP_CPPFLAGS",
+            "LDFLAGS",
+            "PHP_LDFLAGS"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:17:4",
+        "astCommand": [
+            "docker-php-source",
+            "extract"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:17:5",
+        "astCommand": [
+            "cd",
+            "/usr/src/php"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:17:6",
+        "astCommand": [
+            "dpkg-architecture",
+            "--query",
+            "DEB_BUILD_GNU_TYPE"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:17:7",
+        "astCommand": [
+            "./configure",
+            "--build=",
+            "gnuArch",
+            "--with-config-file-path=",
+            "PHP_INI_DIR",
+            "--with-config-file-scan-dir=",
+            "PHP_INI_DIR",
+            "/conf.d",
+            "--enable-option-checking=fatal",
+            "--with-mhash",
+            "--enable-ftp",
+            "--enable-mbstring",
+            "--enable-mysqlnd",
+            "--with-password-argon2",
+            "--with-sodium=shared",
+            "--with-curl",
+            "--with-libedit",
+            "--with-openssl",
+            "--with-zlib",
+            "test",
+            "gnuArch",
+            "=",
+            "s390x-linux-gnu",
+            "echo",
+            "--without-pcre-jit",
+            "PHP_EXTRA_CONFIGURE_ARGS"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:17:8",
+        "astCommand": [
+            "make",
+            "-j",
+            "nproc"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:17:9",
+        "astCommand": [
+            "find",
+            "-type",
+            "f",
+            "-name",
+            "*.a",
+            "-delete"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:17:10",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:17:11",
+        "astCommand": [
+            "find",
+            "/usr/local/bin",
+            "/usr/local/sbin",
+            "-type",
+            "f",
+            "-perm",
+            "+",
+            "0111",
+            "-exec",
+            "strip",
+            "--strip-all",
+            "{}",
+            "+"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:17:12",
+        "astCommand": [
+            "true"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:17:13",
+        "astCommand": [
+            "make",
+            "clean"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:17:14",
+        "astCommand": [
+            "cp",
+            "-v",
+            "php.ini-",
+            "*",
+            "PHP_INI_DIR",
+            "/"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:17:15",
+        "astCommand": [
+            "cd",
+            "/"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:17:16",
+        "astCommand": [
+            "docker-php-source",
+            "delete"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:17:17",
+        "astCommand": [
+            "scanelf",
+            "--needed",
+            "--nobanner",
+            "--format",
+            "%n#p",
+            "--recursive",
+            "/usr/local"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:17:18",
+        "astCommand": [
+            "tr",
+            ",",
+            "\\n"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:17:19",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:17:20",
+        "astCommand": [
+            "awk",
+            "system(\"[ -e /usr/local/lib/\" $1 \" ]\") == 0 { next } { print \"so:\" $1 }"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:17:21",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "runDeps"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:17:22",
+        "astCommand": [
+            "apk",
+            "del",
+            "--no-network",
+            ".build-deps"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:17:23",
+        "astCommand": [
+            "pecl",
+            "update-channels"
+        ]
+    },
+    {
+        "astCommandId": "c8f7e39cc87328ebd91d63dbc764ad7d73be3be9:17:24",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/tmp/pear",
+            "~/.pearrc"
+        ]
+    }
+]

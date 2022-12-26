@@ -1,0 +1,108 @@
+[
+    {
+        "astCommandId": "prestashop:2:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "prestashop:2:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "prestashop:2:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "libicu-dev",
+            "libpng-dev",
+            "libjpeg-dev",
+            "libmcrypt-dev",
+            "unzip"
+        ]
+    },
+    {
+        "astCommandId": "prestashop:2:4",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "prestashop:2:5",
+        "astCommand": [
+            "docker-php-ext-configure",
+            "intl"
+        ]
+    },
+    {
+        "astCommandId": "prestashop:2:6",
+        "astCommand": [
+            "docker-php-ext-configure",
+            "gd",
+            "--with-png-dir=/usr",
+            "--with-jpeg-dir=/usr"
+        ]
+    },
+    {
+        "astCommandId": "prestashop:8:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "prestashop:8:2",
+        "astCommand": [
+            "echo",
+            "short_open_tag=off"
+        ]
+    },
+    {
+        "astCommandId": "prestashop:8:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "PS_URL",
+            "-o",
+            "PS_FILE"
+        ]
+    },
+    {
+        "astCommandId": "prestashop:8:4",
+        "astCommand": [
+            "echo",
+            "PS_MD5",
+            "  ",
+            "PS_FILE"
+        ]
+    },
+    {
+        "astCommandId": "prestashop:8:5",
+        "astCommand": [
+            "md5sum",
+            "-c"
+        ]
+    },
+    {
+        "astCommandId": "prestashop:8:6",
+        "astCommand": [
+            "unzip",
+            "PS_FILE"
+        ]
+    },
+    {
+        "astCommandId": "prestashop:8:7",
+        "astCommand": [
+            "rm",
+            "PS_FILE"
+        ]
+    }
+]

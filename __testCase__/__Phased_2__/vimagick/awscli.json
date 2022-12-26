@@ -1,0 +1,58 @@
+[
+    {
+        "astCommandId": "awscli:1:1",
+        "astCommand": [
+            "apk",
+            "--no-cache",
+            "add",
+            "ca-certificates",
+            "groff",
+            "less",
+            "python3"
+        ]
+    },
+    {
+        "astCommandId": "awscli:1:2",
+        "astCommand": [
+            "pip3",
+            "install",
+            "awscli"
+        ]
+    },
+    {
+        "astCommandId": "awscli:1:3",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/root/.aws"
+        ]
+    },
+    {
+        "astCommandId": "awscli:1:4",
+        "astCommand": [
+            "echo",
+            "[default]"
+        ]
+    },
+    {
+        "astCommandId": "awscli:1:5",
+        "astCommand": [
+            "echo",
+            "output = json"
+        ]
+    },
+    {
+        "astCommandId": "awscli:1:6",
+        "astCommand": [
+            "echo",
+            "region = $AWS_DEFAULT_REGION"
+        ]
+    },
+    {
+        "astCommandId": "awscli:1:7",
+        "astCommand": [
+            "echo",
+            "aws_access_key_id = $AMAZON_ACCESS_KEY_ID"
+        ]
+    }
+]

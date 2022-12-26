@@ -1,0 +1,69 @@
+[
+    {
+        "astCommandId": "cura:1:1",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "cura:1:2",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "ca-certificates",
+            "libgfortran4",
+            "libssl-dev",
+            "wget",
+            "--no-install-recommends"
+        ]
+    },
+    {
+        "astCommandId": "cura:2:1",
+        "astCommand": [
+            "wget",
+            "https://gitlab.com/lulzbot3d/cura-le/cura-lulzbot/uploads/0676b39295476b93181fa8a512f34265/cura-lulzbot_3.2.21_amd64.deb",
+            "-O",
+            "/tmp/cura.deb"
+        ]
+    },
+    {
+        "astCommandId": "cura:2:2",
+        "astCommand": [
+            "apt",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "cura:2:3",
+        "astCommand": [
+            "dpkg",
+            "-i",
+            "/tmp/cura.deb"
+        ]
+    },
+    {
+        "astCommandId": "cura:2:4",
+        "astCommand": [
+            "true"
+        ]
+    },
+    {
+        "astCommandId": "cura:2:5",
+        "astCommand": [
+            "apt-get",
+            "-yf",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "cura:2:6",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    }
+]

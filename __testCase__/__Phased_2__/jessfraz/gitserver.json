@@ -1,0 +1,86 @@
+[
+    {
+        "astCommandId": "gitserver:2:1",
+        "astCommand": [
+            "apk",
+            "--no-cache",
+            "add",
+            "bash",
+            "git",
+            "openssh"
+        ]
+    },
+    {
+        "astCommandId": "gitserver:2:2",
+        "astCommand": [
+            "sed",
+            "-i",
+            "s/#PasswordAuthentication yes/PasswordAuthentication no/",
+            "/etc/ssh/sshd_config"
+        ]
+    },
+    {
+        "astCommandId": "gitserver:2:3",
+        "astCommand": [
+            "sed",
+            "-i",
+            "s/#PubkeyAuthentication yes/PubkeyAuthentication yes/",
+            "/etc/ssh/sshd_config"
+        ]
+    },
+    {
+        "astCommandId": "gitserver:2:4",
+        "astCommand": [
+            "echo",
+            "-e",
+            "AllowUsers git\\n"
+        ]
+    },
+    {
+        "astCommandId": "gitserver:2:5",
+        "astCommand": [
+            "echo",
+            "-e",
+            "Port 22\\n"
+        ]
+    },
+    {
+        "astCommandId": "gitserver:2:6",
+        "astCommand": [
+            "addgroup",
+            "git"
+        ]
+    },
+    {
+        "astCommandId": "gitserver:2:7",
+        "astCommand": [
+            "adduser",
+            "-D",
+            "-S",
+            "-s",
+            "/usr/bin/git-shell",
+            "-h",
+            "/home/git",
+            "-g",
+            "git",
+            "git"
+        ]
+    },
+    {
+        "astCommandId": "gitserver:2:8",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/home/git/.ssh"
+        ]
+    },
+    {
+        "astCommandId": "gitserver:2:9",
+        "astCommand": [
+            "chown",
+            "-R",
+            "git:git",
+            "/home/git"
+        ]
+    }
+]

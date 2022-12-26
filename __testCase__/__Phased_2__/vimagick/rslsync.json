@@ -1,0 +1,55 @@
+[
+    {
+        "astCommandId": "rslsync:1:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "rslsync:1:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "rslsync:1:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "ca-certificates",
+            "curl",
+            "zip"
+        ]
+    },
+    {
+        "astCommandId": "rslsync:1:4",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://download-cdn.getsync.com/stable/linux-x64/resilio-sync_x64.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "rslsync:1:5",
+        "astCommand": [
+            "tar",
+            "xz",
+            "-C",
+            "/usr/bin/",
+            "rslsync"
+        ]
+    },
+    {
+        "astCommandId": "rslsync:1:6",
+        "astCommand": [
+            "apt-get",
+            "purge",
+            "-y",
+            "--auto-remove",
+            "curl"
+        ]
+    }
+]

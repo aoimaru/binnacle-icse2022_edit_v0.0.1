@@ -1,0 +1,72 @@
+[
+    {
+        "astCommandId": "ot-recorder:1:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "ot-recorder:1:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "ot-recorder:1:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "curl",
+            "gnupg",
+            "libcurl3-gnutls"
+        ]
+    },
+    {
+        "astCommandId": "ot-recorder:1:4",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "http://repo.owntracks.org/repo.owntracks.org.gpg.key"
+        ]
+    },
+    {
+        "astCommandId": "ot-recorder:1:5",
+        "astCommand": [
+            "apt-key",
+            "add",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "ot-recorder:1:6",
+        "astCommand": [
+            "echo",
+            "deb http://repo.owntracks.org/debian bullseye main"
+        ]
+    },
+    {
+        "astCommandId": "ot-recorder:1:7",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "ot-recorder:1:8",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "ot-recorder"
+        ]
+    },
+    {
+        "astCommandId": "ot-recorder:1:9",
+        "astCommand": [
+            "true"
+        ]
+    }
+]

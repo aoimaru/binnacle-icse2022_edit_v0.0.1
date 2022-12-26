@@ -1,0 +1,295 @@
+[
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:1:1",
+        "astCommand": [
+            "groupadd",
+            "--system",
+            "--gid",
+            "11211",
+            "memcache"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:2:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:2:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:2:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "libsasl2-modules"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:2",
+        "astCommand": [
+            "apt-mark",
+            "showmanual"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:3",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:4",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "ca-certificates",
+            "dpkg-dev",
+            "gcc",
+            "libc6-dev",
+            "libevent-dev",
+            "libsasl2-dev",
+            "make",
+            "perl",
+            "wget"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:5",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:6",
+        "astCommand": [
+            "wget",
+            "-O",
+            "memcached.tar.gz",
+            "https://memcached.org/files/memcached-",
+            "MEMCACHED_VERSION",
+            ".tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:7",
+        "astCommand": [
+            "echo",
+            "MEMCACHED_SHA1",
+            "  memcached.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:8",
+        "astCommand": [
+            "sha1sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:9",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/memcached"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:10",
+        "astCommand": [
+            "tar",
+            "-xzf",
+            "memcached.tar.gz",
+            "-C",
+            "/usr/src/memcached",
+            "--strip-components=1"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:11",
+        "astCommand": [
+            "rm",
+            "memcached.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:12",
+        "astCommand": [
+            "cd",
+            "/usr/src/memcached"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:13",
+        "astCommand": [
+            "dpkg-architecture",
+            "--query",
+            "DEB_BUILD_GNU_TYPE"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:14",
+        "astCommand": [
+            "echo",
+            "--enable-extstore"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:15",
+        "astCommand": [
+            "./configure",
+            "--build=",
+            "gnuArch",
+            "--enable-sasl",
+            "--enable-sasl-pwdb",
+            "enableExtstore"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:16",
+        "astCommand": [
+            "make",
+            "-j",
+            "nproc"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:17",
+        "astCommand": [
+            "make",
+            "test"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:18",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:19",
+        "astCommand": [
+            "cd",
+            "/"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:20",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/usr/src/memcached"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:21",
+        "astCommand": [
+            "apt-mark",
+            "auto",
+            ".*"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:22",
+        "astCommand": [
+            "apt-mark",
+            "manual",
+            "savedAptMark"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:23",
+        "astCommand": [
+            "find",
+            "/usr/local",
+            "-type",
+            "f",
+            "-executable",
+            "-exec",
+            "ldd",
+            "{}",
+            ";"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:24",
+        "astCommand": [
+            "awk",
+            "/=>/ { print $(NF-1) }"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:25",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:26",
+        "astCommand": [
+            "xargs",
+            "-r",
+            "dpkg-query",
+            "--search"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:27",
+        "astCommand": [
+            "cut",
+            "-d:",
+            "-f1"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:28",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:29",
+        "astCommand": [
+            "xargs",
+            "-r",
+            "apt-mark",
+            "manual"
+        ]
+    },
+    {
+        "astCommandId": "3c3a790c2d100c1a02147c2917f018290135bf79:5:30",
+        "astCommand": [
+            "apt-get",
+            "purge",
+            "-y",
+            "--auto-remove",
+            "-o",
+            "APT::AutoRemove::RecommendsImportant=false"
+        ]
+    }
+]

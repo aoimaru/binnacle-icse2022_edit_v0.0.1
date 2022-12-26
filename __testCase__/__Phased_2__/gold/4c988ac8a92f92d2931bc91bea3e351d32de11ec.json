@@ -1,0 +1,75 @@
+[
+    {
+        "astCommandId": "4c988ac8a92f92d2931bc91bea3e351d32de11ec:1:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "4c988ac8a92f92d2931bc91bea3e351d32de11ec:1:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "4c988ac8a92f92d2931bc91bea3e351d32de11ec:1:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "--no-install-recommends",
+            "ca-certificates",
+            "wget",
+            "apt-transport-https",
+            "rpm",
+            "yum-utils"
+        ]
+    },
+    {
+        "astCommandId": "4c988ac8a92f92d2931bc91bea3e351d32de11ec:2:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "4c988ac8a92f92d2931bc91bea3e351d32de11ec:2:2",
+        "astCommand": [
+            "wget",
+            "-O",
+            "/tmp/apk-tools-static.apk",
+            "apkStaticUrl"
+        ]
+    },
+    {
+        "astCommandId": "4c988ac8a92f92d2931bc91bea3e351d32de11ec:2:3",
+        "astCommand": [
+            "tar",
+            "-xzvf",
+            "/tmp/apk-tools-static.apk",
+            "-C",
+            "/usr/local/",
+            "--wildcards",
+            "*bin/apk.static"
+        ]
+    },
+    {
+        "astCommandId": "4c988ac8a92f92d2931bc91bea3e351d32de11ec:2:4",
+        "astCommand": [
+            "mv",
+            "/usr/local/",
+            "*",
+            "bin/apk.static",
+            "/usr/local/bin/apk"
+        ]
+    },
+    {
+        "astCommandId": "4c988ac8a92f92d2931bc91bea3e351d32de11ec:2:5",
+        "astCommand": [
+            "rm",
+            "/tmp/apk-tools-static.apk"
+        ]
+    }
+]

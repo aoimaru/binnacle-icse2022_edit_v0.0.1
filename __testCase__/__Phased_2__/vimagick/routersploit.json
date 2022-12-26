@@ -1,0 +1,83 @@
+[
+    {
+        "astCommandId": "routersploit:2:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "routersploit:2:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "-U",
+            "bash",
+            "build-base",
+            "curl",
+            "libffi",
+            "libffi-dev",
+            "ncurses-dev",
+            "python",
+            "python-dev",
+            "readline-dev",
+            "tar"
+        ]
+    },
+    {
+        "astCommandId": "routersploit:2:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://bootstrap.pypa.io/get-pip.py"
+        ]
+    },
+    {
+        "astCommandId": "routersploit:2:4",
+        "astCommand": [
+            "python"
+        ]
+    },
+    {
+        "astCommandId": "routersploit:2:5",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://github.com/reverse-shell/routersploit/archive/master.tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "routersploit:2:6",
+        "astCommand": [
+            "tar",
+            "xz",
+            "--strip",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "routersploit:2:7",
+        "astCommand": [
+            "pip",
+            "install",
+            "--no-cache-dir",
+            "-r",
+            "requirements.txt"
+        ]
+    },
+    {
+        "astCommandId": "routersploit:2:8",
+        "astCommand": [
+            "apk",
+            "del",
+            "bash",
+            "build-base",
+            "curl",
+            "libffi-dev",
+            "ncurses-dev",
+            "python3-dev",
+            "readline-dev",
+            "tar"
+        ]
+    }
+]

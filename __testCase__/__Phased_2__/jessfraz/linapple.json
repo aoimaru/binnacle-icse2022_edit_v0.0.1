@@ -1,0 +1,83 @@
+[
+    {
+        "astCommandId": "linapple:2:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "linapple:2:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "build-base",
+            "bzip2",
+            "curl",
+            "curl-dev",
+            "libzip-dev",
+            "make",
+            "sdl-dev",
+            "tar"
+        ]
+    },
+    {
+        "astCommandId": "linapple:2:3",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://beotiger.com/download/linapple_src-2b",
+            "-o",
+            "/tmp/linapple.tar.bz2"
+        ]
+    },
+    {
+        "astCommandId": "linapple:2:4",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/linapple"
+        ]
+    },
+    {
+        "astCommandId": "linapple:2:5",
+        "astCommand": [
+            "tar",
+            "-xjf",
+            "/tmp/linapple.tar.bz2",
+            "-C",
+            "/usr/src/linapple",
+            "--strip-components=1"
+        ]
+    },
+    {
+        "astCommandId": "linapple:2:6",
+        "astCommand": [
+            "rm",
+            "/tmp/linapple.tar.bz2"
+        ]
+    },
+    {
+        "astCommandId": "linapple:2:7",
+        "astCommand": [
+            "cd",
+            "/usr/src/linapple/src"
+        ]
+    },
+    {
+        "astCommandId": "linapple:2:8",
+        "astCommand": [
+            "make"
+        ]
+    },
+    {
+        "astCommandId": "linapple:2:9",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    }
+]

@@ -1,0 +1,87 @@
+[
+    {
+        "astCommandId": "influxdb:6:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "influxdb:6:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "influxdb:6:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "ca-certificates",
+            "wget"
+        ]
+    },
+    {
+        "astCommandId": "influxdb:6:4",
+        "astCommand": [
+            "wget",
+            "INFLUXDB_URL",
+            "-O",
+            "INFLUXDB_FILE"
+        ]
+    },
+    {
+        "astCommandId": "influxdb:6:5",
+        "astCommand": [
+            "echo",
+            "INFLUXDB_MD5",
+            "  ",
+            "INFLUXDB_FILE"
+        ]
+    },
+    {
+        "astCommandId": "influxdb:6:6",
+        "astCommand": [
+            "md5sum",
+            "-c"
+        ]
+    },
+    {
+        "astCommandId": "influxdb:6:7",
+        "astCommand": [
+            "dpkg",
+            "-i",
+            "INFLUXDB_FILE"
+        ]
+    },
+    {
+        "astCommandId": "influxdb:6:8",
+        "astCommand": [
+            "sed",
+            "-i",
+            "/^reporting-disabled/s/false/true/",
+            "/etc/influxdb/influxdb.conf"
+        ]
+    },
+    {
+        "astCommandId": "influxdb:6:9",
+        "astCommand": [
+            "wget",
+            "COLLECTD_URL",
+            "-O",
+            "/usr/lib/influxdb/types.db"
+        ]
+    },
+    {
+        "astCommandId": "influxdb:6:10",
+        "astCommand": [
+            "apt-get",
+            "purge",
+            "--auto-remove",
+            "-y",
+            "wget"
+        ]
+    }
+]

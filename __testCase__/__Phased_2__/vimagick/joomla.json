@@ -1,0 +1,97 @@
+[
+    {
+        "astCommandId": "joomla:1:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "joomla:1:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "joomla:1:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "curl",
+            "unzip",
+            "bzip2",
+            "libpq-dev",
+            "libpng12-dev",
+            "libjpeg-dev"
+        ]
+    },
+    {
+        "astCommandId": "joomla:1:4",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/var/lib/apt/lists/",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "joomla:1:5",
+        "astCommand": [
+            "docker-php-ext-configure",
+            "gd",
+            "--with-png-dir=/usr",
+            "--with-jpeg-dir=/usr"
+        ]
+    },
+    {
+        "astCommandId": "joomla:6:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "joomla:6:2",
+        "astCommand": [
+            "curl",
+            "-fSL",
+            "JOOMLA_URL",
+            "-o",
+            "JOOMLA_FILE"
+        ]
+    },
+    {
+        "astCommandId": "joomla:6:3",
+        "astCommand": [
+            "echo",
+            "JOOMLA_MD5",
+            "  ",
+            "JOOMLA_FILE"
+        ]
+    },
+    {
+        "astCommandId": "joomla:6:4",
+        "astCommand": [
+            "md5sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "joomla:6:5",
+        "astCommand": [
+            "tar",
+            "-xzf",
+            "JOOMLA_FILE"
+        ]
+    },
+    {
+        "astCommandId": "joomla:6:6",
+        "astCommand": [
+            "rm",
+            "JOOMLA_FILE"
+        ]
+    }
+]

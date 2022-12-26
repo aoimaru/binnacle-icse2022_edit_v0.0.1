@@ -1,0 +1,139 @@
+[
+    {
+        "astCommandId": "mc:3:1",
+        "astCommand": [
+            "addgroup",
+            "-g",
+            "1001",
+            "-S",
+            "mc"
+        ]
+    },
+    {
+        "astCommandId": "mc:3:2",
+        "astCommand": [
+            "adduser",
+            "-u",
+            "1001",
+            "-SHG",
+            "mc",
+            "mc"
+        ]
+    },
+    {
+        "astCommandId": "mc:5:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "mc:5:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "aspell-dev",
+            "autoconf",
+            "automake",
+            "build-base",
+            "ca-certificates",
+            "curl",
+            "e2fsprogs-dev",
+            "gettext-dev",
+            "git",
+            "glib-dev",
+            "libssh2-dev",
+            "libtool",
+            "ncurses-dev",
+            "pcre-dev"
+        ]
+    },
+    {
+        "astCommandId": "mc:5:3",
+        "astCommand": [
+            "git",
+            "clone",
+            "--depth",
+            "1",
+            "--branch",
+            "MC_VERSION",
+            "https://github.com/MidnightCommander/mc.git",
+            "/usr/src/mc"
+        ]
+    },
+    {
+        "astCommandId": "mc:5:4",
+        "astCommand": [
+            "cd",
+            "/usr/src/mc"
+        ]
+    },
+    {
+        "astCommandId": "mc:5:5",
+        "astCommand": [
+            "./autogen.sh"
+        ]
+    },
+    {
+        "astCommandId": "mc:5:6",
+        "astCommand": [
+            "./configure",
+            "--prefix=/usr",
+            "--libexecdir=/usr/lib",
+            "--mandir=/usr/share/man",
+            "--sysconfdir=/etc",
+            "--enable-background",
+            "--enable-charset",
+            "--enable-largefile",
+            "--enable-vfs-sftp",
+            "--with-internal-edit",
+            "--with-mmap",
+            "--with-screen=ncurses",
+            "--with-subshell",
+            "--without-gpm-mouse",
+            "--without-included-gettext",
+            "--without-x",
+            "--enable-aspell"
+        ]
+    },
+    {
+        "astCommandId": "mc:5:7",
+        "astCommand": [
+            "make"
+        ]
+    },
+    {
+        "astCommandId": "mc:5:8",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "mc:5:9",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "https://raw.githubusercontent.com/nkulikov/mc-solarized-skin/master/solarized.ini"
+        ]
+    },
+    {
+        "astCommandId": "mc:5:10",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/usr/src/mc"
+        ]
+    },
+    {
+        "astCommandId": "mc:5:11",
+        "astCommand": [
+            "apk",
+            "del",
+            ".build-deps"
+        ]
+    }
+]

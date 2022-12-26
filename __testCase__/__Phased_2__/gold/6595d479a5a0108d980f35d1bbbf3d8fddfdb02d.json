@@ -1,0 +1,740 @@
+[
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "autoconf",
+            "ca-certificates",
+            "dpkg-dev",
+            "dpkg",
+            "gcc",
+            "gnupg",
+            "libc-dev",
+            "linux-headers",
+            "make",
+            "ncurses-dev"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:3",
+        "astCommand": [
+            "mkdir",
+            "/usr/local/src"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:4",
+        "astCommand": [
+            "wget",
+            "--output-document",
+            "OPENSSL_PATH",
+            ".tar.gz.asc",
+            "OPENSSL_SOURCE_URL",
+            ".asc"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:5",
+        "astCommand": [
+            "wget",
+            "--output-document",
+            "OPENSSL_PATH",
+            ".tar.gz",
+            "OPENSSL_SOURCE_URL"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:6",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:7",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--keyserver",
+            "PGP_KEYSERVER",
+            "--recv-keys",
+            "key"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:8",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--verify",
+            "OPENSSL_PATH",
+            ".tar.gz.asc",
+            "OPENSSL_PATH",
+            ".tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:9",
+        "astCommand": [
+            "gpgconf",
+            "--kill",
+            "all"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:10",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "GNUPGHOME"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:11",
+        "astCommand": [
+            "echo",
+            "OPENSSL_SOURCE_SHA256",
+            " *",
+            "OPENSSL_PATH",
+            ".tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:12",
+        "astCommand": [
+            "sha256sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:13",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "OPENSSL_PATH"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:14",
+        "astCommand": [
+            "tar",
+            "--extract",
+            "--file",
+            "OPENSSL_PATH",
+            ".tar.gz",
+            "--directory",
+            "OPENSSL_PATH",
+            "--strip-components",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:15",
+        "astCommand": [
+            "cd",
+            "OPENSSL_PATH"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:16",
+        "astCommand": [
+            "MACHINE",
+            "dpkg-architecture",
+            "--query",
+            "DEB_BUILD_GNU_CPU",
+            "RELEASE",
+            "4.x.y-z",
+            "SYSTEM",
+            "Linux",
+            "BUILD",
+            "???",
+            "./config",
+            "--openssldir=",
+            "OPENSSL_CONFIG_DIR"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:17",
+        "astCommand": [
+            "make",
+            "-j",
+            "getconf",
+            "_NPROCESSORS_ONLN"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:18",
+        "astCommand": [
+            "make",
+            "install_sw",
+            "install_ssldirs"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:19",
+        "astCommand": [
+            "cd",
+            ".."
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:20",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "OPENSSL_PATH",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:21",
+        "astCommand": [
+            "rmdir",
+            "OPENSSL_CONFIG_DIR",
+            "/certs",
+            "OPENSSL_CONFIG_DIR",
+            "/private"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:22",
+        "astCommand": [
+            "ln",
+            "-sf",
+            "/etc/ssl/certs",
+            "/etc/ssl/private",
+            "OPENSSL_CONFIG_DIR"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:23",
+        "astCommand": [
+            "openssl",
+            "version"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:24",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "OTP_PATH"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:25",
+        "astCommand": [
+            "wget",
+            "--output-document",
+            "OTP_PATH",
+            ".tar.gz",
+            "OTP_SOURCE_URL"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:26",
+        "astCommand": [
+            "echo",
+            "OTP_SOURCE_SHA256",
+            " *",
+            "OTP_PATH",
+            ".tar.gz"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:27",
+        "astCommand": [
+            "sha256sum",
+            "-c",
+            "-"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:28",
+        "astCommand": [
+            "tar",
+            "--extract",
+            "--file",
+            "OTP_PATH",
+            ".tar.gz",
+            "--directory",
+            "OTP_PATH",
+            "--strip-components",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:29",
+        "astCommand": [
+            "cd",
+            "OTP_PATH"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:30",
+        "astCommand": [
+            "export",
+            "ERL_TOP",
+            "OTP_PATH"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:31",
+        "astCommand": [
+            "./otp_build",
+            "autoconf"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:32",
+        "astCommand": [
+            "dpkg-buildflags",
+            "--get",
+            "CFLAGS"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:33",
+        "astCommand": [
+            "export",
+            "CFLAGS"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:34",
+        "astCommand": [
+            "dpkg-architecture",
+            "--query",
+            "DEB_HOST_GNU_TYPE"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:35",
+        "astCommand": [
+            "dpkg-architecture",
+            "--query",
+            "DEB_BUILD_GNU_TYPE"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:36",
+        "astCommand": [
+            "dpkg",
+            "--print-architecture"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:37",
+        "astCommand": [
+            "./configure",
+            "--host=",
+            "hostArch",
+            "--build=",
+            "buildArch",
+            "--disable-dynamic-ssl-lib",
+            "--disable-hipe",
+            "--disable-sctp",
+            "--disable-silent-rules",
+            "--enable-clock-gettime",
+            "--enable-hybrid-heap",
+            "--enable-kernel-poll",
+            "--enable-shared-zlib",
+            "--enable-smp-support",
+            "--enable-threads",
+            "--with-microstate-accounting=extra",
+            "--without-common_test",
+            "--without-debugger",
+            "--without-dialyzer",
+            "--without-diameter",
+            "--without-edoc",
+            "--without-erl_docgen",
+            "--without-erl_interface",
+            "--without-et",
+            "--without-eunit",
+            "--without-ftp",
+            "--without-hipe",
+            "--without-jinterface",
+            "--without-megaco",
+            "--without-observer",
+            "--without-odbc",
+            "--without-reltool",
+            "--without-ssh",
+            "--without-tftp",
+            "--without-wx"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:38",
+        "astCommand": [
+            "make",
+            "-j",
+            "getconf",
+            "_NPROCESSORS_ONLN",
+            "GEN_OPT_FLGS=",
+            "-O2 -fno-strict-aliasing"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:39",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:40",
+        "astCommand": [
+            "cd",
+            ".."
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:41",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "OTP_PATH",
+            "*",
+            "/usr/local/lib/erlang/lib/",
+            "*",
+            "/examples",
+            "/usr/local/lib/erlang/lib/",
+            "*",
+            "/src"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:42",
+        "astCommand": [
+            "scanelf",
+            "--needed",
+            "--nobanner",
+            "--format",
+            "%n#p",
+            "--recursive",
+            "/usr/local"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:43",
+        "astCommand": [
+            "tr",
+            ",",
+            "\\n"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:44",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:45",
+        "astCommand": [
+            "awk",
+            "system(\"[ -e /usr/local/lib/\" $1 \" ]\") == 0 { next } { print \"so:\" $1 }"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:46",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".otp-run-deps",
+            "runDeps"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:47",
+        "astCommand": [
+            "apk",
+            "del",
+            "--no-network",
+            ".build-deps"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:8:48",
+        "astCommand": [
+            "openssl",
+            "version"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:10:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:10:2",
+        "astCommand": [
+            "addgroup",
+            "-g",
+            "101",
+            "-S",
+            "rabbitmq"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:10:3",
+        "astCommand": [
+            "adduser",
+            "-u",
+            "100",
+            "-S",
+            "-h",
+            "RABBITMQ_DATA_DIR",
+            "-G",
+            "rabbitmq",
+            "rabbitmq"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:10:4",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "RABBITMQ_DATA_DIR",
+            "/etc/rabbitmq",
+            "/tmp/rabbitmq-ssl",
+            "/var/log/rabbitmq"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:10:5",
+        "astCommand": [
+            "chown",
+            "-fR",
+            "rabbitmq:rabbitmq",
+            "RABBITMQ_DATA_DIR",
+            "/etc/rabbitmq",
+            "/tmp/rabbitmq-ssl",
+            "/var/log/rabbitmq"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:10:6",
+        "astCommand": [
+            "chmod",
+            "777",
+            "RABBITMQ_DATA_DIR",
+            "/etc/rabbitmq",
+            "/tmp/rabbitmq-ssl",
+            "/var/log/rabbitmq"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:17:1",
+        "astCommand": [
+            "set",
+            "-eux"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:17:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "ca-certificates",
+            "gnupg",
+            "xz"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:17:3",
+        "astCommand": [
+            "wget",
+            "--output-document",
+            "RABBITMQ_PATH",
+            ".tar.xz.asc",
+            "RABBITMQ_SOURCE_URL",
+            ".asc"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:17:4",
+        "astCommand": [
+            "wget",
+            "--output-document",
+            "RABBITMQ_PATH",
+            ".tar.xz",
+            "RABBITMQ_SOURCE_URL"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:17:5",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:17:6",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--keyserver",
+            "PGP_KEYSERVER",
+            "--recv-keys",
+            "RABBITMQ_PGP_KEY_ID"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:17:7",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--verify",
+            "RABBITMQ_PATH",
+            ".tar.xz.asc",
+            "RABBITMQ_PATH",
+            ".tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:17:8",
+        "astCommand": [
+            "gpgconf",
+            "--kill",
+            "all"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:17:9",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "GNUPGHOME"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:17:10",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "RABBITMQ_HOME"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:17:11",
+        "astCommand": [
+            "tar",
+            "--extract",
+            "--file",
+            "RABBITMQ_PATH",
+            ".tar.xz",
+            "--directory",
+            "RABBITMQ_HOME",
+            "--strip-components",
+            "1"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:17:12",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "RABBITMQ_PATH",
+            "*"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:17:13",
+        "astCommand": [
+            "grep",
+            "-qE",
+            "^SYS_PREFIX=\\$\\{RABBITMQ_HOME\\}$",
+            "RABBITMQ_HOME",
+            "/sbin/rabbitmq-defaults"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:17:14",
+        "astCommand": [
+            "sed",
+            "-i",
+            "s/^SYS_PREFIX=.*$/SYS_PREFIX=/",
+            "RABBITMQ_HOME",
+            "/sbin/rabbitmq-defaults"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:17:15",
+        "astCommand": [
+            "grep",
+            "-qE",
+            "^SYS_PREFIX=$",
+            "RABBITMQ_HOME",
+            "/sbin/rabbitmq-defaults"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:17:16",
+        "astCommand": [
+            "chown",
+            "-R",
+            "rabbitmq:rabbitmq",
+            "RABBITMQ_HOME"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:17:17",
+        "astCommand": [
+            "apk",
+            "del",
+            ".build-deps"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:17:18",
+        "astCommand": [
+            "su-exec",
+            "rabbitmq",
+            "rabbitmqctl",
+            "help"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:17:19",
+        "astCommand": [
+            "su-exec",
+            "rabbitmq",
+            "rabbitmqctl",
+            "list_ciphers"
+        ]
+    },
+    {
+        "astCommandId": "6595d479a5a0108d980f35d1bbbf3d8fddfdb02d:17:20",
+        "astCommand": [
+            "su-exec",
+            "rabbitmq",
+            "rabbitmq-plugins",
+            "list"
+        ]
+    }
+]

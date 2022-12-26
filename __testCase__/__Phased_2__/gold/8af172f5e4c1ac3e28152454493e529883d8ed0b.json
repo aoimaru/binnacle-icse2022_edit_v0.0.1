@@ -1,0 +1,407 @@
+[
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".fetch-deps",
+            "gnupg",
+            "tar",
+            "xz"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:3",
+        "astCommand": [
+            "wget",
+            "-O",
+            "python.tar.xz",
+            "https://www.python.org/ftp/python/",
+            "PYTHON_VERSION%%[a-z]*",
+            "/Python-",
+            "PYTHON_VERSION",
+            ".tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:4",
+        "astCommand": [
+            "wget",
+            "-O",
+            "python.tar.xz.asc",
+            "https://www.python.org/ftp/python/",
+            "PYTHON_VERSION%%[a-z]*",
+            "/Python-",
+            "PYTHON_VERSION",
+            ".tar.xz.asc"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:5",
+        "astCommand": [
+            "export",
+            "GNUPGHOME",
+            "mktemp",
+            "-d"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:6",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--keyserver",
+            "ha.pool.sks-keyservers.net",
+            "--recv-keys",
+            "GPG_KEY"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:7",
+        "astCommand": [
+            "gpg",
+            "--batch",
+            "--verify",
+            "python.tar.xz.asc",
+            "python.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:8",
+        "astCommand": [
+            "command",
+            "-v",
+            "gpgconf"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:9",
+        "astCommand": [
+            "gpgconf",
+            "--kill",
+            "all"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:10",
+        "astCommand": [
+            ":"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:11",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "GNUPGHOME",
+            "python.tar.xz.asc"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:12",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "/usr/src/python"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:13",
+        "astCommand": [
+            "tar",
+            "-xJC",
+            "/usr/src/python",
+            "--strip-components=1",
+            "-f",
+            "python.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:14",
+        "astCommand": [
+            "rm",
+            "python.tar.xz"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:15",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "bzip2-dev",
+            "coreutils",
+            "dpkg-dev",
+            "dpkg",
+            "expat-dev",
+            "findutils",
+            "gcc",
+            "gdbm-dev",
+            "libc-dev",
+            "libffi-dev",
+            "libnsl-dev",
+            "libtirpc-dev",
+            "linux-headers",
+            "make",
+            "ncurses-dev",
+            "openssl-dev",
+            "pax-utils",
+            "readline-dev",
+            "sqlite-dev",
+            "tcl-dev",
+            "tk",
+            "tk-dev",
+            "zlib-dev"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:16",
+        "astCommand": [
+            "apk",
+            "del",
+            ".fetch-deps"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:17",
+        "astCommand": [
+            "cd",
+            "/usr/src/python"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:18",
+        "astCommand": [
+            "dpkg-architecture",
+            "--query",
+            "DEB_BUILD_GNU_TYPE"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:19",
+        "astCommand": [
+            "./configure",
+            "--build=",
+            "gnuArch",
+            "--enable-shared",
+            "--enable-unicode=ucs4",
+            "--with-system-expat",
+            "--with-system-ffi"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:20",
+        "astCommand": [
+            "make",
+            "-j",
+            "nproc",
+            "EXTRA_CFLAGS=",
+            "-DTHREAD_STACK_SIZE=0x100000"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:21",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:22",
+        "astCommand": [
+            "find",
+            "/usr/local",
+            "-type",
+            "f",
+            "-executable",
+            "-not",
+            "(",
+            "-name",
+            "*tkinter*",
+            ")",
+            "-exec",
+            "scanelf",
+            "--needed",
+            "--nobanner",
+            "--format",
+            "%n#p",
+            "{}",
+            ";"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:23",
+        "astCommand": [
+            "tr",
+            ",",
+            "\\n"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:24",
+        "astCommand": [
+            "sort",
+            "-u"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:25",
+        "astCommand": [
+            "awk",
+            "system(\"[ -e /usr/local/lib/\" $1 \" ]\") == 0 { next } { print \"so:\" $1 }"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:26",
+        "astCommand": [
+            "xargs",
+            "-rt",
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".python-rundeps"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:27",
+        "astCommand": [
+            "apk",
+            "del",
+            ".build-deps"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:28",
+        "astCommand": [
+            "find",
+            "/usr/local",
+            "-depth",
+            "(",
+            "(",
+            "-type",
+            "d",
+            "-a",
+            "(",
+            "-name",
+            "test",
+            "-o",
+            "-name",
+            "tests",
+            ")",
+            ")",
+            "-o",
+            "(",
+            "-type",
+            "f",
+            "-a",
+            "(",
+            "-name",
+            "*.pyc",
+            "-o",
+            "-name",
+            "*.pyo",
+            ")",
+            ")",
+            ")",
+            "-exec",
+            "rm",
+            "-rf",
+            "{}",
+            "+"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:7:29",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/usr/src/python"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:9:1",
+        "astCommand": [
+            "set",
+            "-ex"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:9:2",
+        "astCommand": [
+            "wget",
+            "-O",
+            "get-pip.py",
+            "https://bootstrap.pypa.io/get-pip.py"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:9:3",
+        "astCommand": [
+            "python",
+            "get-pip.py",
+            "--disable-pip-version-check",
+            "--no-cache-dir",
+            "pip==",
+            "PYTHON_PIP_VERSION"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:9:4",
+        "astCommand": [
+            "pip",
+            "--version"
+        ]
+    },
+    {
+        "astCommandId": "8af172f5e4c1ac3e28152454493e529883d8ed0b:9:5",
+        "astCommand": [
+            "find",
+            "/usr/local",
+            "-depth",
+            "(",
+            "(",
+            "-type",
+            "d",
+            "-a",
+            "(",
+            "-name",
+            "test",
+            "-o",
+            "-name",
+            "tests",
+            ")",
+            ")",
+            "-o",
+            "(",
+            "-type",
+            "f",
+            "-a",
+            "(",
+            "-name",
+            "*.pyc",
+            "-o",
+            "-name",
+            "*.pyo",
+            ")",
+            ")",
+            ")",
+            "-exec",
+            "rm",
+            "-rf",
+            "{}",
+            "+"
+        ]
+    }
+]

@@ -1,0 +1,107 @@
+[
+    {
+        "astCommandId": "casperjs:7:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "casperjs:7:2",
+        "astCommand": [
+            "apt-get",
+            "update"
+        ]
+    },
+    {
+        "astCommandId": "casperjs:7:3",
+        "astCommand": [
+            "apt-get",
+            "install",
+            "-y",
+            "bzip2",
+            "curl",
+            "libfontconfig",
+            "libicu52",
+            "libsqlite3-0",
+            "python"
+        ]
+    },
+    {
+        "astCommandId": "casperjs:7:4",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "PHANTOM_URL"
+        ]
+    },
+    {
+        "astCommandId": "casperjs:7:5",
+        "astCommand": [
+            "tar",
+            "xj",
+            "-C",
+            "PHANTOM_DIR",
+            "--strip",
+            "2",
+            "--wildcards",
+            "*/bin/phantomjs"
+        ]
+    },
+    {
+        "astCommandId": "casperjs:7:6",
+        "astCommand": [
+            "chmod",
+            "+",
+            "x",
+            "/usr/local/bin/phantomjs"
+        ]
+    },
+    {
+        "astCommandId": "casperjs:7:7",
+        "astCommand": [
+            "mkdir",
+            "-p",
+            "CASPER_DIR"
+        ]
+    },
+    {
+        "astCommandId": "casperjs:7:8",
+        "astCommand": [
+            "curl",
+            "-sSL",
+            "CASPER_URL"
+        ]
+    },
+    {
+        "astCommandId": "casperjs:7:9",
+        "astCommand": [
+            "tar",
+            "xz",
+            "--strip",
+            "1",
+            "-C",
+            "CASPER_DIR"
+        ]
+    },
+    {
+        "astCommandId": "casperjs:7:10",
+        "astCommand": [
+            "ln",
+            "-sf",
+            "CASPER_DIR",
+            "/bin/casperjs",
+            "/usr/local/bin/"
+        ]
+    },
+    {
+        "astCommandId": "casperjs:7:11",
+        "astCommand": [
+            "apt-get",
+            "remove",
+            "-y",
+            "bzip2",
+            "curl"
+        ]
+    }
+]

@@ -1,0 +1,73 @@
+[
+    {
+        "astCommandId": "lpass:2:1",
+        "astCommand": [
+            "set",
+            "-x"
+        ]
+    },
+    {
+        "astCommandId": "lpass:2:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "--virtual",
+            ".build-deps",
+            "autoconf",
+            "automake",
+            "build-base",
+            "cmake",
+            "curl-dev",
+            "git",
+            "libressl-dev",
+            "libxml2-dev"
+        ]
+    },
+    {
+        "astCommandId": "lpass:2:3",
+        "astCommand": [
+            "git",
+            "clone",
+            "--depth",
+            "1",
+            "https://github.com/LastPass/lastpass-cli.git",
+            "/usr/src/lastpass-cli"
+        ]
+    },
+    {
+        "astCommandId": "lpass:2:4",
+        "astCommand": [
+            "cd",
+            "/usr/src/lastpass-cli"
+        ]
+    },
+    {
+        "astCommandId": "lpass:2:5",
+        "astCommand": [
+            "cmake",
+            "."
+        ]
+    },
+    {
+        "astCommandId": "lpass:2:6",
+        "astCommand": [
+            "make"
+        ]
+    },
+    {
+        "astCommandId": "lpass:2:7",
+        "astCommand": [
+            "make",
+            "install"
+        ]
+    },
+    {
+        "astCommandId": "lpass:2:8",
+        "astCommand": [
+            "rm",
+            "-rf",
+            "/usr/src/lastpass-cli"
+        ]
+    }
+]

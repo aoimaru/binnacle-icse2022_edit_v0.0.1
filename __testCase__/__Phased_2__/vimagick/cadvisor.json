@@ -1,0 +1,63 @@
+[
+    {
+        "astCommandId": "cadvisor:2:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "cadvisor:2:2",
+        "astCommand": [
+            "apk",
+            "add",
+            "--no-cache",
+            "ca-certificates",
+            "openssl",
+            "device-mapper",
+            "zfs"
+        ]
+    },
+    {
+        "astCommandId": "cadvisor:2:3",
+        "astCommand": [
+            "wget",
+            "https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.23-r3/glibc-2.23-r3.apk"
+        ]
+    },
+    {
+        "astCommandId": "cadvisor:2:4",
+        "astCommand": [
+            "wget",
+            "https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.23-r3/glibc-bin-2.23-r3.apk"
+        ]
+    },
+    {
+        "astCommandId": "cadvisor:2:5",
+        "astCommand": [
+            "apk",
+            "add",
+            "--allow-untrusted",
+            "glibc-2.23-r3.apk",
+            "glibc-bin-2.23-r3.apk"
+        ]
+    },
+    {
+        "astCommandId": "cadvisor:3:1",
+        "astCommand": [
+            "set",
+            "-xe"
+        ]
+    },
+    {
+        "astCommandId": "cadvisor:3:2",
+        "astCommand": [
+            "wget",
+            "https://github.com/google/cadvisor/releases/download/v",
+            "CADVISOR_VERSION",
+            "/cadvisor",
+            "-O",
+            "/usr/bin/cadvisor"
+        ]
+    }
+]
