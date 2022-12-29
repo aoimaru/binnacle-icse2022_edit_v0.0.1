@@ -3,6 +3,8 @@ import os
 import numpy as np
 import random
 
+import pprint
+
 RUN_CLEANING_WORDS = [
     "DOCKER-RUN",
     "BASH-SCRIPT",
@@ -76,6 +78,44 @@ class AstCleaner(AstContent):
                 return me
 
         return _execute(content)
+    
+    @staticmethod
+    def _delete_reserved_structure_(content):
+        RESERVED = [
+            '"children"',
+            '"type"',
+            '"value"'
+        ]
+        for reserved in RESERVED:
+            content = content.replace(reserved, "")
+        
+        return content
+    
+    @staticmethod
+    def _sort_by_asc_for_phased3_(content):
+        def _execute(me):
+            if me["children"]:
+                children = list()
+                for child in me["children"]:
+                    children.append(_execute(child))
+                children = sorted(children, key=lambda x:x["type"])
+                return {
+                    "type": me["type"],
+                    "children": children
+                }
+            else:
+                if "value" in me:
+                    return {
+                        "type": me["value"],
+                        "children": []
+                    }
+                else:
+                    return me
+
+        return _execute(content)
+
+
+
 
 class ASTSeed(AstContent):
     @staticmethod

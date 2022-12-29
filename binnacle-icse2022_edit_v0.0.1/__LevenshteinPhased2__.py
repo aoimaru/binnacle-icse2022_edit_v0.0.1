@@ -17,6 +17,10 @@ import random
 
 from zss import simple_distance
 
+PHASED2_JESSFRAZ_PATH = "/Users/nakamurahekikai/Desktop/binnacle-icse2022_edit_v0.0.1/__testCase__/__Phased_2__/jessfraz"
+PHASED2_VIMAGICK_PATH = "/Users/nakamurahekikai/Desktop/binnacle-icse2022_edit_v0.0.1/__testCase__/__Phased_2__/vimagick"
+PHASED2_GOLD_PATH = "/Users/nakamurahekikai/Desktop/binnacle-icse2022_edit_v0.0.1/__testCase__/__Phased_2__/gold"
+
 PHASED3_JESSFRAZ_PATH = "/Users/nakamurahekikai/Desktop/binnacle-icse2022_edit_v0.0.1/__testCase__/__Phased_3__/jessfraz"
 PHASED3_VIMAGICK_PATH = "/Users/nakamurahekikai/Desktop/binnacle-icse2022_edit_v0.0.1/__testCase__/__Phased_3__/vimagick"
 PHASED3_GOLD_PATH = "/Users/nakamurahekikai/Desktop/binnacle-icse2022_edit_v0.0.1/__testCase__/__Phased_3__/gold"
@@ -51,7 +55,7 @@ def __Levenshtein__(X, Y):
     for i in range(1, m + 1):
         for j in range(1, n + 1):
             nc = ncd(X[i-1], Y[j-1])
-            if nc <= 0.3:
+            if nc <= 0.5:
                 cost = 0
                 where.append(str(j))
             else:
@@ -98,7 +102,7 @@ def __Demerau_Levenshtein__(X, Y):
 
 
 def main():
-    file_paths = JsonFile._get_file_paths(PHASED3_VIMAGICK_PATH)
+    file_paths = JsonFile._get_file_paths(PHASED2_VIMAGICK_PATH)
 
     dumped_ast_commands = list()
     dumped_ast_commands_per_run_instruction_dictionaly = dict()
@@ -107,8 +111,7 @@ def main():
         contents = JsonFile._get_contents(file_path)
         for content in contents:
             run_instruction_id = ":".join(content["astCommandId"].split(":")[:-1])
-            dumped = json.dumps(content["astCommand"])
-            dumped_ast_commands.append(dumped)
+            dumped = " ".join(content["astCommand"])
             if not run_instruction_id in dumped_ast_commands_per_run_instruction_dictionaly:
                 dumped_ast_commands_per_run_instruction_dictionaly[run_instruction_id] = list()
             dumped_ast_commands_per_run_instruction_dictionaly[run_instruction_id].append(dumped)
@@ -123,16 +126,13 @@ def main():
     # test_case = "privoxy:1"
     # test_case = "mediagoblin:1"
     test_case = "kafka-manager:6"
-    test_obj = {
-        "type": "ROOT",
-        "children": []
-    }
+    
     test_ncd = list()
     
     for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case][:-3]:
-        astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
-        test_obj["children"].append(astCommand)
-        test_ncd.append(json.dumps(astCommand))
+        # astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
+        # test_obj["children"].append(astCommand)
+        test_ncd.append(dumped_ast_command)
         # test_ncd.append(AstCleaner._delete_reserved_structure_(json.dumps(astCommand)))
 
     # test_ncd.pop(-1)
@@ -141,7 +141,7 @@ def main():
         print(tn[:100])
     
 
-    file_paths = JsonFile._get_file_paths(PHASED3_JESSFRAZ_PATH)
+    file_paths = JsonFile._get_file_paths(PHASED2_JESSFRAZ_PATH)
 
     dumped_ast_commands = list()
     dumped_ast_commands_per_run_instruction_dictionaly = dict()
@@ -150,8 +150,7 @@ def main():
         contents = JsonFile._get_contents(file_path)
         for content in contents:
             run_instruction_id = ":".join(content["astCommandId"].split(":")[:-1])
-            dumped = json.dumps(content["astCommand"])
-            dumped_ast_commands.append(dumped)
+            dumped = " ".join(content["astCommand"])
             if not run_instruction_id in dumped_ast_commands_per_run_instruction_dictionaly:
                 dumped_ast_commands_per_run_instruction_dictionaly[run_instruction_id] = list()
             dumped_ast_commands_per_run_instruction_dictionaly[run_instruction_id].append(dumped)
@@ -161,17 +160,17 @@ def main():
     for dumped_id, dumped_ast_commands in tqdm.tqdm(dumped_ast_commands_per_run_instruction_dictionaly.items()):
         # if dumped_id==test_case:
         #     continue
-        sample_obj = {
-            "type": "ROOT",
-            "children": []
-        }
+        # sample_obj = {
+        #     "type": "ROOT",
+        #     "children": []
+        # }
 
         sample_ncd = list()
 
         for dumped_ast_command in dumped_ast_commands:
-            astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
-            sample_obj["children"].append(astCommand)
-            sample_ncd.append(json.dumps(astCommand))
+            # astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
+            # sample_obj["children"].append(astCommand)
+            sample_ncd.append(dumped_ast_command)
             # sample_ncd.append(AstCleaner._delete_reserved_structure_(json.dumps(astCommand)))
 
         ncd, where = __Levenshtein__(test_ncd, sample_ncd)
@@ -179,32 +178,22 @@ def main():
         edit_distances.append(
             {
                 "dumpedId": dumped_id,
-                "astCommands": sample_obj,
+                # "astCommands": sample_obj,
                 "ncd_distance": ncd,
-                "where": where,
-                "simple_distance": simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
+                "where": where
+                # "simple_distance": simple_distance(PQ_GramWrapper._zhang(test_obj), PQ_GramWrapper._zhang(sample_obj))/max(len(test_obj["children"]), len(sample_obj["children"]))*1.00
             }
         )
     edit_distances = sorted(edit_distances, key=lambda x:x["ncd_distance"])
 
 
-    output_distances = dict()
-    for edit_distance in edit_distances:
-        if not edit_distance["ncd_distance"] in output_distances:
-            output_distances[edit_distance["ncd_distance"]] = list()
-        output_distances[edit_distance["ncd_distance"]].append(edit_distance)
-    
-    output_distances = sorted(output_distances.items(), key=lambda x:x[0])
     count = 0
-    for output_distance in output_distances:
-        edit_distances = sorted(output_distance[1], key=lambda x:x["simple_distance"])
-        # edit_distances = sorted(output_distance[1], key=lambda x:len(x["where"]), reverse=True)
-        for edit_distance in edit_distances:
-            if count >= 15:
-                break
-            # pprint.pprint(edit_distance["astCommands"])
-            print(edit_distance["dumpedId"].ljust(20), edit_distance["ncd_distance"], edit_distance["simple_distance"])
-            count += 1
+    for edit_distance in edit_distances:
+        if count >= 15:
+            break
+        # pprint.pprint(edit_distance["astCommands"])
+        print(edit_distance["dumpedId"].ljust(20), edit_distance["ncd_distance"], "where:", where)
+        count += 1
     
 
 
