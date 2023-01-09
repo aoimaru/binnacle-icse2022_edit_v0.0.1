@@ -50,8 +50,9 @@ def __Levenshtein__(X, Y):
     
     for i in range(1, m + 1):
         for j in range(1, n + 1):
-            pq = PQ_GramWrapper._get_pq_edit_distance(X[i-1], Y[j-1], 4, 2)
-            if pq <= 0.9:
+            pq = PQ_GramWrapper._get_pq_edit_distance(X[i-1], Y[j-1], 5, 2)
+            if pq <= 0.5:
+            # if X[i-1]==Y[j-1]:
                 cost = 0
                 where.append(str(j))
             else:
@@ -98,7 +99,8 @@ def __Demerau_Levenshtein__(X, Y):
 
 
 def __Phased_3__(test_case: str):
-    file_paths = JsonFile._get_file_paths(PHASED3_VIMAGICK_PATH)
+    # file_paths = JsonFile._get_file_paths(PHASED3_JESSFRAZ_PATH)
+    file_paths = JsonFile._get_file_paths(PHASED3_GOLD_PATH)
 
     dumped_ast_commands = list()
     dumped_ast_commands_per_run_instruction_dictionaly = dict()
@@ -120,7 +122,7 @@ def __Phased_3__(test_case: str):
     }
     test_ncd = list()
     
-    for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case][:-1]:
+    for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case][:6]:
         astCommand = AstCleaner._sort_by_asc_for_phased3_(json.loads(dumped_ast_command))
         test_obj["children"].append(astCommand)
         test_ncd.append(astCommand)
@@ -134,6 +136,7 @@ def __Phased_3__(test_case: str):
 
     # file_paths = JsonFile._get_file_paths(PHASED3_JESSFRAZ_PATH)
     file_paths = JsonFile._get_file_paths(PHASED3_GOLD_PATH)
+    # file_paths = JsonFile._get_file_paths(PHASED3_VIMAGICK_PATH)
 
     dumped_ast_commands = list()
     dumped_ast_commands_per_run_instruction_dictionaly = dict()
@@ -196,15 +199,17 @@ def __Phased_3__(test_case: str):
         edit_distances = sorted(output_distance[1], key=lambda x:x["simple_distance"])
         # edit_distances = sorted(output_distance[1], key=lambda x:len(x["where"]), reverse=True)
         for edit_distance in edit_distances:
-            # if count >= 15:
-            #     break
+            if count >= 15:
+                break
             # pprint.pprint(edit_distance["astCommands"])
             print(edit_distance["dumpedId"].ljust(20), edit_distance["ncd_distance"], edit_distance["simple_distance"])
             count += 1
 
 
 def __Phased_4__(test_case: str):
-    file_paths = JsonFile._get_file_paths(PHASED4_VIMAGICK_PATH)
+    file_paths = JsonFile._get_file_paths(PHASED4_JESSFRAZ_PATH)
+    # file_paths = JsonFile._get_file_paths(PHASED4_VIMAGICK_PATH)
+    # file_paths = JsonFile._get_file_paths(PHASED4_GOLD_PATH)
 
     dumped_ast_commands = list()
     dumped_ast_commands_per_run_instruction_dictionaly = dict()
@@ -226,20 +231,22 @@ def __Phased_4__(test_case: str):
     }
     test_ncd = list()
     
-    for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case][:-1]:
+    for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case]:
+    # for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case]:
         astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
         test_obj["children"].append(astCommand)
         test_ncd.append(astCommand)
         # test_ncd.append(AstCleaner._delete_reserved_structure_(json.dumps(astCommand)))
 
-    # test_ncd.pop(-1)
+    test_ncd.pop(-1)
 
     for tn in test_ncd:
         print(json.dumps(tn))
     
 
     # file_paths = JsonFile._get_file_paths(PHASED4_JESSFRAZ_PATH)
-    file_paths = JsonFile._get_file_paths(PHASED3_GOLD_PATH)
+    file_paths = JsonFile._get_file_paths(PHASED4_GOLD_PATH)
+    # file_paths = JsonFile._get_file_paths(PHASED4_VIMAGICK_PATH)
 
     dumped_ast_commands = list()
     dumped_ast_commands_per_run_instruction_dictionaly = dict()
@@ -315,11 +322,13 @@ def main():
     test_case = "mysql-proxy:1"
     # test_case = "vsftpd:1"
     # test_case = "privoxy:1"
-    test_case = "mediagoblin:1"
+    # test_case = "mediagoblin:1"
     # test_case = "kafka-manager:6"
+    test_case = "afterthedeadline:4"
+    # test_case = "100644861884e21cc1e1aa878b21042b810f04f4:5"
     
-    __Phased_3__(test_case)
-    print()
+    # __Phased_3__(test_case)
+    # print()
     __Phased_4__(test_case)
 
 if __name__ == "__main__":

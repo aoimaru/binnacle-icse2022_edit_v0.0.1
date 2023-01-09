@@ -98,7 +98,7 @@ def __Demerau_Levenshtein__(X, Y):
 
 
 def main():
-    file_paths = JsonFile._get_file_paths(PHASED3_VIMAGICK_PATH)
+    file_paths = JsonFile._get_file_paths(PHASED4_VIMAGICK_PATH)
 
     dumped_ast_commands = list()
     dumped_ast_commands_per_run_instruction_dictionaly = dict()
@@ -130,10 +130,11 @@ def main():
     test_ncd = list()
     
     for dumped_ast_command in dumped_ast_commands_per_run_instruction_dictionaly[test_case][:-3]:
+        # astCommand = AstCleaner._sort_by_asc_for_phased3_(json.loads(dumped_ast_command))
         astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
         test_obj["children"].append(astCommand)
-        test_ncd.append(json.dumps(astCommand))
-        # test_ncd.append(AstCleaner._delete_reserved_structure_(json.dumps(astCommand)))
+        # test_ncd.append(json.dumps(astCommand))
+        test_ncd.append(AstCleaner._delete_reserved_structure_(json.dumps(astCommand)))
 
     # test_ncd.pop(-1)
 
@@ -141,7 +142,7 @@ def main():
         print(tn[:100])
     
 
-    file_paths = JsonFile._get_file_paths(PHASED3_JESSFRAZ_PATH)
+    file_paths = JsonFile._get_file_paths(PHASED4_GOLD_PATH)
 
     dumped_ast_commands = list()
     dumped_ast_commands_per_run_instruction_dictionaly = dict()
@@ -169,10 +170,11 @@ def main():
         sample_ncd = list()
 
         for dumped_ast_command in dumped_ast_commands:
+            # astCommand = AstCleaner._sort_by_asc_for_phased3_(json.loads(dumped_ast_command))
             astCommand = AstCleaner._sort_by_asc(json.loads(dumped_ast_command))
             sample_obj["children"].append(astCommand)
-            sample_ncd.append(json.dumps(astCommand))
-            # sample_ncd.append(AstCleaner._delete_reserved_structure_(json.dumps(astCommand)))
+            # sample_ncd.append(json.dumps(astCommand))
+            sample_ncd.append(AstCleaner._delete_reserved_structure_(json.dumps(astCommand)))
 
         ncd, where = __Levenshtein__(test_ncd, sample_ncd)
         ncd = ncd/max(len(test_ncd), len(sample_ncd))*1.00
