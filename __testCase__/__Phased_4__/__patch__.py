@@ -30,7 +30,7 @@ def _get_commands_(file_sha: str, content: dict):
     for cnt_id, cnt in enumerate(content["children"]):
         commands = list()
         def _filter_(me):
-            """クロシージャ"""
+            """クロージャ"""
             if me["children"]:
                 for child in me["children"]:
                     if not child["type"].startswith("SC-"):
